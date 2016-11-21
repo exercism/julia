@@ -1,0 +1,21 @@
+{
+  "slug": "julia",
+  "language": "Julia",
+  "repository": "https://github.com/exercism/xjulia",
+  "active": false,
+  "test_pattern": "TODO",
+  "exercises": [
+
+  ],
+  "deprecated": [
+
+  ],
+  "ignored": [
+    "bin",
+    "img",
+    "docs"
+  ],
+  "foregone": [
+
+  ]
+}
