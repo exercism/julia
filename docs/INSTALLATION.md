@@ -8,6 +8,4 @@ A simple way to get started with Julia without the need of a local installation 
 
 ### Sidenotes
 
-During the installation of Juno, a common issue is that building some dependencies fail. To fix this, make sure you have the required build tools for your operating system installed. You can find more info on how to fix it [here](https://github.com/JuliaWeb/HttpParser.jl/issues/52) (OSX) and [here](http://discuss.junolab.org/t/not-able-to-install-juno-via-atom/562/18). Sometimes it can help to close Atom, run `using Atom` in a Julia REPL, i.e. the Julia command line, and then open Atom again.
-
 While not necessary for the exercism exercises, you will likely run across Julia packages that require a python installation. JuliaBox already comes with one by default. If you use a local installation, check out the [Conda.jl](https://github.com/JuliaPy/Conda.jl) package, which provides an easy way to install Python dependencies. Alternatively, [Anaconda](https://www.continuum.io/downloads) offers a Python distribution that already ships with many of the most popular scientific Python libraries.
