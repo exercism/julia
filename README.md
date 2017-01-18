@@ -14,7 +14,7 @@ Please see the [contributing guide](https://github.com/exercism/x-common/blob/ma
 
 A pool of exercises can be found in the [x-Common repo](https://github.com/exercism/x-common).
 
-Exercises for the Julia track go in the `exercises` directory and should follow the following filename conventions: 
+Exercises for the Julia track go in the `exercises` directory and should follow the following filename conventions:
 
 `exercises/<slug>/<slug>.jl` Skeleton for the function that is called by the test suite. Provide (abstract) parameter and return types to ensure compatibility with the test suite.
 
@@ -25,3 +25,6 @@ Exercises for the Julia track go in the `exercises` directory and should follow 
 Replace `<slug>` with the exercise slug of the exercise you're working on.
 
 See [Issue #2](https://github.com/exercism/xjulia/issues/2) for discussion on the structure.
+
+### Testing the example solutions
+Test your example solutions by running `julia runtests.jl` in the project directory. Specify exercise slugs as arguments to run only certain exercises: `julia runtests.jl <slug>`.

@@ -1,5 +1,19 @@
-language: bash
+language: julia
+
+os:
+  - linux
+  - osx
+
+julia:
+  - release
+  - nightly
+  - 0.5
+
+matrix:
+  allow_failures:
+    - julia: nightly
 
 script:
-  - bin/fetch-configlet
-  - bin/configlet .
+  - julia runtests.jl
+  - ./bin/fetch-configlet
+  - ./bin/configlet .
