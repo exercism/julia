@@ -5,6 +5,15 @@
   "active": false,
   "test_pattern": "TODO",
   "exercises": [
+      {
+          "slug": "bob",
+          "difficulty": 2,
+          "topics": [
+              "strings",
+              "unicode",
+              "control-flow (if-else statements)"
+          ]
+      }
 
   ],
   "deprecated": [
