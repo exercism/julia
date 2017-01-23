@@ -5,6 +5,15 @@
   "active": false,
   "test_pattern": "TODO",
   "exercises": [
+      {
+          "slug": "hamming",
+          "difficulty": 1,
+          "topics": [
+              "generators",
+              "strings",
+              "exceptions"
+          ]
+      }
 
   ],
   "deprecated": [
