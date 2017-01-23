@@ -5,6 +5,13 @@
   "active": false,
   "test_pattern": "TODO",
   "exercises": [
+      {
+          "slug": "difference-of-squares",
+          "difficulty": 1,
+          "topics": [
+              "generators"
+          ]
+      }
 
   ],
   "deprecated": [
