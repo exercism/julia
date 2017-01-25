@@ -5,7 +5,17 @@
   "active": false,
   "test_pattern": "TODO",
   "exercises": [
-
+    {
+      "slug": "anagram",
+      "difficulty": 2,
+      "topics": [
+        "control-flow (loops)",
+        "arrays",
+        "strings",
+        "sorting",
+        "filtering"
+      ]
+    }
   ],
   "deprecated": [
 
