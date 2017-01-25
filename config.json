@@ -5,7 +5,15 @@
   "active": false,
   "test_pattern": "TODO",
   "exercises": [
-
+    {
+      "slug": "leap",
+      "difficulty": 1,
+      "topics": [
+        "control-flow (conditionals)",
+        "integers",
+        "mathematics"
+      ]
+    }
   ],
   "deprecated": [
 
