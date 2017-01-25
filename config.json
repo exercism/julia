@@ -11,6 +11,17 @@
       "topics": [
         "generators"
       ]
+    },
+    {
+      "slug": "anagram",
+      "difficulty": 2,
+      "topics": [
+        "control-flow (loops)",
+        "arrays",
+        "strings",
+        "sorting",
+        "filtering"
+      ]
     }
   ],
   "deprecated": [
