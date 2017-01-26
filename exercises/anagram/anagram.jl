@@ -1,4 +1,4 @@
-function detect_anagrams(subject::String, candidates::AbstractArray)
+function detect_anagrams(subject::AbstractString, candidates::AbstractArray)
 
 end
 
