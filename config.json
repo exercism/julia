@@ -5,15 +5,16 @@
   "active": false,
   "test_pattern": "TODO",
   "exercises": [
-  	{
-    	"slug": "rna-transcription",
-			"difficulty": 1,
-			"topics": [
-				"exception handling",
+    {
+      "slug": "rna-transcription",
+      "difficulty": 1,
+      "topics": [
+        "exception handling",
         "strings",
-				"pattern matching",
+        "pattern matching",
         "filtering"
       ]
+    }
   ],
   "deprecated": [
 
