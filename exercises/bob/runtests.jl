@@ -68,10 +68,3 @@ end
         @test bob(misc) == response[:misc]
     end
 end
-
-@testset "unicode" begin
-    @test bob("Does e^{i ⋅ π} + 1 = 0?") == response[:question]
-    @test bob("ΗΕΛΛΩ WΩΡΛΔ") == response[:yelling]
-    @test bob("√-1 2^3 Σ π and it was delicious!") == response[:misc]
-    @test bob("Ηϵλλω wωρλα") == response[:misc]
-end
