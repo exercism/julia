@@ -10,7 +10,7 @@
           "difficulty": 1,
           "topics": [
               "strings",
-              "unicode"
+              "string interpolation"
           ]
       }
   ],

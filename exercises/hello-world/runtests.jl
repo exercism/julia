@@ -10,7 +10,3 @@ end
     @test hello("Alice") == "Hello, Alice!"
     @test hello("Bob") == "Hello, Bob!"
 end
-
-@testset "unicode" begin
-    @test hello("Πυθαγόρας") == "Hello, Πυθαγόρας!"
-end
