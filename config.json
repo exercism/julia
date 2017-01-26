@@ -5,14 +5,44 @@
   "active": false,
   "test_pattern": "TODO",
   "exercises": [
-      {
-          "slug": "hello-world",
-          "difficulty": 1,
-          "topics": [
-              "strings",
-              "string interpolation"
-          ]
-      }
+    {
+      "slug": "hello-world",
+      "difficulty": 1,
+      "topics": [
+        "strings",
+        "string interpolation"
+      ]
+    },
+    {
+      "slug": "rna-transcription",
+      "difficulty": 1,
+      "topics": [
+        "exception handling",
+        "strings",
+        "pattern matching",
+        "filtering"
+      ]
+    },
+    {
+      "slug": "leap",
+      "difficulty": 1,
+      "topics": [
+        "control-flow (conditionals)",
+				"integers", 
+				"mathematics"
+      ]
+    },
+    {
+      "slug": "anagram",
+      "difficulty": 2,
+      "topics": [
+        "control-flow (loops)",
+        "arrays",
+        "strings",
+        "sorting",
+        "filtering"
+      ]
+    }
   ],
   "deprecated": [
 
@@ -20,7 +50,8 @@
   "ignored": [
     "bin",
     "img",
-    "docs"
+    "docs",
+    "juliamnt"
   ],
   "foregone": [
 
