@@ -10,6 +10,7 @@
           "difficulty": 2,
           "topics": [
               "strings",
+              "unicode",
               "control-flow (if-else statements)"
           ]
       }
