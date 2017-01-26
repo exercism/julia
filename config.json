@@ -6,6 +6,16 @@
   "test_pattern": "TODO",
   "exercises": [
     {
+      "slug": "rna-transcription",
+      "difficulty": 1,
+      "topics": [
+        "exception handling",
+        "strings",
+        "pattern matching",
+        "filtering"
+      ]
+    },
+    {
       "slug": "leap",
       "difficulty": 1,
       "topics": [
