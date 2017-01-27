@@ -1,7 +1,6 @@
 using Base.Test
 
-#include("word-count.jl")
-include("example.jl")
+include("word-count.jl")
 
 @testset "no words" begin
   @test wordcount(" .\n,\t!^&*()~@#\$%{}[]:;'/<>") == Dict()
