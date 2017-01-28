@@ -16,13 +16,15 @@ for (root, dirs, files) in walkdir("exercises")
         cp(joinpath(exercise_path, "example.jl"), joinpath(temp_path, "$exercise.jl"))
         cp(joinpath(exercise_path, "runtests.jl"), joinpath(temp_path, "runtests.jl"))
 
-        # Run the tests
-        result = @testset "$exercise example" begin
-            include(joinpath(temp_path, "runtests.jl"))
+        try
+            # Run the tests
+            result = @testset "$exercise example" begin
+                include(joinpath(temp_path, "runtests.jl"))
+            end
+        finally
+            # Delete the temporary directory
+            rm(temp_path, recursive=true)
         end
-
-        # Delete the temporary directory
-        rm(temp_path, recursive=true)
 
         # Print test output (this is the default behaviour for older versions of Julia)
         if VERSION > v"0.6.0-dev"

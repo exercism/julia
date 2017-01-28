@@ -5,14 +5,61 @@
   "active": false,
   "test_pattern": "TODO",
   "exercises": [
-      {
-          "slug": "difference-of-squares",
-          "difficulty": 1,
-          "topics": [
-              "generators"
-          ]
-      }
-
+    {
+      "slug": "difference-of-squares",
+      "difficulty": 1,
+      "topics": [
+        "generators"
+      ]
+    },
+    {
+      "slug": "word-count",
+      "difficulty": 1,
+      "topics": [
+        "control-flow (loops)",
+        "arrays",
+        "strings"
+      ]
+    },
+    {
+      "slug": "rna-transcription",
+      "difficulty": 1,
+      "topics": [
+        "exception handling",
+        "strings",
+        "pattern matching",
+        "filtering"
+      ]
+    },
+    {
+      "slug": "leap",
+      "difficulty": 1,
+      "topics": [
+        "control-flow (conditionals)",
+				"integers", 
+				"mathematics"
+      ]
+    },
+    {
+      "slug": "anagram",
+      "difficulty": 2,
+      "topics": [
+        "control-flow (loops)",
+        "arrays",
+        "strings",
+        "sorting",
+        "filtering"
+      ]
+    },
+    {
+      "slug": "bob",
+      "difficulty": 2,
+      "topics": [
+        "strings",
+        "unicode",
+        "control-flow (if-else statements)"
+      ]
+    }
   ],
   "deprecated": [
 
@@ -20,7 +67,8 @@
   "ignored": [
     "bin",
     "img",
-    "docs"
+    "docs",
+    "juliamnt"
   ],
   "foregone": [
 
