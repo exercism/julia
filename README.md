@@ -1,4 +1,5 @@
 # Exercism Julia Track
+[![Build Status](https://travis-ci.org/exercism/xjulia.svg?branch=master)](https://travis-ci.org/exercism/xjulia)
 
 Exercism exercises in Julia.
 

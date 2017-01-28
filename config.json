@@ -13,6 +13,36 @@
         "arrays",
         "strings"
       ]
+    },
+    {
+      "slug": "rna-transcription",
+      "difficulty": 1,
+      "topics": [
+        "exception handling",
+        "strings",
+        "pattern matching",
+        "filtering"
+      ]
+    },
+    {
+      "slug": "leap",
+      "difficulty": 1,
+      "topics": [
+        "control-flow (conditionals)",
+				"integers", 
+				"mathematics"
+      ]
+    },
+    {
+      "slug": "anagram",
+      "difficulty": 2,
+      "topics": [
+        "control-flow (loops)",
+        "arrays",
+        "strings",
+        "sorting",
+        "filtering"
+      ]
     }
   ],
   "deprecated": [
