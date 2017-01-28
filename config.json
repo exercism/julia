@@ -6,6 +6,14 @@
   "test_pattern": "TODO",
   "exercises": [
     {
+      "slug": "hello-world",
+      "difficulty": 1,
+      "topics": [
+        "strings",
+        "string interpolation"
+      ]
+    },
+    {
       "slug": "hamming",
       "difficulty": 1,
       "topics": [
