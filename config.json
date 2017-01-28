@@ -6,6 +6,13 @@
   "test_pattern": "TODO",
   "exercises": [
     {
+      "slug": "difference-of-squares",
+      "difficulty": 1,
+      "topics": [
+        "generators"
+      ]
+    },
+    {
       "slug": "word-count",
       "difficulty": 1,
       "topics": [
