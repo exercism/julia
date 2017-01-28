@@ -6,6 +6,15 @@
   "test_pattern": "TODO",
   "exercises": [
     {
+      "slug": "word-count",
+      "difficulty": 1,
+      "topics": [
+        "control-flow (loops)",
+        "arrays",
+        "strings"
+      ]
+    },
+    {
       "slug": "rna-transcription",
       "difficulty": 1,
       "topics": [
