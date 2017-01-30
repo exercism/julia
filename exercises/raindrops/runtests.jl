@@ -1,7 +1,6 @@
 using Base.Test
 
-#include("raindrops.jl")
-include("example.jl")
+include("raindrops.jl")
 
 @testset "detect numbers" begin
   @testset "the sound for 1 is 1" begin
