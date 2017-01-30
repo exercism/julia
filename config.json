@@ -6,7 +6,31 @@
   "test_pattern": "TODO",
   "exercises": [
     {
-      "slug": "raindrops",
+      "slug": "hello-world",
+      "difficulty": 1,
+      "topics": [
+        "strings",
+        "string interpolation"
+      ]
+    },
+    {
+      "slug": "hamming",
+      "difficulty": 1,
+      "topics": [
+        "generators",
+        "strings",
+        "exceptions"
+      ]
+    },
+    {
+      "slug": "difference-of-squares",
+      "difficulty": 1,
+      "topics": [
+        "generators"
+      ]
+    },
+    {
+      "slug": "word-count",
       "difficulty": 1,
       "topics": [
         "control-flow (loops)",
@@ -34,6 +58,15 @@
       ]
     },
     {
+      "slug": "raindrops",
+      "difficulty": 1,
+      "topics": [
+        "control-flow (loops)",
+        "arrays",
+        "strings"
+      ]
+    },
+    {
       "slug": "anagram",
       "difficulty": 2,
       "topics": [
@@ -42,6 +75,15 @@
         "strings",
         "sorting",
         "filtering"
+      ]
+    },
+    {
+      "slug": "bob",
+      "difficulty": 2,
+      "topics": [
+        "strings",
+        "unicode",
+        "control-flow (if-else statements)"
       ]
     }
   ],
