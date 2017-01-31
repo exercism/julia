@@ -58,6 +58,16 @@
       ]
     },
     {
+      "slug": "scrabble-score",
+      "difficulty": 1,
+      "topics": [
+        "control-flow (loops)",
+        "control-flow (conditionals)",
+        "arrays",
+        "strings"
+      ]
+    },
+    {
       "slug": "anagram",
       "difficulty": 2,
       "topics": [
@@ -86,6 +96,16 @@
         "mathematics",
         "arrays",
         "filtering"
+      ]
+    },
+    {
+      "slug": "trinary",
+      "difficulty": 2,
+      "topics": [
+        "arrays",
+        "strings",
+        "integers",
+        "mathematics"
       ]
     }
   ],
