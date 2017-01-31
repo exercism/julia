@@ -53,8 +53,18 @@
       "difficulty": 1,
       "topics": [
         "control-flow (conditionals)",
-				"integers", 
+				"integers",
 				"mathematics"
+      ]
+    },
+    {
+      "slug": "scrabble-score",
+      "difficulty": 1,
+      "topics": [
+        "control-flow (loops)",
+        "control-flow (conditionals)",
+        "arrays",
+        "strings"
       ]
     },
     {
