@@ -86,6 +86,16 @@
         "unicode",
         "control-flow (if-else statements)"
       ]
+    },
+    {
+      "slug": "trinary",
+      "difficulty": 2,
+      "topics": [
+        "arrays",
+        "strings",
+        "integers",
+        "mathematics"
+      ]
     }
   ],
   "deprecated": [
