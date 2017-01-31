@@ -53,7 +53,7 @@
       "difficulty": 1,
       "topics": [
         "control-flow (conditionals)",
-				"integers", 
+				"integers",
 				"mathematics"
       ]
     },
@@ -75,6 +75,16 @@
         "strings",
         "unicode",
         "control-flow (if-else statements)"
+      ]
+    },
+    {
+      "slug": "trinary",
+      "difficulty": 2,
+      "topics": [
+        "arrays",
+        "strings",
+        "integers",
+        "mathematics"
       ]
     }
   ],
