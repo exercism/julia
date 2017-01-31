@@ -53,7 +53,7 @@
       "difficulty": 1,
       "topics": [
         "control-flow (conditionals)",
-				"integers", 
+				"integers",
 				"mathematics"
       ]
     },
@@ -75,6 +75,17 @@
         "strings",
         "unicode",
         "control-flow (if-else statements)"
+      ]
+    },
+    {
+      "slug": "sieve",
+      "difficulty": 2,
+      "topics": [
+        "control-flow (loops)",
+        "control-flow (conditionals)",
+        "mathematics",
+        "arrays",
+        "filtering"
       ]
     }
   ],
