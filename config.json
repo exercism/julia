@@ -53,8 +53,8 @@
       "difficulty": 1,
       "topics": [
         "control-flow (conditionals)",
-				"integers",
-				"mathematics"
+        "integers",
+		"mathematics"
       ]
     },
     {
@@ -94,6 +94,15 @@
         "arrays",
         "strings",
         "integers",
+        "mathematics"
+      ]
+    },
+    {
+      "slug": "secret-handshake",
+      "difficulty": 2,
+      "topics": [
+        "arrays",
+        "filtering",
         "mathematics"
       ]
     }
