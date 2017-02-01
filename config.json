@@ -58,6 +58,15 @@
       ]
     },
     {
+      "slug": "raindrops",
+      "difficulty": 1,
+      "topics": [
+        "control-flow (loops)",
+        "arrays",
+        "strings"
+      ]
+    },
+    {
       "slug": "scrabble-score",
       "difficulty": 1,
       "topics": [
