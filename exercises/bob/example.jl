@@ -25,6 +25,6 @@ function isshouting(stimulus::AbstractString)
             return false
         end
     end
-    
+
     return true
 end
