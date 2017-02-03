@@ -97,6 +97,17 @@
       ]
     },
     {
+      "slug": "sieve",
+      "difficulty": 2,
+      "topics": [
+        "control-flow (loops)",
+        "control-flow (conditionals)",
+        "mathematics",
+        "arrays",
+        "filtering"
+      ]
+    },
+    {
       "slug": "trinary",
       "difficulty": 2,
       "topics": [
