@@ -29,6 +29,15 @@
       ]
     },
     {
+      "slug": "nucleotide-count",
+      "difficulty": 1,
+      "topics": [
+        "chars",
+        "strings",
+        "control-flow (loops)"
+      ]
+    },
+    {
       "slug": "word-count",
       "difficulty": 1,
       "topics": [
