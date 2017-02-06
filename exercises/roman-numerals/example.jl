@@ -1,7 +1,7 @@
 # Aliases: I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000.
-# There is no need to be able to convert numbers larger than about 3000.
+# HINT: There is no need to be able to convert numbers larger than about 3000.
 function to_roman(number::Integer)
-    (number < 1 || number > 3000) && error("Invalid number")
+    number < 1 && error("Invalid number")
     alias = [
         ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"],
         ["X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"],
