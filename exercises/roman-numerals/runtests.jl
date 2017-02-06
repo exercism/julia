@@ -24,13 +24,12 @@ samples = Dict(
     3000 => "MMM"
 )
 
-@testset "basic transformations" begin
-    for sample in samples
+for sample in samples
+    @testset "convert " * repr(sample[1]) * " to roman numeral" begin
         @test to_roman(sample[1]) == sample[2]
     end
 end
 
 @testset "error handling" begin
     @test_throws ErrorException to_roman(0)
-    @test_throws ErrorException to_roman(3001)
 end
