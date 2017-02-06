@@ -24,10 +24,8 @@ samples = Dict(
     3000 => "MMM"
 )
 
-for sample in samples
-    @testset "convert " * repr(sample[1]) * " to roman numeral" begin
-        @test to_roman(sample[1]) == sample[2]
-    end
+@testset "convert $sample[1] to roman numeral" for sample in samples
+    @test to_roman(sample[1]) == sample[2]
 end
 
 @testset "error handling" begin
