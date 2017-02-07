@@ -23,6 +23,13 @@
       ]
     },
     {
+      "slug": "gigasecond",
+      "difficulty": 1,
+      "topics": [
+        "dates"
+      ]
+    },
+    {
       "slug": "difference-of-squares",
       "difficulty": 1,
       "topics": [
