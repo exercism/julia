@@ -76,6 +76,15 @@
       ]
     },
     {
+        "slug": "roman-numerals",
+        "difficulty": 1,
+        "topics": [
+          "control-flow (loops)",
+          "strings",
+          "mathematics"
+        ]
+    },
+    {
       "slug": "anagram",
       "difficulty": 2,
       "topics": [
