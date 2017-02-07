@@ -83,6 +83,15 @@
       ]
     },
     {
+      "slug": "luhn",
+      "difficulty": 1,
+      "topics": [
+        "strings",
+        "arithmetics",
+        "control-flow (conditionals)"
+      ]
+    },
+    {
         "slug": "roman-numerals",
         "difficulty": 1,
         "topics": [
