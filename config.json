@@ -117,6 +117,16 @@
       ]
     },
     {
+      "slug": "transpose",
+      "difficulty": 2,
+      "topics": [
+        "control-flow (loops)",
+        "control-flow (conditionals)",
+        "arrays",
+        "strings"
+      ]
+    },
+    {
       "slug": "secret-handshake",
       "difficulty": 2,
       "topics": [
