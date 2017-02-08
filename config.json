@@ -178,6 +178,19 @@
         "filtering",
         "mathematics"
       ]
+    },
+    {
+      "slug": "custom-set",
+      "difficulty": 5,
+      "topics": [
+        "types",
+        "parametric types",
+        "methods",
+        "multiple dispatch",
+        "function extension",
+        "mathematics",
+        "iterators"
+      ]
     }
   ],
   "deprecated": [
