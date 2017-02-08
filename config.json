@@ -110,6 +110,16 @@
         ]
     },
     {
+      "slug": "isogram",
+      "difficulty": 1,
+      "topics": [
+        "control-flow (loops)",
+        "control-flow (conditionals)",
+        "arrays",
+        "strings"
+      ]
+    },
+    {
       "slug": "anagram",
       "difficulty": 2,
       "topics": [
