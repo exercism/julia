@@ -100,14 +100,23 @@
         "control-flow (conditionals)"
       ]
     },
+	{
+      "slug": "atbash-cipher",
+      "difficulty": 1,
+      "topics": [
+        "strings",
+        "control-flow (conditionals)",
+        "control-flow (loops)"
+      ]
+    },
     {
-        "slug": "roman-numerals",
-        "difficulty": 1,
-        "topics": [
-          "control-flow (loops)",
-          "strings",
-          "mathematics"
-        ]
+      "slug": "roman-numerals",
+      "difficulty": 1,
+      "topics": [
+        "control-flow (loops)",
+        "strings",
+        "mathematics"
+      ]
     },
     {
       "slug": "isogram",
