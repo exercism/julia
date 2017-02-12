@@ -69,7 +69,7 @@
       "topics": [
         "control-flow (conditionals)",
         "integers",
-		"mathematics"
+		    "mathematics"
       ]
     },
     {
@@ -136,6 +136,15 @@
         "arrays",
         "strings",
         "sorting",
+        "filtering"
+      ]
+    },
+    {
+      "slug": "pangram",
+      "difficulty": 1,
+      "topics": [
+        "arrays",
+        "strings",
         "filtering"
       ]
     },
