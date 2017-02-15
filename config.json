@@ -201,9 +201,9 @@
       "slug": "robot-name",
       "difficulty": 2,
       "topics": [
-		"structs",
+        "structs",
         "strings",
-		"randomness"
+        "randomness"
       ]
     },
     {
