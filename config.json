@@ -198,6 +198,15 @@
       ]
     },
     {
+      "slug": "rotational-cipher",
+      "difficulty": 2,
+      "topics": [
+        "string literals",
+        "metaprogramming",
+        "strings"
+      ]
+    },
+    {
       "slug": "custom-set",
       "difficulty": 5,
       "topics": [
