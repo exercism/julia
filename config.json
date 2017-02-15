@@ -198,6 +198,15 @@
       ]
     },
     {
+      "slug": "robot-name",
+      "difficulty": 2,
+      "topics": [
+		"structs",
+        "strings",
+		"randomness"
+      ]
+    },
+    {
       "slug": "custom-set",
       "difficulty": 5,
       "topics": [
