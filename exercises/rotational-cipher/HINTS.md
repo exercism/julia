@@ -12,7 +12,7 @@ Implement a string literal that acts as `ROT13` on the string:
 R13"abcdefghijklmnopqrstuvwxyz" == "nopqrstuvwxyzabcdefghijklm"
 ```
 
-# Bonus B
+## Bonus B
 Implement string literals `R<i>`, `i = 0, ..., 26`, that shift the string for `i` values:
 ```julia
 R0"Hello, World!" == "Hello, World!"
