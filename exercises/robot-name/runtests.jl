@@ -16,7 +16,7 @@ isname(x) = ismatch(r"^[A-Z]{2}[0-9]{3}$", x)
     end
 
     @testset "names of robot instance are valid and unique in history" for i=1:100
-        reset(r1)
+        reset!(r1)
         @test isname(r1.name)
         @test !in(r1.name, history)
         push!(history, r1.name)
@@ -60,7 +60,7 @@ end
     end
 
     @testset "fresh names of reset robots are valid and unique in history" for r in robots
-        reset(r)
+        reset!(r)
         @test isname(r.name)
         @test !in(r.name, history)
         push!(history, r.name)
