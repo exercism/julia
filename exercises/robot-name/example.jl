@@ -8,7 +8,7 @@ type Robot
     Robot() = new(new_name())
 end
 
-function reset(instance::Robot)
+function reset!(instance::Robot)
     instance.name = new_name()
     instance
 end
