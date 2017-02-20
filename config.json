@@ -8,8 +8,7 @@
       "slug": "hello-world",
       "difficulty": 1,
       "topics": [
-        "strings",
-        "string interpolation"
+        "strings"
       ]
     },
     {

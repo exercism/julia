@@ -1,3 +1,3 @@
-function hello(name::AbstractString="World")
-    return "Hello, $(name)!"
+function hello()
+    return "Hello, World!"
 end
