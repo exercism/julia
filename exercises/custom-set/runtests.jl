@@ -14,7 +14,7 @@ end
     @test !(4 in CustomSet([1, 2, 3]))
 end
 
-@testset "subset" begin  # TODO ⊆, ⊈
+@testset "subset" begin
     @test  issubset(CustomSet([]), CustomSet([]))
     @test  issubset(CustomSet([]), CustomSet([1]))
     @test !issubset(CustomSet([1]), CustomSet([]))
@@ -90,7 +90,7 @@ end
             cs1 == CustomSet([2, 3])
         end
     end
-    @testset "not in-place" begin  # TODO use operator ∩
+    @testset "not in-place" begin
         @test isempty(intersect(CustomSet([]), CustomSet([])))
         @test isempty(intersect(CustomSet([]), CustomSet([3, 2, 5])))
         @test isempty(intersect(CustomSet([1, 2, 3, 4]), CustomSet([])))
