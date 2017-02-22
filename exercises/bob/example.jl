@@ -16,7 +16,7 @@ issilence(stimulus::AbstractString) = isempty(stimulus)
 isquestion(stimulus::AbstractString) = endswith(stimulus, '?')
 
 function isshouting(stimulus::AbstractString)
-    isupper(stimulus) && return true
+    all(isupper, stimulus) && return true
     !any(isalpha, stimulus) && return false
 
     for c in stimulus
