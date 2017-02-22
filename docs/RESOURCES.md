@@ -1,0 +1,6 @@
+- [Julia Style Guide](docs.julialang.org/en/stable/manual/style-guide/): Guide on how to write idiomatic Julia code.
+- [Performance Tips](http://docs.julialang.org/en/stable/manual/performance-tips/): Techniques to speed up your programs.
+- [Julia Manual](http://docs.julialang.org/en/stable/manual/introduction/): Additional explanations and examples.
+- [juliabloggers.com](http://www.juliabloggers.com/): Aggregator of Julia blog posts.
+- [Julia Discourse](https://discourse.julialang.org/): Discussions about the language.
+- [Julia YouTube channel](https://www.youtube.com/user/JuliaLanguage): Archive of JuliaCon talks.
