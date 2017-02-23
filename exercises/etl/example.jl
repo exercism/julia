@@ -1,4 +1,4 @@
-function transform(input::AbstractArray)
+function transform(input::Dict)
     output = []
     for i = input
         for j = map(lowercase, i[2])
@@ -6,6 +6,6 @@ function transform(input::AbstractArray)
             push!(output, pair)
         end
     end
-    sort(output)
+    Dict(sort(output))
 end
 
