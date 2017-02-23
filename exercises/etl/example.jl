@@ -6,6 +6,6 @@ function transform(input::Dict)
             push!(output, pair)
         end
     end
-    Dict(sort(output))
+    Dict(output)
 end
 
