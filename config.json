@@ -148,6 +148,15 @@
       ]
     },
     {
+      "slug": "etl",
+      "difficulty": 2,
+      "topics": [
+        "arrays",
+        "strings",
+        "sorting"
+      ]
+    },
+    {
       "slug": "bob",
       "difficulty": 2,
       "topics": [
