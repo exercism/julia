@@ -35,6 +35,16 @@
       ]
     },
     {
+      "slug": "pascals-triangle",
+      "difficulty": 1,
+      "topics": [
+        "control-flow (conditionals)",
+        "integers",
+        "mathematics",
+        "exceptions"
+      ]
+    },
+    {
       "slug": "nucleotide-count",
       "difficulty": 1,
       "topics": [
