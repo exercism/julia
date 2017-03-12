@@ -11,6 +11,7 @@ julia:
 matrix:
   allow_failures:
     - julia: nightly
+    - julia: 0.6
 
 script:
   - julia runtests.jl
