@@ -6,11 +6,11 @@ import Base.Test.@test_skip, Base.Test.@test_broken
 # The track user will not be affected by this.
 # Overwrite @test_skip, @test_broken with @test
 macro test_skip(ex)
-    @test ex
+    @test eval(ex)
 end
 
 macro test_broken(ex)
-    @test ex
+    @test eval(ex)
 end
 
 for (root, dirs, files) in walkdir("exercises")
