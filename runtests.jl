@@ -1,5 +1,18 @@
 using Base.Test
 
+import Base.Test.@test_skip, Base.Test.@test_broken
+
+# When testing the example solution, all tests must pass, even ones marked as skipped or broken.
+# The track user will not be affected by this.
+# Overwrite @test_skip, @test_broken with @test
+macro test_skip(ex)
+    @test ex
+end
+
+macro test_broken(ex)
+    @test ex
+end
+
 for (root, dirs, files) in walkdir("exercises")
     for exercise in dirs
         # Allow only testing specified execises
