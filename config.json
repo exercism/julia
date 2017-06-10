@@ -241,12 +241,6 @@
   "deprecated": [
 
   ],
-  "ignored": [
-    "bin",
-    "img",
-    "docs",
-    "juliamnt"
-  ],
   "foregone": [
 
   ]
