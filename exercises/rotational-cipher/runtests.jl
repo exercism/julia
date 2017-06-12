@@ -32,20 +32,20 @@ include("rotational-cipher.jl")
     end
 end
 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-# Additional exercises                                                #
-# Remove the comments for the optional bonus exercises from HINTS.md  #
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# Additional exercises                                                        #
+# Change @test_skip to @test for the optional bonus exercises from HINTS.md   #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 # Bonus A
-# @testset "string literal R13" begin
-#     @test R13"The quick brown fox jumps over the lazy dog." == "Gur dhvpx oebja sbk whzcf bire gur ynml qbt."
-# end
+@testset "Bonus A: string literal R13" begin
+    @test_skip R13"The quick brown fox jumps over the lazy dog." == "Gur dhvpx oebja sbk whzcf bire gur ynml qbt."
+end
 
 # Bonus B
-# @testset "string literals" begin
-#     @test R5"OMG" == "TRL"
-#     @test R4"Testing 1 2 3 testing" == "Xiwxmrk 1 2 3 xiwxmrk"
-#     @test R21"Let's eat, Grandma!" == "Gzo'n zvo, Bmviyhv!"
-#     @test R13"The quick brown fox jumps over the lazy dog." == "Gur dhvpx oebja sbk whzcf bire gur ynml qbt."
-# end
+@testset "Bonus B: string literals" begin
+    @test_skip R5"OMG" == "TRL"
+    @test_skip R4"Testing 1 2 3 testing" == "Xiwxmrk 1 2 3 xiwxmrk"
+    @test_skip R21"Let's eat, Grandma!" == "Gzo'n zvo, Bmviyhv!"
+    @test_skip R13"The quick brown fox jumps over the lazy dog." == "Gur dhvpx oebja sbk whzcf bire gur ynml qbt."
+end
