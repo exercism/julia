@@ -1,7 +1,7 @@
 # Exercism Julia Track
 
-[![Join the chat at https://gitter.im/exercism/xjulia](https://badges.gitter.im/exercism/xjulia.svg)](https://gitter.im/exercism/xjulia?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Build Status](https://travis-ci.org/exercism/xjulia.svg?branch=master)](https://travis-ci.org/exercism/xjulia)
+[![Join the chat at https://gitter.im/exercism/julia](https://badges.gitter.im/exercism/julia.svg)](https://gitter.im/exercism/julia?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/exercism/julia.svg?branch=master)](https://travis-ci.org/exercism/julia)
 
 Exercism exercises in Julia.
 
@@ -29,7 +29,7 @@ Exercises for the Julia track go in the `exercises` directory and should follow 
 
 Replace `<slug>` with the exercise slug of the exercise you're working on.
 
-See [Issue #2](https://github.com/exercism/xjulia/issues/2) for discussion on the structure and style guidelines.
+See [Issue #2](https://github.com/exercism/julia/issues/2) for discussion on the structure and style guidelines.
 
 ### Adding it to config
 
