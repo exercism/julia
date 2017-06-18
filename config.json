@@ -1,7 +1,7 @@
 {
   "slug": "julia",
   "language": "Julia",
-  "repository": "https://github.com/exercism/xjulia",
+  "repository": "https://github.com/exercism/julia",
   "active": false,
   "exercises": [
     {
