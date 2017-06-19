@@ -58,8 +58,17 @@ end
     @test imag(ComplexNumber(1, 2)) == 2
 end
 
+# Bonus A
 @testset "Complex exponential" begin
     @test_skip exp(ComplexNumber(0, π)) ≈ ComplexNumber(-1, 0)
     @test_skip exp(ComplexNumber(0, 0)) == ComplexNumber(1, 0)
     @test_skip exp(ComplexNumber(1, 0)) ≈ ComplexNumber(e, 0)
+end
+
+# Bonus B
+@testset "Syntax sugar jm" begin
+    @test_skip ComplexNumber(0, 1)  == jm
+    @test_skip ComplexNumber(1, 0)  == 1 + 0jm
+    @test_skip ComplexNumber(1, 1)  == 1 + 1jm
+    @test_skip ComplexNumber(-1, 0) == jm^2
 end
