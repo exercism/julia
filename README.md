@@ -1,4 +1,6 @@
 # Exercism Julia Track
+
+[![Join the chat at https://gitter.im/exercism/xjulia](https://badges.gitter.im/exercism/xjulia.svg)](https://gitter.im/exercism/xjulia?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/exercism/xjulia.svg?branch=master)](https://travis-ci.org/exercism/xjulia)
 
 Exercism exercises in Julia.
@@ -58,3 +60,6 @@ Your example solutions should adhere to the following guidelines:
 - it is generally preferred to use ASCII operators and identifiers over Unicode equivalents whenever possible
 
 These are based on the [General Formatting Guidelines](https://github.com/JuliaLang/julia/blob/master/CONTRIBUTING.md#general-formatting-guidelines-for-julia-code-contributions) for contributions to the Julia codebase.
+
+## Julia icon
+The Julia logo has been designed by Stefan Karpinski. He has granted us permission to create and use a derived logo for this exercism track.

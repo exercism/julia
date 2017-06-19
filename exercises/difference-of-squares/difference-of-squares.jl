@@ -1,10 +1,10 @@
-"Square the sum of the numbers up to the given number"
-function sum_of_squares(n::Int)
+"Sum the squares of the numbers up to the given number"
+function square_of_sum(n::Int)
 
 end
 
-"Sum the squares of the numbers up to the given number"
-function square_of_sum(n::Int)
+"Square the sum of the numbers up to the given number"
+function sum_of_squares(n::Int)
 
 end
 

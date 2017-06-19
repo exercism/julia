@@ -1,5 +1,18 @@
 using Base.Test
 
+import Base.Test.@test_skip, Base.Test.@test_broken
+
+# When testing the example solution, all tests must pass, even ones marked as skipped or broken.
+# The track user will not be affected by this.
+# Overwrite @test_skip, @test_broken with @test
+macro test_skip(ex)
+    @test eval(ex)
+end
+
+macro test_broken(ex)
+    @test eval(ex)
+end
+
 for (root, dirs, files) in walkdir("exercises")
     for exercise in dirs
         # Allow only testing specified execises
@@ -18,17 +31,12 @@ for (root, dirs, files) in walkdir("exercises")
 
         try
             # Run the tests
-            result = @testset "$exercise example" begin
+            @testset "$exercise example" begin
                 include(joinpath(temp_path, "runtests.jl"))
             end
         finally
             # Delete the temporary directory
             rm(temp_path, recursive=true)
-        end
-
-        # Print test output (this is the default behaviour for older versions of Julia)
-        if VERSION > v"0.6.0-dev"
-            Base.Test.print_test_results(result)
         end
     end
 end

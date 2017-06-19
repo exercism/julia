@@ -8,8 +8,7 @@
       "slug": "hello-world",
       "difficulty": 1,
       "topics": [
-        "strings",
-        "string interpolation"
+        "strings"
       ]
     },
     {
@@ -33,6 +32,16 @@
       "difficulty": 1,
       "topics": [
         "generators"
+      ]
+    },
+    {
+      "slug": "pascals-triangle",
+      "difficulty": 1,
+      "topics": [
+        "control-flow (conditionals)",
+        "integers",
+        "mathematics",
+        "exceptions"
       ]
     },
     {
@@ -100,7 +109,7 @@
         "control-flow (conditionals)"
       ]
     },
-	{
+    {
       "slug": "atbash-cipher",
       "difficulty": 1,
       "topics": [
@@ -146,6 +155,15 @@
         "arrays",
         "strings",
         "filtering"
+      ]
+    },
+    {
+      "slug": "etl",
+      "difficulty": 2,
+      "topics": [
+        "arrays",
+        "strings",
+        "sorting"
       ]
     },
     {
@@ -207,6 +225,15 @@
       ]
     },
     {
+      "slug": "rotational-cipher",
+      "difficulty": 2,
+      "topics": [
+        "string literals",
+        "metaprogramming",
+        "strings"
+      ]
+    },
+    {
       "slug": "custom-set",
       "difficulty": 5,
       "topics": [
@@ -222,12 +249,6 @@
   ],
   "deprecated": [
 
-  ],
-  "ignored": [
-    "bin",
-    "img",
-    "docs",
-    "juliamnt"
   ],
   "foregone": [
 
