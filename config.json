@@ -225,6 +225,17 @@
       ]
     },
     {
+      "slug": "complex-numbers",
+      "difficulty": 2,
+      "topics": [
+        "structs",
+        "mathematics",
+        "methods",
+        "multiple dispatch",
+        "function extension"
+      ]
+    },
+    {
       "slug": "rotational-cipher",
       "difficulty": 2,
       "topics": [
