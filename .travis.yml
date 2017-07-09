@@ -14,4 +14,4 @@ matrix:
 script:
   - julia runtests.jl
   - ./bin/fetch-configlet
-  - ./bin/configlet .
+  - ./bin/configlet lint .
