@@ -1,7 +1,7 @@
 import Base: AbstractSet, isempty, length, in, issubset, start, next, done,
              push!, ==, copy, intersect!, intersect, union!, union
 
-type CustomSet{T} <: AbstractSet
+struct CustomSet{T} <: AbstractSet{T}
     elements::Array{T, 1}
 end
 
