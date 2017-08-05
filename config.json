@@ -219,6 +219,18 @@
       ]
     },
     {
+      "uuid": "43f1dc63-0412-9a80-49ba-b620f4bbfccac2731e4",
+      "slug": "collatz-conjecture",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 2,
+      "topics": [
+        "mathematics",
+        "control-flow (exceptions)",
+        "control-flow (if-else statements)"
+      ]
+    },
+    {
       "uuid": "9474a13b-09c1-4e4d-90e3-1a14fde5eb62",
       "slug": "bob",
       "core": false,
