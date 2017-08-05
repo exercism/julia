@@ -37,5 +37,6 @@ there are lots of collisions (like when you generate name one thousand times).
 
 A debugging session with Paul Blackwell at gSchool. [http://gschool.it](http://gschool.it)
 
+
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
