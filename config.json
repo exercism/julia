@@ -1,6 +1,7 @@
 {
   "language": "Julia",
   "active": false,
+  "blurb": "Julia is an open-source high-level, high-performance dynamic programming language designed for technical and scientific computing while also being effective for general-purpose tasks. It is convenient to use for daily work but also runs fast enough to be deployed for high-performance applications.",
   "exercises": [
     {
       "uuid": "a668410d-41aa-4710-a68f-54521da6486d",
