@@ -17,6 +17,7 @@ each nucleotide with its complement:
 * `C` -> `G`
 * `T` -> `A`
 * `A` -> `U`
+
 ## Source
 
 Rosalind [http://rosalind.info/problems/rna](http://rosalind.info/problems/rna)
