@@ -64,7 +64,7 @@
     {
       "uuid": "9474a13b-09c1-4e4d-90e3-1a14fde5eb62",
       "slug": "bob",
-      "core": true,
+      "core": false,
       "unlocked_by": null,
       "difficulty": 2,
       "topics": [
@@ -286,7 +286,7 @@
     {
       "uuid": "e5a6d640-cd76-4453-8247-fd34ffed4fe5",
       "slug": "transpose",
-      "core": true,
+      "core": false,
       "unlocked_by": null,
       "difficulty": 2,
       "topics": [
@@ -311,7 +311,7 @@
     {
       "uuid": "c64e03cc-1952-4b2d-9a53-25c43187a4e6",
       "slug": "gigasecond",
-      "core": true,
+      "core": false,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
