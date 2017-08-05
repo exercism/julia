@@ -319,6 +319,16 @@
       ]
     },
     {
+      "uuid": "deb5a654-056c-2180-2dd8-efaa14dc5225f5af86c",
+      "slug": "robot-simulator",
+      "core": false,
+      "unlocked_by": "robot-name",
+      "difficulty": 2,
+      "topics": [
+        "structs"
+      ]
+    },
+    {
       "uuid": "eca7e62c-7bbf-436c-8011-2920cb2ab1c1",
       "slug": "complex-numbers",
       "core": true,
