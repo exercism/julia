@@ -5,10 +5,6 @@
 
 Exercism exercises in Julia.
 
-## TODO
-
-_Document how to contribute to the Julia track._
-
 ## Contributing Guide
 
 Please see the [contributing guide](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks/README.md).
@@ -31,19 +27,31 @@ Replace `<slug>` with the exercise slug of the exercise you're working on.
 
 See [Issue #2](https://github.com/exercism/julia/issues/2) for discussion on the structure and style guidelines.
 
+#### Adding the README
+If you are porting an existing exercise, you need to generate the exercise `README.md` using the configlet. The process is described here: https://github.com/exercism/docs/blob/master/maintaining-a-track/regenerating-exercise-readmes.md
+
 ### Adding it to config
 
 Make sure to add the exercise to the `config.json` file, by adding an entry to the `exercises` array:
 ```json
 "exercises": [
   {
-    "slug": "hello-world" ,
+    "uuid": "a668410d-41aa-4710-a68f-54521da6486d",
+    "slug": "hello-world",
+    "core": true,
+    "unlocked_by": null,
     "difficulty": 1,
-    "topics": ["strings"]
-  }
+    "topics": [
+      "strings"
+    ]
+  },
 ]
 ```
 If possible, add info on which topics the exercise is about and estimate a difficulty level from 1 to 10. We can adjust these later on when we know more about the exercises and how users solve them.
+
+You can generate the uuid with the [configlet](https://github.com/exercism/configlet). It can be installed easily by running `bin/fetch-configlet`. Simply run `configlet uuid` to generate an exercise uuid.
+
+By default, you can leave `"core": false` and `"unlocked_by: null"`. We can discuss in the PR where the exercise should be added to the progression.
 
 ### Testing the example solutions
 Test your example solutions by running `julia runtests.jl` in the project directory. Specify exercise slugs as arguments to run only certain exercises: `julia runtests.jl <slug>`.

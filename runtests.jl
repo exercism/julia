@@ -6,11 +6,11 @@ import Base.Test.@test_skip, Base.Test.@test_broken
 # The track user will not be affected by this.
 # Overwrite @test_skip, @test_broken with @test
 macro test_skip(ex)
-    @test eval(ex)
+    @test eval(current_module(), ex)
 end
 
 macro test_broken(ex)
-    @test eval(ex)
+    @test eval(current_module(), ex)
 end
 
 for (root, dirs, files) in walkdir("exercises")
@@ -32,7 +32,9 @@ for (root, dirs, files) in walkdir("exercises")
         try
             # Run the tests
             @testset "$exercise example" begin
-                include(joinpath(temp_path, "runtests.jl"))
+                # Run the tests within an anonymous module to prevent definitions from
+                # one exercise leaking into another.
+                eval(Module(), :(include(joinpath($temp_path, "runtests.jl"))))
             end
         finally
             # Delete the temporary directory
