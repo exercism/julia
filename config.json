@@ -362,7 +362,7 @@
       "uuid": "2ed6e171-04e1-b080-f383-a801b2564b3e0f4f1ee",
       "slug": "grains",
       "core": false,
-      "unlocked_by": null,
+      "unlocked_by": "difference-of-squares",
       "difficulty": 1,
       "topics": [
         "exceptions"
