@@ -3,7 +3,7 @@ using Base.Test
 include("grains.jl")
 
 @testset "On squares" begin
-    @testset "On square $s" for s = 1:64
+    @testset "On square $s" for s = UInt64(1):64
         @test on_square(s) == 2^(s-1)
         @test total_after(s) == 2^s - 1
     end

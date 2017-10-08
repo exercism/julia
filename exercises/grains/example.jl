@@ -12,7 +12,12 @@ end
 
 """Validate an arbitrary square."""
 function check_square_input(square)
-    square == 0 && throw(DomainError())
-    square <  0 && throw(DomainError())
-    square > 64 && throw(DomainError())
+    square == 0 && throw(DomainError(square, "Square input of zero is invalid."))
+    square <  0 && throw(DomainError(square, "Negative square input is invalid."))
+    square > 64 && throw(DomainError(square, "Square input greater than 64 is invalid."))
+end
+
+if VERSION < v"0.7"  # backwards compatibility
+    Base.DomainError(val) = DomainError()
+    Base.DomainError(val, msg) = DomainError()
 end
