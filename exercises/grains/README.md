@@ -15,7 +15,7 @@ Write code that shows:
 - how many grains were on each square (`on_square`)
 - the total number of grains (`total_after`)
 
-## Bonuses
+## For bonus points
 
 Did you get the tests passing and the code clean? If you want to, these
 are some additional things you could try:
@@ -25,10 +25,3 @@ are some additional things you could try:
 
 Then please share your thoughts in a comment on the submission. Did this
 experiment make the code better? Worse? Did you learn anything from it?
-
-## Source
-
-JavaRanch Cattle Drive, exercise 6 [http://www.javaranch.com/grains.jsp](http://www.javaranch.com/grains.jsp)
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
