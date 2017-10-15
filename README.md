@@ -1,6 +1,6 @@
 # Exercism Julia Track
 
-[![Join the chat at https://gitter.im/exercism/julia](https://badges.gitter.im/exercism/julia.svg)](https://gitter.im/exercism/julia?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Join the chat at https://gitter.im/exercism/xjulia](https://badges.gitter.im/exercism/xjulia.svg)](https://gitter.im/exercism/xjulia?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/exercism/julia.svg?branch=master)](https://travis-ci.org/exercism/julia)
 
 Exercism exercises in Julia.
