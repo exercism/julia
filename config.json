@@ -284,6 +284,19 @@
       ]
     },
     {
+      "uuid": "2e39f242-0dac-ca80-0a59-15c1850d6617a864d57",
+      "slug": "phone-number",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "pattern_matching",
+        "conditionals",
+        "strings",
+        "regular_expressions"
+      ]
+    },
+    {
       "uuid": "e5a6d640-cd76-4453-8247-fd34ffed4fe5",
       "slug": "transpose",
       "core": false,
