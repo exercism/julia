@@ -297,6 +297,18 @@
       ]
     },
     {
+      "uuid": "7ea2903f-049b-ed80-3f87-73945ebf3d4577b715e",
+      "slug": "triangle",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+		"conditionals",
+		"functional abstraction",
+		"mathematics"
+      ]
+    },
+    {
       "uuid": "e5a6d640-cd76-4453-8247-fd34ffed4fe5",
       "slug": "transpose",
       "core": false,
