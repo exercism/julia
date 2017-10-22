@@ -15,3 +15,4 @@ script:
   - julia runtests.jl
   - ./bin/fetch-configlet
   - ./bin/configlet lint .
+  - ./bin/configlet tree . --with-difficulty
