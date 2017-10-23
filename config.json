@@ -74,6 +74,18 @@
       ]
     },
     {
+      "uuid": "3f9e4679-069c-3080-c2a9-f6a6c5795b4e0a27377",
+      "slug": "run-length-encoding",
+      "core": false,
+      "unlocked_by": "nucleotide-count",
+      "difficulty": 1,
+      "topics": [
+        "strings",
+        "algorithms",
+        "text_formatting"
+      ]
+    },
+    {
       "uuid": "4bc9a4f8-fc4d-4e6b-a93c-07069bbc5bc9",
       "slug": "pangram",
       "core": true,
