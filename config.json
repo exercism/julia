@@ -74,7 +74,7 @@
       ]
     },
     {
-      "uuid": "3f9e4679-069c-3080-c2a9-f6a6c5795b4e0a27377",
+      "uuid": "9814f832-8bd1-4a2b-9a1e-fc0e3e8541b5",
       "slug": "run-length-encoding",
       "core": false,
       "unlocked_by": "nucleotide-count",
@@ -245,7 +245,7 @@
       ]
     },
     {
-      "uuid": "43f1dc63-0412-9a80-49ba-b620f4bbfccac2731e4",
+      "uuid": "d1d5a74a-d488-4e2e-bd63-b74730057c98",
       "slug": "collatz-conjecture",
       "core": false,
       "unlocked_by": "difference-of-squares",
@@ -296,7 +296,7 @@
       ]
     },
     {
-      "uuid": "2e39f242-0dac-ca80-0a59-15c1850d6617a864d57",
+      "uuid": "f7a3f344-a9fa-4a36-ac44-12bc8673899e",
       "slug": "phone-number",
       "core": false,
       "unlocked_by": null,
@@ -309,7 +309,7 @@
       ]
     },
     {
-      "uuid": "7ea2903f-049b-ed80-3f87-73945ebf3d4577b715e",
+      "uuid": "f5be4623-2a9a-4bf5-bb32-dd81eddf0683",
       "slug": "triangle",
       "core": false,
       "unlocked_by": null,
@@ -356,7 +356,7 @@
       ]
     },
     {
-      "uuid": "deb5a654-056c-2180-2dd8-efaa14dc5225f5af86c",
+      "uuid": "e4b19962-ebc1-4f12-9ac8-45f17faeaa55",
       "slug": "robot-simulator",
       "core": false,
       "unlocked_by": "robot-name",
@@ -396,7 +396,7 @@
       ]
     },
     {
-      "uuid": "2ed6e171-04e1-b080-f383-a801b2564b3e0f4f1ee",
+      "uuid": "4cc2a5d6-e662-4d99-81d4-05d6bcd500f4",
       "slug": "grains",
       "core": false,
       "unlocked_by": "difference-of-squares",
