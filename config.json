@@ -404,6 +404,19 @@
       "topics": [
         "exceptions"
       ]
+    },
+    {
+      "uuid": "22b64a2b-7f08-444d-be6e-8b42e5c9207c",
+      "slug": "isbn-verifier",
+      "core": false,
+      "unlocked_by": "luhn",
+      "difficulty": 2,
+      "topics": [
+        "strings",
+        "arithmetics",
+        "control-flow (conditionals)",
+        "metaprogramming"
+      ]
     }
   ],
   "foregone": [
