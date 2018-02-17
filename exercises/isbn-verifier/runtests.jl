@@ -40,13 +40,13 @@ end
 
 @testset "constructing valid ISBN numbers" begin
     # ISBN number
-    @test isbn"3-598-21508-8".s == "3598215088"
+    @test string(isbn"3-598-21508-8") == "3598215088"
     # ISBN number with a check digit of 10
-    @test isbn"3-598-21507-X".s == "359821507X"
+    @test string(isbn"3-598-21507-X") == "359821507X"
     # ISBN without separating dashes
-    @test isbn"3598215088".s == "3598215088"
+    @test string(isbn"3598215088") == "3598215088"
     # ISBN without separating dashes and X as check digit
-    @test isbn"359821507X".s == "359821507X"
+    @test string(isbn"359821507X") == "359821507X"
 end
 
 @testset "constructing invalid ISBN numbers" begin
