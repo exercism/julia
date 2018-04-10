@@ -236,7 +236,7 @@
       "uuid": "bccc00fa-811c-4bf9-8e55-07a0d0affb08",
       "slug": "etl",
       "core": false,
-      "unlocked_by": "scrabble-score",
+      "unlocked_by": "nucleotide-count",
       "difficulty": 2,
       "topics": [
         "arrays",
@@ -409,7 +409,7 @@
       "uuid": "22b64a2b-7f08-444d-be6e-8b42e5c9207c",
       "slug": "isbn-verifier",
       "core": false,
-      "unlocked_by": "luhn",
+      "unlocked_by": "raindrops",
       "difficulty": 2,
       "topics": [
         "strings",
