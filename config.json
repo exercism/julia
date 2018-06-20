@@ -404,6 +404,18 @@
       "topics": [
         "exceptions"
       ]
+    },
+    {
+    "uuid": "3a2facfd-5ec8-49a0-a5aa-2229f07da896",
+    "slug": "spiral-matrix",
+    "core": false,
+    "unlocked_by": null,
+    "difficulty": 3,
+    "topics": [
+    "matrix",
+    "mathematics",
+    "iterators"
+    ]
     }
   ],
   "foregone": [
