@@ -13,7 +13,7 @@ Please see the [contributing guide](https://github.com/exercism/docs/blob/master
 
 ### Implementing an exercise
 
-A pool of exercises can be found in the [x-Common repo](https://github.com/exercism/x-common).
+A pool of exercises can be found in the [problem-specifications repo](https://github.com/exercism/problem-specifications).
 
 Exercises for the Julia track go in the `exercises` directory and should follow the following filename conventions:
 
