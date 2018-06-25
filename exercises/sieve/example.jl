@@ -5,7 +5,7 @@ function sieve(limit::Integer)
     primes = []
     while (i = findfirst(nums)) > 0
         push!(primes, i)
-        for j = find(nums)
+        for j = findall(nums)
             if j % i == 0
                 nums[j] = false
             end

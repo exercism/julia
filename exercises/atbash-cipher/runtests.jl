@@ -1,4 +1,4 @@
-using Base.Test
+using Test
 
 include("atbash-cipher.jl")
 
