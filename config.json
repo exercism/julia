@@ -408,6 +408,18 @@
       ]
     },
     {
+    "uuid": "3a2facfd-5ec8-49a0-a5aa-2229f07da896",
+    "slug": "spiral-matrix",
+    "core": false,
+    "unlocked_by": null,
+    "difficulty": 3,
+    "topics": [
+    "matrix",
+    "mathematics",
+    "iterators"
+    ]
+    },
+    {
       "slug": "isbn-verifier",
       "uuid": "22b64a2b-7f08-444d-be6e-8b42e5c9207c",
       "core": false,
