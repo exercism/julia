@@ -144,7 +144,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "generators"
+        "generators",
+        "math"
       ]
     },
     {
@@ -157,7 +158,7 @@
         "control_flow_conditionals",
         "exceptions",
         "integers",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -217,7 +218,6 @@
       "difficulty": 1,
       "topics": [
         "control_flow_loops",
-        "mathematics",
         "strings"
       ]
     },
@@ -255,7 +255,7 @@
       "topics": [
         "control_flow_exceptions",
         "control_flow_if_else_statements",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -269,7 +269,7 @@
         "control_flow_conditionals",
         "control_flow_loops",
         "filtering",
-        "mathematics"
+        "math"
       ]
     },
     {
@@ -281,7 +281,7 @@
       "topics": [
         "arrays",
         "integers",
-        "mathematics",
+        "math",
         "strings"
       ]
     },
@@ -293,8 +293,7 @@
       "difficulty": 2,
       "topics": [
         "arrays",
-        "filtering",
-        "mathematics"
+        "filtering"
       ]
     },
     {
@@ -318,8 +317,7 @@
       "difficulty": 1,
       "topics": [
         "conditionals",
-        "functional_abstraction",
-        "mathematics"
+        "functional_abstraction"
       ]
     },
     {
@@ -375,7 +373,7 @@
       "difficulty": 2,
       "topics": [
         "function_extension",
-        "mathematics",
+        "math",
         "methods",
         "multiple_dispatch",
         "structs"
@@ -390,7 +388,6 @@
       "topics": [
         "function_extension",
         "iterators",
-        "mathematics",
         "methods",
         "multiple_dispatch",
         "parametric_types",
@@ -408,16 +405,15 @@
       ]
     },
     {
-    "uuid": "3a2facfd-5ec8-49a0-a5aa-2229f07da896",
-    "slug": "spiral-matrix",
-    "core": false,
-    "unlocked_by": null,
-    "difficulty": 3,
-    "topics": [
-    "matrix",
-    "mathematics",
-    "iterators"
-    ]
+      "slug": "spiral-matrix",
+      "uuid": "3a2facfd-5ec8-49a0-a5aa-2229f07da896",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 3,
+      "topics": [
+        "iterators",
+        "matrix"
+      ]
     },
     {
       "slug": "isbn-verifier",
