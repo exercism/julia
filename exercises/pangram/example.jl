@@ -1,2 +1,1 @@
-ispangram(input::AbstractString) = length(Set(matchall(r"[a-z]", lowercase(input)))) == 26
-
+ispangram(input::AbstractString) = length(Set(collect((m.match for m = eachmatch(r"[a-z]", lowercase(input)))))) == 26

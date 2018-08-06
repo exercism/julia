@@ -5,13 +5,13 @@ end
 struct ISBN <: AbstractString
     s::AbstractString
 
-    ISBN(s) = verify(s) ? new(replace(s, "-", "")) : throw(ArgumentError("invalid ISBN string: $s"))
+    ISBN(s) = verify(s) ? new(replace(s, "-" => "")) : throw(ArgumentError("invalid ISBN string: $s"))
 end
 
 string(s::ISBN) = s.s
 
 function verify(s::AbstractString)
-    s = replace(s, "-", "")
+    s = replace(s, "-" => "")
     chars = split(s, "")
 
     length(chars) == 10 || return false

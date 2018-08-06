@@ -1,4 +1,4 @@
-import Base: AbstractSet, isempty, length, in, issubset, start, next, done,
+import Base: AbstractSet, isempty, length, in, issubset, iterate,
              push!, ==, copy, intersect!, intersect, union!, union
 
 struct CustomSet{T} <: AbstractSet{T}
@@ -13,9 +13,13 @@ copy(s::CustomSet) = CustomSet(copy(s.elements))
 push!(s::CustomSet, element) = push!(s.elements, element)
 
 # Iterator protocol
-start(::CustomSet) = 1
-next(s::CustomSet, state) = s.elements[state], state + 1
-done(s::CustomSet, state) = state > length(s)
+function iterate(s::CustomSet, state=1)
+    if state > length(s)
+        return nothing
+    end
+
+    s.elements[state], state + 1
+end
 
 function disjoint(s1::CustomSet, s2::CustomSet)
     for element in s1

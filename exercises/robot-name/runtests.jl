@@ -1,14 +1,14 @@
-using Base.Test
+using Test
 
 include("robot-name.jl")
 
 # Random names means a risk of collisions.
-history = []
+history = String[]
 
-isname(x) = ismatch(r"^[A-Z]{2}[0-9]{3}$", x)
+isname(x) = occursin(r"^[A-Z]{2}[0-9]{3}$", x)
 
 @testset "one robot" begin
-    r1 = Robot()
+    global r1 = Robot()
     push!(history, r1.name)
 
     @testset "name of robot is valid" begin
@@ -24,8 +24,8 @@ isname(x) = ismatch(r"^[A-Z]{2}[0-9]{3}$", x)
 end
 
 @testset "two robots" begin
-    r2 = Robot()
-    r3 = Robot()
+    global r2 = Robot()
+    global r3 = Robot()
 
     @testset "names of robots are valid" begin
         @test isname(r2.name)
@@ -46,7 +46,7 @@ end
 end
 
 @testset "many robots" begin
-    robots = []
+    global robots = Robot[]
 
     for i=1:10
         push!(robots, Robot())
@@ -66,4 +66,3 @@ end
         push!(history, r.name)
     end
 end
-

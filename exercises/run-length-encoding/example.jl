@@ -5,7 +5,7 @@ function encode(s)
     for char in s
         (char == s[1]) ? (count += 1) : break
     end
-    count_str = (count == 1) ? "" : dec(count)
+    count_str = (count == 1) ? "" : string(count)
     return string(count_str, s[1], encode(s[count + 1 : end]))
 end
 

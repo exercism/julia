@@ -1,6 +1,16 @@
 # http://docs.julialang.org/en/stable/stdlib/numbers/#random-numbers
 
-new_name() = join(map(x->Char(x), rand(65:90, 2))) * repr(rand(100:999))
+name_history = String[]
+
+function new_name()
+    generate_name() = join(map(x->Char(x), rand(65:90, 2))) * repr(rand(100:999))
+    name = generate_name()
+    while name in name_history
+        name = generate_name()
+    end
+    push!(name_history, name)
+    name
+end
 
 mutable struct Robot
     name::AbstractString

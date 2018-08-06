@@ -1,11 +1,11 @@
-using Base.Test
+using Test
 
 include("spiral-matrix.jl")
 
 
 @testset "Different valid values" begin
     @testset "Empty spiral" begin
-        @test spiral_matrix(0) == Matrix{Int}(0,0)
+        @test spiral_matrix(0) == Matrix{Int}(undef,0,0)
     end
     @testset "Trivial spiral" begin
         @test spiral_matrix(1) == reshape([1],(1,1))

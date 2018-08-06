@@ -1,5 +1,5 @@
 function luhn(id::AbstractString)
-    id = split(replace(id, ' ', ""), "")
+    id = split(replace(id, ' ' => ""), "")
     length(id) < 2 && return false
     all(all(isdigit, s) for s in id) || return false
 
