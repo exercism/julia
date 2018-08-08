@@ -14,7 +14,6 @@ questions = (
 yells = (
         "WATCH OUT!",
         "FCECDFCAAB",
-        "WHAT THE HELL WERE YOU THINKING?",
         "1, 2, 3 GO!",
         "ZOMG THE %^*@#\$(*^ ZOMBIES ARE COMING!!11!!1!",
         "I HATE YOU",
@@ -67,4 +66,8 @@ end
     @testset "$misc" for misc in miscs
         @test bob(misc) == response[:misc]
     end
+end
+
+@testset "forceful question" begin
+    @test bob("WHAT THE HELL WERE YOU THINKING?") == "Calm down, I know what I'm doing!"
 end

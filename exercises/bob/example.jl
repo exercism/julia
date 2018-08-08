@@ -3,6 +3,8 @@ function bob(stimulus::AbstractString)
 
     if issilence(stimulus)
         return "Fine. Be that way!"
+    elseif isquestion(stimulus) && isshouting(stimulus)
+        return "Calm down, I know what I'm doing!"
     elseif isshouting(stimulus)
         return "Whoa, chill out!"
     elseif isquestion(stimulus)
