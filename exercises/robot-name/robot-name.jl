@@ -1,4 +1,4 @@
-type Robot
+mutable struct Robot
 
 end
 
