@@ -4,12 +4,12 @@
     {
       "github_username": "SaschaMann",
       "alumnus": false,
-      "show_on_website": false,
-      "name": null,
-      "link_text": null,
-      "link_url": null,
+      "show_on_website": true,
+      "name": "Sascha",
+      "link_text": "My website",
+      "link_url": "https://saschamann.eu/",
       "avatar_url": null,
-      "bio": null
+      "bio": "Physics student. Learned about Julia in a class and decided to dig more into it. Very promising language and I wanted to get more involved in its community."
     }
   ]
 }
