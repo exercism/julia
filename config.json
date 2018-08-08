@@ -338,7 +338,7 @@
       "uuid": "7cb2d96a-4707-4cec-9ead-313fcb5fbb94",
       "core": true,
       "unlocked_by": null,
-      "difficulty": 2,
+      "difficulty": 5,
       "topics": [
         "randomness",
         "strings",
@@ -360,7 +360,7 @@
       "uuid": "e4b19962-ebc1-4f12-9ac8-45f17faeaa55",
       "core": false,
       "unlocked_by": "robot-name",
-      "difficulty": 2,
+      "difficulty": 6,
       "topics": [
         "structs"
       ]
@@ -370,7 +370,7 @@
       "uuid": "eca7e62c-7bbf-436c-8011-2920cb2ab1c1",
       "core": true,
       "unlocked_by": null,
-      "difficulty": 2,
+      "difficulty": 10,
       "topics": [
         "function_extension",
         "math",
@@ -384,7 +384,7 @@
       "uuid": "b47377f7-84af-4a10-83ef-c2444a4f8940",
       "core": true,
       "unlocked_by": null,
-      "difficulty": 5,
+      "difficulty": 8,
       "topics": [
         "function_extension",
         "iterators",
@@ -420,12 +420,13 @@
       "uuid": "22b64a2b-7f08-444d-be6e-8b42e5c9207c",
       "core": false,
       "unlocked_by": "raindrops",
-      "difficulty": 2,
+      "difficulty": 5,
       "topics": [
         "arithmetics",
         "control_flow_conditionals",
         "metaprogramming",
-        "strings"
+        "strings",
+        "structs"
       ]
     }
   ]
