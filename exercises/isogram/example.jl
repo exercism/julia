@@ -3,7 +3,7 @@ function isisogram(s::AbstractString)
     chars = Char[]
 
     for c in s
-        isalpha(c) || continue
+        isletter(c) || continue
         c ∉ chars ? push!(chars, c) : return false
     end
 

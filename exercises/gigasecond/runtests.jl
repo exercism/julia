@@ -1,4 +1,5 @@
-using Base.Test
+using Test
+using Dates
 
 include("gigasecond.jl")
 

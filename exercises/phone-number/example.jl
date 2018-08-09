@@ -11,7 +11,7 @@ function clean(phone_number)
     result = match(r, phone_number)
 
     if result != nothing
-        result = string(result.captures...)
+        result = Base.string(result.captures...)
     end
 
     return result

@@ -1,5 +1,5 @@
 function collatz(n::Integer)
-    n <= 0 && throw(DomainError())
+    n <= 0 && throw(DomainError("n must be strictly positive"))
     iseven(n) ? div(n, 2) : 3n + 1
 end
 

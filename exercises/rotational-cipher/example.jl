@@ -12,7 +12,7 @@ rotate(n::Int, s::String) = join(rotate(n, c) for c in s)
 for n in 0:26
     # current_module() is necessary due to constraints of runtests.jl
     # This is not required for the user solving the exercise
-    eval(current_module(), :(macro $(Symbol(:R, n, :_str))(s::String)
+    Core.eval(@__MODULE__, :(macro $(Symbol(:R, n, :_str))(s::String)
         :(rotate($$n, $s))
     end))
 end
