@@ -47,5 +47,10 @@ Now, it's even trickier since the check digit of an ISBN-10 may be 'X' (represen
 Converting a string into a number and some basic processing utilizing a relatable real world example. [https://en.wikipedia.org/wiki/International_Standard_Book_Number#ISBN-10_check_digit_calculation](https://en.wikipedia.org/wiki/International_Standard_Book_Number#ISBN-10_check_digit_calculation)
 
 
+## Version compatibility
+Julia 1.0 and 0.7 are the only supported Julia versions on Exercism.
+For the most part, the test suites and solutions should be compatible to 0.6, but you will have to change `using Test` back to `using Base.Test` in the `runtests.jl` file.
+Note that 0.7 and 1.0 are almost identical, except for deprecation warnings, which have all been removed in 1.0.
+
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
