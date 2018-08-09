@@ -1,6 +1,6 @@
-using Base.Test
+using Test
 
-import Base.Test.@test_skip, Base.Test.@test_broken
+import Test.@test_skip, Test.@test_broken
 
 # When testing the example solution, all tests must pass, even ones marked as skipped or broken.
 # The track user will not be affected by this.
