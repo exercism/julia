@@ -37,7 +37,7 @@ for exercise in readdir("exercises")
         # Run the tests within their own Julia process to prevent definitions from
         # one exercise leaking into another.
         cd(temp_path)
-        run(`julia runtests.jl`)
+        run(`julia --color=yes runtests.jl`)
         cd(path)
         println()
     finally
