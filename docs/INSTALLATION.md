@@ -4,4 +4,6 @@ To install Julia on your system follow the instructions on the [Julia Language D
 
 For a local installation, there are multiple IDEs/editor plugins available. The most popular ones are [Juno](http://junolab.org/) and the [VS Code extension](https://github.com/JuliaEditorSupport/julia-vscode). Just follow the instructions on their websites.
 
-A simple way to get started with Julia without the need of a local installation is [JuliaBox](https://juliabox.com/), which is an online IDE based on Jupyter notebooks. You just access it from your browser, login and you can start solving exercises.
+If you prefer a more interactive environment, you can use Jupyter notebooks with [IJulia](https://github.com/JuliaLang/IJulia.jl). Each exercise also comes with a notebook file. The general workflow stays the same, except you can edit your solution in the notebook directly.
+
+A simple way to get started with Julia without the need of a local installation is [JuliaBox](http://junolab.org/), an online IDE based on Jupyter notebooks. You just access it from your browser, login and you can start solving exercises.
