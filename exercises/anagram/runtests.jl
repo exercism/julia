@@ -1,9 +1,11 @@
+# canonical data version: 1.3.0
+
 using Test
 
 include("anagram.jl")
 
 @testset "no matches" begin
-    @test detect_anagrams("diasper", ["hello", "world", "zombies", "pants"]) == []
+    @test detect_anagrams("diaper", ["hello", "world", "zombies", "pants"]) == []
 end
 
 @testset "detects simple anagram" begin
@@ -14,7 +16,7 @@ end
     @test detect_anagrams("galea", ["eagle"]) == []
 end
 
-@testset "detects multiple anagrams" begin
+@testset "detects two anagrams" begin
     @test detect_anagrams("master", ["stream", "pigeon", "maters"]) == ["stream", "maters"]
 end
 
@@ -26,7 +28,7 @@ end
     @test detect_anagrams("listen", ["enlists", "google", "inlets", "banana"]) == ["inlets"]
 end
 
-@testset "detects multiple anagrams" begin
+@testset "detects three anagrams" begin
     @test detect_anagrams("allergy", ["gallery", "ballerina", "regally", "clergy", "largely", "leading"]) == ["gallery", "regally", "largely"]
 end
 
