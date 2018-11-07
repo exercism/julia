@@ -428,6 +428,18 @@
         "strings",
         "structs"
       ]
+    },
+    {
+      "slug": "armstrong-numbers",
+      "uuid": "af4ae5d7-8d9d-4d21-b5d3-62f4fd8b4719",
+      "core": false,
+      "unlocked_by": null,
+      "difficulty": 1,
+      "topics": [
+        "arithmetics",
+        "integers",
+        "math"
+      ]
     }
   ]
 }
