@@ -17,7 +17,7 @@ A pool of exercises can be found in the [problem-specifications repo](https://gi
 
 Exercises for the Julia track go in the `exercises` directory and should follow the following filename conventions:
 
-`exercises/<slug>/<slug>.jl` Skeleton for the function that is called by the test suite. Provide (abstract) parameter and return types to ensure compatibility with the test suite.
+`exercises/<slug>/<slug>.jl` Skeleton for the function that is called by the test suite. If necessary, provide (abstract) parameter and return types.
 
 `exercises/<slug>/runtests.jl` Test suite for the exercise. Group related tests using [testsets](http://docs.julialang.org/en/release-0.5/stdlib/test/#working-with-test-sets).
 
@@ -27,7 +27,7 @@ Replace `<slug>` with the exercise slug of the exercise you're working on.
 
 See [Issue #2](https://github.com/exercism/julia/issues/2) for discussion on the structure and style guidelines.
 
-#### Adding the README
+### Adding the README
 If you are porting an existing exercise, you need to generate the exercise `README.md` using the configlet. The process is described here: https://github.com/exercism/docs/blob/master/maintaining-a-track/regenerating-exercise-readmes.md
 
 ### Adding it to config
@@ -56,7 +56,7 @@ By default, you can leave `"core": false` and `"unlocked_by: null"`. We can disc
 ### Testing the example solutions
 Test your example solutions by running `julia runtests.jl` in the project directory. Specify exercise slugs as arguments to run only certain exercises: `julia runtests.jl <slug>`.
 
-### Code Formatting Guidelines
+## Code Formatting Guidelines
 Your example solutions should adhere to the following guidelines:
 - 4 spaces per indentation level, no tabs
 - use whitespace to make the code more readable
