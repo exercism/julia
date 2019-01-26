@@ -11,15 +11,17 @@ The sum of the squares of the first ten natural numbers is
 Hence the difference between the square of the sum of the first
 ten natural numbers and the sum of the squares of the first ten
 natural numbers is 3025 - 385 = 2640.
+
+You are not expected to discover an efficient solution to this yourself from
+first principles; research is allowed, indeed, encouraged. Finding the best
+algorithm for the problem is a key skill in software engineering.
 ## Source
 
 Problem 6 at Project Euler [http://projecteuler.net/problem=6](http://projecteuler.net/problem=6)
 
 
 ## Version compatibility
-Julia 1.0 and 0.7 are the only supported Julia versions on Exercism.
-For the most part, the test suites and solutions should be compatible to 0.6, but you will have to change `using Test` back to `using Base.Test` in the `runtests.jl` file.
-Note that 0.7 and 1.0 are almost identical, except for deprecation warnings, which have all been removed in 1.0.
+This exercise has been tested on Julia versions >=1.0.
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
