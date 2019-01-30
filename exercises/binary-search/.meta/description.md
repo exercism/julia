@@ -1,5 +1,3 @@
-# Binary Search
-
 Implement a binary search algorithm.
 
 Searching a sorted collection is a common task. A dictionary is a sorted
@@ -37,16 +35,3 @@ A binary search is a dichotomic divide and conquer search algorithm.
 
 ## Bonus task
 Implement keyword arguments `by`, `lt` and `rev` so that `by` specifies a transformation applied to all elements of the list, `lt` specifies a comparison and `rev` specifies if the list is ordered in reverse.
-
-## Source
-
-Wikipedia [http://en.wikipedia.org/wiki/Binary_search_algorithm](http://en.wikipedia.org/wiki/Binary_search_algorithm)
-
-Some phrases above and the bonus tasks are taken from the [Julia base documentation (MIT license)](https://docs.julialang.org/en/v1/base/sort/#Base.Sort.searchsorted) of `searchsorted`.
-
-
-## Version compatibility
-This exercise has been tested on Julia versions >=1.0.
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
