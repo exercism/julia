@@ -114,6 +114,17 @@
       ]
     },
     {
+      "slug": "binary-search",
+      "uuid": "325385bb-2a70-4c7a-8b4e-e6297fc69872",
+      "core": false,
+      "unlocked_by": "pangram",
+      "difficulty": 3,
+      "topics": [
+        "arrays",
+        "searching"
+      ]
+    },
+    {
       "slug": "rotational-cipher",
       "uuid": "79ea05f1-3f27-4b92-bc47-0cebcd8d5a6f",
       "core": true,
