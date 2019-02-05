@@ -68,6 +68,3 @@ Your example solutions should adhere to the following guidelines:
 - it is generally preferred to use ASCII operators and identifiers over Unicode equivalents whenever possible
 
 These are based on the [General Formatting Guidelines](https://github.com/JuliaLang/julia/blob/master/CONTRIBUTING.md#general-formatting-guidelines-for-julia-code-contributions) for contributions to the Julia codebase.
-
-## Julia icon
-The Julia logo has been designed by Stefan Karpinski. He has granted us permission to create and use a derived logo for this exercism track.
