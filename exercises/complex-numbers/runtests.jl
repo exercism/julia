@@ -65,7 +65,7 @@ end
     @test_skip exp(ComplexNumber(0, π)) ≈ ComplexNumber(-1, 0)
     @test_skip exp(ComplexNumber(0, 0)) == ComplexNumber(1, 0)
     @test_skip exp(ComplexNumber(1, 0)) ≈ ComplexNumber(ℯ, 0)
-    @test_skip exp(ComplexNumber(log2(2), π)) ≈ ComplexNumber(-2, 0)
+    @test_skip exp(ComplexNumber(log(2), π)) ≈ ComplexNumber(-2, 0)
 end
 
 # Bonus B
