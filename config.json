@@ -379,8 +379,8 @@
     {
       "slug": "complex-numbers",
       "uuid": "eca7e62c-7bbf-436c-8011-2920cb2ab1c1",
-      "core": true,
-      "unlocked_by": null,
+      "core": false,
+      "unlocked_by": "custom-set",
       "difficulty": 10,
       "topics": [
         "function_extension",
