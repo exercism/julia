@@ -373,6 +373,20 @@
       ]
     },
     {
+      "slug": "rational-numbers",
+      "uuid": "0caf0209-be6e-4585-a90b-e41c94c5fa40",
+      "core": false,
+      "unlocked_by": "clock",
+      "difficulty": 8,
+      "topics": [
+        "function_extension",
+        "math",
+        "methods",
+        "multiple_dispatch",
+        "structs"
+      ]
+    },
+    {
       "slug": "custom-set",
       "uuid": "b47377f7-84af-4a10-83ef-c2444a4f8940",
       "core": false,
