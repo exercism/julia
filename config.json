@@ -345,6 +345,49 @@
       ]
     },
     {
+      "slug": "clock",
+      "uuid": "39bc1f1e-68e3-4d35-880b-d6b6fa174605",
+      "core": true,
+      "unlocked_by": null,
+      "difficulty": 5,
+      "topics": [
+        "function_extension",
+        "time",
+        "methods",
+        "multiple_dispatch",
+        "structs"
+      ]
+    },
+    {
+      "slug": "complex-numbers",
+      "uuid": "eca7e62c-7bbf-436c-8011-2920cb2ab1c1",
+      "core": false,
+      "unlocked_by": "clock",
+      "difficulty": 10,
+      "topics": [
+        "function_extension",
+        "math",
+        "methods",
+        "multiple_dispatch",
+        "structs"
+      ]
+    },
+    {
+      "slug": "custom-set",
+      "uuid": "b47377f7-84af-4a10-83ef-c2444a4f8940",
+      "core": false,
+      "unlocked_by": "clock",
+      "difficulty": 8,
+      "topics": [
+        "function_extension",
+        "iterators",
+        "methods",
+        "multiple_dispatch",
+        "parametric_types",
+        "types"
+      ]
+    },
+    {
       "slug": "robot-name",
       "uuid": "7cb2d96a-4707-4cec-9ead-313fcb5fbb94",
       "core": true,
@@ -374,35 +417,6 @@
       "difficulty": 6,
       "topics": [
         "structs"
-      ]
-    },
-    {
-      "slug": "complex-numbers",
-      "uuid": "eca7e62c-7bbf-436c-8011-2920cb2ab1c1",
-      "core": false,
-      "unlocked_by": "custom-set",
-      "difficulty": 10,
-      "topics": [
-        "function_extension",
-        "math",
-        "methods",
-        "multiple_dispatch",
-        "structs"
-      ]
-    },
-    {
-      "slug": "custom-set",
-      "uuid": "b47377f7-84af-4a10-83ef-c2444a4f8940",
-      "core": true,
-      "unlocked_by": null,
-      "difficulty": 8,
-      "topics": [
-        "function_extension",
-        "iterators",
-        "methods",
-        "multiple_dispatch",
-        "parametric_types",
-        "types"
       ]
     },
     {
