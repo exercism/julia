@@ -3,10 +3,14 @@ using Test
 include("grains.jl")
 
 @testset "On squares" begin
-    @testset "On square $s" for s = UInt64(1):64
-        @test on_square(s) == 2^(s-1)
-        @test total_after(s) == 2^s - 1
-    end
+    @test on_square(1) == 1
+    @test on_square(2) == 2
+    @test on_square(3) == 4
+    @test on_square(4) == 8
+    @test on_square(16) == 32768
+    @test on_square(32) == 2147483648
+    @test on_square(64) == 9223372036854775808
+    @test total_after(64) == 18446744073709551615
 end
 
 @testset "Invalid values" begin
