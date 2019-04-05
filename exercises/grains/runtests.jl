@@ -1,12 +1,24 @@
 using Test
 
+# canonical data version: 1.2.0
+
 include("grains.jl")
 
-@testset "On squares" begin
-    @testset "On square $s" for s = UInt64(1):64
-        @test on_square(s) == 2^(s-1)
-        @test total_after(s) == 2^s - 1
-    end
+@testset "beginning squares" begin
+    @test on_square(1) == 1
+    @test on_square(2) == 2
+    @test on_square(3) == 4
+    @test on_square(4) == 8
+    @test on_square(16) == 32768
+    @test on_square(32) == 2147483648
+    @test total_after(1) == 1
+    @test total_after(3) == on_square(1) + on_square(2) + on_square(3)
+end
+
+@testset "ending squares" begin
+    @test total_after(32) < total_after(64)
+    @test on_square(64) == 9223372036854775808
+    @test total_after(64) == 18446744073709551615
 end
 
 @testset "Invalid values" begin
