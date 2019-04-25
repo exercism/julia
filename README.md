@@ -47,7 +47,50 @@ Make sure to add the exercise to the `config.json` file, by adding an entry to t
 ]
 ```
 
-You can generate the entry interactively by running `julia bin/new-exercise.jl` and answering the prompts.
+You can generate the entry interactively by running `julia bin/new-exercise.jl` and answering the prompts:
+
+```
+$ julia --color=yes bin/new-exercise.jl
+exercise slug: hamming
+Is hamming a core exercise? [y/N]: N
+choose the core exercise that hamming is unlocked by:
+   hello-world
+   leap
+ > nucleotide-count
+   pangram
+   rotational-cipher
+   difference-of-squares
+   raindrops
+   secret-handshake
+   clock
+   robot-name
+choose the difficulty of hamming [1-10]: 3
+Please select all of the following topics that are covered by this exercise.
+
+[...]
+
+Data Types:
+[press: d=done, a=all, n=none]
+^  [ ] matrices
+   [ ] optional_values
+   [ ] queues
+   [ ] records
+   [X] sequences
+   [X] sets
+   [ ] stacks
+ > [X] strings
+   [ ] structs
+v  [ ] time
+
+[...]
+
+Julia Concepts:
+[press: d=done, a=all, n=none]
+ > [ ] multiple_dispatch
+   [ ]
+
+{"uuid":"2236f400-0a17-4055-85eb-0d616ccea513","slug":"hamming","core":false,"unlocked_by":"nucleotide-count","difficulty":3,"topics":["loops","conditionals","sequences","sets","strings"]}
+```
 
 If possible, add info on which topics the exercise is about and estimate a difficulty level from 1 to 10. We can adjust these later on when we know more about the exercises and how users solve them.
 
