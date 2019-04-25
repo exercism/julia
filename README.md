@@ -46,6 +46,9 @@ Make sure to add the exercise to the `config.json` file, by adding an entry to t
   },
 ]
 ```
+
+You can generate the entry interactively by running `julia bin/new-exercise.jl` and answering the prompts.
+
 If possible, add info on which topics the exercise is about and estimate a difficulty level from 1 to 10. We can adjust these later on when we know more about the exercises and how users solve them.
 
 You can generate the uuid with the [configlet](https://github.com/exercism/configlet). It can be installed easily by running `bin/fetch-configlet`. Simply run `configlet uuid` to generate an exercise uuid.
