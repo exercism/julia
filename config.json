@@ -21,8 +21,8 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "arithmetics",
-        "control_flow_conditionals",
+        "math",
+        "conditionals",
         "integers"
       ]
     },
@@ -34,7 +34,7 @@
       "difficulty": 1,
       "topics": [
         "chars",
-        "control_flow_loops",
+        "loops",
         "strings"
       ]
     },
@@ -45,7 +45,7 @@
       "unlocked_by": "nucleotide-count",
       "difficulty": 1,
       "topics": [
-        "exceptions",
+        "exception_handling",
         "generators",
         "strings"
       ]
@@ -70,7 +70,7 @@
       "unlocked_by": null,
       "difficulty": 2,
       "topics": [
-        "control_flow_if_else_statements",
+        "conditionals",
         "strings",
         "unicode"
       ]
@@ -107,7 +107,7 @@
       "difficulty": 2,
       "topics": [
         "arrays",
-        "control_flow_loops",
+        "loops",
         "filtering",
         "sorting",
         "strings"
@@ -143,8 +143,8 @@
       "unlocked_by": "rotational-cipher",
       "difficulty": 1,
       "topics": [
-        "control_flow_conditionals",
-        "control_flow_loops",
+        "conditionals",
+        "loops",
         "strings"
       ]
     },
@@ -166,8 +166,8 @@
       "unlocked_by": "difference-of-squares",
       "difficulty": 1,
       "topics": [
-        "control_flow_conditionals",
-        "exceptions",
+        "conditionals",
+        "exception_handling",
         "integers",
         "math"
       ]
@@ -180,7 +180,7 @@
       "difficulty": 1,
       "topics": [
         "arrays",
-        "control_flow_loops",
+        "loops",
         "strings"
       ]
     },
@@ -192,8 +192,8 @@
       "difficulty": 1,
       "topics": [
         "arrays",
-        "control_flow_conditionals",
-        "control_flow_loops",
+        "conditionals",
+        "loops",
         "strings"
       ]
     },
@@ -205,7 +205,7 @@
       "difficulty": 1,
       "topics": [
         "arrays",
-        "control_flow_loops",
+        "loops",
         "strings"
       ]
     },
@@ -216,8 +216,8 @@
       "unlocked_by": "raindrops",
       "difficulty": 1,
       "topics": [
-        "arithmetics",
-        "control_flow_conditionals",
+        "math",
+        "conditionals",
         "strings"
       ]
     },
@@ -228,7 +228,7 @@
       "unlocked_by": "raindrops",
       "difficulty": 1,
       "topics": [
-        "control_flow_loops",
+        "loops",
         "strings"
       ]
     },
@@ -240,8 +240,8 @@
       "difficulty": 1,
       "topics": [
         "arrays",
-        "control_flow_conditionals",
-        "control_flow_loops",
+        "conditionals",
+        "loops",
         "strings"
       ]
     },
@@ -264,8 +264,8 @@
       "unlocked_by": "difference-of-squares",
       "difficulty": 2,
       "topics": [
-        "control_flow_exceptions",
-        "control_flow_if_else_statements",
+        "exception_handling",
+        "conditionals",
         "math"
       ]
     },
@@ -277,8 +277,8 @@
       "difficulty": 2,
       "topics": [
         "arrays",
-        "control_flow_conditionals",
-        "control_flow_loops",
+        "conditionals",
+        "loops",
         "filtering",
         "math"
       ]
@@ -327,8 +327,7 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "conditionals",
-        "functional_abstraction"
+        "conditionals"
       ]
     },
     {
@@ -339,8 +338,8 @@
       "difficulty": 2,
       "topics": [
         "arrays",
-        "control_flow_conditionals",
-        "control_flow_loops",
+        "conditionals",
+        "loops",
         "strings"
       ]
     },
@@ -351,9 +350,7 @@
       "unlocked_by": null,
       "difficulty": 5,
       "topics": [
-        "function_extension",
         "time",
-        "methods",
         "multiple_dispatch",
         "structs"
       ]
@@ -365,9 +362,7 @@
       "unlocked_by": "clock",
       "difficulty": 10,
       "topics": [
-        "function_extension",
         "math",
-        "methods",
         "multiple_dispatch",
         "structs"
       ]
@@ -379,9 +374,7 @@
       "unlocked_by": "clock",
       "difficulty": 8,
       "topics": [
-        "function_extension",
         "math",
-        "methods",
         "multiple_dispatch",
         "structs"
       ]
@@ -393,12 +386,9 @@
       "unlocked_by": "clock",
       "difficulty": 8,
       "topics": [
-        "function_extension",
         "iterators",
-        "methods",
         "multiple_dispatch",
-        "parametric_types",
-        "types"
+        "structs"
       ]
     },
     {
@@ -440,7 +430,7 @@
       "unlocked_by": "difference-of-squares",
       "difficulty": 1,
       "topics": [
-        "exceptions"
+        "exception_handling"
       ]
     },
     {
@@ -461,8 +451,8 @@
       "unlocked_by": "raindrops",
       "difficulty": 5,
       "topics": [
-        "arithmetics",
-        "control_flow_conditionals",
+        "math",
+        "conditionals",
         "metaprogramming",
         "strings",
         "structs"
@@ -475,7 +465,7 @@
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "arithmetics",
+        "math",
         "integers",
         "math"
       ]
