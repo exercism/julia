@@ -1,4 +1,4 @@
-function transform(input::AbstractArray)
+function transform(input::AbstractDict)
 
 end
 
