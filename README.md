@@ -9,6 +9,8 @@ Exercism exercises in Julia.
 
 Please see the [contributing guide](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks/README.md).
 
+Please read and adhere to the [Code of Conduct](CODE_OF_CONDUCT.md).
+
 ## Working on the Exercises
 
 ### Implementing an exercise
