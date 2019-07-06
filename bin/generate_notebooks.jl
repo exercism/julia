@@ -1,5 +1,3 @@
-using Distributed
-
 "Generate a Jupyter notebook for a given exercise."
 function generate_notebook(slug)
     # readlines returns an array of strings.
@@ -100,7 +98,8 @@ end
 
 function generate_notebooks()
     @info "Generating notebooks..."
-    @distributed for slug in readdir("exercises")
+    for slug in readdir("exercises")
+        @info "  $slug"
         outfile = joinpath("exercises", slug, "$slug.ipynb")
         write(outfile, generate_notebook(slug))
     end
