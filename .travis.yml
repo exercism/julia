@@ -15,6 +15,7 @@ matrix:
 
 script:
   - julia runtests.jl
+  - ./bin/check_notebooks
   - ./bin/fetch-configlet
   - ./bin/configlet lint .
   - ./bin/configlet tree . --with-difficulty

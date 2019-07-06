@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Run notebook generation
+julia bin/generate_notebooks.jl
+
+# If there is a diff, the submitted notebooks weren't generated
+
+changed_files=$(git diff --name-only)
+
+if [ ! -z "$changed_files" ]; then
+    echo "The following notebooks diverge from the auto-generated notebooks:"
+    echo "$changed_files"
+    echo "Please run bin/generate_notebooks.jl to update the notebooks"
+    exit 1
+fi
+
+exit 0
