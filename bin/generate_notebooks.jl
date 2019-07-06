@@ -99,7 +99,7 @@ end
 function generate_notebooks()
     @info "Generating notebooks..."
     for slug in readdir("exercises")
-        @info "  $slug"
+        @debug "  $slug"
         outfile = joinpath("exercises", slug, "$slug.ipynb")
         write(outfile, generate_notebook(slug))
     end

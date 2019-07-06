@@ -25,9 +25,8 @@ for exercise in readdir("exercises")
     # anonymous module, so we can define `m.include(s::String)` to do nothing.
     Core.eval(m, :(include(s) = nothing))
     Base.include(m, joinpath(exercise_path, "example.jl"))
-    @testset "$exercise" begin
-        Base.include(m, joinpath(exercise_path, "runtests.jl"))
-    end
-
+    @info "Testing $exercise"
+    Base.include(m, joinpath(exercise_path, "runtests.jl"))
+    
     println() # to make the output more readable
 end

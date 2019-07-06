@@ -14,7 +14,7 @@ matrix:
     - julia: nightly
 
 script:
-  - julia runtests.jl
+  - julia --color=yes runtests.jl
   - ./bin/check_notebooks
   - ./bin/fetch-configlet
   - ./bin/configlet lint .
