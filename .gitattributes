@@ -1,0 +1,2 @@
+# Hide notebooks from diffs and language stats on GitHub
+*.ipynb linguist-generated=true
