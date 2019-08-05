@@ -3,6 +3,7 @@ language: julia
 os:
   - osx
   - linux
+  - windows
 
 julia:
   - 1.0
@@ -10,6 +11,13 @@ julia:
   - nightly
 
 matrix:
+  include:
+    - os: windows
+      arch: x64
+      julia: 1.0
+    - os: windows
+      arch: x86
+      julia: 1.0
   allow_failures:
     - julia: nightly
 
