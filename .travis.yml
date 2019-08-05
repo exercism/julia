@@ -32,8 +32,7 @@ matrix:
 script:
   - julia --color=yes --code-coverage --inline=no runtests.jl
   - ./bin/check_notebooks
-  # Fetch configlet depending on the OS
-  - if [[ $TRAVIS_OS_NAME == "windows" ]]; then powershell Set-ExecutionPolicy Bypass; powershell bin/fetch-configlet.ps1; else ./bin/fetch-configlet; fi
+  - ./bin/fetch-configlet
   - ./bin/configlet lint .
   - ./bin/configlet tree . --with-difficulty
 
