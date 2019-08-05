@@ -12,6 +12,8 @@ case $(uname) in
         echo "windows";;
     (MINGW*)
         echo "windows";;
+    (MSYS_NT-*)
+        echo "windows";;
     (*)
         echo "linux";;
 esac)
