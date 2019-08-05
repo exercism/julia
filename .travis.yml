@@ -29,7 +29,7 @@ matrix:
 script:
   - julia --color=yes --code-coverage --inline=no runtests.jl
   - ./bin/check_notebooks
-  - if [[ $TRAVIS_OS_NAME == "windows" ]]; then ./bin/fetch-configlet.ps1; else ./bin/fetch-configlet; fi
+  - if [[ $TRAVIS_OS_NAME == "windows" ]]; then powershell bin/fetch-configlet.ps1; else ./bin/fetch-configlet; fi
   - ./bin/configlet lint .
   - ./bin/configlet tree . --with-difficulty
 
