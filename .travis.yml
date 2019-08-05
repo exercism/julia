@@ -23,20 +23,15 @@ matrix:
     - os: windows
       arch: x86
       julia: 1.1
-    - stage: fetch-configlet.ps1 (Windows)
-      script: ./bin/fetch-configlet.ps1
-      if: os = windows
-    - stage: fetch-configlet (Bash)
-      script: ./bin/fetch-configlet
-      if: os != windows
-    - stage: test
-      script:
-        - julia --color=yes --code-coverage --inline=no runtests.jl
-        - ./bin/check_notebooks
-        - ./bin/configlet lint .
-        - ./bin/configlet tree . --with-difficulty
   allow_failures:
     - julia: nightly
-   
+
+script:
+  - julia --color=yes --code-coverage --inline=no runtests.jl
+  - ./bin/check_notebooks
+  - if [[ $TRAVIS_OS_NAME == "windows" ]]; then ./bin/fetch-configlet.ps1; else; ./bin/fetch-configlet; fi
+  - ./bin/configlet lint .
+  - ./bin/configlet tree . --with-difficulty
+
 after_success:
   - julia -e 'using Pkg; Pkg.add("Coverage"); using Coverage; Codecov.submit(Codecov.process_folder("exercises"))'
