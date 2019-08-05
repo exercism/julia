@@ -10,13 +10,30 @@ julia:
   - nightly
 
 matrix:
+  # fast_finish marks the build as passing even if allow_failures builds are still running
+  fast_finish: true
+  include:
+    - os: windows
+      arch: x64
+      julia: 1.0
+    - os: windows
+      arch: x86
+      julia: 1.0
+    - os: windows
+      arch: x64
+      julia: 1.1
+    - os: windows
+      arch: x86
+      julia: 1.1
   allow_failures:
     - julia: nightly
+    - arch: x86
 
 script:
   - julia --color=yes --code-coverage --inline=no runtests.jl
   - ./bin/check_notebooks
-  - ./bin/fetch-configlet
+  # Fetch configlet depending on the OS
+  - if [[ $TRAVIS_OS_NAME == "windows" ]]; then powershell Set-ExecutionPolicy Bypass; powershell bin/fetch-configlet.ps1; else ./bin/fetch-configlet; fi
   - ./bin/configlet lint .
   - ./bin/configlet tree . --with-difficulty
 
