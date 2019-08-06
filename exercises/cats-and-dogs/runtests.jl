@@ -28,6 +28,7 @@ end
 end
 
 # define a new type of Pet to test the generic fallback
+# this belongs to the testset below but struct definitions within the local scope of testsets are not supported in Julia <1.1
 struct Yak <: Pet
     name::String
 end
