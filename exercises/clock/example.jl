@@ -28,3 +28,5 @@ show(io::IO, c::Clock) = show(io, @sprintf("%02d:%02d", c.h, c.min))
 
 +(c::Clock, min::Dates.Minute) = Clock(c.h, c.min + min.value)
 -(c::Clock, min::Dates.Minute) = Clock(c.h, c.min - min.value)
+
+Clock(6, 41) + Dates.Minute(0) == Clock(6, 41)
