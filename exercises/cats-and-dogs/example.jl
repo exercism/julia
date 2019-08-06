@@ -10,8 +10,9 @@ end
 
 encounter(a::Pet, b::Pet) = "$(a.name) meets $(b.name) and $(meets(a, b))."
 
-# generic fallback
+# generic fallbacks
 meets(a::Pet, b::Pet) = "is confused"
+name(a::Pet) = a.name
 
 # specific types
 meets(a::Dog, b::Dog) = "sniffs"

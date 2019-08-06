@@ -13,6 +13,13 @@ sadie = Dog("Sadie")
 minka = Cat("Minka")
 felix = Cat("Felix")
 
+@testset "names" begin
+    @test name(buddy) == "Buddy"
+    @test name(sadie) == "Sadie"
+    @test name(minka) == "Minka"
+    @test name(felix) == "Felix"
+end
+
 @testset "encounters" begin
     @test encounter(sadie, buddy) == "Sadie meets Buddy and sniffs."
     @test encounter(buddy, felix) == "Buddy meets Felix and chases."
