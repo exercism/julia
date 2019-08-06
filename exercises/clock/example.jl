@@ -8,7 +8,9 @@ struct Clock{T<:Integer}
     h::T
     min::T
 
-    function Clock(h::T, min::T) where {T}
+    # The student is not expected to handle T != S in his solution, since this is only an introductory exercise.
+    # However, not handling it will cause issues when using 32bit Julia.
+    function Clock(h::T, min::S) where {T, S}
         h += fld(min, 60)
         h %= 24
         min %= 60
@@ -18,7 +20,7 @@ struct Clock{T<:Integer}
         if min < 0
             min += 60
         end
-        new{T}(h, min)
+        new{promote_type(T, S)}(h, min)
     end
 end
 
