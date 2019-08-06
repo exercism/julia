@@ -344,10 +344,21 @@
             ]
         },
         {
-            "slug": "clock",
-            "uuid": "39bc1f1e-68e3-4d35-880b-d6b6fa174605",
+            "uuid": "14cc9407-6284-45b3-90b6-ed105bf72d60",
+            "slug": "cats-and-dogs",
             "core": true,
             "unlocked_by": null,
+            "difficulty": 3,
+            "topics": [
+                "structs",
+                "multiple_dispatch"
+            ]
+        },
+        {
+            "slug": "clock",
+            "uuid": "39bc1f1e-68e3-4d35-880b-d6b6fa174605",
+            "core": false,
+            "unlocked_by": "cats-and-dogs",
             "difficulty": 5,
             "topics": [
                 "time",
@@ -359,7 +370,7 @@
             "slug": "complex-numbers",
             "uuid": "eca7e62c-7bbf-436c-8011-2920cb2ab1c1",
             "core": false,
-            "unlocked_by": "clock",
+            "unlocked_by": "cats-and-dogs",
             "difficulty": 10,
             "topics": [
                 "math",
@@ -371,7 +382,7 @@
             "slug": "rational-numbers",
             "uuid": "0caf0209-be6e-4585-a90b-e41c94c5fa40",
             "core": false,
-            "unlocked_by": "clock",
+            "unlocked_by": "cats-and-dogs",
             "difficulty": 8,
             "topics": [
                 "math",
@@ -383,7 +394,7 @@
             "slug": "custom-set",
             "uuid": "b47377f7-84af-4a10-83ef-c2444a4f8940",
             "core": false,
-            "unlocked_by": "clock",
+            "unlocked_by": "cats-and-dogs",
             "difficulty": 8,
             "topics": [
                 "iterators",
