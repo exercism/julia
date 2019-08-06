@@ -20,13 +20,6 @@ felix = Cat("Felix")
     @test encounter(felix, minka) == "Felix meets Minka and slinks."
 end
 
-@testset "verbs" begin
-    @test meets(buddy, sadie) == "sniffs"
-    @test meets(sadie, minka) == "chases"
-    @test meets(felix, buddy) == "hisses"
-    @test meets(minka, felix) == "slinks"
-end
-
 # define a new type of Pet to test the generic fallback
 # this belongs to the testset below but struct definitions within the local scope of testsets are not supported in Julia <1.1
 struct Yak <: Pet
