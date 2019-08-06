@@ -29,20 +29,21 @@ end
 
 # define a new type of Pet to test the generic fallback
 # this belongs to the testset below but struct definitions within the local scope of testsets are not supported in Julia <1.1
-struct Yak <: Pet
+struct Penguin <: Pet
     name::String
 end
+name(p::Penguin) = p.name
 
-julia = Yak("Julia")
+tux = Penguin("Tux")
 
 @testset "generic fallback" begin
-    @test encounter(buddy, julia) == "Buddy meets Julia and is confused."
-    @test encounter(sadie, julia) == "Sadie meets Julia and is confused."
-    @test encounter(minka, julia) == "Minka meets Julia and is confused."
-    @test encounter(felix, julia) == "Felix meets Julia and is confused."
+    @test encounter(buddy, tux) == "Buddy meets Tux and is confused."
+    @test encounter(sadie, tux) == "Sadie meets Tux and is confused."
+    @test encounter(minka, tux) == "Minka meets Tux and is confused."
+    @test encounter(felix, tux) == "Felix meets Tux and is confused."
 
-    @test encounter(julia, buddy) == "Julia meets Buddy and is confused."
-    @test encounter(julia, sadie) == "Julia meets Sadie and is confused."
-    @test encounter(julia, minka) == "Julia meets Minka and is confused."
-    @test encounter(julia, felix) == "Julia meets Felix and is confused."
+    @test encounter(tux, buddy) == "Tux meets Buddy and is confused."
+    @test encounter(tux, sadie) == "Tux meets Sadie and is confused."
+    @test encounter(tux, minka) == "Tux meets Minka and is confused."
+    @test encounter(tux, felix) == "Tux meets Felix and is confused."
 end
