@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1.0.0
       - name: "Set up Julia ${{ matrix.julia-version }}"
-        uses: julia-actions/setup-julia@v0.1.0-release
+        uses: julia-actions/setup-julia@v0.1.0
         with:
           version: ${{ matrix.julia-version }}
       - name: Test exercises
