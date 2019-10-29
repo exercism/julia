@@ -32,7 +32,7 @@ Ciphertext is written out in the same formatting as the input including spaces a
 
 This is a good exercise to experiment with non-standard string literals and metaprogramming.
 
-A short introduction to non-standard string literals can be found in this [blog post](http://iaindunning.com/blog/julia-unicode.html). A detailed metaprogramming guide can be found in the [manual](http://docs.julialang.org/en/stable/manual/metaprogramming/).
+A short introduction to non-standard string literals can be found in this [blog post](https://web.archive.org/web/20170625222109/https://iaindunning.com/blog/julia-unicode.html). A detailed metaprogramming guide can be found in the [manual](https://docs.julialang.org/en/v1/manual/metaprogramming/).
 
 You can extend your solution by adding the functionality described below. To test your solution, you have to remove the comments at the end of `runtests.jl` before running the tests as usual.
 
