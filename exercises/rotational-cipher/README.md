@@ -56,7 +56,6 @@ R13"abcdefghijklmnopqrstuvwxyz" == "nopqrstuvwxyzabcdefghijklm"
 
 Wikipedia [https://en.wikipedia.org/wiki/Caesar_cipher](https://en.wikipedia.org/wiki/Caesar_cipher)
 
-
 ## Version compatibility
 This exercise has been tested on Julia versions >=1.0.
 
