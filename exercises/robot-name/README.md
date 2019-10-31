@@ -37,7 +37,6 @@ there are lots of collisions (like when you generate name one thousand times).
 
 A debugging session with Paul Blackwell at gSchool. [http://gschool.it](http://gschool.it)
 
-
 ## Version compatibility
 This exercise has been tested on Julia versions >=1.0.
 

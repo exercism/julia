@@ -32,7 +32,6 @@ Assume that the programming language you are using does not have an implementati
 
 Wikipedia [https://en.wikipedia.org/wiki/Rational_number](https://en.wikipedia.org/wiki/Rational_number)
 
-
 ## Version compatibility
 This exercise has been tested on Julia versions >=1.0.
 

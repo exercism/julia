@@ -10,10 +10,10 @@ For example:
 - 154 is *not* an Armstrong number, because: `154 != 1^3 + 5^3 + 4^3 = 1 + 125 + 64 = 190`
 
 Write some code to determine whether a number is an Armstrong number.
+
 ## Source
 
 Wikipedia [https://en.wikipedia.org/wiki/Narcissistic_number](https://en.wikipedia.org/wiki/Narcissistic_number)
-
 
 ## Version compatibility
 This exercise has been tested on Julia versions >=1.0.

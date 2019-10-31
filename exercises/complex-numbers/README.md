@@ -44,7 +44,6 @@ Implement `jm` analogous to `im` so that `1 + 1jm == ComplexNumber(1, 1)`.
 
 Wikipedia [https://en.wikipedia.org/wiki/Complex_number](https://en.wikipedia.org/wiki/Complex_number)
 
-
 ## Version compatibility
 This exercise has been tested on Julia versions >=1.0.
 

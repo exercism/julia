@@ -17,10 +17,10 @@ each nucleotide with its complement:
 * `C` -> `G`
 * `T` -> `A`
 * `A` -> `U`
+
 ## Source
 
 Hyperphysics [http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html](http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html)
-
 
 ## Version compatibility
 This exercise has been tested on Julia versions >=1.0.
