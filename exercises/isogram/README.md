@@ -12,10 +12,10 @@ Examples of isograms:
 - six-year-old
 
 The word *isograms*, however, is not an isogram, because the s repeats.
+
 ## Source
 
 Wikipedia [https://en.wikipedia.org/wiki/Isogram](https://en.wikipedia.org/wiki/Isogram)
-
 
 ## Version compatibility
 This exercise has been tested on Julia versions >=1.0.

@@ -22,10 +22,10 @@ For simplicity, you can assume that the unencoded string will only contain
 the letters A through Z (either lower or upper case) and whitespace. This way
 data to be encoded will never contain any numbers and numbers inside data to
 be decoded always represent the count for the following character.
+
 ## Source
 
 Wikipedia [https://en.wikipedia.org/wiki/Run-length_encoding](https://en.wikipedia.org/wiki/Run-length_encoding)
-
 
 ## Version compatibility
 This exercise has been tested on Julia versions >=1.0.

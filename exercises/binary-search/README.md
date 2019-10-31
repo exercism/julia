@@ -44,7 +44,6 @@ Wikipedia [http://en.wikipedia.org/wiki/Binary_search_algorithm](http://en.wikip
 
 Some phrases above and the bonus tasks are taken from the [Julia base documentation (MIT license)](https://docs.julialang.org/en/v1/base/sort/#Base.Sort.searchsorted) of `searchsorted`.
 
-
 ## Version compatibility
 This exercise has been tested on Julia versions >=1.0.
 

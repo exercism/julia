@@ -11,8 +11,6 @@ The tests require a constructor that takes an array. The internals of your custo
 
 Certain methods have a unicode operator equivalent. E.g. `intersect(CustomSet([1, 2, 3, 4]), CustomSet([]))` is equivalent to `CustomSet([1, 2, 3, 4]) ∩ CustomSet([])`.
 
-
-
 ## Version compatibility
 This exercise has been tested on Julia versions >=1.0.
 

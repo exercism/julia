@@ -2,15 +2,13 @@
 
 {{ .Spec.Description -}}
 {{- with .Hints }}
-{{ . }}
+{{ . -}}
 {{ end }}
-{{- with .Spec.Credits -}}
-
+{{- with .Spec.Credits }}
 ## Source
 
 {{ . }}
 {{ end }}
-
 ## Version compatibility
 This exercise has been tested on Julia versions >=1.0.
 

@@ -20,10 +20,10 @@ is the 3's place, the third to last is the 9's place, etc.
 
 If your language provides a method in the standard library to perform the
 conversion, pretend it doesn't exist and implement it yourself.
+
 ## Source
 
 All of Computer Science [http://www.wolframalpha.com/input/?i=binary&a=*C.binary-_*MathWorld-](http://www.wolframalpha.com/input/?i=binary&a=*C.binary-_*MathWorld-)
-
 
 ## Version compatibility
 This exercise has been tested on Julia versions >=1.0.
