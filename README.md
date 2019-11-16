@@ -17,9 +17,7 @@ Your example solutions should adhere to the following guidelines:
 - use whitespace to make the code more readable
 - no whitespace at the end of a line (trailing whitespace)
 - comments are good, especially when they explain the algorithm
-- try to adhere to a 92 character line length limit
 - use upper camel case convention for type names
-- use lower case with underscores for method names
-- it is generally preferred to use ASCII operators and identifiers over Unicode equivalents whenever possible
+- use lower case for method names, add underscores if necessary
 
 These are based on the [General Formatting Guidelines](https://github.com/JuliaLang/julia/blob/master/CONTRIBUTING.md#general-formatting-guidelines-for-julia-code-contributions) for contributions to the Julia codebase.
