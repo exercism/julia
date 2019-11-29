@@ -9,7 +9,7 @@
             "core": true,
             "auto_approve": true,
             "unlocked_by": null,
-            "difficulty": 1,
+            "difficulty": 10,
             "topics": [
                 "strings"
             ]
