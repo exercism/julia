@@ -45,9 +45,9 @@ end
         end
 
         @testset "Exponentiation of a real number to a rational number" begin
-            @test 8^RationalNumber( 4, 3) == 15.999999999999998
-            @test 9^RationalNumber(-1, 2) == 0.3333333333333333
-            @test 2^RationalNumber( 0, 1) == 1.0
+            @test 8^RationalNumber( 4, 3) ≈ 15.999999999999998
+            @test 9^RationalNumber(-1, 2) ≈ 0.3333333333333333
+            @test 2^RationalNumber( 0, 1) ≈ 1.0
         end
     end
 
