@@ -384,7 +384,7 @@
             "uuid": "b47377f7-84af-4a10-83ef-c2444a4f8940",
             "core": false,
             "unlocked_by": "clock",
-            "difficulty": 8,
+            "difficulty": 10,
             "topics": [
                 "iterators",
                 "multiple_dispatch",
