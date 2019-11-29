@@ -27,10 +27,6 @@ matrix:
 
 script:
   - julia --color=yes --code-coverage --inline=no runtests.jl
-  - ./bin/check_notebooks
-  - ./bin/fetch-configlet
-  - ./bin/configlet lint .
-  - ./bin/configlet tree . --with-difficulty
 
 after_success:
   - julia -e 'using Pkg; Pkg.add("Coverage"); using Coverage; Codecov.submit(Codecov.process_folder("exercises"))'

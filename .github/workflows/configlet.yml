@@ -1,0 +1,22 @@
+name: Configlet
+
+on:
+  push:
+    branches: master
+  pull_request:
+
+jobs:
+  configlet:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Fetch configlet
+      run: ./bin/fetch-configlet
+
+    - name: Lint
+      run: ./bin/configlet lint .
+   
+    - name: Tree
+      run: ./bin/configlet tree . --with-difficulty
