@@ -1,0 +1,33 @@
+name: Progression diff
+
+on:
+  push:
+    branches: master
+    paths: config.json
+  pull_request:
+    paths: config.json
+
+jobs:
+  tree-diff:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Fetch configlet
+      run: ./bin/fetch-configlet
+
+    - name: Full Tree
+      run: ./bin/configlet tree . --with-difficulty
+    
+    - name: Diff
+      continue-on-error: true
+      run: ./bin/tree-diff
+    
+    - name: Labeller
+      if: failure()
+      uses: actions/github-script@0.3.0
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+            github.issues.addLabels({...context.issue, labels: ['config change']})
