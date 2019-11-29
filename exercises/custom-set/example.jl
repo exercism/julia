@@ -8,9 +8,8 @@ end
 isempty(s::CustomSet) = isempty(s.elements)
 length(s::CustomSet) = length(s.elements)
 in(element, s::CustomSet) = in(element, s.elements)  # this also defines issubset(::CustomSet, ::CustomSet)
-==(s1::CustomSet, s2::CustomSet) = issubset(s1, s2) && issubset(s2, s1)
 copy(s::CustomSet) = CustomSet(copy(s.elements))
-push!(s::CustomSet, element) = push!(s.elements, element)
+push!(s::CustomSet, element) = element in s.elements || push!(s.elements, element)
 
 # Iterator protocol
 function iterate(s::CustomSet, state=1)
