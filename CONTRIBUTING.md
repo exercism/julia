@@ -41,7 +41,8 @@ If there is no such issue, you may open one. The baseline of work is as follows:
 3. Create a new folder `exercises/$slug`
    - `$slug` refers to the exercise slug, the machine-readable name that is listed in [the list of exercises][list-of-exercises]
 4. Create a `$slug.jl` stub file.
-5. Create a `runtests.jl` test file. Here add the tests, per canonical data if possible.
+5. Create a `runtests.jl` test file. Here add the tests, per [canonical data][problem-specifications] if possible.
+   - Add a comment on top of the test file that contains the canonical data version you've used: `# canonical data version: x.y.z`
 6. Create a `example.jl` file. Place a working implementation, assuming it's renamed to `$slug.jl`
    - The example solution is meant to show that the test suite works properly. It doesn't have to be an ideal or optimised solution!
 7. Run the tests locally, by running `julia runtests.jl $slug` from the root of the repository.
