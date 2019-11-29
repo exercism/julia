@@ -17,6 +17,3 @@ jobs:
 
     - name: Lint
       run: ./bin/configlet lint .
-   
-    - name: Tree
-      run: ./bin/configlet tree . --with-difficulty
