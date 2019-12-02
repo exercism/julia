@@ -33,23 +33,13 @@ end
 end
 
 @testset "random ability is within range" begin
-    global abilities = []
-    global history = []
-
-    for i=1:3
-        push!(abilities, ability())
-
-        @testset "ability is valid and unique in history" begin
-            @test abilities[i] >= 3 && abilities[i] <= 18
-            @test !in(abilities[i], history)
-        end
-
-        push!(history, abilities[i])
-    end
+    abil = ability()
+    @test abil >= 3 && abil <= 18
 end
 
 @testset "random character is valid" begin
     global characters = DndCharacter[]
+    global history = DndCharacter[]
 
     for i=1:10
         push!(characters, DndCharacter())
