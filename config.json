@@ -469,6 +469,22 @@
                 "integers",
                 "math"
             ]
+        },
+        {
+            "uuid": "fcb9ef0e-ed97-4420-a38f-9bf690c23a3b",
+            "slug": "dnd-character",
+            "core": false,
+            "unlocked_by": "robot-name",
+            "difficulty": 5,
+            "topics": [
+                "variables",
+                "integers",
+                "structs",
+                "games",
+                "randomness",
+                "math",
+                "test_driven_development"
+            ]
         }
     ]
 }
