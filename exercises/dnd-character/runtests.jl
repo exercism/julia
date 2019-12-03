@@ -3,14 +3,14 @@ using Test
 
 include("dnd-character.jl")
 
-function ischaracter(dnd)
-    dnd.strength >= 3         && dnd.strength <= 18 &&
-        dnd.dexterity >= 3    && dnd.dexterity <= 18 &&
-        dnd.constitution >= 3 && dnd.constitution <= 18 &&
-        dnd.intelligence >= 3 && dnd.intelligence <= 18 &&
-        dnd.wisdom >= 3       && dnd.wisdom <= 18 &&
-        dnd.charisma >= 3     && dnd.charisma <= 18 &&
-        dnd.hitpoints == 10 + modifier(dnd.constitution)
+function ischaracter(c)
+    c.strength >= 3         && c.strength <= 18 &&
+        c.dexterity >= 3    && c.dexterity <= 18 &&
+        c.constitution >= 3 && c.constitution <= 18 &&
+        c.intelligence >= 3 && c.intelligence <= 18 &&
+        c.wisdom >= 3       && c.wisdom <= 18 &&
+        c.charisma >= 3     && c.charisma <= 18 &&
+        c.hitpoints == 10 + modifier(c.constitution)
 end
 
 @testset "ability modifier" begin
@@ -38,17 +38,15 @@ end
 end
 
 @testset "random character is valid" begin
-    global characters = DndCharacter[]
-    global history = DndCharacter[]
+    characters = DNDCharacter[]
 
     for i=1:10
-        push!(characters, DndCharacter())
-
+        c = DNDCharacter()
         @testset "random character is valid and unique in history" begin
-            @test ischaracter(characters[i])
-            @test !in(characters[i], history)
+            @test ischaracter(c)
+            @test !in(c, characters)
         end
 
-        push!(history, characters[i])
+        push!(characters, c)
     end
 end

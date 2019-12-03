@@ -475,7 +475,7 @@
             "slug": "dnd-character",
             "core": false,
             "unlocked_by": "robot-name",
-            "difficulty": 3,
+            "difficulty": 5,
             "topics": [
                 "variables",
                 "integers",

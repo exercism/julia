@@ -6,6 +6,6 @@ function ability()
 
 end
 
-mutable struct DndCharacter
+mutable struct DNDCharacter
 
 end
