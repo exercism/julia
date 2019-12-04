@@ -485,6 +485,21 @@
                 "math",
                 "test_driven_development"
             ]
-        }
+        },
+        {
+      "slug": "nth-prime",
+      "uuid": "7ce09989-f202-4c3c-8b7e-72cef18808c3",
+      "core": false,
+      "unlocked_by": "robot-name",
+      "difficulty": 5,
+      "topics": [
+        "algorithms",
+        "conditionals",
+        "loops",
+        "exception_handling",
+        "integers",
+        "math"
+      ]
+    }
     ]
 }
