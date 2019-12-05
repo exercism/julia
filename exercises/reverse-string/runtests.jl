@@ -2,7 +2,7 @@
 
 using Test
 
-include(reverse-string.jl)
+include("reverse-string.jl")
 
 @testset "reverse string with one character" begin
     @test reversestring("a") == "a"
