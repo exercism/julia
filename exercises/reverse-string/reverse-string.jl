@@ -1,3 +1,3 @@
-function reversestring(phrase)
+function myreverse(phrase)
 
 end
