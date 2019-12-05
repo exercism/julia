@@ -1,4 +1,4 @@
-function reversestring(phrase::String)
+function myreverse(phrase::String)
     chars = []
     for i in phrase
         push!(chars, i)
