@@ -485,7 +485,7 @@
                 "math",
                 "test_driven_development"
             ]
-        }
+         },
         {
             "uuid":"e73f19f7-17bc-4d51-a00a-c2b58c1fa8e6",
             "slug":"reverse-string",
