@@ -4,18 +4,31 @@ using Test
 
 include("reverse-string.jl")
 
-@testset "reverse string with one character" begin
-    @test reversestring("a") == "a"
+
+@testset "an empty string" begin
+    @test myreverse("") == ""
 end
 
-@testset "reverse string with two characters" begin
-    @test reversestring("ab") == "ba"
+@testset "a word" begin
+    @test myreverse("robot") == "tobor"
 end
 
-@testset "reverse string with many characters" begin
-    @test reversestring("abcdefg") == "gfedcba"
+@testset "a capitalized word" begin
+    @test myreverse("Ramen") == "nemaR"
 end
 
-@testset "reverse string with spaces" begin
-    @test reversestring("Hello World") == "dlroW olleH"
+@testset "a sentence with punctuation" begin
+    @test myreverse("I'm hungry!") == "!yrgnuh m'I"
+end
+
+@testset "a palindrome" begin
+    @test myreverse("racecar") == "racecar"
+end
+
+@testset "an even-sized word" begin
+    @test myreverse("drawer") == "reward"
+end
+
+@testset "reversing a string twice" begin
+    @test myreverse(myreverse("gift")) == "gift"
 end
