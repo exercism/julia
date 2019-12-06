@@ -3,15 +3,19 @@
 # Run notebook generation
 julia bin/generate_notebooks.jl
 
-# If there is a diff, the submitted notebooks weren't generated
+# https://stackoverflow.com/questions/855767/can-i-use-git-diff-on-untracked-files/857696#857696
+git add -N exercises/*/*.ipynb
 
+# If there is a diff, the submitted notebooks weren't generated
 changed_files=$(git diff --name-only)
 
 if [ ! -z "$changed_files" ]; then
     echo "The following notebooks diverge from the auto-generated notebooks:"
     echo "$changed_files"
     echo "Please run bin/generate_notebooks.jl to update the notebooks"
+    git reset HEAD
     exit 1
 fi
 
+git reset HEAD
 exit 0
