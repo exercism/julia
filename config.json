@@ -486,5 +486,16 @@
                 "test_driven_development"
             ]
         }
+        {
+            "slug": "prime-factors",
+            "uuid": "b6b7e95b-c4ca-438c-a5e7-d76cb44e5b19",
+            "core": true,
+            "unlocked_by": null,
+            "difficulty": 1,
+            "topics": [
+                "math",
+                "integers"
+            ]
+        },
     ]
 }
