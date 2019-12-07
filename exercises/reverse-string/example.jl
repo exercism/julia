@@ -1,12 +1,7 @@
 function myreverse(phrase::String)
-    chars = []
-    for i in phrase
-        push!(chars, i)
+    chars = Char[]
+    for c in phrase
+        push!(chars, c)
     end
-    newchars=chars[end:-1:1]
-    newphrase= ""
-    for j in newchars
-        newphrase = "$newphrase$j"
-    end
-    newphrase
+    join(chars[end:-1:1])
 end
