@@ -1,6 +1,6 @@
 function isPrime(n)
     if n == 1
-        return(false)
+        return false
     elseif n == 2
         return(true)
     else
