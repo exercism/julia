@@ -1,4 +1,4 @@
-function isPrime(n)
+function isprime(n)
     if n == 1
         return false
     elseif n == 2
@@ -22,7 +22,7 @@ function prime_factors(n)
     end
     while k != 1
         count += 1
-        if k % count == 0 && isPrime(count) == true
+        if k % count == 0 && isprime(count) == true
             k = k/count
             final = [final; [count]]
             count = 0
