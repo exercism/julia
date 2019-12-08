@@ -504,6 +504,18 @@
                 "data_structures",
                 "functional_programming"
             ]
+        },
+        {
+            "slug": "acronym",
+            "uuid": "929493e2-56b2-41d7-aedc-7cc4831078ba",
+            "core": false,
+            "unlocked_by": null,
+            "difficulty": 1,
+            "topics": [
+                "arrays",
+                "loops",
+                "strings"
+            ]
         }
     ]
 }
