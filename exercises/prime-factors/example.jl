@@ -2,14 +2,14 @@ function isprime(n)
     if n == 1
         return false
     elseif n == 2
-        return(true)
+        return true
     else
         for i = 2:(n ^ (0.5)) + 1
             if n % i == 0
-                return(false)
+                return false
             end
         end
-        return(true)
+        return true
     end
 end
 
@@ -18,7 +18,7 @@ function prime_factors(n)
     final = [1]
     k = n
     if n == 1
-        return([])
+        return []
     end
     while k != 1
         count += 1
@@ -30,5 +30,5 @@ function prime_factors(n)
 
 
     end
-    return(final[2:end])
+    return final[2:end]
 end
