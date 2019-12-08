@@ -79,15 +79,15 @@ function generate_notebook(slug)
         ],
         "metadata": {
             "kernelspec": {
-                "display_name": "Julia 1.1.0",
+                "display_name": "Julia 1.3.0",
                 "language": "julia",
-                "name": "julia-1.1"
+                "name": "julia-1.3"
             },
             "language_info": {
                 "file_extension": ".jl",
                 "mimetype": "application/julia",
                 "name": "julia",
-                "version": "1.1.0"
+                "version": "1.3.0"
             }
         },
         "nbformat": 4,
