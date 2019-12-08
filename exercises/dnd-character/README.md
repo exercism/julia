@@ -33,10 +33,11 @@ programming languages are designed to roll dice. One such language is [Troll].
 [Troll]: http://hjemmesider.diku.dk/~torbenm/Troll/
 
 ## Source
-Simon Shine, Erik Schierboom https://github.com/exercism/problem-specifications/issues/616#issuecomment-437358945
+
+Simon Shine, Erik Schierboom [https://github.com/exercism/problem-specifications/issues/616#issuecomment-437358945](https://github.com/exercism/problem-specifications/issues/616#issuecomment-437358945)
 
 ## Version compatibility
-This exercise has been tested on Julia versions >=1.1.
+This exercise has been tested on Julia versions >=1.0.
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
