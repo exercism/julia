@@ -1,3 +1,3 @@
-function myacronym(phrase)
+function acronym(phrase)
 
 end

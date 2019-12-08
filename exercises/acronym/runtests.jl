@@ -1,4 +1,4 @@
-# canonical test version 1.7.0
+# canonical data version: 1.7.0
 
 using Test
 
