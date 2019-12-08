@@ -4,7 +4,7 @@ using Test
 include("volume.jl")
 
 @testset "0 input" begin
-    @test sphere_vol("") == 0.0
+    @test sphere_vol(0) == 0.0
 end
 
 @testset "1 input" begin
