@@ -487,16 +487,35 @@
       ]
     },
     {
+      "slug": "reverse-string",
+      "uuid": "e73f19f7-17bc-4d51-a00a-c2b58c1fa8e6",
+      "core": false,
+      "unlocked_by": "nucleotide-count",
+      "difficulty": 3,
+      "topics": [
+        "arrays",
+        "data_structures",
+        "functional_programming",
+        "generics",
+        "integers",
+        "lists",
+        "loops",
+        "strings",
+        "text_formatting",
+        "variables"
+      ]
+    },
+    {
       "slug": "acronym",
       "uuid": "929493e2-56b2-41d7-aedc-7cc4831078ba",
       "core": false,
       "unlocked_by": null,
       "difficulty": 1,
       "topics": [
-        "strings",
+        "arrays",
         "loops",
-        "arrays"
-      ]  
+        "strings"
+      ]
     }
   ]
 }
