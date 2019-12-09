@@ -34,6 +34,6 @@ function label(colors::AbstractArray)
     end
 
     # print the final anwer with the appropriate suffix
-    println("$firstTwoDigits $suffix")
+    return ("$firstTwoDigits" * " " * "$suffix")
 
 end
