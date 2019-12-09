@@ -424,6 +424,19 @@
             ]
         },
         {
+            "slug": "resistor-color-trio",
+            "uuid": "39e831d0-ea7a-4df9-b9cb-64ccb996ee0e",
+            "core": false,
+            "unlocked_by": "resistor-color-duo",
+            "difficulty": 2,
+            "topics": [
+                "arrays",
+                "loops",
+                "text_formatting",
+                "strings"
+            ]
+        },
+        {
             "slug": "grains",
             "uuid": "4cc2a5d6-e662-4d99-81d4-05d6bcd500f4",
             "core": false,
