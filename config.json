@@ -427,7 +427,7 @@
             "slug": "resistor-color-trio",
             "uuid": "39e831d0-ea7a-4df9-b9cb-64ccb996ee0e",
             "core": false,
-            "unlocked_by": "resistor-color-duo",
+            "unlocked_by": null,
             "difficulty": 2,
             "topics": [
                 "arrays",
