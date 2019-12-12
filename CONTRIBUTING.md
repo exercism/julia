@@ -14,6 +14,11 @@ This guide covers several common scenarios pertaining to **improving the Julia t
 
 * [Generic information about track-contributing][contributing-generic]
 
+There are track-independent guides on how to use git and GitHub available:
+
+* [Git Basics][contributing-git-basics]
+* [Pull Request Guidelines][contributing-pr-guidelines]
+
 ## Code of Conduct
 
 Help us keep Exercism welcoming. Please read and abide by the [Code of Conduct][coc].
@@ -134,6 +139,8 @@ You can find them in the `bin/` directory.
 [list-of-exercises]: https://tracks.exercism.io/julia/master/unimplemented
 [contributing-generic]: https://github.com/exercism/docs/tree/master/contributing-to-language-tracks
 [contributing-website-copy]: https://github.com/exercism/website-copy#contributing
+[contributing-git-basics]: https://github.com/exercism/docs/blob/master/contributing/git-basics.md
+[contributing-pr-guidelines]: https://github.com/exercism/docs/blob/master/contributing/pull-request-guidelines.md
 [doc-readme]: https://github.com/exercism/docs/blob/master/language-tracks/exercises/anatomy/readmes.md
 [problem-specifications]: https://github.com/exercism/problem-specifications
 [coc]: ./CODE_OF_CONDUCT.md
