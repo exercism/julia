@@ -527,6 +527,24 @@
                 "math",
                 "integers"
             ]
+        },
+        {
+            "slug": "minesweeper",
+            "uuid": "9a47bffd-4dd2-48ce-b47b-753271305966",
+            "core": false,
+            "unlocked_by": "pangram",
+            "difficulty": 2,
+            "topics": [
+                "loops",
+                "conditionals",
+                "variables",
+                "strings",
+                "integers",
+                "lists",
+                "booleans",
+                "arrays",
+                "text_formatting"
+            ]
         }
     ]
 }
