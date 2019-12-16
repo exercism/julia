@@ -558,6 +558,20 @@
                 "arrays",
                 "text_formatting"
             ]
-        }
+        },
+        {
+             "slug": "accumulate",
+             "uuid": "9a47bffd-4dd2-48ce-b47b-753271305966",
+             "core": false,
+             "unlocked_by": "null",
+             "difficulty": 2,
+             "topics": [
+                 "broadcast",
+                 "conditionals",
+                 "variables",
+                 "integers",
+                 "arrays"
+             ]
+          }
     ]
 }
