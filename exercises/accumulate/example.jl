@@ -7,7 +7,7 @@ function accumulate(collection, operation)
 
     new_collection = []
 
-    new_colletion = operation.(collection, collection)
+    new_collection = operation.(collection, collection)
 
     return new_collection
 end
