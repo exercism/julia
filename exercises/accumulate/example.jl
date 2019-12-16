@@ -7,17 +7,7 @@ function accumulate(collection, operation)
 
     new_colletion = []
 
-    if operation == *
-        new_colletion = collection .* collection
-    elseif operation == +
-        new_colletion = collection .+ collection
-    elseif operation == -
-        new_colletion = collection .- collection
-    elseif operation == /
-        new_colletion = collection ./ collection
-    elseif operation == %
-        new_colletion = collection .% collection
-    end
+    new_colletion = operation.(collection, collection)
 
     return new_colletion
 end
