@@ -562,7 +562,7 @@
         {
              "slug": "accumulate",
              "uuid": "9a47bffd-4dd2-48ce-b47b-753271305966",
-             "core": false,
+             "core": true,
              "unlocked_by": "null",
              "difficulty": 2,
              "topics": [
