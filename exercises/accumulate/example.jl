@@ -5,9 +5,6 @@ a new collection.
 """
 function accumulate(collection, operation)
 
-    new_collection = []
-
     new_collection = operation.(collection, collection)
 
-    return new_collection
 end

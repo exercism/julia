@@ -1,4 +1,3 @@
-# canonical data version: 1.1.0
 
  using Test
 
@@ -22,4 +21,8 @@
 
  @testset "mod" begin
      @test accumulate(collect(1:10), %) == [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+ end
+
+ @testset "square" begin
+     @test accumulate(collect(1:10), ^) == [1, 4, 27, 256, 3125, 46656, 823543, 16777216, 387420489, 10000000000]
  end
