@@ -572,6 +572,23 @@
                  "integers",
                  "arrays"
              ]
-          }
+        },
+        {
+            "uuid": "4eced190-062f-4a7b-8c92-87ff02f1e343",
+            "slug": "allergies",
+            "core": false,
+            "unlocked_by": "pangram",
+            "difficulty": 1,
+            "topics": [
+                "loops",
+                "conditionals",
+                "integers",
+                "lists",
+                "booleans",
+                "enumerations",
+                "arrays",
+                "bitwise_operations"
+            ]
+        }
     ]
 }
