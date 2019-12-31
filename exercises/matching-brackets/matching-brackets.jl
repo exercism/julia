@@ -25,8 +25,10 @@ function matching-brackets(a)
 		end
 	end
 	if valid == 0 || count != 0
-		println("Not balanced!")
+		return false
+		# parantheses not balanced
 	else
-		println("Balanced!")
+		return true
+		# parantheses balanced
 	end
 end
