@@ -2,10 +2,6 @@
 
 Given a string containing brackets [], braces {}, parentheses (), or any combination thereof, verify that any and all pairs are matched and nested correctly.
 
-## Source
-
-Julien Vanier [https://github.com/monkbroc](https://github.com/monkbroc)
-
 ## Version compatibility
 This exercise has been tested on Julia versions >=1.0.
 
