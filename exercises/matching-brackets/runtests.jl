@@ -2,7 +2,7 @@ using Test
 
 include("matching-brackets.jl")
 
-@testset "Square the sum of the numbers up to the given number" begin
+@testset "Please input an expression containing only brackets" begin
     @test square_of_sum(5)::Integer == 225
     @test square_of_sum(10)::Integer == 3025
     @test square_of_sum(100)::Integer == 25502500
