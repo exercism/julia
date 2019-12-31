@@ -1,4 +1,4 @@
-function matching-brackets(a)
+function matching_brackets(a)
 	a = split(a, "")
 	b,c = ["(", "[", "{"], [")", "]", "}"]
 	a = filter(i -> (i in b || i in c), a)
