@@ -2,7 +2,6 @@ function matching_brackets(a)
 	a = split(a, "")
 	b,c = ["(", "[", "{"], [")", "]", "}"]
 	a = filter(i -> (i in b || i in c), a)
-	println("Your input: ", a, "\n")
 	stack = Array{String}(undef, 0)
 	global d, count, valid = Dict([("(", ")"),(")", "("), ("[", "]"), ("]", "["), ("{", "}"), ("}", "{")]), 0,1
 	if length(a) % 2 != 0
@@ -32,6 +31,3 @@ function matching_brackets(a)
 		# parantheses balanced
 	end
 end
-
-a = readline()
-matching_brackets(a)
