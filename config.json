@@ -593,7 +593,7 @@
 	{
 	    "uuid":"bf5c1f49-963a-4397-bb67-b58e1b7d45e3",
 	    "slug":"matching-brackets",
-	    "core":true,
+	    "core":false,
 	    "unlocked_by":null,
 	    "difficulty":5,
 	    "topics":[
