@@ -6,22 +6,22 @@ include("matching-brackets.jl")
 
 @testset "Determine if brackets in expression are correctly matched" begin
     @test matching_brackets("[]") 
-    @test matching_brackets("[[")
-    @test matching_brackets("}{")
-    @test matching_brackets("{]")
+    @test !matching_brackets("[[")
+    @test !matching_brackets("}{")
+    @test !matching_brackets("{]")
     @test matching_brackets("{ }")
 end
 
 @testset "Determine if brackets in expression are correctly matched" begin
-    @test matching_brackets("[]]")
-    @test matching_brackets("{}[")
+    @test !matching_brackets("[]]")
+    @test !matching_brackets("{}[")
     @test matching_brackets("{}[]")
-    @test matching_brackets("{[])")
+    @test !matching_brackets("{[])")
     @test matching_brackets("{[]}")
     @test matching_brackets("([{}({}[])])")
-    @test matching_brackets("{[)][]}")
-    @test matching_brackets("([{])")
-    @test matching_brackets("[({]})")
+    @test !matching_brackets("{[)][]}")
+    @test !matching_brackets("([{])")
+    @test !matching_brackets("[({]})")
 end
     
 @testset "Determine if brackets in expression are correctly matched" begin
