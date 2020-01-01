@@ -25,5 +25,4 @@ function matching_brackets(inputt)
         end
     end
     (valid == 0 || count != 0) ? (return false) : (return true)
-    end
 end
