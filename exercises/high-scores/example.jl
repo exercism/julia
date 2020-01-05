@@ -1,12 +1,12 @@
-function latest(scores)
+function latest(scores::Array)
     return scores[length(scores)]
 end
 
-function personalBest(scores)
+function personalBest(scores::Array)
     return sort(scores)[length(scores)]
 end
 
-function personalTopThree(scores)
+function personalTopThree(scores::Array)
     if length(scores) <= 3
         return reverse(sort(scores))
     end

@@ -1,16 +1,16 @@
 
-function list(scores)
+function list(scores::Array)
 
 end
 
-function latest(scores)
+function latest(scores::Array)
 
 end
 
-function personalBest(scores)
+function personalBest(scores::Array)
 
 end
 
-function personalTopThree(scores)
+function personalTopThree(scores::Array)
 
 end
