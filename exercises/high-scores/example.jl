@@ -1,15 +1,11 @@
-function scores(a::AbstractArray; latest = false, sorted=false, top=0)
+function scores(a::AbstractArray; latest = false, top=0)
     if top > 0
-        top > length(a) ? sorted ? (return sort(a)) : (return reverse(sort(a))) : nothing
+        top > length(a) ? (return reverse(sort(a))) : nothing
         if top == 1
-            return sort(a)[length(a)]
+            return sort(a)[end]
         end
-        if sorted
-            return (sort(a)[length(a)-top+1:length(a)])
-        else
-            return reverse(sort(a)[length(a)-top+1:length(a)])
-        end
+        return reverse(sort(a)[end-top+1:end])
     end
 
-    latest ? (return a[length(a)]) : return a
+    latest ? (return a[end]) : return a
 end
