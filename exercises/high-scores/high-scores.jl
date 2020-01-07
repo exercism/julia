@@ -1,16 +1,4 @@
 
-function list(scores::Array)
-
-end
-
-function latest(scores::Array)
-
-end
-
-function personalBest(scores::Array)
-
-end
-
-function personalTopThree(scores::Array)
+function scores(a::AbstractArray; latest = false, sorted=false, top=0)
 
 end
