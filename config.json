@@ -614,10 +614,10 @@
         },
         {
             "uuid": "4555e802-453e-4262-a8b6-a94063dd7273",
-            "slug": "high-scores"
+            "slug": "high-scores",
             "core": false,
             "unlocked by": null,
-            "difficulty": 2
+            "difficulty": 2,
             "topics": [
                 "conditionals",
                 "variables",
