@@ -1,14 +1,15 @@
-function latest(scores::Array)
-    return scores[length(scores)]
-end
-
-function personalbest(scores::Array)
-    return sort(scores)[length(scores)]
-end
-
-function personaltopthree(scores::Array)
-    if length(scores) <= 3
-        return reverse(sort(scores))
+function scores(a::AbstractArray; latest = false, sorted=false, top=0)
+    if top > 0
+        top > length(a) ? sorted ? (return sort(a)) : (return reverse(sort(a))) : nothing
+        if top == 1
+            return sort(a)[length(a)]
+        end
+        if sorted
+            return (sort(a)[length(a)-top+1:length(a)])
+        else
+            return reverse(sort(a)[length(a)-top+1:length(a)])
+        end
     end
-    return reverse(sort(scores)[length(scores)-2:length(scores)])
+
+    latest ? (return a[length(a)]) : return a
 end
