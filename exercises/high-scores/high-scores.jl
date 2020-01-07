@@ -1,4 +1,8 @@
 
+function list(scores::Array)
+
+end
+
 function latest(scores::Array)
 
 end
