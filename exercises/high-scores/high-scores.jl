@@ -1,4 +1,4 @@
 
-function scores(a::AbstractArray; latest = false, sorted=false, top=0)
+function scores(a::AbstractArray; latest = false, top=0)
 
 end
