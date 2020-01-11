@@ -74,6 +74,22 @@ Open a new issue with your proposal, and we'll make sure all these steps are cor
 Don't worry!
 You're not alone in this.
 
+### Exercise structure
+
+After following the steps above, your exercise should contain _at least_ the following files:
+
+- `README.md` - The problem description and other information that is presented to the student. Generated using `configlet`.
+- `example.jl` - Contains an example solution that proves the test suite works.
+- `$slug.ipynb` - The Jupyter notebook version of the exercise. Generated using `bin/generate-notebooks.jl`.
+- `$slug.jl` - The file that the student will write their solution in. May contain stubs or be empty depending on the exercise.
+- `runtests.jl` - The test suite for the exercise. Contains a standardized comment referring to the canonical data version and tests. It must only `include` `$slug.jl`, not `example.jl`.
+
+Further, an entry in `config.json` was added for the exercise.
+
+It may contain further files, e.g. to add additional information to the README. This is the bare minimum.
+
+Take a look at the `exercise/` directory or commit history for examples, or at this [example](https://github.com/exercism/julia/commit/310077d4ed4711122e12795792390b331df72980) of what a commit adding a new exercise should look like.
+
 ### Existing exercises
 
 There are always improvements possible on existing exercises. 
