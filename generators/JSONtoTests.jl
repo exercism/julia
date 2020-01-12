@@ -6,93 +6,133 @@
 
 using JSON, HTTP
 
-# Get the exercise the user is working on from command line argument
-current_exercise = ARGS[1]
-
-# Download the test data for the exercise the user is working on and parse the JSON.
-get_json = HTTP.get("https://raw.githubusercontent.com/exercism/problem-specifications/master/exercises/$current_exercise/canonical-data.json")
-json_code = String(get_json.body)
-data = JSON.parse(json_code)
-
-# Create an array to push our julia code text to.
-lines = []
-
-# Write the initial two lines for runtets.jl
-push!(lines, "# canonical data version: " * string(get(data, "version", nothing)) * "\n\nusing Test\n\n")
-push!(lines, "include(\"$current_exercise.jl\")\n\n")
-
-
-# For every testcase in the canonical data json file, write the test code
-for testcases in get(data, "cases", nothing)
-
-    # Get the function name that we want to test
-    function_to_test = get(testcases, "property", nothing)
-
-    # Write the testcase name, and description
-    push!(lines, "@testset \"" * string(get(testcases, "description", nothing)) * "\" begin\n")
-
-    # Get the parameters that need to be input into the function for testing
-    inputParams = []
-    for parameter in keys(get(testcases, "input", nothing))
-
-        # If the parameters are arrays, format them as arrays in String
-        # e.g. [a, b, c, d]
-        if isa(get(get(testcases, "input", nothing), parameter, nothing), AbstractArray)
-            # Start list string form
-            listInStringForm = ["["]
-            # Add every item in list to string list
-            for item in get(get(testcases, "input", nothing), parameter, nothing)
-                push!(listInStringForm, "\"", item, "\", ")
-            end
-
-            # Join the list into a string
-            parameterTemp = String(join(listInStringForm))[1:lastindex(join(listInStringForm))-2]
-
-            # End the list
-            push!(inputParams, "$parameter = " *  parameterTemp * "]" * ", ")
-            
-        else
-
-            # If parameters are not lists, get the parameters seperated by commas.
-            push!(inputParams, "$parameter = " * string(get(get(testcases, "input", nothing), parameter, nothing)) * ", ")    
-        end
-    end
-
-    # Finalise parameters to input into function
-    inputTemp = String(join(inputParams))[1:lastindex(join(inputParams))-2]
-
-    # Create expected output to compare with
-    expectedOutput = []
-
-    # If expected output is a dict, add items to expected output seperated by spaces
-    if isa(get(testcases, "expected", nothing), Dict)
-        for expectedThing in keys(get(testcases, "expected", nothing))
-            push!(expectedOutput, get(get(testcases, "expected", nothing), expectedThing, nothing) , " ")
-        end
-        # Finalise expectedOutput
-        expectedOutput = "\"" * join(expectedOutput) * "\""
-
-    # If expected output is an array, write the array as a string like befor
-    elseif isa(get(testcases, "expected", nothing), Array)
-        expectedOutput = ["["]
-        if length(get(testcases, "expected", nothing)) == 0
-            expectedOutput = join(expectedOutput) * "]"
-        else
-            for expectedOutputItem in get(testcases, "expected", nothing)
-                push!(expectedOutput, "\"$expectedOutputItem\", ")
-            end
-            expectedOutput = join(expectedOutput)[1:lastindex(join(expectedOutput))-2] * "]"
-        end
+# Convert an array to a array in string form
+# eg. 4-element Array{Int64,1}: 1 2 3 4 --> "[1, 2, 3, 4]"
+function array_to_str(array)
+    # Start array with opening bracket
+    str = ["["]
+    # If array is empty, return an empty array
+    if length(array) == 0
+        return "[]"
     else
-        # If expected output is not any a Dict or Array, just keep the expected output as a String
-        expectedOutput = "\"" * get(testcases, "expected", nothing) * "\""
-    end
+    # Else, for each item in array, add it to array
+        for item in array
+            # If item is a string, enclose it in quotations and add it to our array
+            if typeof(item) == String
+                push!(str, "\"$item\", ")
+            # If item is an array, call function recursively to add it to our array
+            elseif typeof(item) == AbstractArray
+                push!(str, array_to_str(item))
+            # Else, if item is something else, just write it to array
+            else                
+                push!(str, "$item, ")
+            end
+        end
 
-    # Write the actual code that tests our function.
-    push!(lines, "    @test $function_to_test(" * inputTemp * ") == " * strip(expectedOutput))
-    push!(lines, "\nend\n\n")
+        # Make it a string and remove the last extra comma and space from array
+        truncated_str = join(str)[1:end-2]
+
+        # Return final array string by closing with bracket
+        return string(truncated_str, "]")
+    end
 end
 
-# Finalise the runtests code, and show it.
-linesJoin = join(lines)
-println(linesJoin)
+function main(exercise_name)
+    # Get the exercise the user is working on from command line argument
+    current_exercise = exercise_name
+
+    # Download the test data for the exercise the user is working on and parse the JSON.
+    get_json = HTTP.get("https://raw.githubusercontent.com/exercism/problem-specifications/master/exercises/$current_exercise/canonical-data.json")
+    json_code = String(get_json.body)
+    data = JSON.parse(json_code)
+
+    # Create an array to push our julia code text to.
+    lines = []
+
+    # Write the initial two lines for runtets.jl
+    push!(lines, "# canonical data version: " * string(get(data, "version", nothing)) * "\n\nusing Test\n\n")
+    push!(lines, "include(\"$current_exercise.jl\")\n\n")
+
+
+    # For every testcase in the canonical data json file, write the test code
+    for testcases in get(data, "cases", nothing)
+
+        # Get the function name that we want to test
+        function_to_test = get(testcases, "property", nothing)
+
+        # Write the testcase name, and description
+        push!(lines, "@testset \"" * string(get(testcases, "description", nothing)) * "\" begin\n")
+
+        # Get the parameters that need to be input into the function for testing
+        input_params = []
+        for parameter in keys(get(testcases, "input", nothing))
+
+            # If the parameters are arrays, format them as arrays in String using our function array_to_str()
+            # e.g. [a, b, c, d]
+            if isa(get(get(testcases, "input", nothing), parameter, nothing), AbstractArray)
+                # Start list string form
+                parameter_temp = array_to_str(get(get(testcases, "input", nothing), parameter, nothing))
+                # Add the parameter with its variable name
+                push!(input_params, "$parameter = " *  parameter_temp * ", ")            
+            else
+                # If parameters are not lists, get the parameters seperated by commas.
+
+                # If parameters are strings, enclose them in quotations
+                if isa(get(get(testcases, "input", nothing), parameter, nothing), String)
+                    push!(input_params, "$parameter = " * "\"" * string(get(get(testcases, "input", nothing), parameter, nothing)) * "\"" * ", ")
+
+                # Else, just put them in as they were
+                else
+                    push!(input_params, "$parameter = " * string(get(get(testcases, "input", nothing), parameter, nothing)) * ", ")
+                end
+            end
+        end
+
+        # Finalise parameters to input into function
+        input_temp = string(join(input_params))[1:lastindex(join(input_params))-2]
+
+        # Create expected output to compare with
+        expected_output = []
+
+        # If expected output is a dict, add items to expected output seperated by spaces
+        if isa(get(testcases, "expected", nothing), Dict)
+            for expected_thing in keys(get(testcases, "expected", nothing))
+                push!(expected_output, get(get(testcases, "expected", nothing), expected_thing, nothing) , " ")
+            end
+            # Finalise expected_output
+            expected_output = "\"" * join(expected_output) * "\""
+
+        # If expected output is an array, write the array as a string like before
+        elseif isa(get(testcases, "expected", nothing), AbstractArray)
+            expected_output = array_to_str(get(testcases, "expected", nothing))
+        else
+            # If expected output is not any a Dict or Array, just keep the expected output as a String
+            expected_output = "\"" * get(testcases, "expected", nothing) * "\""
+        end
+
+        # Write the actual code that tests our function.
+        push!(lines, "    @test $function_to_test(" * input_temp * ") == " * strip(expected_output))
+        push!(lines, "\nend\n\n")
+    end
+
+    # Finalise the runtests code, and return it.
+    final_code = join(lines)
+    return final_code
+end
+
+# If this code is run on its own, show the code
+if length(ARGS) > 0
+    test_code = main(ARGS[1])
+    println(test_code)
+else
+    # Else, if this code is run by the coverage tester, do nothing. The coverage tester will detect errors on its own.
+    # println("Please mention the name of the exercise as an argument to this script")
+end
+
+# For now, print code. Later when coveraage is 100%, we will save the code to its folder.
+
+# Write final code to folder
+# RUN ONLY IF CODE WORKS ON EXERCISE
+# open("../exercises/$(ARGS[1])/runtests.jl", "w") do io
+    # write(io, final_code)
+# end;
