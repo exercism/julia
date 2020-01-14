@@ -102,6 +102,7 @@ jsonfileinstringbecausecannotreadfromanotherfile=
                     },
                     "expected": "deficient"
                 },
+                
                 {
                     "description": "Edge case (no factors other than itself) is classified correctly",
                     "property": "classify",
