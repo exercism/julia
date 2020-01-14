@@ -1,5 +1,6 @@
 # canonical version = 1.3.0
 using Test
+using Pkg; Pkg.add("LazyJSON")
 using LazyJSON
 include("example.jl")
 
