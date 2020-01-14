@@ -1,6 +1,3 @@
-using Test
-include("example.jl")
-
 @testset "Smallest perfect number is classified correctly" begin
    @test classify(6) == "perfect"
 end
