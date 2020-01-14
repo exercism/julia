@@ -1,6 +1,6 @@
 # canonical version = 1.3.0
 using Test
-using Pkg; Pkg.add("LazyJSON")
+
 using LazyJSON
 include("example.jl")
 
@@ -102,7 +102,7 @@ jsonfileinstringbecausecannotreadfromanotherfile=
                     },
                     "expected": "deficient"
                 },
-                
+
                 {
                     "description": "Edge case (no factors other than itself) is classified correctly",
                     "property": "classify",
