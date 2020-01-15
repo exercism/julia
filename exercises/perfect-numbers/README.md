@@ -1,3 +1,5 @@
+# Perfect Numbers
+
 Determine if a number is perfect, abundant, or deficient based on
 Nicomachus' (60 - 120 CE) classification scheme for natural numbers.
 
@@ -14,3 +16,13 @@ The Greek mathematician [Nicomachus](https://en.wikipedia.org/wiki/Nicomachus) d
   - Prime numbers are deficient
 
 Implement a way to determine whether a given number is **perfect**. Depending on your language track, you may also need to implement a way to determine whether a given number is **abundant** or **deficient**.
+
+## Source
+
+Taken from Chapter 2 of Functional Thinking by Neal Ford. [http://shop.oreilly.com/product/0636920029687.do](http://shop.oreilly.com/product/0636920029687.do)
+
+## Version compatibility
+This exercise has been tested on Julia versions >=1.0.
+
+## Submitting Incomplete Solutions
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.
