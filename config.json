@@ -615,7 +615,7 @@
         {
             "uuid": "4fc89443-1c5c-492a-850f-7990869caae6",
             "slug": "perfect-numbers",
-            "core": true,
+            "core": false,
             "unlocked_by": null,
             "difficulty": 3,
             "topics": [

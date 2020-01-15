@@ -3,7 +3,7 @@ function classify(number)
     if number == 1
         return "deficient"
     elseif number <= 0
-        return "Classification is only possible for natural numbers."
+        return throw(DomainError(number,"Classification is only possible for natural numbers."))
     end
 
     for i in 1:(number-1)
