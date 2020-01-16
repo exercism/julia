@@ -1,4 +1,4 @@
-# This code generates the runtets.jl file automatically for some lucky exercises that work with this script.
+# This code generates the runtests.jl file automatically for some lucky exercises that work with this script.
 
 # NOTE: This is a very experimental version of this idea. The code is not all that well written,
 # and may not work on most exercises. If it works, it might save you hours of time writing that exercise.
@@ -6,48 +6,79 @@
 
 using JSON, HTTP
 
-# Convert an array to a array in string form
-# eg. 4-element Array{Int64,1}: 1 2 3 4 --> "[1, 2, 3, 4]"
-function array_to_str(array)
+# Define 404 Not found Exception so test_JSONtoTests.jl can handle non existent slugs.
+struct NotFoundException <: Exception
+    var::String
+end
+
+"""
+    array_to_str(array::AbstractArray)
+
+Convert an array to a array in string form.
+
+## Examples
+
+Array with different types of elements:
+```julia-repl
+julia> array_to_str([1, 2, "hey"])
+"[1, 2, \"hey\"]"
+```
+
+Empty array:
+```julia-repl
+julia> array_to_str([])
+"[]"
+```
+"""
+function array_to_str(array::AbstractArray)
     # Start array with opening bracket
     str = ["["]
     # If array is empty, return an empty array
     if length(array) == 0
         return "[]"
-    else
-    # Else, for each item in array, add it to array
-        for item in array
-            # If item is a string, enclose it in quotations and add it to our array
-            if typeof(item) == String
-                push!(str, "\"$item\", ")
-            # If item is an array, call function recursively to add it to our array
-            elseif typeof(item) == AbstractArray
-                push!(str, array_to_str(item))
-            # Else, if item is something else, just write it to array
-            else                
-                push!(str, "$item, ")
-            end
-        end
-
-        # Make it a string and remove the last extra comma and space from array
-        truncated_str = join(str)[1:end-2]
-
-        # Return final array string by closing with bracket
-        return string(truncated_str, "]")
     end
+
+    # If list contains items, for each item in array, add it to array
+    for item in array
+        # If item is a string, enclose it in quotations and add it to our array
+        if typeof(item) == String
+            push!(str, "\"$item\", ")
+        # If item is an array, call function recursively to add it to our array
+        elseif typeof(item) == AbstractArray
+            push!(str, array_to_str(item))
+        # Else, if item is something else, just write it to array
+        else                
+            push!(str, "$item, ")
+        end
+    end
+
+    # Make it a string and remove the last extra comma and space from array
+    truncated_str = join(str)[1:end-2]
+
+    # Return final array string by closing with bracket
+    return string(truncated_str, "]")
 end
 
-function main(exercise_name)
+function main(exercise_slug)
     # Get the exercise the user is working on from command line argument
-    current_exercise = exercise_name
+    current_exercise = exercise_slug
 
     # Download the test data for the exercise the user is working on and parse the JSON.
+    try
+        get_json = HTTP.get("https://raw.githubusercontent.com/exercism/problem-specifications/master/exercises/$current_exercise/canonical-data.json")
+        json_code = String(get_json.body)
+        data = JSON.parse(json_code)
+    catch
+        throw(NotFoundException("Sorry, there was a problem processing the data.\nMaybe the exercise is not in the exercism problem-specifications list?"))
+    end
+
+    # If exercise exists in problem-specifications, go ahead with the conversion.
     get_json = HTTP.get("https://raw.githubusercontent.com/exercism/problem-specifications/master/exercises/$current_exercise/canonical-data.json")
     json_code = String(get_json.body)
     data = JSON.parse(json_code)
 
     # Create an array to push our julia code text to.
-    lines = []
+    lines = String[]
 
     # Write the initial two lines for runtets.jl
     push!(lines, "# canonical data version: " * string(get(data, "version", nothing)) * "\n\nusing Test\n\n")
@@ -126,13 +157,16 @@ if length(ARGS) > 0
     println(test_code)
 else
     # Else, if this code is run by the coverage tester, do nothing. The coverage tester will detect errors on its own.
-    # println("Please mention the name of the exercise as an argument to this script")
+    # println("Please mention the slug of the exercise as an argument to this script")
 end
 
-# For now, print code. Later when coveraage is 100%, we will save the code to its folder.
+# For now, print code. Later when code works on 100% of exercises, we will save the code to its folder.
 
-# Write final code to folder
-# RUN ONLY IF CODE WORKS ON EXERCISE
-# open("../exercises/$(ARGS[1])/runtests.jl", "w") do io
-    # write(io, final_code)
-# end;
+#= 
+Write final code to folder
+RUN ONLY IF CODE WORKS ON EXERCISE
+
+open("../exercises/$(ARGS[1])/runtests.jl", "w") do io
+    write(io, final_code)
+end;
+=#
