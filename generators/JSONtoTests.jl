@@ -68,8 +68,12 @@ function main(exercise_slug)
         get_json = HTTP.get("https://raw.githubusercontent.com/exercism/problem-specifications/master/exercises/$current_exercise/canonical-data.json")
         json_code = String(get_json.body)
         data = JSON.parse(json_code)
-    catch
-        throw(NotFoundException("Sorry, there was a problem processing the data.\nMaybe the exercise is not in the exercism problem-specifications list?"))
+    catch error
+        if isa(error, HTTP.ExceptionRequest.StatusError)
+            throw(NotFoundException("Sorry, there was a problem processing the data.\nMaybe the exercise is not in the exercism problem-specifications list?"))
+        end
+
+        throw("Something went wrong.")
     end
 
     # If exercise exists in problem-specifications, go ahead with the conversion.
