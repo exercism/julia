@@ -488,6 +488,27 @@
             ]
         },
         {
+            "uuid": "a534b8ed-da88-4945-bb25-f6633977740b",
+            "slug": "pythagorean-triplet",
+            "core": false,
+            "unlocked_by": null,
+            "difficulty": 7,
+            "topics": [
+                "conditionals",
+                "type_conversion",
+                "loops",
+                "variables",
+                "tuples",
+                "integers",
+                "lists",
+                "arrays",
+                "logic",
+                "math",
+                "algorithms",
+                "functional_programming"
+            ]
+        },
+        {
             "uuid": "fcb9ef0e-ed97-4420-a38f-9bf690c23a3b",
             "slug": "dnd-character",
             "core": false,
