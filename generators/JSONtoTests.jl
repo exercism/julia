@@ -59,55 +59,21 @@ function array_to_str(array::AbstractArray)
     return string(truncated_str, "]")
 end
 
-function main(exercise_slug)
-    # Get the exercise the user is working on from command line argument
-    current_exercise = exercise_slug
+function write_test_code(testcase_array)
+    # Initialize array to add code so far to
+    lines_written_so_far = []
 
-    # Download the test data for the exercise the user is working on and parse the JSON.
-    try
-        get_json = HTTP.get("https://raw.githubusercontent.com/exercism/problem-specifications/master/exercises/$current_exercise/canonical-data.json")
-        json_code = String(get_json.body)
-        data = JSON.parse(json_code)
-    catch error
-        if isa(error, HTTP.ExceptionRequest.StatusError)
-            throw(NotFoundException("Sorry, there was a problem processing the data.\nMaybe the exercise is not in the exercism problem-specifications list?"))
-        end
-
-        throw("Something went wrong.")
-    end
-
-    # If exercise exists in problem-specifications, go ahead with the conversion.
-    get_json = HTTP.get("https://raw.githubusercontent.com/exercism/problem-specifications/master/exercises/$current_exercise/canonical-data.json")
-    json_code = String(get_json.body)
-    data = JSON.parse(json_code)
-
-    # Create an array to push our julia code text to.
-    lines = String[]
-
-    # Write the initial two lines for runtets.jl
-    push!(lines, "# canonical data version: " * string(get(data, "version", nothing)) * "\n\nusing Test\n\n")
-    push!(lines, "include(\"$current_exercise.jl\")\n\n")
-
-    # Some exercises have a slightly different json structure: the testcases are stored in data["cases"][1]["cases"]
-    # I don't know why this structure is the way it is, but this generator needs to handle it.
-    # If the json has the weird double case nested structure, handle that
-    if (length(data["cases"]) == 1) && (get(data["cases"][1], "cases", nothing) !== nothing)
-        testcase_array = data["cases"][1]["cases"]
-    else
-        # If the structure is not the nested on we discussed, handle cases as usual
-        testcase_array = get(data, "cases", nothing)
-    end
-    # For every testcase in the canonical data json file, write the test code
     for testcases in testcase_array
 
         # Get the function name that we want to test
         function_to_test = get(testcases, "property", nothing)
 
         # Write the testcase name, and description
-        push!(lines, "@testset \"" * string(get(testcases, "description", nothing)) * "\" begin\n")
+        push!(lines_written_so_far, "@testset \"" * string(get(testcases, "description", nothing)) * "\" begin\n")
 
         # Get the parameters that need to be input into the function for testing
         input_params = []
+        
         for parameter in keys(get(testcases, "input", nothing))
 
             # If the parameters are arrays, format them as arrays in String using our function array_to_str()
@@ -152,8 +118,55 @@ function main(exercise_slug)
         end
 
         # Write the actual code that tests our function.
-        push!(lines, "    @test $function_to_test(" * input_temp * ") == " * strip(expected_output))
-        push!(lines, "\nend\n\n")
+        push!(lines_written_so_far, "    @test $function_to_test(" * input_temp * ") == " * strip(expected_output))
+        push!(lines_written_so_far, "\nend\n\n")
+    end
+    return lines_written_so_far
+end
+
+function main(exercise_slug)
+    # Get the exercise the user is working on from command line argument
+    current_exercise = exercise_slug
+
+    # Download the test data for the exercise the user is working on and parse the JSON.
+    try
+        get_json = HTTP.get("https://raw.githubusercontent.com/exercism/problem-specifications/master/exercises/$current_exercise/canonical-data.json")
+        json_code = String(get_json.body)
+        data = JSON.parse(json_code)
+    catch error
+        if isa(error, HTTP.ExceptionRequest.StatusError)
+            throw(NotFoundException("Sorry, there was a problem processing the data.\nMaybe the exercise is not in the exercism problem-specifications list?"))
+        end
+
+        throw("Something went wrong.")
+    end
+
+    # If exercise exists in problem-specifications, go ahead with the conversion.
+    get_json = HTTP.get("https://raw.githubusercontent.com/exercism/problem-specifications/master/exercises/$current_exercise/canonical-data.json")
+    json_code = String(get_json.body)
+    data = JSON.parse(json_code)
+
+    # Create an array to push our julia code text to.
+    lines = String[]
+
+    # Write the initial two lines for runtets.jl
+    push!(lines, "# canonical data version: " * string(get(data, "version", nothing)) * "\n\nusing Test\n\n")
+    push!(lines, "include(\"$current_exercise.jl\")\n\n")
+
+    # Some exercises have a slightly different json structure: the testcases are stored in data["cases"][i]["cases"].
+    # I don't know why this structure is the way it is, but this generator needs to handle it.
+    # If the json has the weird double case nested structure, handle that
+    if (get(data["cases"][1], "cases", nothing) !== nothing)
+        for i in data["cases"]
+            testcase_array = i["cases"]
+            # For every testcase in the nested case, write the test code
+            push!(lines, join(write_test_code(testcase_array)))
+        end
+    else
+        # If the structure is not the nested on we discussed, handle cases as usual
+        testcase_array = get(data, "cases", nothing)
+        # For every testcase in the canonical data json file, write the test code
+        push!(lines, join(write_test_code(testcase_array)))
     end
 
     # Finalise the runtests code, and return it.

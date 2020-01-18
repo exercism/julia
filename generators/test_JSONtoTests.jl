@@ -6,8 +6,8 @@ using JSON, HTTP
 # Include the code we want to test the coverage of
 include("JSONtoTests.jl")
 
-# Print the slugs of the exercises that the code works on.
-println("The converter works on the following exercises: ")
+# Print the slugs of the exercises that the code fails on.
+println("The converter fails on the following exercises: ")
 
 # Initialize an error counter to keep track of the number of exercises our script does not work on.
 error_count = 0
@@ -30,8 +30,6 @@ for i in slugs
     # Try to run the code on the exercise.
     try
         main(i)
-        # If code works, then we can print the slug of the exercise. (slug is indented, and bulleted)
-        println("-   $i")
     catch error
         # If exercise does not exist in problem-specifications repo, increment number of exercies
         # that are not on problem-specifications and move on.
@@ -39,6 +37,10 @@ for i in slugs
             not_existing += 1
             continue
         end
+        
+        # If code doesn't work, then we can print the slug of the exercise. (slug is indented, and bulleted)
+        println("-   $i")
+
         # If code doesn't work, increment the error count, and continue to next exercise
         error_count += 1
         continue
