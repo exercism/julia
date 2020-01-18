@@ -88,9 +88,17 @@ function main(exercise_slug)
     push!(lines, "# canonical data version: " * string(get(data, "version", nothing)) * "\n\nusing Test\n\n")
     push!(lines, "include(\"$current_exercise.jl\")\n\n")
 
-
+    # Some exercises have a slightly different json structure: the testcases are stored in data["cases"][1]["cases"]
+    # I don't know why this structure is the way it is, but this generator needs to handle it.
+    # If the json has the weird double case nested structure, handle that
+    if (length(data["cases"]) == 1) && (get(data["cases"][1], "cases", nothing) !== nothing)
+        testcase_array = data["cases"][1]["cases"]
+    else
+        # If the structure is not the nested on we discussed, handle cases as usual
+        testcase_array = get(data, "cases", nothing)
+    end
     # For every testcase in the canonical data json file, write the test code
-    for testcases in get(data, "cases", nothing)
+    for testcases in testcase_array
 
         # Get the function name that we want to test
         function_to_test = get(testcases, "property", nothing)
@@ -129,20 +137,18 @@ function main(exercise_slug)
         # Create expected output to compare with
         expected_output = []
 
-        # If expected output is a dict, add items to expected output seperated by spaces
-        if isa(get(testcases, "expected", nothing), Dict)
-            for expected_thing in keys(get(testcases, "expected", nothing))
-                push!(expected_output, get(get(testcases, "expected", nothing), expected_thing, nothing) , " ")
-            end
-            # Finalise expected_output
-            expected_output = "\"" * join(expected_output) * "\""
-
-        # If expected output is an array, write the array as a string like before
-        elseif isa(get(testcases, "expected", nothing), AbstractArray)
+        # If expected output is an array, write it as an array like before
+        if isa(get(testcases, "expected", nothing), AbstractArray)
             expected_output = array_to_str(get(testcases, "expected", nothing))
+        # If expected_output is a Dict, write it as a Dict
+        elseif isa(get(testcases, "expected", nothing), Dict)
+            expected_output = string(get(testcases, "expected", nothing))
+        # If expected output is a Bool, write it without quotes
+        elseif isa(get(testcases, "expected", nothing), Bool)
+            expected_output = string(get(testcases, "expected", nothing))
         else
-            # If expected output is not any a Dict or Array, just keep the expected output as a String
-            expected_output = "\"" * get(testcases, "expected", nothing) * "\""
+        # If expected output is not any of the handled cases, best choice is to print it out in quotes.
+            expected_output = "\"" * string(get(testcases, "expected", nothing)) * "\""
         end
 
         # Write the actual code that tests our function.
