@@ -1,0 +1,6 @@
+docs:
+- "**/*.md"
+exercise:
+- "exercises/**"
+config changes:
+- "config.json"
