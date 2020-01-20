@@ -2,5 +2,5 @@ docs:
 - "**/*.md"
 exercise:
 - "exercises/**"
-config changes:
+config change:
 - "config.json"
