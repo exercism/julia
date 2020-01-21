@@ -490,7 +490,7 @@
         {
             "uuid": "a534b8ed-da88-4945-bb25-f6633977740b",
             "slug": "pythagorean-triplet",
-            "core": true,
+            "core": false,
             "unlocked_by": null,
             "difficulty": 7,
             "topics": [
@@ -634,4 +634,5 @@
             ]
         }
     ]
+
 }

@@ -5,7 +5,7 @@ function pythagorean_triplets(input)
             c = input - a - b
             triplet = sort([a, b, c])
             if (triplet[1]^2 + triplet[2]^2 == triplet[3]^2)
-                push!(triplets, tuple(Int.(triplet)))
+                push!(triplets, Tuple(Int.(triplet)))
             end
         end
     end
