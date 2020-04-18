@@ -30,7 +30,7 @@ include("complex-numbers.jl")
     @testset "Division" begin
         @test ComplexNumber(1, 0) / ComplexNumber(2, 0) == ComplexNumber(0.5, 0)
         @test ComplexNumber(0, 1) / ComplexNumber(0, 2) == ComplexNumber(0.5, 0)
-        @test ComplexNumber(1, 2) / ComplexNumber(3, 4) == ComplexNumber(0.44, 0.08)
+        @test ComplexNumber(1, 2) / ComplexNumber(3, 4) ≈ ComplexNumber(0.44, 0.08)
     end
 end
 
