@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Run notebook generation
-julia bin/generate_notebooks.jl
+julia bin/generate-notebooks.jl
 
 # https://stackoverflow.com/questions/855767/can-i-use-git-diff-on-untracked-files/857696#857696
 git add -N exercises/*/*.ipynb
