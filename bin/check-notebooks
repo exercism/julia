@@ -12,7 +12,7 @@ changed_files=$(git diff --name-only)
 if [ ! -z "$changed_files" ]; then
     echo "The following notebooks diverge from the auto-generated notebooks:"
     echo "$changed_files"
-    echo "Please run bin/generate_notebooks.jl to update the notebooks"
+    echo "Please run bin/generate-notebooks.jl or comment `/make-notebooks` to update the notebooks"
     git reset HEAD
     exit 1
 fi
