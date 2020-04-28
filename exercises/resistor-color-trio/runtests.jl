@@ -23,3 +23,7 @@ end
 @testset "Yellow and violet and yellow" begin
     @test label(["yellow", "violet", "yellow"]) == "470 kiloohms"
 end
+
+@testset "Orange and orange and red" begin
+    @test label(["orange", "orange", "red"]) == "3300 ohms"
+end
