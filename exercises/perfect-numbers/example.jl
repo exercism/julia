@@ -9,16 +9,9 @@ function aliquot_sum(n)
     return sum(i for i in 1:div(n, 2) if n % i == 0)
 end
 
-function classify(n)
-    if !isinteger(n) || n < 1
-        throw(DomainError(n, "n must be a positive integer"))
-    end
-    s = aliquot_sum(n)
-    if s > n
-        :abundant
-    elseif s < n
-        :deficient
-    else
-        :perfect
-    end
-end
+isnatural(n) = isinteger(n) && n > zero(n)
+assert_natural(n) = isnatural(n) || throw(DomainError(n, "n must be a positive integer"))
+
+isabundant(n) = assert_natural(n) && aliquot_sum(n) > n
+isperfect(n) = assert_natural(n) && aliquot_sum(n) == n
+isdeficient(n) = assert_natural(n) && aliquot_sum(n) < n
