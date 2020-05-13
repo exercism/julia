@@ -32,7 +32,7 @@ for i in f["cases"]
             global CODE *= """
 
                 @testset \"$des\" begin
-                    @test $property($inp) == \"$exped\"
+                    @test $property($inp) == :$exped
                 end
             """
         else
