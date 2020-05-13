@@ -1,7 +1,7 @@
 function classify(number)
     factors = []
     if number == 1
-        return "deficient"
+        return :deficient
     elseif number <= 0
         return throw(DomainError(number,"Classification is only possible for natural numbers."))
     end
@@ -12,10 +12,10 @@ function classify(number)
         end
     end
     if sum(factors) > number
-        return "abundant"
+        return :abundant
     elseif sum(factors) < number
-        return "deficient"
+        return :deficient
     else
-        return "perfect"
+        return :perfect
     end
 end
