@@ -1,21 +1,20 @@
-function classify(number)
-    factors = []
-    if number == 1
-        return :deficient
-    elseif number <= 0
-        return throw(DomainError(number,"Classification is only possible for natural numbers."))
+function aliquot_sum(n)
+    if !isinteger(n) || n < 0
+        throw(DomainError(n,"n must be a non-negative integer"))
     end
+    return sum(i for i in 1:div(n, 2) if n % i == 0)
+end
 
-    for i in 1:(number-1)
-        if number%i == 0
-            push!(factors, i)
-        end
+function classify(n)
+    if !isinteger(n) || n < 1
+        throw(DomainError(n, "n must be a positive integer"))
     end
-    if sum(factors) > number
-        return :abundant
-    elseif sum(factors) < number
-        return :deficient
+    s = aliquot_sum(n)
+    if s > n
+        :abundant
+    elseif s < n
+        :deficient
     else
-        return :perfect
+        :perfect
     end
 end
