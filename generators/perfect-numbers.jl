@@ -32,14 +32,16 @@ for i in f["cases"]
             global CODE *= """
 
                 @testset \"$des\" begin
-                    @test $property($inp) == :$exped
+                    @test is$exped($inp)
                 end
             """
         else
             global CODE *= """
 
                 @testset \"$des\" begin
-                    @test_throws DomainError classify($inp)
+                    @test_throws DomainError isdeficient($inp)
+                    @test_throws DomainError isperfect($inp)
+                    @test_throws DomainError isabundant($inp)
                 end
             """
         end
