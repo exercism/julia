@@ -1,4 +1,4 @@
-all = [
+const all = [
     "eggs",
     "peanuts",
     "shellfish",
