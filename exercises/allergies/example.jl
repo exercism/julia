@@ -14,5 +14,5 @@ function allergic_to(score, allergen)
 end
 
 function allergy_list(score)
-    return filter(allergen -> allergic_to(score, allergen), all)
+    return Set(filter(allergen -> allergic_to(score, allergen), all))
 end
