@@ -38,3 +38,10 @@ end
     @test !ispangram("the quick brown fox jumped over the lazy FOX")
 end
 
+@testset "a-m and A-M are 26 different letters but not a pangram" begin
+    @test !ispangram("abcdefghijklm ABCDEFGHIJKLM")
+end
+
+@testset "pangram with more than 26 letters (if case sensitive)" begin
+    @test ispangram("the 1 quick brown fox jumps Over the 2 lazy dogs")
+end
