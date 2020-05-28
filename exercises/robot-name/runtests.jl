@@ -15,11 +15,13 @@ isname(x) = occursin(r"^[A-Z]{2}[0-9]{3}$", x)
         @test isname(r1.name)
     end
 
-    @testset "names of robot instance are valid and unique in history" for i=1:100
-        reset!(r1)
-        @test isname(r1.name)
-        @test !in(r1.name, history)
-        push!(history, r1.name)
+    @testset "names of robot instance are valid and unique in history" begin
+        for i in 1:100
+            reset!(r1)
+            @test isname(r1.name)
+            @test !in(r1.name, history)
+            push!(history, r1.name)
+        end
     end
 end
 
@@ -48,7 +50,7 @@ end
 @testset "many robots" begin
     global robots = Robot[]
 
-    for i=1:10
+    for i in 1:10
         push!(robots, Robot())
 
         @testset "name of robot is valid and unique in history" begin
@@ -59,10 +61,12 @@ end
         push!(history, robots[i].name)
     end
 
-    @testset "fresh names of reset robots are valid and unique in history" for r in robots
-        reset!(r)
-        @test isname(r.name)
-        @test !in(r.name, history)
-        push!(history, r.name)
+    @testset "fresh names of reset robots are valid and unique in history" begin
+        for r in robots
+            reset!(r)
+            @test isname(r.name)
+            @test !in(r.name, history)
+            push!(history, r.name)
+        end
     end
 end
