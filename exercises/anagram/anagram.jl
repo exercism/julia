@@ -1,3 +1,3 @@
-function detect_anagrams(subject::AbstractString, candidates::AbstractArray)
+function detect_anagrams(subject, candidates)
 
 end

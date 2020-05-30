@@ -1,3 +1,3 @@
-function wordcount(sentence::AbstractString)
+function wordcount(sentence)
 
 end

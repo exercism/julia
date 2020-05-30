@@ -1,3 +1,3 @@
-function triangle(n::Int)
+function triangle(n)
 
 end

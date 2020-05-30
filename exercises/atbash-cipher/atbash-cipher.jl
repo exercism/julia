@@ -1,8 +1,8 @@
-function encode(input::AbstractString)
+function encode(input)
 
 end
 
-function decode(input::AbstractString)
+function decode(input)
 
 end
 

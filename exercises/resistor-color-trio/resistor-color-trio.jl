@@ -1,3 +1,3 @@
-function label(colors::AbstractArray)
+function label(colors)
     
 end

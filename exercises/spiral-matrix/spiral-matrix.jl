@@ -1,3 +1,3 @@
-function spiral_matrix(n::Int)
+function spiral_matrix(n)
 
 end
