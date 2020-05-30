@@ -2,7 +2,7 @@ mutable struct Robot
 
 end
 
-function reset!(instance)
+function reset!(instance::Robot)
 
 end
 

@@ -1,3 +1,3 @@
-function add_gigasecond(date)
+function add_gigasecond(date::DateTime)
 
 end
