@@ -1,3 +1,3 @@
-function to_roman(number::Integer)
+function to_roman(number)
 
 end

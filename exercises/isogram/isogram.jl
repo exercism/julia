@@ -1,3 +1,3 @@
-function isisogram(s::AbstractString)
+function isisogram(s)
 
 end
