@@ -1,12 +1,16 @@
+#! julia
+
+const BASEPATH = joinpath(@__DIR__, "..")
+
 "Generate a Jupyter notebook for a given exercise."
 function generate_notebook(slug)
     # readlines returns an array of strings.
     # Jupyter treats arrays of strings as multiline strings
     # but does not insert \n between elements of the array,
     # so it must be appended to each line manually.
-    readme = readlines(joinpath("exercises", "$slug", "README.md")) .* "\n"
-    stub = readlines(joinpath("exercises", "$slug", "$slug.jl")) .* "\n"
-    tests = readlines(joinpath("exercises", "$slug", "runtests.jl")) .* "\n"
+    readme = readlines(joinpath(BASEPATH, "exercises", "$slug", "README.md")) .* "\n"
+    stub = readlines(joinpath(BASEPATH, "exercises", "$slug", "$slug.jl")) .* "\n"
+    tests = readlines(joinpath(BASEPATH, "exercises", "$slug", "runtests.jl")) .* "\n"
 
     # mark stub cell as to-be-submitted
     pushfirst!(stub, "# submit\n")
@@ -98,9 +102,9 @@ end
 
 function generate_notebooks()
     @info "Generating notebooks..."
-    for slug in readdir("exercises")
+    for slug in readdir(joinpath(BASEPATH, "exercises"))
         @debug "  $slug"
-        outfile = joinpath("exercises", slug, "$slug.ipynb")
+        outfile = joinpath(BASEPATH, "exercises", slug, "$slug.ipynb")
         write(outfile, generate_notebook(slug))
     end
     @info "Notebooks successfully generated"
