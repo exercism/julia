@@ -1,3 +1,3 @@
-function raindrops(number::Int)
+function raindrops(number)
 
 end
