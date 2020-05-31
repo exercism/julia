@@ -41,7 +41,7 @@ end
     end
     
     @testset "names of robots are not equal" begin
-        @test name(r2) != r3.name
+        @test name(r2) != name(r3)
     end
 
     @testset "names of both robots are unique in history" begin
