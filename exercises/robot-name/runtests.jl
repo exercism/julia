@@ -57,8 +57,6 @@ end
     Random.seed!()
     robots = Robot[]
 
-    # There are ~700k names, so this will only give a small chance of collisions.
-    # Students: consider testing for collisions some other way.
     for i in 1:100
         push!(robots, Robot())
 
