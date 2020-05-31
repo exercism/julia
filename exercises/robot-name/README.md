@@ -15,6 +15,8 @@ The names must be random: they should not follow a predictable sequence.
 Using random names means a risk of collisions. Your solution must ensure that
 every existing robot has a unique name.
 
+The test suite only generates ~100 names by default. There are ~700k valid names, so it will only give a small chance of collisions. Consider testing your solution for collisions in some other way in addition to the test suite.
+
 This exercise continues our exploration of Julia's
 [type system](https://docs.julialang.org/en/v1/manual/types/),
 this time with mutable types,
