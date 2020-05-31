@@ -1,17 +1,22 @@
-This exercise introduces work with Julia's [type system](http://docs.julialang.org/en/stable/manual/types/)
-and random [numbers](http://docs.julialang.org/en/stable/stdlib/numbers/).
+This exercise continues our exploration of Julia's
+[type system](https://docs.julialang.org/en/v1/manual/types/),
+this time with mutable types,
+and introduces us to
+[random number generation](https://docs.julialang.org/en/v1/stdlib/Random/).
 
-Let's create a structure that will describe our robots
-and then use it to create new instances and to work with them.
+We will imagine that resetting the robot to the factory settings is like a surgery or a really good book: it changes its subject.
+We could also have modeled the problem such that resetting a robot creates a new robot, but not every problem can be modeled solely with immutable data structures (even purely functional languages deal with mutability inside their runtimes!).
 
-Generate the robot's name using randomness and don't worry about
-collisions, tests sometimes will fail and that's alright.
+Mutation (other than `a[idx] = b`) is a bit unusual in Julia, so the convention is that methods that  mutate their arguments have a recognizable suffix, `!`, to emphasise their difference and potential danger.
+So our method for doing this will be called `reset!`.
 
-Resetting the robot to the factory settings is like a surgery,
-so we declare a method that will reset the robot's settings.
-Take a note that skeleton method reset! has an exclamation mark suffix
-meaning that the method changes given argument's contents.
+This is only a convention, but almost all published Julia code follows it and you might come to agree that it's quite helpful!
 
-Futhermore, experiment with testing and check out the situations when
-there are lots of collisions (like when you generate name one thousand times).
+## Hints
 
+You will need to define a method for generating unique names,
+a structure to describe robots,
+and a method for resetting a robot.
+
+You might find it helpful to design your program first to just emit a random name for a robot (without worrying about collisions) and then later to think about and design a scheme that will avoid ever issuing duplicate names.
+In your design, be thoughtful about how the run time of name generation changes as names run out. What guarantees do you want to offer the caller?
