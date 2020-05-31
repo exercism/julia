@@ -8,7 +8,7 @@ this time with mutable types,
 and introduces us to
 [random number generation](https://docs.julialang.org/en/v1/stdlib/Random/).
 
-We will imagine that resetting the robot to the factory settings is like a surgery or a really good book: it changes its subject.
+We will imagine that resetting the robot to the factory settings is like a surgery: it makes changes to the subject, but doesn't replace it.
 We could also have modeled the problem such that resetting a robot creates a new robot, but not every problem can be modeled solely with immutable data structures (even purely functional languages deal with mutability inside their runtimes!).
 
 In Julia, functions that mutate their arguments have a suffix `!` by convention.
