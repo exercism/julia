@@ -2,7 +2,7 @@ This is a good exercise to experiment with non-standard string literals and meta
 
 A short introduction to non-standard string literals can be found in this [blog post](https://web.archive.org/web/20170625222109/https://iaindunning.com/blog/julia-unicode.html). A detailed metaprogramming guide can be found in the [manual](https://docs.julialang.org/en/v1/manual/metaprogramming/).
 
-You can extend your solution by adding the functionality described below. To test your solution, you have to remove the comments at the end of `runtests.jl` before running the tests as usual.
+You can extend your solution by adding the functionality described below.
 
 Bonus A only requires basics as outlined in the blog post. Bonus B requires significantly more knowledge of metaprogramming in Julia.
 
