@@ -1,3 +1,7 @@
+The test suite only generates ~100 names by default.
+There are ~700k valid names, so it will only give a small chance of collisions.
+Consider testing your solution for collisions in some other way in addition to the test suite.
+
 This exercise continues our exploration of Julia's
 [type system](https://docs.julialang.org/en/v1/manual/types/),
 this time with mutable types,
@@ -7,7 +11,7 @@ and introduces us to
 We will imagine that resetting the robot to the factory settings is like a surgery or a really good book: it changes its subject.
 We could also have modeled the problem such that resetting a robot creates a new robot, but not every problem can be modeled solely with immutable data structures (even purely functional languages deal with mutability inside their runtimes!).
 
-Mutation (other than `a[idx] = b`) is a bit unusual in Julia, so the convention is that methods that  mutate their arguments have a recognizable suffix, `!`, to emphasise their difference and potential danger.
+In Julia, functions that mutate their arguments have a suffix `!` by convention.
 So our method for doing this will be called `reset!`.
 
 This is only a convention, but almost all published Julia code follows it and you might come to agree that it's quite helpful!
