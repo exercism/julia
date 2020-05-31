@@ -9,18 +9,18 @@ isname(x) = occursin(r"^[A-Z]{2}[0-9]{3}$", x)
 
 @testset "one robot" begin
     global r1 = Robot()
-    push!(history, r1.name)
+    push!(history, name(r1))
 
     @testset "name of robot is valid" begin
-        @test isname(r1.name)
+        @test isname(name(r1))
     end
 
     @testset "names of robot instance are valid and unique in history" begin
         for i in 1:100
             reset!(r1)
-            @test isname(r1.name)
-            @test !in(r1.name, history)
-            push!(history, r1.name)
+            @test isname(name(r1))
+            @test !in(name(r1), history)
+            push!(history, name(r1))
         end
     end
 end
@@ -30,21 +30,21 @@ end
     global r3 = Robot()
 
     @testset "names of robots are valid" begin
-        @test isname(r2.name)
-        @test isname(r3.name)
+        @test isname(name(r2))
+        @test isname(name(r3))
     end
     
     @testset "names of robots are not equal" begin
-        @test r2.name != r3.name
+        @test name(r2) != r3.name
     end
 
     @testset "names of both robots are unique in history" begin
-        @test !in(r2.name, history)
-        @test !in(r3.name, history)
+        @test !in(name(r2), history)
+        @test !in(name(r3), history)
     end
 
-    push!(history, r2.name)
-    push!(history, r3.name)
+    push!(history, name(r2))
+    push!(history, name(r3))
 end
 
 @testset "many robots" begin
@@ -54,19 +54,19 @@ end
         push!(robots, Robot())
 
         @testset "name of robot is valid and unique in history" begin
-            @test isname(robots[i].name)
-            @test !in(robots[i].name, history)
+            @test isname(name(robots[i]))
+            @test !in(name(robots[i]), history)
         end
 
-        push!(history, robots[i].name)
+        push!(history, name(robots[i]))
     end
 
     @testset "fresh names of reset robots are valid and unique in history" begin
         for r in robots
             reset!(r)
-            @test isname(r.name)
-            @test !in(r.name, history)
-            push!(history, r.name)
+            @test isname(name(r))
+            @test !in(name(r), history)
+            push!(history, name(r))
         end
     end
 end

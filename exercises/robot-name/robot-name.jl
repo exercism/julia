@@ -6,3 +6,6 @@ function reset!(instance::Robot)
 
 end
 
+function name(instance::Robot)
+
+end
