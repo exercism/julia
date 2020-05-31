@@ -22,3 +22,7 @@ function reset!(instance::Robot)
     instance.name = new_name()
     instance
 end
+
+function name(instance::Robot)
+    instance.name
+end
