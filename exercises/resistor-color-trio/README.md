@@ -43,3 +43,13 @@ When we get more than a thousand ohms, we say "kiloohms". That's similar to sayi
 So an input of `"orange", "orange", "orange"` should return:
 
 > "33 kiloohms"
+
+## Source
+
+Maud de Vries, Erik Schierboom [https://github.com/exercism/problem-specifications/issues/1549](https://github.com/exercism/problem-specifications/issues/1549)
+
+## Version compatibility
+This exercise has been tested on Julia versions >=1.0.
+
+## Submitting Incomplete Solutions
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.
