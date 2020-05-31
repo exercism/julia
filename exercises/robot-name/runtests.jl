@@ -1,9 +1,14 @@
 using Test
 
+# @testset sets the same seed every time for reproducibility, but we're undoing
+# that deliberately with Random.seed!() so that students are more likely to see
+# collisions.
+import Random
+
 include("robot-name.jl")
 
 # Random names means a risk of collisions.
-history = String[]
+const history = Set{String}()
 
 isname(x) = occursin(r"^[A-Z]{2}[0-9]{3}$", x)
 
@@ -16,6 +21,7 @@ isname(x) = occursin(r"^[A-Z]{2}[0-9]{3}$", x)
     end
 
     @testset "names of robot instance are valid and unique in history" begin
+        Random.seed!()
         for i in 1:100
             reset!(r1)
             @test isname(name(r1))
@@ -48,9 +54,12 @@ end
 end
 
 @testset "many robots" begin
-    global robots = Robot[]
+    Random.seed!()
+    robots = Robot[]
 
-    for i in 1:10
+    # There are ~700k names, so this will only give a small chance of collisions.
+    # Students: consider testing for collisions some other way.
+    for i in 1:100
         push!(robots, Robot())
 
         @testset "name of robot is valid and unique in history" begin
@@ -62,6 +71,7 @@ end
     end
 
     @testset "fresh names of reset robots are valid and unique in history" begin
+        Random.seed!()
         for r in robots
             reset!(r)
             @test isname(name(r))
