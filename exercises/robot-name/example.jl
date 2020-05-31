@@ -1,28 +1,37 @@
-# http://docs.julialang.org/en/stable/stdlib/numbers/#random-numbers
+# Scott P Jones' solution as reinterpreted by Colin Caine
 
-name_history = String[]
+using Random: shuffle!
 
-function new_name()
-    generate_name() = join(map(x->Char(x), rand(65:90, 2))) * repr(rand(100:999))
-    name = generate_name()
-    while name in name_history
-        name = generate_name()
-    end
-    push!(name_history, name)
-    name
-end
+# Use Int32 to save some bits because this is quite a big vector.
+const names = shuffle!(Int32[0:26^2 * 10^3 - 1;])
 
 mutable struct Robot
-    name::AbstractString
+    # Robots are comfortable with integer names ;)
+    id::Int32
+    Robot() = new(mint_id())
+end
 
-    Robot() = new(new_name())
+function mint_id()
+    isempty(names) ? error("No unique identifiers left!") : pop!(names)
+end
+
+"Convert an integer name to a human-friendly name"
+function id2name(id)
+    id, c1 = divrem(id, 26)
+    id, c2 = divrem(id, 26)
+    id, d1 = divrem(id, 10)
+    id, d2 = divrem(id, 10)
+    d3 = id
+    return join((Char('A' + c1),
+                 Char('A' + c2),
+                 string.((d1, d2, d3))...))
 end
 
 function reset!(instance::Robot)
-    instance.name = new_name()
+    instance.id = mint_name()
     instance
 end
 
 function name(instance::Robot)
-    instance.name
+    id2name(robot.id)
 end
