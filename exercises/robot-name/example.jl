@@ -28,7 +28,7 @@ function id2name(id)
 end
 
 function reset!(instance::Robot)
-    instance.id = mint_name()
+    instance.id = mint_id()
     instance
 end
 
