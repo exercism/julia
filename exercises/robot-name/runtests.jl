@@ -1,8 +1,5 @@
 using Test
 
-# @testset sets the same seed every time for reproducibility, but we're undoing
-# that deliberately with Random.seed!() so that students are more likely to see
-# collisions.
 import Random
 
 include("robot-name.jl")
@@ -21,6 +18,9 @@ isname(x) = occursin(r"^[A-Z]{2}[0-9]{3}$", x)
     end
 
     @testset "names of robot instance are valid and unique in history" begin
+        # @testset sets the same seed every time for reproducibility, but we're
+        # undoing that deliberately with Random.seed!() to increase the chance
+        # of seeing collisions.
         Random.seed!()
         for i in 1:100
             reset!(r1)
