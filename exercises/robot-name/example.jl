@@ -33,5 +33,5 @@ function reset!(instance::Robot)
 end
 
 function name(instance::Robot)
-    id2name(robot.id)
+    id2name(instance.id)
 end
