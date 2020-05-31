@@ -1,2 +1,3 @@
-# Hide notebooks from diffs and language stats on GitHub
-*.ipynb linguist-generated=true
+# Hide notebooks from diffs and language stats on GitHub and tell git not to
+# diff them
+*.ipynb linguist-generated=true -diff
