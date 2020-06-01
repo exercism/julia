@@ -1,6 +1,6 @@
 # canonical data version: 2.4.0 (auto-generated)
 
-using Test
+using Dates, Test
 
 include("clock.jl")
 
