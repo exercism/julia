@@ -35,9 +35,11 @@ This is only a convention, but almost all published Julia code follows it and yo
 
 ## Hints
 
-You will need to define a method for generating unique names,
+You will need to define
+a method for generating unique names,
 a structure to describe robots,
-and a method for resetting a robot.
+a method for resetting a robot,
+and a method for getting the name of a robot.
 
 You might find it helpful to design your program first to just emit a random name for a robot (without worrying about collisions) and then later to think about and design a scheme that will avoid ever issuing duplicate names.
 In your design, be thoughtful about how the run time of name generation changes as names run out. What guarantees do you want to offer the caller?
