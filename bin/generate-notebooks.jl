@@ -28,13 +28,15 @@ function generate_notebook(slug)
         tests[i] = replace(line, "include(\"$slug.jl\")" => "# include(\"$slug.jl\")")
     end
 
+    unescape(lines) = replace(string(lines), "\\\$" => "\$")
+
     """
     {
         "cells": [
             {
                 "cell_type": "markdown",
                 "metadata": {},
-                "source": $readme
+                "source": $(unescape(readme))
             },
             {
                 "cell_type": "markdown",
@@ -46,7 +48,7 @@ function generate_notebook(slug)
                 "execution_count": null,
                 "metadata": {},
                 "outputs": [],
-                "source": $stub
+                "source": $(unescape(stub))
             },
             {
                 "cell_type": "markdown",
@@ -58,7 +60,7 @@ function generate_notebook(slug)
                 "execution_count": null,
                 "metadata": {},
                 "outputs": [],
-                "source": $tests
+                "source": $(unescape(tests))
             },
             {
                 "cell_type": "markdown",
