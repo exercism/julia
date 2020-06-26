@@ -5,9 +5,9 @@
 # script which might not be maintained.
 
 # Usage:
-# JULIA_LOAD_PATH=:[dir containing GeneratorUtils.jl] julia [this file] [path to problem-specifications/] [output dir]
+# julia [this file] [path to problem-specifications/] [output dir]
 # Example:
-# dir='julia/generators/GeneratorUtils/' JULIA_LOAD_PATH=":$dir" julia "$dir/generate_defaults.jl" problem-specifications/ "$dir/generated_defaults/"
+# julia --project=generators generators/GeneratorUtils/examples/generate_defaults.jl ../problem-specifications/ generators/GeneratorUtils/examples/generated_defaults/
 
 using GeneratorUtils
 

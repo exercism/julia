@@ -1,4 +1,5 @@
 [deps]
 DataStructures = "864edb3b-99cc-5e75-8d2d-829cb0a9cfe8"
+GeneratorUtils = "eed18385-e81b-4d1c-9354-d0dd448bec45"
 JSON = "682c06a0-de6a-54ab-a142-c8b1cf79cde6"
 LazyJSON = "fc18253b-5e1b-504c-a4a2-9ece4944c004"
