@@ -3,9 +3,8 @@
 # The problem-specifications directory shoud be adjacent to this project's root directory;
 # otherwise you must provide its path as an argument to this script.
 #
-# For each generated slug listed below, this script downloads canonical-data.json and diffs
-# the existing runtests.jl with a newly generated one. It does not modify existing files or
-# add new files.
+# For each generated slug listed below, this script diffs the existing runtests.jl with a
+# newly generated one. It does not modify existing files or add new files.
 
 # Update as necessary.
 slugs=(circular-buffer darts)
