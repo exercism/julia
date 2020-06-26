@@ -650,6 +650,18 @@
                 "math",
                 "functional_programming"
             ]
+        },
+        {
+            "uuid": "3dc9bbde-d344-4a36-a7e1-433637974dfc",
+            "slug": "circular-buffer",
+            "core": false,
+            "unlocked_by": "robot-name",
+            "difficulty": 8,
+            "topics": [
+                "data_structures",
+                "generics",
+                "structs"
+            ]
         }
     ]
 }

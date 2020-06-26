@@ -7,7 +7,7 @@
 # add new files.
 
 # Update as necessary.
-slugs=()
+slugs=(circular-buffer)
 
 if ! [[ -d exercises/ ]]; then
   echo "Error: ./exercises/ does not exist." >&2; exit 1
