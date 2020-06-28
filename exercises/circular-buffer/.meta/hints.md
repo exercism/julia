@@ -9,7 +9,7 @@ that creates an instance that can store up to `capacity` elements.
 
 Extend the following functions from `Base` to work on `CircularBuffer`s:
 - `Base.push!(cb::CircularBuffer, item; overwrite::Bool=false)`: Insert the element `item`
-  to the end of `cb`, then return `cb`. If `cb` is already full, then throw a `BoundsErrors`
+  to the end of `cb`, then return `cb`. If `cb` is already full, then throw a `BoundsError`
   if `overwrite` is `false` (the default value); otherwise remove the first element to make
   space for `item` if `overwrite` is `true`.
 - `Base.popfirst!(cb::CircularBuffer)`: Remove and return the first element of `cb`.
@@ -55,6 +55,7 @@ Hint: You don't need to—and should not—extend all of these functions! By def
 for `AbstractVector` will now accept `CircularBuffer` as input. See the section on
 [interfaces](https://docs.julialang.org/en/v1/manual/interfaces/#man-interface-array-1) in
 the Julia manual:
+
 > A lot of the power and extensibility in Julia comes from a collection of informal
 > interfaces. By extending a few specific methods to work for a custom type, objects of that
 > type not only receive those functionalities, but they are also able to be used in other

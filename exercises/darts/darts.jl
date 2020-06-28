@@ -1,3 +1,3 @@
-function score(x::Real, y::Real)
+function score(x, y)
 
 end
