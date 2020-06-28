@@ -15,7 +15,7 @@ const INDENT = ' '^4
 
 Return a new collection with recursively tightened/narrowed container element types.
 
-Starting from the innermost containers and proceeding outward, opy each container `a` into
+Starting from the innermost containers and proceeding outward, copy each container `a` into
 an array with `collect(x for x in a)`, then apply the constructor for the type of the
 `UnionAll` over parameters in `typeof(a)`. This copies the elements into a new container of
 appropriate element type (see implementation of `Base.collect`). The original container and
@@ -86,7 +86,7 @@ end
 
 Override how parts of `case` are printed by the `print_` functions in `GeneratorUtils`.
 
-If you wish to remove an entire test, use `delete!` instead on the entry in the parsed JSON.
+To remove an entire test, use `delete!` instead on the entry in the parsed JSON.
 
 There are two defaults that often require overrides:
 - Using `JSON.jl`, all containers are parsed to `Vector`s and `[Abstract]Dict`s. If you need
