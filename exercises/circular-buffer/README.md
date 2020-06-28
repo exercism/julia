@@ -61,7 +61,7 @@ that creates an instance that can store up to `capacity` elements.
 
 Extend the following functions from `Base` to work on `CircularBuffer`s:
 - `Base.push!(cb::CircularBuffer, item; overwrite::Bool=false)`: Insert the element `item`
-  to the end of `cb`, then return `cb`. If `cb` is already full, then throw a `BoundsErrors`
+  to the end of `cb`, then return `cb`. If `cb` is already full, then throw a `BoundsError`
   if `overwrite` is `false` (the default value); otherwise remove the first element to make
   space for `item` if `overwrite` is `true`.
 - `Base.popfirst!(cb::CircularBuffer)`: Remove and return the first element of `cb`.
@@ -70,43 +70,30 @@ Extend the following functions from `Base` to work on `CircularBuffer`s:
 
 ## Bonus tasks
 
-Extend your `CircularBuffer` to pass all tests for both `CircularBuffer` and `CircularDeque`
-from the `DataStructures.jl` package. These tests are included but disabled in the provided
-tests for this Exercism exercise; to enable these tests, simply add the top-level line
-```julia
-enable_bonus_tests = true
-```
-anywhere in your file or notebook.
+*If you wish to receive mentoring, please submit your solution without the following bonus
+tasks.* Mentors are not expected to review these bonuses as they can lead to long solutions
+beyond the scope of this exercise.
 
-Concretely, to pass the tests you first need to declare `CircularBuffer` as a subtype of
+Extend your `CircularBuffer` to pass tests for `CircularBuffer` from the
+[`DataStructures.jl` package](https://github.com/JuliaCollections/DataStructures.jl/). These
+tests are included but disabled in the provided tests for this Exercism exercise; to enable
+these tests, add the top-level line `enable_bonus_tests = true` to your file or notebook.
+
+To pass these tests you need to declare `CircularBuffer` as a subtype of
 `AbstractVector` and define two functions:
 - `capacity(cb::CircularBuffer)`: Return the capacity of `cb`.
 - `isfull(cb::CircularBuffer)`: Return `true` is `cb` is full.
 
 Then you must ensure that the following functions from `Base` work correctly with
-`CircularBuffer`s:
-```julia
-Base.append!
-Base.empty!
-Base.pop!
-Base.pushfirst!
-Base.setindex!
-Base.collect
-Base.eltype
-Base.first
-Base.getindex
-Base.isempty
-Base.iterate
-Base.last
-Base.length
-Base.size
-```
+`CircularBuffer`s: `append!`, `empty!`, `pop!`, `pushfirst`, `setindex!`, `collect`,
+`eltype`, `first`, `getindex`, `isempty`, `iterate`, `last`, `length`, and `size`.
 
 Hint: You don't need to—and should not—extend all of these functions! By defining
 `CircularBuffer` to be a subtype of `AbstractVector`, generic functions that were defined
 for `AbstractVector` will now accept `CircularBuffer` as input. See the section on
 [interfaces](https://docs.julialang.org/en/v1/manual/interfaces/#man-interface-array-1) in
 the Julia manual:
+
 > A lot of the power and extensibility in Julia comes from a collection of informal
 > interfaces. By extending a few specific methods to work for a custom type, objects of that
 > type not only receive those functionalities, but they are also able to be used in other
