@@ -51,7 +51,9 @@ You will have to look through the source code for Julia's
 [`Base`](https://github.com/JuliaLang/julia/tree/master/base) module to see function
 definitions and figure out which ones to extend. To locate the relevant code for a function
 call, you can use the
-[@which](https://docs.julialang.org/en/v1/stdlib/InteractiveUtils/#InteractiveUtils.@which)
+[`@which`](https://docs.julialang.org/en/v1/stdlib/InteractiveUtils/#InteractiveUtils.@which)
 macro to identify the specific method to which a function call is dispatched. It also shows
 you the file and line number at which that method is defined (in a Jupyter Notebook through
 IJulia, it even gives you a link to the relevant code on GitHub).
+
+If you are working at the REPL, you may prefer to use the [`@edit`](https://docs.julialang.org/en/v1/stdlib/InteractiveUtils/#InteractiveUtils.@edit) macro to open the relevant file and line in your default text editor.
