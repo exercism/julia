@@ -18,9 +18,10 @@ Extend the following functions from `Base` to work on `CircularBuffer`s:
 
 ## Bonus tasks
 
-*If you wish to receive mentoring, please submit your solution without the following bonus
-tasks.* Mentors are not expected to review these bonuses as they can lead to long solutions
-beyond the scope of this exercise.
+This exercise is quite large and potentially complicated, and that makes it more challenging
+and time-consuming to mentor. To help your mentor out, please don't submit code for the
+bonus exercises until your mentor has reviewed your solution for the first part of the
+exercise.
 
 Extend your `CircularBuffer` to pass tests for `CircularBuffer` from the
 [`DataStructures.jl` package](https://github.com/JuliaCollections/DataStructures.jl/). These

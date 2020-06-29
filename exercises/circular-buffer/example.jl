@@ -1,3 +1,52 @@
+# Mentoring note: CircularDeque below is sufficient to complete the exercise without bonus
+# tasks. The lengthier CircularBuffer afterward completes the bonus tasks and is optimized
+# for performance.
+
+module CircularDeques
+
+"""
+    CircularDeque{T}(n)
+
+Empty circular deque with capacity for `n` elements of type `T`.
+"""
+mutable struct CircularDeque{T}
+    length::Int  # number of inserted items
+    # Can use firstindex instead. When fully optimized, tracking lastindex leads to a faster
+    # push! whereas firstindex leads to a faster pushfirst!. Alternatively, instead of
+    # tracking length and one end, can track both ends for symmetric performance.
+    lastindex::Int  # index in data of the last (i.e., most-recently push!ed) item
+    data::Vector{T}
+
+    CircularDeque{T}(n) where {T} = new(0, n, Vector{T}(undef, n))
+end
+
+Base.length(cd::CircularDeque) = cd.length
+Base.isempty(cd::CircularDeque) = length(cd) == 0
+capacity(cd::CircularDeque) = length(cd.data)
+isfull(cd::CircularDeque) = length(cd) == capacity(cd)
+
+Base.empty!(cd::CircularDeque) = (cd.length = 0; cd)
+
+function Base.push!(cd::CircularDeque, item; overwrite::Bool=false)
+    overwrite || !isfull(cd) || throw(BoundsError(cd, length(cd) + 1))
+    cd.lastindex = mod1(cd.lastindex + 1, capacity(cd))
+    cd.data[cd.lastindex] = item
+    cd.length = min(capacity(cd), cd.length + 1)
+    return cd
+end
+
+function Base.popfirst!(cd::CircularDeque)
+    !isempty(cd) || throw(BoundsError(cd, 0))
+    i = mod1(cd.lastindex - length(cd) + 1, capacity(cd))
+    cd.length -= 1
+    return cd.data[i]
+end
+
+end  # module CircularDeques
+
+using .CircularDeques
+
+
 module CircularBuffers
 
 using Base: @propagate_inbounds

@@ -1,4 +1,4 @@
-struct CircularBuffer{T}
+mutable struct CircularBuffer{T}
 
 
     function CircularBuffer{T}(capacity::Integer) where {T}
