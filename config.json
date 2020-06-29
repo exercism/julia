@@ -68,6 +68,17 @@
             ]
         },
         {
+            "slug": "darts",
+            "uuid": "25e1ab6b-782b-4892-8220-f332ebe44b23",
+            "core": false,
+            "unlocked_by": "leap",
+            "difficulty": 1,
+            "topics": [
+                "conditionals",
+                "math"
+            ]
+        },
+        {
             "slug": "bob",
             "uuid": "9474a13b-09c1-4e4d-90e3-1a14fde5eb62",
             "core": false,
@@ -649,6 +660,18 @@
                 "logic",
                 "math",
                 "functional_programming"
+            ]
+        },
+        {
+            "uuid": "3dc9bbde-d344-4a36-a7e1-433637974dfc",
+            "slug": "circular-buffer",
+            "core": false,
+            "unlocked_by": "robot-name",
+            "difficulty": 8,
+            "topics": [
+                "data_structures",
+                "generics",
+                "structs"
             ]
         }
     ]
