@@ -71,7 +71,7 @@ Extend the following functions from `Base` to work on `CircularBuffer`s:
 ## Bonus tasks
 
 This exercise is quite large and potentially complicated, and that makes it more challenging
-and time-consuming to mentor. To help your mentor out, please don't submit code for the
+and time-consuming to mentor. If you are in Mentor Mode or are intending to request a mentor in Practice Mode, to help your mentor out, please don't submit code for the
 bonus exercises until your mentor has reviewed your solution for the first part of the
 exercise.
 
