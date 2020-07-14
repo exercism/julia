@@ -8,4 +8,4 @@ For a local installation, there are multiple IDEs/editor plugins available. The 
 
 If you prefer a more interactive environment, you can use Jupyter notebooks with [IJulia](https://github.com/JuliaLang/IJulia.jl). Each exercise also comes with a notebook file. The general workflow stays the same, except you can edit your solution in the notebook directly.
 
-A simple way to get started with Julia without the need of a local installation is [JuliaBox](https://juliabox.com/), an online IDE based on Jupyter notebooks. You just access it from your browser, login and you can start solving exercises. If you just want an online REPL, you can use [Repl.it](https://repl.it/languages/julia).
+A simple way to get started with Julia without the need of a local installation is [Nextjournal](https://nextjournal.com/), anotebook-based online IDE. You just access it from your browser, login and you can start solving exercises. If you just want an online REPL, you can use [Repl.it](https://repl.it/languages/julia).
