@@ -596,6 +596,7 @@
             ]
         },
         {
+            "deprecated": true,
             "slug": "accumulate",
             "uuid": "e11e9623-f763-4bea-a6d9-7085956ce959",
             "core": false,
