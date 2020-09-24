@@ -596,6 +596,20 @@
             ]
         },
         {
+            "slug": "accumulate",
+            "uuid": "e11e9623-f763-4bea-a6d9-7085956ce959",
+            "core": false,
+            "unlocked_by": null,
+            "difficulty": 2,
+            "topics": [
+                "broadcast",
+                "conditionals",
+                "variables",
+                "integers",
+                "arrays"
+            ]
+        },
+        {
             "uuid": "4eced190-062f-4a7b-8c92-87ff02f1e343",
             "slug": "allergies",
             "core": false,
