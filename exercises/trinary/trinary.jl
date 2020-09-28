@@ -1,3 +1,3 @@
-function trinary_to_decimal(str::AbstractString)
+function trinary_to_decimal(str)
 
 end

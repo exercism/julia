@@ -1,3 +1,3 @@
-function score(str::AbstractString)
+function score(str)
 
 end

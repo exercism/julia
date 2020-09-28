@@ -1,3 +1,3 @@
-function secret_handshake(code::Integer)
+function secret_handshake(code)
 
 end

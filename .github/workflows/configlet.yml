@@ -2,7 +2,6 @@ name: Configlet
 
 on:
   push:
-    branches: master
   pull_request:
 
 jobs:
@@ -10,10 +9,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@f90c7b395dac7c5a277c1a6d93d5057c1cddb74e # 2.0.0
 
     - name: Fetch configlet
       run: ./bin/fetch-configlet
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Lint
       run: ./bin/configlet lint .

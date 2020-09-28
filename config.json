@@ -68,6 +68,17 @@
             ]
         },
         {
+            "slug": "darts",
+            "uuid": "25e1ab6b-782b-4892-8220-f332ebe44b23",
+            "core": false,
+            "unlocked_by": "leap",
+            "difficulty": 1,
+            "topics": [
+                "conditionals",
+                "math"
+            ]
+        },
+        {
             "slug": "bob",
             "uuid": "9474a13b-09c1-4e4d-90e3-1a14fde5eb62",
             "core": false,
@@ -488,6 +499,27 @@
             ]
         },
         {
+            "uuid": "a534b8ed-da88-4945-bb25-f6633977740b",
+            "slug": "pythagorean-triplet",
+            "core": false,
+            "unlocked_by": null,
+            "difficulty": 7,
+            "topics": [
+                "conditionals",
+                "type_conversion",
+                "loops",
+                "variables",
+                "tuples",
+                "integers",
+                "lists",
+                "arrays",
+                "logic",
+                "math",
+                "algorithms",
+                "functional_programming"
+            ]
+        },
+        {
             "uuid": "fcb9ef0e-ed97-4420-a38f-9bf690c23a3b",
             "slug": "dnd-character",
             "core": false,
@@ -564,6 +596,7 @@
             ]
         },
         {
+            "deprecated": true,
             "slug": "accumulate",
             "uuid": "e11e9623-f763-4bea-a6d9-7085956ce959",
             "core": false,
@@ -610,6 +643,36 @@
                 "arrays",
                 "data_structures",
                 "algorithms"
+            ]
+        },
+        {
+            "uuid": "4fc89443-1c5c-492a-850f-7990869caae6",
+            "slug": "perfect-numbers",
+            "core": false,
+            "unlocked_by": null,
+            "difficulty": 3,
+            "topics": [
+                "loops",
+                "conditionals",
+                "variables",
+                "integers",
+                "lists",
+                "strings",
+                "logic",
+                "math",
+                "functional_programming"
+            ]
+        },
+        {
+            "uuid": "3dc9bbde-d344-4a36-a7e1-433637974dfc",
+            "slug": "circular-buffer",
+            "core": false,
+            "unlocked_by": "robot-name",
+            "difficulty": 8,
+            "topics": [
+                "data_structures",
+                "generics",
+                "structs"
             ]
         },
         {

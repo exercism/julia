@@ -73,17 +73,17 @@ end
 
 @testset "testing the allergy_list" begin
         @testset "testing single allergies" begin
-        @test allergy_list(0) == []
-        @test allergy_list(1) == ["eggs"]
-        @test allergy_list(2) == ["peanuts"]
-        @test allergy_list(8) == ["strawberries"]
+        @test allergy_list(0) == Set([])
+        @test allergy_list(1) == Set(["eggs"])
+        @test allergy_list(2) == Set(["peanuts"])
+        @test allergy_list(8) == Set(["strawberries"])
     end
 
     @testset "testing for more allergies" begin
-        @test allergy_list(3) == ["eggs", "peanuts"]
-        @test allergy_list(5) == ["eggs", "shellfish"]
-        @test allergy_list(248) == ["strawberries", "tomatoes", "chocolate", "pollen", "cats"]
-        @test allergy_list(255) == ["eggs", "peanuts", "shellfish", "strawberries", "tomatoes", "chocolate", "pollen", "cats"]
-        @test allergy_list(509) == ["eggs", "shellfish", "strawberries", "tomatoes", "chocolate", "pollen", "cats"]
+        @test allergy_list(3) == Set(["eggs", "peanuts"])
+        @test allergy_list(5) == Set(["eggs", "shellfish"])
+        @test allergy_list(248) == Set(["strawberries", "tomatoes", "chocolate", "pollen", "cats"])
+        @test allergy_list(255) == Set(["eggs", "peanuts", "shellfish", "strawberries", "tomatoes", "chocolate", "pollen", "cats"])
+        @test allergy_list(509) == Set(["eggs", "shellfish", "strawberries", "tomatoes", "chocolate", "pollen", "cats"])
     end
 end

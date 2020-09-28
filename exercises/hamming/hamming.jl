@@ -1,3 +1,4 @@
-function distance(s1::AbstractString, s2::AbstractString)
+"Your optional docstring here"
+function distance(a, b)
 
 end

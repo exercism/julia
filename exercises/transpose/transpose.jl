@@ -1,3 +1,3 @@
-function transpose_strings(input::AbstractArray)
+function transpose_strings(input)
 
 end

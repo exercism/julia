@@ -1,3 +1,3 @@
-function sieve(limit::Integer)
+function sieve(limit)
 
 end

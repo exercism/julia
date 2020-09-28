@@ -1,14 +1,14 @@
-"Sum the squares of the numbers up to the given number"
-function square_of_sum(n::Int)
+"Square the sum of the first `n` positive integers"
+function square_of_sum(n)
 
 end
 
-"Square the sum of the numbers up to the given number"
-function sum_of_squares(n::Int)
+"Sum the squares of the first `n` positive integers"
+function sum_of_squares(n)
 
 end
 
-"Subtract sum of squares from square of sums"
-function difference(n::Int)
+"Subtract the sum of squares from square of the sum of the first `n` positive ints"
+function difference(n)
 
 end

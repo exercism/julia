@@ -2,7 +2,6 @@ name: Progression diff
 
 on:
   push:
-    branches: master
     paths: config.json
   pull_request:
     paths: config.json

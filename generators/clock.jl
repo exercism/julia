@@ -9,7 +9,7 @@ p = joinpath(ARGS[1], "exercises", "clock", "canonical-data.json")
 const data = JSON.parsefile(p)
 
 s  = "# canonical data version: $(data["version"]) (auto-generated)\n\n"
-s *= "using Test\n\n"
+s *= "using Dates, Test\n\n"
 s *= "include(\"$(data["exercise"]).jl\")\n\n"
 
 parsetime(timestr) = Tuple(parse.(Int, split(timestr, ":")))

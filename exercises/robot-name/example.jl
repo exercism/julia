@@ -1,24 +1,66 @@
-# http://docs.julialang.org/en/stable/stdlib/numbers/#random-numbers
+# Scott P Jones' solution as reinterpreted by Colin Caine
 
-name_history = String[]
+using Random: shuffle!
 
-function new_name()
-    generate_name() = join(map(x->Char(x), rand(65:90, 2))) * repr(rand(100:999))
-    name = generate_name()
-    while name in name_history
-        name = generate_name()
-    end
-    push!(name_history, name)
-    name
-end
+# Use Int32 to save some bits because this is quite a big vector.
+const names = shuffle!(Int32[0:26^2 * 10^3 - 1;])
 
 mutable struct Robot
-    name::AbstractString
+    # Robots are comfortable with integer names ;)
+    id::Int32
 
-    Robot() = new(new_name())
+    """
+        Robot()
+
+    Construct a robot with a unique name within its class.
+    """
+    Robot() = new(mint_id())
 end
 
+
+"""
+    mint_id()
+
+Return a unique robot id. If there are none left, error.
+"""
+function mint_id()
+    isempty(names) ? error("No unique identifiers left!") : pop!(names)
+end
+
+
+"""
+    id2name(id)
+
+Convert an integer name to a human-friendly name.
+"""
+function id2name(id)
+    id, c1 = divrem(id, 26)
+    id, c2 = divrem(id, 26)
+    id, d1 = divrem(id, 10)
+    id, d2 = divrem(id, 10)
+    d3 = id
+    return join((Char('A' + c1),
+                 Char('A' + c2),
+                 string.((d1, d2, d3))...))
+end
+
+
+"""
+    reset!(instance::Robot)
+
+Factory-reset this robot, assigning it a new unique name.
+"""
 function reset!(instance::Robot)
-    instance.name = new_name()
+    instance.id = mint_id()
     instance
+end
+
+
+"""
+    name(instance::Robot)
+
+Return this robot's name.
+"""
+function name(instance::Robot)
+    id2name(instance.id)
 end

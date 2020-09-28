@@ -1,4 +1,4 @@
-function to_rna(dna::AbstractString)
+function to_rna(dna)
 
 end
 

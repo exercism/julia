@@ -1,3 +1,3 @@
-function bob(stimulus::AbstractString)
+function bob(stimulus)
 
 end
