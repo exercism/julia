@@ -12,6 +12,14 @@ include("robot-simulator.jl")
     @test heading(r) == SOUTH
 end
 
+@testset "mutating functions should return robot" begin
+    r = Robot((0, 0), NORTH)
+    @test r == turn_right!(r)
+    @test r == turn_left!(r)
+    @test r == advance!(r)
+    @test r == move!(r, "A")
+end
+
 @testset "rotate +π/2" begin
     r = Robot((0, 0), NORTH)
     turn_right!(r)
