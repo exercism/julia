@@ -45,6 +45,7 @@ end
             @test_skip binarysearch([1.1, 2.9, 4.4, 5.5, 8.1, 9.0, 10.8], 6, by = round) == 4:4
             @test_skip binarysearch([1.1, 2.9, 4.4, 5.5, 8.1, 9.0, 10.8], 1, by = round) == 1:1
             @test_skip binarysearch([1.1, 2.9, 4.4, 5.5, 8.1, 9.0, 10.8], 11, by = round) == 7:7
+            @test_skip binarysearch([1.1, 2.9, 4.4, 5.5, 8.1, 9.0, 10.8], 11, by =  abs2∘round) == 7:7
             @test_skip binarysearch([1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634], 144.4, by = round) == 10:10
             @test_skip binarysearch([1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377], 20.6, by = round) == 6:6
         end
