@@ -1,6 +1,6 @@
 # Exercism Julia Track
 
-[![Build Status](https://travis-ci.org/exercism/julia.svg?branch=master)](https://travis-ci.org/exercism/julia)
+![Run tests](https://github.com/exercism/julia/workflows/Run%20tests/badge.svg)
 [![codecov](https://codecov.io/gh/exercism/julia/branch/master/graph/badge.svg)](https://codecov.io/gh/exercism/julia)
 
 Exercism exercises in Julia.
