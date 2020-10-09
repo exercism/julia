@@ -9,12 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@a81bbbf8298c0fa03ea29cdc473d45769f953675 # 2.3.3
+    - uses: actions/checkout@v2 # 2.3.3
 
     - name: Fetch configlet
-      uses: exercism/github-actions/configlet-ci@remove-extras
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: exercism/github-actions/configlet-ci@master
         
     - name: Configlet Linter
       run: configlet lint .
