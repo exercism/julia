@@ -12,7 +12,7 @@ jobs:
     - uses: actions/checkout@a81bbbf8298c0fa03ea29cdc473d45769f953675 # 2.3.3
 
     - name: Fetch configlet
-      uses: exercism/github-actions/configlet-ci@fetch-configlet2
+      uses: exercism/github-actions/configlet-ci@master
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
