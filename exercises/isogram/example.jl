@@ -1,4 +1,4 @@
-function isisogram(s::AbstractString)
+function is_isogram(s::AbstractString)
     s = lowercase(s)
     chars = Char[]
 

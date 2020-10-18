@@ -13,6 +13,8 @@ Examples of isograms:
 
 The word *isograms*, however, is not an isogram, because the s repeats.
 
+Isograms are case insensitive.
+
 ## Source
 
 Wikipedia [https://en.wikipedia.org/wiki/Isogram](https://en.wikipedia.org/wiki/Isogram)
