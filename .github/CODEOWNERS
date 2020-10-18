@@ -1,3 +1,6 @@
+# Default fallback
+*                       @exercism/julia
+
 # Maintainers 
 config/maintainers.json @exercism/maintainers-admin
 
