@@ -1,3 +1,3 @@
-function is_isogram(s)
+function isisogram(s)
 
 end

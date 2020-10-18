@@ -3,33 +3,33 @@ using Test
 include("isogram.jl")
 
 @testset "empty string" begin
-    @test is_isogram("")
+    @test isisogram("")
 end
 
 @testset "isogram with only lower case characters" begin
-    @test is_isogram("isogram")
+    @test isisogram("isogram")
 end
 
 @testset "word with one duplicated character" begin
-    @test !is_isogram("eleven")
+    @test !isisogram("eleven")
 end
 
 @testset "longest reported english isogram" begin
-    @test is_isogram("subdermatoglyphic")
+    @test isisogram("subdermatoglyphic")
 end
 
 @testset "word with duplicated character in mixed case" begin
-    @test !is_isogram("Alphabet")
+    @test !isisogram("Alphabet")
 end
 
 @testset "hypothetical isogrammic word with hyphen" begin
-    @test is_isogram("thumbscrew-japingly")
+    @test isisogram("thumbscrew-japingly")
 end
 
 @testset "isogram with duplicated non letter character" begin
-    @test is_isogram("Hjelmqvist-Gryb-Zock-Pfund-Wax")
+    @test isisogram("Hjelmqvist-Gryb-Zock-Pfund-Wax")
 end
 
 @testset "made-up name that is an isogram" begin
-    @test is_isogram("Emily Jung Schwartzkopf")
+    @test isisogram("Emily Jung Schwartzkopf")
 end
