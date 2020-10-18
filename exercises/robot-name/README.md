@@ -46,7 +46,7 @@ In your design, be thoughtful about how the run time of name generation changes 
 
 ## Source
 
-A debugging session with Paul Blackwell at gSchool. [http://gschool.it](http://gschool.it)
+A debugging session with Paul Blackwell at gSchool.
 
 ## Version compatibility
 This exercise has been tested on Julia versions >=1.0.
