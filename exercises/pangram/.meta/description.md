@@ -7,13 +7,3 @@ The best known English pangram is:
 
 The alphabet used consists of ASCII letters `a` to `z`, inclusive, and is case
 insensitive.
-
-## Source
-
-Wikipedia [https://en.wikipedia.org/wiki/Pangram](https://en.wikipedia.org/wiki/Pangram)
-
-## Version compatibility
-This exercise has been tested on Julia versions >=1.0.
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
