@@ -1,0 +1,19 @@
+name: 'Check exercise files exist'
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  check-files-exist:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Check exercise files exist
+      run: ./bin/check-files-exist.sh
