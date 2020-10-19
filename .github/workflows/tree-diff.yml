@@ -1,7 +1,11 @@
 name: Progression diff
 
 on:
+  workflow_dispatch:
   push:
+    branches:
+      - main
+      - master
     paths: config.json
   pull_request:
     paths: config.json
