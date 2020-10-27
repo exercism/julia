@@ -1,5 +1,5 @@
 {
-    "language": "Julia", 
+    "language": "Julia",
     "active": true,
     "blurb": "Julia is an open-source high-level, dynamic programming language whose sweet spot is technical and scientific computing. It is convenient for day-to-day work and fast enough for high performance computing.",
     "online_editor": {
@@ -661,6 +661,17 @@
                 "logic",
                 "math",
                 "functional_programming"
+            ]
+        },
+        {
+            "uuid": "6fa91607-d772-47af-9520-de26bbb8addb",
+            "slug": "all-your-base",
+            "core": false,
+            "unlocked_by": "resistor-color",
+            "difficulty": 4,
+            "topics": [
+                "integers",
+                "math"
             ]
         },
         {
