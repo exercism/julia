@@ -667,7 +667,7 @@
             "uuid": "6fa91607-d772-47af-9520-de26bbb8addb",
             "slug": "all-your-base",
             "core": false,
-            "unlocked_by": "resistor-color",
+            "unlocked_by": null,
             "difficulty": 4,
             "topics": [
                 "integers",
