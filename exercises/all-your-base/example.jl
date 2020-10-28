@@ -3,11 +3,11 @@
 function all_your_base(digits, input_base, output_base)
     # error checking behavior
     if input_base < 2
-        throw(ArgumentError("input base must be >= 2"))
+        throw(DomainError(input_base, "input base must be >= 2"))
     end
 
     if output_base < 2
-        throw(ArgumentError("output base must be >= 2"))
+        throw(DomainError(output_base, "output base must be >= 2"))
     end
 
     # short-circuit for [0] input; doesn't matter the base
@@ -19,7 +19,7 @@ function all_your_base(digits, input_base, output_base)
     total = 0
     for i in digits
         if i >= input_base || i < 0
-            throw(ArgumentError("all digits must satisfy 0 <= d < input base"))
+            throw(DomainError(input_base, "all digits must satisfy 0 <= d < input base"))
         end
         total = total * input_base + i
     end
