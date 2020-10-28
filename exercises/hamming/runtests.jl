@@ -37,6 +37,6 @@ end
 end
 
 @testset "different strand lengths" begin
-    @test_throws DomainError distance("AATG", "AAA")
-    @test_throws DomainError distance("ATA", "AGTG")
+    @test_throws ArgumentError distance("AATG", "AAA")
+    @test_throws ArgumentError distance("ATA", "AGTG")
 end
