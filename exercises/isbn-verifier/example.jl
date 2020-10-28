@@ -5,7 +5,7 @@ end
 struct ISBN <: AbstractString
     s::AbstractString
 
-    ISBN(s) = verify(s) ? new(replace(s, "-" => "")) : throw(ArgumentError("invalid ISBN string: $s"))
+    ISBN(s) = verify(s) ? new(replace(s, "-" => "")) : throw(DomainError(s, "invalid ISBN string"))
 end
 
 string(s::ISBN) = s.s
