@@ -1,5 +1,5 @@
 # Implement number base conversion
 
-function all_your_base(digit_string::Vector, input_base::Integer, output_base::Integer)
+function all_your_base(digits, base_in, base_out)
 
 end

@@ -1,6 +1,6 @@
 # Implement number base conversion
 
-function all_your_base(digits::Vector, input_base::Integer, output_base::Integer)
+function all_your_base(digits, input_base, output_base)
     # error checking behavior
     if input_base < 2
         throw(ArgumentError("input base must be >= 2"))
@@ -16,7 +16,7 @@ function all_your_base(digits::Vector, input_base::Integer, output_base::Integer
     end
 
     # encode the list to a single number
-    total::Integer = 0
+    total = 0
     for i in digits
         if i >= input_base || i < 0
             throw(ArgumentError("all digits must satisfy 0 <= d < input base"))
@@ -25,7 +25,7 @@ function all_your_base(digits::Vector, input_base::Integer, output_base::Integer
     end
 
     # decode to desired base
-    output::Vector = []
+    output = Int[]
     while total > 0
         (total, rem) = divrem(total, output_base)
         push!(output, rem)
@@ -35,5 +35,5 @@ function all_your_base(digits::Vector, input_base::Integer, output_base::Integer
         return [0]
     end
 
-    return reverse(output)
+    return reverse!(output)
 end
