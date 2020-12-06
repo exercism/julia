@@ -103,7 +103,7 @@ end
 @testset "Ordering" begin
     for a in -5:5, b in -5:5, c in -5:5
         a == b == 0 && continue
-        
+        b == 0 && continue
         r = RationalNumber(a, b)
 
         @test (r == c) == (a / b == c)
@@ -115,7 +115,7 @@ end
 
         for d in -5:5
             c == d == 0 && continue
-
+            d == 0 && continue
             s = RationalNumber(c, d)
 
             @test (r == s) == (a / b == c / d)
