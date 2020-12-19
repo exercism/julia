@@ -9,7 +9,9 @@ function luhn(id::AbstractString)
     end
 
     for i in length(numbers) - 1:-2:1
-        numbers[i] = (numbers[i] * 2) % 9
+        if numbers[i] != 9
+            numbers[i] = (numbers[i] * 2) % 9
+        end
     end
 
     return sum(numbers) % 10 == 0
