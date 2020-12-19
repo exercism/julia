@@ -12,6 +12,7 @@ questions = (
         "4?", ":) ?",
         "Wait! Hang on. Are you going to be OK?",
         "Okay if like my  spacebar  quite a bit?   ",
+        "Oida?",
 )
 
 yells = (
@@ -22,6 +23,7 @@ yells = (
         "ZOMG THE %^*@#\$(*^ ZOMBIES ARE COMING!!11!!1!",
         "I HATE YOU",
         "I HATE THE DENTIST",
+        "OIDA!",
 )
 
 silences = (
@@ -41,11 +43,13 @@ miscs = (
         "\nDoes this cryogenic chamber make me look fat?\nno",
         "         hmmmmmmm...",
         "This is a statement ending with whitespace      ",
+        "Oida.",
 )
 
 forceful_questions = (
         "WHAT THE HELL WERE YOU THINKING?",
         "WAS ZUR HÖLLE GEHT HIER VOR?",
+        "OIDA?",
 )
 
 response = Dict(
