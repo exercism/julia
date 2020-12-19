@@ -19,6 +19,7 @@ yells = (
         "1, 2, 3 GO!",
         "ZOMG THE %^*@#\$(*^ ZOMBIES ARE COMING!!11!!1!",
         "I HATE YOU",
+        "I HATE THE DENTIST",
 )
 
 silences = (
@@ -31,7 +32,7 @@ silences = (
 miscs = (
         "Tom-ay-to, tom-aaaah-to.",
         "Let's go make out behind the gym!",
-        "It's OK if you don't want to go to the DMV.",
+        "It's OK if you don't want to work for the NSA.",
         "1, 2, 3",
         "Ending with ? means a question.",
         "\nDoes this cryogenic chamber make me look fat?\nno",
