@@ -2,6 +2,11 @@ using Test
 
 include("phone-number.jl")
 
+# Julia 1.0 compat
+if VERSION < v"1.1"
+    @eval isnothing(::Any) = false
+    @eval isnothing(::Nothing) = true
+end
 
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 # Returns the cleaned phone number as a digit string if given number is valid,
@@ -19,6 +24,7 @@ const valid_11digit_num = (
         "+1 (223) 456-7890",
 )
 const invalid_num = (
+        "123456789",
         "1223456789",
         "22234567890",
         "321234567890",
@@ -28,6 +34,10 @@ const invalid_num = (
         "(123) 456-7890",
         "(223) 056-7890",
         "(223) 156-7890",
+        "1 (023) 456-7890",
+        "1 (123) 456-7890",
+        "1 (223) 056-7890",
+        "1 (223) 156-7890",
 )
 
 @testset "clean 10-digit number" begin
@@ -44,6 +54,6 @@ end
 
 @testset "detect invalid number" begin
     @testset "$number" for number in invalid_num
-        @test clean(number) == nothing
+        @test isnothing(clean(number))
     end
 end
