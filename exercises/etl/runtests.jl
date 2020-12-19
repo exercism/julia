@@ -2,7 +2,7 @@ using Test
 
 include("etl.jl")
 
-@testset "a single letter" begin
+@testset "single letter" begin
     input = Dict(1=>['A'])
     output = Dict('a'=>1)
     @test transform(input) == output
