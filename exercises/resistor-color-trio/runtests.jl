@@ -1,5 +1,3 @@
-# canonical data version: 1.0.0
-
 using Test
 
 include("resistor-color-trio.jl")

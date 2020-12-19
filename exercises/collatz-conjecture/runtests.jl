@@ -1,5 +1,3 @@
-# canonical data version: 1.2.1
-
 using Test
 
 include("collatz-conjecture.jl")

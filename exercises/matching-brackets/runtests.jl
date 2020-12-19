@@ -1,5 +1,3 @@
-# canonical data version: 2.0.0
-
 using Test
 
 include("matching-brackets.jl")

@@ -1,5 +1,3 @@
-# canonical data version: 1.4.0
-
 using Test
 
 include("bob.jl")
