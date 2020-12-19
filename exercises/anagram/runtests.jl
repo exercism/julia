@@ -32,6 +32,10 @@ end
     @test detect_anagrams("allergy", ["gallery", "ballerina", "regally", "clergy", "largely", "leading"]) == ["gallery", "regally", "largely"]
 end
 
+@testset "detects multiple anagrams with different case" begin
+    @test detect_anagrams("nose", ["Eons", "ONES"]) == ["Eons", "ONES"]
+end
+
 @testset "does not detect identical words" begin
     @test detect_anagrams("corn", ["corn", "dark", "Corn", "rank", "CORN", "cron", "park"]) == ["cron"]
 end
@@ -52,6 +56,10 @@ end
     @test detect_anagrams("orchestra", ["cashregister", "Carthorse", "radishes"]) == ["Carthorse"]
 end
 
+@testset "does not detect an anagram if the original word is repeated" begin
+    @test detect_anagrams("go", ["go Go GO"]) == []
+end
+
 @testset "does not detect a word as its own anagram" begin
     @test detect_anagrams("banana", ["Banana"]) == []
 end
@@ -62,6 +70,14 @@ end
 
 @testset "anagrams must use all letters exactly once" begin
     @test detect_anagrams("tapper", ["patter"]) == []
+end
+
+@testset "words are not anagrams of themselves (case-insensitive)" begin
+    @test detect_anagrams("BANANA", ["BANANA", "Banana", "banana"]) == []
+end
+
+@testset "words other than themselves can be anagrams" begin
+    @test detect_anagrams("LISTEN", ["Listen", "Silent", "LISTEN"]) == ["Silent"]
 end
 
 @testset "capital word is not own anagram" begin
