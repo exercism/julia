@@ -346,6 +346,7 @@
             ]
         },
         {
+            "deprecated": true,
             "slug": "transpose",
             "uuid": "e5a6d640-cd76-4453-8247-fd34ffed4fe5",
             "core": false,
