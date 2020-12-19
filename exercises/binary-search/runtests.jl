@@ -1,5 +1,3 @@
-# canonical data version: 1.2.0
-
 using Test
 
 include("binary-search.jl")

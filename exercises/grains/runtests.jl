@@ -1,7 +1,5 @@
 using Test
 
-# canonical data version: 1.2.0
-
 include("grains.jl")
 
 @testset "beginning squares" begin

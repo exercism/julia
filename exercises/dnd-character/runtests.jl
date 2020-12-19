@@ -1,4 +1,3 @@
-# canonical data version: 1.1.0
 using Test
 
 include("dnd-character.jl")

@@ -1,5 +1,3 @@
-# canonical data version: 1.7.0
-
 using Test
 
 include("acronym.jl")

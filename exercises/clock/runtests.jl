@@ -1,5 +1,3 @@
-# canonical data version: 2.4.0 (auto-generated)
-
 using Dates, Test
 
 include("clock.jl")
