@@ -45,3 +45,15 @@ end
 @testset "with quotations" begin
     @test wordcount("Joe can't tell between 'large' and large.") == Dict("joe" => 1, "can't" => 1, "tell" => 1, "between" => 1, "large" => 2, "and" => 1)
 end
+
+@testset "substrings from the beginning" begin
+    @test wordcount("Joe can't tell between app, apple and a.") == Dict("joe" => 1, "can't" => 1, "tell" => 1, "between" => 1, "app" => 1, "apple" => 1, "and" => 1, "a" => 1)
+end
+
+@testset "multiple spaces not detected as a word" begin
+    @test wordcount(" multiple   whitespaces") == Dict("multiple" => 1, "whitespaces" => 1)
+end
+
+@testset "alternating word separators not detected as a word" begin
+    @test wordcount(",\n,one,\n ,two \n 'three'") == Dict("one" => 1, "two" => 1, "three" => 1)
+end
