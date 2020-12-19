@@ -6,6 +6,10 @@ include("pangram.jl")
     @test !ispangram("")
 end
         
+@testset "perfect lower case" begin
+    @test ispangram("abcdefghijklmnopqrstuvwxyz")
+end
+
 @testset "pangram with only lower case" begin
     @test ispangram("the quick brown fox jumps over the lazy dog")
 end
@@ -16,6 +20,10 @@ end
         
 @testset "another missing character 'x'" begin
     @test !ispangram("the quick brown fish jumps over the lazy dog")
+end
+
+@testset "missing character 'h'" begin
+    @test !ispangram("five boxing wizards jump quickly at it")
 end
         
 @testset "pangram with underscores" begin
