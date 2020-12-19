@@ -87,6 +87,33 @@ end
         ]
 end
 
+@testset "mixed line length" begin
+    @test transpose_strings([
+        "The longest line.",
+        "A long line.",
+        "A longer line.",
+        "A line."
+    ]) == [
+        "TAAA",
+        "h   ",
+        "elll",
+        " ooi",
+        "lnnn",
+        "ogge",
+        "n e.",
+        "glr",
+        "ei ",
+        "snl",
+        "tei",
+        " .n",
+        "l e",
+        "i .",
+        "n",
+        "e",
+        "."
+    ]
+end
+
 @testset "square" begin
     @test transpose_strings([
           "HEART",
