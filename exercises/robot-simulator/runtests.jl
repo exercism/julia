@@ -58,6 +58,13 @@ end
 end
 
 @testset "instructions" begin
+    @testset "moving east and north from README" begin
+        r = Robot((7, 3), NORTH)
+        move!(r, "RAALAL")
+        @test position(r) == Point(9, 4)
+        @test heading(r) == WEST
+    end
+
     @testset "move west and north" begin
         r = Robot((0, 0), NORTH)
         move!(r, "LAAARALA")
