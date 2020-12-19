@@ -7,67 +7,67 @@ include("allergies.jl")
 #canonical data
 @testset "testing for single allergies" begin
     @testset "testing for eggs allergy" begin
-        @test allergic_to(0, "eggs") == false
-        @test allergic_to(1, "eggs") == true
-        @test allergic_to(3, "eggs") == true
-        @test allergic_to(2, "eggs") == false
-        @test allergic_to(255, "eggs") == true
+        @test !allergic_to(0, "eggs")
+        @test  allergic_to(1, "eggs")
+        @test  allergic_to(3, "eggs")
+        @test !allergic_to(2, "eggs")
+        @test  allergic_to(255, "eggs")
     end
 
     @testset "testing for peanuts allergy" begin
-        @test allergic_to(0, "peanuts") == false
-        @test allergic_to(2, "peanuts") == true
-        @test allergic_to(7, "peanuts") == true
-        @test allergic_to(5, "peanuts") == false
-        @test allergic_to(255, "peanuts") == true
+        @test !allergic_to(0, "peanuts")
+        @test  allergic_to(2, "peanuts")
+        @test  allergic_to(7, "peanuts")
+        @test !allergic_to(5, "peanuts")
+        @test  allergic_to(255, "peanuts")
     end
 
     @testset "testing for shellfish allergy" begin
-        @test allergic_to(0, "shellfish") == false
-        @test allergic_to(4, "shellfish") == true
-        @test allergic_to(14, "shellfish") == true
-        @test allergic_to(10, "shellfish") == false
-        @test allergic_to(255, "shellfish") == true
+        @test !allergic_to(0, "shellfish")
+        @test  allergic_to(4, "shellfish")
+        @test  allergic_to(14, "shellfish")
+        @test !allergic_to(10, "shellfish")
+        @test  allergic_to(255, "shellfish")
     end
 
     @testset "testing for strawberries allergy" begin
-        @test allergic_to(0, "strawberries") == false
-        @test allergic_to(8, "strawberries") == true
-        @test allergic_to(28, "strawberries") == true
-        @test allergic_to(20, "strawberries") == false
-        @test allergic_to(255, "strawberries") == true
+        @test !allergic_to(0, "strawberries")
+        @test  allergic_to(8, "strawberries")
+        @test  allergic_to(28, "strawberries")
+        @test !allergic_to(20, "strawberries")
+        @test  allergic_to(255, "strawberries")
     end
 
     @testset "testing for tomatoes allergy" begin
-        @test allergic_to(0, "tomatoes") == false
-        @test allergic_to(16, "tomatoes") == true
-        @test allergic_to(56, "tomatoes") == true
-        @test allergic_to(40, "tomatoes") == false
-        @test allergic_to(255, "tomatoes") == true
+        @test !allergic_to(0, "tomatoes")
+        @test  allergic_to(16, "tomatoes")
+        @test  allergic_to(56, "tomatoes")
+        @test !allergic_to(40, "tomatoes")
+        @test  allergic_to(255, "tomatoes")
     end
 
     @testset "testing for chocolate allergy" begin
-        @test allergic_to(0, "chocolate") == false
-        @test allergic_to(32, "chocolate") == true
-        @test allergic_to(112, "chocolate") == true
-        @test allergic_to(80, "chocolate") == false
-        @test allergic_to(255, "chocolate") == true
+        @test !allergic_to(0, "chocolate")
+        @test  allergic_to(32, "chocolate")
+        @test  allergic_to(112, "chocolate")
+        @test !allergic_to(80, "chocolate")
+        @test  allergic_to(255, "chocolate")
     end
 
     @testset "testing for pollen allergy" begin
-        @test allergic_to(0, "pollen") == false
-        @test allergic_to(64, "pollen") == true
-        @test allergic_to(224, "pollen") == true
-        @test allergic_to(160, "pollen") == false
-        @test allergic_to(255, "pollen") == true
+        @test !allergic_to(0, "pollen")
+        @test  allergic_to(64, "pollen")
+        @test  allergic_to(224, "pollen")
+        @test !allergic_to(160, "pollen")
+        @test  allergic_to(255, "pollen")
     end
 
     @testset "testing for cats allergy" begin
-        @test allergic_to(0, "cats") == false
-        @test allergic_to(128, "cats") == true
-        @test allergic_to(192, "cats") == true
-        @test allergic_to(64, "cats") == false
-        @test allergic_to(255, "cats") == true
+        @test !allergic_to(0, "cats")
+        @test  allergic_to(128, "cats")
+        @test  allergic_to(192, "cats")
+        @test !allergic_to(64, "cats")
+        @test  allergic_to(255, "cats")
     end
 end
 
