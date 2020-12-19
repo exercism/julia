@@ -2,7 +2,6 @@ using Test
 
 include("roman-numerals.jl")
 
-# HINT: There is no need to be able to convert numbers larger than about 3000.
 samples = Dict(
     1 => "I",
     2 => "II",
@@ -13,6 +12,7 @@ samples = Dict(
     9 => "IX",
     27 => "XXVII",
     48 => "XLVIII",
+    49 => "XLIX",
     59 => "LIX",
     93 => "XCIII",
     141 => "CXLI",
