@@ -36,6 +36,16 @@ end
     @test !isvalid(ISBN, "3-598-21515-X")
     # empty ISBN
     @test !isvalid(ISBN, "")
+    # invalid character in ISBN
+    @test !isvalid(ISBN, "3-598-P1581-X")
+    # too short ISBN
+    @test !isvalid(ISBN, "00")
+    # input is 9 characters
+    @test !isvalid(ISBN, "134456729")
+    # invalid characters are not ignored
+    @test !isvalid(ISBN, "3132P34035")
+    # input is too long but contains a valid ISBN
+    @test !isvalid(ISBN, "98245726788")
 end
 
 @testset "constructing valid ISBN numbers" begin
@@ -70,4 +80,14 @@ end
     @test_throws DomainError ISBN("3-598-21515-X")
     # empty ISBN
     @test_throws DomainError ISBN("")
+    # invalid character in ISBN
+    @test_throws DomainError ISBN("3-598-P1581-X")
+    # too short ISBN
+    @test_throws DomainError ISBN("00")
+    # input is 9 characters
+    @test_throws DomainError ISBN("134456729")
+    # invalid characters are not ignored
+    @test_throws DomainError ISBN("3132P34035")
+    # input is too long but contains a valid ISBN
+    @test_throws DomainError ISBN("98245726788")
 end
