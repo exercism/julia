@@ -94,6 +94,6 @@
   description: Changes to the track or exercise configs"
   color: "ededed"
 
-- name: "v3 launch :rocket:"
+- name: "v3 :rocket:"
   description: "Issues that need to be resolved for the launch of v3"
   color: "ff00ff"
