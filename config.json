@@ -954,5 +954,24 @@
       "content": "Unicode operators & identifiers, plus operator overloading, allows elegant code that looks like math",
       "icon": ""
     }
+  ],
+  "tags": [
+    "execution_mode/compiled",
+    "typing/dynamic",
+    "paradigm/declarative",
+    "paradigm/functional",
+    "paradigm/imperative",
+    "paradigm/object_oriented",
+    "paradigm/procedural",
+    "platform/windows",
+    "platform/mac",
+    "platform/linux",
+    "used_for/artificial_intelligence",
+    "used_for/cross_platform_development",
+    "used_for/financial_systems",
+    "used_for/robotics",
+    "used_for/scientific_calculations",
+    "used_for/scripts",
+    "used_for/web_development"
   ]
 }
