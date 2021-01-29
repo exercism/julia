@@ -27,11 +27,6 @@ for exercise in readdir("exercises")
     Base.include(m, joinpath(exercise_path, "examplar.jl"))
     @info "Testing $exercise"
     Base.include(m, joinpath(exercise_path, "runtests.jl"))
-    
-    # Check that all ipynb's are valid JSON
-    # open("$exercise_path/$exercise.ipynb") do f
-    #     string(JSON3.read(f))
-    # end
 
     println() # to make the output more readable
 end
