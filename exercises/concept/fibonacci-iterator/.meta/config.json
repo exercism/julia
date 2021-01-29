@@ -1,20 +1,22 @@
 {
   "language_versions": "≥1.0",
   "files": {
-    "test": [
-      "runtests.jl"
-    ],
     "exemplar": [
       ".meta/exemplar.jl"
+    ],
+    "test": [
+      "runtests.jl"
     ],
     "solution": [
       "fibonacci.jl"
     ]
   },
+  "contributors": [],
   "authors": [
     {
       "github_username": "SaschaMann",
       "exercism_username": "SaschaMann"
     }
-  ]
+  ],
+  "forked_from": null
 }

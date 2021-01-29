@@ -1,11 +1,11 @@
 {
   "language_versions": "≥1.0",
   "files": {
-    "test": [
-      "runtests.jl"
-    ],
     "exemplar": [
       ".meta/exemplar.jl"
+    ],
+    "test": [
+      "runtests.jl"
     ],
     "solution": [
       "game.jl"
@@ -23,7 +23,5 @@
       "exercism_username": "SaschaMann"
     }
   ],
-  "forked_from": [
-    "javascript/boolean"
-  ]
+  "forked_from": "javascript/boolean"
 }

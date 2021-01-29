@@ -1,23 +1,22 @@
 {
   "language_versions": "≥1.0",
   "files": {
-    "test": [
-      "runtests.jl"
-    ],
     "exemplar": [
       ".meta/exemplar.jl"
+    ],
+    "test": [
+      "runtests.jl"
     ],
     "solution": [
       "lasagna.jl"
     ]
   },
-  "forked_from": [
-    "fsharp/basics"
-  ],
+  "contributors": [],
   "authors": [
     {
       "github_username": "SaschaMann",
       "exercism_username": "SaschaMann"
     }
-  ]
+  ],
+  "forked_from": "fsharp/basics"
 }
