@@ -23,7 +23,8 @@
         "concepts": [
           "functions-introduction"
         ],
-        "prerequisites": []
+        "prerequisites": [],
+        "status": "wip"
       },
       {
         "uuid": "05cfc609-3a14-479a-b6fa-6d2a53ad111c",
@@ -35,7 +36,8 @@
         ],
         "prerequisites": [
           "functions-introduction"
-        ]
+        ],
+        "status": "wip"
       },
       {
         "uuid": "3c0ab989-6544-4a1a-8e93-c2b5dc3d4109",
@@ -46,7 +48,8 @@
         ],
         "prerequisites": [
           "booleans"
-        ]
+        ],
+        "status": "wip"
       },
       {
         "uuid": "f2f696e6-8a6a-4c8c-ae0b-d940d8579905",
@@ -60,7 +63,8 @@
           "functions-introduction",
           "boolean-logic",
           "booleans"
-        ]
+        ],
+        "status": "wip"
       },
       {
         "uuid": "b615a19c-ab76-4f93-985f-7e4c628b6939",
@@ -75,7 +79,8 @@
         "prerequisites": [
           "boolean-expressions",
           "strings"
-        ]
+        ],
+        "status": "wip"
       },
       {
         "uuid": "36cbda04-3921-4491-9ec6-76951f00aa00",
@@ -86,7 +91,8 @@
         ],
         "prerequisites": [
           "functions-introduction"
-        ]
+        ],
+        "status": "wip"
       },
       {
         "uuid": "68001762-8a35-4494-9de4-624ca9efb5cd",
@@ -99,7 +105,8 @@
           "composite-types",
           "abstract-types",
           "methods"
-        ]
+        ],
+        "status": "wip"
       },
       {
         "uuid": "2b2b8bed-ff39-4e77-a2fe-254125b53a1c",
@@ -114,7 +121,8 @@
           "composite-types",
           "methods",
           "constants"
-        ]
+        ],
+        "status": "wip"
       },
       {
         "uuid": "9a864ac5-0fda-4ba2-bccc-702a1444c412",
@@ -131,7 +139,8 @@
           "nothingness",
           "parametric-types",
           "tuples"
-        ]
+        ],
+        "status": "wip"
       }
     ],
     "practice": [
