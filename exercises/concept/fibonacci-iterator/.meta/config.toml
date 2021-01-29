@@ -1,0 +1,7 @@
+authors = [
+    { github = "SaschaMann", exercism = "SaschaMann" },
+]
+
+contributors = []
+
+solution = "fibonacci.jl"

@@ -1,0 +1,7 @@
+authors = [
+    { github = "SaschaMann", exercism = "SaschaMann" },
+]
+
+contributors = []
+
+forked_from = "v2/leap"
