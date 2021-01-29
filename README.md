@@ -1,7 +1,8 @@
 # Exercism Julia Track
 
-![Run tests](https://github.com/exercism/julia/workflows/Run%20tests/badge.svg)
-[![codecov](https://codecov.io/gh/exercism/julia/branch/master/graph/badge.svg)](https://codecov.io/gh/exercism/julia)
+![Exercise CI](https://github.com/exercism/julia/workflows/Exercise%20CI/badge.svg)
+![Configlet](https://github.com/exercism/julia/workflows/Configlet/badge.svg)
+
 
 Exercism exercises in Julia.
 
