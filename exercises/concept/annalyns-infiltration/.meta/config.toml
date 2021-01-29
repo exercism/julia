@@ -1,0 +1,10 @@
+authors = [
+    { github = "SaschaMann", exercism = "SaschaMann" },
+]
+
+contributors = [
+    { github = "cmcaine", exercism = "cmcaine" },
+]
+
+forked_from = "javascript/boolean"
+solution = "game.jl"
