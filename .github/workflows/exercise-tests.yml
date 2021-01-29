@@ -5,8 +5,13 @@ on:
   push:
     branches:
       - main
-      - master
+    paths:
+      - "exercises/"
+      - "runtests.jl"
   pull_request:
+    paths:
+      - "exercises/"
+      - "runtests.jl"
 
 jobs:
   test:
@@ -15,9 +20,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        julia-version: ['1.0', '1', nightly]
+        julia-version: ["1.0", "1", nightly]
         os: [ubuntu-latest, windows-latest, macOS-latest]
-    
+
     steps:
       - uses: actions/checkout@v2
 
