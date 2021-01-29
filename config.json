@@ -365,7 +365,8 @@
         "conditionals",
         "loops",
         "strings"
-      ]
+      ],
+      "status": "deprecated"
     },
     {
       "slug": "clock",
@@ -617,7 +618,8 @@
         "variables",
         "integers",
         "arrays"
-      ]
+      ],
+      "status": "deprecated"
     },
     {
       "uuid": "4eced190-062f-4a7b-8c92-87ff02f1e343",
