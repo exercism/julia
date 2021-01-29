@@ -9,7 +9,6 @@ on:
 
 jobs:
   configlet:
-    continue-on-error: true
     runs-on: ubuntu-latest
 
     steps:
@@ -19,4 +18,5 @@ jobs:
       uses: exercism/github-actions/configlet-ci@main
         
     - name: Configlet Linter
+      continue-on-error: true
       run: configlet lint
