@@ -158,7 +158,7 @@
         "slug": "leap",
         "name": "Leap",
         "uuid": "8740c914-f008-4b6b-8e7d-7470e78e6a8e",
-        "prerequisites": [],
+        "prerequisites": ["boolean-logic"],
         "difficulty": 1,
         "topics": [
           "math",
@@ -170,7 +170,10 @@
         "slug": "nucleotide-count",
         "name": "Nucleotide Count",
         "uuid": "54c24809-c6e7-419b-8ec3-6d8d128ca546",
-        "prerequisites": [],
+        "prerequisites": [
+          "arithmetic-operators", "loops", "dicts",
+          "chars", "strings"
+        ],
         "difficulty": 1,
         "topics": [
           "chars",
@@ -182,7 +185,10 @@
         "slug": "pangram",
         "name": "Pangram",
         "uuid": "4bc9a4f8-fc4d-4e6b-a93c-07069bbc5bc9",
-        "prerequisites": [],
+        "prerequisites": [
+          "boolean-logic", "loops",
+          "chars", "strings"
+        ],
         "difficulty": 1,
         "topics": [
           "arrays",
@@ -194,7 +200,10 @@
         "slug": "rotational-cipher",
         "name": "Rotational Cipher",
         "uuid": "79ea05f1-3f27-4b92-bc47-0cebcd8d5a6f",
-        "prerequisites": [],
+        "prerequisites": [
+          "arithmetic-operators", "loops",
+          "chars", "strings"
+        ],
         "difficulty": 2,
         "topics": [
           "metaprogramming",
@@ -206,7 +215,9 @@
         "slug": "difference-of-squares",
         "name": "Difference Of Squares",
         "uuid": "16550822-4751-4bb3-9e15-80361006e2d6",
-        "prerequisites": [],
+        "prerequisites": [
+          "arithmetic-operators", "generators"
+        ],
         "difficulty": 1,
         "topics": [
           "generators",
@@ -217,7 +228,9 @@
         "slug": "raindrops",
         "name": "Raindrops",
         "uuid": "7a083573-2c68-47cc-8bc8-c0e483cf0e50",
-        "prerequisites": [],
+        "prerequisites": [
+          "arithmetic-operators", "conditionals", "loops"
+        ],
         "difficulty": 1,
         "topics": [
           "arrays",
@@ -229,7 +242,9 @@
         "slug": "secret-handshake",
         "name": "Secret Handshake",
         "uuid": "d2c85375-c0e7-4e04-88f1-08736e5afa04",
-        "prerequisites": [],
+        "prerequisites": [
+          "bitwise-operators", "conditionals", "loops"
+        ],
         "difficulty": 2,
         "topics": [
           "arrays",
@@ -240,7 +255,9 @@
         "slug": "clock",
         "name": "Clock",
         "uuid": "39bc1f1e-68e3-4d35-880b-d6b6fa174605",
-        "prerequisites": [],
+        "prerequisites": [
+          "arithmetic-operators", "structs", "loops"
+        ],
         "difficulty": 5,
         "topics": [
           "time",
@@ -252,7 +269,10 @@
         "slug": "robot-name",
         "name": "Robot Name",
         "uuid": "7cb2d96a-4707-4cec-9ead-313fcb5fbb94",
-        "prerequisites": [],
+        "prerequisites": [
+          "arithmetic-operators", "structs", "methods", "randomness",
+          "loops", "conditionals"
+        ],
         "difficulty": 5,
         "topics": [
           "randomness",
