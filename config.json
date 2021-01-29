@@ -922,5 +922,37 @@
       "name": "Unicode Identifiers",
       "blurb": "TODO: add blurb for unicode-identifiers concept"
     }
+  ],
+  "key_features": [
+    {
+      "title": "Fast",
+      "content": "Julia is designed for high performance. Julia compiles efficient native code for multiple platforms",
+      "icon": ""
+    },
+    {
+      "title": "Interactive",
+      "content": "Julia is dynamically typed, feels like a scripting language and has good support for interactive use",
+      "icon": ""
+    },
+    {
+      "title": "Scientific",
+      "content": "Julia is designed with reproducibility, distributed computing and frictionless collaboration in mind",
+      "icon": ""
+    },
+    {
+      "title": "Composable",
+      "content": "Julia uses multiple dispatch as a paradigm, making it unreasonably effective for composing programs!",
+      "icon": ""
+    },
+    {
+      "title": "Expressive",
+      "content": "Multiple dispatch, generator expressions and metaprogramming features lead to highly expressive code",
+      "icon": ""
+    },
+    {
+      "title": "Natural Syntax",
+      "content": "Unicode operators & identifiers, plus operator overloading, allows elegant code that looks like math",
+      "icon": ""
+    }
   ]
 }
