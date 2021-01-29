@@ -6,6 +6,33 @@
 
 Exercism exercises in Julia.
 
+## v3: Track-specific tooling
+
+### `make.jl`
+
+Some files, like `.meta/config.json` contain redundant information for the Julia track.
+Instead of manually updating these, `.meta/config.toml` and `make.jl` should be used.
+Running `julia --project make.jl` will generate the `.meta/config.json` files based on the information given in `.meta/config.toml`.
+
+`.meta/config.toml` will look like this for most exercises:
+
+```toml
+authors = [
+    { github = "Foo", exercism = "Foo" },
+]
+
+contributors = [
+    { github = "Bar", exercism = "Bar" },
+]
+```
+
+If necessary, `forked_from` and `solution` keys can be used to specify the value of `forked_from` and overwrite the name of the solution file, e.g.:
+
+```toml
+forked_from = "javascript/boolean"
+solution = "game.jl"
+```
+
 ## Contributing Guide
 
 Please see the [contributing guide](CONTRIBUTING.md).
