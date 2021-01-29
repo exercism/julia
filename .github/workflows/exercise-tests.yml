@@ -1,4 +1,4 @@
-name: Exercise tests
+name: Exercise CI
 
 on:
   workflow_dispatch:
