@@ -53,7 +53,7 @@
       },
       {
         "uuid": "f2f696e6-8a6a-4c8c-ae0b-d940d8579905",
-        "slug": "leap",
+        "slug": "leap-years",
         "concepts": [
           "arithmetic-operators",
           "integer-equality",
@@ -158,13 +158,14 @@
         "slug": "leap",
         "name": "Leap",
         "uuid": "8740c914-f008-4b6b-8e7d-7470e78e6a8e",
-        "prerequisites": ["boolean-logic"],
+        "prerequisites": [],
         "difficulty": 1,
         "topics": [
           "math",
           "conditionals",
           "integers"
-        ]
+        ],
+        "status": "deprecated"
       },
       {
         "slug": "nucleotide-count",
