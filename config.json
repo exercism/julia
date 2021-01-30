@@ -257,7 +257,7 @@
         "name": "Clock",
         "uuid": "39bc1f1e-68e3-4d35-880b-d6b6fa174605",
         "prerequisites": [
-          "arithmetic-operators", "structs", "loops"
+          "arithmetic-operators", "structs", "loops", "multiple-dispatch"
         ],
         "difficulty": 5,
         "topics": [
@@ -271,7 +271,7 @@
         "name": "Robot Name",
         "uuid": "7cb2d96a-4707-4cec-9ead-313fcb5fbb94",
         "prerequisites": [
-          "arithmetic-operators", "structs", "methods", "randomness",
+          "arithmetic-operators", "structs", "multiple-dispatch", "randomness",
           "loops", "conditionals"
         ],
         "difficulty": 5,
