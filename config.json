@@ -125,6 +125,22 @@
         "status": "wip"
       },
       {
+        "uuid": "0e7ecc5e-b4d6-4ead-bfaa-a2ebdddcff47",
+        "name": "Stage Heralding",
+        "slug": "stage-heralding",
+        "concepts": [
+          "regex"
+        ],
+        "prerequisites": [
+          "strings",
+          "conditionals",
+          "nothingness",
+          "symbols",
+          "getindex"
+        ],
+        "status": "wip"
+      },
+      {
         "uuid": "9a864ac5-0fda-4ba2-bccc-702a1444c412",
         "name": "Fibonacci Iterator",
         "slug": "fibonacci-iterator",
