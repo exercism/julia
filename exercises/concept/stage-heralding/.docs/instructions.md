@@ -84,7 +84,7 @@ A few things to note here:
 - If no time for the Q&A session is given, the speaker opted against answering questions.
 - If the speaker does not specify pronouns, use the speaker's first name instead.
 
-## 1. Write a regex that captures the information you need to generate the cards
+## 1. Capture the information needed to generate the cards using regex
 
 It's easiest to use a regex builder tool like [regex101](https://regex101.com/) or [RegExr](https://regexr.com/) to do this.
 
@@ -98,7 +98,7 @@ julia> get_org("»Speedrunning 101« – Sasha Duda Krall (they/them), from GDQU
 "GDQU"
 ```
 
-## 2. Write a function that takes a line and returns the generated moderation card
+## 2. Generate the moderation card
 
 Use the expression from the first part and implement a function that takes a line as input, captures the information from it, and returns the generated moderation card according to the spec above.
 
