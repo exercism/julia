@@ -1,4 +1,4 @@
-## Learning Julia with a Python background
+# Learning Julia with a Python background
 
 ### Workflow differences
 

@@ -1,4 +1,4 @@
-## Learning Julia with a C/C++ background
+# Learning Julia with a C/C++ background
 
 ### Resources
 

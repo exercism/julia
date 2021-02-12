@@ -1,4 +1,4 @@
-## Learning Julia with a MATLAB background
+# Learning Julia with a MATLAB background
 
 ### Resources
 

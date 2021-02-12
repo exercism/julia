@@ -1,4 +1,4 @@
-## Learning Julia with a Common Lisp background
+# Learning Julia with a Common Lisp background
 
 ### Resources
 

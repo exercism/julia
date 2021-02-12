@@ -1,3 +1,5 @@
+# Instructions
+
 Something something dot matrix display.
 
 <!-- TODO: This needs to be phrased better. -->

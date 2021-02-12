@@ -1,3 +1,5 @@
+# Introduction
+
 If several boolean expressions are chained together using the `&&` and `||` operators, Julia will only evaluate the least amount of expressions that are necessary to determine the value of the entire chain.
 
 For an example, consider the expression chain `n > 0 && k > 10`.

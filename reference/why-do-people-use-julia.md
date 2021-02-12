@@ -1,4 +1,4 @@
-## Why do people use Julia?
+# Why do people use Julia?
 
 Knowing why people use Julia and what users (dis-)like about it can be helpful to determine what aspects of it should be taught, even if those aspects don't fit the definition of a concept.
 

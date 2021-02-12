@@ -1,3 +1,5 @@
+# Installation
+
 To install Julia on your system follow the instructions on the [Julia Language Downloads page](https://julialang.org/downloads/).
 
 [JuliaPro](https://juliacomputing.com/products/juliapro.html) includes the latest stable version of Julia, the Juno IDE, a debugger, a Jupyter notebook environment and many of the most popular Julia packages. It is a convenient way to install everything you will need to get started. Please note that JuliaPro may contain outdated versions of packages or the language itself as it focuses on providing a stable installation.

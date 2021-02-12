@@ -1,3 +1,5 @@
+# Instructions
+
 In this exercise you're going to write an iterator that iterates through the first `n` elements of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
 
 ## Fibonacci sequence

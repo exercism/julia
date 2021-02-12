@@ -1,4 +1,4 @@
-## Learning Julia with an R background
+# Learning Julia with an R background
 
 ### Resources
 

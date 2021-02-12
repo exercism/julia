@@ -1,3 +1,5 @@
+# Instructions append
+
 The test suite only generates ~100 names by default.
 There are ~700k valid names, so it will only give a small chance of collisions.
 Consider testing your solution for collisions in some other way in addition to the test suite.
