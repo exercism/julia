@@ -3,7 +3,7 @@
 The entire Julia track will require you to treat your solution like small libraries, i.e. you need to define functions, types etc. which will then be run against a test suite.
 For that reason, we will introduce named functions as the very first concept.
 
-### Defining functions
+## Defining functions
 
 There are two common ways to define a named function in Julia:
 
@@ -21,7 +21,7 @@ muladd(x, y, z) = x * y + z
 
 The latter is most commonly used for one-line function definitions or mathematical functions.
 
-### Invoking functions
+## Invoking functions
 
 Invoking a function is done by specifying its name and passing arguments for each of the function's parameters:
 

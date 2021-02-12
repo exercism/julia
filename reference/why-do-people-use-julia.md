@@ -4,7 +4,7 @@ Knowing why people use Julia and what users (dis-)like about it can be helpful t
 
 The source for all information in this paragraph is the [Julia User & Developer Survey June 2019](https://julialang.org/blog/2019/08/2019-julia-survey). Aspects and features that aren't relevant to teaching/learning Julia have been omitted (e.g. an immature ecosystem).
 
-### Most popular technical features
+## Most popular technical features
 
 <!-- prettier-ignore -->
 1. Speed, performance
@@ -15,14 +15,14 @@ The source for all information in this paragraph is the [Julia User & Developer 
 7. Integrates well with other language(s)
 9. 1-based indexing
 
-### Biggest technical problems
+## Biggest technical problems
 
 <!-- prettier-ignore -->
 2. It takes too long to generate the first plot<sup>2</sup>
 4. Slow compile times
 12. 1-based indexing
 
-### If not for Julia, what language would users be using?
+## If not for Julia, what language would users be using?
 
 This can help in finding out which transitions are the most common.
 
@@ -42,7 +42,7 @@ Under 5% of respondents:
 8. SQL
 9. Scala
 
-### Footnotes
+## Footnotes
 
 <sup>1</sup>The two language problem refers to the issue that performance-critical scientific or technical code is often written in a language like C/C++/Fortran but called from a higher-level but slower language like Python or MATLAB. Often this includes prototyping in Python/MATLAB and then translating code into a faster language.
 
