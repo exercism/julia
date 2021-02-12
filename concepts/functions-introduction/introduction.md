@@ -1,3 +1,5 @@
+# Introduction
+
 ## Defining functions
 
 There are two common ways to define a named function in Julia:

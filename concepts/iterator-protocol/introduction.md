@@ -1,3 +1,5 @@
+# Introduction
+
 <!-- TODO: the content below is copied from the exercise introduction and probably needs rewriting to a proper concept introduction -->
 <!-- TODO: Motivate why iterators are useful -->
 <!-- TODO: Add explanation why the Base.-prefix or import is necessary -->
@@ -49,7 +51,7 @@ while !isnothing(next_item)
 end
 ```
 
-### Example
+## Example
 
 We want to define an iterator `Squares(n)` to iterate the sequence of [square numbers](https://en.wikipedia.org/wiki/Square_number) smaller than `n`. Square numbers are numbers that are the square of an integer. For example, 9 is a square number, since it can be written as `3 * 3`. The end result should look like:
 
@@ -84,7 +86,7 @@ Base.iterate(S::Squares) = iterate(S, 1)
 
 You may find it useful to combine these two definitions into one using optional arguments:
 
-### optional-arguments
+## optional-arguments
 
 ```julia
 julia> f(a, b=1) = a + b
@@ -106,7 +108,7 @@ In the response in the REPL, you can see that the first definition defines two m
 This is particularly useful when the computation of the next item is identical regardless if it's the first or a consecutive iteration.
 Some iterators may require a more extensive initialisation, in which case it can be better to split them into two separate definitions.
 
-### Source
+## Source
 
 This entire section is based on the Julia Manual section on the [Iteration Interface](https://docs.julialang.org/en/v1/manual/interfaces/#man-interface-iteration)[^1].
 

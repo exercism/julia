@@ -1,4 +1,6 @@
-### Summary
+# About
+
+## Summary
 
 This exercise showed how to:
 
@@ -6,7 +8,7 @@ This exercise showed how to:
 - Do arithmetic calculations with integers.
 - Invoke functions.
 
-#### Defining functions
+### Defining functions
 
 There are two common ways to define a named function in Julia:
 
@@ -24,7 +26,7 @@ muladd(x, y, z) = x * y + z
 
 The latter is most commonly used for one-line function definitions or mathematical functions.
 
-#### Invoking functions
+### Invoking functions
 
 Invoking a function is done by specifying its name and passing arguments for each of the function's parameters:
 
@@ -34,7 +36,7 @@ mul(x, y) = x * y
 muladd(x, y, z) = add(mul(x, y), z)
 ```
 
-#### Comments
+### Comments
 
 Julia supports two kinds of comments.
 Single line comments are preceded by `#` and multiline comments are inserted between `#=` and `=#`.

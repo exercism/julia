@@ -1,3 +1,5 @@
+# About
+
 Simple `if-else` statements can also be written using the ternary operator `a ? b : c`.
 If `a` is true, then `b` will be evaluated.
 Otherwise evaluate `c`.

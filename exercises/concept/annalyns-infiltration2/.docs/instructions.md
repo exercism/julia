@@ -1,3 +1,5 @@
+# Instructions
+
 In this exercise, you'll be extending the quest logic for the new role-playing game a friend is developing.
 To make the game more interesting, your friend wants you to add random events that change the situation.
 

@@ -1,4 +1,4 @@
-## Bonus
+# Bonus
 
 Preserve grapheme clusters, i.e.
 
