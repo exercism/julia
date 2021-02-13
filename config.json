@@ -129,14 +129,15 @@
         "name": "Stage Heralding",
         "slug": "stage-heralding",
         "concepts": [
-          "regex"
+          "regex",
+          "getindex",
+          "string-literals-using"
         ],
         "prerequisites": [
           "strings",
           "conditionals",
           "nothingness",
-          "symbols",
-          "getindex"
+          "symbols"
         ],
         "status": "wip"
       },

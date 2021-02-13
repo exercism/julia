@@ -50,6 +50,8 @@ The entire list may look like this:
 »How I learned to say Farewell« – Madeline (she/her). Start: 13:40, Q&A: 14:00, End: 14:05
 »How To Find a Good Title For Your Conference Talk« – Vítězslav Kruse (he/him). Start: 14:15, End: 14:40
 »Why Emoji Matter❣« – Ash van Amelsvoort, from the University of 🧬🧪⚛. Start: 14:50, Q&A: 15:05, End: 15:10
+»Can dogs look up?« – Kira "k1ralli" Sørensen. Start: 20:50, Q&A: 21:05, End: 21:10
+»SQL Injection 201« – Robert'); DROP TABLE Students; --. Start: 21:15, Q&A: 21:40, End: 21:45
 ```
 
 The corresponding cards are:
@@ -65,24 +67,40 @@ The corresponding cards are:
 ```text
 - Our next speaker is Vítězslav Kruse
 - His talk is called »How To Find a Good Title For Your Conference Talk«
-- There will not be a Q&A session.
+- There will not be a Q&A session
 
 14:15 - NO Q&A - 14:40
 ```
 
 ```text
 - Our next speaker is Ash van Amelsvoort, from the University of 🧬🧪⚛
-- Ash's talk is called »Why Emoji Matter❣«
-- Ash will answer your questions in the Q&A session at the end of the talk, starting at 15:05
+- Ash van Amelsvoort's talk is called »Why Emoji Matter❣«
+- Ash van Amelsvoort will answer your questions in the Q&A session at the end of the talk, starting at 15:05
 
 14:50 - 15:05 - 15:10
+```
+
+```text
+- Our next speaker is Kira "k1ralli" Sørensen
+- Kira "k1ralli" Sørensen's talk is called »Can dogs look up?«
+- Kira "k1ralli" Sørensen will answer your questions in the Q&A session at the end of the talk, starting at 21:05
+
+20:50 - 21:05 - 21:10 
+```
+
+```text
+- Our next speaker is Robert'); DROP TABLE Students; --
+- Robert'); DROP TABLE Students; --'s talk is called »SQL Injection 201«
+- Robert'); DROP TABLE Students; -- will answer your questions in the Q&A session at the end of the talk, starting at 21:40
+
+21:15 - 21:40 - 21:45
 ```
 
 A few things to note here:
 
 - If no organisation is given for a speaker, leave it out in the moderation card.
 - If no time for the Q&A session is given, the speaker opted against answering questions.
-- If the speaker does not specify pronouns, use the speaker's first name instead.
+- If the speaker does not specify pronouns, use the speaker's name instead.
 
 ## 1. Capture the information needed to generate the cards using regex
 
