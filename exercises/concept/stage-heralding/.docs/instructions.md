@@ -51,7 +51,6 @@ The entire list may look like this:
 »How To Find a Good Title For Your Conference Talk« – Vítězslav Kruse (he/him). Start: 14:15, End: 14:40
 »Why Emoji Matter❣« – Ash van Amelsvoort, from the University of 🧬🧪⚛. Start: 14:50, Q&A: 15:05, End: 15:10
 »Can dogs look up?« – Kira "k1ralli" Sørensen. Start: 20:50, Q&A: 21:05, End: 21:10
-»SQL Injection 201« – Robert'); DROP TABLE Students; --. Start: 21:15, Q&A: 21:40, End: 21:45
 ```
 
 The corresponding cards are:
@@ -86,14 +85,6 @@ The corresponding cards are:
 - Kira will answer your questions in the Q&A session at the end of the talk, starting at 21:05
 
 20:50 - 21:05 - 21:10 
-```
-
-```text
-- Our next speaker is Robert'); DROP TABLE Students; --
-- Robert');'s talk is called »SQL Injection 201«
-- Robert'); will answer your questions in the Q&A session at the end of the talk, starting at 21:40
-
-21:15 - 21:40 - 21:45
 ```
 
 A few things to note here:

@@ -51,13 +51,3 @@ end
         20:50 - 21:05 - 21:10
         """
 end
-
-@testset "SQL Injection 201" begin
-    @test generate_card("»SQL Injection 201« – Robert'); DROP TABLE Students; --. Start: 21:15, Q&A: 21:40, End: 21:45") == """
-        - Our next speaker is Robert'); DROP TABLE Students; --
-        - Robert');'s talk is called »SQL Injection 201«
-        - Robert'); will answer your questions in the Q&A session at the end of the talk, starting at 21:40
-        
-        21:15 - 21:40 - 21:45
-        """
-end
