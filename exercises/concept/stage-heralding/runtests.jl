@@ -2,6 +2,12 @@ using Test
 
 include("card-generator.jl")
 
+# Julia 1.0 compat
+if VERSION < v"1.1"
+    @eval isnothing(::Any) = false
+    @eval isnothing(::Nothing) = true
+end
+
 @testset "Speedrunning 101" begin
     @test generate_card("»Speedrunning 101« – Sasha Duda Krall (they/them), from GDQU. Start: 13:00, Q&A: 13:20, End: 13:30") == """
         - Our next speaker is Sasha Duda Krall, from GDQU
