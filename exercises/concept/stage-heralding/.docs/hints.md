@@ -1,6 +1,6 @@
 # Hints
 
-## 1. Write a regex that captures the information you need to generate the cards
+## 1. Capture the information needed to generate the cards using regex
 
 - `\p{L}` will match any kind of letter from any language.
 - You can use the following expression to capture the information:
@@ -15,4 +15,4 @@
         """x
   ```
 
-## 2. Write a function that takes a line and returns the generated moderation card
+## 2. Generate the moderation card
