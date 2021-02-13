@@ -101,8 +101,8 @@ A few things to note here:
 - If no organisation is given for a speaker, leave it out in the moderation card.
 - If no time for the Q&A session is given, the speaker opted against answering questions.
 - If the speaker does not specify pronouns, use the speaker's first name instead.
-  Note that in general, it is not safe to assume that the name of a person used in informal contexts is also their first name.
-  However, among the speakers on this stage, this happens to be the case.
+  Note that it is not always appropriate to abbreviate someone's name like this, e.g. many Chinese names are better abbreviated by keeping the last name.
+  However, the abbreviate-to-first-name rule happens to work fine for everyone speaking on this stage.
 
 ## 1. Capture the information needed to generate the cards using regex
 
