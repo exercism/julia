@@ -7,13 +7,11 @@ on:
       - main
     paths:
       - "exercises/**"
-      - "!exercises/**/.docs/**"
       - "runtests.jl"
       - ".github/workflows/exercise-tests.yml"
   pull_request:
     paths:
       - "exercises/**"
-      - "!exercises/**/.docs/**"
       - "runtests.jl"
       - ".github/workflows/exercise-tests.yml"
 
