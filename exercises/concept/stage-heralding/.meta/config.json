@@ -1,0 +1,26 @@
+{
+  "language_versions": "≥1.0",
+  "files": {
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "solution": [
+      "card-generator.jl"
+    ]
+  },
+  "contributors": [],
+  "authors": [
+    {
+      "github_username": "SaschaMann",
+      "exercism_username": "SaschaMann"
+    },
+    {
+      "github_username": "cmcaine",
+      "exercism_username": "cmcaine"
+    }
+  ],
+  "forked_from": null
+}

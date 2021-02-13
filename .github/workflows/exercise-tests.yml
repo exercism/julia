@@ -6,12 +6,14 @@ on:
     branches:
       - main
     paths:
-      - "exercises/"
+      - "exercises/**"
       - "runtests.jl"
+      - ".github/workflows/exercise-tests.yml"
   pull_request:
     paths:
-      - "exercises/"
+      - "exercises/**"
       - "runtests.jl"
+      - ".github/workflows/exercise-tests.yml"
 
 jobs:
   test:
