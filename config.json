@@ -130,7 +130,6 @@
         "slug": "stage-heralding",
         "concepts": [
           "regex",
-          "getindex",
           "string-literals-using"
         ],
         "prerequisites": [
