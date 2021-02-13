@@ -1,5 +1,6 @@
 authors = [
     { github = "SaschaMann", exercism = "SaschaMann" },
+    { github = "cmcaine", exercism = "cmcaine" }
 ]
 
 contributors = []
