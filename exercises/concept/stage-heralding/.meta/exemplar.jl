@@ -5,7 +5,6 @@ const possessive_pronouns = Dict(
 )
 
 function generate_card(line)
-    # re = r"^»(?P<title>.+)« – (?P<speaker>[\p{L} ]+)(?:\s+\(?(?P<pronouns>[a-z\/]+)?\))?(?:, from (?P<org>[^.]+))?\. Start: (?P<start>[\d:]+)(?:, Q&A: (?P<qanda>[\d:]+))?, End: (?P<end>[\d:]*)$"
     re = r"""»(.*)«                     # title
              \ –\ (.*?)                 # name
              (?:\ \((.*?)\)|)           # optional pronouns
