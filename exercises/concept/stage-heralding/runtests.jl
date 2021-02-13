@@ -2,12 +2,6 @@ using Test
 
 include("card-generator.jl")
 
-# Julia 1.0 compat
-if VERSION < v"1.1"
-    @eval isnothing(::Any) = false
-    @eval isnothing(::Nothing) = true
-end
-
 @testset "Speedrunning 101" begin
     @test generate_card("»Speedrunning 101« – Sasha Duda Krall (they/them), from GDQU. Start: 13:00, Q&A: 13:20, End: 13:30") == """
         - Our next speaker is Sasha Duda Krall, from GDQU
@@ -41,8 +35,8 @@ end
 @testset "Why Emoji Matter❣" begin
     @test generate_card("»Why Emoji Matter❣« – Ash van Amelsvoort, from the University of 🧬🧪⚛. Start: 14:50, Q&A: 15:05, End: 15:10") == """
         - Our next speaker is Ash van Amelsvoort, from the University of 🧬🧪⚛
-        - Ash van Amelsvoort's talk is called »Why Emoji Matter❣«
-        - Ash van Amelsvoort will answer your questions in the Q&A session at the end of the talk, starting at 15:05
+        - Ash's talk is called »Why Emoji Matter❣«
+        - Ash will answer your questions in the Q&A session at the end of the talk, starting at 15:05
         
         14:50 - 15:05 - 15:10
         """
@@ -51,8 +45,8 @@ end
 @testset "»Can dogs look up?" begin
     @test generate_card("»Can dogs look up?« – Kira \"k1ralli\" Sørensen. Start: 20:50, Q&A: 21:05, End: 21:10") == """
         - Our next speaker is Kira "k1ralli" Sørensen
-        - Kira "k1ralli" Sørensen's talk is called »Can dogs look up?«
-        - Kira "k1ralli" Sørensen will answer your questions in the Q&A session at the end of the talk, starting at 21:05
+        - Kira's talk is called »Can dogs look up?«
+        - Kira will answer your questions in the Q&A session at the end of the talk, starting at 21:05
         
         20:50 - 21:05 - 21:10
         """
@@ -61,8 +55,8 @@ end
 @testset "SQL Injection 201" begin
     @test generate_card("»SQL Injection 201« – Robert'); DROP TABLE Students; --. Start: 21:15, Q&A: 21:40, End: 21:45") == """
         - Our next speaker is Robert'); DROP TABLE Students; --
-        - Robert'); DROP TABLE Students; --'s talk is called »SQL Injection 201«
-        - Robert'); DROP TABLE Students; -- will answer your questions in the Q&A session at the end of the talk, starting at 21:40
+        - Robert');'s talk is called »SQL Injection 201«
+        - Robert'); will answer your questions in the Q&A session at the end of the talk, starting at 21:40
         
         21:15 - 21:40 - 21:45
         """

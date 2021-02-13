@@ -74,24 +74,24 @@ The corresponding cards are:
 
 ```text
 - Our next speaker is Ash van Amelsvoort, from the University of 🧬🧪⚛
-- Ash van Amelsvoort's talk is called »Why Emoji Matter❣«
-- Ash van Amelsvoort will answer your questions in the Q&A session at the end of the talk, starting at 15:05
+- Ash's talk is called »Why Emoji Matter❣«
+- Ash will answer your questions in the Q&A session at the end of the talk, starting at 15:05
 
 14:50 - 15:05 - 15:10
 ```
 
 ```text
 - Our next speaker is Kira "k1ralli" Sørensen
-- Kira "k1ralli" Sørensen's talk is called »Can dogs look up?«
-- Kira "k1ralli" Sørensen will answer your questions in the Q&A session at the end of the talk, starting at 21:05
+- Kira's talk is called »Can dogs look up?«
+- Kira will answer your questions in the Q&A session at the end of the talk, starting at 21:05
 
 20:50 - 21:05 - 21:10 
 ```
 
 ```text
 - Our next speaker is Robert'); DROP TABLE Students; --
-- Robert'); DROP TABLE Students; --'s talk is called »SQL Injection 201«
-- Robert'); DROP TABLE Students; -- will answer your questions in the Q&A session at the end of the talk, starting at 21:40
+- Robert');'s talk is called »SQL Injection 201«
+- Robert'); will answer your questions in the Q&A session at the end of the talk, starting at 21:40
 
 21:15 - 21:40 - 21:45
 ```
@@ -100,7 +100,9 @@ A few things to note here:
 
 - If no organisation is given for a speaker, leave it out in the moderation card.
 - If no time for the Q&A session is given, the speaker opted against answering questions.
-- If the speaker does not specify pronouns, use the speaker's name instead.
+- If the speaker does not specify pronouns, use the speaker's first name instead.
+  Note that in general, it is not safe to assume that the name of a person used in informal contexts is also their first name.
+  However, among the speakers on this stage, this happens to be the case.
 
 ## 1. Capture the information needed to generate the cards using regex
 
