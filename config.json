@@ -16,16 +16,16 @@
   },
   "files": {
     "solution": [
-      "path/to/%{kebab_slug}.ext"
+      "%{kebab_slug}.jl"
     ],
     "test": [
-      "path/to/%{kebab_slug}.ext"
+      "runtests.jl"
     ],
     "example": [
-      "path/to/%{kebab_slug}.ext"
+      ".meta/example.jl"
     ],
     "exemplar": [
-      "path/to/%{kebab_slug}.ext"
+      ".meta/exemplar.jl"
     ]
   },
   "exercises": {
