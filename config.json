@@ -149,8 +149,7 @@
         "prerequisites": [
           "strings",
           "conditionals",
-          "nothingness",
-          "symbols"
+          "nothingness"
         ],
         "status": "wip"
       },
