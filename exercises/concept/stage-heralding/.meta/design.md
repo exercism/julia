@@ -38,7 +38,7 @@ Potential future test cases should conform to the following guidelines:
 ## Analyzer
 
 The analyzer should disregard most of the expression defined by the student.
-The expression itself is out of scope of the exercise and does not need to be mentored.
+The regex itself is out of scope of the exercise and does not need to be mentored.
 This should be clearly communicated to both mentors and students.
 
 The analyzer may suggest alternative approachs to writing the expression, e.g. using named capture groups or writing multi-line expressions, but this is not a priority.
