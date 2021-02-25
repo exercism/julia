@@ -1,0 +1,9 @@
+authors = [
+    { github = "SaschaMann", exercism = "SaschaMann" },
+]
+
+contributors = []
+
+forked_from = "javascript/enchantments"
+solution = "enchantments.jl"
+
