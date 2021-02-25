@@ -3,6 +3,7 @@
 ## 1. Retrieve a card from a stack
 
 - `Vector` indices start at `1`.
+- You can retrieve the `n`th value in a vector `v` with `v[n]`.
 
 ## 2. Exchange a card in the stack
 

@@ -17,7 +17,7 @@ julia> card([1, 3, 4, 1], idx)
 ## 2. Exchange a card in the stack
 
 Exchange the card at position `idx` with the new card provided and return the adjusted stack.
-Note that this will also change the input slice which is ok.
+Note that this will mutate (change) the input vector and this is okay.
 
 ```julia
 julia> idx = 2; new_card = 6;
@@ -59,7 +59,7 @@ julia> remove_card_from_top!([1, 3, 4, 1])
 
 ## 6. Insert a card at the bottom of the stack
 
-Insert new card at the bottom of the stack and return the stack.
+Insert a new card at the bottom of the stack and return the stack.
 
 ```julia
 julia> new_card = 8;

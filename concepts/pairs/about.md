@@ -1,4 +1,4 @@
-A `Pair` is a data structure that contains exactly two elements accessible through the fields `first` and `second`.
+A `Pair` is a data structure that contains exactly two elements accessible through the fields `first` and `second` or the indices `1` and `2`.
 
 They can be constructed using `x => y` or `Pair(x, y)`:
 
@@ -41,7 +41,7 @@ Dict{Int64,Int64} with 3 entries:
 
 ## Replacements
 
-Many replacement methods take a `Pair` as argument to make it clear which element is being replaced.
+Many replacement methods take a `Pair` as an argument to make it clear which element is being replaced.
 This allows syntax like
 
 ```julia
