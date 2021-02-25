@@ -1,10 +1,13 @@
 A `Pair` is a data structure that contains exactly two elements accessible through the fields `first` and `second`.
 
-They can be constructed using `x => y`:
+They can be constructed using `x => y` or `Pair(x, y)`:
 
 ```julia
 julia> p = 3 => true
 3 => true
+
+julia> p == Pair(3, true)
+true
 
 julia> p.first
 3
