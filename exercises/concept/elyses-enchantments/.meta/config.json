@@ -1,20 +1,22 @@
 {
-    "language_versions": "≥1.0",
-    "editor": {
-        "test_files": [
-            "runtests.jl"
-        ],
-        "solution_files": [
-            "enchantments.jl"
-        ]
-    },
-    "forked_from": [
-        "javascript/enchantments"
+  "language_versions": "≥1.0",
+  "files": {
+    "exemplar": [
+      ".meta/exemplar.jl"
     ],
-    "authors": [
-        {
-            "github_username": "SaschaMann",
-            "exercism_username": "SaschaMann"
-        }
+    "test": [
+      "runtests.jl"
+    ],
+    "solution": [
+      "enchantments.jl"
     ]
+  },
+  "contributors": [],
+  "authors": [
+    {
+      "github_username": "SaschaMann",
+      "exercism_username": "SaschaMann"
+    }
+  ],
+  "forked_from": "javascript/enchantments"
 }
