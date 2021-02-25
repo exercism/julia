@@ -98,6 +98,6 @@
   description: "Issues that need to be resolved for the launch of v3"
   color: "ff00ff"
 
-- name: "v3-migration"
+- name: "v3-migration 🤖"
   description: "Automated bulk PRs for the launch of v3 that should be merged ASAP"
   color: "ff00ff"
