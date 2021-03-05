@@ -101,3 +101,7 @@
 - name: "v3-migration 🤖"
   description: "Automated bulk PRs for the launch of v3 that should be merged ASAP"
   color: "ff00ff"
+
+- name: "exercism-bot 🤖"
+  description: "Automated bulk PRs that will automatically be merged"
+  color: "ffffff"
