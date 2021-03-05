@@ -3,8 +3,8 @@
   "authors": [],
   "files": {
     "solution": [],
-    "test": [],
-    "example": []
+    "test": ["runtests.jl"],
+    "example": [".meta/example.jl"]
   },
   "source": "Bert, in Mary Poppins",
   "source_url": "http://www.imdb.com/title/tt0058331/quotes/qt0437047"

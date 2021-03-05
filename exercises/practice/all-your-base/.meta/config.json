@@ -3,7 +3,7 @@
   "authors": [],
   "files": {
     "solution": [],
-    "test": [],
-    "example": []
+    "test": ["runtests.jl"],
+    "example": [".meta/example.jl"]
   }
 }
