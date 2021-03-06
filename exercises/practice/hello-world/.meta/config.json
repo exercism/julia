@@ -3,8 +3,8 @@
   "authors": [],
   "files": {
     "solution": [],
-    "test": [],
-    "example": []
+    "test": ["runtests.jl"],
+    "example": [".meta/example.jl"]
   },
   "source": "This is an exercise to introduce users to using Exercism",
   "source_url": "http://en.wikipedia.org/wiki/%22Hello,_world!%22_program"

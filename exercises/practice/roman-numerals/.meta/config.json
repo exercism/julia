@@ -3,8 +3,8 @@
   "authors": [],
   "files": {
     "solution": [],
-    "test": [],
-    "example": []
+    "test": ["runtests.jl"],
+    "example": [".meta/example.jl"]
   },
   "source": "The Roman Numeral Kata",
   "source_url": "http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals"

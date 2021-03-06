@@ -3,8 +3,8 @@
   "authors": [],
   "files": {
     "solution": [],
-    "test": [],
-    "example": []
+    "test": ["runtests.jl"],
+    "example": [".meta/example.jl"]
   },
   "source": "Conversation with James Edward Gray II",
   "source_url": "https://twitter.com/jeg2"
