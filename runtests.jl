@@ -26,7 +26,7 @@ for exercise_type in ("concept", "practice")
         # runtests.jl includes the solution by calling `include("slug.jl")`
         # Our anonymous module doesn't have `include(s::String)` defined,
         # so we define our own.
-        Core.eval(m, :(include(s) = $(Base.include)($m, $(joinpath(exercise_path, ".meta", example_or_exemplar * ".jl")))
+        Core.eval(m, :(include(s) = $(Base.include)($m, $(joinpath(exercise_path, ".meta", example_or_exemplar * ".jl")))))
         @info "[$(uppercase(exercise_type))] Testing $exercise"
         Base.include(m, joinpath(exercise_path, "runtests.jl"))
         
