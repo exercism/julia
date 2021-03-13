@@ -1,7 +1,0 @@
-authors = [
-    { github = "SaschaMann", exercism = "SaschaMann" },
-]
-
-contributors = []
-
-forked_from = "fsharp/basics"
