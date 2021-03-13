@@ -1,8 +1,0 @@
-authors = [
-    { github = "SaschaMann", exercism = "SaschaMann" },
-    { github = "cmcaine", exercism = "cmcaine" }
-]
-
-contributors = []
-
-solution = "card-generator.jl"
