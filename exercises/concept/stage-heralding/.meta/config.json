@@ -1,5 +1,4 @@
 {
-  "blurb": "TODO: add blurb for stage-heralding exercise",
   "language_versions": "≥1.0",
   "files": {
     "exemplar": [
@@ -23,5 +22,5 @@
       "exercism_username": "cmcaine"
     }
   ],
-  "forked_from": null
+  "forked_from": []
 }

@@ -29,7 +29,7 @@ function create_meta_configs()
             "contributors" => [
                 Dict("github_username" => x["github"], "exercism_username" => x["exercism"]) for x in human_cfg["contributors"]
             ],
-            "forked_from" => get(human_cfg, "forked_from", nothing),
+            "forked_from" => get(human_cfg, "forked_from", []),
         )
         open(meta_path / "config.json", "w") do f
             JSON.print(f, cfg, 2)

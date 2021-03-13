@@ -1,5 +1,4 @@
 {
-  "blurb": "TODO: add blurb for encounters exercise",
   "language_versions": "≥1.0",
   "files": {
     "exemplar": [
@@ -19,5 +18,5 @@
       "exercism_username": "SaschaMann"
     }
   ],
-  "forked_from": null
+  "forked_from": []
 }
