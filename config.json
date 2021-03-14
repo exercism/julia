@@ -932,7 +932,7 @@
       "uuid": "9470279c-9960-420b-b266-53e329bb205c",
       "slug": "booleans",
       "name": "Booleans",
-      "blurb": "TODO: add blurb for booleans concept"
+      "blurb": "The Bool type represents the values true and false."
     },
     {
       "uuid": "aad9773b-9032-4d8d-a9e9-4b8152f35b68",
