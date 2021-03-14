@@ -1,4 +1,9 @@
 # Step 1
+"""
+    Fib
+
+TODO (see PR comments)
+"""
 struct Fib
     n::Int
 end

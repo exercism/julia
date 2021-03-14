@@ -8,14 +8,29 @@ struct Cat <: Pet
     name::AbstractString
 end
 
+"""
+    encounter(a, b)
+
+Simulate an encounter between `a` and `b`.
+"""
 encounter(a, b) = "$(name(a)) meets $(name(b)) and $(meets(a, b))."
 
-# name
+"""
+    name(p::Pet)
+
+Return the name of the pet `p`.
+"""
 name(p::Pet) = p.name
 
 # fallbacks
 meets(a::Pet, b::Pet) = "is cautious"
 meets(a::Pet, b) = "runs away"
+
+"""
+    meets(a, b)
+
+Determine what happens when `a` and `b` meet.
+"""
 meets(a, b) = "nothing happens"
 
 # specific types
