@@ -15,4 +15,4 @@ If you prefer a more interactive environment, you can use Jupyter notebooks with
 
 A simple way to get started with Julia without the need of a local installation is [Nextjournal](https://nextjournal.com/), a notebook-based online IDE.
 You can access it from your browser, login and you start solving exercises.
-If you merely want an online REPL, you can use [Repl.it](https://repl.it/languages/julia).
+If you just want an online REPL, you can use [Repl.it](https://repl.it/languages/julia).
