@@ -61,7 +61,8 @@
           "booleans"
         ],
         "prerequisites": [
-          "functions-introduction"
+          "functions-introduction",
+          "docstrings"
         ],
         "status": "wip"
       },
@@ -88,7 +89,8 @@
         "prerequisites": [
           "functions-introduction",
           "boolean-logic",
-          "booleans"
+          "booleans",
+          "docstrings"
         ],
         "status": "wip"
       },
@@ -112,8 +114,15 @@
         "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",
         "name": "Elyse's Enchantments",
         "slug": "elyses-enchantments",
-        "concepts": ["vectors", "pairs"],
-        "prerequisites": ["functions-introduction", "booleans"]
+        "concepts": [
+          "vectors",
+          "pairs"
+        ],
+        "prerequisites": [
+          "functions-introduction",
+          "booleans",
+          "docstrings"
+        ]
       },
       {
         "uuid": "36cbda04-3921-4491-9ec6-76951f00aa00",
@@ -124,7 +133,8 @@
         ],
         "prerequisites": [
           "functions-introduction",
-          "vectors"
+          "vectors",
+          "docstrings"
         ],
         "status": "wip"
       },
