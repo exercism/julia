@@ -1,0 +1,23 @@
+{
+  "blurb": "TODO: add blurb for lasagna exercise",
+  "language_versions": "≥1.0",
+  "files": {
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "solution": [
+      "lasagna.jl"
+    ]
+  },
+  "contributors": [],
+  "authors": [
+    {
+      "github_username": "SaschaMann",
+      "exercism_username": "SaschaMann"
+    }
+  ],
+  "forked_from": "fsharp/basics"
+}
