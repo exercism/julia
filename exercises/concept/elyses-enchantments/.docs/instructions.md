@@ -79,7 +79,7 @@ julia> remove_card_at_bottom!([1, 3, 4, 1])
 
 ## 8. Check size of the stack
 
-Check whether the size of the stack is equal a given `stack_size` or not.
+Check whether the size of the stack equals a given `stack_size` or not.
 
 ```julia
 julia> stack_size = 4;

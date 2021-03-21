@@ -10,6 +10,21 @@ const possessive_pronouns = Dict(
     "he/him" => "his"
 )
 
+"""
+    generate_card(line)
+
+Return the generated moderation card from the given `line`.
+
+# Examples
+```jldoctest
+julia> println(generate_card("»How I learned to say Farewell« – Madeline (she/her). Start: 13:40, Q&A: 14:00, End: 14:05"))
+- Our next speaker is Madeline
+- Her talk is called »How I learned to say Farewell«
+- She will answer your questions in the Q&A session at the end of the talk, starting at 14:00
+
+13:40 - 14:00 - 14:05
+```
+"""
 function generate_card(line)
     # You can also write this as a multi-line regex string:
     # re = r"""»(.*)«                     # title
