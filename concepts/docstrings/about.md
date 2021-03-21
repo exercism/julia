@@ -47,7 +47,6 @@ The Julia Manual contains few conventions that should be followed:
 ~~~~exercism/note
 The list above only covers conventions you may need or encounter in the context of Exercism.
 You can find a full, unabbreviated list in the [Julia Manual](https://docs.julialang.org/en/v1/manual/documentation/).
-Further conventions for documenting more advanced Julia concepts will be introduced alongside the concept in later exercises.
 ~~~~
 
 ## Accessing docstrings
