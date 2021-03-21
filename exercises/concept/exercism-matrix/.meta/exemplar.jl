@@ -16,7 +16,7 @@ const E = [
 """
     frown!(E)
 
-In-place change the smiling mouth of the Exercism logo matrix `E` to a frowning mouth.
+Change the smiling mouth of an Exercism logo matrix `E` to a frowning mouth, mutating `E`.
 """
 function frown!(E)
     E[7, 7] = E[7, 12] = E[9, 9] = E[9, 10] = 0
@@ -27,7 +27,7 @@ end
 """
     frown(E)
 
-Change the smiling mouth of the Exercism logo matrix `E` to a frowning mouth.
+Return a copy of the Exercism logo matrix `E` with a frowning mouth.
 """
 frown(E) = frown!(copy(E))
 

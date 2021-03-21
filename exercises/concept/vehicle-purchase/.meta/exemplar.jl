@@ -1,7 +1,7 @@
 """
     canibuy(vehicle, price, monthly_budget)
 
-Return a message if you can afford the monthly payments on a given vehicle.
+Return a message describing if you can afford the monthly payments on a given vehicle.
 """
 function canibuy(vehicle, price, monthly_budget)
     if price / 60 < monthly_budget
@@ -16,7 +16,7 @@ end
 """
     licence(vehicle, kind)
 
-Return a message if `vehicle` requires a licence to operate based on its `kind`.
+Return a message that describes if `vehicle` requires a licence to operate based on its `kind`.
 """
 function licence(vehicle, kind)
     s = kind == "car" ? "a" : "no"

@@ -1,14 +1,14 @@
 """
     is_foggy()
 
-Return if it's foggy.
+Return `true` if it's foggy.
 """
 is_foggy() = rand(Bool)
 
 """
     is_dog_distracted()
 
-Return if Annalyn's dog has been distracted.
+Return `true` if Annalyn's dog has been distracted.
 """
 is_dog_distracted() = rand() < 0.25
 

@@ -29,7 +29,7 @@ meets(a::Pet, b) = "runs away"
 """
     meets(a, b)
 
-Determine what happens when `a` and `b` meet.
+Return a string describing what happens when `a` and `b` meet.
 """
 meets(a, b) = "nothing happens"
 
