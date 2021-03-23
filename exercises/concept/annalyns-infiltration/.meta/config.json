@@ -13,16 +13,10 @@
     ]
   },
   "contributors": [
-    {
-      "github_username": "cmcaine",
-      "exercism_username": "cmcaine"
-    }
+    "cmcaine"
   ],
   "authors": [
-    {
-      "github_username": "SaschaMann",
-      "exercism_username": "SaschaMann"
-    }
+    "SaschaMann"
   ],
   "forked_from": "javascript/boolean"
 }

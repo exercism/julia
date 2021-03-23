@@ -14,10 +14,7 @@
   },
   "contributors": [],
   "authors": [
-    {
-      "github_username": "SaschaMann",
-      "exercism_username": "SaschaMann"
-    }
+    "SaschaMann"
   ],
   "forked_from": "swift/vehicle-purchase"
 }
