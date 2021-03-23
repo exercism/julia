@@ -6,10 +6,11 @@ You're given a list of speakers on your stage in advance and need to turn them i
 
 Since the list follows a particular formatting, you decide to write a short program that parses the list you're given using regular expressions (regex) and automatically generates the moderation cards.
 
-!!! note
-    This exercise is **not** about learning regular expressions.
-    It's about learning to use regex within Julia.
-    The hints contain a regular expression that you can use if you don't want to write one yourself.
+~~~~exercism/note
+This exercise is **not** about learning regular expressions.
+It's about learning to use regex within Julia.
+The hints contain a regular expression that you can use if you don't want to write one yourself.
+~~~~
 
 The list you're given contains the following information for each talk:
 
@@ -30,8 +31,9 @@ A full entry has the following format:
 Here, the title is `Speedrunning 101`, the speaker is called `Sasha Duda Krall`, from `GDQU`, and uses `they/them` pronouns.
 The talk starts at `13:00`, there will be a Q&A starting at `13:20`, and the entire session ends at `13:30`.
 
-!!! note
-    Since names may contain regular dashes `-`, an en dash `–` is used to separate the speaker and talk name.
+~~~~exercism/caution
+Since names may contain regular dashes `-`, an en dash `–` is used to separate the speaker and talk name.
+~~~~
 
 The moderation card that your program should generate for that talk looks like this:
 
@@ -99,8 +101,9 @@ A few things to note here:
 
 It's easiest to use a regex builder tool like [regex101](https://regex101.com/) or [RegExr](https://regexr.com/) to do this.
 
-!!! warning
-    Make sure to set the regex engine/flavour to PCRE.
+~~~~exercism/caution
+Make sure to set the regex engine/flavour to PCRE.
+~~~~
 
 If you're new to regex or struggle with creating an expression that captures all required information at once, you can also define several smaller expressions that capture parts of the information, e.g.
 

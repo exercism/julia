@@ -8,25 +8,25 @@ Both methods must return a tuple of an item and the state of the iterator.
 The first method will return the first item and state, while the second method will return the next item and state.
 The iteration ends if `iterate` returns `nothing`.
 
-<!-- prettier-ignore -->
-!!! note
-    Julia currently doesn't have a way to formally define interfaces.
-    To implement an interface, you need to look up which methods need to be defined in the Manual, or in the documentation of the package that "defines" the interface.
-    Alternatively, you can work your way through `MethodErrors` to find out which methods you need to implement:
-    <!-- TODO check if code blocks work within info boxes -->
-    ```julia
-    julia> struct MyIter end;
+~~~~exercism/note
+Julia currently doesn't have a way to formally define interfaces.
+To implement an interface, you need to look up which methods need to be defined in the Manual, or in the documentation of the package that "defines" the interface.
+Alternatively, you can work your way through `MethodErrors` to find out which methods you need to implement:
+<!-- TODO check if code blocks work within info boxes -->
+```julia
+julia> struct MyIter end;
 
-    julia> for i in MyIter()
-            println(i)
-        end
-    ERROR: MethodError: no method matching iterate(::MyIter)
-    ...
-    ```
+julia> for i in MyIter()
+        println(i)
+    end
+ERROR: MethodError: no method matching iterate(::MyIter)
+...
+```
+~~~~
 
-<!-- prettier-ignore -->
-!!! note
-    The iterator object itself is usually not mutated by iteration.
+~~~~exercism/note
+The iterator object itself is usually not mutated by iteration.
+~~~~
 
 To make it clearer when the `iterate` methods are called, one can look at the translation of the `for`-loop syntax:
 
