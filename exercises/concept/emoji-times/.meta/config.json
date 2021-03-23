@@ -14,14 +14,8 @@
   },
   "contributors": [],
   "authors": [
-    {
-      "github_username": "cmcaine",
-      "exercism_username": "cmcaine"
-    },
-    {
-      "github_username": "SaschaMann",
-      "exercism_username": "SaschaMann"
-    }
+    "cmcaine",
+    "SaschaMann"
   ],
   "forked_from": null
 }
