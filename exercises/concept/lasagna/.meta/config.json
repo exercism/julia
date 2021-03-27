@@ -16,5 +16,5 @@
   "authors": [
     "SaschaMann"
   ],
-  "forked_from": "fsharp/basics"
+  "forked_from": ["fsharp/basics"]
 }

@@ -16,5 +16,5 @@
   "authors": [
     "SaschaMann"
   ],
-  "forked_from": "javascript/enchantments"
+  "forked_from": ["javascript/enchantments"]
 }
