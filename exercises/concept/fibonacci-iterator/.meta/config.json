@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for fibonacci-iterator exercise",
+  "blurb": "Learn about the iteration protocol by implementing a Fibonacci Iterator.",
   "language_versions": "≥1.0",
   "files": {
     "exemplar": [

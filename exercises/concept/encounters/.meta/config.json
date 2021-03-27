@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for encounters exercise",
+  "blurb": "Learn about multiple dispatch by simulating encounters between pets and other entities.",
   "language_versions": "≥1.0",
   "files": {
     "exemplar": [
