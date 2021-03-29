@@ -12,11 +12,10 @@
       "lasagna.jl"
     ]
   },
-  "contributors": [],
-  "authors": [
-    {
-      "github_username": "SaschaMann",
-      "exercism_username": "SaschaMann"
-    }
+  "contributors": [
+    "cmcaine"
   ],
+  "authors": [
+    "SaschaMann"
+  ]
 }
