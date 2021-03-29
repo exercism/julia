@@ -13,7 +13,9 @@ include("lasagna.jl")
 """
     hasdocstring(s::Symbol)
 
-Return true if the binding `s` in `@__MODULE__` has a docstring.
+Return true if the binding `s` in `@__MODULE__` has a docstring
+
+**Credit:** https://julialang.zulipchat.com/#narrow/stream/225542-helpdesk/topic/finding.20out.20if.20a.20function.20has.20a.20docstring
 """
 function hasdocstring(s::Symbol)
     meta = Docs.meta(@__MODULE__)
