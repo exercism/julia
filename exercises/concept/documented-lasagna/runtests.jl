@@ -2,7 +2,13 @@ using Test
 
 include("lasagna.jl")
 
-# Util function
+# Dear Julia learner,
+# If you're reading this test suite to gain some insights, please be advised that it is somewhat unusual.
+#
+# Don't worry if you don't understand this test suite at this stage of your learning journey.
+# We had to use some advanced features to be able to write assertions about docstrings.
+# You wouldn't normally write assertions for that in a typical codebase.
+# We're doing it here strictly for educational purposes.
 function hasdocstring(f::Symbol)
     @eval !startswith(string(@doc $f), "No documentation found.")
 end
