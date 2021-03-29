@@ -9,8 +9,15 @@ include("lasagna.jl")
 # We had to use some advanced features to be able to write assertions about docstrings.
 # You wouldn't normally write assertions for that in a typical codebase.
 # We're doing it here strictly for educational purposes.
-function hasdocstring(f::Symbol)
-    @eval !startswith(string(@doc $f), "No documentation found.")
+
+"""
+    hasdocstring(s::Symbol)
+
+Return true if the binding `s` in `@__MODULE__` has a docstring.
+"""
+function hasdocstring(s::Symbol)
+    meta = Docs.meta(@__MODULE__)
+    haskey(meta, Docs.Binding(@__MODULE__, s))
 end
 
 @testset "solution still works" begin
