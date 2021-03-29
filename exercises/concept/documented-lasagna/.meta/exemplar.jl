@@ -1,7 +1,7 @@
 """
     preptime(layers)
 
-Return the preparation times in minutes.
+Return the preparation time in minutes.
 """
 preptime(layers) = 2layers
 

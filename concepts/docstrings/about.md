@@ -89,6 +89,24 @@ Perhaps you meant println, pipeline, @inline or print
   Binding printline does not exist.
 ```
 
+You can also use `apropos` to search docstrings for a pattern:
+
+```julia-repl
+help?> apropos
+search: apropos hasproperty
+
+  apropos([io::IO=stdout], pattern::Union{AbstractString,Regex})
+
+
+  Search available docstrings for entries containing pattern.
+
+  When pattern is a string, case is ignored. Results are printed to io.
+
+julia> apropos("apropos")
+Base.Docs.apropos
+REPL.stripmd
+```
+
 ## Source
 
 This entire document is derived from the [Documentation chapter](https://docs.julialang.org/en/v1/manual/documentation/) of the Julia Manual.
