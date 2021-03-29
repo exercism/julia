@@ -41,6 +41,18 @@
         "status": "wip"
       },
       {
+        "uuid": "84480c18-327e-47ea-94e7-9e14f2146643",
+        "name": "Documented Lasagna",
+        "slug": "documented-lasagna",
+        "concepts": [
+          "docstrings"
+        ],
+        "prerequisites": [
+          "functions-introduction"
+        ],
+        "status": "wip"
+      },
+      {
         "uuid": "05cfc609-3a14-479a-b6fa-6d2a53ad111c",
         "name": "Annalyn's Infiltration",
         "slug": "annalyns-infiltration",
@@ -49,7 +61,8 @@
           "booleans"
         ],
         "prerequisites": [
-          "functions-introduction"
+          "functions-introduction",
+          "docstrings"
         ],
         "status": "wip"
       },
@@ -76,7 +89,8 @@
         "prerequisites": [
           "functions-introduction",
           "boolean-logic",
-          "booleans"
+          "booleans",
+          "docstrings"
         ],
         "status": "wip"
       },
@@ -100,8 +114,15 @@
         "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",
         "name": "Elyse's Enchantments",
         "slug": "elyses-enchantments",
-        "concepts": ["vectors", "pairs"],
-        "prerequisites": ["functions-introduction", "booleans"]
+        "concepts": [
+          "vectors",
+          "pairs"
+        ],
+        "prerequisites": [
+          "functions-introduction",
+          "booleans",
+          "docstrings"
+        ]
       },
       {
         "uuid": "36cbda04-3921-4491-9ec6-76951f00aa00",
@@ -112,7 +133,8 @@
         ],
         "prerequisites": [
           "functions-introduction",
-          "vectors"
+          "vectors",
+          "docstrings"
         ],
         "status": "wip"
       },
@@ -945,6 +967,12 @@
       "slug": "constants",
       "name": "Constants",
       "blurb": "TODO: add blurb for constants concept"
+    },
+    {
+      "uuid": "33e5c4af-7361-4a61-bdb2-504f7227d0ef",
+      "slug": "docstrings",
+      "name": "Docstrings",
+      "blurb": "Docstrings can be used to document any kind of Julia object, such as functions, macros, types, or instances."
     },
     {
       "uuid": "daef8574-4fed-4385-919b-82a16e3b9701",

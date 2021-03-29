@@ -1,0 +1,10 @@
+[
+    {
+        "url": "https://docs.julialang.org/en/v1/manual/documentation/",
+        "description": "Julia Manual"
+    },
+    {
+        "url": "https://juliadocs.github.io/Documenter.jl/stable/",
+        "description": "Documenter.jl - A documentation generator for Julia."
+    }
+]
