@@ -1,10 +1,20 @@
 {
   "blurb": "We are going to do the `Transform` step of an Extract-Transform-Load.",
   "authors": [],
+  "contributors": [
+    "cmcaine",
+    "marcoesposito1988",
+    "SaschaMann",
+    "Teo-ShaoWei"
+  ],
   "files": {
     "solution": [],
-    "test": ["runtests.jl"],
-    "example": [".meta/example.jl"]
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
   },
   "source": "The Jumpstart Lab team",
   "source_url": "http://jumpstartlab.com"

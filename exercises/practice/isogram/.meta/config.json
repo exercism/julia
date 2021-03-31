@@ -1,10 +1,20 @@
 {
   "blurb": "Determine if a word or phrase is an isogram.",
-  "authors": [],
+  "authors": [
+    "SaschaMann"
+  ],
+  "contributors": [
+    "cmcaine",
+    "Teo-ShaoWei"
+  ],
   "files": {
     "solution": [],
-    "test": ["runtests.jl"],
-    "example": [".meta/example.jl"]
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
   },
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Isogram"

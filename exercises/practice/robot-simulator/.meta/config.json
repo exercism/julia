@@ -1,10 +1,20 @@
 {
   "blurb": "Write a robot simulator.",
-  "authors": [],
+  "authors": [
+    "SaschaMann"
+  ],
+  "contributors": [
+    "cmcaine",
+    "Teo-ShaoWei"
+  ],
   "files": {
     "solution": [],
-    "test": ["runtests.jl"],
-    "example": [".meta/example.jl"]
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
   },
   "source": "Inspired by an interview question at a famous company.",
   "source_url": ""
