@@ -1,6 +1,12 @@
 {
   "blurb": "Given a word and a list of possible anagrams, select the correct sublist.",
-  "authors": [],
+  "authors": [
+    "andrej-makarov-skrt"
+  ],
+  "contributors": [
+    "cmcaine",
+    "SaschaMann"
+  ],
   "files": {
     "solution": [],
     "test": ["runtests.jl"],

@@ -1,6 +1,12 @@
 {
   "blurb": "Reverse a string",
-  "authors": [],
+  "authors": [
+    "kimttfung"
+  ],
+  "contributors": [
+    "cmcaine",
+    "SaschaMann"
+  ],
   "files": {
     "solution": [],
     "test": ["runtests.jl"],

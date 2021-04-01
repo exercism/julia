@@ -1,6 +1,11 @@
 {
   "blurb": "Randomly generate Dungeons & Dragons characters",
-  "authors": [],
+  "authors": [
+    "leo60228"
+  ],
+  "contributors": [
+    "SaschaMann"
+  ],
   "files": {
     "solution": [],
     "test": ["runtests.jl"],

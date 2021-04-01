@@ -1,6 +1,11 @@
 {
   "blurb": "Determine if a word or phrase is an isogram.",
-  "authors": [],
+  "authors": [
+    "SaschaMann"
+  ],
+  "contributors": [
+    "cmcaine"
+  ],
   "files": {
     "solution": [],
     "test": ["runtests.jl"],

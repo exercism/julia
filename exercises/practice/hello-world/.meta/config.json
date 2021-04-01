@@ -1,6 +1,9 @@
 {
   "blurb": "The classical introductory exercise. Just say \"Hello, World!\"",
-  "authors": [],
+  "authors": [
+    "SaschaMann"
+  ],
+  "contributors": [],
   "files": {
     "solution": [],
     "test": ["runtests.jl"],

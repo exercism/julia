@@ -1,6 +1,11 @@
 {
   "blurb": "Implement a binary search algorithm.",
-  "authors": [],
+  "authors": [
+    "SaschaMann"
+  ],
+  "contributors": [
+    "tomerarnon"
+  ],
   "files": {
     "solution": [],
     "test": ["runtests.jl"],

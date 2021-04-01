@@ -1,6 +1,9 @@
 {
   "blurb": "Implement rational numbers.",
-  "authors": [],
+  "authors": [
+    "SaschaMann"
+  ],
+  "contributors": [],
   "files": {
     "solution": [],
     "test": ["runtests.jl"],
