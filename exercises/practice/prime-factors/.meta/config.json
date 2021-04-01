@@ -5,12 +5,8 @@
   ],
   "files": {
     "solution": [],
-    "test": [
-      "runtests.jl"
-    ],
-    "example": [
-      ".meta/example.jl"
-    ]
+    "test": ["runtests.jl"],
+    "example": [".meta/example.jl"]
   },
   "source": "The Prime Factors Kata by Uncle Bob",
   "source_url": "http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata"

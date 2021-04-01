@@ -9,11 +9,7 @@
   ],
   "files": {
     "solution": [],
-    "test": [
-      "runtests.jl"
-    ],
-    "example": [
-      ".meta/example.jl"
-    ]
+    "test": ["runtests.jl"],
+    "example": [".meta/example.jl"]
   }
 }

@@ -10,12 +10,8 @@
   ],
   "files": {
     "solution": [],
-    "test": [
-      "runtests.jl"
-    ],
-    "example": [
-      ".meta/example.jl"
-    ]
+    "test": ["runtests.jl"],
+    "example": [".meta/example.jl"]
   },
   "source": "Chapter 9 in Chris Pine's online Learn to Program tutorial.",
   "source_url": "http://pine.fm/LearnToProgram/?Chapter=09"

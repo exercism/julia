@@ -9,12 +9,8 @@
   ],
   "files": {
     "solution": [],
-    "test": [
-      "runtests.jl"
-    ],
-    "example": [
-      ".meta/example.jl"
-    ]
+    "test": ["runtests.jl"],
+    "example": [".meta/example.jl"]
   },
   "source": "Wikipedia",
   "source_url": "http://en.wikipedia.org/wiki/Binary_search_algorithm"

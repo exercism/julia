@@ -11,12 +11,8 @@
   ],
   "files": {
     "solution": [],
-    "test": [
-      "runtests.jl"
-    ],
-    "example": [
-      ".meta/example.jl"
-    ]
+    "test": ["runtests.jl"],
+    "example": [".meta/example.jl"]
   },
   "source": "A debugging session with Paul Blackwell at gSchool."
 }
