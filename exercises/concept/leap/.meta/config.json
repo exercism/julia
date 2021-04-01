@@ -14,7 +14,8 @@
   },
   "contributors": [],
   "authors": [
-    "SaschaMann"
+    "SaschaMann",
+    "cmcaine"
   ],
   "forked_from": ["v2/leap"]
 }
