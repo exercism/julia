@@ -3,6 +3,9 @@
   "authors": [
     "vyu"
   ],
+  "contributors": [
+    "cmcaine"
+  ],
   "files": {
     "solution": [],
     "test": ["runtests.jl"],

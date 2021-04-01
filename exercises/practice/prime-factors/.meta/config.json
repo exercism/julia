@@ -3,6 +3,9 @@
   "authors": [
     "NandVinchhi"
   ],
+  "contributors": [
+    "SaschaMann"
+  ],
   "files": {
     "solution": [],
     "test": ["runtests.jl"],

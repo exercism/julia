@@ -3,9 +3,7 @@
   "authors": [
     "SaschaMann"
   ],
-  "contributors": [
-    "Teo-ShaoWei"
-  ],
+  "contributors": [],
   "files": {
     "solution": [],
     "test": ["runtests.jl"],

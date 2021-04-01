@@ -3,6 +3,10 @@
   "authors": [
     "serialhex"
   ],
+  "contributors": [
+    "cmcaine",
+    "SaschaMann"
+  ],
   "files": {
     "solution": [],
     "test": ["runtests.jl"],
