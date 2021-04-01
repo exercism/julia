@@ -12,7 +12,9 @@
       "lasagna.jl"
     ]
   },
-  "contributors": [],
+  "contributors": [
+    "ErikSchierboom"
+  ],
   "authors": [
     "SaschaMann"
   ],

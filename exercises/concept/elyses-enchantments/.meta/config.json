@@ -12,7 +12,9 @@
       "enchantments.jl"
     ]
   },
-  "contributors": [],
+  "contributors": [
+    "cmcaine"
+  ],
   "authors": [
     "SaschaMann"
   ],

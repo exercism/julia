@@ -12,7 +12,11 @@
       "fibonacci.jl"
     ]
   },
-  "contributors": [],
+  "contributors": [
+    "cmcaine",
+    "miguelraz",
+    "iHiD"
+  ],
   "authors": [
     "SaschaMann"
   ],

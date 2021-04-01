@@ -12,7 +12,9 @@
       "vehicle-purchase.jl"
     ]
   },
-  "contributors": [],
+  "contributors": [
+    "cmcaine"
+  ],
   "authors": [
     "SaschaMann"
   ],
