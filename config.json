@@ -112,6 +112,20 @@
         "status": "wip"
       },
       {
+        "uuid": "4b3e6780-b566-4315-a7b0-45500883f050",
+        "name": "Name Badge",
+        "slug": "name-badge",
+        "concepts": [
+          "nothingness"
+        ],
+        "prerequisites": [
+          "strings",
+          "string-manipulation",
+          "conditionals"
+        ],
+        "status": "beta"
+      },
+      {
         "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",
         "name": "Elyse's Enchantments",
         "slug": "elyses-enchantments",
