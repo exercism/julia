@@ -71,7 +71,8 @@
         "name": "Annalyn's Infiltration Ⅱ",
         "slug": "annalyns-infiltration2",
         "concepts": [
-          "randomness"
+          "randomness",
+          "methods"
         ],
         "prerequisites": [
           "booleans"
