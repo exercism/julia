@@ -5,7 +5,7 @@ It is used when a function has no return value, or when a variable holds no valu
 
 You can test if a value is identical to `nothing` using the `isnothing` function:
 
-```jldoctest
+```julia
 julia> isnothing("something")
 false
 
