@@ -32,5 +32,8 @@ jobs:
         with:
           version: ${{ matrix.julia-version }}
 
+      - name: Install test dependencies
+        run: julia --color=yes --project -e "using Pkg; Pkg.instantiate()"
+
       - name: Test exercises
-        run: julia --color=yes runtests.jl
+        run: julia --color=yes --project runtests.jl
