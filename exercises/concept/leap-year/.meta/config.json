@@ -9,7 +9,7 @@
       "runtests.jl"
     ],
     "solution": [
-      "leap.jl"
+      "leap-year.jl"
     ]
   },
   "contributors": [],
