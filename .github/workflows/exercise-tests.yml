@@ -33,7 +33,7 @@ jobs:
           version: ${{ matrix.julia-version }}
 
       - name: Cache Julia artifacts
-        uses: actions/cache@v1
+        uses: actions/cache@v2.1.4
         env:
           cache-name: cache-artifacts
         with:
