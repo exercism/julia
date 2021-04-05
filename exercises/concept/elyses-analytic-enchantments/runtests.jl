@@ -10,7 +10,7 @@ end
     @test find_card([3], 3) == 1
     @test find_card([9, 7, 3, 2], 2) == 4
     @test find_card([8, 3, 9, 5], 8) == 1
-    @test find_card([5, 3, 1, 9], 2) === nothing
+    @test isnothing(find_card([5, 3, 1, 9], 2))
 end
 
 @testset "Determine if each card is even" begin
@@ -28,11 +28,11 @@ end
 @testset "Determine the position of the first card that is even" begin
     @test first_even_card_idx([2, 4, 1, 3]) == 1
     @test first_even_card_idx([1, 2]) == 2
-    @test first_even_card_idx([1, 3, 5]) === nothing
+    @test isnothing(first_even_card_idx([1, 3, 5]))
 end
 
 @testset "Get the first odd card from the stack" begin
     @test first_odd_card([2, 4, 1, 3]) == 1
     @test first_odd_card([1, 2]) == 1
-    @test first_odd_card([4, 2, 6]) === nothing
+    @test isnothing(first_odd_card([4, 2, 6]))
 end

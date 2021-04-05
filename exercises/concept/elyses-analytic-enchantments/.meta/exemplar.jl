@@ -1,3 +1,9 @@
+# Julia 1.0 compat
+if VERSION < v"1.1"
+    @eval isnothing(::Any) = false
+    @eval isnothing(::Nothing) = true
+end
+
 """
     has_card(stack, card)
 
@@ -40,5 +46,5 @@ Return the first odd card in `stack`, and `nothing` if the stack does not contai
 """
 function first_odd_card(stack)
     idx = findfirst(isodd, stack)
-    idx === nothing ? nothing : stack[idx]
+    isnothing(idx) ? nothing : stack[idx]
 end
