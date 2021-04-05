@@ -12,10 +12,10 @@ In this exercise, use methods from Julia's Base library to analyse the contents 
 Elyse wants to determine if a card is present in the stack -- in other words, if the stack contains a specific number:
 
 ```julia
-julia> card = 2;
+julia> card = 3;
 
-julia> find_card([9, 7, 3, 2], card)
-4
+julia> has_card([2, 3, 4, 5], card)
+true
 ```
 
 ## 2. Find the position of a card
@@ -23,10 +23,10 @@ julia> find_card([9, 7, 3, 2], card)
 Elyse wants to know the position (index) of a card in the stack:
 
 ```julia
-julia> card = 3;
+julia> card = 2;
 
-julia> has_card([2, 3, 4, 5], card)
-true
+julia> find_card([9, 7, 3, 2], card)
+4
 ```
 
 ## 3. Determine if each card is even

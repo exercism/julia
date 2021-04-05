@@ -14,21 +14,21 @@
 ## 3. Determine if each card is even
 
 - The stacks of cards do not contain any duplicate cards.
-- There is a method [`all`](https://docs.julialang.org/en/v1/base/collections/#Base.all-Tuple{AbstractArray,%20Any}) in Base to find the position of the first element of a collection that matches a given predicate.
-- [`iseven`](https://docs.julialang.org/en/v1/base/numbers/#Base.iseven) can be used as predicate to find elements that equal `x` in methods that take predicate functions.
+- There is a method [`all`](https://docs.julialang.org/en/v1/base/collections/#Base.all-Tuple{AbstractArray,%20Any}) in Base that returns `true` if all elements in a collection satisfy a given predicate.
+- [`iseven`](https://docs.julialang.org/en/v1/base/numbers/#Base.iseven) is a predicate function.
 
 ## 4. Check if the stack contains an odd-value card
 
 - The stacks of cards do not contain any duplicate cards.
-- There is a method [`any`](https://docs.julialang.org/en/v1/base/collections/#Base.any-Tuple{AbstractArray,%20Any}) in Base to find the position of the first element of a collection that matches a given predicate.
-- [`isodd`](https://docs.julialang.org/en/v1/base/numbers/#Base.isodd) can be used as predicate to find elements that equal `x` in methods that take predicate functions.
+- There is a method [`any`](https://docs.julialang.org/en/v1/base/collections/#Base.any-Tuple{AbstractArray,%20Any}) in Base that returns `true` if any elements in a collection satisfy a given predicate.
+- [`isodd`](https://docs.julialang.org/en/v1/base/numbers/#Base.isodd) is a predicate function.
 
 ## 5. Determine the position of the first card that is even
 
 - `Vector` indices start at `1`.
 - The stacks of cards do not contain any duplicate cards.
 - There is a method [`findfirst`](https://docs.julialang.org/en/v1/base/arrays/#Base.findfirst-Tuple{Function,%20Any}) in Base to find the position of the first element of a collection that matches a given predicate.
-- [`iseven`](https://docs.julialang.org/en/v1/base/numbers/#Base.iseven) can be used as predicate to find elements that equal `x` in methods that take predicate functions.
+- [`iseven`](https://docs.julialang.org/en/v1/base/numbers/#Base.iseven) is a predicate function.
 
 ## 6. Get the first odd card from the stack
 
