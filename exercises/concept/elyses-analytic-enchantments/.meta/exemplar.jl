@@ -5,46 +5,46 @@ if VERSION < v"1.1"
 end
 
 """
-    has_card(stack, card)
+    has_card(deck, card)
 
-Return true if `stack` contains `card`.
+Return true if `deck` contains `card`.
 """
-has_card(stack, card) = card ∈ stack
-
-"""
-    find_card(stack, card)
-
-Return the index of `card` in `stack`.
-"""
-find_card(stack, card) = findfirst(==(card), stack)
+has_card(deck, card) = card ∈ deck
 
 """
-    all_cards_even(stack)
+    find_card(deck, card)
 
-Return true if all cards in `stack` are even.
+Return the index of `card` in `deck`.
 """
-all_cards_even(stack) = all(iseven, stack)
-
-"""
-    any_odd_cards(stack)
-
-Return true if any cards in `stack` are odd.
-"""
-any_odd_cards(stack) = any(isodd, stack)
+find_card(deck, card) = findfirst(==(card), deck)
 
 """
-    first_even_card_idx(stack)
+    all_cards_even(deck)
 
-Return the index of the first even card in `stack`.
+Return true if all cards in `deck` are even.
 """
-first_even_card_idx(stack) = findfirst(iseven, stack)
+all_cards_even(deck) = all(iseven, deck)
 
 """
-    first_odd_card(stack)
+    any_odd_cards(deck)
 
-Return the first odd card in `stack`, and `nothing` if the stack does not contain any odd cards.
+Return true if any cards in `deck` are odd.
 """
-function first_odd_card(stack)
-    idx = findfirst(isodd, stack)
-    isnothing(idx) ? nothing : stack[idx]
+any_odd_cards(deck) = any(isodd, deck)
+
+"""
+    first_even_card_idx(deck)
+
+Return the index of the first even card in `deck`.
+"""
+first_even_card_idx(deck) = findfirst(iseven, deck)
+
+"""
+    first_odd_card(deck)
+
+Return the first odd card in `deck`, and `nothing` if the deck does not contain any odd cards.
+"""
+function first_odd_card(deck)
+    idx = findfirst(isodd, deck)
+    isnothing(idx) ? nothing : deck[idx]
 end
