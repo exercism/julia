@@ -140,6 +140,19 @@
         ]
       },
       {
+        "uuid": "fe7f6097-36b7-42a2-bbd4-f706fb4c08b1",
+        "name": "Elyse's Analytic Enchantments",
+        "slug": "elyses-analytic-enchantments",
+        "concepts": [
+          "predicates"
+        ],
+        "prerequisites": [
+          "vectors",
+          "nothingness",
+          "conditionals"
+        ]
+      },
+      {
         "uuid": "36cbda04-3921-4491-9ec6-76951f00aa00",
         "name": "The Exercism Matrix",
         "slug": "exercism-matrix",
