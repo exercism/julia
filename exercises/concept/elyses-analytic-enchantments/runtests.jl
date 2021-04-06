@@ -19,7 +19,7 @@ end
     @test  all_cards_even([2, 4, 8, 6])
 end
 
-@testset "Check if the stack contains an odd-value card" begin
+@testset "Check if the deck contains an odd-value card" begin
     @test !any_odd_cards([2, 4, 6])
     @test  any_odd_cards([2, 5])
     @test  any_odd_cards([1, 3, 5, 7])
@@ -31,7 +31,7 @@ end
     @test isnothing(first_even_card_idx([1, 3, 5]))
 end
 
-@testset "Get the first odd card from the stack" begin
+@testset "Get the first odd card from the deck" begin
     @test first_odd_card([2, 4, 1, 3]) == 1
     @test first_odd_card([1, 2]) == 1
     @test isnothing(first_odd_card([4, 2, 6]))

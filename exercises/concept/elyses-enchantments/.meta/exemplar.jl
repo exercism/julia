@@ -1,64 +1,64 @@
 """
-    card(stack, idx)
+    card(deck, idx)
 
-Return the card at position `idx` from the given `stack`.
+Return the card at position `idx` from the given `deck`.
 """
-card(stack, idx) = stack[idx]
+card(deck, idx) = deck[idx]
 
 """
-    replace_card!(stack, idx => new_card)
+    replace_card!(deck, idx => new_card)
 
-Exchange the card at position `idx` with `new_card` and return the adjusted `stack`.
+Exchange the card at position `idx` with `new_card` and return the adjusted `deck`.
 """
-function replace_card!(stack, r)
-    stack[r.first] = r.second
-    stack
+function replace_card!(deck, r)
+    deck[r.first] = r.second
+    deck
 end
 
 """
-    insert_card_at_top!(stack, new_card)
+    insert_card_at_top!(deck, new_card)
 
-Insert `new_card` at the top of `stack` and return the modified `stack`.
+Insert `new_card` at the top of `deck` and return the modified `deck`.
 """
-insert_card_at_top!(stack, new_card) = push!(stack, new_card)
-
-"""
-    remove_card!(stack, idx)
-
-Remove the card at position `idx` from `stack` and return the modified `stack`.
-"""
-remove_card!(stack, idx) = deleteat!(stack, idx)
+insert_card_at_top!(deck, new_card) = push!(deck, new_card)
 
 """
-    remove_card_from_top!(stack)
+    remove_card!(deck, idx)
 
-Remove the card at the top of `stack` and return the modified `stack`.
+Remove the card at position `idx` from `deck` and return the modified `deck`.
 """
-function remove_card_from_top!(stack)
-    pop!(stack)
-    stack
+remove_card!(deck, idx) = deleteat!(deck, idx)
+
+"""
+    remove_card_from_top!(deck)
+
+Remove the card at the top of `deck` and return the modified `deck`.
+"""
+function remove_card_from_top!(deck)
+    pop!(deck)
+    deck
 end
 
 """
-    insert_card_at_bottom!(stack, new_card)
+    insert_card_at_bottom!(deck, new_card)
 
-Insert `new_card` at the bottom of `stack` and return the modified `stack`.
+Insert `new_card` at the bottom of `deck` and return the modified `deck`.
 """
-insert_card_at_bottom!(stack, new_card) = pushfirst!(stack, new_card)
+insert_card_at_bottom!(deck, new_card) = pushfirst!(deck, new_card)
 
 """
-    remove_card_from_bottom!(stack)
+    remove_card_from_bottom!(deck)
 
-Remove the card at the bottom of `stack` and return the modified `stack`.
+Remove the card at the bottom of `deck` and return the modified `deck`.
 """
-function remove_card_from_bottom!(stack)
-    popfirst!(stack)
-    stack
+function remove_card_from_bottom!(deck)
+    popfirst!(deck)
+    deck
 end
 
 """
-    check_stack_size(stack, stack_size)
+    check_deck_size(deck, deck_size)
 
-Check if the size of `stack` equals the given `stack_size`.
+Check if the size of `deck` equals the given `deck_size`.
 """
-check_stack_size(stack, stack_size) = length(stack) == stack_size
+check_deck_size(deck, deck_size) = length(deck) == deck_size
