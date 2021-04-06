@@ -41,7 +41,6 @@ jobs:
             ${{ runner.os }}-${{ matrix.julia-version }}-test-cache-artifacts-
             ${{ runner.os }}-${{ matrix.julia-version }}-test-
             ${{ runner.os }}-${{ matrix.julia-version }}-
-            ${{ runner.os }}-
 
       - name: Install test dependencies
         run: julia --color=yes --project -e "using Pkg; Pkg.instantiate()"
