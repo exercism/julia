@@ -8,9 +8,15 @@
     "SaschaMann"
   ],
   "files": {
-    "solution": [],
-    "test": ["runtests.jl"],
-    "example": [".meta/example.jl"]
+    "solution": [
+      "leap.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
   },
   "source": "JavaRanch Cattle Drive, exercise 3",
   "source_url": "http://www.javaranch.com/leap.jsp"

@@ -7,9 +7,15 @@
     "cmcaine"
   ],
   "files": {
-    "solution": [],
-    "test": ["runtests.jl"],
-    "example": [".meta/example.jl"]
+    "solution": [
+      "robot-simulator.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
   },
   "source": "Inspired by an interview question at a famous company.",
   "source_url": ""

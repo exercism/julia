@@ -7,9 +7,15 @@
     "cmcaine"
   ],
   "files": {
-    "solution": [],
-    "test": ["runtests.jl"],
-    "example": [".meta/example.jl"]
+    "solution": [
+      "luhn.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
   },
   "source": "The Luhn Algorithm on Wikipedia",
   "source_url": "http://en.wikipedia.org/wiki/Luhn_algorithm"

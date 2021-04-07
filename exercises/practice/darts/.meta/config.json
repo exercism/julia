@@ -7,9 +7,15 @@
     "cmcaine"
   ],
   "files": {
-    "solution": [],
-    "test": ["runtests.jl"],
-    "example": [".meta/example.jl"]
+    "solution": [
+      "darts.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
   },
   "source": "Inspired by an exercise created by a professor Della Paolera in Argentina"
 }

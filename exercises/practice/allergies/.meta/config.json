@@ -8,9 +8,15 @@
     "SaschaMann"
   ],
   "files": {
-    "solution": [],
-    "test": ["runtests.jl"],
-    "example": [".meta/example.jl"]
+    "solution": [
+      "allergies.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
   },
   "source": "Jumpstart Lab Warm-up",
   "source_url": "http://jumpstartlab.com"
