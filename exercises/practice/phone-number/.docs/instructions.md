@@ -27,3 +27,10 @@ should all produce the output
 `6139950253`
 
 **Note:** As this exercise only deals with telephone numbers used in NANP-countries, only 1 is considered a valid country code.
+
+When an input is invalid your function must throw an `ArgumentError`.
+Invalid inputs include:
+- `apple`
+- `100`
+- `2 555 555 1234`
+- `100 200 3000`

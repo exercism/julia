@@ -10,9 +10,9 @@ function clean(phone_number)
 
     result = match(r, phone_number)
 
-    if result != nothing
-        result = Base.string(result.captures...)
+    if result === nothing
+        throw(ArgumentError("\"$phone_number\" is not a valid NANP phone number."))
+    else
+        return Base.string(result.captures...)
     end
-
-    return result
 end
