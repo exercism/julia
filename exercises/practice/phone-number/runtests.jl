@@ -2,12 +2,6 @@ using Test
 
 include("phone-number.jl")
 
-# Julia 1.0 compat
-if VERSION < v"1.1"
-    @eval isnothing(::Any) = false
-    @eval isnothing(::Nothing) = true
-end
-
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.2.0
 # Returns the cleaned phone number as a digit string if given number is valid,
 # else returns `nothing`.
@@ -54,6 +48,6 @@ end
 
 @testset "detect invalid number" begin
     @testset "$number" for number in invalid_num
-        @test isnothing(clean(number))
+        @test_throws ArgumentError clean(number)
     end
 end
