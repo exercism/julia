@@ -33,7 +33,7 @@ jobs:
           version: ${{ matrix.julia-version }}
 
       - name: Cache Julia artifacts
-        uses: actions/cache@v2.1.4
+        uses: actions/cache@v2.1.5
         with:
           path: ~/.julia/artifacts 
           key: ${{ runner.os }}-${{ matrix.julia-version }}-test-cache-artifacts-${{ hashFiles('**/Project.toml') }}
