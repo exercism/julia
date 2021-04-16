@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for multiple-dispatch concept",
+  "blurb": "Julia chooses which method of a function is called based on the types of all arguments.",
   "authors": [],
   "contributors": []
 }
