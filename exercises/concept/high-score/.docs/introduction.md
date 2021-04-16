@@ -1,8 +1,12 @@
 # Introduction
 
-<!-- TODO: Link to methods & function concepts -->
+<!-- TODO: As you may recall from Elyse's enchantments, arrays also use push!() -->
+<!-- TODO: Explain insertion order and == comparison -->
+<!-- TODO: Explain collect() and keys() -->
 
-Julia supports optional arguments as a way to define multiple methods of the same function at once.
+## Dictionaries
+
+## Optional arguments
 
 ```julia
 julia> f(a, b=1) = a + b

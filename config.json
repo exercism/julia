@@ -153,6 +153,22 @@
         ]
       },
       {
+        "uuid": "21ba9b66-5410-4748-9e6f-e8a96871d9bf",
+        "name": "High Score",
+        "slug": "high-score",
+        "concepts": [
+          "dicts",
+          "optional-arguments"
+        ],
+        "prerequisites": [
+          "methods",
+          "strings",
+          "pairs",
+          "vectors"
+        ],
+        "status": "beta"
+      },
+      {
         "uuid": "36cbda04-3921-4491-9ec6-76951f00aa00",
         "name": "The Exercism Matrix",
         "slug": "exercism-matrix",
@@ -216,8 +232,7 @@
         "name": "Fibonacci Iterator",
         "slug": "fibonacci-iterator",
         "concepts": [
-          "iterator-protocol",
-          "optional-arguments"
+          "iterator-protocol"
         ],
         "prerequisites": [
           "multiple-dispatch",
@@ -225,7 +240,8 @@
           "loops",
           "nothingness",
           "parametric-types",
-          "tuples"
+          "tuples",
+          "optional-arguments"
         ],
         "status": "wip"
       }
