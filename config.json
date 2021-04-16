@@ -35,7 +35,7 @@
         "name": "Lasagna",
         "slug": "lasagna",
         "concepts": [
-          "functions-introduction"
+          "functions"
         ],
         "prerequisites": [],
         "status": "wip"
@@ -48,7 +48,7 @@
           "docstrings"
         ],
         "prerequisites": [
-          "functions-introduction"
+          "functions"
         ],
         "status": "wip"
       },
@@ -61,7 +61,7 @@
           "booleans"
         ],
         "prerequisites": [
-          "functions-introduction",
+          "functions",
           "docstrings"
         ],
         "status": "wip"
@@ -88,7 +88,7 @@
           "boolean-expressions"
         ],
         "prerequisites": [
-          "functions-introduction",
+          "functions",
           "boolean-logic",
           "booleans",
           "docstrings"
@@ -134,7 +134,7 @@
           "pairs"
         ],
         "prerequisites": [
-          "functions-introduction",
+          "functions",
           "booleans",
           "docstrings"
         ]
@@ -160,7 +160,7 @@
           "matrices-introduction"
         ],
         "prerequisites": [
-          "functions-introduction",
+          "functions",
           "vectors",
           "docstrings"
         ],
@@ -1003,8 +1003,8 @@
     },
     {
       "uuid": "32384ed4-ef26-4118-8ea3-4d44c331e828",
-      "slug": "functions-introduction",
-      "name": "Functions Introduction"
+      "slug": "functions",
+      "name": "Functions"
     },
     {
       "uuid": "0ac24090-fa7b-4b36-a78c-4c2fe3686223",
