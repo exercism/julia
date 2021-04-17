@@ -1055,7 +1055,7 @@
   "key_features": [
     {
       "title": "Fast",
-      "content": "Julia is designed for high performance. Julia compiles efficient native code for multiple platforms",
+      "content": "Julia is designed for high performance and compiles efficient native code for multiple platforms",
       "icon": ""
     },
     {
@@ -1070,7 +1070,7 @@
     },
     {
       "title": "Composable",
-      "content": "Julia uses multiple dispatch as a paradigm, making it unreasonably effective for composing programs!",
+      "content": "Julia uses multiple dispatch as a paradigm, making it unreasonably effective for composing programs",
       "icon": ""
     },
     {
@@ -1080,7 +1080,7 @@
     },
     {
       "title": "Natural Syntax",
-      "content": "Unicode operators & identifiers, plus operator overloading, allows elegant code that looks like math",
+      "content": "Use operator overloading plus unicode operators and identifiers to write code that looks like math",
       "icon": ""
     }
   ],
