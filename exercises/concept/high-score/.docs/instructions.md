@@ -2,14 +2,6 @@
 
 In this exercise, you're implementing a way to keep track of the high scores for the most popular game in your local arcade hall.
 
-<!-- TODO
-    Decide if "edge cases" should be listed in the instructions or not.
-
-    By explicitely mentioning them, students may consider them ahead of time when they don't really need to, because the edge cases match the behaviour of the naive implementation anyway.
-
-    However, if students deviate from the naive implementation, they may find it frustrating that tests fail even if their implementation conforms to the instructions.
--->
-
 ## 1. Add players to the high score board
 
 To add a player to the high score board, define two `add_player!` methods that take the following arguments:
