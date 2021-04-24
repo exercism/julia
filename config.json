@@ -89,6 +89,7 @@
         ],
         "prerequisites": [
           "immutable-structs",
+          "vectors",
           "randomness",
           "keyword-arguments"
         ],
