@@ -1,0 +1,18 @@
+[
+    {
+        "description": "What does `@kwdef` do?",
+        "url": "https://discourse.julialang.org/t/what-does-kwdef-do/51973/2"
+    },
+    {
+        "description": "Julia Issue #32659 to add `@kwdef` to the Manual",
+        "url": "https://github.com/JuliaLang/julia/issues/32659"
+    },
+    {
+        "description": "Julia Issue #33192 to export `@kwdef`",
+        "url": "https://github.com/JuliaLang/julia/issues/33192"
+    },
+    {
+        "url": "https://github.com/JuliaLang/julia/pull/35715/files#diff-3591da1fafe13d9fcae96e5b32a9492c6fb68b7e33ac0810b106b09b45d59534",
+        "description": "Julia's Public API"
+    }
+]
