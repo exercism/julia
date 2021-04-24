@@ -737,7 +737,8 @@
           "randomness",
           "math",
           "test_driven_development"
-        ]
+        ],
+        "status": "deprecated"
       },
       {
         "slug": "robot-simulator",
