@@ -1,0 +1,24 @@
+{
+  "blurb": "Learn about dictionaries (Dicts) in Julia.",
+  "language_versions": "≥1.0",
+  "files": {
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "solution": [
+      "high-score.jl"
+    ]
+  },
+  "contributors": [
+    "cmcaine"
+  ],
+  "authors": [
+    "SaschaMann"
+  ],
+  "forked_from": [
+    "elixir/high-score"
+  ]
+}

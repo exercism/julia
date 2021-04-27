@@ -153,6 +153,22 @@
         ]
       },
       {
+        "uuid": "21ba9b66-5410-4748-9e6f-e8a96871d9bf",
+        "name": "High Score",
+        "slug": "high-score",
+        "concepts": [
+          "dictionaries",
+          "optional-arguments"
+        ],
+        "prerequisites": [
+          "methods",
+          "strings",
+          "pairs",
+          "vectors"
+        ],
+        "status": "beta"
+      },
+      {
         "uuid": "36cbda04-3921-4491-9ec6-76951f00aa00",
         "name": "The Exercism Matrix",
         "slug": "exercism-matrix",
@@ -216,8 +232,7 @@
         "name": "Fibonacci Iterator",
         "slug": "fibonacci-iterator",
         "concepts": [
-          "iterator-protocol",
-          "optional-arguments"
+          "iterator-protocol"
         ],
         "prerequisites": [
           "multiple-dispatch",
@@ -225,7 +240,8 @@
           "loops",
           "nothingness",
           "parametric-types",
-          "tuples"
+          "tuples",
+          "optional-arguments"
         ],
         "status": "wip"
       }
@@ -992,6 +1008,11 @@
       "name": "Constants"
     },
     {
+      "uuid": "f2a11926-c152-4c46-91e9-6349ee6b61d3",
+      "slug": "dictionaries",
+      "name": "Dictionaries"
+    },
+    {
       "uuid": "33e5c4af-7361-4a61-bdb2-504f7227d0ef",
       "slug": "docstrings",
       "name": "Docstrings"
@@ -1040,6 +1061,11 @@
       "uuid": "84567594-5ec1-48f4-bfaf-f6480a75c47e",
       "slug": "multiple-dispatch",
       "name": "Multiple Dispatch"
+    },
+    {
+      "uuid": "3fd60b22-06c6-444e-baf2-8cfa48dc6a3f",
+      "slug": "optional-arguments",
+      "name": "Optional Arguments"
     },
     {
       "uuid": "ac862fcd-90a1-404c-8f6d-ba42f2c813a4",

@@ -85,7 +85,11 @@ Base.iterate(S::Squares) = iterate(S, 1)
 
 You may find it useful to combine these two definitions into one using optional arguments:
 
-## optional-arguments
+## Making use of optional arguments
+
+In a [previous exercise](https://exercism.io/tracks/julia/exercises/high-score) you have learned how to define several methods at once by making use of optional arguments.
+
+Recall that
 
 ```julia
 julia> f(a, b=1) = a + b
@@ -102,8 +106,7 @@ julia> f(a) = f(a, 1)
 f (generic function with 2 methods)
 ```
 
-In the response in the REPL, you can see that the first definition defines two methods at once.
-
+For some iterators, optional arguments can simplify your `iterate` method to a single definition.
 This is particularly useful when the computation of the next item is identical regardless if it's the first or a consecutive iteration.
 Some iterators may require a more extensive initialisation, in which case it can be better to split them into two separate definitions.
 
