@@ -9,7 +9,7 @@ To add a player to the high score board, define two `add_player!` methods that t
 - The first argument is the dictionary of scores.
 - The second argument is the name of a player as a string.
 - The third argument is the score as an integer.
-  The argument is optional, when no value is given, the score should be set to 0.
+  This argument is optional, when no value is given, the score should be set to 0.
 
 ```julia
 julia> scores = Dict{String, Int}()
