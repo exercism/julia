@@ -20,7 +20,7 @@ end
 
 Return the modifier based on an ability value.
 """
-modifier(ability) = floor(Int, (ability - 10) / 2)
+modifier(ability) = fld(ability - 10, 2)
 
 Base.@kwdef struct DNDCharacter
     strength::Int = ability()

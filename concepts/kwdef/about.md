@@ -1,7 +1,7 @@
 # About
 
 The macro `Base.@kwdef` can be used to automatically define constructors that take keyword arguments for the definition of a [struct][struct].
-It also allows one to set default values for fields.
+These keyword argument constructors can also set default values for fields.
 
 For example, the following definition
 
@@ -55,7 +55,7 @@ julia> methods(HumanStats)
 [2] HumanStats(birthyear, height, mass, bmi) [...]
 ```
 
-and would require manually defining a keyword-based constructor.
+and would require manually defining a keyword-based constructor if you wanted one.
 
 ## When to use `Base.@kwdef`?
 
@@ -105,6 +105,8 @@ struct BasketballPlayer
 end
 ```
 -->
+
+<!-- TODO Maybe mention named tuples as an alternative? -->
 
 ~~~~exercism/caution
 `Base.@kwdef` is not exported and not documented in the manual, and therefore not part of [Julia's public API][public-api].
