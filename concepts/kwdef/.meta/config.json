@@ -1,5 +1,5 @@
 {
-  "blurb": "The macro `Base.@kwdef` can be used to automatically define constructors that take keyword arguments for type definitions.",
+  "blurb": "The macro Base.@kwdef can be used to automatically define constructors that take keyword arguments for type definitions.",
   "authors": [
     "SaschaMann"
   ],
