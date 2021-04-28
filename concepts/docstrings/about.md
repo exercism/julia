@@ -2,7 +2,7 @@
 
 A docstring is a piece of text that describes the functionality of the subsequent code.
 Docstrings allow for the automatic generation of documentation.
-They differ from comments in that they're part of the source tree and accessible to the program itself at runtime.[1]
+They differ from comments in that they are integrated with the REPL and documentation help systems. (More details on those later.)
 
 ~~~~exercism/note
 You are not required to write docstrings for your functions while solving exercises on the Julia track if you don't want to.
@@ -114,6 +114,3 @@ REPL.stripmd
 ## Sources
 
 This entire document is derived from the [Documentation chapter](https://docs.julialang.org/en/v1/manual/documentation/) of the Julia Manual.
-
-[1]Docstring, Wikipedia. (2020). https://en.wikipedia.org/w/index.php?title=Docstring&oldid=991140087 (accessed April 6, 2021).
-
