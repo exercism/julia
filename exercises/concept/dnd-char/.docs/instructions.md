@@ -14,8 +14,7 @@ These six abilities have scores that are determined randomly.
 You do this by rolling four 6-sided dice and record the sum of the largest three dice.
 You do this six times, once for each ability.
 
-Your character's initial hitpoints are 10 + your character's constitution
-modifier.
+Your character's initial hitpoints are 10 + your character's constitution modifier.
 You find your character's constitution modifier by subtracting 10 from your character's constitution, divide by 2 and round down.
 
 ~~~~exercism/advanced
@@ -64,6 +63,7 @@ You can use random values between 3 and 18 (inclusive) for the ability values, r
 ## 2. Calculate the constitution modifier
 
 Implement a function `modifier(ability)` that returns an ability modifier based on the value of `ability` according to the rules above.
+The returned value must be an integer.
 
 ```julia
 julia> modifier(17)
@@ -71,6 +71,7 @@ julia> modifier(17)
 ``` 
 
 ## 3. Write a random character generator that follows the rules above
+
 Implement a `DNDCharacter` struct with three constructors:
 
 | Constructor                                                                                    | Description                                                                       |

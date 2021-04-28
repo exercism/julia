@@ -8,23 +8,27 @@ include("dnd-character.jl")
     end
 end
 
+@testset "Ability modifiers are integers" begin
+    @test typeof(modifier(7)) <: Integer
+end
+
 @testset "Ability modifiers" begin
-    @test modifier(3)::Int == -4
-    @test modifier(4)::Int == -3
-    @test modifier(5)::Int == -3
-    @test modifier(6)::Int == -2
-    @test modifier(7)::Int == -2
-    @test modifier(8)::Int == -1
-    @test modifier(9)::Int == -1
-    @test modifier(10)::Int == 0
-    @test modifier(11)::Int == 0
-    @test modifier(12)::Int == 1
-    @test modifier(13)::Int == 1
-    @test modifier(14)::Int == 2
-    @test modifier(15)::Int == 2
-    @test modifier(16)::Int == 3
-    @test modifier(17)::Int == 3
-    @test modifier(18)::Int == 4
+    @test modifier(3) == -4
+    @test modifier(4) == -3
+    @test modifier(5) == -3
+    @test modifier(6) == -2
+    @test modifier(7) == -2
+    @test modifier(8) == -1
+    @test modifier(9) == -1
+    @test modifier(10) == 0
+    @test modifier(11) == 0
+    @test modifier(12) == 1
+    @test modifier(13) == 1
+    @test modifier(14) == 2
+    @test modifier(15) == 2
+    @test modifier(16) == 3
+    @test modifier(17) == 3
+    @test modifier(18) == 4
 end
 
 @testset "Randomly generated character is valid" begin
