@@ -80,6 +80,22 @@
         "status": "wip"
       },
       {
+        "uuid": "60e480e9-7f6f-460a-b753-f333a37d3e0c",
+        "name": "DND Character",
+        "slug": "dnd-char",
+        "concepts": [
+          "kwdef",
+          "using-macros"
+        ],
+        "prerequisites": [
+          "immutable-structs",
+          "vectors",
+          "randomness",
+          "keyword-arguments"
+        ],
+        "status": "wip"
+      },
+      {
         "uuid": "f2f696e6-8a6a-4c8c-ae0b-d940d8579905",
         "slug": "leap",
         "concepts": [
@@ -737,7 +753,8 @@
           "randomness",
           "math",
           "test_driven_development"
-        ]
+        ],
+        "status": "deprecated"
       },
       {
         "slug": "robot-simulator",
