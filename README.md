@@ -22,4 +22,4 @@ Your example solutions should adhere to the following guidelines:
 - use lower case for method names, add underscores if necessary
 
 These are based on the [General Formatting Guidelines](https://github.com/JuliaLang/julia/blob/master/CONTRIBUTING.md#general-formatting-guidelines-for-julia-code-contributions) for contributions to the Julia codebase.
- 
+  
