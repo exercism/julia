@@ -23,8 +23,6 @@ Having found the kidnappers, Annalyn considers which of the following actions sh
 
 Your tasks are to implement the functions that determine if these random events occur, and to determine Annalyn's loot.
 
-## Tasks
-
 ### 1. Add a function that determines if it's foggy
 
 Implement a function named `is_foggy`. This function returns `true` half the time. Otherwise, it returns `false`.
