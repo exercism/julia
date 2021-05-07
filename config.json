@@ -1022,6 +1022,11 @@
       "name": "Composite Types"
     },
     {
+      "uuid": "0d312606-7738-4b0a-9c33-564c40c6f35d",
+      "slug": "conditionals",
+      "name": "Conditionals"
+    },
+    {
       "uuid": "3584666e-faaa-4a30-b5af-b80c4ee980c7",
       "slug": "constants",
       "name": "Constants"
@@ -1045,6 +1050,11 @@
       "uuid": "32384ed4-ef26-4118-8ea3-4d44c331e828",
       "slug": "functions",
       "name": "Functions"
+    },
+    {
+      "uuid": "684a989c-530f-43df-9a1d-d76708528312",
+      "slug": "if-expressions",
+      "name": "If Expressions"
     },
     {
       "uuid": "cdf8b342-f8b6-4b34-8c6c-05c968c685bf",
@@ -1097,9 +1107,19 @@
       "name": "Randomness"
     },
     {
+      "uuid": "25d93b83-fbca-452a-bac2-e5b0d3b656eb",
+      "slug": "short-circuit-evaluation",
+      "name": "Short-Circuit Evaluation"
+    },
+    {
       "uuid": "ac862fcd-90a1-404c-8f6d-ba42f2c813a4",
       "slug": "symbols",
       "name": "Symbols"
+    },
+    {
+      "uuid": "6587e5b6-f87f-4a57-81bb-080d030409ff",
+      "slug": "ternary-operator",
+      "name": "Ternary Operator"
     },
     {
       "uuid": "7ebfefea-f725-4b3e-9f2d-b5820b73dd9a",
