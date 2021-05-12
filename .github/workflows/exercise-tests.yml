@@ -28,7 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2.3.4
 
-      - uses: julia-actions/setup-julia@v1
+      - uses: julia-actions/setup-julia@v1.6
         with:
           version: ${{ matrix.julia-version }}
 
