@@ -10,6 +10,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2.3.4
     - name: Automatic Rebase
-      uses: cirrus-actions/rebase@7cea12ac34ab078fa37e87798d8986185afa7bf2 # 1.4
+      uses: cirrus-actions/rebase@c473b716e3fcde0c6bf67416e2c2882830ad40f6 # 1.4
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
