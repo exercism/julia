@@ -1,6 +1,6 @@
 # Instructions
 
-A friend of yours is learning how to solve Killer Sudokus but struggling to figure out which digits can go in a cage.
+A friend of yours is learning how to solve Killer Sudokus (rules below) but struggling to figure out which digits can go in a cage.
 They ask you to help them out by writing a small program that lists all valid combinations for a given cage, and any constraints that affect the cage.
 
 To make the output of your program easy to read, the combinations it returns must be sorted.
