@@ -132,6 +132,19 @@
         "status": "wip"
       },
       {
+        "uuid": "a35ef99d-41d1-42c9-8f14-ed98b8bd294b",
+        "name": "Library Fees",
+        "slug": "library-fees",
+        "concepts": [
+          "booleans-are-numbers",
+          "dates"
+        ],
+        "prerequisites": [
+          "conditionals"
+        ],
+        "status": "wip"
+      },
+      {
         "uuid": "4b3e6780-b566-4315-a7b0-45500883f050",
         "name": "Name Badge",
         "slug": "name-badge",
