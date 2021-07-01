@@ -18,6 +18,8 @@ In a 3-digit cage with a sum of 7, there is only one valid combination: 124.
 - 1 + 2 + 4 = 7
 - Any other combination that adds up to 7, e.g. 232, would violate the rule of not repeating digits within a cage.
 
+![https://media.githubusercontent.com/media/exercism/v3-files/main/julia/killer-sudoku-helper/example1.png](https://media.githubusercontent.com/media/exercism/v3-files/main/julia/killer-sudoku-helper/example1.png)
+
 ## Example 2: Cage with several combinations
 
 In a 2-digit cage with a sum 10, there are 4 possible combinations:
@@ -27,6 +29,8 @@ In a 2-digit cage with a sum 10, there are 4 possible combinations:
 - 37
 - 46
 
+![https://media.githubusercontent.com/media/exercism/v3-files/main/julia/killer-sudoku-helper/example2.png](https://media.githubusercontent.com/media/exercism/v3-files/main/julia/killer-sudoku-helper/example2.png)
+
 ## Example 3: Cage with several combinations that is restricted
 
 In a 2-digit cage with a sum 10, where the column already contains a 1 and a 4, there are 2 possible combinations:
@@ -35,6 +39,8 @@ In a 2-digit cage with a sum 10, where the column already contains a 1 and a 4, 
 - 37
 
 19 and 46 are not possible due to the 1 and 4 in the column according to standard Sudoku rules.
+
+![https://media.githubusercontent.com/media/exercism/v3-files/main/julia/killer-sudoku-helper/example3.png](https://media.githubusercontent.com/media/exercism/v3-files/main/julia/killer-sudoku-helper/example3.png)
 
 ## Trying it yourself
 
