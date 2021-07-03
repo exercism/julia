@@ -42,7 +42,7 @@
           "functions"
         ],
         "prerequisites": [],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "uuid": "84480c18-327e-47ea-94e7-9e14f2146643",
@@ -54,7 +54,7 @@
         "prerequisites": [
           "functions"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "uuid": "05cfc609-3a14-479a-b6fa-6d2a53ad111c",
