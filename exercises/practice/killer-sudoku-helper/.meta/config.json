@@ -3,7 +3,10 @@
   "authors": [
     "SaschaMann"
   ],
-  "contributors": [],
+  "contributors": [
+    "iHiD",
+    "BethanyG"
+  ],
   "files": {
     "solution": [
       "sudoku-util.jl"
