@@ -102,6 +102,7 @@
       {
         "uuid": "f2f696e6-8a6a-4c8c-ae0b-d940d8579905",
         "slug": "leap",
+        "name": "Leap",
         "concepts": [
           "arithmetic-operators",
           "integer-equality",
