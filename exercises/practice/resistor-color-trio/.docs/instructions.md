@@ -39,7 +39,7 @@ So an input of `"orange", "orange", "black"` should return:
 
 > "33 ohms"
 
-When we get more than a thousand ohms, we say "kiloohms". That's similar to saying "kilometer" for 1000 meters, and "kilograms" for 1000 grams.
+When we get more than a three trailing zeros in terms of "ohms", we say "kiloohms". That's similar to saying "kilometer" for 1000 meters, and "kilograms" for 1000 grams.
 So an input of `"orange", "orange", "orange"` should return:
 
 > "33 kiloohms"
