@@ -1134,32 +1134,32 @@
     {
       "title": "Fast",
       "content": "Julia is designed for high performance and compiles efficient native code for multiple platforms",
-      "icon": ""
+      "icon": "fast"
     },
     {
       "title": "Interactive",
       "content": "Julia is dynamically typed, feels like a scripting language and has good support for interactive use",
-      "icon": ""
+      "icon": "interactive"
     },
     {
       "title": "Scientific",
       "content": "Julia is designed with reproducibility, distributed computing and frictionless collaboration in mind",
-      "icon": ""
+      "icon": "scientific"
     },
     {
       "title": "Composable",
       "content": "Julia uses multiple dispatch as a paradigm, making it unreasonably effective for composing programs",
-      "icon": ""
+      "icon": "fun"
     },
     {
       "title": "Expressive",
       "content": "Multiple dispatch, generator expressions and metaprogramming features lead to highly expressive code",
-      "icon": ""
+      "icon": "expressive"
     },
     {
       "title": "Natural Syntax",
       "content": "Use operator overloading plus unicode operators and identifiers to write code that looks like math",
-      "icon": ""
+      "icon": "multi-paradigm"
     }
   ],
   "tags": [
