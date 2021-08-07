@@ -8,3 +8,5 @@ You may also choose your own solution to that exercise as a starting point if yo
 ~~~~
 
 ## 1. Document the three methods
+
+Add docstrings to the three methods `preptime`, `remaining_time`, and `total_working_time`.
