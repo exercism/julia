@@ -16,7 +16,7 @@
 
 The Concepts this exercise unlocks are:
 
-- `conditionals`: Exercises that require conditionals as prereq should only depend on this concept. Since these are technically all interchangable, depending on one of these versions makes no sense. However, for the website concept view, separating these into three concepts may make sense.
+- `conditionals`: Exercises that require conditionals as prereq should only depend on this concept. Since these are technically all interchangeable, depending on one of these versions makes no sense. However, for the website concept view, separating these into three concepts may make sense.
 - `if-expressions`
 - `ternary-operator`
 - `short-circuit-evaluation`

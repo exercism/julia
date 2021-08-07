@@ -41,7 +41,7 @@ The analyzer should disregard most of the regex defined by the student.
 The regex itself is out of scope of the exercise and does not need to be mentored.
 This should be clearly communicated to both mentors and students.
 
-The analyzer may suggest alternative approachs to writing the regex, e.g. using named capture groups or writing multi-line expressions, but this is not a priority.
+The analyzer may suggest alternative approaches to writing the regex, e.g. using named capture groups or writing multi-line expressions, but this is not a priority.
 
 ## Representer
 

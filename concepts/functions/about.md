@@ -57,7 +57,7 @@ For more information about functions, consider taking a look at the [Julia Manua
 #### Implicit returns
 
 The `return` statement is optional in Julia.
-The last value in the function body will be returned implicitely:
+The last value in the function body will be returned implicitly:
 
 ```julia
 function preptime(layers)
