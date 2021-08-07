@@ -130,7 +130,7 @@ You may improve these files by making the required changes and opening a new Pul
 
 ## Tools
 
-You'll need Julia 1.0 or higher in order to contribute to the _code_ in this respository.
+You'll need Julia 1.0 or higher in order to contribute to the _code_ in this repository.
 
 ### Fetch configlet
 

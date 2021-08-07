@@ -1,5 +1,5 @@
 using LinearAlgebra
-#Credit to u/SingularInfinity on Redit: https://www.reddit.com/r/dailyprogrammer/comments/6i60lr/20170619_challenge_320_easy_spiral_ascension/djb8po0
+#Credit to u/SingularInfinity on Reddit: https://www.reddit.com/r/dailyprogrammer/comments/6i60lr/20170619_challenge_320_easy_spiral_ascension/djb8po0
 
 function spiral_matrix(n::Int)
     n < 0 && throw(DomainError(n, "n should be positive"))

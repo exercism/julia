@@ -33,7 +33,7 @@ function label(colors::AbstractArray)
         suffix = "ohms"
     end
 
-    # print the final anwer with the appropriate suffix
+    # print the final answer with the appropriate suffix
     return ("$first_two_digits" * " " * "$suffix")
 
 end
