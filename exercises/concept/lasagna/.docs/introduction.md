@@ -40,7 +40,7 @@ square_plus_one(x) = muladd(x, x, 1)
 ### Types
 
 Depending on which other programming languages you know, you may expect parameters, variables or return values to have explicit type annotations.
-For now, assume that that Julia will infer the types automagically and don't worry about them, we will get to the specifics of the type system in later exercises.
+For now, assume that Julia will infer the types automagically and don't worry about them, we will get to the specifics of the type system in later exercises.
 
 ### Comments
 
