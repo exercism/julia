@@ -4,7 +4,7 @@
   "active": true,
   "status": {
     "concept_exercises": false,
-    "test_runner": false,
+    "test_runner": true,
     "representer": false,
     "analyzer": false
   },
@@ -12,7 +12,25 @@
   "version": 3,
   "online_editor": {
     "indent_style": "space",
-    "indent_size": 4
+    "indent_size": 4,
+    "highlightjs_language": "julia"
+  },
+  "test_runner": {
+    "average_run_time": 2.0
+  },
+  "files": {
+    "solution": [
+      "%{kebab_slug}.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ]
   },
   "exercises": {
     "concept": [
@@ -21,10 +39,22 @@
         "name": "Lasagna",
         "slug": "lasagna",
         "concepts": [
-          "functions-introduction"
+          "functions"
         ],
         "prerequisites": [],
-        "status": "wip"
+        "status": "beta"
+      },
+      {
+        "uuid": "84480c18-327e-47ea-94e7-9e14f2146643",
+        "name": "Documented Lasagna",
+        "slug": "documented-lasagna",
+        "concepts": [
+          "docstrings"
+        ],
+        "prerequisites": [
+          "functions"
+        ],
+        "status": "beta"
       },
       {
         "uuid": "05cfc609-3a14-479a-b6fa-6d2a53ad111c",
@@ -35,7 +65,8 @@
           "booleans"
         ],
         "prerequisites": [
-          "functions-introduction"
+          "functions",
+          "docstrings"
         ],
         "status": "wip"
       },
@@ -44,7 +75,8 @@
         "name": "Annalyn's Infiltration Ⅱ",
         "slug": "annalyns-infiltration2",
         "concepts": [
-          "randomness"
+          "randomness",
+          "methods"
         ],
         "prerequisites": [
           "booleans"
@@ -52,17 +84,35 @@
         "status": "wip"
       },
       {
+        "uuid": "60e480e9-7f6f-460a-b753-f333a37d3e0c",
+        "name": "DND Character",
+        "slug": "dnd-char",
+        "concepts": [
+          "kwdef",
+          "using-macros"
+        ],
+        "prerequisites": [
+          "immutable-structs",
+          "vectors",
+          "randomness",
+          "keyword-arguments"
+        ],
+        "status": "wip"
+      },
+      {
         "uuid": "f2f696e6-8a6a-4c8c-ae0b-d940d8579905",
         "slug": "leap-years",
+        "name": "Leap",
         "concepts": [
           "arithmetic-operators",
           "integer-equality",
           "boolean-expressions"
         ],
         "prerequisites": [
-          "functions-introduction",
+          "functions",
           "boolean-logic",
-          "booleans"
+          "booleans",
+          "docstrings"
         ],
         "status": "wip"
       },
@@ -83,6 +133,63 @@
         "status": "wip"
       },
       {
+        "uuid": "4b3e6780-b566-4315-a7b0-45500883f050",
+        "name": "Name Badge",
+        "slug": "name-badge",
+        "concepts": [
+          "nothingness"
+        ],
+        "prerequisites": [
+          "strings",
+          "string-manipulation",
+          "conditionals"
+        ],
+        "status": "beta"
+      },
+      {
+        "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",
+        "name": "Elyse's Enchantments",
+        "slug": "elyses-enchantments",
+        "concepts": [
+          "vectors",
+          "pairs"
+        ],
+        "prerequisites": [
+          "functions",
+          "booleans",
+          "docstrings"
+        ]
+      },
+      {
+        "uuid": "fe7f6097-36b7-42a2-bbd4-f706fb4c08b1",
+        "name": "Elyse's Analytic Enchantments",
+        "slug": "elyses-analytic-enchantments",
+        "concepts": [
+          "predicates"
+        ],
+        "prerequisites": [
+          "vectors",
+          "nothingness",
+          "conditionals"
+        ]
+      },
+      {
+        "uuid": "21ba9b66-5410-4748-9e6f-e8a96871d9bf",
+        "name": "High Score",
+        "slug": "high-score",
+        "concepts": [
+          "dictionaries",
+          "optional-arguments"
+        ],
+        "prerequisites": [
+          "methods",
+          "strings",
+          "pairs",
+          "vectors"
+        ],
+        "status": "beta"
+      },
+      {
         "uuid": "36cbda04-3921-4491-9ec6-76951f00aa00",
         "name": "The Exercism Matrix",
         "slug": "exercism-matrix",
@@ -90,7 +197,9 @@
           "matrices-introduction"
         ],
         "prerequisites": [
-          "functions-introduction"
+          "functions",
+          "vectors",
+          "docstrings"
         ],
         "status": "wip"
       },
@@ -125,12 +234,26 @@
         "status": "wip"
       },
       {
+        "uuid": "0e7ecc5e-b4d6-4ead-bfaa-a2ebdddcff47",
+        "name": "Stage Heralding",
+        "slug": "stage-heralding",
+        "concepts": [
+          "regex",
+          "string-literals-using"
+        ],
+        "prerequisites": [
+          "strings",
+          "conditionals",
+          "nothingness"
+        ],
+        "status": "wip"
+      },
+      {
         "uuid": "9a864ac5-0fda-4ba2-bccc-702a1444c412",
         "name": "Fibonacci Iterator",
         "slug": "fibonacci-iterator",
         "concepts": [
-          "iterator-protocol",
-          "optional-arguments"
+          "iterator-protocol"
         ],
         "prerequisites": [
           "multiple-dispatch",
@@ -138,7 +261,8 @@
           "loops",
           "nothingness",
           "parametric-types",
-          "tuples"
+          "tuples",
+          "optional-arguments"
         ],
         "status": "wip"
       }
@@ -148,6 +272,7 @@
         "slug": "hello-world",
         "name": "Hello World",
         "uuid": "a668410d-41aa-4710-a68f-54521da6486d",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
@@ -158,6 +283,7 @@
         "slug": "leap",
         "name": "Leap",
         "uuid": "8740c914-f008-4b6b-8e7d-7470e78e6a8e",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
@@ -171,6 +297,7 @@
         "slug": "nucleotide-count",
         "name": "Nucleotide Count",
         "uuid": "54c24809-c6e7-419b-8ec3-6d8d128ca546",
+        "practices": [],
         "prerequisites": [
           "arithmetic-operators", "loops", "dicts",
           "chars", "strings"
@@ -186,6 +313,7 @@
         "slug": "pangram",
         "name": "Pangram",
         "uuid": "4bc9a4f8-fc4d-4e6b-a93c-07069bbc5bc9",
+        "practices": [],
         "prerequisites": [
           "boolean-logic", "loops",
           "chars", "strings"
@@ -201,6 +329,7 @@
         "slug": "rotational-cipher",
         "name": "Rotational Cipher",
         "uuid": "79ea05f1-3f27-4b92-bc47-0cebcd8d5a6f",
+        "practices": [],
         "prerequisites": [
           "arithmetic-operators", "loops",
           "chars", "strings"
@@ -216,6 +345,7 @@
         "slug": "difference-of-squares",
         "name": "Difference Of Squares",
         "uuid": "16550822-4751-4bb3-9e15-80361006e2d6",
+        "practices": [],
         "prerequisites": [
           "arithmetic-operators", "generators"
         ],
@@ -229,6 +359,7 @@
         "slug": "raindrops",
         "name": "Raindrops",
         "uuid": "7a083573-2c68-47cc-8bc8-c0e483cf0e50",
+        "practices": [],
         "prerequisites": [
           "arithmetic-operators", "conditionals", "loops"
         ],
@@ -243,6 +374,7 @@
         "slug": "secret-handshake",
         "name": "Secret Handshake",
         "uuid": "d2c85375-c0e7-4e04-88f1-08736e5afa04",
+        "practices": [],
         "prerequisites": [
           "bitwise-operators", "conditionals", "loops"
         ],
@@ -256,6 +388,7 @@
         "slug": "clock",
         "name": "Clock",
         "uuid": "39bc1f1e-68e3-4d35-880b-d6b6fa174605",
+        "practices": [],
         "prerequisites": [
           "arithmetic-operators", "structs", "loops", "multiple-dispatch"
         ],
@@ -270,6 +403,7 @@
         "slug": "robot-name",
         "name": "Robot Name",
         "uuid": "7cb2d96a-4707-4cec-9ead-313fcb5fbb94",
+        "practices": [],
         "prerequisites": [
           "arithmetic-operators", "structs", "multiple-dispatch", "randomness",
           "loops", "conditionals"
@@ -285,6 +419,7 @@
         "slug": "darts",
         "name": "Darts",
         "uuid": "25e1ab6b-782b-4892-8220-f332ebe44b23",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
@@ -296,6 +431,7 @@
         "slug": "hamming",
         "name": "Hamming",
         "uuid": "878e9897-c4b6-40ff-9034-8f2aedf07a91",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
@@ -308,6 +444,7 @@
         "slug": "rna-transcription",
         "name": "Rna Transcription",
         "uuid": "0d5f865c-b704-445c-ac31-df34168f54aa",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
@@ -321,6 +458,7 @@
         "slug": "run-length-encoding",
         "name": "Run Length Encoding",
         "uuid": "9814f832-8bd1-4a2b-9a1e-fc0e3e8541b5",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
@@ -333,6 +471,7 @@
         "slug": "scrabble-score",
         "name": "Scrabble Score",
         "uuid": "5feec698-0bf8-4308-9f72-2cecaab5e75e",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
@@ -346,6 +485,7 @@
         "slug": "word-count",
         "name": "Word Count",
         "uuid": "07875495-146f-44a3-b13a-e8e74a37b87d",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
@@ -358,6 +498,7 @@
         "slug": "etl",
         "name": "Etl",
         "uuid": "bccc00fa-811c-4bf9-8e55-07a0d0affb08",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 2,
         "topics": [
@@ -368,6 +509,7 @@
       },
       {
         "uuid": "e73f19f7-17bc-4d51-a00a-c2b58c1fa8e6",
+        "practices": [],
         "prerequisites": [],
         "slug": "reverse-string",
         "name": "Reverse String",
@@ -387,6 +529,7 @@
       },
       {
         "uuid": "4eced190-062f-4a7b-8c92-87ff02f1e343",
+        "practices": [],
         "prerequisites": [],
         "slug": "allergies",
         "name": "Allergies",
@@ -406,6 +549,7 @@
         "slug": "isogram",
         "name": "Isogram",
         "uuid": "19f9e7c4-f2a5-4636-b7b2-4e0a15977e01",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
@@ -419,6 +563,7 @@
         "slug": "anagram",
         "name": "Anagram",
         "uuid": "d2cb1621-2a2e-4791-a6b6-fdbca74a5583",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 2,
         "topics": [
@@ -433,6 +578,7 @@
         "slug": "minesweeper",
         "name": "Minesweeper",
         "uuid": "9a47bffd-4dd2-48ce-b47b-753271305966",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 2,
         "topics": [
@@ -451,6 +597,7 @@
         "slug": "binary-search",
         "name": "Binary Search",
         "uuid": "325385bb-2a70-4c7a-8b4e-e6297fc69872",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 3,
         "topics": [
@@ -462,6 +609,7 @@
         "slug": "atbash-cipher",
         "name": "Atbash Cipher",
         "uuid": "a4638670-941d-4213-8407-d9ebba70bd42",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
@@ -474,6 +622,7 @@
         "slug": "grains",
         "name": "Grains",
         "uuid": "4cc2a5d6-e662-4d99-81d4-05d6bcd500f4",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
@@ -484,6 +633,7 @@
         "slug": "pascals-triangle",
         "name": "Pascals Triangle",
         "uuid": "bf709fe6-d269-467a-a3da-5bbdaf674f91",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
@@ -497,6 +647,7 @@
         "slug": "collatz-conjecture",
         "name": "Collatz Conjecture",
         "uuid": "d1d5a74a-d488-4e2e-bd63-b74730057c98",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 2,
         "topics": [
@@ -509,6 +660,7 @@
         "slug": "sieve",
         "name": "Sieve",
         "uuid": "5e3b376a-06ab-442f-8d18-710db7778db6",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 2,
         "topics": [
@@ -523,6 +675,7 @@
         "slug": "luhn",
         "name": "Luhn",
         "uuid": "cc08d672-9c58-4e7a-bfb7-344cbad811f7",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
@@ -535,6 +688,7 @@
         "slug": "roman-numerals",
         "name": "Roman Numerals",
         "uuid": "58c41643-971c-4199-a10f-7dc21093e5e3",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
@@ -546,6 +700,7 @@
         "slug": "isbn-verifier",
         "name": "Isbn Verifier",
         "uuid": "22b64a2b-7f08-444d-be6e-8b42e5c9207c",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 5,
         "topics": [
@@ -560,6 +715,7 @@
         "slug": "trinary",
         "name": "Trinary",
         "uuid": "c09ed7ec-fa7c-4f6a-994f-3d3eb7f22df4",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 2,
         "topics": [
@@ -573,6 +729,7 @@
         "slug": "custom-set",
         "name": "Custom Set",
         "uuid": "b47377f7-84af-4a10-83ef-c2444a4f8940",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 8,
         "topics": [
@@ -585,6 +742,7 @@
         "slug": "rational-numbers",
         "name": "Rational Numbers",
         "uuid": "0caf0209-be6e-4585-a90b-e41c94c5fa40",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 8,
         "topics": [
@@ -597,6 +755,7 @@
         "slug": "complex-numbers",
         "name": "Complex Numbers",
         "uuid": "eca7e62c-7bbf-436c-8011-2920cb2ab1c1",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 10,
         "topics": [
@@ -607,6 +766,7 @@
       },
       {
         "uuid": "fcb9ef0e-ed97-4420-a38f-9bf690c23a3b",
+        "practices": [],
         "prerequisites": [],
         "slug": "dnd-character",
         "name": "Dnd Character",
@@ -619,12 +779,14 @@
           "randomness",
           "math",
           "test_driven_development"
-        ]
+        ],
+        "status": "deprecated"
       },
       {
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "e4b19962-ebc1-4f12-9ac8-45f17faeaa55",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 6,
         "topics": [
@@ -633,6 +795,7 @@
       },
       {
         "uuid": "3dc9bbde-d344-4a36-a7e1-433637974dfc",
+        "practices": [],
         "prerequisites": [],
         "slug": "circular-buffer",
         "name": "Circular Buffer",
@@ -647,6 +810,7 @@
         "slug": "acronym",
         "name": "Acronym",
         "uuid": "929493e2-56b2-41d7-aedc-7cc4831078ba",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
@@ -659,6 +823,7 @@
         "slug": "armstrong-numbers",
         "name": "Armstrong Numbers",
         "uuid": "af4ae5d7-8d9d-4d21-b5d3-62f4fd8b4719",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
@@ -671,6 +836,7 @@
         "slug": "gigasecond",
         "name": "Gigasecond",
         "uuid": "c64e03cc-1952-4b2d-9a53-25c43187a4e6",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
@@ -681,6 +847,7 @@
         "slug": "phone-number",
         "name": "Phone Number",
         "uuid": "f7a3f344-a9fa-4a36-ac44-12bc8673899e",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
@@ -694,6 +861,7 @@
         "slug": "prime-factors",
         "name": "Prime Factors",
         "uuid": "b6b7e95b-c4ca-438c-a5e7-d76cb44e5b19",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
@@ -705,6 +873,7 @@
         "slug": "triangle",
         "name": "Triangle",
         "uuid": "f5be4623-2a9a-4bf5-bb32-dd81eddf0683",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 1,
         "topics": [
@@ -715,6 +884,7 @@
         "slug": "accumulate",
         "name": "Accumulate",
         "uuid": "e11e9623-f763-4bea-a6d9-7085956ce959",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 2,
         "topics": [
@@ -730,6 +900,7 @@
         "slug": "bob",
         "name": "Bob",
         "uuid": "9474a13b-09c1-4e4d-90e3-1a14fde5eb62",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 2,
         "topics": [
@@ -742,6 +913,7 @@
         "slug": "resistor-color-trio",
         "name": "Resistor Color Trio",
         "uuid": "39e831d0-ea7a-4df9-b9cb-64ccb996ee0e",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 2,
         "topics": [
@@ -755,6 +927,7 @@
         "slug": "transpose",
         "name": "Transpose",
         "uuid": "e5a6d640-cd76-4453-8247-fd34ffed4fe5",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 2,
         "topics": [
@@ -767,6 +940,7 @@
       },
       {
         "uuid": "4fc89443-1c5c-492a-850f-7990869caae6",
+        "practices": [],
         "prerequisites": [],
         "slug": "perfect-numbers",
         "name": "Perfect Numbers",
@@ -787,6 +961,7 @@
         "slug": "spiral-matrix",
         "name": "Spiral Matrix",
         "uuid": "3a2facfd-5ec8-49a0-a5aa-2229f07da896",
+        "practices": [],
         "prerequisites": [],
         "difficulty": 3,
         "topics": [
@@ -796,6 +971,7 @@
       },
       {
         "uuid": "6fa91607-d772-47af-9520-de26bbb8addb",
+        "practices": [],
         "prerequisites": [],
         "slug": "all-your-base",
         "name": "All Your Base",
@@ -807,6 +983,7 @@
       },
       {
         "uuid": "bf5c1f49-963a-4397-bb67-b58e1b7d45e3",
+        "practices": [],
         "prerequisites": [],
         "slug": "matching-brackets",
         "name": "Matching Brackets",
@@ -825,6 +1002,7 @@
       },
       {
         "uuid": "a534b8ed-da88-4945-bb25-f6633977740b",
+        "practices": [],
         "prerequisites": [],
         "slug": "pythagorean-triplet",
         "name": "Pythagorean Triplet",
@@ -850,130 +1028,154 @@
     {
       "uuid": "7d7cef41-5cef-4896-9aa3-cd7baf15339c",
       "slug": "abstract-types",
-      "name": "Abstract Types",
-      "blurb": "TODO: add blurb for abstract-types concept"
+      "name": "Abstract Types"
     },
     {
       "uuid": "839e5029-3bde-4823-8177-7b04a43cbf62",
       "slug": "boolean-logic",
-      "name": "Boolean Logic",
-      "blurb": "TODO: add blurb for boolean-logic concept"
+      "name": "Boolean Logic"
     },
     {
       "uuid": "9470279c-9960-420b-b266-53e329bb205c",
       "slug": "booleans",
-      "name": "Booleans",
-      "blurb": "TODO: add blurb for booleans concept"
+      "name": "Booleans"
     },
     {
       "uuid": "aad9773b-9032-4d8d-a9e9-4b8152f35b68",
       "slug": "composite-types",
-      "name": "Composite Types",
-      "blurb": "TODO: add blurb for composite-types concept"
+      "name": "Composite Types"
+    },
+    {
+      "uuid": "0d312606-7738-4b0a-9c33-564c40c6f35d",
+      "slug": "conditionals",
+      "name": "Conditionals"
     },
     {
       "uuid": "3584666e-faaa-4a30-b5af-b80c4ee980c7",
       "slug": "constants",
-      "name": "Constants",
-      "blurb": "TODO: add blurb for constants concept"
+      "name": "Constants"
+    },
+    {
+      "uuid": "33e5c4af-7361-4a61-bdb2-504f7227d0ef",
+      "slug": "docstrings",
+      "name": "Docstrings"
     },
     {
       "uuid": "daef8574-4fed-4385-919b-82a16e3b9701",
       "slug": "emoji-symbols",
-      "name": "Emoji Symbols",
-      "blurb": "TODO: add blurb for emoji-symbols concept"
+      "name": "Emoji Symbols"
     },
     {
       "uuid": "32384ed4-ef26-4118-8ea3-4d44c331e828",
-      "slug": "functions-introduction",
-      "name": "Functions Introduction",
-      "blurb": "TODO: add blurb for functions-introduction concept"
+      "slug": "functions",
+      "name": "Functions"
+    },
+    {
+      "uuid": "684a989c-530f-43df-9a1d-d76708528312",
+      "slug": "if-expressions",
+      "name": "If Expressions"
+    },
+    {
+      "uuid": "cdf8b342-f8b6-4b34-8c6c-05c968c685bf",
+      "slug": "kwdef",
+      "name": "Keyword-based Constructors"
     },
     {
       "uuid": "0ac24090-fa7b-4b36-a78c-4c2fe3686223",
       "slug": "matrices-concatenation",
-      "name": "Matrices Concatenation",
-      "blurb": "TODO: add blurb for matrices-concatenation concept"
+      "name": "Matrices Concatenation"
     },
     {
       "uuid": "63b504c0-a6b4-410b-8ebd-9e6745ad99f0",
       "slug": "matrices-indices",
-      "name": "Matrices Indices",
-      "blurb": "TODO: add blurb for matrices-indices concept"
+      "name": "Matrices Indices"
     },
     {
       "uuid": "6d1448b6-847a-4c18-9a9b-3ad37a66d31e",
       "slug": "matrices-introduction",
-      "name": "Matrices Introduction",
-      "blurb": "TODO: add blurb for matrices-introduction concept"
+      "name": "Matrices Introduction"
     },
     {
       "uuid": "de3002c3-9234-4516-923f-2ffb33024ea5",
       "slug": "matrices-iteration",
-      "name": "Matrices Iteration",
-      "blurb": "TODO: add blurb for matrices-iteration concept"
+      "name": "Matrices Iteration"
     },
     {
       "uuid": "1ba6abf2-646a-444d-a820-e94560e6f685",
       "slug": "matrices-mutation",
-      "name": "Matrices Mutation",
-      "blurb": "TODO: add blurb for matrices-mutation concept"
+      "name": "Matrices Mutation"
     },
     {
       "uuid": "8ca3e0f2-30ef-4a27-b30e-c196fcc6104f",
       "slug": "methods",
-      "name": "Methods",
-      "blurb": "TODO: add blurb for methods concept"
+      "name": "Methods"
     },
     {
       "uuid": "84567594-5ec1-48f4-bfaf-f6480a75c47e",
       "slug": "multiple-dispatch",
-      "name": "Multiple Dispatch",
-      "blurb": "TODO: add blurb for multiple-dispatch concept"
+      "name": "Multiple Dispatch"
+    },
+    {
+      "uuid": "3fd60b22-06c6-444e-baf2-8cfa48dc6a3f",
+      "slug": "optional-arguments",
+      "name": "Optional Arguments"
+    },
+    {
+      "uuid": "0e292741-5920-4d94-a038-ba6d1be8871d",
+      "slug": "randomness",
+      "name": "Randomness"
+    },
+    {
+      "uuid": "25d93b83-fbca-452a-bac2-e5b0d3b656eb",
+      "slug": "short-circuit-evaluation",
+      "name": "Short-Circuit Evaluation"
     },
     {
       "uuid": "ac862fcd-90a1-404c-8f6d-ba42f2c813a4",
       "slug": "symbols",
-      "name": "Symbols",
-      "blurb": "TODO: add blurb for symbols concept"
+      "name": "Symbols"
+    },
+    {
+      "uuid": "6587e5b6-f87f-4a57-81bb-080d030409ff",
+      "slug": "ternary-operator",
+      "name": "Ternary Operator"
     },
     {
       "uuid": "7ebfefea-f725-4b3e-9f2d-b5820b73dd9a",
       "slug": "unicode-identifiers",
-      "name": "Unicode Identifiers",
-      "blurb": "TODO: add blurb for unicode-identifiers concept"
+      "name": "Unicode Identifiers"
     }
   ],
   "key_features": [
     {
       "title": "Fast",
-      "content": "Julia is designed for high performance. Julia compiles efficient native code for multiple platforms",
-      "icon": ""
+      "content": "Julia is designed for high performance and compiles efficient native code for multiple platforms",
+      "icon": "fast"
     },
     {
       "title": "Interactive",
       "content": "Julia is dynamically typed, feels like a scripting language and has good support for interactive use",
-      "icon": ""
+      "icon": "interactive"
     },
     {
       "title": "Scientific",
       "content": "Julia is designed with reproducibility, distributed computing and frictionless collaboration in mind",
-      "icon": ""
+      "icon": "scientific"
     },
     {
       "title": "Composable",
-      "content": "Julia uses multiple dispatch as a paradigm, making it unreasonably effective for composing programs!",
-      "icon": ""
+      "content": "Julia uses multiple dispatch as a paradigm, making it unreasonably effective for composing programs",
+      "icon": "fun"
     },
     {
       "title": "Expressive",
       "content": "Multiple dispatch, generator expressions and metaprogramming features lead to highly expressive code",
-      "icon": ""
+      "icon": "expressive"
     },
     {
       "title": "Natural Syntax",
-      "content": "Unicode operators & identifiers, plus operator overloading, allows elegant code that looks like math",
-      "icon": ""
+      "content": "Use operator overloading plus unicode operators and identifiers to write code that looks like math",
+      "icon": "multi-paradigm"
     }
   ],
   "tags": [

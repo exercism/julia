@@ -1,0 +1,10 @@
+{
+  "blurb": "Docstrings can be used to document any kind of Julia object, such as functions, macros, types, or instances.",
+  "authors": [
+    "SaschaMann"
+  ],
+  "contributors": [
+    "cmcaine",
+    "iHiD"
+  ]
+}

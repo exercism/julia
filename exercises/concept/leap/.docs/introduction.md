@@ -1,3 +1,5 @@
+# Introduction
+
 Given a year, report if it is a leap year in the Gregorian calendar.
 
 ## Arithmetic Operators: Remainder & Equality
@@ -24,20 +26,18 @@ julia> 2 + 2 == 5
 false
 ```
 
-<!-- TODO Check if admonitions will be supported -->
+~~~~exercism/note
+It is conventional to have one space either side of each operator:
 
-!!! note
+```julia
+x % y == 3
+```
 
-    It is conventional to have one space either side of each operator:
+instead of
 
-    ```julia
-    x % y == 3
-    ```
-
-    instead of
-
-    ```julia
-    x%y==3
-    ```
+```julia
+x%y==3
+```
+~~~~
 
 [^1]: You can find a list of them in the [Julia Manual](https://docs.julialang.org/en/v1/manual/mathematical-operations/#Arithmetic-Operators).

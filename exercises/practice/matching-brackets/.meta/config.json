@@ -1,0 +1,21 @@
+{
+  "blurb": "Make sure the brackets and braces all match.",
+  "authors": [
+    "chinglamchoi"
+  ],
+  "contributors": [
+    "SaschaMann"
+  ],
+  "files": {
+    "solution": [
+      "matching-brackets.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
+  },
+  "source": "Ginna Baker"
+}

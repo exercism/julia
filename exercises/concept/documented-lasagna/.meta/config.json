@@ -1,0 +1,21 @@
+{
+  "blurb": "Learn about docstrings by documenting how you cooked delicious lasagna.",
+  "language_versions": "≥1.0",
+  "files": {
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "solution": [
+      "lasagna.jl"
+    ]
+  },
+  "contributors": [
+    "cmcaine"
+  ],
+  "authors": [
+    "SaschaMann"
+  ]
+}

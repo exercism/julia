@@ -1,0 +1,21 @@
+{
+  "blurb": "Learn how to use regular expressions in Julia by generating moderation cards.",
+  "language_versions": "≥1.0",
+  "files": {
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "solution": [
+      "card-generator.jl"
+    ]
+  },
+  "contributors": [],
+  "authors": [
+    "SaschaMann",
+    "cmcaine"
+  ],
+  "forked_from": null
+}

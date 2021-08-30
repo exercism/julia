@@ -1,0 +1,18 @@
+{
+  "blurb": "Create a custom set type.",
+  "authors": [
+    "SaschaMann"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "custom-set.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
+  }
+}

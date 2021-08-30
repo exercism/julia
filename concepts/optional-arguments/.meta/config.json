@@ -1,0 +1,9 @@
+{
+  "blurb": "Optional arguments can be used to define several methods at once in Julia.",
+  "authors": [
+    "SaschaMann"
+  ],
+  "contributors": [
+    "cmcaine"
+  ]
+}

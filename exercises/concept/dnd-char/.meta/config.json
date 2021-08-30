@@ -1,0 +1,25 @@
+{
+  "blurb": "Learn how to use macros by randomly generating Dungeons & Dragons characters.",
+  "language_versions": "≥1.0",
+  "authors": [
+    "leo60228",
+    "SaschaMann"
+  ],
+  "contributors": [
+    "cmcaine"
+  ],
+  "files": {
+    "solution": [
+      "dnd-character.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ]
+  },
+  "forked_from": [
+    "v2/dnd-character"
+  ]
+}

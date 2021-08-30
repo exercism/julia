@@ -1,4 +1,4 @@
-## iterator-protocol
+# iterator-protocol
 
 <!-- TODO: Motivate why iterators are useful -->
 <!-- TODO: Add explanation why the Base.-prefix or import is necessary -->
@@ -8,25 +8,25 @@ Both methods must return a tuple of an item and the state of the iterator.
 The first method will return the first item and state, while the second method will return the next item and state.
 The iteration ends if `iterate` returns `nothing`.
 
-<!-- prettier-ignore -->
-!!! note
-    Julia currently doesn't have a way to formally define interfaces.
-    To implement an interface, you need to look up which methods need to be defined in the Manual, or in the documentation of the package that "defines" the interface.
-    Alternatively, you can work your way through `MethodErrors` to find out which methods you need to implement:
-    <!-- TODO check if code blocks work within info boxes -->
-    ```julia
-    julia> struct MyIter end;
+~~~~exercism/note
+Julia currently doesn't have a way to formally define interfaces.
+To implement an interface, you need to look up which methods need to be defined in the Manual, or in the documentation of the package that "defines" the interface.
+Alternatively, you can work your way through `MethodErrors` to find out which methods you need to implement:
+<!-- TODO check if code blocks work within info boxes -->
+```julia
+julia> struct MyIter end;
 
-    julia> for i in MyIter()
-            println(i)
-        end
-    ERROR: MethodError: no method matching iterate(::MyIter)
-    ...
-    ```
+julia> for i in MyIter()
+        println(i)
+    end
+ERROR: MethodError: no method matching iterate(::MyIter)
+...
+```
+~~~~
 
-<!-- prettier-ignore -->
-!!! note
-    The iterator object itself is usually not mutated by iteration.
+~~~~exercism/note
+The iterator object itself is usually not mutated by iteration.
+~~~~
 
 To make it clearer when the `iterate` methods are called, one can look at the translation of the `for`-loop syntax:
 
@@ -50,7 +50,7 @@ while !isnothing(next_item)
 end
 ```
 
-### Example
+## Example
 
 We want to define an iterator `Squares(n)` to iterate the sequence of [square numbers](https://en.wikipedia.org/wiki/Square_number) smaller than `n`. Square numbers are numbers that are the square of an integer. For example, 9 is a square number, since it can be written as `3 * 3`. The end result should look like:
 
@@ -85,7 +85,11 @@ Base.iterate(S::Squares) = iterate(S, 1)
 
 You may find it useful to combine these two definitions into one using optional arguments:
 
-### optional-arguments
+## Making use of optional arguments
+
+In a [previous exercise](https://exercism.io/tracks/julia/exercises/high-score) you have learned how to define several methods at once by making use of optional arguments.
+
+Recall that
 
 ```julia
 julia> f(a, b=1) = a + b
@@ -102,12 +106,11 @@ julia> f(a) = f(a, 1)
 f (generic function with 2 methods)
 ```
 
-In the response in the REPL, you can see that the first definition defines two methods at once.
-
+For some iterators, optional arguments can simplify your `iterate` method to a single definition.
 This is particularly useful when the computation of the next item is identical regardless if it's the first or a consecutive iteration.
 Some iterators may require a more extensive initialisation, in which case it can be better to split them into two separate definitions.
 
-### Source
+## Source
 
 This entire section is based on the Julia Manual section on the [Iteration Interface](https://docs.julialang.org/en/v1/manual/interfaces/#man-interface-iteration)[^1].
 

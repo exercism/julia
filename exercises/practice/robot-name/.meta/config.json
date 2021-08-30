@@ -1,0 +1,22 @@
+{
+  "blurb": "Manage robot factory settings.",
+  "authors": [
+    "andrej-makarov-skrt"
+  ],
+  "contributors": [
+    "cmcaine",
+    "SaschaMann"
+  ],
+  "files": {
+    "solution": [
+      "robot-name.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
+  },
+  "source": "A debugging session with Paul Blackwell at gSchool."
+}

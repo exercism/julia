@@ -1,0 +1,22 @@
+{
+  "blurb": "Implement complex numbers.",
+  "authors": [
+    "SaschaMann"
+  ],
+  "contributors": [
+    "bovine3dom"
+  ],
+  "files": {
+    "solution": [
+      "complex-numbers.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Complex_number"
+}

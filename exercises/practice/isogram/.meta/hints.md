@@ -1,1 +1,0 @@
-Isograms are case insensitive.

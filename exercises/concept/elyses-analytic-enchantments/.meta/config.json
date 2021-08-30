@@ -1,0 +1,22 @@
+{
+  "blurb": "Learn about predicate functions and how to scan the contents of vectors in Julia.",
+  "language_versions": "≥1.0",
+  "files": {
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "solution": [
+      "enchantments.jl"
+    ]
+  },
+  "contributors": [
+    "cmcaine"
+  ],
+  "authors": [
+    "SaschaMann"
+  ],
+  "forked_from": ["javascript/elyses-analytic-enchantments"]
+}

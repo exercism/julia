@@ -1,4 +1,5 @@
 {
+  "blurb": "Learn about matrices by making the Exercism logo frown.",
   "language_versions": "≥1.0",
   "files": {
     "exemplar": [
@@ -13,10 +14,7 @@
   },
   "contributors": [],
   "authors": [
-    {
-      "github_username": "SaschaMann",
-      "exercism_username": "SaschaMann"
-    }
+    "SaschaMann"
   ],
   "forked_from": null
 }

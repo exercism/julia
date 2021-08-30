@@ -1,4 +1,5 @@
 {
+  "blurb": "Learn the basics of functions in Julia by cooking delicious lasagna.",
   "language_versions": "≥1.0",
   "files": {
     "exemplar": [
@@ -11,12 +12,11 @@
       "lasagna.jl"
     ]
   },
-  "contributors": [],
-  "authors": [
-    {
-      "github_username": "SaschaMann",
-      "exercism_username": "SaschaMann"
-    }
+  "contributors": [
+    "ErikSchierboom"
   ],
-  "forked_from": "fsharp/basics"
+  "authors": [
+    "SaschaMann"
+  ],
+  "forked_from": ["fsharp/lucians-luscious-lasagna"]
 }

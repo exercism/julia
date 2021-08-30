@@ -1,3 +1,5 @@
+# Introduction
+
 `if`-expressions in Julia are similar to those seen in other languages:
 
 ```julia
@@ -23,10 +25,10 @@ If the boolean expression following the `if` evaluates to `true`, the first bloc
 If the boolean expression following the `if` evaluates to `false`, the first block of code is skipped and the second block is run.
 The program continues running at the first line of code after the `end` keyword.
 
-<!-- prettier-ignore -->
-!!! info
-    In Julia, the `end` keyword signifies the end of all block expressions.
-    This syntax is not specific to `if`-expressions or function definitions.
+~~~~exercism/note
+In Julia, the `end` keyword signifies the end of all block expressions.
+This syntax is not specific to `if`-expressions or function definitions.
+~~~~
 
 In cases where the second block of code would be just another `if`-expression, `elseif` allows us to avoid nesting `if`-expressions within the block:
 

@@ -1,0 +1,22 @@
+{
+    "blurb": "Learn nothing.",
+    "language_versions": "≥1.1",
+    "files": {
+      "exemplar": [
+        ".meta/exemplar.jl"
+      ],
+      "test": [
+        "runtests.jl"
+      ],
+      "solution": [
+        "namebadge.jl"
+      ]
+    },
+    "contributors": [
+      "cmcaine"
+    ],
+    "authors": [
+      "SaschaMann"
+    ],
+    "forked_from": ["elixir/name-badge"]
+  }

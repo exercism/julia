@@ -1,0 +1,20 @@
+{
+  "blurb": "Determine if a number is an Armstrong number",
+  "authors": [
+    "SaschaMann"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "armstrong-numbers.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
+  },
+  "source": "Wikipedia",
+  "source_url": "https://en.wikipedia.org/wiki/Narcissistic_number"
+}

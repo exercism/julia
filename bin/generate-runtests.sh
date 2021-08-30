@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# The problem-specifications directory shoud be adjacent to this project's root directory;
+# The problem-specifications directory should be adjacent to this project's root directory;
 # otherwise you must provide its path as an argument to this script.
 
 # For each listed slug, generate tests using /generators/$slug.jl and put them in

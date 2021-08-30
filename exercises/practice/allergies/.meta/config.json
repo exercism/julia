@@ -1,0 +1,23 @@
+{
+  "blurb": "Given a person's allergy score, determine whether or not they're allergic to a given item, and their full list of allergies.",
+  "authors": [
+    "DarkoGNU"
+  ],
+  "contributors": [
+    "miguelraz",
+    "SaschaMann"
+  ],
+  "files": {
+    "solution": [
+      "allergies.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
+  },
+  "source": "Jumpstart Lab Warm-up",
+  "source_url": "http://jumpstartlab.com"
+}

@@ -1,3 +1,5 @@
+# Instructions
+
 In this exercise you're going to write some code to help you help you prepare to buy a new vehicle.
 
 You have three tasks, one to help you determine the price of the vehicle you can afford, one to determine if you will need to get a licence, and one to help you compute your registration fee.
@@ -18,10 +20,10 @@ julia> canibuy("2020 Gazelle Medeo", 3000, 50)
 "I'll have to be frugal if I want a 2020 Gazelle Medeo."
 ```
 
-<!-- prettier-ignore -->
-!!! info
-    Numbers in Julia can contain `_` to group digits together.
-    E.g. `562_500` equals `562500`.
+~~~~exercism/note
+Numbers in Julia can contain `_` to group digits together.
+E.g. `562_500` equals `562500`.
+~~~~
 
 ## 2. Determine if you will need a drivers licence
 

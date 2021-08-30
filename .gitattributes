@@ -1,5 +1,4 @@
 # Hide generated files from diffs and language stats on GitHub and tell git not to
 # diff them
 *.ipynb linguist-generated=true -diff
-**/.meta/config.json linguist-generated=true -diff
 Manifest.toml linguist-generated=true -diff

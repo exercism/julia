@@ -1,4 +1,5 @@
 {
+  "blurb": "Learn about conditionals by deciding on a new vehicle to purchase.",
   "language_versions": "≥1.0",
   "files": {
     "exemplar": [
@@ -11,12 +12,11 @@
       "vehicle-purchase.jl"
     ]
   },
-  "contributors": [],
-  "authors": [
-    {
-      "github_username": "SaschaMann",
-      "exercism_username": "SaschaMann"
-    }
+  "contributors": [
+    "cmcaine"
   ],
-  "forked_from": "swift/vehicle-purchase"
+  "authors": [
+    "SaschaMann"
+  ],
+  "forked_from": ["swift/vehicle-purchase"]
 }

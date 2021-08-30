@@ -1,6 +1,0 @@
-authors = [
-    { github = "cmcaine", exercism = "cmcaine" },
-    { github = "SaschaMann", exercism = "SaschaMann" },
-]
-
-contributors = []

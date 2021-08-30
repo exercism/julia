@@ -1,0 +1,21 @@
+{
+  "blurb": "Convert a number, represented as a sequence of digits in one base, to any other base.",
+  "authors": [
+    "serialhex"
+  ],
+  "contributors": [
+    "cmcaine",
+    "SaschaMann"
+  ],
+  "files": {
+    "solution": [
+      "all-your-base.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
+  }
+}

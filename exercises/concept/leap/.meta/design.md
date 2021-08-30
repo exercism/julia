@@ -1,3 +1,5 @@
+# Design
+
 ## Goal
 
 The goal of this exercise is to teach the student the fundamentals of the boolean expressions and (arithmetic) operators in Julia.

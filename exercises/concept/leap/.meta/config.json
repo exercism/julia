@@ -1,4 +1,5 @@
 {
+  "blurb": "Learn about arithmetic operators and boolean expressions by searching for leap years.",
   "language_versions": "≥1.0",
   "files": {
     "exemplar": [
@@ -13,10 +14,8 @@
   },
   "contributors": [],
   "authors": [
-    {
-      "github_username": "SaschaMann",
-      "exercism_username": "SaschaMann"
-    }
+    "SaschaMann",
+    "cmcaine"
   ],
-  "forked_from": "v2/leap"
+  "forked_from": ["v2/leap"]
 }

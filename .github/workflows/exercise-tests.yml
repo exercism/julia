@@ -6,12 +6,14 @@ on:
     branches:
       - main
     paths:
-      - "exercises/"
+      - "exercises/**"
       - "runtests.jl"
+      - ".github/workflows/exercise-tests.yml"
   pull_request:
     paths:
-      - "exercises/"
+      - "exercises/**"
       - "runtests.jl"
+      - ".github/workflows/exercise-tests.yml"
 
 jobs:
   test:
@@ -30,5 +32,18 @@ jobs:
         with:
           version: ${{ matrix.julia-version }}
 
+      - name: Cache Julia artifacts
+        uses: actions/cache@v2.1.6
+        with:
+          path: ~/.julia/artifacts 
+          key: ${{ runner.os }}-${{ matrix.julia-version }}-test-cache-artifacts-${{ hashFiles('**/Project.toml') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ matrix.julia-version }}-test-cache-artifacts-
+            ${{ runner.os }}-${{ matrix.julia-version }}-test-
+            ${{ runner.os }}-${{ matrix.julia-version }}-
+
+      - name: Install test dependencies
+        run: julia --color=yes --project -e "using Pkg; Pkg.instantiate()"
+
       - name: Test exercises
-        run: julia --color=yes runtests.jl
+        run: julia --color=yes --project runtests.jl

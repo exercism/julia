@@ -1,3 +1,5 @@
+# Instructions
+
 In this exercise, you'll be extending the quest logic for the new role-playing game a friend is developing.
 To make the game more interesting, your friend wants you to add random events that change the situation.
 
@@ -20,8 +22,6 @@ Having found the kidnappers, Annalyn considers which of the following actions sh
 **After freeing her friend, Annalyn still has some time to quickly loot the camp. She can find anywhere between three and thirteen coins. She also comes across a treasure chest with a random item inside.**
 
 Your tasks are to implement the functions that determine if these random events occur, and to determine Annalyn's loot.
-
-## Tasks
 
 ### 1. Add a function that determines if it's foggy
 

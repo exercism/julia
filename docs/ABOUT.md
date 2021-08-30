@@ -1,3 +1,5 @@
+# About
+
 The creators of Julia want to eat their cake and have it too. As they describe in their blog post ["Why We Created Julia"](http://julialang.org/blog/2012/02/why-we-created-julia) they want the speed of C, the dynamism of Ruby, the familiar mathematical notation of Matlab. They want it to be their favourite things from their favourite languages. String processing like Perl. Glue like the shell. Powerful but not impenetrably complex.
 
 Julia has a powerful, yet clear and intuitive, dynamic [type system](http://docs.julialang.org/en/v1/manual/types/). It allows writing dynamic code and specifying types if additional expressiveness is needed for simplification or performance increases. The language features [multiple dispatch](https://youtu.be/kc9HwsxE1OY?t=66), meaning it chooses which method is called based on the types of each argument. This lets you write specific methods for certain types while providing generic fallbacks and is particularly useful for mathematical code, where it is not clear why an operation should belong to a specific argument.

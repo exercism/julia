@@ -1,0 +1,21 @@
+{
+  "blurb": "Add the numbers to a minesweeper board",
+  "authors": [
+    "abhishalya"
+  ],
+  "contributors": [
+    "SaschaMann",
+    "logankilpatrick"
+  ],
+  "files": {
+    "solution": [
+      "minesweeper.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
+  }
+}

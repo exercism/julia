@@ -1,4 +1,5 @@
 {
+  "blurb": "Learn about randomness by improving the quest logic of a new RPG.",
   "language_versions": "≥1.0",
   "files": {
     "exemplar": [
@@ -12,16 +13,10 @@
     ]
   },
   "contributors": [
-    {
-      "github_username": "cmcaine",
-      "exercism_username": "cmcaine"
-    }
+    "cmcaine"
   ],
   "authors": [
-    {
-      "github_username": "SaschaMann",
-      "exercism_username": "SaschaMann"
-    }
+    "SaschaMann"
   ],
-  "forked_from": "javascript/boolean"
+  "forked_from": ["javascript/annalyns-infiltration"]
 }

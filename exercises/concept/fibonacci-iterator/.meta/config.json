@@ -1,4 +1,5 @@
 {
+  "blurb": "Learn about the iteration protocol by implementing a Fibonacci Iterator.",
   "language_versions": "≥1.0",
   "files": {
     "exemplar": [
@@ -11,12 +12,13 @@
       "fibonacci.jl"
     ]
   },
-  "contributors": [],
+  "contributors": [
+    "cmcaine",
+    "miguelraz",
+    "iHiD"
+  ],
   "authors": [
-    {
-      "github_username": "SaschaMann",
-      "exercism_username": "SaschaMann"
-    }
+    "SaschaMann"
   ],
   "forked_from": null
 }
