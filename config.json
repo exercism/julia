@@ -1035,11 +1035,6 @@
       "name": "Constants"
     },
     {
-      "uuid": "f2a11926-c152-4c46-91e9-6349ee6b61d3",
-      "slug": "dictionaries",
-      "name": "Dictionaries"
-    },
-    {
       "uuid": "33e5c4af-7361-4a61-bdb2-504f7227d0ef",
       "slug": "docstrings",
       "name": "Docstrings"
