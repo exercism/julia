@@ -42,7 +42,7 @@
           "functions"
         ],
         "prerequisites": [],
-        "status": "beta"
+        "status": "wip"
       },
       {
         "uuid": "84480c18-327e-47ea-94e7-9e14f2146643",
@@ -54,7 +54,7 @@
         "prerequisites": [
           "functions"
         ],
-        "status": "beta"
+        "status": "wip"
       },
       {
         "uuid": "05cfc609-3a14-479a-b6fa-6d2a53ad111c",
@@ -144,7 +144,7 @@
           "string-manipulation",
           "conditionals"
         ],
-        "status": "beta"
+        "status": "wip"
       },
       {
         "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",
@@ -187,7 +187,7 @@
           "pairs",
           "vectors"
         ],
-        "status": "beta"
+        "status": "wip"
       },
       {
         "uuid": "36cbda04-3921-4491-9ec6-76951f00aa00",
