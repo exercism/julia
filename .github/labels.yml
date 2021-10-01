@@ -242,3 +242,127 @@
 - name: "wontfix :no_good_woman:"
   description: "This won't be applied, fixed, worked on, continued."
   color: "ffffff"
+
+##################
+# Colour testing #
+##################
+
+# The `x:action/<value>` labels describe what sort of work the contributor will be engaged in when working on the issue
+- name: "x:action/create"
+  description: "Work on something from scratch"
+  color: "ffffff"
+
+- name: "x:action/fix"
+  description: "Fix an issue"
+  color: "ffffff"
+
+- name: "x:action/improve"
+  description: "Improve existing functionality/content"
+  color: "ffffff"
+
+- name: "x:action/proofread"
+  description: "Proofread text"
+  color: "ffffff"
+
+- name: "x:action/sync"
+  description: "Sync content with its latest version"
+  color: "ffffff"
+
+# The `x:knowledge/<value>` labels describe how much Exercism knowledge is required by the contributor
+- name: "x:knowledge/none"
+  description: "No existing Exercism knowledge required"
+  color: "ffffff"
+
+- name: "x:knowledge/elementary"
+  description: "Little Exercism knowledge required"
+  color: "ffffff"
+
+- name: "x:knowledge/intermediate"
+  description: "Quite a bit of Exercism knowledge required"
+  color: "ffffff"
+
+- name: "x:knowledge/advanced"
+  description: "Comprehensive Exercism knowledge required"
+  color: "ffffff"
+
+# The `x:module/<value>` labels indicate what part of Exercism the contributor will be working on
+- name: "x:module/analyzer"
+  description: "Work on Analyzers"
+  color: "ffffff"
+
+- name: "x:module/concept"
+  description: "Work on Concepts"
+  color: "ffffff"
+
+- name: "x:module/concept-exercise"
+  description: "Work on Concept Exercises"
+  color: "ffffff"
+
+- name: "x:module/generator"
+  description: "Work on Exercise generators"
+  color: "ffffff"
+
+- name: "x:module/practice-exercise"
+  description: "Work on Practice Exercises"
+  color: "ffffff"
+
+- name: "x:module/representer"
+  description: "Work on Representers"
+  color: "ffffff"
+
+- name: "x:module/test-runner"
+  description: "Work on Test Runners"
+  color: "ffffff"
+
+# The `x:size/<value>` labels describe the expected amount of work for a contributor
+- name: "x:size/tiny"
+  description: "Tiny amount of work"
+  color: "ffffff"
+
+- name: "x:size/small"
+  description: "Small amount of work"
+  color: "ffffff"
+
+- name: "x:size/medium"
+  description: "Medium amount of work"
+  color: "ffffff"
+
+- name: "x:size/large"
+  description: "Large amount of work"
+  color: "ffffff"
+
+- name: "x:size/massive"
+  description: "Massive amount of work"
+  color: "ffffff"
+
+# The `x:status/<value>` label indicates if there is already someone working on the issue
+- name: "x:status/claimed"
+  description: "Someone is working on this issue"
+  color: "ffffff"
+
+# The `x:type/<value>` labels describe what type of work the contributor will be engaged in
+- name: "x:type/ci"
+  description: "Work on Continuous Integration (e.g. GitHub Actions workflows)"
+  color: "ffffff"
+
+- name: "x:type/coding"
+  description: "Write code that is not student-facing content (e.g. test-runners, generators, but not exercises)"
+  color: "ffffff"
+
+- name: "x:type/content"
+  description: "Work on content (e.g. exercises, concepts)"
+  color: "ffffff"
+
+- name: "x:type/docker"
+  description: "Work on Dockerfiles"
+  color: "ffffff"
+
+- name: "x:type/docs"
+  description: "Work on Documentation"
+  color: "ffffff"
+
+# This Exercism-wide label is added to all automatically created pull requests that help migrate/prepare a track for Exercism v3
+- name: "v3-migration 🤖"
+  description: "Preparing for Exercism v3"
+  color: "ffffff"
+
