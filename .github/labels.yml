@@ -255,40 +255,40 @@
 # The `x:action/<value>` labels describe what sort of work the contributor will be engaged in when working on the issue
 - name: "x:action/create"
   description: "Work on something from scratch"
-  color: "ffffff"
+  color: "d3d3d3"
 
 - name: "x:action/fix"
   description: "Fix an issue"
-  color: "ffffff"
+  color: "d3d3d3"
 
 - name: "x:action/improve"
   description: "Improve existing functionality/content"
-  color: "ffffff"
+  color: "d3d3d3"
 
 - name: "x:action/proofread"
   description: "Proofread text"
-  color: "ffffff"
+  color: "d3d3d3"
 
 - name: "x:action/sync"
   description: "Sync content with its latest version"
-  color: "ffffff"
+  color: "d3d3d3"
 
 # The `x:knowledge/<value>` labels describe how much Exercism knowledge is required by the contributor
 - name: "x:knowledge/none"
   description: "No existing Exercism knowledge required"
-  color: "ffffff"
+  color: "c0c0c0"
 
 - name: "x:knowledge/elementary"
   description: "Little Exercism knowledge required"
-  color: "ffffff"
+  color: "c0c0c0"
 
 - name: "x:knowledge/intermediate"
   description: "Quite a bit of Exercism knowledge required"
-  color: "ffffff"
+  color: "c0c0c0"
 
 - name: "x:knowledge/advanced"
   description: "Comprehensive Exercism knowledge required"
-  color: "ffffff"
+  color: "c0c0c0"
 
 # The `x:module/<value>` labels indicate what part of Exercism the contributor will be working on
 - name: "x:module/analyzer"
@@ -322,49 +322,49 @@
 # The `x:size/<value>` labels describe the expected amount of work for a contributor
 - name: "x:size/tiny"
   description: "Tiny amount of work"
-  color: "ffffff"
+  color: "e0e0e0"
 
 - name: "x:size/small"
   description: "Small amount of work"
-  color: "ffffff"
+  color: "e0e0e0"
 
 - name: "x:size/medium"
   description: "Medium amount of work"
-  color: "ffffff"
+  color: "e0e0e0"
 
 - name: "x:size/large"
   description: "Large amount of work"
-  color: "ffffff"
+  color: "e0e0e0"
 
 - name: "x:size/massive"
   description: "Massive amount of work"
-  color: "ffffff"
+  color: "e0e0e0"
 
 # The `x:status/<value>` label indicates if there is already someone working on the issue
 - name: "x:status/claimed"
   description: "Someone is working on this issue"
-  color: "ffffff"
+  color: "e8e8e8"
 
 # The `x:type/<value>` labels describe what type of work the contributor will be engaged in
 - name: "x:type/ci"
   description: "Work on Continuous Integration (e.g. GitHub Actions workflows)"
-  color: "ffffff"
+  color: "e8e8e8"
 
 - name: "x:type/coding"
   description: "Write code that is not student-facing content (e.g. test-runners, generators, but not exercises)"
-  color: "ffffff"
+  color: "e8e8e8"
 
 - name: "x:type/content"
   description: "Work on content (e.g. exercises, concepts)"
-  color: "ffffff"
+  color: "e8e8e8"
 
 - name: "x:type/docker"
   description: "Work on Dockerfiles"
-  color: "ffffff"
+  color: "e8e8e8"
 
 - name: "x:type/docs"
   description: "Work on Documentation"
-  color: "ffffff"
+  color: "e8e8e8"
 
 # This Exercism-wide label is added to all automatically created pull requests that help migrate/prepare a track for Exercism v3
 - name: "v3-migration 🤖"
