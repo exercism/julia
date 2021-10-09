@@ -57,6 +57,19 @@
         "status": "wip"
       },
       {
+        "uuid": "d8528c41-5611-4e92-90b2-fd29777d23cf",
+        "name": "Welcome to the Tech Palace!",
+        "slug": "tech-palace",
+        "concepts": [
+          "strings"
+        ],
+        "prerequisites": [
+          "functions",
+          "docstrings"
+        ],
+        "status": "wip"
+      },
+      {
         "uuid": "05cfc609-3a14-479a-b6fa-6d2a53ad111c",
         "name": "Annalyn's Infiltration",
         "slug": "annalyns-infiltration",
