@@ -8,7 +8,7 @@ struct ISBN <: AbstractString
     ISBN(s) = verify(s) ? new(replace(s, "-" => "")) : throw(DomainError(s, "invalid ISBN string"))
 end
 
-string(s::ISBN) = s.s
+Base.string(s::ISBN) = s.s
 
 function verify(s::AbstractString)
     s = replace(s, "-" => "")
