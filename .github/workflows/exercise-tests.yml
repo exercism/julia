@@ -26,14 +26,14 @@ jobs:
         os: [ubuntu-latest, windows-latest, macOS-latest]
 
     steps:
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
 
-      - uses: julia-actions/setup-julia@v1
+      - uses: julia-actions/setup-julia@ee66464cb7897ffcc5322800f4b18d449794af30
         with:
           version: ${{ matrix.julia-version }}
 
       - name: Cache Julia artifacts
-        uses: actions/cache@v2.1.6
+        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353
         with:
           path: ~/.julia/artifacts 
           key: ${{ runner.os }}-${{ matrix.julia-version }}-test-cache-artifacts-${{ hashFiles('**/Project.toml') }}
@@ -47,3 +47,46 @@ jobs:
 
       - name: Test exercises
         run: julia --color=yes --project runtests.jl
+
+  test-runner:
+    name: Julia Test Runner
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@5a4ac9002d0be2fb38bd78e4b4dbde5606d7042f
+
+      - name: Pull julia-test-runner image
+        run: docker pull exercism/julia-test-runner
+
+      - name: Install Julia dependencies
+        run: julia --color=yes --project -e "using Pkg; Pkg.instantiate()"
+      
+      - name: Generate test reports using julia-test-runner
+        id: generate-reports
+        run: julia --color=yes --project runtestrunner.jl
+      
+      - name: Upload reports as artifact
+        uses: actions/upload-artifact@27121b0bdffd731efa15d66772be8dc71245d074
+        with:
+          name: test-reports
+          path: ${{ steps.generate-reports.outputs.results-path }}
+
+      - name: Check if all tests passed
+        run: |
+          using JSON
+
+          any_errors = false
+
+          for report in readdir(ENV["RESULTS"])
+            result = JSON.parsefile(joinpath(ENV["RESULTS"], report))
+            if result["status"] != "pass"
+              global any_errors = true
+              @error "Exercise failed tests" report
+              run(`jq -C '.' $(joinpath(ENV["RESULTS"], report))`)
+            end
+          end
+
+          any_errors && exit(1)
+        env:
+          RESULTS: ${{ steps.generate-reports.outputs.results-path }}
+        shell: julia --color=yes --project {0}
