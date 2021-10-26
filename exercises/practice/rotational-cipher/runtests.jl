@@ -37,14 +37,14 @@ end
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 # Bonus A
-if isdefined(Main, Symbol("@R13_str"))
+if isdefined(@__MODULE__, Symbol("@R13_str"))
     @eval @testset "Bonus A: string literal R13" begin
         @test R13"The quick brown fox jumps over the lazy dog." == "Gur dhvpx oebja sbk whzcf bire gur ynml qbt."
     end
 end
 
 # Bonus B
-if isdefined(Main, Symbol("@R1_str"))
+if isdefined(@__MODULE__, Symbol("@R1_str"))
     @eval @testset "Bonus B: string literals" begin
         @test R5"OMG" == "TRL"
         @test R4"Testing 1 2 3 testing" == "Xiwxmrk 1 2 3 xiwxmrk"
