@@ -6,7 +6,7 @@ include("nucleotide-count.jl")
     @test count_nucleotides("") == Dict('A' => 0, 'C' => 0, 'G' => 0, 'T' => 0)
 end
 
-@testset "strang with one nucleotide in single-character input" begin
+@testset "strand with one nucleotide in single-character input" begin
     @test count_nucleotides("G") == Dict('A' => 0, 'C' => 0, 'G' => 1, 'T' => 0)
 end
 
