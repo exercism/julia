@@ -24,19 +24,21 @@ letters(puzzle) = unique(c for c in puzzle if c in 'A':'Z')
 """
     parse_puzzle(puzzle)
 
-An alphametic puzzle like "SEND + MORE == MONEY" can be represented as
+An alphametic puzzle like "A + A + B == AA" can be represented as an equation
+and a list of letters used as leading digits. The equation looks like this:
 
-1000S + 100E ... == 10000M + 1000 * O + 100N ...
+    A + A + B == 10A + A
 
-We can simplify that to a set of coefficients for the left and right hand sides.
+We can rearrange and simplify that to a set of coefficients:
 
-And a constraint on leading digits.
+    2A + B == 11A
+    -9A + B == 0
 
-This function returns the letters of the puzzle in the order that they are used
-in each of three vectors:
+This function returns three vectors:
 
-- coefficients for the left hand side
-- coefficients for the right hand side
+- the unique letters of the puzzle in the order that they are used in the next
+  two vectors
+- coefficients for each letter
 - a boolean vector indicating if the letter is ever used as a leading digit
 
 """
@@ -52,7 +54,8 @@ function parse_puzzle(puzzle::String)
             parse_word!(acc, key, token)
         end
     end
-    return key, lhs, rhs, map(∈(leading_letters(puzzle)), key)
+    coeffs = lhs .- rhs
+    return key, coeffs, map(∈(leading_letters(puzzle)), key)
 end
 
 """
@@ -74,14 +77,13 @@ function parse_word!(acc, key, word)
 end
 
 """
-    is_valid(p, lhs, rhs, leads)
+    is_valid(p, coeffs, leads)
 
-Return true iff `sum(p .* lhs) == sum(p .* rhs)` and no leading digit is 0.
+Return true iff `sum(p .* coeffs) == 0` and no leading digit is 0.
 """
-function is_valid(p, lhs, rhs, leads)
+function is_valid(p, coeffs, leads)
     # Using generators + zip leads to many fewer allocations than .*
-    sum(p_i * lhs_i for (p_i, lhs_i) in zip(p, lhs)) ==
-    sum(p_i * rhs_i for (p_i, rhs_i) in zip(p, rhs)) &&
+    sum(p_i * coeffs_i for (p_i, coeffs_i) in zip(p, coeffs)) == 0 &&
     all(p[l_i] != 0 for (l_i, l) in enumerate(leads) if l)
 end
 
@@ -94,9 +96,9 @@ Words cannot start with 0.
 No two letters can share the same value.
 """
 function solve(puzzle)
-    (key, lhs, rhs, leads) = parse_puzzle(puzzle)
+    (key, coeffs, leads) = parse_puzzle(puzzle)
     for p in permutations(0:9, length(key))
-        if is_valid(p, lhs, rhs, leads)
+        if is_valid(p, coeffs, leads)
             return Dict(key .=> p)
         end
     end
