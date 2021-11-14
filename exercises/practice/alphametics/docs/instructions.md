@@ -27,3 +27,6 @@ This is correct because every letter is replaced by a different number and the w
 Each letter must represent a different digit, and the leading digit of a multi-digit number must not be zero.
 
 Write a function to solve alphametics puzzles.
+
+You may (or may not!) want to call the function `permutations(a, t)` from [Combinatorics.jl](https://github.com/JuliaMath/Combinatorics.jl) in your solution.
+If you would like to use it, you can include the **read-only** file `permutations.jl` with `include("permutations.jl")`.
