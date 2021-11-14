@@ -1,0 +1,22 @@
+{
+    "blurb": "Write a function to solve alphametics puzzles.",
+    "authors": [
+        "SaschaMann",
+        "cmcaine"
+    ],
+    "contributors": [],
+    "files": {
+        "solution": [
+            "alphametics.jl"
+        ],
+        "test": [
+            "runtests.jl"
+        ],
+        "example": [
+            ".meta/example.jl"
+        ],
+        "editor" : [
+            "permutations.jl"
+        ]
+    }
+}

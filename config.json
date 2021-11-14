@@ -1015,6 +1015,14 @@
           "algorithms",
           "functional_programming"
         ]
+      },
+      {
+        "uuid": "32af807f-ba90-4a36-bf6b-5d71a0fae7ae",
+        "practices": [],
+        "prerequisites": [],
+        "slug": "alphametics",
+        "name": "Alphametics",
+        "difficulty": 10
       }
     ]
   },
