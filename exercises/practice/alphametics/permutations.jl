@@ -1,7 +1,8 @@
 # Extract of Combinatorics.jl
 #
 # You may (or may not!) want to call the function `permutations(a, t)` in your
-# solution.
+# solution. If you would like to use it, include this file with
+# `include("permutations.jl")`.
 #
 # License:
 #
