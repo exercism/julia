@@ -13,6 +13,9 @@
         ],
         "example": [
             ".meta/example.jl"
+        ],
+        "editor" : [
+            "permutations.jl"
         ]
     }
 }
