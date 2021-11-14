@@ -79,6 +79,7 @@ end
 Return true iff `sum(p .* lhs) == sum(p .* rhs)` and no leading digit is 0.
 """
 function is_valid(p, lhs, rhs, leads)
+    # Using generators + zip leads to many fewer allocations than .*
     sum(p_i * lhs_i for (p_i, lhs_i) in zip(p, lhs)) ==
     sum(p_i * rhs_i for (p_i, rhs_i) in zip(p, rhs)) &&
     all(p[l_i] != 0 for (l_i, l) in enumerate(leads) if l)
