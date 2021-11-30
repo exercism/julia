@@ -8,7 +8,7 @@ include("robot-simulator.jl")
     @test heading(r) == NORTH
 
     r = Robot((-1, -1), SOUTH)
-    @test position(r) == Point{Int}(-1, -1)
+    @test position(r) == Point(-1, -1)
     @test heading(r) == SOUTH
 end
 
