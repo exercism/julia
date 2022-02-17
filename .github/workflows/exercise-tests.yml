@@ -32,15 +32,7 @@ jobs:
         with:
           version: ${{ matrix.julia-version }}
 
-      - name: Cache Julia artifacts
-        uses: actions/cache@c64c572235d810460d0d6876e9c705ad5002b353
-        with:
-          path: ~/.julia/artifacts 
-          key: ${{ runner.os }}-${{ matrix.julia-version }}-test-cache-artifacts-${{ hashFiles('**/Project.toml') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ matrix.julia-version }}-test-cache-artifacts-
-            ${{ runner.os }}-${{ matrix.julia-version }}-test-
-            ${{ runner.os }}-${{ matrix.julia-version }}-
+      - uses: julia-actions/cache@745127cf80d5fa1a9953e0107e8ecd9b336022b7
 
       - name: Install test dependencies
         run: julia --color=yes --project -e "using Pkg; Pkg.instantiate()"
