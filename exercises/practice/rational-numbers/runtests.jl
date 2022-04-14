@@ -36,12 +36,14 @@ end
 
     @testset "Exponentiation" begin
         @testset "Exponentiation of a rational number" begin
-            @test RationalNumber( 1, 2)^3 == RationalNumber( 1, 8)
-            @test RationalNumber(-1, 2)^3 == RationalNumber(-1, 8)
-            @test RationalNumber( 0, 1)^5 == RationalNumber( 0, 1)
-            @test RationalNumber( 1, 1)^4 == RationalNumber( 1, 1)
-            @test RationalNumber( 1, 2)^0 == RationalNumber( 1, 1)
-            @test RationalNumber(-1, 2)^0 == RationalNumber( 1, 1)
+            @test RationalNumber( 1, 2)^3  == RationalNumber(   1,  8)
+            @test RationalNumber(-1, 2)^3  == RationalNumber(  -1,  8)
+            @test RationalNumber( 0, 1)^5  == RationalNumber(   0,  1)
+            @test RationalNumber( 1, 1)^4  == RationalNumber(   1,  1)
+            @test RationalNumber( 1, 2)^0  == RationalNumber(   1,  1)
+            @test RationalNumber(-1, 2)^0  == RationalNumber(   1,  1)
+            @test RationalNumber( 3, 5)^-2 == RationalNumber(  25,  9)
+            @test RationalNumber(-3, 5)^-3 == RationalNumber(-125, 27)
         end
 
         @testset "Exponentiation of a real number to a rational number" begin
@@ -64,6 +66,7 @@ end
     @test abs(RationalNumber(-1,  2)) == RationalNumber(1, 2)
     @test abs(RationalNumber( 0,  1)) == RationalNumber(0, 1)
     @test abs(RationalNumber( 1, -2)) == RationalNumber(1, 2)
+    @test abs(RationalNumber( 2,  4)) == RationalNumber(1, 2)
 end
 
 @testset "Reduction to lowest terms" begin
@@ -94,6 +97,10 @@ end
     r = RationalNumber(1, -1)
     @test numerator(r)   == -1
     @test denominator(r) ==  1
+
+    r = RationalNumber(3, -4)
+    @test numerator(r)   == -3
+    @test denominator(r) ==  4
 end
 
 # TODO add to problem spec
