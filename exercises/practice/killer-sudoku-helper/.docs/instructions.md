@@ -5,12 +5,13 @@ They ask you to help them out by writing a small program that lists all valid co
 
 To make the output of your program easy to read, the combinations it returns must be sorted.
 
-## Killer Sudoku Rules
+## Killer Sudoku Rules[^1]
 
 - [Standard Sudoku rules](https://masteringsudoku.com/sudoku-rules-beginners/) apply.
 - The digits in a cage, usually marked by a dotted line, add up to the small number given in the corner of the cage.
 - A digit may only occur once in a cage.
 
+[^1]: For a more detailed explanation, check out [this guide](https://masteringsudoku.com/killer-sudoku/).
 ## Example 1: Cage with only 1 possible combination
 
 In a 3-digit cage with a sum of 7, there is only one valid combination: 124.
