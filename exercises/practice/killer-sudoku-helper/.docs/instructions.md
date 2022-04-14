@@ -7,7 +7,7 @@ To make the output of your program easy to read, the combinations it returns mus
 
 ## Killer Sudoku Rules
 
-- [Standard Sudoku rules](https://en.wikipedia.org/wiki/Sudoku) apply.
+- [Standard Sudoku rules](https://masteringsudoku.com/sudoku-rules-beginners/) apply.
 - The digits in a cage, usually marked by a dotted line, add up to the small number given in the corner of the cage.
 - A digit may only occur once in a cage.
 
