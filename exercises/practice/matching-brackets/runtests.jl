@@ -20,6 +20,8 @@ end
     @test !matching_brackets("{[)][]}")
     @test !matching_brackets("([{])")
     @test !matching_brackets("[({]})")
+    @test !matching_brackets(")()")
+    @test !matching_brackets("{)()")
 end
     
 @testset "Determine if expressions with non-brackets are correctly matched" begin
