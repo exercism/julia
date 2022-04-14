@@ -295,6 +295,21 @@
         ]
       },
       {
+        "slug": "killer-sudoku-helper",
+        "name": "Killer Sudoku Helper",
+        "uuid": "e0142403-af9e-406e-827a-1fd37187d1ea",
+        "practices": [
+          "iterator-protocol",
+          "vectors",
+          "conditionals"
+        ],
+        "prerequisites": [
+          "vectors",
+          "conditionals"
+        ],
+        "difficulty": 5
+      },
+      {
         "slug": "leap",
         "name": "Leap",
         "uuid": "8740c914-f008-4b6b-8e7d-7470e78e6a8e",

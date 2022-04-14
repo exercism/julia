@@ -1,0 +1,21 @@
+{
+  "blurb": "Write a program to help a friend solve Killer Sudokus.",
+  "authors": [
+    "SaschaMann"
+  ],
+  "contributors": [
+    "iHiD",
+    "BethanyG"
+  ],
+  "files": {
+    "solution": [
+      "sudoku-util.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
+  }
+}
