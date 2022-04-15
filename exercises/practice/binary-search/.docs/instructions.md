@@ -33,3 +33,32 @@ found in the array and a special "not found" indication is returned.
 A binary search halves the number of items to check with each iteration,
 so locating an item (or determining its absence) takes logarithmic time.
 A binary search is a dichotomic divide and conquer search algorithm.
+
+The output should match the behaviour of Julia's built-in `searchsorted` function:
+
+```julia
+searchsorted(a, x; by=<transform>, lt=<comparison>, rev=false)
+Return the range of indices of a which compare as equal to x (using binary search) 
+according to the order specified by the by, lt and rev keywords, 
+assuming that a is already sorted in that order. 
+Return an empty range located at the insertion point if a does not contain values equal to x.
+
+See also: insorted, searchsortedfirst, sort, findall.
+
+Examples
+
+julia> searchsorted([1, 2, 4, 5, 5, 7], 4) # single match
+3:3
+
+julia> searchsorted([1, 2, 4, 5, 5, 7], 5) # multiple matches
+4:5
+
+julia> searchsorted([1, 2, 4, 5, 5, 7], 3) # no match, insert in the middle
+3:2
+
+julia> searchsorted([1, 2, 4, 5, 5, 7], 9) # no match, insert at end
+7:6
+
+julia> searchsorted([1, 2, 4, 5, 5, 7], 0) # no match, insert at start
+1:0
+```
