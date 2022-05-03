@@ -81,6 +81,7 @@ This policy was initially adopted from the Front-end London Slack community and 
 
 _This policy is a "living" document, and subject to refinement and expansion in the future. This policy applies to the Exercism website, the Exercism GitHub organization, any other Exercism-related communication channels (e.g. Slack, Twitter, email) and any other Exercism entity or event._
 
+
 ## Addendum
 
 Furthermore, on the Julia-specific repos and website sections, do not sexualize or genderize the term "Julia" or any other aspects of the project.
