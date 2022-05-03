@@ -1,4 +1,3 @@
-
 ## Addendum
 
 Furthermore, on the Julia-specific repos and website sections, do not sexualize or genderize the term "Julia" or any other aspects of the project.
