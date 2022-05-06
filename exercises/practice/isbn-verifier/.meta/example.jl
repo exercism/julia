@@ -35,5 +35,5 @@ value(x::ISBN) = x.s
 
 macro isbn_str(s) ISBN(s) end
 
-# Print ISBN's as they might appear in your source code if you used the macro.
-Base.show(io::IO, isbn::ISBN) = print(io, "isbn\"$(value(isbn))\"")
+# Show ISBNs as they might appear in your source code if you used the macro.
+Base.show(io::IO, isbn::ISBN) = print(io, "isbn\"", value(isbn), '"')
