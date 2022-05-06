@@ -4,7 +4,7 @@ struct ISBN
     """
         ISBN(s)
 
-    An International Standard Book Number. Throws `DomainError` if `s` is not a valid 10-digit ISBN.
+    An International Standard Book Number. Throws `DomainError` if `s` does not look like a valid 10-digit ISBN.
     """
     function ISBN(s)
         acc = 0
