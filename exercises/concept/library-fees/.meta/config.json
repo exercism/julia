@@ -1,0 +1,23 @@
+{
+    "blurb": "Learn how to handle dates in Julia by calculating library fees.",
+    "language_versions": "≥1.0",
+    "files": {
+        "exemplar": [
+            ".meta/exemplar.jl"
+        ],
+        "test": [
+            "runtests.jl"
+        ],
+        "solution": [
+            "library-fees.jl"
+        ]
+    },
+    "contributors": [],
+    "authors": [
+        "SaschaMann",
+        "cmcaine"
+    ],
+    "forked_from": [
+        "elixir/library-fees"
+    ]
+}
