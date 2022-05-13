@@ -1,6 +1,5 @@
 using Test
 
-enable_bonus_tasks = false
 include("binary-search.jl")
 
 @testset "default binary search" begin
