@@ -33,7 +33,8 @@ A binary search halves the number of items to check with each iteration,
 so locating an item (or determining its absence) takes logarithmic time.
 A binary search is a dichotomic divide and conquer search algorithm.
 
-**For simplification, you can assume that all elements of the list to be searched are unique.** Feel free to implement a solution that works on lists with non-unique elements as a bonus task.
+**For simplification, you can assume that all elements of the list to be searched are unique.**
 
 ## Bonus task
-Implement keyword arguments `by`, `lt` and `rev` so that `by` specifies a transformation applied to all elements of the list, `lt` specifies a comparison and `rev` specifies if the list is ordered in reverse.
+- Implement keyword arguments `by`, `lt` and `rev` so that `by` specifies a transformation applied to all elements of the list, `lt` specifies a comparison and `rev` specifies if the list is ordered in reverse.
+- Implement a solution that works on lists with non-unique elements.
