@@ -22,7 +22,7 @@ include("binary-search.jl")
     end
 end
 
-enable_bonus_tasks && @testset "bonus tasks" begin
+@isdefined(enable_bonus_tasks) && enable_bonus_tasks && @testset "bonus tasks" begin
     @testset "reverse search" begin
         @testset "value in array" begin
             @test binarysearch([6], 6, rev = true) == 1:1
