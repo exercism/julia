@@ -1,5 +1,7 @@
-struct ISBN
-    s::String
+import Base: ==, show
+
+struct ISBN{T<:AbstractString}
+    s::T
 
     """
         ISBN(s)
@@ -27,13 +29,16 @@ struct ISBN
         coeff == 0 || throw(DomainError(s, "ISBNs must be 10 digits long"))
         acc % 11 == 0 || throw(DomainError(s, "ISBN checksum failed"))
         # Canonicalise in the simplest way
-        new(replace(s, '-' => ""))
+        s′ = replace(s, '-' => "")
+        new{typeof(s′)}(s′)
     end
 end
 
 value(x::ISBN) = x.s
 
+==(a::ISBN, b::ISBN) = value(a) == value(b)
+
 macro isbn_str(s) ISBN(s) end
 
 # Show ISBNs as they might appear in your source code if you used the macro.
-Base.show(io::IO, isbn::ISBN) = print(io, "isbn\"", value(isbn), '"')
+show(io::IO, isbn::ISBN) = print(io, "isbn\"", value(isbn), '"')
