@@ -36,9 +36,8 @@ For this exercise, you must do as Julia's built-in `searchsorted` functions do
 and return an empty range located at the insertion point, see the docs for
 `searchsorted` below for examples.
 
-A binary search halves the number of items to check with each iteration,
+A binary search halves the number of items to search with each iteration,
 so locating an item (or determining its absence) takes logarithmic time.
-A binary search is a dichotomic divide and conquer search algorithm.
 
 ## Documentation for Julia's `searchsorted` function:
 
