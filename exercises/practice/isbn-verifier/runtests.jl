@@ -7,15 +7,12 @@ include("isbn-verifier.jl")
 
 Test that the expression `expr` does not throw an exception.
 """
+# Julia doesn't include this because you would usually test some property of
+# your object (as we do later) rather than checking if an exception was thrown.
+# We define this anyway so that you can focus on the validation logic before
+# working out how to make the structs compare equal.
 macro test_nothrow(expr)
-    quote
-        @test try
-            $expr
-            true
-        catch exception
-            exception
-        end
-    end
+    :(@test ( $expr; true ))
 end
 
 @testset "valid ISBNs don't throw" begin
