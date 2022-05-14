@@ -19,8 +19,11 @@ an array sorted by key value.
 In each step, the algorithm compares the search key value with the key
 value of the middle element of the array.
 
-If the keys match, then a matching element has been found and its index,
-or position, is returned.
+If the keys match, then a matching element has been found and the range of
+indices that equal the search key value are returned.
+This matches Julia's built-in `searchsorted` functions.
+However, **to simplify your solution you may assume that the target element is
+not repeated**, except for the bonus task testset on multiple matches.
 
 Otherwise, if the search key is less than the middle element's key, then
 the algorithm repeats its action on the sub-array to the left of the
@@ -29,19 +32,24 @@ right.
 
 If the remaining array to be searched is empty, then the key cannot be
 found in the array and a special "not found" indication is returned.
+For this exercise, you must do as Julia's built-in `searchsorted` functions do
+and return an empty range located at the insertion point, see the docs for
+`searchsorted` below for examples.
 
 A binary search halves the number of items to check with each iteration,
 so locating an item (or determining its absence) takes logarithmic time.
 A binary search is a dichotomic divide and conquer search algorithm.
 
-The output should match the behaviour of Julia's built-in `searchsorted` function:
+## Documentation for Julia's `searchsorted` function:
 
-```julia
+```
 searchsorted(a, x; by=<transform>, lt=<comparison>, rev=false)
-Return the range of indices of a which compare as equal to x (using binary search) 
-according to the order specified by the by, lt and rev keywords, 
+
+Return the range of indices of a which compare as equal to x (using binary
+search) according to the order specified by the by, lt and rev keywords,
 assuming that a is already sorted in that order. 
-Return an empty range located at the insertion point if a does not contain values equal to x.
+Return an empty range located at the insertion point if a does not contain
+values equal to x.
 
 See also: insorted, searchsortedfirst, sort, findall.
 
@@ -62,3 +70,12 @@ julia> searchsorted([1, 2, 4, 5, 5, 7], 9) # no match, insert at end
 julia> searchsorted([1, 2, 4, 5, 5, 7], 0) # no match, insert at start
 1:0
 ```
+
+## Bonus tasks
+
+- Implement keyword arguments `by`, `lt` and `rev` so that `by` specifies a
+  transformation applied to all elements of the list, `lt` specifies a
+  comparison and `rev` specifies if the list is ordered in reverse. When these
+  parameters are used you must assume that the list has already been sorted
+  using these parameters. See the docs for `sort` for more details.
+- Implement a solution that works on lists with non-unique elements.
