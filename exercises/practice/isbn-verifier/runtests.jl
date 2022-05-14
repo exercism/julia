@@ -2,15 +2,31 @@ using Test
 
 include("isbn-verifier.jl")
 
-@testset "valid ISBNs are canonicalised" begin
+"""
+    @test_nothrow expr
+
+Test that the expression `expr` does not throw an exception.
+"""
+macro test_nothrow(expr)
+    quote
+        @test try
+            $expr
+            true
+        catch exception
+            exception
+        end
+    end
+end
+
+@testset "valid ISBNs don't throw" begin
     # ISBN number
-    @test value(ISBN("3-598-21508-8")) == "3598215088"
+    @test_nothrow ISBN("3-598-21508-8")
     # ISBN number with a check digit of 10
-    @test value(ISBN("3-598-21507-X")) == "359821507X"
+    @test_nothrow ISBN("3-598-21507-X")
     # ISBN without separating dashes
-    @test value(ISBN("3598215088")) == "3598215088"
+    @test_nothrow ISBN("3598215088")
     # ISBN without separating dashes and X as check digit
-    @test value(ISBN("359821507X")) == "359821507X"
+    @test_nothrow ISBN("359821507X")
 end
 
 @testset "invalid ISBNs throw DomainError" begin
@@ -46,6 +62,6 @@ end
     @test_throws DomainError ISBN("98245726788")
 end
 
-@testset "isbn_str macro works" begin
-    @test ISBN("359821507X") == isbn"359821507X"
+@testset "ISBNs compare equal when they're the same number" begin
+    @test ISBN("3-598-21508-8") == ISBN("3598215088") != ISBN("3-598-21507-X")
 end
