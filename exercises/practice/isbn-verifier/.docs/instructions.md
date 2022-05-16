@@ -24,11 +24,17 @@ Since the result is 0, this proves that our ISBN is valid.
 
 ## Task
 
-Given a string the program should check if the provided string is a valid ISBN-10.
-Putting this into place requires some thinking about preprocessing/parsing of the string prior to calculating the check digit for the ISBN.
+Define a new `ISBN` type and a constructor for it that accepts a string.
+The constructor should throw a `DomainError` if the provided string does not look like a valid ISBN-10.
 
-The program should be able to verify ISBN-10 both with and without separating dashes.
+The constructor should accept strings with and without separating dashes.
 
+`ISBN` values should compare as equal if the ISBN-10s are the same and not otherwise, e.g.
+
+```jl
+ISBN("1-234-56789-X") == ISBN("123456789X") == ISBN("1234-56789X")
+ISBN("1-234-56789-X") != ISBN("3-598-21508-8")
+```
 
 ## Caveats
 
@@ -37,6 +43,12 @@ Now, it's even trickier since the check digit of an ISBN-10 may be 'X' (represen
 
 ## Bonus tasks
 
-* Generate a valid ISBN-13 from the input ISBN-10 (and maybe verify it again with a derived verifier).
+If you attempt these tasks please write your own tests for them in your solution file!
 
-* Generate valid ISBN, maybe even from a given starting ISBN.
+* Define a string macro so that `isbn"3-598-21507-X" == ISBN("3-598-21507-X")`.
+
+* Let the constructor accept ISBN-13s as well. The same ISBN should compare equal regardless of format: `ISBN("1-234-56789-X") == ISBN("978-1-234-56789-7")`.
+
+* Define a function or iterator to generate a valid ISBN, maybe even from a given starting ISBN.
+
+* Can you store the ISBN as an integer rather than a string and would that ever be a good idea? If you did, could you still print the ISBN (including check-digit) as a string?
