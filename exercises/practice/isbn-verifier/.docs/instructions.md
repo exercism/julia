@@ -43,7 +43,7 @@ Now, it's even trickier since the check digit of an ISBN-10 may be 'X' (represen
 
 ## Bonus tasks
 
-If you attempt these tasks, write your own tests for them and include those in your solution too!
+If you attempt these tasks please write your own tests for them in your solution file!
 
 * Define a string macro so that `isbn"3-598-21507-X" == ISBN("3-598-21507-X")`.
 
