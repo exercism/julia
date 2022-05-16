@@ -20,10 +20,8 @@ include("binary-search.jl")
     end
 end
 
-if @isdefined(enable_bonus_tasks) && enable_bonus_tasks
-    println("Bonus tasks enabled")
-
-    @testset "bonus tasks" begin
+@testset "bonus tasks" begin
+    if @isdefined(enable_reverse_tests) && enable_reverse_tests
         @testset "reverse search" begin
             @testset "value in array" begin
                 @test binarysearch([6], 6, rev = true) == 1:1
@@ -40,7 +38,8 @@ if @isdefined(enable_bonus_tasks) && enable_bonus_tasks
                 @test binarysearch([], 1, rev = true) == 1:0
             end
         end
-
+    end
+    if @isdefined(enable_by_tests) && enable_by_tests
         @testset "apply transformation" begin
             @testset "value in array" begin
                 @test binarysearch([5.5], 6, by = round) == 1:1
@@ -58,7 +57,9 @@ if @isdefined(enable_bonus_tasks) && enable_bonus_tasks
                 @test binarysearch([], 1, by = round) == 1:0
             end
         end
+    end
 
+    if @isdefined(enable_lt_tests) && enable_lt_tests
         @testset "compare with > instead of <" begin
             # this is equivalent to searching in reverse order
             @testset "value in array" begin
@@ -76,7 +77,9 @@ if @isdefined(enable_bonus_tasks) && enable_bonus_tasks
                 @test binarysearch([], 1, lt = >) == 1:0
             end
         end
+    end
 
+    if @isdefined(enable_multiple_matches) && enable_multiple_matches
         @testset "multiple matches" begin
             @test binarysearch([1, 3, 4, 6, 6, 9, 11], 6) == 4:5
             @test binarysearch([1, 1, 4, 6, 8, 9, 11], 1) == 1:2
