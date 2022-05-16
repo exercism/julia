@@ -1,5 +1,3 @@
-# Uncomment any of the following lines to add test for a different bonus tasks
-# enable_reverse_tests = true
-# enable_by_tests = true
-# enable_lt_tests = true
-# enable_multiple_matches = true
+# Change any of the following NamedTuple values to true to 
+# enable testing different bonus tasks
+tested_benus_tasks = (rev = false, by = false, lt = false, multiple_matches = false)

@@ -1,7 +1,4 @@
 # the base function searchsorted does exactly what the exercise asks for
 const binarysearch = searchsorted
 
-enable_reverse_tests = true
-enable_by_tests = true
-enable_lt_tests = true
-enable_multiple_matches = true
+tested_benus_tasks = (rev = true, by = true, lt = true, multiple_matches = true)
