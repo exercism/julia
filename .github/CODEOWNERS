@@ -1,6 +1,8 @@
 # Default fallback
 *                       @exercism/julia
 
+# Colin doesn't want to receive botspam
+.github                 @exercism/maintainers-admin
 
 # Code owners
 .github/CODEOWNERS      @exercism/maintainers-admin
