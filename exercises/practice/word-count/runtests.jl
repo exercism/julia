@@ -40,6 +40,7 @@ end
 
 @testset "with apostrophes" begin
     @test wordcount("First: don't laugh. Then: don't cry.") == Dict("first" => 1, "don't" => 2, "laugh" => 1, "then" => 1, "cry" => 1)
+    @test wordcount("Should've could've would've") == Dict("should've" => 1, "could've" => 1, "would've" => 1)
 end
 
 @testset "with quotations" begin
