@@ -32,7 +32,7 @@ jobs:
         with:
           version: ${{ matrix.julia-version }}
 
-      - uses: julia-actions/cache@8684ae14b7139cdeff741a36cc896cdd57daaa45
+      - uses: julia-actions/cache@936559d9c8a8452e3426f2c76b596b5cdf10f442
 
       - name: Install test dependencies
         run: julia --color=yes --project -e "using Pkg; Pkg.instantiate()"
