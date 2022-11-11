@@ -53,7 +53,7 @@ A similar solution by cmcaine includes a docstring; defines `Dates.minute` and `
 
 ```julia
 import Base: show, +, -
-import Dates: Minute, hour, minute
+import Dates: Minute, hour, minute, value
 
 using Printf: @printf
 
