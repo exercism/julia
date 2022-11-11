@@ -2,7 +2,7 @@
 
 ## Guidance
 
-- Prefer use `Dates.value(m)` rather than `m.value` because fields are generally considered private in Julia. Defining an API in terms of functions makes it much easier for other structs to implement your interface or for you to refactor your stuff. You can import the `value` function from Dates with `using Dates: value` to use it without a prefix.
+- Prefer to use `Dates.value(m)` rather than `m.value` because fields are generally considered private in Julia. Defining an API in terms of functions makes it much easier for other structs to implement your interface or for you to refactor your stuff. You can import the `value` function from Dates with `using Dates: value` to use it without a prefix.
 - `lpad` is totally fine, but if you're already familiar with the `printf` language from C or elsewhere, you might like to take a look at the `Printf` stdlib
 
 
