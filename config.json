@@ -89,10 +89,12 @@
         "slug": "annalyns-infiltration2",
         "concepts": [
           "randomness",
-          "methods"
+          "methods",
+          "types"
         ],
         "prerequisites": [
-          "booleans"
+          "booleans",
+          "vectors"
         ],
         "status": "wip"
       },
