@@ -3,6 +3,7 @@
 ## General remarks
 
 - Use the remainder operator `%` to find if a number is evenly divisible by another
+- Whenever you have an expression like `if condition; return true; else; return false`, you can rewrite it as `return condition`
 - Prefer `&&` and `||` over `&` and `|` to benefit from [short-circuiting](https://docs.julialang.org/en/v1/manual/control-flow/#Short-Circuit-Evaluation). Julia will not evaluate the whole expression but only the expressions that are necessary to determine the result of the entire chain
 - You might be interested to see the Julia standard library's solution: `using Dates; @edit isleapyear(4)`
 
@@ -15,11 +16,6 @@ end
 ```
 
 If you're struggling to follow how this works, or trying to solve a similar problem, consider writing a truth table and seeing if you can work out what the simplest predicates are and how they can be combined with `&&` and `||` to give the full answer.
-
-## Mentoring notes
-
-- Whenever you have an expression like `if condition; return true; else; return false`, you can rewrite it as `return condition`.
-- Consider writing a truth table for this exercise and see if you can work out what the simplest predicates are and how they could be combined with `&&` and `||`
 
 <details>
 <summary>Example truth table</summary>
