@@ -1,6 +1,6 @@
 # Introduction
 
-## Advice
+## General guidance
 
 It is probably clearest to separate the checks for silence, yelling, and questioning out and give them descriptive names.
 
