@@ -1,6 +1,6 @@
 # Introduction
 
-## Guidance
+## General guidance
 
 - The key lesson from this exercise is that you can define two methods for the function `rotate`
 - The macro/metaprogramming is quite challenging for lots of students. Feel free to read the answer below!
@@ -55,6 +55,14 @@ This works because:
  └─ The beginning/base of the alphabet.
 ```
 
+~~~~exercism/advanced
+
+Iterating a UTF-8 string is slow because it's a variable length encoding. It is often faster to iterate a collection with elements of a fixed size (a vector of `UInt8`s from `transcode()` or an `ASCIIStr` (from Strs.jl), perhaps).
+
+See the dig deeper pages for the [pangram][dd-pg], [nucleotide count][dd-nc], and [luhn][dd-l] exercises for more details on how to safely and efficiently use `transcode` (if you can't see a pages when you follow the link, try completing the exercise first).
+
+~~~~
+
 ## Bonus macro task
 
 Just R13:
@@ -75,6 +83,6 @@ for n in 0:26
 end
 ```
 
-## Performance hints
-
-Iterating a UTF-8 string is slow because it's a variable length encoding. Iterating something with elements of a fixed size (a vector of UInt8s or an ASCIIStr (Strs.jl), perhaps), this can be faster.
+[dd-pg]: https://exercism.org/tracks/julia/exercises/pangram/dig_deeper
+[dd-nc]: https://exercism.org/tracks/julia/exercises/nucleotide-count/dig_deeper
+[dd-l]: https://exercism.org/tracks/julia/exercises/luhn/dig_deeper
