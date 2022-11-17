@@ -4,6 +4,9 @@
 
 There are three reasonably common solutions to this problem, a cubic time solution, a quadratic time solution and a linear time solution
 (if those terms are unclear to you, you might like to read about [time complexity](https://en.wikipedia.org/wiki/Time_complexity)).
+A cubic time solution is easy to find, but too slow for the tests or for many practical uses.
+A quadratic time solution is pretty easy to find and will be good enough for the tests.
+Finding a linear time solution will require some mathematics. The solution below was derived by solving some simultaneous equations.
 
 ## Approach: cubic time solution
 
