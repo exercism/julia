@@ -31,7 +31,7 @@ This approach uses an anonymous function and uppercases the character rather tha
 ispangram2(input) = all(c -> in(c, input) || in(uppercase(c), input), 'a':'z')
 ```
 
-## Approach: bitwise tracking
+## Approach: marking bytes
 
 And here's a faster, more complicated solution,
 just in case pangram-identification is on the critical path for your new startup.
