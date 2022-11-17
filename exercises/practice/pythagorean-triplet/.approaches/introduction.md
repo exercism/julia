@@ -35,7 +35,7 @@ function pythagorean_triplets(n)
 end
 ```
 
-### Approach: quadratic time algorithm
+## Approach: quadratic time algorithm
 
 ```julia
 """
