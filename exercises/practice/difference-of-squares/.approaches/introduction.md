@@ -1,6 +1,6 @@
 # Introduction
 
-## Mathematics!?
+## General guidance
 
 - The sum of the first `n` natural numbers is given by Gauss's formula:
 
@@ -8,13 +8,11 @@
 
 - There's also a formula for the sum of the first `n` square numbers: [square pyramidal number](https://en.wikipedia.org/wiki/Square_pyramidal_number)
 
-
 ## Talking points
 
 - You might be interested to know that `sum(1:n)` already uses Gauss' formula. You can see this with `@edit sum(1:n)`
 - For integer division, students should use `÷` and not `/` (see [#138](https://github.com/exercism/julia/issues/138))
 - You can define the sum of squares as `sum((1:n) .^ 2)`, but it allocates an array (at least in Julia 1.4), can you see how to do this without allocation?
-
 
 ## A simple solution
 

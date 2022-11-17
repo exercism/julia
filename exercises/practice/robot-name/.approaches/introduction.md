@@ -1,6 +1,6 @@
 # Introduction
 
-## Guidance
+## General guidance
 
 The main point of this exercise is to learn about mutable structs and to reinforce the idea of writing methods for your own types.
 But there's also some trickyness in the problem, too.
@@ -30,7 +30,6 @@ There's some basic stats to help you grasp the issue:
 
     Probability of finding the last name with N guesses =
       1 - ((676000 - 1) / 676000)^N
-
 
 ## A fancy solution
 
@@ -116,9 +115,9 @@ it is often useful to consider the tradeoffs of different ways of representing i
 
 Converting names to integers and back again might seem tricky at first.
 A decent intuition is that the names are a number, but in an inconsistent base.
-Just as 153 is 3 + 5 * 10 + 1 * 100,
+Just as 153 is 3 + 5 _ 10 + 1 _ 100,
 "AC5" could be interpreted as a number with two digits in base 26 and one in base 10:
-0 + 2 * 26 + 5 * 26 * 10
+0 + 2 _ 26 + 5 _ 26 \* 10
 (I'm interpreting 'A' as 0 here, and I'm treating the number as little-endian, both are arbitrary choices).
 
 Worked example:

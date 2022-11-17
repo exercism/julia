@@ -1,10 +1,9 @@
 # Introduction
 
-## Common suggestions
+## General guidance
 
 - You can express this whole problem as lowercasing the input and a single set relationship. Can you work out which relation it is? (answer below)
 - Instead of writing out the whole alphabet, you can use a character range `'a':'z'`
-
 
 ## Using set relations
 

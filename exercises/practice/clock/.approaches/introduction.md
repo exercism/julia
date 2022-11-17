@@ -1,19 +1,17 @@
 # Introduction
 
-## Guidance
+## General guidance
 
 - Prefer to use `Dates.value(m)` rather than `m.value` because fields are generally considered private in Julia. Defining an API in terms of functions makes it much easier for other structs to implement your interface or for you to refactor your stuff. You can import the `value` function from Dates with `using Dates: value` to use it without a prefix.
 - `lpad` is totally fine, but if you're already familiar with the `printf` language from C or elsewhere, you might like to take a look at the `Printf` stdlib
 
-
 ## Complexities to watch out for!
 
 - If you're storing a field for both hours and minutes then
-the trickiest case is when minutes are less than and not a multiple of 60 (e.g. -61).
-Students often end up doing something quite convoluted to solve this.
+  the trickiest case is when minutes are less than and not a multiple of 60 (e.g. -61).
+  Students often end up doing something quite convoluted to solve this.
 - Students often use `%` or `rem` and a subtraction when `mod` is probably what they want
 - Your humble correspondent thinks that this is best solved by converting the hours to minutes, as is done in the first approach below
-
 
 ## Technique: defining subtraction
 

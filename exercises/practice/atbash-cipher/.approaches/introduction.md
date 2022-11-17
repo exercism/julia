@@ -1,6 +1,6 @@
 # Introduction
 
-## General advice
+## General guidance
 
 - Instead of writing out the whole alphabet, you can use a character range `'a':'z'`, if you like.
 - `Iterators.partition` and `join` might be helpful for adding spaces between groups.
@@ -11,6 +11,7 @@
 The Atbash cipher requires mapping each occurrence of the nth letter in the alphabet with the (26-n)th letter.
 
 You could acheive this by creating a dictionary something like this:
+
 ```julia
 const cipher = Dict(zip(vcat('a':'z', 'A':'Z', '0':'9'),
                         vcat('z':-1:'a', 'z':-1:'a', '0':'9')))
@@ -108,7 +109,6 @@ A convenience function for `encode(str; group=false)`
 """
 decode(str) = encode(str; group=false)
 ```
-
 
 ## Approach: Low-level style
 

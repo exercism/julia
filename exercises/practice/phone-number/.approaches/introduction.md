@@ -1,6 +1,6 @@
 # Introduction
 
-## Hints and tips
+## General guidance
 
 - prefer `isdigit` to `isnumeric` when you want to match only the western arabic numerals (0123456789)
 - regex is fine

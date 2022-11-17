@@ -1,6 +1,6 @@
 # Introduction
 
-## General remarks
+## General guidance
 
 - Use the remainder operator `%` to find if a number is evenly divisible by another
 - Whenever you have an expression like `if condition; return true; else; return false`, you can rewrite it as `return condition`
@@ -38,4 +38,5 @@ p q r | o
 ```
 
 The idea is that you 1) work out what predicates you need and 2) notice that you can construct the output with p && !q || r.
+
 </details>

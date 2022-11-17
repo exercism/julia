@@ -1,6 +1,6 @@
 # Introduction
 
-## Guidance
+## General guidance
 
 Broadcasting solutions like `count(collect(s1) .!= collect(s2))` will create copies of both inputs, and a new vector for the logical array too. That's 3N memory use for a problem with a fairly obvious constant-memory algorithm.
 
