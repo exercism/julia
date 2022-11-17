@@ -24,7 +24,7 @@ function count_nucleotides(strand)
 end
 ```
 
-## Approach: using if/elseif
+## Approach: using a variable for each type of nucleotide
 
 We can get some speedup with a simple stack of if/elseifs like this:
 
