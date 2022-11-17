@@ -23,6 +23,27 @@ There are track-independent guides on how to use git and GitHub available:
 
 Help us keep Exercism welcoming. Please read and abide by the [Code of Conduct][coc].
 
+## Concepts and concept exercises
+
+These have been moved into `.wip` directories to make `configlet lint` helpful again.
+
+To make configlet see them again:
+
+```bash
+mv concepts{.wip,}
+mv exercises/concept{.wip,}
+jq -s '.[0] * .[1]' config.json concepts.wip/config.json > tmp && mv tmp config.json
+```
+
+To hide them again:
+
+```bash
+mv concepts{,.wip}
+mv exercises/concept{,.wip}
+jq '{concepts: .concepts, exercises: {concept: .exercises.concept}}' config.json > concepts.wip/config.json
+jq '.concepts=[]|.exercises.concept=[]' config.json > tmp && mv tmp config.json
+```
+
 ## Exercises
 
 Before contributing code to any existing exercise or any new exercise, please have a thorough look at the current exercises and dive into [open issues][issue-open].
