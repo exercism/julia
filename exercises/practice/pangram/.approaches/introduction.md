@@ -25,7 +25,7 @@ ispangram1(input) = all(in(lowercase(input)), 'a':'z')
 
 ## Approach: use an anonymous function
 
-The second uses an anonymous function and avoids taking a copy of the input to reduce memory usage.
+This approach uses an anonymous function and uppercases the character rather than the string to avoid making a copy of the input.
 
 ```julia
 ispangram2(input) = all(c -> in(c, input) || in(uppercase(c), input), 'a':'z')
