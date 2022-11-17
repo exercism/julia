@@ -31,7 +31,7 @@ There's some basic stats to help you grasp the issue:
     Probability of finding the last name with N guesses =
       1 - ((676000 - 1) / 676000)^N
 
-## Approach: shuffle all robot names in advance
+## Approach: encode names as numbers and shuffle them all in advance
 
 ```julia
 # Scott P Jones' solution as reinterpreted by Colin Caine
