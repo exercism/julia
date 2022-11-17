@@ -170,9 +170,15 @@ end
 
 A solution by [halfdan](https://exercism.io/tracks/julia/exercises/atbash-cipher/solutions/419b6f4d04974a63b7f8531e8ad2808c).
 
-Note that this solution will mangle non-ascii letter characters and pass-through symbols, separators, etc.
-Assuming that `isletter(c)` is the same as `c in 'a':'z' || c in 'A':'Z'` is quite common and can cause issues!
-If you want your input to be ascii, use `ascii()`, `isascii()` or Strs.jl.
+```exercism/warning
+
+This solution will mangle non-[ascii][ascii] letter characters and pass-through symbols, separators, etc.
+because it assumes that `isletter(c)` is the same as `c in 'a':'z' || c in 'A':'Z'` (it actually matches all unicode letters).
+This is a common mistake and can cause real issues!
+
+If you want to ensure your input is ascii you can use `ascii()`, or `isascii()`, or the Strs.jl package.
+
+```
 
 ```julia
 encode(input) = atbash(input, group=true)
@@ -210,3 +216,5 @@ encode(obj) = [ get(Cipher, x, "") for x ∈ obj if x ∈ keys(Cipher) ] |>
                            " "))
 decode(obj) = join(get(Cipher, x, "") for x in obj)
 ```
+
+[ascii]: https://en.wikipedia.org/wiki/ASCII
