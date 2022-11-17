@@ -2,9 +2,6 @@
 
 ## General guidance
 
-- A O(n^3) solution is trivial to find, but too slow for the tests. A O(n^2) solution is pretty easy to find. A O(n) solution requires solving some simultaneous equations.
-
-
 There are three reasonably common solutions to this problem, a cubic time solution, a quadratic time solution and a linear time solution
 (if those terms are unclear to you, you might like to read about [time complexity](https://en.wikipedia.org/wiki/Time_complexity)).
 
