@@ -43,7 +43,8 @@ This works because:
 ```
 (c - 'a' + n)
 └──┬───┘
-   └─ returns the "distance" between both characters in the alphabet as an Int (e.g. `'b' - 'a' == 1`).
+   └─ returns the "distance" between both characters in the
+      alphabet as an Int (e.g. `'b' - 'a' == 1`).
 ```
 
 ```
