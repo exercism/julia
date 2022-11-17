@@ -14,7 +14,7 @@
 - For integer division, students should use `÷` and not `/` (see [#138](https://github.com/exercism/julia/issues/138))
 - You can define the sum of squares as `sum((1:n) .^ 2)`, but it allocates an array (at least in Julia 1.4), can you see how to do this without allocation?
 
-## A simple solution
+## Approach: using `sum`
 
 ```julia
 square_of_sum(n) = sum(1:n)^2
@@ -25,7 +25,7 @@ sum_of_squares(n) = sum(x -> x^2, 0:n)
 difference(n) = square_of_sum(n) - sum_of_squares(n)
 ```
 
-## Using square pyramidal number formula
+## Approach: using the square pyramidal number formula
 
 ```julia
 "Square the sum of the first `n` positive integers"
@@ -40,7 +40,7 @@ difference(n) = square_of_sum(n) - sum_of_squares(n)
 
 You may see some solutions where the `difference` has been partially expanded analytically, too.
 
-## Using the analytical formulas and `evalpoly`
+## Approach: using the analytical formulas and `evalpoly`
 
 n111b111's solution uses `evalpoly`, which generates efficient code for the three polynomial expressions using [Horner's method](https://www.math10.com/en/algebra/horner.html).
 

@@ -21,7 +21,7 @@ You can define the subtraction in terms of unary negation of a `Minute` and addi
 -(c::Clock, m::Minute) = c + -m
 ```
 
-## Simplest approach: work in minutes.
+## Approach: work with minutes
 
 OTDE's solution defines a struct with only one field, `min`, which records the number of minutes since midnight.
 
@@ -79,7 +79,7 @@ show(io::IO, c::Clock) = @printf(io, "\"%02d:%02d\"", hour(c), minute(c))
 
 </details>
 
-## Approach with `Bool` arithmetic
+## Approach: `Bool` arithmetic
 
 ScottPJones does some arithmetic with `Bool`s below. This works because `Bool`s are also integers (true == 1, false == 0).
 
@@ -104,7 +104,7 @@ Base.:-(x::Clock, y::Minute) = x + Minute(-value(y))
 Base.show(io::IO, x::Clock) = print(io, '"', lpad(x.h, 2, '0'), ':', lpad(x.m, 2, '0'), '"')
 ```
 
-## Approach using `@printf`
+## Approach: using `@printf`
 
 dbalman's solution, using three mods and using `@printf` rather than `lpad`:
 
@@ -130,7 +130,7 @@ Base.show(io::IO, clock::Clock) =
   @printf(io, "\"%02d:%02d\"", clock.hour, clock.minute)
 ```
 
-## Approach with floor division
+## Approach: using floor division
 
 bovine3dom's solution which avoids the subtraction in dbalman's solution by using floor division:
 

@@ -6,7 +6,7 @@
 - You can initialise a `Dict` with a generator, if you like: `Dict(base => 0 for base in "ACGT")`
 - In Julia, the properties of objects are generally considered private unless documented otherwise, so we generally prefer `value in keys(dict)` or `haskey(dict, value)` over `value in dict.keys`
 
-## Using a `Dict`
+## Approach: using a `Dict`
 
 Straightforward solution. Easily understood, but a bit slow because it will compute the hash of a character twice on each iteration (though any of these solutions is plenty fast enough for even pretty large inputs!).
 
@@ -24,7 +24,7 @@ function count_nucleotides(strand)
 end
 ```
 
-## Using four variables
+## Approach: using if/elseif
 
 We can get some speedup with a simple stack of if/elseifs like this:
 
@@ -48,7 +48,7 @@ function count_nucleotides2(strand)
 end
 ```
 
-## Using `count`
+## Approach: using `count`
 
 ```julia
 function count_nucleotides3(strand)
@@ -66,7 +66,7 @@ It can be surprising to some people that this solution using `count(==(base), st
 This is because the complexity of your loop body matters.
 In this case, we swap one iteration of a moderately complex loop body for four iterations of a very simple loop body.
 
-## Going real fast by counting bytes
+## Approach: counting bytes
 
 This solution, though perhaps a little harder to understand, is much faster at the price of just a little memory use:
 

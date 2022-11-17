@@ -6,7 +6,7 @@ Broadcasting solutions like `count(collect(s1) .!= collect(s2))` will create cop
 
 You can use `sum`, but you'll probably need to jump through hoops to get it to handle the case of an empty generator. `count` is easier.
 
-## Example solutions
+## Approach: using `count`
 
 ```julia
 function distance(s1, s2)
@@ -14,6 +14,8 @@ function distance(s1, s2)
     count(a != b for (a, b) in zip(s1, s2))
 end
 ```
+
+## Approach: using `mapreduce`
 
 There's a nice solution with mapreduce, too, especially nice because mapreduce makes it easy to iterate multiple collections at the same time without `zip`:
 

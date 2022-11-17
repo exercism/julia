@@ -5,7 +5,7 @@
 - The key lesson from this exercise is that you can define two methods for the function `rotate`
 - The macro/metaprogramming is quite challenging for lots of students. Feel free to read the answer below!
 
-## Example solution
+## Approach: modulo arithmetic
 
 ```julia
 """
@@ -55,13 +55,13 @@ This works because:
  └─ The beginning/base of the alphabet.
 ```
 
-~~~~exercism/advanced
+```exercism/advanced
 
 Iterating a UTF-8 string is slow because it's a variable length encoding. It is often faster to iterate a collection with elements of a fixed size (a vector of `UInt8`s from `transcode()` or an `ASCIIStr` (from Strs.jl), perhaps).
 
 See the dig deeper pages for the [pangram][dd-pg], [nucleotide count][dd-nc], and [luhn][dd-l] exercises for more details on how to safely and efficiently use `transcode` (if you can't see a pages when you follow the link, try completing the exercise first).
 
-~~~~
+```
 
 ## Bonus macro task
 

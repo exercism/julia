@@ -110,7 +110,7 @@ A convenience function for `encode(str; group=false)`
 decode(str) = encode(str; group=false)
 ```
 
-## Approach: Low-level style
+## Approach: low-level style
 
 An efficient procedural-style solution to this problem.
 This code is verbose, but through that verbosity manages to read the input only once and allocates very little memory.
@@ -166,7 +166,7 @@ function decode(input)
 end
 ```
 
-## A nice (and informatively flawed) functional approach
+## Approach: functional approach
 
 A solution by [halfdan](https://exercism.io/tracks/julia/exercises/atbash-cipher/solutions/419b6f4d04974a63b7f8531e8ad2808c).
 
@@ -194,7 +194,7 @@ function atbash(c::Char)
 end
 ```
 
-## An approach with a translation dictionary
+## Approach: translation dictionary
 
 Solution by [Nosferican](https://exercism.io/tracks/julia/exercises/atbash-cipher/solutions/4a06872ec87a4c91ab7c32e98682165e)
 
