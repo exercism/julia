@@ -4,7 +4,7 @@
 
 It is probably clearest to separate the checks for silence, yelling, and questioning out and give them descriptive names.
 
-## Approach using variables for each check
+## Approach: using variables for each check
 
 [4d47's very readable solution](https://exercism.io/tracks/julia/exercises/bob/solutions/bad626f50f3d46999305e1db5d6c8c78)
 
@@ -29,7 +29,7 @@ function bob(stimulus)
 end
 ```
 
-## Approach using closures for each check
+## Approach: using closures for each check
 
 [cmcaine's solution](https://exercism.io/tracks/julia/exercises/bob/solutions/3f88ebf58eca47fe98c2bc5f20823e45)
 

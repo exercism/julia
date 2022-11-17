@@ -1,6 +1,6 @@
 # Introduction
 
-## General advice
+## General guidance
 
 - Instead of writing out the whole alphabet, you can use a character range `'a':'z'`, if you like.
 - `Iterators.partition` and `join` might be helpful for adding spaces between groups.
@@ -11,6 +11,7 @@
 The Atbash cipher requires mapping each occurrence of the nth letter in the alphabet with the (26-n)th letter.
 
 You could acheive this by creating a dictionary something like this:
+
 ```julia
 const cipher = Dict(zip(vcat('a':'z', 'A':'Z', '0':'9'),
                         vcat('z':-1:'a', 'z':-1:'a', '0':'9')))
@@ -109,8 +110,7 @@ A convenience function for `encode(str; group=false)`
 decode(str) = encode(str; group=false)
 ```
 
-
-## Approach: Low-level style
+## Approach: low-level style
 
 An efficient procedural-style solution to this problem.
 This code is verbose, but through that verbosity manages to read the input only once and allocates very little memory.
@@ -166,13 +166,19 @@ function decode(input)
 end
 ```
 
-## A nice (and informatively flawed) functional approach
+## Approach: functional approach
 
 A solution by [halfdan](https://exercism.io/tracks/julia/exercises/atbash-cipher/solutions/419b6f4d04974a63b7f8531e8ad2808c).
 
-Note that this solution will mangle non-ascii letter characters and pass-through symbols, separators, etc.
-Assuming that `isletter(c)` is the same as `c in 'a':'z' || c in 'A':'Z'` is quite common and can cause issues!
-If you want your input to be ascii, use `ascii()`, `isascii()` or Strs.jl.
+```exercism/warning
+
+This solution will mangle non-[ascii][ascii] letter characters and pass-through symbols, separators, etc.
+because it assumes that `isletter(c)` is the same as `c in 'a':'z' || c in 'A':'Z'` (it actually matches all unicode letters).
+This is a common mistake and can cause real issues!
+
+If you want to ensure your input is ascii you can use `ascii()`, or `isascii()`, or the Strs.jl package.
+
+```
 
 ```julia
 encode(input) = atbash(input, group=true)
@@ -194,7 +200,7 @@ function atbash(c::Char)
 end
 ```
 
-## An approach with a translation dictionary
+## Approach: translation dictionary
 
 Solution by [Nosferican](https://exercism.io/tracks/julia/exercises/atbash-cipher/solutions/4a06872ec87a4c91ab7c32e98682165e)
 
@@ -210,3 +216,5 @@ encode(obj) = [ get(Cipher, x, "") for x ∈ obj if x ∈ keys(Cipher) ] |>
                            " "))
 decode(obj) = join(get(Cipher, x, "") for x in obj)
 ```
+
+[ascii]: https://en.wikipedia.org/wiki/ASCII

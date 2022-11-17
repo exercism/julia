@@ -1,15 +1,14 @@
 # Introduction
 
-## Hints and tips
-
-- A O(n^3) solution is trivial to find, but too slow for the tests. A O(n^2) solution is pretty easy to find. A O(n) solution requires solving some simultaneous equations.
-
-## Example solutions
+## General guidance
 
 There are three reasonably common solutions to this problem, a cubic time solution, a quadratic time solution and a linear time solution
 (if those terms are unclear to you, you might like to read about [time complexity](https://en.wikipedia.org/wiki/Time_complexity)).
+A cubic time solution is easy to find, but too slow for the tests or for many practical uses.
+A quadratic time solution is pretty easy to find and will be good enough for the tests.
+Finding a linear time solution will require some mathematics. The solution below was derived by solving some simultaneous equations.
 
-### Cubic time solution
+## Approach: cubic time solution
 
 Just iterate over a, b, and c.
 This solution is very simple, but really is too slow.
@@ -35,8 +34,7 @@ function pythagorean_triplets(n)
 end
 ```
 
-
-### Quadratic time algorithm
+## Approach: quadratic time algorithm
 
 ```julia
 """
@@ -76,19 +74,18 @@ We can improve this solution slightly by tightening up the loop bounds using som
         for b in a+1:fld(n, 2)-1
 ```
 
-> Note: you can come up with even tighter bounds than these. Share your working in comments if you do!
+You might be able to find even tighter bounds than these. Share your working in comments if you do!
 
-The intuition on upper bounds is that if we were working with real numbers, the biggest `a` can be is `n/3 - ε`,
+The intuition on these upper bounds is that if we were working with real numbers, the biggest `a` can be is `n/3 - ε`,
 where `ε` is the smallest real number greater than 0,
 because `b` and `c` must both be larger.
 Similarly, the biggest `b` can be is `n/2 - ε` because `c` must be larger than it.
 
 When we move that to the integers, we observe that the maximum remainder of `n/3` is 2.
-We already know that the biggest `a` can be is  when `a`, `b`, and `c` are as close as possible, so that gives us something like this: `fld(n, 3) - 1 < fld(n, 3) + x < fld(n, 3) + y` where `x < y && -1 + x + y < 2`.
+We already know that the biggest `a` can be is when `a`, `b`, and `c` are as close as possible, so that gives us something like this: `fld(n, 3) - 1 < fld(n, 3) + x < fld(n, 3) + y` where `x < y && -1 + x + y < 2`.
 Similarly, the biggest remainder of `n/2` is 1, so the largest `b` can be is when our variables are `1 < fld(n, 2) - 1 < fld(n, 2) + 1`, so an upper bound on `b` is `fld(n, 2) - 1`.
 
-
-### Linear time algorithm
+## Approach: linear time algorithm
 
 To really go fast, we need a linear time algorithm, and this one derived by solving some simultaneous equations is a much greater improvement:
 

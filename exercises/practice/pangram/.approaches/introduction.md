@@ -1,12 +1,11 @@
 # Introduction
 
-## Common suggestions
+## General guidance
 
 - You can express this whole problem as lowercasing the input and a single set relationship. Can you work out which relation it is? (answer below)
 - Instead of writing out the whole alphabet, you can use a character range `'a':'z'`
 
-
-## Using set relations
+## Approach: using set relations
 
 A simple, elegant solution:
 
@@ -16,18 +15,23 @@ ispangram(input) = 'a':'z' ⊆ lowercase(input)
 
 ⊆ can be entered at the Julia repl as `\subseteq` followed by tab. It's the infix operator for the `issubset` function.
 
-## Two more one-liners
+## Approach: using currying
 
-The first uses function currying, which may look strange at first, but is very convenient for predicates like `in`.
-The second uses an anonymous function and avoids taking a copy of the input to reduce memory usage.
+This approach uses function currying, which may look strange at first, but is very convenient for predicates like `in`.
 
 ```julia
 ispangram1(input) = all(in(lowercase(input)), 'a':'z')
+```
 
+## Approach: use an anonymous function
+
+This approach uses an anonymous function and uppercases the character rather than the string to avoid making a copy of the input.
+
+```julia
 ispangram2(input) = all(c -> in(c, input) || in(uppercase(c), input), 'a':'z')
 ```
 
-## Going faster with bytes
+## Approach: marking bytes
 
 And here's a faster, more complicated solution,
 just in case pangram-identification is on the critical path for your new startup.

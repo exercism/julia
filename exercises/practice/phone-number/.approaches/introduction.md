@@ -1,12 +1,12 @@
 # Introduction
 
-## Hints and tips
+## General guidance
 
 - prefer `isdigit` to `isnumeric` when you want to match only the western arabic numerals (0123456789)
 - regex is fine
 - you can use higher-order-functions like `filter` and `map` on strings
 
-## A solution without regex
+## Approach: not using regex
 
 A simple procedural solution. We filter the string so that it only contains digits, remove a leading 1 if the string is exactly 11 chars long, then check that the first and fourth digits are in the right range.
 
@@ -24,7 +24,7 @@ function clean(phone_number)
 end
 ```
 
-## A solution that does use regex
+## Approach: using regex
 
 And here's a more declarative solution using a regex.
 If you can read regex, this is probably easier to understand than the first and easier to prove that it is correct.

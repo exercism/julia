@@ -1,19 +1,17 @@
 # Introduction
 
-## Guidance
+## General guidance
 
 - Prefer to use `Dates.value(m)` rather than `m.value` because fields are generally considered private in Julia. Defining an API in terms of functions makes it much easier for other structs to implement your interface or for you to refactor your stuff. You can import the `value` function from Dates with `using Dates: value` to use it without a prefix.
 - `lpad` is totally fine, but if you're already familiar with the `printf` language from C or elsewhere, you might like to take a look at the `Printf` stdlib
 
-
 ## Complexities to watch out for!
 
 - If you're storing a field for both hours and minutes then
-the trickiest case is when minutes are less than and not a multiple of 60 (e.g. -61).
-Students often end up doing something quite convoluted to solve this.
+  the trickiest case is when minutes are less than and not a multiple of 60 (e.g. -61).
+  Students often end up doing something quite convoluted to solve this.
 - Students often use `%` or `rem` and a subtraction when `mod` is probably what they want
 - Your humble correspondent thinks that this is best solved by converting the hours to minutes, as is done in the first approach below
-
 
 ## Technique: defining subtraction
 
@@ -23,7 +21,7 @@ You can define the subtraction in terms of unary negation of a `Minute` and addi
 -(c::Clock, m::Minute) = c + -m
 ```
 
-## Simplest approach: work in minutes.
+## Approach: work with minutes
 
 OTDE's solution defines a struct with only one field, `min`, which records the number of minutes since midnight.
 
@@ -81,7 +79,7 @@ show(io::IO, c::Clock) = @printf(io, "\"%02d:%02d\"", hour(c), minute(c))
 
 </details>
 
-## Approach with `Bool` arithmetic
+## Approach: `Bool` arithmetic
 
 ScottPJones does some arithmetic with `Bool`s below. This works because `Bool`s are also integers (true == 1, false == 0).
 
@@ -106,7 +104,7 @@ Base.:-(x::Clock, y::Minute) = x + Minute(-value(y))
 Base.show(io::IO, x::Clock) = print(io, '"', lpad(x.h, 2, '0'), ':', lpad(x.m, 2, '0'), '"')
 ```
 
-## Approach using `@printf`
+## Approach: using `@printf`
 
 dbalman's solution, using three mods and using `@printf` rather than `lpad`:
 
@@ -132,7 +130,7 @@ Base.show(io::IO, clock::Clock) =
   @printf(io, "\"%02d:%02d\"", clock.hour, clock.minute)
 ```
 
-## Approach with floor division
+## Approach: using floor division
 
 bovine3dom's solution which avoids the subtraction in dbalman's solution by using floor division:
 

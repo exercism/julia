@@ -1,6 +1,6 @@
 # Introduction
 
-## Guidance
+## General guidance
 
 The main point of this exercise is to learn about mutable structs and to reinforce the idea of writing methods for your own types.
 But there's also some trickyness in the problem, too.
@@ -31,8 +31,7 @@ There's some basic stats to help you grasp the issue:
     Probability of finding the last name with N guesses =
       1 - ((676000 - 1) / 676000)^N
 
-
-## A fancy solution
+## Approach: encode names as numbers and shuffle them all in advance
 
 ```julia
 # Scott P Jones' solution as reinterpreted by Colin Caine

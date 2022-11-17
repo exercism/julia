@@ -29,7 +29,7 @@ The transformation is:
 """
 ```
 
-## Example solutions: Going backwards
+## Approach: going backwards
 
 The simplest way to solve this exercise is to iterate over the string backwards:
 
@@ -89,8 +89,7 @@ function luhn2(str)
 end
 ```
 
-
-## Example solution: breaking it up
+## Approach: breaking it up
 
 A different approach might break the problem up into a few different steps, like this:
 
