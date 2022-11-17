@@ -5,7 +5,7 @@
 - The key lesson from this exercise is that you can define two methods for the function `rotate`
 - The macro/metaprogramming is quite challenging for lots of students. Feel free to read the answer below!
 
-## Approach: modulo arithmetic
+## Approach: using `Char` arithmetic and `map`
 
 ```julia
 """
