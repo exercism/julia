@@ -26,7 +26,7 @@ jobs:
         os: [ubuntu-latest, windows-latest, macOS-latest]
 
     steps:
-      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+      - uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b
 
       - uses: julia-actions/setup-julia@ee66464cb7897ffcc5322800f4b18d449794af30
         with:
@@ -45,7 +45,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+      - uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b
 
       - name: Pull julia-test-runner image
         run: docker pull exercism/julia-test-runner
