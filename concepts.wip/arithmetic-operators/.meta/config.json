@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for arithmetic-operators concept",
-  "authors": [],
-  "contributors": []
+  "blurb": "Arithmetic operations are supported on all (numeric) primitive types such as: integers and floating-point numbers.",
+  "authors": ["SaschaMann"],
+  "contributors": ["SJ-Nosrat"]
 }
