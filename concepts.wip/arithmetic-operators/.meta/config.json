@@ -1,5 +1,5 @@
 {
   "blurb": "Arithmetic operations are supported on all (numeric) primitive types such as: integers and floating-point numbers.",
   "authors": ["SaschaMann"],
-  "contributors": ["SJ-Nosrat"]
+  "contributors": ["SJ-Nosrat", "cmcaine"]
 }
