@@ -19,7 +19,7 @@ julia> 5 ÷ 2
 2
 ```
 
-In he latter operation after performing division is **truncated** to an integer.
+In the latter operation after performing division is **truncated** to an integer.
 
 ```julia
 # Modulo
