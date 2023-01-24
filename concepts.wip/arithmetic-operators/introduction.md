@@ -4,7 +4,7 @@ Julia provides a number of [arithmetic operators](https://en.wikipedia.org/wiki/
 
 [^1]: You can find a list of them in the [Julia Manual](https://docs.julialang.org/en/v1/manual/mathematical-operations/#Arithmetic-Operators).
 
-Many of the arithmetic operations are straightforward. Below are examples of some operations in Julia that may have different **syntax** in other languages, ex: Python.
+Below are examples of some arithmetic operations in Julia. You may find that Julia embraces unicode operators more than many other languages.
 
 ```julia
 # Exponentiation
@@ -14,15 +14,15 @@ julia> 3 ^ 2
 
 ```julia
 # Integer Division
-julia> div(5, 2)
+# ÷ can be typed as \div<tab>
+julia> 5 ÷ 2
 2
 ```
 
-The latter operation after performing division is **truncated** to an integer.
+In he latter operation after performing division is **truncated** to an integer.
 
 ```julia
 # Modulo
-# 7 % 2 syntax is also supported
-julia> rem(7, 2)
+julia> 7 % 2
 1
 ```
