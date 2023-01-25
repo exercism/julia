@@ -23,7 +23,9 @@ julia> typeof(3)
 Int64
 ```
 
-In the latter line, we can check the type of numeric type with the `typeof` function.
+In the latter line, we can check the numeric type with the `typeof` function.
+
+Depending on the computer system used, Julia returns either `Int32` or `Inter64` for a 32-bit or 64-bit system, respectively.
 
 ## Floating-point types
 
@@ -108,7 +110,7 @@ julia> 1/0
 Inf
 
 # Integer division produces an error in Julia.
-julia> div(1, 0)
+julia> 1 ÷ 0
 ERROR: DivideError: integer division error
 ```
 
@@ -130,7 +132,7 @@ julia> 8 ^ 2
 julia> 10 ^ 3.0
 1000.0
 
-# Any float between 0 and 1 raised to an infinitely large positive number,
+# Any float between 0 and 1 raised to Inf,
 # returns 0.0
 julia> 0.5 ^ Inf
 0.0
