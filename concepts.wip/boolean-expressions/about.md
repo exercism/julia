@@ -39,6 +39,8 @@ julia> !(1234 ÷ 5 + true == 246)
 true
 ```
 
+The order of operations in a boolean expression is evaluated based on [operator precedence](https://docs.julialang.org/en/v1/manual/mathematical-operations/#Operator-Precedence-and-Associativity).
+
 ## Expression involving built-in Bool functions
 
 ```julia
