@@ -10,6 +10,7 @@ julia> true ≥ 1
 true
 
 # √ can be typed as \sqrt<tab>
+# Equivalently √100 can be written as sqrt(100)
 julia> 120 % 11 == √100
 true
 
