@@ -27,6 +27,30 @@
 #    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 #    DEALINGS IN THE SOFTWARE.
 
+# Combinatorics/src/factorials.jl
+
+# TODO: This should really live in Base, otherwise it's type piracy
+"""
+    factorial(n, k)
+
+Compute ``n!/k!``.
+"""
+function Base.factorial(n::T, k::T) where T<:Integer
+    if k < 0 || n < 0 || k > n
+        throw(DomainError((n, k), "n and k must be nonnegative with k ≤ n"))
+    end
+    f = one(T)
+    while n > k
+        f = Base.checked_mul(f, n)
+        n -= 1
+    end
+    return f
+end
+
+Base.factorial(n::Integer, k::Integer) = factorial(promote(n, k)...)
+
+# Combinatorics/src/permutations.jl
+
 struct Permutations{T}
     a::T
     t::Int
