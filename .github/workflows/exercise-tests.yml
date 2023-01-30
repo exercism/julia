@@ -28,7 +28,7 @@ jobs:
     steps:
       - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
 
-      - uses: julia-actions/setup-julia@ee66464cb7897ffcc5322800f4b18d449794af30
+      - uses: julia-actions/setup-julia@b315a4d9881690c63d53fc0175b150a3776140bd
         with:
           version: ${{ matrix.julia-version }}
 
