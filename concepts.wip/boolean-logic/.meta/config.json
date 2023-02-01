@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for boolean-logic concept",
-  "authors": [],
+  "blurb": "Boolean logic involves combining logical statements using logical connectives, which evaluate to either true or false.",
+  "authors": ["SJ-Nosrat"],
   "contributors": []
 }
