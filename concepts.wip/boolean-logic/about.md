@@ -1,6 +1,6 @@
 # About
 
-Boolean logic is a branch of Boolean algebra, where boolean expressions are combined using logical operators, in Julia called [boolean operators](https://docs.julialang.org/en/v1/manual/mathematical-operations/#Boolean-Operators), to form logical statements that evaluates to either `true` or `false`.
+Boolean logic is a branch of Boolean algebra, where boolean expressions are combined using logical operators, in Julia called [boolean operators](https://docs.julialang.org/en/v1/manual/mathematical-operations/#Boolean-Operators), to form logical statements that evaluate to either `true` or `false`.
 
 Below, we present tables that illustrate what results are produced when boolean operators are combined with given expressions.
 
