@@ -1,10 +1,10 @@
 # About
 
-The _Boolean_ data type, contains the values `true` and `false`, only.
+The _Boolean_ data type contains the values `true` and `false`, only.
 
-`true` or `false` values are represented by the `Bool` type.
+In Julia, `true` or `false` values are represented by the `Bool` data type.
 
-In Julia, `Bool` is a subtype of `Integer` and acts as `0` and `1` numerically. Formally it is a _primitive_ type.
+Furthermore, `Bool` is a subtype of `Integer` and acts as `0` and `1` numerically. Formally it is a _primitive_ type.
 
 ```julia
 help?> Bool
