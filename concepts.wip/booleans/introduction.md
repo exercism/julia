@@ -10,6 +10,8 @@ In Julia, it is a built-in _data_ _type_.
 [^1]: This also includes Julia, among other programming languages.
 [^2]: [Programming generalities](https://en.wikipedia.org/wiki/Boolean_data_type#Generalities).
 
+## Booleans in Julia
+
 ```julia
 julia> true
 true
@@ -24,4 +26,13 @@ Bool
 
 julia> typeof(false)
 Bool
+
+# Another way to directly "typecheck".
+# isa(x, type) -> Bool
+julia> isa(true, Bool)
+true
+
+# "isa" function can be used as an infix operator.
+julia> false isa Bool
+true
 ```
