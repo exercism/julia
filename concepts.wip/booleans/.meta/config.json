@@ -1,9 +1,5 @@
 {
   "blurb": "The Bool type represents the values true and false.",
-  "authors": [
-    "SaschaMann"
-  ],
-  "contributors": [
-    "cmcaine"
-  ]
+  "authors": ["SaschaMann"],
+  "contributors": ["cmcaine", "SJ-Nosrat"]
 }
