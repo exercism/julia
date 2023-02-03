@@ -51,9 +51,9 @@ false
 
 The only time `A||B` results in `false` is when both A and B are `false`.
 
-```exercism/note
+~~~~exercism/note
 We recommend referencing both tables to able to predict the resulting boolean logic before using Julia, to allow to internalize their behaviour.
-```
+~~~~
 
 ### Logical _or_ (||) examples
 
