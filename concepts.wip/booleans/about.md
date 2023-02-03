@@ -32,7 +32,7 @@ julia> false * NaN
 0.0
 ```
 
-~~~~exercism/note
+~~~~exercism/caution
 Be aware that the behaviour of `false` as a strong zero may not be  consistent and intuitive in all situations.
 See [julialang/julia#33226](https://github.com/JuliaLang/julia/issues/33226) for more information.
 ~~~~
