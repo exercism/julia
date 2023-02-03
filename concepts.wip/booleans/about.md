@@ -1,9 +1,10 @@
 # About
 
-True or false values are represented by the `Bool` type.
-It contains only two values: `true` and `false`.
+The _Boolean_ data type contains the values `true` and `false`.
 
-`Bool` is a subtype of `Integer` and acts as `1` and `0` numerically:
+In Julia, `true` or `false` values are represented by the `Bool` type.
+
+Furthermore, `Bool` is a subtype of `Integer` and acts as `0` and `1` numerically.
 
 ```julia
 help?> Bool
@@ -13,11 +14,11 @@ help?> Bool
 Bool <: Integer
 ```
 
-Boolean type, containing the values `true` and `false`.
+`Bool` is a kind of number: `false` is numerically equal to `0` and `true` is numerically equal to `1`.
 
-`Bool` is a kind of number: `false` is numerically equal to `0` and `true` is numerically equal to `1`. Moreover, `false` acts as a multiplicative "strong zero":
+Moreover, `false` acts as a multiplicative "strong zero":
 
-```jldoctest
+```julia
 julia> false == 0
 true
 
@@ -31,7 +32,7 @@ julia> false * NaN
 0.0
 ```
 
-~~~~exercism/note
+~~~~exercism/caution
 Be aware that the behaviour of `false` as a strong zero may not be  consistent and intuitive in all situations.
 See [julialang/julia#33226](https://github.com/JuliaLang/julia/issues/33226) for more information.
 ~~~~
