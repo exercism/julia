@@ -6,9 +6,9 @@ This is where Julia provides the following ways to control the flow of our progr
 
 There are three primary conditional statements that are used in Julia:
 
-- [`if`-expressions](https://exercism.lol/tracks/julia/concepts/if-expressions)
-- [The ternary operator](https://exercism.lol/tracks/julia/concepts/ternary-operator)
-- [Short-circuit evaluation](https://exercism.lol/tracks/julia/concepts/short-circuit-evaluation)
+- [`if`-expressions](https://exercism.org/tracks/julia/concepts/if-expressions)
+- [The ternary operator](https://exercism.org/tracks/julia/concepts/ternary-operator)
+- [Short-circuit evaluation](https://exercism.org/tracks/julia/concepts/short-circuit-evaluation)
 
 Take note of the following, in Julia the _conditional expression_ must return `true` or `false`. Otherwise it is an error.
 
