@@ -2,7 +2,7 @@
 
 Conditional evaluation is one of the handful of ways that Julia offers to _control the flow_ of your program.
 
-There are three primary conditional expressions that are used in Julia:
+There are three primary ways to achieve this in Julia:
 
 - `if`-expressions
 - The ternary operator
