@@ -8,7 +8,7 @@ There are three primary ways to achieve this in Julia:
 - The ternary operator
 - Short-circuit evaluation
 
-Suppose you need a program to execute a cetain set of statements, given that the boolean expression is satisfied, then structure the code according to the syntax that Julia provides.
+Suppose you need a program to execute a cetain set of statements, given that the conditional expression is satisfied, then we structure the code according to the syntax that Julia provides.
 
 Below are examples of the syntax for conditional evaluation in Julia. 
 
