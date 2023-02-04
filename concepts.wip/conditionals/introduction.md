@@ -36,4 +36,4 @@ julia> x > 0 || false
 true
 ```
 
-The above code is just to introduce you to the respective syntaxes are defined in Julia. We will treat each of them in detail in their respective section in the Julia track.
+The above code is just to introduce you to the respective syntaxes as defined in Julia. We will treat each of them in detail in their respective section in the Julia track.
