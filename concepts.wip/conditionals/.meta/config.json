@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for conditionals concept",
-  "authors": [],
+  "blurb": "Conditionals execute certain statements depending on the return value of a Boolean expression.",
+  "authors": ["SJ-Nosrat"],
   "contributors": []
 }
