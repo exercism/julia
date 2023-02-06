@@ -61,7 +61,7 @@ n is negative!
 ## `if`-`elseif`-`else` syntax example
 
 ```julia
-julia> function say_parity(n)
+julia> function say_if_positive_or_zero(n)
            if n > 0
                println("n is positive!")
             elseif n < 0
@@ -71,16 +71,16 @@ julia> function say_parity(n)
            end
        end
 
-say_parity (generic function with 1 method)
+say_if_positive_or_zero (generic function with 1 method)
 
 # We explicitly test for n to be negative number
 # in the elseif block.
-julia> say_parity(-3)
+julia> say_if_positive_or_zero(-3)
 n is negative!
 
 # 0 is neither positive nor negative,
 # else block is executed.
-julia> say_parity(0)
+julia> say_if_positive_or_zero(0)
 n is zero!
 ```
 
