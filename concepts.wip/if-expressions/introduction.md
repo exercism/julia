@@ -3,12 +3,12 @@
 In Julia, `if`-expressions, are similar to those seen in other languages.
 
 ~~~~exercism/note
-`if`-expressions as defined here will encompass the following syntaxes:`if`, `if-else` and `if-elseif-else` statements.
+[`if`-expressions](https://docs.julialang.org/en/v1/manual/control-flow/#man-conditional-evaluation) as defined here will encompass the following syntaxes:`if`, `if-else` and `if-elseif-else` statements.
 ~~~~
 
-`if`-expressions provide the ability to execute certain statements in a _code block_ given that the conditional is satisfied. In other words, it allows for branching in our programs.
+`if`-expressions provide the ability to execute certain statements in a _code block_ given that the condition is satisfied. In other words, it allows for branching in our programs.
 
-## `If` statement example
+## `if` statement example
 
 ```julia
 # Defining a function, allows to pass different values
@@ -39,7 +39,7 @@ In Julia, the `end` keyword signifies the end of all block expressions.
 This syntax is not specific to `if`-expressions or function definitions.
 ~~~~
 
-## `if`-`else` syntax example
+## `if`-`else` statement example
 
 ```julia
 julia> function say_if_positive(n)
@@ -58,7 +58,7 @@ say_if_positive (generic function with 1 method)
 julia> say_if_positive(-10)
 n is negative!
 ```
-## `if`-`elseif`-`else` syntax example
+## `if`-`elseif`-`else` statement example
 
 ```julia
 julia> function say_if_positive_or_zero(n)
