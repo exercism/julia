@@ -1,5 +1,5 @@
 {
-  "blurb": "TODO: add blurb for if-expressions concept",
+  "blurb": "if-expressions control the flow of a code block by allowing to execute certain statements, given that the conditional expression is satisfied.",
   "authors": [],
   "contributors": []
 }
