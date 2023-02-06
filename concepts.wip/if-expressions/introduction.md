@@ -1,57 +1,86 @@
 # Introduction
 
-`if`-expressions in Julia are similar to those seen in other languages:
+In Julia, `if`-expressions, are similar to those seen in other languages.
+
+~~~~exercism/note
+`if`-expressions as defined here will encompass the following syntaxes:`if`, `if-else` and `if-elseif-else` statements.
+~~~~
+
+`if`-expressions provide the ability to execute certain statements in a _code block_ given that the conditional is satisfied. In other words, it allows for branching in our programs.
+
+## `If` statement example
 
 ```julia
-julia> function say_if_positive(n)
+# Defining a function, allows to pass different values
+# to test. The if statement is the code block inside
+# the function.
+julia> function say_positive(n)
            if n > 0
                println("n is positive!")
-           else
-               println("n is not positive!")
            end
        end
-say_if_positive (generic function with 1 method)
+say_positive (generic function with 1 method)
 
-julia> say_if_positive(10)
+# 10 > 0 which enters the if block
+# and executes the println("n is positive!") 
+# statement.
+julia> say_positive(10)
 n is positive!
 
-julia> say_if_positive(-10)
-n is not positive!
+# -10 < 0, if expression is skipped
+# and no print to screen.
+julia> say_positive(-10)
 ```
+`n > 0` following immediately the `if` keyword above is the conditional expression (a boolean expression), must always return `true` or `false` for the `if`-expression to be executed.
 
-<!-- TODO: Add that fancy concept highlight embed thing to boolean expression -->
-
-If the boolean expression following the `if` evaluates to `true`, the first block of code is run and the second block is skipped.
-If the boolean expression following the `if` evaluates to `false`, the first block of code is skipped and the second block is run.
-The program continues running at the first line of code after the `end` keyword.
 
 ~~~~exercism/note
 In Julia, the `end` keyword signifies the end of all block expressions.
 This syntax is not specific to `if`-expressions or function definitions.
 ~~~~
 
-In cases where the second block of code would be just another `if`-expression, `elseif` allows us to avoid nesting `if`-expressions within the block:
+## `if`-`else` syntax example
 
 ```julia
-julia> function dessert(fruit)
-           if fruit == "apple"
-               return "Apple Crumble"
-           elseif fruit == "lemon"
-               return "Lemon Meringue Pie"
-           else
-               return "Fruit Salad"
+julia> function say_if_positive(n)
+           if n > 0
+               println("n is positive!")
+            else
+               println("n is negative!")
            end
        end
-dessert (generic function with 1 method)
 
-julia> dessert("apple")
-"Apple Crumble"
+say_if_positive (generic function with 1 method)
 
-julia> dessert("lemon")
-"Lemon Meringue Pie"
+# Again, -10 < 0, the if block is skipped,
+# else block is executed, as the only other 
+# alternative.
+julia> say_if_positive(-10)
+n is negative!
+```
+## `if`-`elseif`-`else` syntax example
 
-julia> dessert("peach")
-"Fruit Salad"
+```julia
+julia> function say_parity(n)
+           if n > 0
+               println("n is positive!")
+            elseif n < 0
+               println("n is negative!")
+            else
+               println("n is zero!")
+           end
+       end
+
+say_parity (generic function with 1 method)
+
+# We explicitly test for n to be negative number
+# in the elseif block.
+julia> say_parity(-3)
+n is negative!
+
+# 0 is neither positive nor negative,
+# else block is executed.
+julia> say_parity(0)
+n is zero!
 ```
 
-If an `if`-expression only needs to perform code for one of the cases, there's no need to write out the `else` branch.
