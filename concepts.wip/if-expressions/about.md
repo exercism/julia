@@ -11,25 +11,25 @@ In Julia, like many other languages, allow for the following with `if`-expressio
 
 `if`-expressions allows for branching in our programs, given a condition is satisfied.
 
-## A prompt program example
+## A first example
 
-Suppose you've defined a `password_checker(password)` function that returns `true`, if the password entered by the user is correct.
+The `function` defined below is not very realistic, but it shows the anatomy of an `if` statement. 
 
 ```julia
-# Login prompt
-println("Enter Password: ")
+julia> function password_checker(password)
+           if password == system_password
+               println("Welcome back!")
+            end
+        end
 
-# Get user input
-password = readline()
+# Assume system_password is "abc123"
+julia> password_checker("abc123")
+Welcome back!
 
-# Our main logic
-if password_checker(password)
-    println("Welcome!")
-end
+julia> password_checker("xyz321")
+
 ```
-Although the above program is not very realistic, but it shows the anatomy of an `if` statement. 
-
-In this case the `println("Welcome!")` is run, if the `password_checker(password)` returns `true`, otherwise it is skipped.
+`println("Welcome back!")` is run, if the `password == system_password`, otherwise it is skipped, and nothing is printed to the screen.
 
 We can do the following for effective branching:
 
