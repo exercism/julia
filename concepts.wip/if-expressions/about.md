@@ -6,10 +6,30 @@ In Julia, like many other languages, allow for the following with `if`-expressio
 - Nested if-expressions
 
 ~~~~exercism/note
-`if`-expressions as defined here will encompass the following syntaxes:`if`, `if-else` and `if-elseif-else` statements.
+[`if`-expressions](https://docs.julialang.org/en/v1/manual/control-flow/#man-conditional-evaluation) as defined here will encompass the following syntaxes:`if`, `if-else` and `if-elseif-else` statements.
 ~~~~
 
-`if`-expressions allows for branching in our programs, given a conditional is satisfied. 
+`if`-expressions allows for branching in our programs, given a condition is satisfied.
+
+## A prompt program example
+
+Suppose you've defined a `password_checker(password)` function that returns `true`, if the password entered by the user is correct.
+
+```julia
+# Login prompt
+println("Enter Password: ")
+
+# Get user input
+password = readline()
+
+# Our main logic
+if password_checker(password)
+    println("Welcome!")
+end
+```
+Although the above program is not very realistic, but it shows the anatomy of an `if` statement. 
+
+In this case the `println("Welcome!")` is run, if the `password_checker(password)` returns `true`, otherwise it is skipped.
 
 We can do the following for effective branching:
 
