@@ -18,7 +18,7 @@ The `function` defined below is not very realistic, but it shows the anatomy of 
 ```julia
 julia> function password_checker(password)
            if password == system_password
-               println("Welcome back!")
+               return "Welcome back!"
             end
         end
 
