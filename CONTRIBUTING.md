@@ -164,20 +164,20 @@ Find more information about [configlet here][configlet].
 We have various scripts for you in order to aid with maintaining and contributing to this repository.
 You can find them in the `bin/` directory.
 
-[configlet]: https://github.com/exercism/docs/blob/master/language-tracks/configuration/configlet.md
+[configlet]: https://github.com/exercism/configlet
 [bin-fetch-configlet]: https://github.com/exercism/julia/blob/master/bin/fetch-configlet
-[web-exercism]: https://exercism.io
+[web-exercism]: https://exercism.org
 [file-config]: https://github.com/exercism/julia/blob/master/config.json
 [file-docs]: https://github.com/exercism/julia/blob/master/docs
 [issue-open]: https://github.com/exercism/julia/issues
 [issue-discussion]: https://github.com/exercism/julia/labels/discussion%20%3Aspeech_balloon%3A
 [issue-new-exercise]: https://github.com/exercism/julia/issues?q=is%3Aopen+is%3Aissue+label%3A%22%3Asparkles%3A+new+exercise%22
 [list-of-exercises]: https://tracks.exercism.io/julia/master/unimplemented
-[contributing-generic]: https://github.com/exercism/docs/tree/master/contributing-to-language-tracks
+[contributing-generic]: https://exercism.org/docs/building/tracks
 [contributing-website-copy]: https://github.com/exercism/website-copy#contributing
-[contributing-git-basics]: https://github.com/exercism/docs/blob/master/contributing/git-basics.md
-[contributing-pr-guidelines]: https://github.com/exercism/docs/blob/master/contributing/pull-request-guidelines.md
-[doc-readme]: https://github.com/exercism/docs/blob/master/language-tracks/exercises/anatomy/readmes.md
+[contributing-git-basics]: https://exercism.org/docs/building/github
+[contributing-pr-guidelines]: https://exercism.org/docs/building/github/contributors-pull-request-guide
+[doc-readme]: https://exercism.org/docs/building/tracks/practice-exercises
 [problem-specifications]: https://github.com/exercism/problem-specifications
 [coc]: ./CODE_OF_CONDUCT.md
 [mentor-notes]: https://github.com/exercism/website-copy/tree/master/tracks/julia/exercises
