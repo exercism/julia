@@ -8,7 +8,7 @@ However, **to simplify your solution you may assume that the target element is n
 
 If the searched-for item is not in the list you must return an empty range whose lower bound is the index at which the item could be inserted into the sorted list. An empty range is any range where the upper bound is less than the lower bound.
 
-Please read the documenation and examples for the `searchsorted` function for more details:
+Please read the documentation and examples for the `searchsorted` function for more details:
 
 ```
 searchsorted(a, x; by=<transform>, lt=<comparison>, rev=false)
