@@ -642,6 +642,17 @@
         ]
       },
       {
+        "slug": "sum-of-multiples",
+        "name": "Sum of Multiples",
+        "uuid": "e1664ea0-647c-4667-86bc-45a670353740",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1,
+        "topics": [
+          "sets"
+        ]
+      },
+      {
         "slug": "accumulate",
         "name": "Accumulate",
         "uuid": "e11e9623-f763-4bea-a6d9-7085956ce959",
