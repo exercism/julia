@@ -112,7 +112,7 @@ This solution can be hundreds or thousands of times faster than "Approach: summi
 
 The downside, of course, is that this approach is a lot more complicated.
 
-```
+```julia
 # Implementation inspired by wheel factorisation.
 # We observe that the multiples of the factors is a sequence that repeats with an offset.
 # We call the repeating values the `cycle` and the offset is the
