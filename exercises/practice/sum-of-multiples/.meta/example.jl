@@ -1,11 +1,12 @@
-function sum_of_multiples(limit, multiples)
-    uniques = Set([0]) # avoid empty set, which would make sum() unhappy
-    for num in [m for m in multiples if m > 0]
-        mult = num
-        while mult < limit
-            push!(uniques, mult)
-            mult += num
+function sum_of_multiples(limit, factors)
+    multiples = BitSet()
+    for f in factors
+        f == 0 && continue
+        multiple = f
+        while multiple < limit
+            push!(multiples, multiple)
+            multiple += f
         end
     end
-    return sum(uniques)
+    sum(multiples)
 end
