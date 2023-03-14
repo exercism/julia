@@ -27,7 +27,7 @@ end
 end
 
 @testset "can get the largest product of a big number" begin
-    @test largest_product("73167176531330624919225119674426574742355349194934", 6,) == 23_520
+    @test largest_product("73167176531330624919225119674426574742355349194934", 6) == 23_520
 end
 
 @testset "reports zero if the only digits are zero" begin
