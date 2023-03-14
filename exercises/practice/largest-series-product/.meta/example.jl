@@ -1,4 +1,4 @@
-function largest_product(s::AbstractString, span::Int)
+function largest_product(s, span)
     0 <= span <= length(s) || throw(DomainError(span, "Span must be ≥ 0 and ≤ length(s)"))
     (iszero(span) || isempty(s)) && return 1
 
