@@ -36,9 +36,9 @@ function largest_product(str, span)
         # The product of the empty set is the multiplicative identity (1)
         return 1
     elseif span ∉ 0:length(str)
-        throw(DomainError(span, "span must be in the range 0:length(str)"))
+        throw(ArgumentError("span must be in the range 0:length(str)"))
     elseif !all(isdigit, str)
-        throw(DomainError(str, "Non-digit character in str"))
+        throw(ArgumentError("Non-digit character in str"))
     end
 
     best = 0
@@ -70,9 +70,9 @@ function largest_product(str, span)
         # The product of the empty set is the multiplicative identity (1)
         return 1
     elseif span ∉ 0:length(str)
-        throw(DomainError(span, "span must be in the range 0:length(str)"))
+        throw(ArgumentError("span must be in the range 0:length(str)"))
     elseif !all(isdigit, str)
-        throw(DomainError(str, "Non-digit character in str"))
+        throw(ArgumentError("Non-digit character in str"))
     end
 
     digits = parse.(Int8, (ch for ch in str))
@@ -118,9 +118,9 @@ function largest_product(str, span)
         # The product of the empty set is the multiplicative identity (1)
         return 1
     elseif span ∉ 0:length(bytes)
-        throw(DomainError(span, "span must be in the range 0:length(str)"))
+        throw(ArgumentError("span must be in the range 0:length(str)"))
     elseif !all(c -> UInt8('0') ≤ c ≤ UInt8('9'), bytes)
-        throw(DomainError(str, "Non-digit character in str"))
+        throw(ArgumentError("Non-digit character in str"))
     end
 
     idxs = Iterators.zip(1:length(bytes)-span+1, span:length(bytes))
@@ -151,9 +151,9 @@ function largest_product2(str, span)
         # The product of the empty set is the multiplicative identity (1)
         return 1
     elseif span ∉ 0:length(str)
-        throw(DomainError(span, "span must be in the range 0:length(str)"))
+        throw(ArgumentError("span must be in the range 0:length(str)"))
     elseif !all(isdigit, str)
-        throw(DomainError(str, "Non-digit character in str"))
+        throw(ArgumentError("Non-digit character in str"))
     end
 
     digits = [parse(Int8, ch) for ch in str]
