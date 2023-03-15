@@ -4,6 +4,28 @@
 
 - Be careful not to use `isnumeric(c)` in your solution. When you want to test if a character is in '0':'9', use `isdigit`. Read the help to find out more (enter `?isnumeric` and press enter at a Julia REPL).
 
+## Overflows
+
+Products expand very quickly.
+If you're multiplying more than a few integers together then you may get silent integer overflow and garbage results!
+Consider calculating with floats if approximation is acceptable or BigInt if not.
+If you need precise integers and BigInts are too slow then you can use Base.Checked or SaferIntegers.jl, these will throw exceptions on overflow.
+
+You can make most of the examples below throw an exception on overflow by defining a new function `checked_prod` and using it instead of `prod`:
+
+```julia
+checked_prod(itr) = reduce(Base.Checked.checked_mul, itr; init=1)
+```
+
+Surprisingly, code using checked integer arithmetic can sometimes be faster than unchecked (default) integer arithmetic.
+
+Similarly, if you want to try using big integers or floats:
+
+```julia
+big_prod(itr) = reduce(*, itr, init=big(1))
+float64_prod(itr) = reduce(*, itr, init=1.0)
+```
+
 ## Approach: moving window with a for loop
 
 In this approach we calculate the product for each set of `span` digits in `str` in the for loop and keep a record of the largest product in `best`, which we return once the loop terminates.
@@ -116,5 +138,48 @@ If we know our strings are ASCII (or we are willing to treat them as ASCII), the
 If we could import ScottPJones' Strs.jl package\* then we could get similar performance improvements without writing our own ASCII-related optimisations. Instead, we would change the type of the strings that are passed into `largest_product` from Julia's built-in `String` to Strs.jl's `ASCIIStr` type (e.g. `largest_product(ASCIIStr("23"), 2)`).
 
 \* which you can't in Exercism, our test-runner bots don't allow importing third-party packages.
+
+## Approach: one in, one out
+
+We can usually reverse a multiplication by dividing by the same number, so we can save some work compared to the simpler approach of recalculating the product for each window.
+
+This approach works by calculating the product of the initial window, and then for each subsequent step if the digit we're removing from the window is not 0, we divide by it and then multiply by the digit we're adding. If the digit we're removing is 0, that means the window is currently 0 and we have to recalculate it from scratch.
+
+```julia
+function largest_product2(str, span)
+    if span == 0
+        # The product of the empty set is the multiplicative identity (1)
+        return 1
+    elseif span ∉ 0:length(str)
+        throw(DomainError(span, "span must be in the range 0:length(str)"))
+    elseif !all(isdigit, str)
+        throw(DomainError(str, "Non-digit character in str"))
+    end
+
+    digits = [parse(Int8, ch) for ch in str]
+
+    best = window = prod(view(digits, 1:span))
+    for right in span+1:length(digits)
+        left = right - span + 1
+
+        # If possible, recalculate the product of the window with
+        # just one divide and one multiplication.
+        leaving = digits[left - 1]
+        if leaving ≠ 0
+            window = (window ÷ leaving) * digits[right]
+        else
+            window = prod(view(digits, left:right))
+        end
+
+        best = max(best, window)
+    end
+
+    return best
+end
+```
+
+Note that this solution uses integer division, `window ÷ leaving`, rather than standard division.
+In Julia, the unicode divide symbol means integer division, or you can write `div(window, leaving)`.
+With standard division, each of `window` and `best` would sometimes be an Int and sometimes be a Float64, and that kind of uncertainty makes the compiler emit slower code and is confusing (the Julia community calls this kind of problem "type instability").
 
 [do-block]: https://docs.julialang.org/en/v1/manual/functions/#Do-Block-Syntax-for-Function-Arguments
