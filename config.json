@@ -801,6 +801,25 @@
         "slug": "alphametics",
         "name": "Alphametics",
         "difficulty": 10
+      },
+      {
+        "uuid": "4ce25733-55ab-48fd-84e2-c4b7f2f3f529",
+        "practices": [],
+        "prerequisites": [],
+        "slug": "largest-series-product",
+        "name": "largest-series-product",
+        "difficulty": 4,
+        "topics": [
+          "conditionals",
+          "type_conversion",
+          "loops",
+          "variables",
+          "integers",
+          "arrays",
+          "logic",
+          "math",
+          "algorithms"
+        ]
       }
     ]
   },
