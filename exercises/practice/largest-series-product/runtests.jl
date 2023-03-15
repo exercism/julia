@@ -48,18 +48,18 @@ end
 
 @testset "error handling" begin
     @testset "span longer than string length" begin
-        @test_throws DomainError largest_product("123", 4)
+        @test_throws ArgumentError largest_product("123", 4)
     end
 
     @testset "empty string and nonzero span" begin
-        @test_throws DomainError largest_product("", 1)
+        @test_throws ArgumentError largest_product("", 1)
     end
 
     @testset "invalid character in digits" begin
-        @test_throws DomainError largest_product("1234a5", 2)
+        @test_throws ArgumentError largest_product("1234a5", 2)
     end
 
     @testset "negative span" begin
-        @test_throws DomainError largest_product("12345", -1)
+        @test_throws ArgumentError largest_product("12345", -1)
     end
 end
