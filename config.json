@@ -807,7 +807,7 @@
         "practices": [],
         "prerequisites": [],
         "slug": "largest-series-product",
-        "name": "largest-series-product",
+        "name": "Largest Series Product",
         "difficulty": 4,
         "topics": [
           "conditionals",
