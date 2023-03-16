@@ -69,7 +69,7 @@ How does this approach compare to "Approach: summing a set"? Do you think it is 
 
 Understandability is a matter of opinion and taste, but for me both approaches are understandable.
 
-As for performance, finding the remainders will almost always be a lot slower because it is performing many more iterations of its inner loop (at least once for each of 1:limit-1) and its inner loop is more expensive (CPUs take longer to divide than to add).
+As for performance, finding the remainders will almost always be a lot slower because it is performing many more iterations of its inner loop (at least once for each of 1:limit-1) and its inner loop is more expensive (CPUs take several times longer to divide integers than to add them).
 
 When benchmarking, finding the remainders was only faster when when the factors started at 1 (so every value in 1:limit-1 is a factor) or there were an enormous number of repeated factors, which are the worst cases for the summing set approach but are also quite silly inputs. Try the benchmarking code below if you're interested in running your own experiments.
 
@@ -127,16 +127,10 @@ function sum_of_multiples(limit, factors)
     factors = filter(≠(0), factors)
     isempty(factors) && return 0
 
+    # Warning! This can easily and silently overflow and cause us to emit
+    # garbage or loop forever.
     wheel_circumference = prod(factors)
-    if wheel_circumference ≤ 0
-        # The product of the factors is way too big (it's overflowed the Int).
-        # prod(xs) has the feature that if the result is ≥ 0 it is correct
-        # (otherwise some overflow has occurred). This isn't specified in the
-        # docstring, so I don't know if it can be relied upon or not.
-        cycle_limit = limit
-    else
-        cycle_limit = min(limit, wheel_circumference + minimum(factors))
-    end
+    cycle_limit = min(limit, wheel_circumference + minimum(factors))
 
     # BitSets are ordered and of course contain only unique values.
     # We rely on both properties below.
@@ -173,5 +167,35 @@ function sum_of_multiples(limit, factors)
     return acc
 end
 ```
+
+Because this function calculates the product of the factors it is even more liable to suffer from integer overflow than the other approaches on this page (and all of them can experience overflow).
+Here's one way of calculating `wheel_circumference` that handles overflow:
+
+```julia
+    # The circumference of the wheel is the product of the factors, which means
+    # it can quickly become far too large. We can't just calculate the product
+    # with `prod` because if the factors are Ints then we can get silent
+    # overflow issues, so instead we're calculating the product with checked
+    # arithmetic.
+    wheel_circumference = try
+        reduce(Base.Checked.checked_mul, factors, init=1)
+    catch e
+        if e isa OverflowError
+            # Set wheel_circumference to the limit if the real value is way too
+            # big. This means we will fall-back to the non-wheel method for
+            # finding the answer.
+            limit
+        else
+            rethrow()
+        end
+    end
+```
+
+There are several other additions and multiplications in this approach and the others that can overflow if the limit or factors are too large.
+You can use `checked_add` and `checked_mul` from `Base.Checked` to make your code throw an error if there's overflow.
+Another approach would be to edit your code to support different types of numbers (all of the examples so far expect `Int`), and then callers can use Floats or BigInts or SaferIntegers if their limits or factors are large.
+
+Overflow can be quite tricky!
+If you're worried about it you might like to look at the SaferIntegers.jl package or just do your numeric programming with Float64s; BigInt; or BigFloat.
 
 [wheel]: https://en.wikipedia.org/wiki/Wheel_factorization
