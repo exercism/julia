@@ -31,7 +31,9 @@ end
 
 We specify that the `Set` will contain `Int` by writing `Set{Int}`. This is necessary so that `sum` knows how to sum the empty set (an empty set of integers has a sum of 0, but if the set has an unknown type then we cannot know it's sum).
 
-We could also have used a `BitSet` here instead of a `Set`, which is usually the better option when working with a set of integers. To use a `BitSet` replace `Set{Int}()` on line 2 with `BitSet()`.
+We could also have used a `BitSet` here instead of a `Set`, which is the better option when working with a dense set of integers.
+To use a `BitSet` replace `Set{Int}()` on line 2 with `BitSet()`,
+but beware that `BitSet`s can use an enormous about of memory if the difference between the smallest and largest element is very large, which can happen in this function if the limit is very large.
 
 ## Approach: finding remainders
 
