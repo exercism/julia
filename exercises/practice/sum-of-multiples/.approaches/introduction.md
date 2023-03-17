@@ -91,7 +91,7 @@ I came up with the approximations for the sizes of each collection by making a f
 I chose the 5[MiB][mebibyte] cut-off before this function considers using a `Set{Int}` arbitrarily.
 If you wanted to, you could do some benchmarks and find a better cut-off.
 
-I noted the type instability in the docstring of `unique_multiples`, but in this case Julia's small-union optimisations mean that our code will still end up fast.
+I noted the type instability in the docstring of `unique_multiples`, but in this case Julia's [union-splitting optimisations][union-splitting] mean that our code will still end up fast.
 It will compile to something similar to:
 
 ```julia
@@ -279,3 +279,4 @@ If you're worried about it you might like to look at the SaferIntegers.jl packag
 
 [mebibyte]: https://simple.wikipedia.org/wiki/Mebibyte
 [wheel]: https://en.wikipedia.org/wiki/Wheel_factorization
+[union-splitting]: https://julialang.org/blog/2018/08/union-splitting/
