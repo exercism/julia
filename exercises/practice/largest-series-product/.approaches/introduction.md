@@ -91,7 +91,7 @@ There is no performance difference between the two.
 Another small variation would be to use `zip` rather than calculating `right` within the loop:
 
 ```julia
-    indexes = Iterators.zip(1:length(digits)-span+1, span:length(digits)-1)
+    indexes = Iterators.zip(1:length(digits)-span+1, span:length(digits))
     return maximum(indexes) do (left, right)
         prod(view(digits, left:right))
     end
