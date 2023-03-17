@@ -179,6 +179,6 @@ end
 
 Note that this solution uses integer division, `window ÷ leaving`, rather than standard division.
 In Julia, the unicode divide symbol means integer division, or you can write `div(window, leaving)`.
-With standard division, each of `window` and `best` would sometimes be an Int and sometimes be a Float64, and that kind of uncertainty makes the compiler emit slower code and is confusing (the Julia community calls this kind of problem "type instability").
+With standard division, each of `window` and `best` would sometimes be an Int (because `prod` will return an Int) and sometimes be a Float64, and that kind of uncertainty makes the compiler emit slower code and is confusing (the Julia community calls this kind of problem "type instability").
 
 [do-block]: https://docs.julialang.org/en/v1/manual/functions/#Do-Block-Syntax-for-Function-Arguments
