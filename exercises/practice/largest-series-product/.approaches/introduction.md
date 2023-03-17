@@ -42,7 +42,7 @@ function largest_product(str, span)
     end
 
     best = 0
-    digits = parse.(Int8, (ch for ch in str))
+    digits = [parse(Int8, ch) for ch in str]
     for left in 1:(length(digits) - span + 1)
         right = left + span - 1
         best = max(best, prod(view(digits, left:right)))
@@ -56,7 +56,6 @@ This example uses some techniques or syntax that may be unfamiliar to you:
 
 - `span ∉ 0:length(str)` is equivalent to `!(span in 0:length(str))`. `∉` is the mathematical symbol for "not in" and can be typed at the Julia REPL (and possibly in your editor) as `\notin<tab>`.
 - `!all(isdigit, str)` is equivalent to `!all(isdigit(char) for char in str)`. Many functions that accept an iterable collection also have a form `whatever(f, itr)` which will apply the function `f` to every element in `itr`.
-- `parse.(Int8, (ch for ch in str))` is a broadcasted function call. It is equivalent to `[parse(Int8, ch) for ch in str]`.
 - `view(digits, left:right)` lets us refer to part of the array `digits` without copying it. We could write `digits[left:right]`, but that will create a new array with a copy of the values from `digits`, which is slower.
 
 
@@ -75,7 +74,7 @@ function largest_product(str, span)
         throw(ArgumentError("Non-digit character in str"))
     end
 
-    digits = parse.(Int8, (ch for ch in str))
+    digits = [parse(Int8, ch) for ch in str]
     return maximum(1:(length(digits) - span + 1)) do left
         right = left + span - 1
         prod(view(digits, left:right))
