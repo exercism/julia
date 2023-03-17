@@ -1,5 +1,5 @@
 function saddlepoints(matrix)
-    isempty(matrix) && return []
+    isempty(matrix) && return Tuple{Int,Int}[]
 
     (cols_min,) = findmin(matrix, dims=1)
     (rows_max,) = findmax(matrix, dims=2)
