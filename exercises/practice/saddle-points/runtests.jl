@@ -38,7 +38,7 @@ end
 end
 
 @testset "Can identify that saddle points in a single column matrix are those with the minimum value" begin
-    matrix = reshape([2; 1; 4; 1], :, 1)
+    matrix = reshape([2, 1, 4, 1], :, 1)
     @test saddlepoints(matrix) == [(2, 1), (4, 1)]
 end
 
