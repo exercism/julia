@@ -1,2 +1,2 @@
-function saddlepoints(matrix)
+function saddlepoints(M)
 end
