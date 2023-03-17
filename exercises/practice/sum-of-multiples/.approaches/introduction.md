@@ -35,6 +35,85 @@ We could also have used a `BitSet` here instead of a `Set`, which is the better 
 To use a `BitSet` replace `Set{Int}()` on line 2 with `BitSet()`,
 but beware that `BitSet`s can use an enormous about of memory if the difference between the smallest and largest element is very large, which can happen in this function if the limit is very large.
 
+<details>
+<summary>Automatically choosing between a `BitSet` and a `Set{Int}`</summary>
+
+We can automatically choose between a `BitSet` and a `Set` with a function like this:
+
+```julia
+function sum_of_multiples(limit, factors)
+    sum(unique_multiples(limit, factors))
+end
+
+"""
+    unique_multiples(limit, factors)
+
+The unique multiples of factors ≤ limit.
+
+!!! warning "Type instability!"
+
+    This function can return a BitSet or a Set{Int}(), you may want to check
+    that this instability isn't a performace or correctness problem for your
+    usecase.
+"""
+function unique_multiples(limit, factors)
+    # BitSets can be unreasonably large, so we use a BitSet only if it will be
+    # less than 5MiB in size (arbitrary limit) or if a Set would be even bigger
+    smallest_factor = minimum(factors)
+    max_sparse_bitset_size = 5 * 1024^2 * 8 # (in bits)
+    # both very approximate
+    approx_bitset_size = limit - smallest_factor
+    approx_set_size = (limit ÷ smallest_factor) * 72
+    use_bitset =  approx_bitset_size < max_sparse_bitset_size ||
+                  approx_bitset_size < approx_set_size
+
+    multiples = if use_bitset
+        BitSet()
+    else
+        Set{Int}()
+    end
+
+    for f in factors
+        f == 0 && continue
+        multiple = f
+        while multiple < limit
+            push!(multiples, multiple)
+            multiple += f
+        end
+    end
+
+    return multiples
+end
+```
+
+I came up with the approximations for the sizes of each collection by making a few collections and inspecting them with `dump()`.
+
+I chose the 5[MiB][mebibyte] cut-off before this function considers using a `Set{Int}` arbitrarily.
+If you wanted to, you could do some benchmarks and find a better cut-off.
+
+I noted the type instability in the docstring of `unique_multiples`, but in this case Julia's small-union optimisations mean that our code will still end up fast.
+It will compile to something similar to:
+
+```julia
+function sum_of_multiples(limit, factors)
+    multiples = unique_multiples(limit, factors)
+    if multiples isa BitSet
+        sum(multiples::BitSet)
+    else
+        sum(multiples::Set{Int})
+    end
+end
+```
+
+If the body of `sum_of_multiples` was more complicated (as in the Wheel approach below), then the type instability could cause performance issues.
+In that case, performance could be improved be coercing `multiples` into just one type (e.g. `collect(unique_multiples(limit, factor))` to turn it into a vector), or by introducing a "function barrier", or by writing explicit ifs (`if multiples isa BitSet`).
+
+If this seems a bit clumsy to you, another approach would be to write your own set implementation (possibly using `BitSet` and `Set`) that has good performance for both dense and sparse sets of integers.
+This is left as an exercise for the reader ;)
+
+</details>
+
+
 ## Approach: finding remainders
 
 Another option is to test every integer between 1 and (limit - 1) to see if it's divisible by any of our factors:
@@ -198,4 +277,5 @@ Another approach would be to edit your code to support different types of number
 Overflow can be quite tricky!
 If you're worried about it you might like to look at the SaferIntegers.jl package or just do your numeric programming with Float64s; BigInt; or BigFloat.
 
+[mebibyte]: https://simple.wikipedia.org/wiki/Mebibyte
 [wheel]: https://en.wikipedia.org/wiki/Wheel_factorization
