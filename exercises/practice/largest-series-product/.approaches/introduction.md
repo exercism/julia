@@ -42,7 +42,7 @@ function largest_product(str, span)
     end
 
     best = 0
-    digits = parse.(Int8, (ch for ch in str))
+    digits = [parse(Int8, ch) for ch in str]
     for left in 1:(length(digits) - span + 1)
         right = left + span - 1
         best = max(best, prod(view(digits, left:right)))
@@ -56,7 +56,6 @@ This example uses some techniques or syntax that may be unfamiliar to you:
 
 - `span ∉ 0:length(str)` is equivalent to `!(span in 0:length(str))`. `∉` is the mathematical symbol for "not in" and can be typed at the Julia REPL (and possibly in your editor) as `\notin<tab>`.
 - `!all(isdigit, str)` is equivalent to `!all(isdigit(char) for char in str)`. Many functions that accept an iterable collection also have a form `whatever(f, itr)` which will apply the function `f` to every element in `itr`.
-- `parse.(Int8, (ch for ch in str))` is a broadcasted function call. It is equivalent to `[parse(Int8, ch) for ch in str]`.
 - `view(digits, left:right)` lets us refer to part of the array `digits` without copying it. We could write `digits[left:right]`, but that will create a new array with a copy of the values from `digits`, which is slower.
 
 
@@ -75,7 +74,7 @@ function largest_product(str, span)
         throw(ArgumentError("Non-digit character in str"))
     end
 
-    digits = parse.(Int8, (ch for ch in str))
+    digits = [parse(Int8, ch) for ch in str]
     return maximum(1:(length(digits) - span + 1)) do left
         right = left + span - 1
         prod(view(digits, left:right))
@@ -92,7 +91,7 @@ There is no performance difference between the two.
 Another small variation would be to use `zip` rather than calculating `right` within the loop:
 
 ```julia
-    indexes = Iterators.zip(1:length(digits)-span+1, span:length(digits)-1)
+    indexes = Iterators.zip(1:length(digits)-span+1, span:length(digits))
     return maximum(indexes) do (left, right)
         prod(view(digits, left:right))
     end
@@ -180,6 +179,6 @@ end
 
 Note that this solution uses integer division, `window ÷ leaving`, rather than standard division.
 In Julia, the unicode divide symbol means integer division, or you can write `div(window, leaving)`.
-With standard division, each of `window` and `best` would sometimes be an Int and sometimes be a Float64, and that kind of uncertainty makes the compiler emit slower code and is confusing (the Julia community calls this kind of problem "type instability").
+With standard division, each of `window` and `best` would sometimes be an Int (because `prod` will return an Int) and sometimes be a Float64, and that kind of uncertainty makes the compiler emit slower code and is confusing (the Julia community calls this kind of problem "type instability").
 
 [do-block]: https://docs.julialang.org/en/v1/manual/functions/#Do-Block-Syntax-for-Function-Arguments
