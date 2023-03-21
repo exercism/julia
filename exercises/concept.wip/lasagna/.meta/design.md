@@ -21,6 +21,7 @@ The Concepts this exercise practices are:
 
 - `functions`: Defining a function with one or more positional arguments that returns something. Bare minimum to be able to understand the basic structure of Exercism exercises.
 - `integers-introduction`: Present integer literals and basic arithmetic operations.
+- `comments`
 
 ## Prerequisites
 
