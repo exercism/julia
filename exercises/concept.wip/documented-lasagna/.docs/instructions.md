@@ -8,6 +8,7 @@ To document your code, write a "docstring" for each of the three functions. Here
 - Review the [Documentation][doc] section in the Julia Manual.
 - Start with the function signature indented with 4 spaces.
 - Include a single one-line sentence describing what the function does, in your own words.
+
 ~~~~exercism/note
 You're provided with the exemplar solution of the [previous exercise](https://exercism.lol/tracks/julia/exercises/lasagna).
 You may also choose your own solution to that exercise as a starting point if you prefer.
