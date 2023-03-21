@@ -1,0 +1,35 @@
+{
+  "concepts": [
+    {
+      "slug": "functions",
+      "name": "Functions",
+      "uuid": "5f4ecaa8-2dde-4f1a-a409-81eef153c9d4"
+    },
+    {
+      "slug": "integer-introduction",
+      "name": "Integers and Arithmetic Operations",
+      "uuid": "006ebce8-87cd-4695-87e6-8a7b8dc2f239"
+    },
+    {
+      "slug": "comments",
+      "name": "Comments",
+      "uuid": "90365822-f58c-4e45-88be-430978b77e65"
+    }
+  ],
+  "exercises": {
+    "concept": [
+      {
+        "slug": "lasagna",
+        "name": "",
+        "concepts": [
+          "functions",
+          "integer-introduction",
+          "comments"
+        ],
+        "prerequisites": [],
+        "uuid": "0ab14a15-5be8-4786-aed4-b3bdc3e1a6c7",
+        "status": "wip"
+      }
+    ]
+  }
+}

@@ -36,25 +36,7 @@ mul(x, y) = x * y
 muladd(x, y, z) = add(mul(x, y), z)
 ```
 
-### Comments
-
-Julia supports two kinds of comments.
-Single line comments are preceded by `#` and multiline comments are inserted between `#=` and `=#`.
-
-```julia
-add(1, 3) # returns 4
-
-#= Some random code that's no longer needed but not deleted
-sub(x, y) = x - y
-mulsub(x, y, z) = sub(mul(x, y), z)
-=#
-```
-
-### Further details
-
-For more information about functions, consider taking a look at the [Julia Manual][functions]. Note that the concepts after the "The `return` Keyword" section will be introduced in future exercises.
-
-#### Implicit returns
+### Implicit returns
 
 The `return` statement is optional in Julia.
 The last value in the function body will be returned implicitly:
@@ -75,12 +57,17 @@ end
 
 are equivalent.
 
-#### Naming
+### Further details
+
+For more information about functions, consider taking a look at the [Julia Manual][functions]. Note that the concepts after the "The `return` Keyword" section will be introduced in future exercises.
+
+### Naming
 
 Julia code often uses "germaniccase" for short function and variable names, e.g. `preptime`, `isbits`, or `eigvals`, while longer names use "snake_case", e.g. `total_working_time`.
 The line when to use which is a bit blurry.
-Some Julia style guides suggest using snake_case for all function and variable names, e.g. the [Blue Style][blue-style], but Julia's standard and Base libraries prefer germaniccase.
+Some Julia style guides suggest using snake_case for all function and variable names, e.g. the [Blue Style][blue-style], but Julia's standard and Base libraries [prefer germaniccase][style-guide].
 Julia programs generally do not use "lowerCamelCase" anywhere and reserve "UpperCamelCase" for type names, which we will get to later.
 
 [blue-style]: https://github.com/invenia/BlueStyle
 [functions]: https://docs.julialang.org/en/v1/manual/functions/
+[style-guide]: https://docs.julialang.org/en/v1/manual/style-guide/#Use-naming-conventions-consistent-with-Julia-base/
