@@ -1,0 +1,10 @@
+[
+  {
+    "description": "Integers",
+    "url": "https://docs.julialang.org/en/v1/manual/integers-and-floating-point-numbers/"
+  },
+  {
+    "description": "Mathematical Operations",
+    "url": "https://docs.julialang.org/en/v1/manual/mathematical-operations/"
+  }
+]

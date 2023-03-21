@@ -17,9 +17,11 @@ The goal of this exercise is to teach the student the fundamentals of the Concep
 
 ## Concepts
 
-The Concepts this exercise unlocks are:
+The Concepts this exercise practices are:
 
-- `functions-introduction`: Defining a function with one or more positional arguments that returns something. Bare minimum to be able to understand the basic structure of Exercism exercises.
+- `functions`: Defining a function with one or more positional arguments that returns something. Bare minimum to be able to understand the basic structure of Exercism exercises.
+- `integers-introduction`: Present integer literals and basic arithmetic operations.
+- `comments`
 
 ## Prerequisites
 

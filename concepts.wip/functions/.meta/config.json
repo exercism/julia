@@ -1,9 +1,10 @@
 {
-  "blurb": "TODO: add blurb for functions-introduction concept",
+  "blurb": "A brief introduction to defining functions in Julia",
   "authors": [
     "SaschaMann"
   ],
   "contributors": [
-    "ErikSchierboom"
+    "ErikSchierboom",
+    "glennj"
   ]
 }

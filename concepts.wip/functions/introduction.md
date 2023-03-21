@@ -4,19 +4,21 @@
 
 There are two common ways to define a named function in Julia:
 
-```julia
-function muladd(x, y, z)
-    return x * y + z
-end
-```
+1. Using the `function` keyword
 
-and
+    ```julia
+    function muladd(x, y, z)
+        return x * y + z
+    end
+    ```
 
-```julia
-muladd(x, y, z) = x * y + z
-```
+2. Using the "assignment form"
 
-The latter is most commonly used for one-line function definitions or mathematical functions.
+    ```julia
+    muladd(x, y, z) = x * y + z
+    ```
+
+    This is most commonly used for one-line function definitions or mathematical functions, where the function body is a single expression.
 
 ## Invoking functions
 
