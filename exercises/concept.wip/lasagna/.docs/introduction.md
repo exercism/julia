@@ -55,7 +55,7 @@ julia> 1_234_567_890
 
 ### Arithmetic operations
 
-The standard prefix and infix operations are available: `+`, `-`, `*`
+The standard prefix and infix operations are available: `+`, `-`, `*`, `%`.
 
 ```julia-repl
 julia> +16
@@ -95,6 +95,14 @@ julia> div(16, 6)
 julia> 16 ÷ 6
 2
 ```
+
+~~~~note
+It's natural to use Unicode symbols in Julia source files, typically in mathematical expressions.
+When using the Julia REPL, or in other Julia editing environments, the division symbol can be entered by typing `\div` followed by the `Tab` key.
+More details can be found in the manual at [Unicode Input][unicode].
+
+[unicode]: https://docs.julialang.org/en/v1/manual/unicode-input/#Unicode-Input
+~~~~
 
 ## Comments
 

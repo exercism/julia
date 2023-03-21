@@ -6,7 +6,9 @@
         "name": "Lasagna",
         "slug": "lasagna",
         "concepts": [
-          "functions"
+          "functions",
+          "integer-introduction",
+          "comments"
         ],
         "prerequisites": [],
         "status": "wip"
@@ -267,6 +269,11 @@
       "name": "Booleans"
     },
     {
+      "slug": "comments",
+      "name": "Comments",
+      "uuid": "90365822-f58c-4e45-88be-430978b77e65"
+    },
+    {
       "uuid": "aad9773b-9032-4d8d-a9e9-4b8152f35b68",
       "slug": "composite-types",
       "name": "Composite Types"
@@ -300,6 +307,11 @@
       "uuid": "684a989c-530f-43df-9a1d-d76708528312",
       "slug": "if-expressions",
       "name": "If Expressions"
+    },
+    {
+      "slug": "integer-introduction",
+      "name": "Integers and Arithmetic Operations",
+      "uuid": "006ebce8-87cd-4695-87e6-8a7b8dc2f239"
     },
     {
       "uuid": "cdf8b342-f8b6-4b34-8c6c-05c968c685bf",
