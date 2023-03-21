@@ -1,6 +1,6 @@
 # Introduction
 
-Integer literals in Julia are represented in the usual way.
+Integer literals in Julia are represented in the same way as in most languages.
 Underscores may be used as a digit separator.
 
 ```julia-repl
