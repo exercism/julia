@@ -101,7 +101,7 @@ It's natural to use Unicode symbols in Julia source files, typically in mathemat
 When using the Julia REPL, or in other Julia editing environments, the division symbol can be entered by typing `\div` followed by the `Tab` key.
 More details can be found in the manual at [Unicode Input][unicode].
 
-[unicode]: https://docs.julialang.org/en/v1/manual/unicode-input/#Unicode-Input
+
 ~~~~
 
 ## Comments
@@ -122,3 +122,5 @@ mulsub(x, y, z) = sub(mul(x, y), z)
 
 Depending on which other programming languages you know, you may expect parameters, variables or return values to have explicit type annotations.
 For now, assume that Julia will infer the types automagically and don't worry about them, we will get to the specifics of the type system in later exercises.
+
+[unicode]: https://docs.julialang.org/en/v1/manual/unicode-input/#Unicode-Input
