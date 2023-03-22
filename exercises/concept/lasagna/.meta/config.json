@@ -1,0 +1,25 @@
+{
+  "authors": [
+    "SaschaMann"
+  ],
+  "contributors": [
+    "ErikSchierboom",
+    "glennj"
+  ],
+  "files": {
+    "solution": [
+      "lasagna.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ]
+  },
+  "language_versions": "≥1.0",
+  "forked_from": [
+    "fsharp/lucians-luscious-lasagna"
+  ],
+  "blurb": "Learn the basics of functions in Julia by cooking delicious lasagna."
+}

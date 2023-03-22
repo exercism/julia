@@ -32,8 +32,38 @@
       ".meta/exemplar.jl"
     ]
   },
+  "concepts": [
+    {
+      "uuid": "32384ed4-ef26-4118-8ea3-4d44c331e828",
+      "slug": "functions",
+      "name": "Functions"
+    },
+    {
+      "slug": "integer-introduction",
+      "name": "Integers and Arithmetic Operations",
+      "uuid": "006ebce8-87cd-4695-87e6-8a7b8dc2f239"
+    },
+    {
+      "slug": "comments",
+      "name": "Comments",
+      "uuid": "90365822-f58c-4e45-88be-430978b77e65"
+    }
+  ],
   "exercises": {
-    "concept": [],
+    "concept": [
+      {
+        "uuid": "39ebdd04-4f84-4817-bf9d-f1f9e066c283",
+        "name": "Lasagna",
+        "slug": "lasagna",
+        "concepts": [
+          "functions",
+          "integer-introduction",
+          "comments"
+        ],
+        "prerequisites": [],
+        "status": "wip"
+      }
+    ],
     "practice": [
       {
         "slug": "hello-world",
@@ -50,12 +80,10 @@
         "slug": "killer-sudoku-helper",
         "name": "Killer Sudoku Helper",
         "uuid": "e0142403-af9e-406e-827a-1fd37187d1ea",
-        "practices": [
+        "practices": [],
+        "prerequisites": [],
+        "topics": [
           "iterator-protocol",
-          "vectors",
-          "conditionals"
-        ],
-        "prerequisites": [
           "vectors",
           "conditionals"
         ],
@@ -842,7 +870,6 @@
       }
     ]
   },
-  "concepts": [],
   "key_features": [
     {
       "title": "Fast",
