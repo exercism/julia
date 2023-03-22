@@ -96,7 +96,7 @@ julia> 16 ÷ 6
 2
 ```
 
-~~~~note
+~~~~exercism/note
 It's natural to use Unicode symbols in Julia source files, typically in mathematical expressions.
 When using the Julia REPL, or in other Julia editing environments, the division symbol can be entered by typing `\div` followed by the `Tab` key.
 More details can be found in the manual at [Unicode Input][unicode].
