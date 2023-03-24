@@ -18,11 +18,9 @@ Bool
 
 ## Boolean logic
 
-Imagine we have the following Boolean expressions in Julia: `5 > 3` and `1 != 0`, both of the expression are logically `true`. How can we combine the previously mentioned expressions to produce a `true` or `false` result?
-
-We use [Boolean operators](https://docs.julialang.org/en/v1/manual/mathematical-operations/#Boolean-Operators): `!` (not), `&&` (and), `||` (or).
-
-Below, we provide examples on how to use them to produce the desired result.
+Imagine we have the following Boolean expressions in Julia: `5 > x` and `x != 0`.
+If `x` was 3 they would both be `true`.
+We can express statements like "is x less than 5 and not equal to y?" using [Boolean operators](https://docs.julialang.org/en/v1/manual/mathematical-operations/#Boolean-Operators): `!` (not), `&&` (and), `||` (or).
 
 ### Logical _not_
 
@@ -36,9 +34,14 @@ true
 julia> false != true
 true
 
-# Parentheses may be required.
+julia> 3 != "apple"
+true
+
 julia> !(false == true)
 true
+
+julia> !(1 < 7)
+false
 ```
 
 ### Logical _and_
@@ -50,8 +53,8 @@ true
 julia> 1 != 0
 true
 
-# && (two ampersands juxtaposed) - represents logical and in Julia.
-# Parentheses are optional, but they provide easier readability.
+# && (two ampersands) - represents logical "and" in Julia.
+# Parentheses are optional and can make the code easier to read
 julia> (5 > 3) && (1 != 0)
 true
 ```
@@ -65,8 +68,8 @@ true
 julia> 2 < 1
 false
 
-# || (two pipe characters juxtaposed),
-# represents logical or in Julia.
+# || (two pipe characters),
+# represents logical "or" in Julia.
 julia> (5 * 5 == 25) || (2 < 1)
 true
 ```
