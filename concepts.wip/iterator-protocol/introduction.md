@@ -14,7 +14,7 @@ Julia currently doesn't have a way to formally define interfaces.
 To implement an interface, you need to look up which methods need to be defined in the Manual, or in the documentation of the package that "defines" the interface.
 Alternatively, you can work your way through `MethodErrors` to find out which methods you need to implement:
 <!-- TODO check if code blocks work within info boxes -->
-```julia
+```julia-repl
 julia> struct MyIter end;
 
 julia> for i in MyIter()
@@ -55,7 +55,7 @@ end
 
 We want to define an iterator `Squares(n)` to iterate the sequence of [square numbers](https://en.wikipedia.org/wiki/Square_number) smaller than `n`. Square numbers are numbers that are the square of an integer. For example, 9 is a square number, since it can be written as `3 * 3`. The end result should look like:
 
-```julia
+```julia-repl
 julia> for i in Squares(20)
            println(i)
        end
@@ -88,14 +88,14 @@ You may find it useful to combine these two definitions into one using optional 
 
 ## optional-arguments
 
-```julia
+```julia-repl
 julia> f(a, b=1) = a + b
 f (generic function with 2 methods)
 ```
 
 is equivalent to
 
-```julia
+```julia-repl
 julia> f(a, b) = a + b
 f (generic function with 1 method)
 

@@ -28,7 +28,7 @@ The last expression in a chain of `&&` and `||` does not need to be a boolean ex
 You will often find this feature being used for early errors or returns.
 For example:
 
-```julia
+```julia-repl
 julia> function whats_for_dessert(fruit, allergic_to)
            fruit == allergic_to && return "I can't eat that, guess I'll not have dessert tonight!"
 

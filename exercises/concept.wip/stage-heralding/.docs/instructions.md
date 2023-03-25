@@ -107,7 +107,7 @@ Make sure to set the regex engine/flavour to PCRE.
 
 If you're new to regex or struggle with creating an expression that captures all required information at once, you can also define several smaller expressions that capture parts of the information, e.g.
 
-```julia
+```julia-repl
 julia> get_org("»Speedrunning 101« – Sasha Duda Krall (they/them), from GDQU. Start: 13:00, Q&A: 13:20, End: 13:30")
 "GDQU"
 ```
@@ -116,7 +116,7 @@ julia> get_org("»Speedrunning 101« – Sasha Duda Krall (they/them), from GDQU
 
 Use the expression from the first part and implement a function that takes a line as input, captures the information from it, and returns the generated moderation card according to the spec above.
 
-```julia
+```julia-repl
 julia> generate_card("»How I learned to say Farewell« – Madeline (she/her). Start: 13:40, Q&A: 14:00, End: 14:05")
 "- Our next speaker is Madeline\n- Her talk is called »How I learned to say Farewell«\n- She will answer your questions in the Q&A session at the end of the talk, starting at 14:00\n\n13:40 - 14:00 - 14:05\n"
 ```

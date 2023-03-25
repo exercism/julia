@@ -11,7 +11,7 @@ To add a player to the high score board, define two `add_player!` methods that t
 - The third argument is the score as an integer.
   This argument is optional, when no value is given, the score should be set to 0.
 
-```julia
+```julia-repl
 julia> scores = Dict{String, Int}()
 Dict{String, Int64}()
 
@@ -32,7 +32,7 @@ To remove a player from the high score board, define `remove_player!`, which tak
 - The first argument is the dictionary of scores.
 - The second argument is the name of the player as a string.
 
-```julia
+```julia-repl
 julia> scores = Dict(
            "Liselot" => 486373,
            "Éimhín"  => 0,
@@ -54,7 +54,7 @@ To update a players score by replacing the previous score, define `update_score!
 - The second argument is the name of the player as a string, whose score you wish to update.
 - The third argument is the score that you wish to set stored high score to.
 
-```julia
+```julia-repl
 julia> scores = Dict(
            "Liselot" => 486373,
            "Éimhín"  => 0,
@@ -79,7 +79,7 @@ To reset a player's score, define `reset_score!`, which takes 2 arguments:
 - The first argument is the dictionary of scores.
 - The second argument is the name of the player as a string, whose score you wish to reset.
 
-```julia
+```julia-repl
 julia> scores = Dict(
            "Liselot" => 486373,
            "Éimhín"  => 0,
@@ -103,7 +103,7 @@ To get a list of players, define `players`, which takes 1 argument:
 
 - The first argument is the dictionary of scores.
 
-```julia
+```julia-repl
 julia> scores = Dict(
            "Liselot" => 486373,
            "Éimhín"  => 0,

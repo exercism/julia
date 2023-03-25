@@ -8,7 +8,7 @@ Julia provides a number of [arithmetic operators](https://en.wikipedia.org/wiki/
 
 In this exercise you will only need the `%` operator that calculates the [remainder](https://en.wikipedia.org/wiki/Remainder) of the division of two numbers
 
-```julia
+```julia-repl
 julia> 10 % 5
 0
 
@@ -18,7 +18,7 @@ julia> 8 % 5
 
 and the equality operator `==`
 
-```julia
+```julia-repl
 julia> 2 + 2 == 4
 true
 

@@ -2,7 +2,7 @@
 
 `if`-expressions in Julia are similar to those seen in other languages:
 
-```julia
+```julia-repl
 julia> function say_if_positive(n)
            if n > 0
                println("n is positive!")
@@ -32,7 +32,7 @@ This syntax is not specific to `if`-expressions or function definitions.
 
 In cases where the second block of code would be just another `if`-expression, `elseif` allows us to avoid nesting `if`-expressions within the block:
 
-```julia
+```julia-repl
 julia> function dessert(fruit)
            if fruit == "apple"
                return "Apple Crumble"

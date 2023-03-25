@@ -19,7 +19,7 @@ The only time the boolean operator `&&` produces a `true` result is when both A 
 
 ### Logical _and_ (&&) examples
 
-```julia
+```julia-repl
 julia> 3 / 3 == 1
 true
 
@@ -57,7 +57,7 @@ We recommend referencing both tables to able to predict the resulting boolean lo
 
 ### Logical _or_ (||) examples
 
-```julia
+```julia-repl
 julia> 1 * 0 == 1
 false
 
@@ -87,7 +87,7 @@ false
 
 ### Logical _not_ (!) examples
 
-```julia
+```julia-repl
 julia> 1 * 0 == 1
 false
 

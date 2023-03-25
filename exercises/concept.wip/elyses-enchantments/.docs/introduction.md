@@ -12,7 +12,7 @@ A `Pair` is a data structure that contains exactly two elements accessible throu
 
 They can be constructed using `x => y`:
 
-```julia
+```julia-repl
 julia> p = 3 => true
 3 => true
 
@@ -25,7 +25,7 @@ true
 
 The elements of a `Pair` may be of different type:
 
-```julia
+```julia-repl
 julia> typeof(p)
 Pair{Int64,Bool}
 ```
@@ -44,7 +44,7 @@ This will be covered in a later exercise.
 Many replacement methods take a `Pair` as argument to make it clear which element is being replaced.
 This allows syntax like
 
-```julia
+```julia-repl
 julia> replace!([1, 3, 4, 1], 4 => 0)
 4-element Array{Int64,1}:
  1

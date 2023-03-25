@@ -1,6 +1,6 @@
 # Introduction
 
-```julia
+```julia-repl
 julia> 2 + 2 == 4
 true
 

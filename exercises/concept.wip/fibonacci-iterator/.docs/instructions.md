@@ -26,14 +26,14 @@ However in the context of this exercise, we define the sequence without a $0$-th
 
 ## 1. Define a `Fib` type with a constructor that takes `n` as argument
 
-```julia
+```julia-repl
 julia> Fib(10)
 Fib(10)
 ```
 
 ## 2. Implement `iterate` methods
 
-```julia
+```julia-repl
 julia> for a in Fib(10)
            println(a)
        end
@@ -54,7 +54,7 @@ The tests will only test for `n` small enough to not cause overflow problems.
 
 ## 3. Define the optional methods that make `collect` work
 
-```julia
+```julia-repl
 julia> collect(Fib(10))
 10-element Array{Any,1}:
   1
@@ -73,7 +73,7 @@ julia> collect(Fib(10))
 
 ## 4. Define the optional methods that are necessary for Julia to infer the type of the elements of the iterator
 
-```julia
+```julia-repl
 julia> collect(Fib(10))
 10-element Array{Int64,1}:
   1

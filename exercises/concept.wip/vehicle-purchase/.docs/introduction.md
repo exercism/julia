@@ -10,7 +10,7 @@ There are three primary conditional statements that are used in Julia:
 
 `if`-expressions in Julia are similar to those seen in other languages:
 
-```julia
+```julia-repl
 julia> function say_if_positive(n)
            if n > 0
                println("n is positive!")
@@ -40,7 +40,7 @@ This syntax is not specific to `if`-expressions or function definitions.
 
 In cases where the second block of code would be just another `if`-expression, `elseif` allows us to avoid nesting `if`-expressions within the block:
 
-```julia
+```julia-repl
 julia> function dessert(fruit)
            if fruit == "apple"
                return "Apple Crumble"
@@ -72,7 +72,7 @@ Otherwise evaluate `c`.
 
 For example the following function
 
-```julia
+```julia-repl
 julia> function diagnose(heartrate)
            if heartrate > 100
                println("Elevated heart rate.")
@@ -85,7 +85,7 @@ diagnose (generic function with 1 method)
 
 can also be written as
 
-```julia
+```julia-repl
 julia> diagnose(heartrate) = heartrate > 100 ? println("Elevated heart rate.") : println("Nominal heart rate or dead.")
 diagnose (generic function with 1 method)
 ```
@@ -94,7 +94,7 @@ This is especially useful if you want to assign a different value to a variable 
 `x = a ? b : c` will assign `b` to `x` if `a` is `true` and otherwise assign `c` to `x`.
 For example:
 
-```julia
+```julia-repl
 julia> function patient_status(heartrate)
            status = heartrate > 0 ? "alive" : "dead"
 
@@ -138,7 +138,7 @@ The last expression in a chain of `&&` and `||` does not need to be a boolean ex
 You will often find this feature being used for early errors or returns.
 For example, using the `dessert(fruit)` function from above:
 
-```julia
+```julia-repl
 julia> function whats_for_dessert(fruit, allergic_to)
            fruit == allergic_to && return "I can't eat that, guess I'll not have dessert tonight!"
 

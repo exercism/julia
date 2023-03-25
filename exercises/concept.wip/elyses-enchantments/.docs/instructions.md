@@ -7,7 +7,7 @@ To make things a bit easier she only uses the cards 1 to 10.
 
 Return the card at position `idx` from the given deck.
 
-```julia
+```julia-repl
 julia> idx = 2;
 
 julia> card([1, 3, 4, 1], idx)
@@ -19,7 +19,7 @@ julia> card([1, 3, 4, 1], idx)
 Exchange the card at position `idx` with the new card provided and return the adjusted deck.
 Note that this will mutate (change) the input vector and this is okay.
 
-```julia
+```julia-repl
 julia> idx = 2; new_card = 6;
 
 julia> replace_card!([1, 3, 4, 1], idx => new_card)
@@ -30,7 +30,7 @@ julia> replace_card!([1, 3, 4, 1], idx => new_card)
 
 Insert new card at the top of the deck and return the deck.
 
-```julia
+```julia-repl
 julia> new_card = 8;
 
 julia> insert_card_at_top!([1, 3, 4, 1], new_card)
@@ -41,7 +41,7 @@ julia> insert_card_at_top!([1, 3, 4, 1], new_card)
 
 Remove the card at position `idx` from the deck and return the deck.
 
-```julia
+```julia-repl
 julia> idx = 2;
 
 julia> remove_card!([1, 3, 4, 1], idx)
@@ -52,7 +52,7 @@ julia> remove_card!([1, 3, 4, 1], idx)
 
 Remove the card at the top of the deck and return the deck.
 
-```julia
+```julia-repl
 julia> remove_card_from_top!([1, 3, 4, 1])
 [1, 3, 4]
 ```
@@ -61,7 +61,7 @@ julia> remove_card_from_top!([1, 3, 4, 1])
 
 Insert a new card at the bottom of the deck and return the deck.
 
-```julia
+```julia-repl
 julia> new_card = 8;
 
 julia> insert_card_at_bottom!([1, 3, 4, 1], new_card)
@@ -72,7 +72,7 @@ julia> insert_card_at_bottom!([1, 3, 4, 1], new_card)
 
 Remove the card at the bottom of the deck and return the deck.
 
-```julia
+```julia-repl
 julia> remove_card_at_bottom!([1, 3, 4, 1])
 [3, 4, 1]
 ```
@@ -81,7 +81,7 @@ julia> remove_card_at_bottom!([1, 3, 4, 1])
 
 Check whether the size of the deck equals a given `deck_size` or not.
 
-```julia
+```julia-repl
 julia> deck_size = 4;
 
 julia> check_deck_size([1, 3, 4, 1], deck_size)

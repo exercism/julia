@@ -16,7 +16,7 @@ end
 
 defines three constructors at once
 
-```julia
+```julia-repl
 julia> methods(HumanStats)
 # 3 methods for type constructor:
 [1] HumanStats(; birthyear, height, mass, bmi) [...]
@@ -26,7 +26,7 @@ julia> methods(HumanStats)
 
 including a constructor based on keyword arguments
 
-```julia
+```julia-repl
 julia> HumanStats(
            birthyear = 2002,
            height = 193,
@@ -48,7 +48,7 @@ end
 
 only defines the following two
 
-```julia
+```julia-repl
 julia> methods(HumanStats)
 # 2 methods for type constructor:
 [1] HumanStats(birthyear::Int64, height::Int64, mass::Int64, bmi::Float64) [...]

@@ -12,7 +12,7 @@ There are three primary conditional statements that are used in Julia:
 
 Take note of the following, in Julia the _conditional expression_ must return `true` or `false`. Otherwise it is an error.
 
-```julia
+```julia-repl
 julia> if 1
            println("true")
        end

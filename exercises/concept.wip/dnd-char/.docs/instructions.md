@@ -50,7 +50,7 @@ Because the constitution is 3, the constitution modifier is -4, and the hitpoint
 
 Implement a function `ability()` that returns the value of an ability based on the rules above.
 
-```julia
+```julia-repl
 julia> ability()
 14
 ```
@@ -65,7 +65,7 @@ You can use random values between 3 and 18 (inclusive) for the ability values, r
 Implement a function `modifier(ability)` that returns an ability modifier based on the value of `ability` according to the rules above.
 The returned value must be an integer.
 
-```julia
+```julia-repl
 julia> modifier(17)
 3
 ``` 
@@ -80,7 +80,7 @@ Implement a `DNDCharacter` struct with three constructors:
 | `DNDCharacter(strength, dexterity, constitution, intelligence, wisdom, charisma, hitpoints)`   | Create a character with given abilities using **positional arguments**. |
 | `DNDCharacter(; strength, dexterity, constitution, intelligence, wisdom, charisma, hitpoints)` | Create a character with given abilities using **keyword arguments**.    |
 
-```julia
+```julia-repl
 julia> DNDCharacter()
 DNDCharacter(18, 17, 18, 17, 5, 10, 14)
 
