@@ -10,7 +10,7 @@ Implement the `badge` function.
 It should take an ID, name, and a department.
 It should return the badge label, with the department name in uppercase:
 
-```julia
+```julia-repl
 julia> badge(7, "Eneus", "Wizardry & Witchcraft")
 "[7] - Eneus - WIZARDRY & WITCHCRAFT"
 ```
@@ -23,7 +23,7 @@ As badges are required, they will receive a temporary badge without the ID prefi
 Extend the `badge` function.
 When the ID is missing, it should print a badge without it:
 
-```julia
+```julia-repl
 julia> badge(nothing, "Helge Klaasen", "Procurement")
 "Helge Klaasen - PROCUREMENT"
 ```
@@ -37,14 +37,14 @@ In this case, the label should print `"OWNER"` instead of the department name.
 Extend the `badge` function.
 When the department is missing, assume the badge belongs to the company owner:
 
-```julia
+```julia-repl
 julia> badge(204, "Lilyana Porsche", nothing)
 "[204] - Lilyana Porsche - OWNER"
 ```
 
 Note that it is possible for the owner to also be a new employee:
 
-```julia
+```julia-repl
 julia> badge(nothing, "Adéla Evans", nothing)
 "Adéla Evans - OWNER"
 ```

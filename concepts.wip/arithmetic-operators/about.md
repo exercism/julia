@@ -53,7 +53,7 @@ In Julia, if one of the operands is a float, the remaining integers will be conv
 
 ### Addition and Subtraction
 
-```julia
+```julia-repl
 julia> 3 + 6
 9
 
@@ -66,7 +66,7 @@ julia> 1.0 - 2
 
 ### Multiplication
 
-```julia
+```julia-repl
 julia> 6 * 3
 18
 

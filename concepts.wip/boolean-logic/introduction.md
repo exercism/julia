@@ -51,7 +51,7 @@ Parentheses are optional and can make the code easier to read.
 
 `||` (two pipe characters) represents logical "or" in Julia.
 
-```julia
+```julia-repl
 julia> 5 * 5 == 25
 true
 

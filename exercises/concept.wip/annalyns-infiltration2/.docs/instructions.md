@@ -27,7 +27,7 @@ Your tasks are to implement the functions that determine if these random events 
 
 Implement a function named `is_foggy`. This function returns `true` half the time. Otherwise, it returns `false`.
 
-```julia
+```julia-repl
 julia> is_foggy()
 true
 
@@ -39,7 +39,7 @@ false
 
 Implement a function named `is_dog_distracted`. This function returns `true` 25% of the time. Otherwise, it returns `false`.
 
-```julia
+```julia-repl
 julia> is_dog_distracted()
 false
 
@@ -54,7 +54,7 @@ false
 
 Implement a function named `loot` that returns the number of coins Annalyn finds in the camp. For example:
 
-```julia
+```julia-repl
 julia> loot()
 4
 
@@ -69,7 +69,7 @@ julia> loot()
 
 Implement a function named `loot` that takes a collection of items as an argument and returns the item Annalyn finds in the chest. For example:
 
-```julia
+```julia-repl
 julia> loot(["Cabbage", "Daring Dagger", "Sneaky Shoes"])
 "Cabbage"
 

@@ -17,7 +17,7 @@ year, but 2000 is.
 
 ## 3. Wrap it in the `isleapyear` function
 
-```julia
+```julia-repl
 julia> isleapyear(2000)
 true
 ```

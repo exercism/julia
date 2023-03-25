@@ -6,7 +6,7 @@ Otherwise evaluate `c`.
 
 For example the following function
 
-```julia
+```julia-repl
 julia> function diagnose(heartrate)
            if heartrate > 100
                println("Elevated heart rate.")
@@ -19,7 +19,7 @@ diagnose (generic function with 1 method)
 
 can also be written as
 
-```julia
+```julia-repl
 julia> diagnose(heartrate) = heartrate > 100 ? println("Elevated heart rate.") : println("Nominal heart rate or dead.")
 diagnose (generic function with 1 method)
 ```
@@ -28,7 +28,7 @@ This is especially useful if you want to assign a different value to a variable 
 `x = a ? b : c` will assign `b` to `x` if `a` is `true` and otherwise assign `c` to `x`.
 For example:
 
-```julia
+```julia-repl
 julia> function patient_status(heartrate)
            status = heartrate > 0 ? "alive" : "dead"
 

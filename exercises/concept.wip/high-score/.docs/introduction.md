@@ -8,14 +8,14 @@
 
 ## Optional arguments
 
-```julia
+```julia-repl
 julia> f(a, b=1) = a + b
 f (generic function with 2 methods)
 ```
 
 is equivalent to
 
-```julia
+```julia-repl
 julia> f(a, b) = a + b
 f (generic function with 1 method)
 

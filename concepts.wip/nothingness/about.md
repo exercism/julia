@@ -5,7 +5,7 @@ It is used when a function has no return value, or when a variable holds no valu
 
 You can test if a value is `nothing` using the `isnothing` function:
 
-```julia
+```julia-repl
 julia> isnothing("something")
 false
 

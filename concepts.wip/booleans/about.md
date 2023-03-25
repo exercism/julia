@@ -18,7 +18,7 @@ Bool <: Integer
 
 Moreover, `false` acts as a multiplicative "strong zero":
 
-```julia
+```julia-repl
 julia> false == 0
 true
 

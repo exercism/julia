@@ -9,7 +9,7 @@ You can output any value by passing it to `@show`.
 @show uppercase("hello") # HELLO will be shown as debug output
 ```
 
-```julia
+```julia-repl
 julia> function f(a, b)
            @show a b
            return (@show a^b) / 1000

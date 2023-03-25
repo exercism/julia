@@ -12,7 +12,7 @@ If the knight is sleeping, then Annalyn will be able to make a quick attack into
 
 Implement a function named `can_do_fast_attack` that takes a boolean value which indicates if the knight is awake. This function returns `true` if the 'Fast Attack' action is available based on the state of the character. Otherwise, returns `false`:
 
-```julia
+```julia-repl
 julia> knight_awake = true;
 
 julia> can_do_fast_attack(knight_awake)
@@ -27,7 +27,7 @@ The group can be spied upon if at least one of them is awake. Otherwise, spying 
 
 Implement a function named `can_spy` that takes three boolean values, indicating if the knight, archer and Nóra, respectively, are awake. The function returns `true` if the 'Spy' action is available based on the state of the characters. Otherwise, returns `false`:
 
-```julia
+```julia-repl
 julia> knight_awake = false; archer_awake = true; nóra_awake = false;
 
 julia> can_spy(knight_awake, archer_awake, nóra_awake)
@@ -40,7 +40,7 @@ Nóra can be signalled using bird sounds if she is awake and the archer is sleep
 
 Implement a function named `can_signal_prisoner` that takes two boolean values, indicating if the archer and Nóra, respectively, are awake. The function returns `true` if the 'Signal Prisoner' action is available based on the state of the characters. Otherwise, returns `false`:
 
-```julia
+```julia-repl
 julia> archer_awake = false; nóra_awake = true;
 
 julia> can_signal_prisoner(archer_awake, nóra_awake)
@@ -57,7 +57,7 @@ Annalyn can try sneaking into the camp to free Nóra. This is a risky thing to d
 
 Implement a function named `can_free_prisoner` that takes four boolean values. The first three parameters indicate if the knight, archer and Nóra, respectively, are awake. The last parameter indicates if Annalyn's pet dog is present. The function returns `true` if the 'Free Prisoner' action is available based on the state of the characters. Otherwise, it returns `false`:
 
-```julia
+```julia-repl
 julia> knight_awake = false; archer_awake = true; nóra_awake = false; dog_present = false;
 
 julia> can_free_prisoner(knight_awake, archer_awake, nóra_awake, dog_present)

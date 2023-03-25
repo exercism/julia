@@ -11,7 +11,7 @@ In this exercise, use methods from Julia's Base library to analyse the contents 
 
 Elyse wants to determine if a card is present in the deck -- in other words, if the deck contains a specific number.
 
-```julia
+```julia-repl
 julia> card = 3;
 
 julia> has_card([2, 3, 4, 5], card)
@@ -23,7 +23,7 @@ true
 Elyse wants to know the position (index) of a card in the deck.
 If the card is not in the deck, return `nothing`.
 
-```julia
+```julia-repl
 julia> card = 2;
 
 julia> find_card([9, 7, 3, 2], card)
@@ -34,7 +34,7 @@ julia> find_card([9, 7, 3, 2], card)
 
 Elyse wants to know if every card is even -- in other words, if each number in the deck is even.
 
-```julia
+```julia-repl
 julia> all_cards_even([2, 4, 6, 7])
 false
 ```
@@ -43,7 +43,7 @@ false
 
 Elyse wants to know if there is an odd number in the deck.
 
-```julia
+```julia-repl
 julia> any_odd_cards([3, 2, 6, 4, 8])
 true
 ```
@@ -53,7 +53,7 @@ true
 Elyse wants to know the position of the first card that is even.
 If there are no even cards in the deck, return `nothing`.
 
-```julia
+```julia-repl
 julia> first_even_card_idx([5, 2, 3, 1])
 2
 ```
@@ -63,7 +63,7 @@ julia> first_even_card_idx([5, 2, 3, 1])
 Elyse wants to know the value of the first card that is odd.
 If there are no odd cards in the deck, return `nothing`.
 
-```julia
+```julia-repl
 julia> first_odd_card([4, 2, 8, 7, 9])
 7
 ```
