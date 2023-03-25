@@ -6,7 +6,7 @@ Imagine we have the following Boolean expressions in Julia: `5 > x` and `x != 0`
 If `x` was 3 they would both be `true`.
 We can express statements like "is x less than 5 and not equal to y?" using [Boolean operators](https://docs.julialang.org/en/v1/manual/mathematical-operations/#Boolean-Operators): `!` (not), `&&` (and), `||` (or).
 
-### Logical _not_
+## Logical _not_
 
 ```julia
 # ! - represents logical not in  Julia.
@@ -28,7 +28,7 @@ julia> !(1 < 7)
 false
 ```
 
-### Logical _and_
+## Logical _and_
 
 ```julia
 julia> 5 > 3
@@ -43,7 +43,7 @@ julia> (5 > 3) && (1 != 0)
 true
 ```
 
-### Logical _or_
+## Logical _or_
 
 ```julia
 julia> 5 * 5 == 25
