@@ -54,6 +54,6 @@ end
     @test ispangram("the 1 quick brown fox jumps Over the 2 lazy dogs")
 end
 
-@testset "letters that aren't part of ASCII" begin
-    @test !ispangram("the 1 qüick bröwn föx jümps över the 2 läzy dögs")
+@testset "punctuation that isn't part of ASCII" begin
+    @test ispangram("Wow—the quick brown fox jumps over the lazy dog‽")
 end
