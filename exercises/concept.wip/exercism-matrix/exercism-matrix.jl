@@ -1,4 +1,4 @@
-const E = []
+E = nothing
 
 function frown!(E)
 end
