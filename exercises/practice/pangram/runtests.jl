@@ -54,6 +54,6 @@ end
     @test ispangram("the 1 quick brown fox jumps Over the 2 lazy dogs")
 end
 
-@testset "punctuation that isn't part of ASCII" begin
-    @test ispangram("Wow—the quick brown fox jumps over the lazy dog‽")
+@testset "An Arabic pangram is not an English pangram" begin
+    @test !ispangram("The scholar and poet Al Farāhīdi wrote this Arabic pangram: صِف خَلقَ خَودِ كَمِثلِ الشَمسِ إِذ بَزَغَت — يَحظى الضَجيعُ بِها نَجلاءَ مِعطارِ")
 end
