@@ -164,3 +164,5 @@ You can find them in the `bin/` directory.
 [problem-specifications]: https://github.com/exercism/problem-specifications
 [coc]: ./CODE_OF_CONDUCT.md
 [mentor-notes]: https://github.com/exercism/website-copy/tree/master/tracks/julia/exercises
+[docs-practice-exercise]: https://exercism.org/docs/building/tracks/practice-exercises
+[docs-concept-exercise]: https://exercism.org/docs/building/tracks/concept-exercises
