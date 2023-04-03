@@ -81,11 +81,11 @@ end
 
     if get(tested_benus_tasks, :multiple_matches, false)
         @testset "multiple matches" begin
-            @test binarysearch([1, 3, 4, 6, 6, 9, 11], 6) == 4:5
-            @test binarysearch([1, 1, 4, 6, 8, 9, 11], 1) == 1:2
-            @test binarysearch([1, 3, 4, 6, 8, 11, 11], 11) == 6:7
-            @test binarysearch([1, 3, 5, 8, 13, 21, 34, 55, 144, 144, 144, 377, 634],144,) == 9:11
-            @test binarysearch([1, 3, 5, 21, 21, 21, 21, 21, 89, 144, 233, 377], 21) == 4:8
+            @test binarysearch([1, 3, 4, 6, 6, 9, 11], 6, multiple_matches = true) == 4:5
+            @test binarysearch([1, 1, 4, 6, 8, 9, 11], 1, multiple_matches = true) == 1:2
+            @test binarysearch([1, 3, 4, 6, 8, 11, 11], 11, multiple_matches = true) == 6:7
+            @test binarysearch([1, 3, 5, 8, 13, 21, 34, 55, 144, 144, 144, 377, 634],144, multiple_matches = true) == 9:11
+            @test binarysearch([1, 3, 5, 21, 21, 21, 21, 21, 89, 144, 233, 377], 21, multiple_matches = true) == 4:8
         end
     end
 end
