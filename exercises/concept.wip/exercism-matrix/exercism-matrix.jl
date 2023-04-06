@@ -1,4 +1,4 @@
-E = nothing
+const E = nothing
 
 function frown!(E)
 end
