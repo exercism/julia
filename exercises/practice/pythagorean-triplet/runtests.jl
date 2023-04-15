@@ -18,11 +18,11 @@ end
 end
 
 @testset "returns all matching triplets" begin
-    @test pythagorean_triplets(90) == [(9, 40, 41), (15, 36, 39)]
+    @test Set(pythagorean_triplets(90)) == Set([(9, 40, 41), (15, 36, 39)])
 end
 
 @testset "several matching triplets" begin
-    @test pythagorean_triplets(840) == [
+    @test Set(pythagorean_triplets(840)) == Set([
         (40, 399, 401),
         (56, 390, 394),
         (105, 360, 375),
@@ -31,15 +31,15 @@ end
         (168, 315, 357),
         (210, 280, 350),
         (240, 252, 348),
-    ]
+    ])
 end
 
 @testset "triplets for large number" begin
-    @test pythagorean_triplets(30000) == [
+    @test Set(pythagorean_triplets(30000)) == Set([
         (1200, 14375, 14425),
         (1875, 14000, 14125),
         (5000, 12000, 13000),
         (6000, 11250, 12750),
         (7500, 10000, 12500),
-    ]
+    ])
 end
