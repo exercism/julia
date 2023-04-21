@@ -1,3 +1,3 @@
-function square_root(n::Int64; tol)
+function square_root(n)
     
 end
