@@ -1,0 +1,22 @@
+{
+    "blurb": "Given a natural number, calculate its square root.",
+    "authors": [
+      "golanor"
+    ],
+    "contributors": [
+    ],
+    "files": {
+      "solution": [
+        "square-root.jl"
+      ],
+      "test": [
+        "runtests.jl"
+      ],
+      "example": [
+        ".meta/example.jl"
+      ]
+    },
+    "source": "Wikipedia's Methods of Computing Square Roots.",
+    "source_url": "https://en.wikipedia.org/wiki/Methods_of_computing_square_roots"
+  }
+  
