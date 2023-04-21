@@ -1,6 +1,6 @@
-# Description
+# Instructions
 
-Find the square root of positive non-zero integers.
+Find the square roots of positive non-zero integers.
 
 You may want to check out the Wikipedia pages on [square roots][square-root] and [methods of computing square roots][computing-square-roots].
 
