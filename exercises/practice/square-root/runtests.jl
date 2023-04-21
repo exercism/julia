@@ -29,7 +29,8 @@ end
 
 
 @testset "Random tests" begin
-    for s in rand(10, 1:1000000)
+    for _ in 1:1000
+        s = rand(1:isqrt(typemax(Int64)))
         @test square_root(s^2) == s
     end
 end
