@@ -29,7 +29,7 @@ end
 
 
 @testset "Random tests" begin
-    for s in rand(Int64, 10)
+    for s in rand(10, 1:1000000)
         @test square_root(s^2) == s
     end
 end
