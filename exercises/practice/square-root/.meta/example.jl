@@ -1,13 +1,12 @@
-function square_root(n::Int64; tol=1e-6)
-    digs = round(Int, -log10(tol))
+function square_root(n::Int64)
     if n ≤ 0
         throw(DomainError(n, "Can only calculate roots of natural numbers."))
     end
     x = initial_guess(n)
-    while abs(x^2 - n) > tol
+    while x ≠ 0.5 * (x + n / x)
         x = 0.5 * (x + n / x)
     end
-    round(x; digits=digs)
+    x
 end
 
 
