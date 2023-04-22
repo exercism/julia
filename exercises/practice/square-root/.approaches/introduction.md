@@ -10,10 +10,11 @@ Each new value of `x` will be closer to the square root of `S`.
 function square_root(S)
     S < 1 && throw(DomainError(S, "S must be ≥ 1"))
     x = S
-    while (S/x + x) / 2 ≠ x
-        x = (S/x + x) / 2
+    while true
+        next_x = (S/x + x) / 2
+        next_x == x && return x
+        x = next_x
     end
-    return x
 end
 ```
 
