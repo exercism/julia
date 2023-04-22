@@ -3,8 +3,8 @@
 ## Approach: Heron's method
 
 Perhaps the simplest algorithm for finding the square root of a number is Heron's method, also known as the Babylonian method or Newton's method.
-We make an initial guess of what the square root is and then repeatedly calculate `x_next = (S/x + x) / 2`, which is the average of `S/x` and `x`.
-Each successive value of `x` will be closer to the real square root.
+We make an initial guess `x` of what the square root of `S` is and then repeatedly calculate `x = (S/x + x) / 2`, which is the average of `S/x` and `x`.
+Each new value of `x` will be closer to the square root of `S`.
 
 ```julia
 function square_root(S)
@@ -20,7 +20,7 @@ end
 If you try to follow this algorithm by hand then it won't necessarily terminate (e.g. √2 has an infinitely long decimal representation), so you'd have to decide when to stop (perhaps after 5 decimal places or something).
 Fortunately, we're calculating on a computer and `Float64` has finite precision, so our algorithm will always converge on something.
 
-You can speed this algorithm up quite a bit by making a better initial guess for the square root of S (in the version above we guess that the square root of S is S, which is usually an overestimate!).
+You can speed this algorithm up quite a bit by making a better initial guess for the square root of `S` (in the version above we guess that the square root of `S` is `S`, which is usually an overestimate!).
 
 Here's one way of estimating the square root:
 
