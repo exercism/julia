@@ -1,0 +1,20 @@
+{
+  "blurb": "Calculate a positive integer's square root",
+  "authors": [
+    "golanor"
+  ],
+  "contributors": [],
+  "files": {
+    "solution": [
+      "square-root.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
+  },
+  "source": "wolf99",
+  "source_url": "https://github.com/exercism/problem-specifications/pull/1582"
+}

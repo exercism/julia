@@ -867,6 +867,22 @@
           "math",
           "algorithms"
         ]
+      },
+      {
+        "uuid": "587ad0fa-ea7e-4962-9c71-3a50d2877e6b",
+        "practices": [],
+        "prerequisites": [],
+        "slug": "square-root",
+        "name": "Square Root",
+        "difficulty": 2,
+        "topics": [
+          "algorithms",
+          "loops",
+          "math",
+          "integers",
+          "conditionals",
+          "variables"
+        ]
       }
     ]
   },
