@@ -8,7 +8,7 @@ Each new value of `x` will be closer to the square root of `S`.
 
 ```julia
 function square_root(S)
-    S < 1 && throw(DomainError(S, "S must be ≥ 1"))
+    S < 0 && throw(DomainError(S, "S must be ≥ 0"))
     x = S
     while true
         next_x = (S/x + x) / 2
@@ -27,7 +27,7 @@ Here's one way of estimating the square root:
 
 ```julia
 function sqrt_approx(S)
-    S < 1 && throw(DomainError(S, "S must be ≥ 1"))
+    S < 0 && throw(DomainError(S, "S must be ≥ 0"))
     # √S ≈ (0.5 + 0.5a) * 2^(n/2)
     # where S = a * 2^n; and 0.5 ≤ a < 2
 
