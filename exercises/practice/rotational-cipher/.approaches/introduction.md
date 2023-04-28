@@ -62,6 +62,11 @@ Iterating a UTF-8 string is slow because it's a variable length encoding. It is 
 
 See the dig deeper pages for the [pangram][dd-pg], [nucleotide count][dd-nc], and [luhn][dd-l] exercises for more details on how to safely and efficiently use `transcode` (if you can't see a pages when you follow the link, try completing the exercise first).
 
+
+[dd-pg]: https://exercism.org/tracks/julia/exercises/pangram/dig_deeper
+[dd-nc]: https://exercism.org/tracks/julia/exercises/nucleotide-count/dig_deeper
+[dd-l]: https://exercism.org/tracks/julia/exercises/luhn/dig_deeper
+
 ```
 
 ## Bonus macro task
@@ -83,7 +88,3 @@ for n in 0:26
     end
 end
 ```
-
-[dd-pg]: https://exercism.org/tracks/julia/exercises/pangram/dig_deeper
-[dd-nc]: https://exercism.org/tracks/julia/exercises/nucleotide-count/dig_deeper
-[dd-l]: https://exercism.org/tracks/julia/exercises/luhn/dig_deeper
