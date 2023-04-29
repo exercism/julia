@@ -3,7 +3,7 @@ using Test
 
 @testset "no multiples within limit" begin
     @test sum_of_multiples(1, [3, 5]) == 0
- end
+end
 
 @testset "test one factor has multiples within limit" begin
     @test sum_of_multiples(4, [3, 5]) == 3
@@ -50,7 +50,7 @@ end
 end
 
 @testset "no factors means an empty sum" begin
-    @test sum_of_multiples(10000, []) == 0
+    @test sum_of_multiples(10000, Int[]) == 0
 end
 
 @testset "the only multiple of 0 is 0" begin
