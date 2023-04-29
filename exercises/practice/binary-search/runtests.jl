@@ -20,8 +20,8 @@ include("binary-search.jl")
     end
 end
 
-@isdefined(tested_benus_tasks) && any(values(tested_benus_tasks)) && @testset "bonus tasks" begin
-    if get(tested_benus_tasks, :rev, false)
+@isdefined(tested_bonus_tasks) && any(values(tested_bonus_tasks)) && @testset "bonus tasks" begin
+    if get(tested_bonus_tasks, :rev, false)
         @testset "reverse search" begin
             @testset "value in array" begin
                 @test binarysearch([6], 6, rev = true) == 1:1
@@ -39,7 +39,7 @@ end
             end
         end
     end
-    if get(tested_benus_tasks, :by, false)
+    if get(tested_bonus_tasks, :by, false)
         @testset "apply transformation" begin
             @testset "value in array" begin
                 @test binarysearch([5.5], 6, by = round) == 1:1
@@ -59,7 +59,7 @@ end
         end
     end
 
-    if get(tested_benus_tasks, :lt, false)
+    if get(tested_bonus_tasks, :lt, false)
         @testset "compare with > instead of <" begin
             # this is equivalent to searching in reverse order
             @testset "value in array" begin
@@ -79,7 +79,7 @@ end
         end
     end
 
-    if get(tested_benus_tasks, :multiple_matches, false)
+    if get(tested_bonus_tasks, :multiple_matches, false)
         @testset "multiple matches" begin
             @test binarysearch([1, 3, 4, 6, 6, 9, 11], 6) == 4:5
             @test binarysearch([1, 1, 4, 6, 8, 9, 11], 1) == 1:2
