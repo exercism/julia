@@ -50,7 +50,7 @@ end
 end
 
 @testset "no factors means an empty sum" begin
-    @test sum_of_multiples(10000, Vector{Int}()) == 0
+    @test sum_of_multiples(10000, Int[]) == 0
 end
 
 @testset "the only multiple of 0 is 0" begin
