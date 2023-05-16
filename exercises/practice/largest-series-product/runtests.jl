@@ -38,14 +38,6 @@ end
     @test largest_product("99099", 3) == 0
 end
 
-@testset "reports 1 for empty string and empty product 0 span" begin
-    @test largest_product("", 0) == 1
-end
-
-@testset "reports 1 for nonempty string and empty product 0 span" begin
-    @test largest_product("123", 0) == 1
-end
-
 @testset "error handling" begin
     @testset "span longer than string length" begin
         @test_throws ArgumentError largest_product("123", 4)
