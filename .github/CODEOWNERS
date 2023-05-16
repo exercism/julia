@@ -1,6 +1,3 @@
-# Default fallback
-*                       @exercism/julia
-
 # Colin doesn't want to receive botspam
 .github                 @exercism/maintainers-admin
 
