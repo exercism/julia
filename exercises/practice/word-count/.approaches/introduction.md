@@ -1,11 +1,32 @@
 # Introduction
 
+## Specification
+
+The specification of this exercise has changed several times, slightly changing what counts as a word.
+
+All of the solutions on this page are essentially correct (and depending on your point of view you may think them more correct than the specification!), but they were written for varying versions of the specification and will count some words that the current specification excludes.
+
+If you'd like to challenge your bug-hunting skills, perhaps read through the solutions and the specification and see if you can find the mismatches!
+
+<details>
+<summary>Answers</summary>
+
+At the time of writing, "Approach: Find each word with regex" matches the specification exactly, but other solutions match some words excluded by the specification.
+
+- Words containing a mix of numbers and letters (e.g. "x220")
+- Double contractions: words containing more than one apostrophe (e.g. "y'ain't", "wouldn't've")
+- Words containing non-ascii letters or numerals (e.g. "café")
+    - This one is a bit subtle for solutions using regex because unlike regex in most other languages, the character classes in Julia's regexes (e.g. `\w`) are inclusive of non-ascii characters.
+      You can read more about this behaviour by searching for `PCRE_UCP` in the [PCRE library's documentation](https://www.pcre.org/original/doc/html/pcreunicode.html).
+
+</details>
+
 ## Suggested docstring
 
 The details of what is and is not a word are a bit complicated and subjective.
-It is good practice to include a detailed docstring in this kind of situation.
+It is good practice to include a docstring in this kind of situation to document what your function is supposed to be doing.
 
-Here's an example docstring:
+Here's an example docstring, whether it is appropriate for your solution will depend on exactly what your solution treats as a word.
 
 ````julia
 """
@@ -64,7 +85,7 @@ function wordcount(input)
 end
 ```
 
-Same as above, but we lowercase `input` all in one go, so we can have a `Dict` of `SubString`s, which is slightly faster and might be better for some purposes.
+Same as above, but we lowercase `input` all in one go, so we can have a `Dict` of `SubString`s, which might be slightly faster or more appropriate for some situations.
 
 ```julia
 function wordcount(input)
@@ -77,6 +98,24 @@ function wordcount(input)
     return counts
 end
 ```
+
+~~~~exercism/advanced
+
+A dict of substrings like this could be a performance problem sometimes. Can you work out why?
+
+<details>
+<summary>Answer</summary>
+
+A `SubString` is a view into another string, which means that the original string cannot be garbage collected while the `SubString` is still in use. In the solution above, we make a lowercase copy of the input string which Julia will then have to keep in memory until the last `SubString` derived from it becomes unreachable.
+
+If we called `wordcount(document)` on several large documents then this would usually lead to a lot more memory use than a `Dict{String, Int}` would have used.
+If the total volume of text is large enough, this could make a big difference to the performance of your program.
+
+This pattern is worth remembering whenever you're using or thinking of using `SubString`s or `view`s.
+
+</details>
+
+~~~~
 
 It's possible to create the dictionary more efficiently with the `countmap` function from `StatsBase`. With `countmap`, you can code-golf the above into:
 
@@ -108,18 +147,6 @@ function wordcount(input)
 end
 ```
 
-Note that this solution was written for a previous version of the instructions and counts a lot of words that the new specification does not allow.
-See if you can find some!
-
-<details>
-<summary>Answer</summary>
-
-This solution will count words containing more than one apostrophe as a single word, which is against the specification.
-More subtly, words containing non-ascii letters or numbers will also be counted as words by this solution because the character classes in Julia's Regexes include unicode characters.
-You can read more about this behaviour by searching for `PCRE_UCP` in the [PCRE library's documentation](https://www.pcre.org/original/doc/html/pcreunicode.html).
-
-</details>
-
 This solution uses a regex, but you could equally do something like:
 
 ```julia
@@ -137,9 +164,10 @@ This solution is a lot more complicated and a little quicker than the other appr
 
 ```julia
 function wordcount(str)
-    str = lowercase(str)
-    counts = Dict{SubString{typeof(str)}, Int}()
+    counts = Dict{typeof(str)}, Int}()
     iswordchar(c) = 'a' ≤ c ≤ 'z' || 'A' ≤ c ≤ 'Z' || isdigit(c)
+    # To support more non-ascii words, you could use this instead:
+    # iswordchar(c) = isletter(c) || isnumeric(c)
 
     in_word = false
     prev = 0
@@ -163,7 +191,7 @@ function wordcount(str)
             # Otherwise, record the word
             else
                 in_word = false
-                word = SubString(str, prev:prevind(str, i))
+                word = lowercase(SubString(str, prev:prevind(str, i)))
                 counts[word] = get(counts, word, 0) + 1
             end
         end
@@ -171,7 +199,7 @@ function wordcount(str)
     # If the last character was a word char, then its word will not have been
     # counted. So we count it here.
     if in_word
-        word = SubString(str, prev:lastind)
+        word = lowercase(SubString(str, prev:lastind))
         counts[word] = get(counts, word, 0) + 1
     end
 
@@ -189,6 +217,8 @@ julia> nextind("Ünited Stätes Toughens Image With Umlauts", 1)
 ```
 
 This happens because the default String type encodes strings as UTF-8 and indexes by byte, not by character.
+
+This solution uses `SubString` to make only one copy of each part of the string that it converts to lowercase.
 
 ## Approach: Removing non-contraction apostrophes
 
