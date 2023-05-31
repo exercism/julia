@@ -125,7 +125,7 @@ Syncing an exercise consists of:
 
 We like to include detailed information about expert solutions to exercises. You can find this information in the .approaches directory for exercises. Please feel free to open a PR or an issue if you'd like to make a change. Tag @cmcaine because they wrote most of these docs :)
 
-This information used to exist on the mentoring notes pages, but basically no one requests mentoring since exercise v3, so don't bother editing those (all relevant information was pulled into the .approaches files).
+This content was mostly pulled from the mentoring notes in the `exercism/website-copy` repository, but for maintenance ease we only update the "approaches" files now. Most of the content from the old mentoring notes has been adapted into the approaches files now (see https://github.com/exercism/julia/issues/644 for any remaining conversions).
 
 ## Documentation
 
