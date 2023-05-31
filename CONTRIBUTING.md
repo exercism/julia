@@ -2,8 +2,6 @@
 
 This is the Julia track, one of the many tracks on [exercism.io][web-exercism].
 It holds all the _exercises_ that are currently implemented and available for students to complete.
-The track consists of various **core** exercises, the ones a student _must_ complete, and each **core** exercise may unlock various _side_ exercises.
-You can find this in the [`config.json`][file-config].
 It's not uncommon that people discover incorrect implementations of certain tests, have a suggestion for a track specific hint to aid the student on the _Julia specifics_, report missing edge cases, factual errors, logical errors, and, implement exercises or develop new exercises.
 
 We welcome contributions of all sorts and sizes, from reporting issues to submitting patches, as well as joining the current [discussions 💬][issue-discussion].
@@ -55,29 +53,21 @@ There are two ways to implement new exercises.
 1. Pick one from [the list of exercises][list-of-exercises]
 2. Create a new, track-specific exercise from scratch.
 
-#### Implementing existing exercise
+#### Implementing an existing exercise for Julia
 
 Let's say you want to implement a new exercise, from the list of exercises, because you've noticed that this track could benefit from this exercise, really liked it in another track, or just because you find this interesting; the first step is to [check for an open issue][issue-new-exercise].
 If it's there, make sure no one is working on it, and most of all that there is not an open Pull Request towards this exercise.
 
 If there is no such issue, you may open one. The baseline of work is as follows:
 
-1. Open a new issue, we'll label it with `new exercise ✨`
+1. Optionally open a new issue, we'll label it with `new exercise ✨`
 2. We'll assign the issue to you, so you get to work on this exercise
-3. Create a new folder `exercises/$slug`
-   - `$slug` refers to the exercise slug, the machine-readable name that is listed in [the list of exercises][list-of-exercises]
-4. Create a `$slug.jl` stub file.
-5. Create a `runtests.jl` test file. Here add the tests, per [canonical data][problem-specifications] if possible.
-6. Create a `example.jl` file. Place a working implementation, assuming it's renamed to `$slug.jl`
-   - The example solution is meant to show that the test suite works properly. It doesn't have to be an ideal or optimised solution!
-7. Run the tests locally, by running `julia runtests.jl $slug` from the root of the repository.
-8. Add the exercise to `config.json`. You can generate the entry interactively by running `julia bin/new-exercise.jl` and answering the prompts. If you're unsure about the difficulty, progression or topics, just guess and we will discuss it in the Pull Request.
-   - You may have to install the [`configlet`](#fetch-configlet) first, if you haven't already.
+3. Read the documentation for [practice][docs-practice-exercise] or [concept][docs-concept-exercise] exercises.
 
-Instead of manually creating a `runtests.jl` file, you may also add a generator script that takes the `canonical-data.json` for the exercise as input and generates a test suite from it.
-Eventually we will create a framework for this but for now, individual scripts are fine.
+You will need to create a runtests.jl file. You may be able to generate this from the information in the problem-specifications repo using the script in the bin directory of this repo.
+You should try to solve the exercise. Once you have a solution that passes the tests (it doesn't need to be perfect!) move it to .meta/example.jl
 
-The final step is opening a Pull Request, with these items all checked off.
+The final step is opening a Pull Request.
 Make sure the tests pass and the config linter doesn't complain.
 They will run automatically on your PR.
 
@@ -85,9 +75,9 @@ They will run automatically on your PR.
 
 The steps for a track-specific exercise are similar to those of implementing an established, existing exercise. The differences are:
 
-- You'll have to write a README.md and test-suite from scratch
+- You'll have to write the instructions and test-suite from scratch
 - You'll have to come up with a unique _slug_.
-- We need to require an icon for it. (optional)
+- You may want to assign an icon
 - Generate a UUID, for example using [configlet][configlet].
 
 Open a new issue with your proposal, and we'll make sure all these steps are correctly taken.
@@ -98,51 +88,44 @@ You're not alone in this.
 
 After following the steps above, your exercise should contain _at least_ the following files:
 
-- `README.md` - The problem description and other information that is presented to the student. Generated using `configlet`.
+- `.docs/` - The problem description and other information that is presented to the student. Generated using `configlet`.
 - `example.jl` - Contains an example solution that proves the test suite works.
-- `$slug.ipynb` - The Jupyter notebook version of the exercise. Generated using `bin/generate-notebooks.jl`.
 - `$slug.jl` - The file that the student will write their solution in. May contain stubs or be empty depending on the exercise.
 - `runtests.jl` - The test suite for the exercise. Contains a standardized comment referring to the canonical data version and tests. It must only `include` `$slug.jl`, not `example.jl`.
 
 Further, an entry in `config.json` was added for the exercise.
 
-It may contain further files, e.g. to add additional information to the README. This is the bare minimum.
+It may contain further files, e.g. to add additional information or provide extra code. This is the bare minimum.
 
-Take a look at the `exercise/` directory or commit history for examples, or at this [example](https://github.com/exercism/julia/commit/310077d4ed4711122e12795792390b331df72980) of what a commit adding a new exercise should look like.
+Take a look at the `exercise/` directory or commit history for examples, or at this [example](https://github.com/exercism/julia/pull/560) of what a PR adding a new exercise should look like.
 
 ### Existing exercises
 
 There are always improvements possible on existing exercises. 
 
-#### Improving the README.md
+#### Improving the exercise instructions
 
-`README.md`: the description that shows up on the student's exercise page, when they are ready to start.
-It's also downloaded as part of the exercise's data.
-The `README.md`, together with the `runtests.jl` file form the contract for the implementation of the exercise.
-No test should _force_ a specific implementation, no `README.md` explanation should _give away_ a certain implementation.
-The `README.md` files are [generated][doc-readme], which is explains [here][doc-readme].
+The files in .docs define the exercise instructions.
+Read more about what they're supposed to contain and where to edit them [here][doc-readme].
 
-  - This file may need to be _regenerated_ in order to sync with the latest canonical data.
-  - You may contribute track specific `hints.md`, as listed in that [document][doc-readme]
-  - You may improve the track specific `exercise-readme-insert.md`, and regenerate all the readmes.
+There are some generic instructions that appear for every exercise. If you want to edit those, just search the repo for the text you saw on the website and wanted to edit.
 
 #### Syncing the exercise
 
-Syncing an exercise with _canonical data_: There is a [problem-specifications][problem-specifications] repository that holds test data in a standardised format.
-These tests are occasionally fixed, improved, added, removed or otherwise changed.
-Each change also changes the _version_ of that canonical data.
+Syncing an exercise with _canonical data_: There is a [problem-specifications][problem-specifications] repository that holds test data and exercise instructions in a standardised format.
+These files are occasionally fixed, improved, added, removed or otherwise changed.
 Syncing an exercise consists of:
 
-  - updating or adding the `version` comment on top of the `runtests.jl` file, 
-  - updating the `runtests.jl` file,
-  - match the `example.jl` file to still work with the new tests, and 
-  - regenerate the `README.md`, should there be any changes.
+  - rerunning the test generator script (and then re-adding and julia-specific tests)
+  - check that the `example.jl` still works with the new tests. If it doesn't, have a think about whether we want the new tests or want to opt out, maybe open an issue.
+  - sync the instructions and introduction files in .docs. Make sure that any changes we've made specifically for the Julia track are maintained
+  - think about whether synchronising the exercise has actually improved the track, if it hasn't, maybe open a PR on problem-specifications to improve the content there first, or open an issue here to let us know.
 
-#### Improving or adding mentor notes
+#### Improving or adding dig-deeper pages and mentor notes
 
-[Mentor notes][mentor-notes] are the notes that are given to the mentors to guide them with mentoring.
-These notes _do not live in this repository_, but instead in the `website-copy` repository.
-Take a look at their [contributing guidelines][contributing-website-copy].
+We like to include detailed information about expert solutions to exercises. You can find this information in the .approaches directory for exercises. Please feel free to open a PR or an issue if you'd like to make a change. Tag @cmcaine because they wrote most of these docs :)
+
+This content was mostly pulled from the mentoring notes in the `exercism/website-copy` repository, but for maintenance ease we only update the "approaches" files now. Most of the content from the old mentoring notes has been adapted into the approaches files now (see https://github.com/exercism/julia/issues/644 for any remaining conversions).
 
 ## Documentation
 
@@ -151,7 +134,7 @@ You may improve these files by making the required changes and opening a new Pul
 
 ## Tools
 
-You'll need Julia 1.0 or higher in order to contribute to the _code_ in this repository.
+You'll need the latest LTS release of Julia (or any newer version) in order to contribute to the _code_ in this repository.
 
 ### Fetch configlet
 
@@ -181,3 +164,5 @@ You can find them in the `bin/` directory.
 [problem-specifications]: https://github.com/exercism/problem-specifications
 [coc]: ./CODE_OF_CONDUCT.md
 [mentor-notes]: https://github.com/exercism/website-copy/tree/master/tracks/julia/exercises
+[docs-practice-exercise]: https://exercism.org/docs/building/tracks/practice-exercises
+[docs-concept-exercise]: https://exercism.org/docs/building/tracks/concept-exercises
