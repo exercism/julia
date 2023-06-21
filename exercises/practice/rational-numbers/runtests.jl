@@ -116,7 +116,6 @@ end
     @test promote_type(Int, RationalNumber{Int}) == RationalNumber{Int}
 end
 
-# TODO add to problem spec
 # The following testset is based on the tests for rational numbers in Julia Base (MIT license)
 # https://github.com/JuliaLang/julia/blob/52bafeb981bac548afd2264edb518d8d86944dca/test/rational.jl
 # https://github.com/JuliaLang/julia/blob/52bafeb981bac548afd2264edb518d8d86944dca/LICENSE.md
