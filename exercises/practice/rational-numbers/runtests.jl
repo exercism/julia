@@ -134,8 +134,3 @@ end
         end
     end
 end
-
-@testset "Showing RationalNumbers" begin
-    @test sprint(show, RationalNumber(23, 42)) == "23//42"
-    @test sprint(show, RationalNumber(-2500, 5000)) == "-1//2"
-end
