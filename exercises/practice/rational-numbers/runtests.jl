@@ -14,7 +14,7 @@ include("rational-numbers.jl")
     # https://docs.julialang.org/en/v1/manual/conversion-and-promotion/
     @test RationalNumber{Int}(10) == 10
     @test promote_type(Int, RationalNumber{Int}) == RationalNumber{Int}
-    @test convert(RationalNumber{Int8}, 2) <: RationalNumber{Int8}
+    @test convert(RationalNumber{Int8}, 2) isa RationalNumber{Int8}
 end
 
 @testset "One- & Zero-elements" begin
