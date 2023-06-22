@@ -5,6 +5,18 @@ include("rational-numbers.jl")
 @test RationalNumber <: Real
 @test_throws ArgumentError RationalNumber(0, 0)
 
+@testset "Conversion and promotion" begin
+    # To pass these tests you should define a promote_rule method and a
+    # constructor, you don't need to define methods such as
+    # `==(a::RationalNumber{Int}, b::Int)`, `promote_type`, `convert`, etc.
+    #
+    # Read the manual for how to do this and why:
+    # https://docs.julialang.org/en/v1/manual/conversion-and-promotion/
+    @test RationalNumber{Int}(10) == 10
+    @test promote_type(Int, RationalNumber{Int}) == RationalNumber{Int}
+    @test convert(RationalNumber{Int8}, 2) <: RationalNumber{Int8}
+end
+
 @testset "One- & Zero-elements" begin
     @test zero(RationalNumber{Int}) == RationalNumber(0, 1)
     @test one(RationalNumber{Int})  == RationalNumber(1, 1)
@@ -16,6 +28,8 @@ end
         @test RationalNumber( 1, 2) + RationalNumber(-2, 3) == RationalNumber(-1, 6)
         @test RationalNumber(-1, 2) + RationalNumber(-2, 3) == RationalNumber(-7, 6)
         @test RationalNumber( 1, 2) + RationalNumber(-1, 2) == RationalNumber( 0, 1)
+        @test RationalNumber(1, 2) + 4 == RationalNumber(9, 2)
+        @test 4 + RationalNumber(1, 2) == RationalNumber(9, 2)
     end
 
     @testset "Subtraction" begin
@@ -101,19 +115,6 @@ end
     r = RationalNumber(3, -4)
     @test numerator(r)   == -3
     @test denominator(r) ==  4
-end
-
-@testset "Conversion and promotion" begin
-    # To pass these tests you should define a promote_rule method and a
-    # constructor, you don't need to define methods such as
-    # `==(a::RationalNumber{Int}, b::Int)`, `convert`, `promote`, etc.
-    #
-    # Read the manual for how to do this and why:
-    # https://docs.julialang.org/en/v1/manual/conversion-and-promotion/
-    @test RationalNumber{Int}(10) == 10
-    @test RationalNumber(1, 2) + 4 == RationalNumber(9, 2)
-    @test 4 + RationalNumber(1, 2) == RationalNumber(9, 2)
-    @test promote_type(Int, RationalNumber{Int}) == RationalNumber{Int}
 end
 
 # The following testset is based on the tests for rational numbers in Julia Base (MIT license)
