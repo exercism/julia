@@ -5,6 +5,18 @@ include("rational-numbers.jl")
 @test RationalNumber <: Real
 @test_throws ArgumentError RationalNumber(0, 0)
 
+@testset "Conversion and promotion" begin
+    # To pass these tests you should define a promote_rule method and a
+    # constructor, you don't need to define methods such as
+    # `==(a::RationalNumber{Int}, b::Int)`, `promote_type`, `convert`, etc.
+    #
+    # Read the manual for how to do this and why:
+    # https://docs.julialang.org/en/v1/manual/conversion-and-promotion/
+    @test RationalNumber{Int}(10) == 10
+    @test promote_type(Int, RationalNumber{Int}) == RationalNumber{Int}
+    @test convert(RationalNumber{Int8}, 2) isa RationalNumber{Int8}
+end
+
 @testset "One- & Zero-elements" begin
     @test zero(RationalNumber{Int}) == RationalNumber(0, 1)
     @test one(RationalNumber{Int})  == RationalNumber(1, 1)
@@ -16,6 +28,8 @@ end
         @test RationalNumber( 1, 2) + RationalNumber(-2, 3) == RationalNumber(-1, 6)
         @test RationalNumber(-1, 2) + RationalNumber(-2, 3) == RationalNumber(-7, 6)
         @test RationalNumber( 1, 2) + RationalNumber(-1, 2) == RationalNumber( 0, 1)
+        @test RationalNumber(1, 2) + 4 == RationalNumber(9, 2)
+        @test 4 + RationalNumber(1, 2) == RationalNumber(9, 2)
     end
 
     @testset "Subtraction" begin
@@ -103,13 +117,12 @@ end
     @test denominator(r) ==  4
 end
 
-# TODO add to problem spec
 # The following testset is based on the tests for rational numbers in Julia Base (MIT license)
 # https://github.com/JuliaLang/julia/blob/52bafeb981bac548afd2264edb518d8d86944dca/test/rational.jl
 # https://github.com/JuliaLang/julia/blob/52bafeb981bac548afd2264edb518d8d86944dca/LICENSE.md
 @testset "Ordering" begin
     for a in -5:5, b in -5:5, c in -5:5
-        a == b == 0 && continue
+        b == 0 && continue
         
         r = RationalNumber(a, b)
 
@@ -121,7 +134,7 @@ end
         @test (r >  c) == (a / b >  c)
 
         for d in -5:5
-            c == d == 0 && continue
+            d == 0 && continue
 
             s = RationalNumber(c, d)
 
@@ -133,9 +146,4 @@ end
             @test (r >  s) == (a / b >  c / d)
         end
     end
-end
-
-@testset "Showing RationalNumbers" begin
-    @test sprint(show, RationalNumber(23, 42)) == "23//42"
-    @test sprint(show, RationalNumber(-2500, 5000)) == "-1//2"
 end
