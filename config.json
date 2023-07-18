@@ -16,7 +16,7 @@
     "highlightjs_language": "julia"
   },
   "test_runner": {
-    "average_run_time": 2.1
+    "average_run_time": 2
   },
   "files": {
     "solution": [
