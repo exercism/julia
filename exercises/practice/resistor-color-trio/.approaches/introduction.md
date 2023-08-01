@@ -65,7 +65,7 @@ Here are some I came up with, and I encourage you to take a look!
 If you'd like to stretch yourself you might like to try to come up with your own optimisation ideas (possibly prompted by the summaries below) before you read mine.
 
 <details>
-<summary>Faster power_of_1000<summary>
+<summary>Faster power_of_1000</summary>
 
 `log10(ohms)` is a moderately expensive operation.
 We can find `floor(log10(ohms))` with only integer arithmetic like this: `exponent + (tens != 0)`.
