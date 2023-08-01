@@ -1,39 +1,23 @@
-function label(colors::AbstractArray)
+function label(colors)
+    @assert length(colors) == 3
+    color_key = ("black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white")
+    metric_prefixes = ("", "kilo", "mega", "giga")
 
-    # Set the color-number converter list
-    color_key = ["black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"]
+    color_idx(i) = findfirst(==(colors[i]), color_key) - 1
 
-    # Initialize the array that hold the converted numbers
-    converted_colors = collect(1:3)
+    tens = color_idx(1)
+    units = color_idx(2)
+    exponent = color_idx(3)
+    ohms = (10tens + units) * 10^exponent
 
-    # For every color, put the converted number in the converted_colors array
-    for color_index in 1:3
-        converted_colors[color_index] = (findfirst(x -> x == colors[color_index], color_key) - 1)
+    power_of_1000 = log10(ohms) ÷ 3
+    prefix = metric_prefixes[power_of_1000 + 1]
+    mantissa = ohms / 1000^power_of_1000
+
+    # We want to print the mantissa without a trailing .0 if it is an integer.
+    # The easiest way to get Julia to do that is to convert it to an Int.
+    if isinteger(mantissa)
+        mantissa = Int(mantissa)
     end
-
-    # If the second digit ends with zero, end the first two digits at the first digit, and increment the power of ten
-    # else, keep the two digits and convert the third number into a power of 10
-    if converted_colors[2] == 0
-        first_two_digits = converted_colors[1]
-        converted_colors[3] += 1
-        power_of_ten = 10^converted_colors[3]
-    else
-        first_two_digits = 10*converted_colors[1] + converted_colors[2]
-        power_of_ten = 10^converted_colors[3]
-    end
-
-    # If the resistance is an integral multiple of 1000 ohms, write the answer in terms of kiloohms
-    # Else, write the answer in terms of ohms
-    if power_of_ten >= 1000
-        power_of_ten = 10^(converted_colors[3]-3)
-        suffix = "kiloohms"
-        first_two_digits *= power_of_ten
-    else
-        first_two_digits *= power_of_ten
-        suffix = "ohms"
-    end
-
-    # print the final answer with the appropriate suffix
-    return ("$first_two_digits" * " " * "$suffix")
-
+    return "$mantissa $(prefix)ohms"
 end
