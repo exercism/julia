@@ -8,7 +8,7 @@ jobs:
     if: github.event.issue.pull_request != '' && contains(github.event.comment.body, '/rebase')
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9
+    - uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
     - name: Automatic Rebase
       uses: cirrus-actions/rebase@b87d48154a87a85666003575337e27b8cd65f691
       env:
