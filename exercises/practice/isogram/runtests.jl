@@ -57,3 +57,7 @@ end
 @testset "same first and last characters" begin
     @test !isisogram("angola")
 end
+
+@testset "word with duplicated character and with two hyphens" begin
+    @test !isisogram("up-to-date")
+end
