@@ -56,7 +56,7 @@ This works because:
  └─ The beginning/base of the alphabet.
 ```
 
-```exercism/advanced
+~~~~exercism/advanced
 
 Iterating a UTF-8 string is slow because it's a variable length encoding. It is often faster to iterate a collection with elements of a fixed size (a vector of `UInt8`s from `transcode()` or an `ASCIIStr` (from Strs.jl), perhaps).
 
@@ -67,7 +67,7 @@ See the dig deeper pages for the [pangram][dd-pg], [nucleotide count][dd-nc], an
 [dd-nc]: https://exercism.org/tracks/julia/exercises/nucleotide-count/dig_deeper
 [dd-l]: https://exercism.org/tracks/julia/exercises/luhn/dig_deeper
 
-```
+~~~~
 
 ## Bonus macro task
 
