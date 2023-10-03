@@ -1,0 +1,25 @@
+# This is an auto-generated file.
+#
+# Regenerating this file via `configlet sync` will:
+# - Recreate every `description` key/value pair
+# - Recreate every `reimplements` key/value pair, where they exist in problem-specifications
+# - Remove any `include = true` key/value pair (an omitted `include` key implies inclusion)
+# - Preserve any other key/value pair
+#
+# As user-added comments (using the # character) will be removed when this file
+# is regenerated, comments can be added via a `comment` key.
+
+[728853d3-24de-4855-a452-6520b67dec23]
+description = "Initial set"
+
+[ed5bf871-3923-47ca-8346-5d640f9069a0]
+description = "Initial set w/ opposite labels"
+
+[15a9860e-f9be-46b1-86b2-989bd878c8a5]
+description = "Hyperplane cannot pass through origin"
+
+[52ba77fc-8983-4429-91dc-e64b2f625484]
+description = "Hyperplane nearly parallel with y-axis"
+
+[3e758bbd-5f72-447d-999f-cfa60b27bc26]
+description = "Increasing Populations"

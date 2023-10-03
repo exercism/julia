@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "depial"
+  ],
+  "contributors": [
+    "cmcaine"
+  ],
+  "files": {
+    "solution": [
+      "perceptron.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
+  },
+  "blurb": "Given points and their labels, provide a hyperplane which separates them"
+}
