@@ -1,5 +1,4 @@
 {
-  "blurb": "Convert a trinary number, represented as a string (e.g. '102012'), to its decimal equivalent using first principles.",
   "authors": [
     "andrej-makarov-skrt"
   ],
@@ -18,6 +17,7 @@
       ".meta/example.jl"
     ]
   },
+  "blurb": "Convert a trinary number, represented as a string (e.g. '102012'), to its decimal equivalent using first principles.",
   "source": "All of Computer Science",
   "source_url": "http://www.wolframalpha.com/input/?i=binary&a=*C.binary-_*MathWorld-"
 }

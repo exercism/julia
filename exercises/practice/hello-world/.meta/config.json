@@ -1,9 +1,7 @@
 {
-  "blurb": "The classical introductory exercise. Just say \"Hello, World!\"",
   "authors": [
     "SaschaMann"
   ],
-  "contributors": [],
   "files": {
     "solution": [
       "hello-world.jl"
@@ -15,6 +13,7 @@
       ".meta/example.jl"
     ]
   },
+  "blurb": "The classical introductory exercise. Just say \"Hello, World!\"",
   "source": "This is an exercise to introduce users to using Exercism",
   "source_url": "http://en.wikipedia.org/wiki/%22Hello,_world!%22_program"
 }
