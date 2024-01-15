@@ -2,7 +2,7 @@ using Test
 
 include("pangram.jl")
 
-@testset verbose = true "pangram" begin
+@testset verbose = true "Pangram" begin
     @testset "empty sentence" begin
         @test !ispangram("")
     end
