@@ -11,6 +11,7 @@ include("rotational-cipher.jl")
                 @test rotate(13, "m") == "z"
                 @test rotate(13, 'm') == 'z'
             end
+
             @testset "wrap around" begin
                 @test rotate(13, "n") == "a"
                 @test rotate(13, 'n') == 'a'
@@ -34,7 +35,7 @@ include("rotational-cipher.jl")
     end
 
     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-    # Additional exercises                                                        #
+    # Bonus tests                                                                 #
     # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
     # Bonus A
