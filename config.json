@@ -32,29 +32,12 @@
       ".meta/exemplar.jl"
     ]
   },
-  "concepts": [
-    {
-      "uuid": "32384ed4-ef26-4118-8ea3-4d44c331e828",
-      "slug": "functions",
-      "name": "Functions"
-    },
-    {
-      "slug": "integer-introduction",
-      "name": "Integers and Arithmetic Operations",
-      "uuid": "006ebce8-87cd-4695-87e6-8a7b8dc2f239"
-    },
-    {
-      "slug": "comments",
-      "name": "Comments",
-      "uuid": "90365822-f58c-4e45-88be-430978b77e65"
-    }
-  ],
   "exercises": {
     "concept": [
       {
-        "uuid": "39ebdd04-4f84-4817-bf9d-f1f9e066c283",
-        "name": "Lasagna",
         "slug": "lasagna",
+        "name": "Lasagna",
+        "uuid": "39ebdd04-4f84-4817-bf9d-f1f9e066c283",
         "concepts": [
           "functions",
           "integer-introduction",
@@ -82,12 +65,12 @@
         "uuid": "e0142403-af9e-406e-827a-1fd37187d1ea",
         "practices": [],
         "prerequisites": [],
+        "difficulty": 5,
         "topics": [
           "iterator-protocol",
           "vectors",
           "conditionals"
-        ],
-        "difficulty": 5
+        ]
       },
       {
         "slug": "leap",
@@ -297,11 +280,11 @@
         ]
       },
       {
+        "slug": "reverse-string",
+        "name": "Reverse String",
         "uuid": "e73f19f7-17bc-4d51-a00a-c2b58c1fa8e6",
         "practices": [],
         "prerequisites": [],
-        "slug": "reverse-string",
-        "name": "Reverse String",
         "difficulty": 3,
         "topics": [
           "generics",
@@ -317,11 +300,11 @@
         ]
       },
       {
+        "slug": "allergies",
+        "name": "Allergies",
         "uuid": "4eced190-062f-4a7b-8c92-87ff02f1e343",
         "practices": [],
         "prerequisites": [],
-        "slug": "allergies",
-        "name": "Allergies",
         "difficulty": 1,
         "topics": [
           "loops",
@@ -554,12 +537,13 @@
         ]
       },
       {
+        "slug": "dnd-character",
+        "name": "D&D Character",
         "uuid": "fcb9ef0e-ed97-4420-a38f-9bf690c23a3b",
         "practices": [],
         "prerequisites": [],
-        "slug": "dnd-character",
-        "name": "D&D Character",
         "difficulty": 5,
+        "status": "deprecated",
         "topics": [
           "variables",
           "integers",
@@ -568,8 +552,7 @@
           "randomness",
           "math",
           "test_driven_development"
-        ],
-        "status": "deprecated"
+        ]
       },
       {
         "slug": "robot-simulator",
@@ -583,11 +566,11 @@
         ]
       },
       {
+        "slug": "circular-buffer",
+        "name": "Circular Buffer",
         "uuid": "3dc9bbde-d344-4a36-a7e1-433637974dfc",
         "practices": [],
         "prerequisites": [],
-        "slug": "circular-buffer",
-        "name": "Circular Buffer",
         "difficulty": 8,
         "topics": [
           "data_structures",
@@ -617,8 +600,7 @@
         "difficulty": 1,
         "topics": [
           "math",
-          "integers",
-          "math"
+          "integers"
         ]
       },
       {
@@ -687,14 +669,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 2,
+        "status": "deprecated",
         "topics": [
           "broadcast",
           "conditionals",
           "variables",
           "integers",
           "arrays"
-        ],
-        "status": "deprecated"
+        ]
       },
       {
         "slug": "bob",
@@ -730,20 +712,20 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 2,
+        "status": "deprecated",
         "topics": [
           "arrays",
           "conditionals",
           "loops",
           "strings"
-        ],
-        "status": "deprecated"
+        ]
       },
       {
+        "slug": "perfect-numbers",
+        "name": "Perfect Numbers",
         "uuid": "4fc89443-1c5c-492a-850f-7990869caae6",
         "practices": [],
         "prerequisites": [],
-        "slug": "perfect-numbers",
-        "name": "Perfect Numbers",
         "difficulty": 3,
         "topics": [
           "loops",
@@ -770,11 +752,11 @@
         ]
       },
       {
+        "slug": "all-your-base",
+        "name": "All Your Base",
         "uuid": "6fa91607-d772-47af-9520-de26bbb8addb",
         "practices": [],
         "prerequisites": [],
-        "slug": "all-your-base",
-        "name": "All Your Base",
         "difficulty": 4,
         "topics": [
           "integers",
@@ -782,11 +764,11 @@
         ]
       },
       {
+        "slug": "matching-brackets",
+        "name": "Matching Brackets",
         "uuid": "bf5c1f49-963a-4397-bb67-b58e1b7d45e3",
         "practices": [],
         "prerequisites": [],
-        "slug": "matching-brackets",
-        "name": "Matching Brackets",
         "difficulty": 5,
         "topics": [
           "loops",
@@ -801,11 +783,11 @@
         ]
       },
       {
+        "slug": "pythagorean-triplet",
+        "name": "Pythagorean Triplet",
         "uuid": "a534b8ed-da88-4945-bb25-f6633977740b",
         "practices": [],
         "prerequisites": [],
-        "slug": "pythagorean-triplet",
-        "name": "Pythagorean Triplet",
         "difficulty": 7,
         "topics": [
           "conditionals",
@@ -823,19 +805,19 @@
         ]
       },
       {
+        "slug": "alphametics",
+        "name": "Alphametics",
         "uuid": "32af807f-ba90-4a36-bf6b-5d71a0fae7ae",
         "practices": [],
         "prerequisites": [],
-        "slug": "alphametics",
-        "name": "Alphametics",
         "difficulty": 10
       },
       {
+        "slug": "largest-series-product",
+        "name": "Largest Series Product",
         "uuid": "4ce25733-55ab-48fd-84e2-c4b7f2f3f529",
         "practices": [],
         "prerequisites": [],
-        "slug": "largest-series-product",
-        "name": "Largest Series Product",
         "difficulty": 4,
         "topics": [
           "conditionals",
@@ -850,11 +832,11 @@
         ]
       },
       {
+        "slug": "saddle-points",
+        "name": "Saddle Points",
         "uuid": "f26bf680-b8fb-40dd-a82c-884ae391b8b6",
         "practices": [],
         "prerequisites": [],
-        "slug": "saddle-points",
-        "name": "Saddle Points",
         "difficulty": 4,
         "topics": [
           "conditionals",
@@ -869,11 +851,11 @@
         ]
       },
       {
+        "slug": "square-root",
+        "name": "Square Root",
         "uuid": "587ad0fa-ea7e-4962-9c71-3a50d2877e6b",
         "practices": [],
         "prerequisites": [],
-        "slug": "square-root",
-        "name": "Square Root",
         "difficulty": 2,
         "topics": [
           "algorithms",
@@ -883,9 +865,34 @@
           "conditionals",
           "variables"
         ]
+      },
+      {
+        "slug": "space-age",
+        "name": "Space Age",
+        "uuid": "f4bfe822-90cc-4183-8a50-081ff0fdb512",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
       }
     ]
   },
+  "concepts": [
+    {
+      "uuid": "32384ed4-ef26-4118-8ea3-4d44c331e828",
+      "slug": "functions",
+      "name": "Functions"
+    },
+    {
+      "uuid": "006ebce8-87cd-4695-87e6-8a7b8dc2f239",
+      "slug": "integer-introduction",
+      "name": "Integers and Arithmetic Operations"
+    },
+    {
+      "uuid": "90365822-f58c-4e45-88be-430978b77e65",
+      "slug": "comments",
+      "name": "Comments"
+    }
+  ],
   "key_features": [
     {
       "title": "Fast",
@@ -920,15 +927,15 @@
   ],
   "tags": [
     "execution_mode/compiled",
-    "typing/dynamic",
     "paradigm/declarative",
     "paradigm/functional",
     "paradigm/imperative",
     "paradigm/object_oriented",
     "paradigm/procedural",
-    "platform/windows",
-    "platform/mac",
     "platform/linux",
+    "platform/mac",
+    "platform/windows",
+    "typing/dynamic",
     "used_for/artificial_intelligence",
     "used_for/cross_platform_development",
     "used_for/financial_systems",
