@@ -30,6 +30,8 @@ samples = Dict(
     1991 => "MCMXCI",
     2017 => "MMXVII",
     3000 => "MMM",
+    3001 => "MMMI",
+    3999 => "MMMCMXCIX",
 )
 
 @testset "convert $(sample[1]) to roman numeral" for sample in samples
