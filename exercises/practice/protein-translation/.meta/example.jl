@@ -26,7 +26,11 @@ macro rna_str(str)
     n = 3
     result = []
     for i=1:n:length(str)
-        substring = SubString(str, i, i+n-1)
+        substring = try
+            SubString(str, i, i+n-1)
+        catch
+            throw(TranslationError("invalid rna string"))
+        end
         protein = string_to_protein(substring)
         protein == "STOP" && break
         push!(result, protein)

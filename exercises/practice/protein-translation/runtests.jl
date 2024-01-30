@@ -55,7 +55,7 @@ include("protein-translation.jl")
     end
 
     @testset "Sequence of two different codons translates into proteins" begin
-        @test rna"UUAUUG" == ["Leucine", "Phenylalanine"]
+        @test rna"UUAUUU" == ["Leucine", "Phenylalanine"]
     end
 
     @testset "Translation stops if STOP codon appears in middle of sequence" begin
@@ -71,11 +71,11 @@ include("protein-translation.jl")
     end
 
     @testset "Non existent codon causes translation exception" begin
-        @test_throws TranslationError rna"AAA"
+        @test_throws TranslationError @macroexpand rna"AAA"
     end
 
     @testset "Incomplete codon causes translation exception" begin
-        @test_throws TranslationError rna"UGGU"
+        @test_throws TranslationError @macroexpand rna"UGGU"
     end
 
     @testset "Incomplete RNA sequence can translate if given a stop codon" begin
