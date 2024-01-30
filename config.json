@@ -872,7 +872,16 @@
         "uuid": "98b2f717-2630-4f28-a5f2-e51047b59a56",
         "practices": [],
         "prerequisites": [],
-        "difficulty": 1
+        "difficulty": 2
+      },
+      {
+        "slug": "space-age",
+        "name": "Space Age",
+        "uuid": "f4bfe822-90cc-4183-8a50-081ff0fdb512",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+
       }
     ]
   },

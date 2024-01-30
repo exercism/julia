@@ -59,3 +59,7 @@ include("isogram.jl")
         @test !isisogram("angola")
     end
 end
+
+@testset "word with duplicated character and with two hyphens" begin
+    @test !isisogram("up-to-date")
+end
