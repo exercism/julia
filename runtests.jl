@@ -5,7 +5,12 @@ using Test
 # Setup GHA logger in CI
 using Logging: global_logger
 using GitHubActions: GitHubActionsLogger
-get(ENV, "GITHUB_ACTIONS", "false") == "true" && global_logger(GitHubActionsLogger())
+
+const running_in_gha = get(ENV, "GITHUB_ACTIONS", "false") == "true"
+
+if running_in_gha
+    global_logger(GitHubActionsLogger())
+end
 
 include("eachexercise.jl")
 
@@ -34,7 +39,7 @@ include("eachexercise.jl")
             # Our anonymous module doesn't have `include(s::String)` defined,
             # so we define our own.
             @eval m include(s) = Base.include($m, $example_path)
-            @info "[$(uppercase(exercise_type))] Testing $exercise"
+            running_in_gha || @info "[$(uppercase(exercise_type))] Testing $exercise"
             Base.include(m, joinpath(exercise_path, "runtests.jl"))
         end
     end
