@@ -23,6 +23,10 @@ struct TranslationError <: Exception
 end
 
 macro rna_str(str)
+    rna_translator(str)
+end
+
+function rna_translator(str)
     n = 3
     result = []
     for i=1:n:length(str)
@@ -35,7 +39,8 @@ macro rna_str(str)
         protein == "STOP" && break
         push!(result, protein)
     end
-    return result
+    result
+    
 end
 
 
