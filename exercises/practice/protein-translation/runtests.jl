@@ -63,7 +63,7 @@ include("protein-translation.jl")
     end
 
     @testset "Translation stops if STOP codon appears at end of two-codon sequence" begin
-        @test rna_translator("UGGUGUUGA") == ["Tryptophan", "Cysteine", "Tyrosine"]
+        @test rna_translator("UGGUGUUGA") == ["Tryptophan", "Cysteine"]
     end
 
     @testset "Non existent codon causes translation exception" begin
