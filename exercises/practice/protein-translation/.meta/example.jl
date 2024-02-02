@@ -1,4 +1,4 @@
-codon_protein_dict = Dict(
+const codon_protein_dict = Dict(
     "AUG" => "Methionine",
     "UUU" => "Phenylalanine",
     "UUC" => "Phenylalanine",
@@ -22,9 +22,6 @@ struct TranslationError <: Exception
     message::String
 end
 
-macro rna_str(str)
-    rna_translator(str)
-end
 
 function rna_translator(str)
     n = 3

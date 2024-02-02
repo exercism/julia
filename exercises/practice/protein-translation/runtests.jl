@@ -9,65 +9,61 @@ include("protein-translation.jl")
     end
 
     @testset "Methionine RNA sequence is decoded as Methionine" begin
-        @test rna"AUG" == ["Methionine"]
+        @test rna_translator("AUG") == ["Methionine"]
     end
 
     @testset "Phenylalanine RNA sequence is decoded as Phenylalanine" begin
-        @test rna"UUU" == ["Phenylalanine"]
-    end
-
-    @testset "Other Phenylalanine RNA sequence is decoded as Phenylalanine" begin
-        @test rna"UUC" == ["Phenylalanine"]
+        @test rna_translator("UUUUUC") == ["Phenylalanine", "Phenylalanine"]
     end
 
     @testset "Leucine RNA sequence is decoded as Leucine" begin
-        @test rna"UUA" == ["Leucine"]
+        @test rna_translator("UUA") == ["Leucine"]
     end
 
     @testset "Leucine RNA sequence is decoded as Leucine" begin
-        @test rna"UUG" == ["Leucine"]
+        @test rna_translator("UUG") == ["Leucine"]
     end
 
     @testset "Serine RNA sequence is decoded as Serine" begin
-        @test rna"UCUUCCUCAUCG" == ["Serine", "Serine", "Serine", "Serine"]
+        @test rna_translator("UCUUCCUCAUCG") == ["Serine", "Serine", "Serine", "Serine"]
     end
 
     @testset "Tyrosine RNA sequence is decoded as Tyrosine" begin
-        @test rna"UAUUAC" == ["Tyrosine", "Tyrosine"]
+        @test rna_translator("UAUUAC") == ["Tyrosine", "Tyrosine"]
     end
 
     @testset "Cysteine RNA sequence is decoded as Cysteine" begin
-        @test rna"UGUUGC" == ["Cysteine", "Cysteine"]
+        @test rna_translator("UGUUGC") == ["Cysteine", "Cysteine"]
     end
 
     @testset "Tryptophan RNA sequence is decoded as Tryptophan" begin
-        @test rna"UGG" == ["Tryptophan"]
+        @test rna_translator("UGG") == ["Tryptophan"]
     end
 
     @testset "STOP codon terminates translation" begin
-        @test rna"UAA" == []
-        @test rna"UAG" == []
-        @test rna"UGA" == []
+        @test rna_translator("UAA") == []
+        @test rna_translator("UAG") == []
+        @test rna_translator("UGA") == []
     end
 
     @testset "Sequence of two codons translates into proteins" begin
-        @test rna"UUUUUU" == ["Phenylalanine", "Phenylalanine"]
+        @test rna_translator("UUUUUUUGA") == ["Phenylalanine", "Phenylalanine"]
     end
 
     @testset "Sequence of two different codons translates into proteins" begin
-        @test rna"UUAUUU" == ["Leucine", "Phenylalanine"]
+        @test rna_translator("UUAUUUUAG") == ["Leucine", "Phenylalanine"]
     end
 
     @testset "Translation stops if STOP codon appears in middle of sequence" begin
-        @test rna"UGGUAG" == ["Tryptophan"]
+        @test rna_translator("UGGUAAUGCAUG") == ["Tryptophan"]
     end
 
     @testset "Translation stops if STOP codon appears at beginning of sequence" begin
-        @test rna"UAGUUUUGG" == []
+        @test rna_translator("UAGUAUUCGUCAUCU") == []
     end
 
     @testset "Translation stops if STOP codon appears at end of two-codon sequence" begin
-        @test rna"UGGUGUUAUUAAUGGUUU" == ["Tryptophan", "Cysteine", "Tyrosine"]
+        @test rna_translator("UGGUGUUGA") == ["Tryptophan", "Cysteine", "Tyrosine"]
     end
 
     @testset "Non existent codon causes translation exception" begin
@@ -79,6 +75,6 @@ include("protein-translation.jl")
     end
 
     @testset "Incomplete RNA sequence can translate if given a stop codon" begin
-        @test rna"UGGUAGUAAAA" == ["Tryptophan"]
+        @test rna_translator("UGGUGAUG") == ["Tryptophan"]
     end
 end

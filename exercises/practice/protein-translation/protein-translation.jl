@@ -1,8 +1,3 @@
-macro rna_str()
-    # I'm a ribosome macro!
-end
-
-
-function rna_translator()
+function rna_translator(rna::String)
     # I'm a ribosome function!
 end
