@@ -5,7 +5,7 @@ include("protein-translation.jl")
 @testset "Protein Translation" begin
 
     @testset "Empty RNA sequence returns an empty list" begin
-        @test rna"" == []
+        @test rna_translator("") == []
     end
 
     @testset "Methionine RNA sequence is decoded as Methionine" begin
