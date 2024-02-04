@@ -16,5 +16,5 @@
       ".meta/example.jl"
     ]
   },
-  "blurb": "Given points and their labels, provide a hyperplane which separates them"
+  "blurb": "Write your own machine learning classifier"
 }
