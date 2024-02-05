@@ -692,6 +692,14 @@
         ]
       },
       {
+        "slug": "resistor-color-duo",
+        "name": "Resistor Color Duo",
+        "uuid": "c71c65c4-0572-4dd6-b864-317486821e54",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "resistor-color-trio",
         "name": "Resistor Color Trio",
         "uuid": "39e831d0-ea7a-4df9-b9cb-64ccb996ee0e",
