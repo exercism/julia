@@ -1,4 +1,4 @@
-COLORS = [
+const COLORS = [
     "black",
     "brown",
     "red",
@@ -9,7 +9,7 @@ COLORS = [
     "violet",
     "grey",
     "white"
-]
+)
 
 function colorcode(colors)
     tens = value(colors[1])
