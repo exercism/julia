@@ -40,6 +40,4 @@ In Roman numerals 1990 is MCMXC:
 2000=MM
 8=VIII
 
-There is no need to be able to convert numbers larger than about 3000.
-
 See also: [http://www.novaroma.org/via_romana/numbers.html](http://www.novaroma.org/via_romana/numbers.html)
