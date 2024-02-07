@@ -16,7 +16,7 @@ include("resistor-color.jl")
     end
 
     @testset "Colors" begin
-        @test colors() == [
+        expected_colors = [
             "black",
             "brown",
             "red",
@@ -28,5 +28,6 @@ include("resistor-color.jl")
             "grey",
             "white"
         ]
+        @test all(colors() .== expected_colors)
     end
 end
