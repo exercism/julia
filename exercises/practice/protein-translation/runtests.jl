@@ -77,4 +77,12 @@ include("protein-translation.jl")
     @testset "Incomplete RNA sequence can translate if given a stop codon" begin
         @test rna_to_amino_acids("UGGUGAUG") == ["Tryptophan"]
     end
+
+    # Bonus
+    if isdefined(@__MODULE__, Symbol("@rna_str"))
+        @eval @testset "Bonus: rna string macro" begin
+            @test rna"AUGUUUUUAUGGUACUAG" == ["Methionine", "Phenylalanine", "Leucine", "Tryptophan", "Tyrosine"]
+        end
+    end
+
 end
