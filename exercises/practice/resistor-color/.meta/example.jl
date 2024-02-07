@@ -1,4 +1,4 @@
-COLORS = [
+const COLORS = (
     "black",
     "brown",
     "red",
@@ -9,7 +9,7 @@ COLORS = [
     "violet",
     "grey",
     "white"
-]
+)
 
 function colorcode(color)
     findfirst(==(color), COLORS) - 1
