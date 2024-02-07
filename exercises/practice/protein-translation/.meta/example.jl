@@ -23,7 +23,7 @@ struct TranslationError <: Exception
 end
 
 
-function rna_translator(str)
+function rna_to_amino_acids(str)
     n = 3
     result = []
     for i=1:n:length(str)

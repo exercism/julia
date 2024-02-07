@@ -5,76 +5,76 @@ include("protein-translation.jl")
 @testset "Protein Translation" begin
 
     @testset "Empty RNA sequence returns an empty list" begin
-        @test rna_translator("") == []
+        @test rna_to_amino_acids("") == []
     end
 
     @testset "Methionine RNA sequence is decoded as Methionine" begin
-        @test rna_translator("AUG") == ["Methionine"]
+        @test rna_to_amino_acids("AUG") == ["Methionine"]
     end
 
     @testset "Phenylalanine RNA sequence is decoded as Phenylalanine" begin
-        @test rna_translator("UUUUUC") == ["Phenylalanine", "Phenylalanine"]
+        @test rna_to_amino_acids("UUUUUC") == ["Phenylalanine", "Phenylalanine"]
     end
 
     @testset "Leucine RNA sequence is decoded as Leucine" begin
-        @test rna_translator("UUA") == ["Leucine"]
+        @test rna_to_amino_acids("UUA") == ["Leucine"]
     end
 
     @testset "Leucine RNA sequence is decoded as Leucine" begin
-        @test rna_translator("UUG") == ["Leucine"]
+        @test rna_to_amino_acids("UUG") == ["Leucine"]
     end
 
     @testset "Serine RNA sequence is decoded as Serine" begin
-        @test rna_translator("UCUUCCUCAUCG") == ["Serine", "Serine", "Serine", "Serine"]
+        @test rna_to_amino_acids("UCUUCCUCAUCG") == ["Serine", "Serine", "Serine", "Serine"]
     end
 
     @testset "Tyrosine RNA sequence is decoded as Tyrosine" begin
-        @test rna_translator("UAUUAC") == ["Tyrosine", "Tyrosine"]
+        @test rna_to_amino_acids("UAUUAC") == ["Tyrosine", "Tyrosine"]
     end
 
     @testset "Cysteine RNA sequence is decoded as Cysteine" begin
-        @test rna_translator("UGUUGC") == ["Cysteine", "Cysteine"]
+        @test rna_to_amino_acids("UGUUGC") == ["Cysteine", "Cysteine"]
     end
 
     @testset "Tryptophan RNA sequence is decoded as Tryptophan" begin
-        @test rna_translator("UGG") == ["Tryptophan"]
+        @test rna_to_amino_acids("UGG") == ["Tryptophan"]
     end
 
     @testset "STOP codon terminates translation" begin
-        @test rna_translator("UAA") == []
-        @test rna_translator("UAG") == []
-        @test rna_translator("UGA") == []
+        @test rna_to_amino_acids("UAA") == []
+        @test rna_to_amino_acids("UAG") == []
+        @test rna_to_amino_acids("UGA") == []
     end
 
     @testset "Sequence of two codons translates into proteins" begin
-        @test rna_translator("UUUUUUUGA") == ["Phenylalanine", "Phenylalanine"]
+        @test rna_to_amino_acids("UUUUUUUGA") == ["Phenylalanine", "Phenylalanine"]
     end
 
     @testset "Sequence of two different codons translates into proteins" begin
-        @test rna_translator("UUAUUUUAG") == ["Leucine", "Phenylalanine"]
+        @test rna_to_amino_acids("UUAUUUUAG") == ["Leucine", "Phenylalanine"]
     end
 
     @testset "Translation stops if STOP codon appears in middle of sequence" begin
-        @test rna_translator("UGGUAAUGCAUG") == ["Tryptophan"]
+        @test rna_to_amino_acids("UGGUAAUGCAUG") == ["Tryptophan"]
     end
 
     @testset "Translation stops if STOP codon appears at beginning of sequence" begin
-        @test rna_translator("UAGUAUUCGUCAUCU") == []
+        @test rna_to_amino_acids("UAGUAUUCGUCAUCU") == []
     end
 
     @testset "Translation stops if STOP codon appears at end of two-codon sequence" begin
-        @test rna_translator("UGGUGUUGA") == ["Tryptophan", "Cysteine"]
+        @test rna_to_amino_acids("UGGUGUUGA") == ["Tryptophan", "Cysteine"]
     end
 
     @testset "Non existent codon causes translation exception" begin
-        @test_throws TranslationError rna_translator("AAA")
+        @test_throws TranslationError rna_to_amino_acids("AAA")
     end
 
     @testset "Incomplete codon causes translation exception" begin
-        @test_throws TranslationError rna_translator("UGUU")
+        @test_throws TranslationError rna_to_amino_acids("UGUU")
     end
 
     @testset "Incomplete RNA sequence can translate if given a stop codon" begin
-        @test rna_translator("UGGUGAUG") == ["Tryptophan"]
+        @test rna_to_amino_acids("UGGUGAUG") == ["Tryptophan"]
     end
 end
