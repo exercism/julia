@@ -2,7 +2,7 @@
 
 Write a function to solve alphametics puzzles.
 
-[Alphametics](https://en.wikipedia.org/wiki/Alphametics) is a puzzle where letters in words are replaced with numbers.
+[Alphametics][alphametics] is a puzzle where letters in words are replaced with numbers.
 
 For example `SEND + MORE = MONEY`:
 
@@ -28,5 +28,4 @@ Each letter must represent a different digit, and the leading digit of a multi-d
 
 Write a function to solve alphametics puzzles.
 
-You may (or may not!) want to call the function `permutations(a, t)` from [Combinatorics.jl](https://github.com/JuliaMath/Combinatorics.jl) in your solution.
-If you would like to use it, you can include the **read-only** file `permutations.jl` with `include("permutations.jl")`.
+[alphametics]: https://en.wikipedia.org/wiki/Alphametics

@@ -1,12 +1,23 @@
 # Instructions
 
-`(3, 4, 5)` and `(5, 12, 13)` are both Pythogorean triplets.
-A Pythagorean triplet is three natural numbers `(a, b, c)` such that: `a^2 + b^2 = c^2` and `a < b < c`.
+A Pythagorean triplet is a set of three natural numbers, {a, b, c}, for which,
 
-In this exercise you must find all Pythagorean triplets that sum to a target value `N` and return them in ascending order.
+```text
+a² + b² = c²
+```
 
-## Examples
+and such that,
 
-For `N = 24`, there is one triplet that sums to 24: `(6, 8, 10)`.
+```text
+a < b < c
+```
 
-For `N = 60`, there are two triplets that sum to 60: `(10, 24, 26)` and `(15, 20 , 25)`. You should return them in that order.
+For example,
+
+```text
+3² + 4² = 5².
+```
+
+Given an input integer N, find all Pythagorean triplets for which `a + b + c = N`.
+
+For example, with N = 1000, there is exactly one Pythagorean triplet for which `a + b + c = 1000`: `{200, 375, 425}`.
