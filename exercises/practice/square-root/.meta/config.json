@@ -1,5 +1,5 @@
 {
-  "blurb": "Calculate a positive integer's square root",
+  "blurb": "Given a natural radicand, return its square root.",
   "authors": [
     "golanor"
   ],

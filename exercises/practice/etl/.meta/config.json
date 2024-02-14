@@ -1,5 +1,5 @@
 {
-  "blurb": "We are going to do the `Transform` step of an Extract-Transform-Load.",
+  "blurb": "Change the data format for scoring a game to more easily add other languages.",
   "authors": [
     "andrej-makarov-skrt"
   ],
@@ -19,6 +19,6 @@
       ".meta/example.jl"
     ]
   },
-  "source": "The Jumpstart Lab team",
-  "source_url": "http://jumpstartlab.com"
+  "source": "Based on an exercise by the JumpstartLab team for students at The Turing School of Software and Design.",
+  "source_url": "https://turing.edu"
 }
