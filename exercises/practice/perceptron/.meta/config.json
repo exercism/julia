@@ -1,7 +1,5 @@
 {
-  "authors": [
-    "depial"
-  ],
+  "authors": [],
   "contributors": [
     "cmcaine"
   ],
@@ -16,5 +14,5 @@
       ".meta/example.jl"
     ]
   },
-  "blurb": "Write your own machine learning classifier"
+  "blurb": "Write your own machine learning algorithm"
 }
