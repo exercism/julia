@@ -1,14 +1,20 @@
+[b8feac03-a063-44c9-8867-330cce110e6f]
+description = "Boundary is a vector of three weights"
+
+[7220e861-e8f6-4d5f-b45a-8750e5146010]
+description = "Weights are Real numbers"
+
 [728853d3-24de-4855-a452-6520b67dec23]
-description = "Initial set"
+description = "Initial population"
 
 [ed5bf871-3923-47ca-8346-5d640f9069a0]
-description = "Initial set w/ opposite labels"
+description = "Initial population w/ opposite labels"
 
 [15a9860e-f9be-46b1-86b2-989bd878c8a5]
-description = "Hyperplane cannot pass through origin"
+description = "Decision boundary cannot pass through origin"
 
 [52ba77fc-8983-4429-91dc-e64b2f625484]
-description = "Hyperplane nearly parallel with y-axis"
+description = "Decision boundary nearly parallel with y-axis"
 
 [3e758bbd-5f72-447d-999f-cfa60b27bc26]
 description = "Increasing Populations"
