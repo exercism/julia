@@ -1,44 +1,54 @@
 using Test, Random
 include("perceptron.jl")
 
+@testset "Boundary is a vector of three weights" begin
+    decisionboundary = perceptron([[-1,-1], [1, 0], [0, 1]], [-1, 1, 1])
+    @test length(decisionboundary) == 3
+end
+
+@testset "Weights are Real numbers" begin
+    decisionboundary = perceptron([[-1,-1], [1, 0], [0, 1]], [-1, 1, 1])
+    @test eltype(decisionboundary) <: Real
+end
+
 function runtestset()
     
-    @testset "Low population" begin
-        @testset "Initial set" begin
-            points = [[1, 2], [3, 4], [-1, -2], [-3, -4], [2, 1], [1, 1]]
-            labels = [1, 1, -1, -1, 1, 1]
-            reference = [1, 2, 1]
-            hyperplane = perceptron(points, labels)
-            @test dotest(points, labels, hyperplane, reference)
+    @testset "Low populations" begin
+        @testset "Initial population" begin
+            points = [[-1, 0], [0, -1], [1, 0], [0, 1]]
+            labels = [-1, -1, 1, 1]
+            reference = [0, 1, 1]
+            decisionboundary = perceptron(points, labels)
+            @test isvalidboundary(points, labels, decisionboundary, reference)
         end
-        @testset "Initial set w/ opposite labels" begin
-            points = [[1, 2], [3, 4], [-1, -2], [-3, -4], [2, 1], [1, 1]]
-            labels = [-1, -1, 1, 1, -1, -1]
-            reference = [-1, -2, -1]
-            hyperplane = perceptron(points, labels)
-            @test dotest(points, labels, hyperplane, reference)
+        @testset "Initial population w/ opposite labels" begin
+            points = [[-1, 0], [0, -1], [1, 0], [0, 1]]
+            labels = [1, 1, -1, -1]
+            reference = [0, -1, -1]
+            decisionboundary = perceptron(points, labels)
+            @test isvalidboundary(points, labels, decisionboundary, reference)
         end
-        @testset "Hyperplane cannot pass through origin" begin
-            points = [[1, 2], [3, 4], [-1, -2], [-3, -4], [2, 1], [-1, -1]]
-            labels = [1, 1, -1, -1, 1, 1]
-            reference = [-1, 3, 3]
-            hyperplane = perceptron(points, labels)
-            @test dotest(points, labels, hyperplane, reference)
+        @testset "Decision boundary cannot pass through origin" begin
+            points = [[1, 0], [0, 1], [2, 1], [1, 2]]
+            labels = [-1, -1, 1, 1]
+            reference = [-2, 1, 1]
+            decisionboundary = perceptron(points, labels)
+            @test isvalidboundary(points, labels, decisionboundary, reference)
         end
-        @testset "Hyperplane nearly parallel with y-axis" begin
-            points = [[0, 50], [0, -50], [-2, 0], [1, 50], [1, -50], [2, 0]]
-            labels = [-1, -1, -1, 1, 1, 1]
-            reference = [2, 0, -1]
-            hyperplane = perceptron(points, labels)
-            @test dotest(points, labels, hyperplane, reference)
+        @testset "Decision boundary nearly parallel with y-axis" begin
+            points = [[0, 50], [0, -50], [1, 50], [1, -50]]
+            labels = [-1, -1, 1, 1]
+            reference = [-1, 2, 0]
+            decisionboundary = perceptron(points, labels)
+            @test isvalidboundary(points, labels, decisionboundary, reference)
         end
     end
     
     @testset "Increasing Populations" begin
         for n in 10:50
             points, labels, reference = population(n, 25)
-            hyperplane = perceptron(points, labels)
-            @test dotest(points, labels, hyperplane, reference)
+            decisionboundary = perceptron(points, labels)
+            @test isvalidboundary(points, labels, decisionboundary, reference)
         end
     end
     
@@ -67,17 +77,17 @@ function population(n, bound)
     points, labels, hyperplane
 end 
 
-function dotest(points, labels, hyperplane, reference)
+function isvalidboundary(points, labels, hyperplane, reference)
     points = vcat.(1, points)
     test = reduce(hcat, points)' * hyperplane .* labels
     if all(>(0), test)
-        println("Reference hyperplane = $reference\nYour hyperplane = $hyperplane\nSeparated! And the normal points towards the positively labeled side\n")
+        println("Reference hyperplane = $reference\nYour hyperplane = $hyperplane\nSeparated! And the normal points towards the positively labeled class\n")
         return true
     elseif all(<(0), test)
-        println("Reference hyperplane = $reference\nYour hyperplane = $hyperplane\nSeparated! But the normal points towards the negatively labeled side\n")
-        return true
+        println("Reference hyperplane = $reference\nYour hyperplane = $hyperplane\nSeparated! But the normal points towards the negatively labeled class\n")
+        return false
     else
-        println("Reference hyperplane = $reference\nYour hyperplane = $hyperplane\nThe sides are not properly separated...\n")
+        println("Reference hyperplane = $reference\nYour hyperplane = $hyperplane\nThe classes are not properly separated\n")
         return false
     end
 end
