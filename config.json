@@ -875,14 +875,6 @@
         ]
       },
       {
-        "slug": "space-age",
-        "name": "Space Age",
-        "uuid": "f4bfe822-90cc-4183-8a50-081ff0fdb512",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 2
-      },
-      {
         "uuid": "b43a938a-7bd2-4fe4-b16c-731e2e25e747",
         "practices": [],
         "prerequisites": [],
@@ -896,6 +888,14 @@
           "logic",
           "math"
         ]
+      },
+      {
+        "slug": "space-age",
+        "name": "Space Age",
+        "uuid": "f4bfe822-90cc-4183-8a50-081ff0fdb512",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
       }
     ]
   },
