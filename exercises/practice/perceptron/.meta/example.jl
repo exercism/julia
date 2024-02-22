@@ -8,26 +8,26 @@ end
 function update(point, label, hyperplane)
     # Takes one point, its label and a hyperplane
     # Updates the hyperplane conditional on classification not matching the label
-    # Returns the Perceptron updated hyperplane
-    (classify(point, hyperplane) != label) * label * point
+    # Returns a vector, the Perceptron updated hyperplane
+    hyperplane + (classify(point, hyperplane) != label) * label * point
 end
 
 function step(points, labels, hyperplane)
     # Takes a vector of points, a vector of their associated labels and a hyperplane
     # Iteratively updates the hyperplane for each point/label pair
-    # Returns true/false if a valid decision boundary and the decision boundary/hyperplane
+    # Returns a tuple: (true/false, decision boundary/hyperplane) for valid/invalid decision boundary, respectively
     decisionboundary = hyperplane
-    foreach(i -> hyperplane += update(points[i], labels[i], hyperplane), eachindex(points))
+    foreach(i -> hyperplane = update(points[i], labels[i], hyperplane), eachindex(points))
     decisionboundary == hyperplane, hyperplane
 end
 
 function perceptron(points, labels)
     # Takes a vector of linearly separable points and a vector of their associated labels
     # Performs steps of the Perceptron algorithm until a valid decision boundary is found
-    # Returns a valid decision boundary for the provided population of labeled points
-    hyperplane, pnts = [0, 0, 0], vcat.(1, points)
+    # Returns a vector, a valid decision boundary for the provided population of labeled points
+    hyperplane, points = [0, 0, 0], vcat.(1, points)
     while true
-        isdecisionboundary, hyperplane = step(pnts, labels, hyperplane)
+        isdecisionboundary, hyperplane = step(points, labels, hyperplane)
         isdecisionboundary && return hyperplane
     end
 end
