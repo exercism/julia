@@ -69,7 +69,7 @@ end
 
 function population(n, bound)
     v = !iszero(n % 10)
-    x, y, b = rand(-bound:bound), rand(-bound:bound)*vertical, rand(-bound÷2:bound÷2)v
+    b, x, y = rand(-bound÷2:bound÷2), rand(-bound:bound), rand(-bound:bound)v
     y_intercept = -b ÷ (iszero(y) ? 1 : y)
     points, labels, hyperplane = [], [], [b, x, y]
     while n > 0
