@@ -66,16 +66,13 @@ function runtestset()
 end
 
 
-function population(n, bound)
-    # Builds a population of n points with labels {1, -1} in area bound x bound around a reference hyperplane
-    # Returns linearly separable points, labels and reference hyperplane
 
-    vertical = !iszero(n % 10) #every tenth test has vertical reference hyperplane
-    x, y, b = rand(-bound:bound), rand(-bound:bound)*vertical, rand(-bound÷2:bound÷2)
+function population(n, bound)
+    v = !iszero(n % 10)
+    x, y, b = rand(-bound:bound), rand(-bound:bound)*vertical, rand(-bound÷2:bound÷2)v
     y_intercept = -b ÷ (iszero(y) ? 1 : y)
     points, labels, hyperplane = [], [], [b, x, y]
     while n > 0
-        # points are centered on y-intercept, but not x-intercept so distributions can be lopsided
         point = [rand(-bound:bound), y_intercept + rand(-bound:bound)]
         label = point' * [x, y] + b
         if !iszero(label)
@@ -84,14 +81,9 @@ function population(n, bound)
             n -= 1
         end
     end
-
     points, labels
 end 
+isvalidboundary(points, labels, db) = all(>(0), reduce(hcat, vcat.(1, points))' * db .* labels)
 
-function isvalidboundary(points, labels, decisionboundary)
-    points = vcat.(1, points)
-    all(>(0), reduce(hcat, points)' * decisionboundary .* labels)
-end
-
-Random.seed!(42) # set seed for deterministic test set
+Random.seed!(42)
 runtestset()
