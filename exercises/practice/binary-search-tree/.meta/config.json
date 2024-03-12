@@ -1,0 +1,16 @@
+{
+  "authors": [],
+  "files": {
+    "solution": [
+      "binary-search-tree.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
+  },
+  "blurb": "Insert and search for numbers in a binary tree.",
+  "source": "Josh Cheek"
+}
