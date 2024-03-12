@@ -378,6 +378,18 @@
         ]
       },
       {
+        "slug": "binary-search-tree",
+        "name": "Binary Search Tree",
+        "uuid": "00246993-4917-41f0-8289-b299b9964aba",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7,
+        "topics": [
+          "structs",
+          "data_structures"
+        ]
+      },
+      {
         "slug": "atbash-cipher",
         "name": "Atbash Cipher",
         "uuid": "a4638670-941d-4213-8407-d9ebba70bd42",
@@ -875,11 +887,11 @@
         ]
       },
       {
+        "slug": "perceptron",
+        "name": "Perceptron",
         "uuid": "b43a938a-7bd2-4fe4-b16c-731e2e25e747",
         "practices": [],
         "prerequisites": [],
-        "slug": "perceptron",
-        "name": "Perceptron",
         "difficulty": 3,
         "topics": [
           "machine learning",
@@ -896,6 +908,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
+      },
+      {
+        "slug": "binary-search-tree",
+        "name": "Binary Search Tree",
+        "uuid": "f5df0c95-30c7-40f3-8ec6-fcfb3e28cdf4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
       }
     ]
   },
