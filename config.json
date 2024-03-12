@@ -910,6 +910,14 @@
         "difficulty": 2
       },
       {
+        "slug": "two-fer",
+        "name": "Two-Fer",
+        "uuid": "91a8a9c0-041c-4e2e-97fc-dae149ef69f9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
         "slug": "binary-search-tree",
         "name": "Binary Search Tree",
         "uuid": "f5df0c95-30c7-40f3-8ec6-fcfb3e28cdf4",
