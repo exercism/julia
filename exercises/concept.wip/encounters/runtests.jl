@@ -2,17 +2,31 @@ using Test
 
 include("encounters.jl")
 
+# define a new type of Pet to test the fallback
+# this belongs to a testset below but struct definitions within the local scope of testsets are not supported in Julia <1.1
+struct Horse <: Pet
+    name::String
+end
+name(h::Horse) = h.name
+
+struct Car
+    license_plate::String
+end
+name(c::Car) = c.license_plate
+
+# create some pets
+buddy = Dog("Buddy")
+sadie = Dog("Sadie")
+minka = Cat("Minka")
+felix = Cat("Felix")
+jenny = Horse("Jenny")
+car = Car("W-12345X")
+
 @testset verbose = true "tests" begin
     @testset "type abstraction" begin
         @test Dog <: Pet
         @test Cat <: Pet
     end
-
-    # create some pets
-    buddy = Dog("Buddy")
-    sadie = Dog("Sadie")
-    minka = Cat("Minka")
-    felix = Cat("Felix")
 
     @testset "names" begin
         @test name(buddy) == "Buddy"
@@ -28,15 +42,6 @@ include("encounters.jl")
         @test encounter(felix, minka) == "Felix meets Minka and slinks."
     end
 
-    # define a new type of Pet to test the fallback
-    # this belongs to the testset below but struct definitions within the local scope of testsets are not supported in Julia <1.1
-    struct Horse <: Pet
-        name::String
-    end
-    name(h::Horse) = h.name
-
-    jenny = Horse("Jenny")
-
     @testset "pet fallbacks" begin
         @test encounter(buddy, jenny) == "Buddy meets Jenny and is cautious."
         @test encounter(sadie, jenny) == "Sadie meets Jenny and is cautious."
@@ -48,13 +53,6 @@ include("encounters.jl")
         @test encounter(jenny, minka) == "Jenny meets Minka and is cautious."
         @test encounter(jenny, felix) == "Jenny meets Felix and is cautious."
     end
-
-    struct Car
-        license_plate::String
-    end
-    name(c::Car) = c.license_plate
-
-    car = Car("W-12345X")
 
     @testset "non-pet fallback" begin
         @test encounter(buddy, car) == "Buddy meets W-12345X and runs away."
