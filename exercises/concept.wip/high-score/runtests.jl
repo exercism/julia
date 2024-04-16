@@ -2,7 +2,7 @@ using Test
 
 include("high-score.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "Adding players" begin
         @testset "Add player with score to empty score dict" begin
             scores = Dict{String, Int}()

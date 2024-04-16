@@ -2,7 +2,7 @@ using Test
 
 include("sum-of-multiples.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "no multiples within limit" begin
         @test sum_of_multiples(1, [3, 5]) == 0
     end

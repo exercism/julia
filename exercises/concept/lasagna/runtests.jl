@@ -2,7 +2,7 @@ using Test
 
 include("lasagna.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "preparation time" begin
         @test preptime(2) == 4
         @test preptime(3) == 6

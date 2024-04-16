@@ -2,7 +2,7 @@ using Test
 
 include("secret-handshake.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "wink for 1" begin
         @test secret_handshake(1) == ["wink"]
     end

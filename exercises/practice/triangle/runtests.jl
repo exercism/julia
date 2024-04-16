@@ -2,7 +2,7 @@ using Test
 
 include("triangle.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "check equilateral triangles" begin
         @testset "true if all sides are equal" begin
             @test is_equilateral([2, 2, 2])

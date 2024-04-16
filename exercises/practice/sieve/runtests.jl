@@ -2,7 +2,7 @@ using Test
 
 include("sieve.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "no primes under two" begin
         @test sieve(1) == []
     end

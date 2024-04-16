@@ -2,7 +2,7 @@ using Test
 
 include("largest-series-product.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "finds the largest product if span equals length" begin
         @test largest_product("29", 2) == 18
     end

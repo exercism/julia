@@ -34,7 +34,7 @@ samples = Dict(
     3999 => "MMMCMXCIX",
 )
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "convert $(sample[1]) to roman numeral" for sample in samples
         @test to_roman(sample[1]) == sample[2]
     end

@@ -2,7 +2,7 @@ using Test
 
 include("hamming.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "identical strands" begin
         @test distance("A", "A") == 0
         @test distance("GGACTGA", "GGACTGA") == 0

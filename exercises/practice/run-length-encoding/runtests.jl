@@ -6,7 +6,7 @@ include("run-length-encoding.jl")
 # Tests adapted from `problem-specifications//canonical-data.json` @ v1.0.0
 # Encode and decode the strings under the given specifications.
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "encode strings" begin
         @test encode("") == ""
         @test encode("XYZ") == "XYZ"

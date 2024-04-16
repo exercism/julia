@@ -2,7 +2,7 @@ using Test
 
 include("custom-set.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     # canonical data
     @testset "empty" begin
         @test  isempty(CustomSet([]))

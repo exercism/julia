@@ -34,7 +34,7 @@ const invalid_num = (
         "1 (223) 156-7890",
 )
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "clean 10-digit number" begin
         @testset "$number" for number in valid_10digit_num
             @test clean(number) == expected_number

@@ -2,7 +2,7 @@ using Test
 
 include("etl.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "single letter" begin
         input = Dict(1=>['A'])
         output = Dict('a'=>1)

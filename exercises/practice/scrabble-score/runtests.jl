@@ -2,7 +2,7 @@ using Test
 
 include("scrabble-score.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "lowercase letter" begin
         @test score("a") == 1
     end

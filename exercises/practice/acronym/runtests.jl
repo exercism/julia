@@ -2,7 +2,7 @@ using Test
 
 include("acronym.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "basic" begin
         @test acronym("Portable Network Graphics") == "PNG"
     end

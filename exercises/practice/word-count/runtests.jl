@@ -2,7 +2,7 @@ using Test
 
 include("word-count.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "no words" begin
         @test wordcount(" .\n,\t!^&*()~@#\$%{}[]:;'/<>") == Dict()
     end

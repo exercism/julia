@@ -2,7 +2,7 @@ using Test
 
 include("transpose.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "empty string" begin
         @test transpose_strings([]) == []
     end

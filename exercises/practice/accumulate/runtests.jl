@@ -2,7 +2,7 @@ using Test
 
 include("accumulate.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "multiply" begin
         @test accumulate(collect(1:10), *) == [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
     end

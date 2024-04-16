@@ -2,7 +2,7 @@ using Test
 
 include("two-fer.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "no name given" begin
         @test twofer() == "One for you, one for me."
     end

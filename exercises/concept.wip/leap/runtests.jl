@@ -2,7 +2,7 @@ using Test
 
 include("leap.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "year not divisible by 4 in common year" begin
         @test !isleapyear(2015)
     end

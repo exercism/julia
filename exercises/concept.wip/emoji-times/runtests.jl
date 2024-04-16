@@ -2,7 +2,7 @@ using Test
 
 include("emoji-times.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "Addition" begin
         @test 🕐 + 🕒 == 🕓
         @test 🕒 + 🕧 == 🕞

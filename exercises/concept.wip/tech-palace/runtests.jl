@@ -2,7 +2,7 @@ using Test
 
 include("welcome.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "1. Create the welcome message" begin
         @testset "Welcome message for customer with first letter capitalized" begin
             @test welcome("Formora") == "Welcome to the Tech Palace, FORMORA"

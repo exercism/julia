@@ -2,7 +2,7 @@ using Test
 
 include("space-age.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "age on Earth" begin
         result = onEarth(1000000000)
         expected = 31.60

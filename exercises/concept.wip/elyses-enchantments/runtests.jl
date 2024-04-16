@@ -2,7 +2,7 @@ using Test
 
 include("enchantments.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "Retrieve a card from a deck" begin
         @test card([1, 3, 4, 1], 2) == 3
         @test_throws BoundsError card([1, 3, 4, 1], 0)

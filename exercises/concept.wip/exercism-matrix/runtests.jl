@@ -2,7 +2,7 @@ using Test
 
 include("exercism-matrix.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "construct E" begin
         @test E == [
             0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 1 0 0;

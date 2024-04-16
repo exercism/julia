@@ -2,7 +2,7 @@ using Test
 
 include("anagram.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset verbose = true "Anagram" begin
         @testset "no matches" begin
             @test detect_anagrams("diaper", ["hello", "world", "zombies", "pants"]) == String[]

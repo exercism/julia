@@ -2,7 +2,7 @@ using Test
 
 include("prime-factors.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "no factors" begin
         @test prime_factors(1) == []
     end

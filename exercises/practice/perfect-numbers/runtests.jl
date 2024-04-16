@@ -2,7 +2,7 @@ using Test
 
 include("perfect-numbers.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "Perfect numbers" begin
 
         @testset "Smallest perfect number is classified correctly" begin

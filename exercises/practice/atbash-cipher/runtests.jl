@@ -2,7 +2,7 @@ using Test
 
 include("atbash-cipher.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "encoding from English to atbash" begin
         @test encode("yes") == "bvh"
         @test encode("no") == "ml"

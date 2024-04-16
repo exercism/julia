@@ -2,7 +2,7 @@ using Test
 
 include("matching-brackets.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "Determine if a pair of brackets are correctly matched" begin
         @test  matching_brackets("[]") 
         @test !matching_brackets("[[")

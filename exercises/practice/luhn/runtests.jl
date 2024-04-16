@@ -2,7 +2,7 @@ using Test
 
 include("luhn.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "invalid" begin
         @testset "single digit strings can not be valid" begin
             @test !luhn("1")

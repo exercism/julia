@@ -2,7 +2,7 @@ using Test
 
 include("encounters.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "type abstraction" begin
         @test Dog <: Pet
         @test Cat <: Pet

@@ -2,7 +2,7 @@ using Test
 
 include("alphametics.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "puzzle with three letters" begin
         @test solve("I + BB == ILL") == Dict(
             'I' => 1,

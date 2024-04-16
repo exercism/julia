@@ -12,7 +12,7 @@ function ischaracter(c)
         c.hitpoints == 10 + modifier(c.constitution)
 end
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "ability modifier" begin
         @test modifier(3) == -4
         @test modifier(4) == -3

@@ -5,7 +5,7 @@ include("game.jl")
 # This exercise isn't about mathematical methods to determine the distribution of a random sample,
 # therefore we only test that all possible values are returned at least once.
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "fog" begin
         @test Set(is_foggy() for _ in 1:1000) == Set([true, false])
     end

@@ -2,7 +2,7 @@ using Test
 
 include("enchantments.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "Determine if a card is present" begin
         @test has_card([2, 3, 4, 5], 3)
     end

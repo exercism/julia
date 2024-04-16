@@ -2,7 +2,7 @@ using Test
 
 include("rational-numbers.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @test RationalNumber <: Real
     @test_throws ArgumentError RationalNumber(0, 0)
 

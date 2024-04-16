@@ -2,7 +2,7 @@ using Test
 
 include("grains.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "beginning squares" begin
         @test on_square(1) == 1
         @test on_square(2) == 2

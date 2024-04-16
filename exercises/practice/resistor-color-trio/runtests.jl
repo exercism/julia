@@ -2,7 +2,7 @@ using Test
 
 include("resistor-color-trio.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "Orange and orange and black" begin
         @test label(["orange", "orange", "black"]) == "33 ohms"
     end

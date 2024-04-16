@@ -9,7 +9,7 @@ const history = Set{String}()
 
 isname(x) = occursin(r"^[A-Z]{2}[0-9]{3}$", x)
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "one robot" begin
         global r1 = Robot()
         push!(history, name(r1))

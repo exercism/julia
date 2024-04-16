@@ -2,7 +2,7 @@ using Test
 
 include("vehicle-purchase.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "Affordability" begin
         @test canibuy("1974 Ford Pinto", 516, 100) == "Yes! I'm getting a 1974 Ford Pinto."
         @test canibuy("2014 Bugatti Veyron", 562_500, 5000) == "Damn! No 2014 Bugatti Veyron for me."

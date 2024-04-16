@@ -2,7 +2,7 @@ using Test, Random
 
 include("square-root.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "Different valid values" begin
         @testset "Square root of 1 is 1" begin
             @test square_root(1) == 1.0

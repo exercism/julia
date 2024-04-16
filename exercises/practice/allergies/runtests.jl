@@ -2,7 +2,7 @@ using Test
 
 include("allergies.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     #canonical data
     @testset "testing for single allergies" begin
         @testset "testing for eggs allergy" begin

@@ -2,7 +2,7 @@ using Dates, Test
 
 include("clock.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "Create a new clock with an initial time" begin
         # on the hour
         @test Clock(8, 0) == Clock(8, 0)

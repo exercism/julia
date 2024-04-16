@@ -2,7 +2,7 @@ using Test
 
 include("namebadge.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "Full data" begin
         @test badge(455, "Mary M. Brown", "MARKETING") == "[455] - Mary M. Brown - MARKETING"
     end

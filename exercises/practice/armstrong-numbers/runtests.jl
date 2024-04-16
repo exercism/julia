@@ -2,7 +2,7 @@ using Test
 
 include("armstrong-numbers.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "armstrong numbers" begin
         @test  isarmstrong(0)
         @test  isarmstrong(5)

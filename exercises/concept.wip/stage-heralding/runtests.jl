@@ -2,7 +2,7 @@ using Test
 
 include("card-generator.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "Speedrunning 101" begin
         @test generate_card("»Speedrunning 101« – Sasha Duda Krall (they/them), from GDQU. Start: 13:00, Q&A: 13:20, End: 13:30") == """
             - Our next speaker is Sasha Duda Krall, from GDQU

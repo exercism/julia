@@ -9,7 +9,7 @@ if VERSION < v"1.1"
     @eval eachrow(A) = (view(A, i, :) for i in axes(A, 1))
 end
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "fast attack" begin
         @test !can_do_fast_attack(true)
         @test  can_do_fast_attack(false)

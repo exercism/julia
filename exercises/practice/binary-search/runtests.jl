@@ -2,7 +2,7 @@ using Test
 
 include("binary-search.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "default binary search" begin
         @testset "value in array" begin
             @test binarysearch([6], 6) == 1:1

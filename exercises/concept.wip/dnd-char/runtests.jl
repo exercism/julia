@@ -2,7 +2,7 @@ using Test
 
 include("dnd-character.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "Randomly generated ability is within range" begin
         for i in 1:1000
             @test 3 <= ability() <= 18

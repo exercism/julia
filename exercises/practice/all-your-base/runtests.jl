@@ -2,7 +2,7 @@ using Test
 
 include("all-your-base.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "single bit one to decimal" begin
         @test all_your_base([1], 2, 10) == [1]
     end

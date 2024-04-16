@@ -2,7 +2,7 @@ using Test
 
 include("spiral-matrix.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "Different valid values" begin
         @testset "Empty spiral" begin
             @test spiral_matrix(0) == Matrix{Int}(undef,0,0)

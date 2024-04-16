@@ -2,7 +2,7 @@ using Test
 
 include("robot-simulator.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "constructor" begin
         r = Robot((0, 0), NORTH)
         @test position(r) == Point(0, 0)

@@ -2,7 +2,7 @@ using Test
 
 include("trinary.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "trinary 1 is decimal 1" begin
         @test trinary_to_decimal("1") == 1
     end

@@ -15,7 +15,7 @@ macro test_nothrow(expr)
     :(@test ( $expr; true ))
 end
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "valid ISBNs don't throw" begin
         # ISBN number
         @test_nothrow ISBN("3-598-21508-8")

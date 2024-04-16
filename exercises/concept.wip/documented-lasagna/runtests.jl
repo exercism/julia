@@ -22,7 +22,7 @@ function hasdocstring(s::Symbol)
     haskey(meta, Docs.Binding(@__MODULE__, s))
 end
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "solution still works" begin
         @test preptime(2) == 4
         @test preptime(3) == 6

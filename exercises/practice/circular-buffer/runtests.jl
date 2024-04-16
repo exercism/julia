@@ -2,7 +2,7 @@ using Test
 
 include("circular-buffer.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "reading empty buffer should fail" begin
         cb = CircularBuffer{Int}(1)
         @test_throws BoundsError popfirst!(cb)

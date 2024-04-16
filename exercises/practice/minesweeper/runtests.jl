@@ -2,7 +2,7 @@ using Test
 
 include("minesweeper.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "no rows" begin
         @test annotate([]) == []
     end

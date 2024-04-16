@@ -58,7 +58,7 @@ response = Dict(
         :forceful_question => "Calm down, I know what I'm doing!",
 )
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "questions" begin
         @testset "$question" for question in questions
             @test bob(question) == response[:question]
