@@ -2,7 +2,7 @@ using Test
 
 include("rna-transcription.jl")
 
-@testset verbose = true "RNA Transcription" begin
+@testset verbose = true "" begin
     @testset "basic transformations" begin
         @testset "empty rna sequence" begin
             @test to_rna("") == ""

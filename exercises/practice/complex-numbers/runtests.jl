@@ -2,7 +2,7 @@ using Test
 
 include("complex-numbers.jl")
 
-@testset verbose = true "Complex Numbers" begin
+@testset verbose = true "" begin
     @test ComplexNumber <: Number
 
     @test ComplexNumber(0, 1)^2 == ComplexNumber(-1, 0)

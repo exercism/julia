@@ -1,7 +1,7 @@
 using Test
 include("pythagorean-triplet.jl")
 
-@testset verbose = true "Pythagorean Triplet" begin
+@testset verbose = true "" begin
     @testset "triplets whose sum is 12" begin
         @test pythagorean_triplets(12) == [(3, 4, 5)]
     end

@@ -2,7 +2,7 @@ using Test
 
 include("reverse-string.jl")
 
-@testset verbose = true "Reverse String" begin
+@testset verbose = true "" begin
     @testset "an empty string" begin
         @test myreverse("") == ""
     end

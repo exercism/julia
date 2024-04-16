@@ -2,7 +2,7 @@ using Test
 
 include("saddle-points.jl")
 
-@testset verbose = true "Saddle Points" begin
+@testset verbose = true "" begin
     @testset "Can identify single saddle point" begin
         M = Int[9 8 7; 5 3 2; 6 6 7]
         @test saddlepoints(M) == NTuple{2,Int}[(2, 1)]

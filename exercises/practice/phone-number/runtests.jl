@@ -34,20 +34,22 @@ const invalid_num = (
         "1 (223) 156-7890",
 )
 
-@testset "clean 10-digit number" begin
-    @testset "$number" for number in valid_10digit_num
-        @test clean(number) == expected_number
+@testset verbose = true "" begin
+    @testset "clean 10-digit number" begin
+        @testset "$number" for number in valid_10digit_num
+            @test clean(number) == expected_number
+        end
     end
-end
 
-@testset "clean 11-digit number starting with 1" begin
-    @testset "$number" for number in valid_11digit_num
-        @test clean(number) == expected_number
+    @testset "clean 11-digit number starting with 1" begin
+        @testset "$number" for number in valid_11digit_num
+            @test clean(number) == expected_number
+        end
     end
-end
 
-@testset "detect invalid number" begin
-    @testset "$number" for number in invalid_num
-        @test_throws ArgumentError clean(number)
+    @testset "detect invalid number" begin
+        @testset "$number" for number in invalid_num
+            @test_throws ArgumentError clean(number)
+        end
     end
 end
