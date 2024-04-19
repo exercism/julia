@@ -2,7 +2,7 @@ using Test
 
 include("connect.jl")
 
-@testset verbose = true "" begin
+@testset verbose = true "tests" begin
     @testset "an empty board has no winner" begin
         board = [
             ". . . . .",
