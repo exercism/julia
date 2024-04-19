@@ -67,11 +67,11 @@ include("protein-translation.jl")
     end
 
     @testset "Non existent codon causes translation exception" begin
-        @test_throws TranslationError rna_to_amino_acids("AAA")
+        @test_throws ArgumentError rna_to_amino_acids("AAA")
     end
 
     @testset "Incomplete codon causes translation exception" begin
-        @test_throws TranslationError rna_to_amino_acids("UGUU")
+        @test_throws ArgumentError rna_to_amino_acids("UGUU")
     end
 
     @testset "Incomplete RNA sequence can translate if given a stop codon" begin
