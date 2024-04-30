@@ -2,7 +2,7 @@ using Test
 
 include("nucleotide-count.jl")
 
-@testset verbose = true "Nucleotide Count" begin
+@testset verbose = true "tests" begin
     @testset "empty strand" begin
         @test count_nucleotides("") == Dict('A' => 0, 'C' => 0, 'G' => 0, 'T' => 0)
     end

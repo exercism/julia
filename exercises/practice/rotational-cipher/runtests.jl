@@ -2,7 +2,7 @@ using Test
 
 include("rotational-cipher.jl")
 
-@testset verbose = true "Rotational Cipher" begin
+@testset verbose = true "tests" begin
     @testset "rotate function" begin
         @testset "rotate by n" begin
             @testset "no wrap" begin

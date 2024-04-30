@@ -2,7 +2,7 @@ using Test
 
 include("collatz-conjecture.jl")
 
-@testset verbose = true "Collatz Conjecture" begin
+@testset verbose = true "tests" begin
     # canonical data
     @testset "Canonical data" begin
         @test collatz_steps(1) == 0
