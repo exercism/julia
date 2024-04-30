@@ -2,7 +2,7 @@ using Test
 
 include("raindrops.jl")
 
-@testset verbose = true "Raindrops" begin
+@testset verbose = true "tests" begin
     @testset "detect numbers" begin
         @testset "the sound for 1 is 1" begin
           @test raindrops(1) == "1"

@@ -2,7 +2,7 @@ using Test
 
 include("darts.jl")
 
-@testset verbose = true "Darts" begin
+@testset verbose = true "tests" begin
     @testset "Missed target" begin
         @test score(-9, 9) == 0
     end

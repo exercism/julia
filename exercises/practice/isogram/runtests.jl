@@ -2,7 +2,7 @@ using Test
 
 include("isogram.jl")
 
-@testset verbose = true "Isogram" begin
+@testset verbose = true "tests" begin
     @testset "empty string" begin
         @test isisogram("")
     end
