@@ -1,5 +1,5 @@
 {
-  "authors": ["kytrinyx"],
+  "authors": ["depial"],
   "files": {
     "solution": [
       "connect.jl"
