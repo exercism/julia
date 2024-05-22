@@ -1,5 +1,5 @@
 {
-  "authors": ["depial"],
+  "authors": [],
   "files": {
     "solution": [
       "connect.jl"
