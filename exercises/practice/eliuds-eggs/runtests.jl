@@ -2,7 +2,7 @@ using Test
 
 include("eliuds-eggs.jl")
 
-@testset verbose = true "Eliud's Eggs" begin
+@testset verbose = true "tests" begin
     @testset "0 eggs" begin
         @test eggcount(0) == 0
     end
