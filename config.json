@@ -883,6 +883,14 @@
         "difficulty": 2
       },
       {
+        "slug": "eliuds-eggs",
+        "name": "Eliud's Eggs",
+        "uuid": "cc2a6031-d5fa-465b-aa28-13186d7eb202",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
         "slug": "two-fer",
         "name": "Two-Fer",
         "uuid": "91a8a9c0-041c-4e2e-97fc-dae149ef69f9",
@@ -897,7 +905,7 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 5
-      }      
+      }
     ]
   },
   "concepts": [
