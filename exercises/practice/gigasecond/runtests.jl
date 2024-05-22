@@ -11,6 +11,8 @@ samples = Dict(
     DateTime("2015-01-24T23:59:59") => DateTime("2046-10-03T01:46:39")
 )
 
-@testset "add gigasecond to $sample[1]" for sample in samples
-    @test add_gigasecond(sample[1]) == sample[2]
+@testset verbose = true "tests" begin
+    @testset "add gigasecond to $sample[1]" for sample in samples
+        @test add_gigasecond(sample[1]) == sample[2]
+    end
 end

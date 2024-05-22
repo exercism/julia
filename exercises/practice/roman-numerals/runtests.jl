@@ -34,11 +34,13 @@ samples = Dict(
     3999 => "MMMCMXCIX",
 )
 
-@testset "convert $(sample[1]) to roman numeral" for sample in samples
-    @test to_roman(sample[1]) == sample[2]
-end
+@testset verbose = true "tests" begin
+    @testset "convert $(sample[1]) to roman numeral" for sample in samples
+        @test to_roman(sample[1]) == sample[2]
+    end
 
-@testset "error handling" begin
-    @test_throws ErrorException to_roman(0)
-    @test_throws ErrorException to_roman(-2017)
+    @testset "error handling" begin
+        @test_throws ErrorException to_roman(0)
+        @test_throws ErrorException to_roman(-2017)
+    end
 end

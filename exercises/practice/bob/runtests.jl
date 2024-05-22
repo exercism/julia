@@ -58,32 +58,34 @@ response = Dict(
         :forceful_question => "Calm down, I know what I'm doing!",
 )
 
-@testset "questions" begin
-    @testset "$question" for question in questions
-        @test bob(question) == response[:question]
+@testset verbose = true "tests" begin
+    @testset "questions" begin
+        @testset "$question" for question in questions
+            @test bob(question) == response[:question]
+        end
     end
-end
 
-@testset "yelling" begin
-    @testset "$yell" for yell in yells
-        @test bob(yell) == response[:yelling]
+    @testset "yelling" begin
+        @testset "$yell" for yell in yells
+            @test bob(yell) == response[:yelling]
+        end
     end
-end
 
-@testset "silence" begin
-    @testset "$silence" for silence in silences
-        @test bob(silence) == response[:silence]
+    @testset "silence" begin
+        @testset "$silence" for silence in silences
+            @test bob(silence) == response[:silence]
+        end
     end
-end
 
-@testset "misc" begin
-    @testset "$misc" for misc in miscs
-        @test bob(misc) == response[:misc]
+    @testset "misc" begin
+        @testset "$misc" for misc in miscs
+            @test bob(misc) == response[:misc]
+        end
     end
-end
 
-@testset "forceful questions" begin
-    @testset "$question" for question in forceful_questions
-        @test bob(question) == response[:forceful_question]
-    end 
+    @testset "forceful questions" begin
+        @testset "$question" for question in forceful_questions
+            @test bob(question) == response[:forceful_question]
+        end 
+    end
 end
