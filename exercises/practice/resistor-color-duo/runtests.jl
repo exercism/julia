@@ -2,7 +2,7 @@ using Test
 
 include("resistor-color-duo.jl")
 
-@testset verbose = true "Resistor Color Duo" begin
+@testset verbose = true "tests" begin
     @testset "Brown and black" begin
         @test colorcode(["brown", "black"]) == 10
     end
