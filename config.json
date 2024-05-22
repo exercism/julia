@@ -889,7 +889,15 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
-      }
+      },
+      {
+        "slug": "connect",
+        "name": "Connect",
+        "uuid": "6cd9edb0-35ba-4f32-b51b-a734d98e3a88",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      }      
     ]
   },
   "concepts": [
