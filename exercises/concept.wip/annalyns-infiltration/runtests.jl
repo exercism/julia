@@ -9,61 +9,63 @@ if VERSION < v"1.1"
     @eval eachrow(A) = (view(A, i, :) for i in axes(A, 1))
 end
 
-@testset "fast attack" begin
-    @test !can_do_fast_attack(true)
-    @test  can_do_fast_attack(false)
-end
-
-@testset "spying" begin
-    character_state_combinations = Bool[
-        0 0 0 0;
-        0 0 1 1;
-        0 1 0 1;
-        0 1 1 1;
-        1 0 0 1;
-        1 0 1 1;
-        1 1 1 1;
-    ]
-
-    for state in eachrow(character_state_combinations)
-        @test can_spy(state[1:3]...) == state[4]
+@testset verbose = true "tests" begin
+    @testset "fast attack" begin
+        @test !can_do_fast_attack(true)
+        @test  can_do_fast_attack(false)
     end
-end
 
-@testset "signaling prisoner" begin
-    character_state_combinations = Bool[
-        0 0 0;
-        0 1 1;
-        1 0 0;
-        1 1 0;
-    ]
+    @testset "spying" begin
+        character_state_combinations = Bool[
+            0 0 0 0;
+            0 0 1 1;
+            0 1 0 1;
+            0 1 1 1;
+            1 0 0 1;
+            1 0 1 1;
+            1 1 1 1;
+        ]
 
-    for state in eachrow(character_state_combinations)
-        @test can_signal_prisoner(state[1:2]...) == state[3]
+        for state in eachrow(character_state_combinations)
+            @test can_spy(state[1:3]...) == state[4]
+        end
     end
-end
 
-@testset "freeing prisoner" begin
-    character_state_combinations = Bool[
-        0 0 0 0 0;
-        0 0 0 1 1;
-        0 0 1 0 1;
-        0 0 1 1 1;
-        0 1 0 0 0;
-        0 1 0 1 0;
-        0 1 1 0 0;
-        0 1 1 1 0;
-        1 0 0 0 0;
-        1 0 0 1 1;
-        1 0 1 0 0;
-        1 0 1 1 1;
-        1 1 0 0 0;
-        1 1 0 1 0;
-        1 1 1 0 0;
-        1 1 1 1 0;
-    ]
+    @testset "signaling prisoner" begin
+        character_state_combinations = Bool[
+            0 0 0;
+            0 1 1;
+            1 0 0;
+            1 1 0;
+        ]
 
-    for state in eachrow(character_state_combinations)
-        @test can_free_prisoner(state[1:4]...) == state[5]
+        for state in eachrow(character_state_combinations)
+            @test can_signal_prisoner(state[1:2]...) == state[3]
+        end
+    end
+
+    @testset "freeing prisoner" begin
+        character_state_combinations = Bool[
+            0 0 0 0 0;
+            0 0 0 1 1;
+            0 0 1 0 1;
+            0 0 1 1 1;
+            0 1 0 0 0;
+            0 1 0 1 0;
+            0 1 1 0 0;
+            0 1 1 1 0;
+            1 0 0 0 0;
+            1 0 0 1 1;
+            1 0 1 0 0;
+            1 0 1 1 1;
+            1 1 0 0 0;
+            1 1 0 1 0;
+            1 1 1 0 0;
+            1 1 1 1 0;
+        ]
+
+        for state in eachrow(character_state_combinations)
+            @test can_free_prisoner(state[1:4]...) == state[5]
+        end
     end
 end

@@ -692,6 +692,14 @@
         ]
       },
       {
+        "slug": "resistor-color",
+        "name": "Resistor Color",
+        "uuid": "ef7e22db-1f66-4d44-87f9-23d97f794628",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
         "slug": "resistor-color-trio",
         "name": "Resistor Color Trio",
         "uuid": "39e831d0-ea7a-4df9-b9cb-64ccb996ee0e",
@@ -881,6 +889,22 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 1
+      },
+      {
+        "slug": "two-fer",
+        "name": "Two-Fer",
+        "uuid": "91a8a9c0-041c-4e2e-97fc-dae149ef69f9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 1
+      },
+      {
+        "slug": "connect",
+        "name": "Connect",
+        "uuid": "6cd9edb0-35ba-4f32-b51b-a734d98e3a88",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
       }
     ]
   },

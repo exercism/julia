@@ -2,7 +2,7 @@ using Test
 
 include("sudoku-util.jl")
 
-@testset verbose = true "Killer Sudoku Helper" begin
+@testset verbose = true "tests" begin
     @testset "Trivial 1-digit cages" begin
         for n in 1:9
             @test combinations_in_cage(n, 1) == [[n]]

@@ -2,7 +2,7 @@ using Test
 
 include("difference-of-squares.jl")
 
-@testset verbose = true "Difference of Squares" begin
+@testset verbose = true "tests" begin
     @testset "Square the sum of the numbers up to the given number" begin
         @test square_of_sum(1)::Integer == 1
         @test square_of_sum(5)::Integer == 225
