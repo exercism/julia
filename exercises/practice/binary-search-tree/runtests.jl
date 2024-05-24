@@ -1,4 +1,5 @@
 using Test
+
 include("binary-search-tree.jl")
 
 @testset verbose = true "tests" begin
@@ -11,29 +12,29 @@ include("binary-search-tree.jl")
         @testset "instantiation with a single real number" begin
             tree = BinarySearchTree(4)
             @test isa(tree, BinarySearchTree)
-            @test tree.data == 4
-                @test isnothing(tree.left)
-                @test isnothing(tree.right)
+            @test nodedata(tree) == 4
+                @test isnothing(leftnode(tree))
+                @test isnothing(rightnode(tree))
         end
 
         @testset "instantiation with vector containing a single real number" begin
             tree = BinarySearchTree([4])
             @test isa(tree, BinarySearchTree)
-            @test tree.data == 4
-                @test isnothing(tree.left)
-                @test isnothing(tree.right)
+            @test nodedata(tree) == 4
+                @test isnothing(leftnode(tree))
+                @test isnothing(rightnode(tree))
         end
 
         @testset "instantiation with vector containing multiple real numbers" begin
             tree = BinarySearchTree([4, 3, 5])
             @test isa(tree, BinarySearchTree)
-            @test tree.data == 4
-                @test tree.left.data == 3
-                    @test isnothing(tree.left.left)
-                    @test isnothing(tree.left.right)
-                @test tree.right.data == 5
-                    @test isnothing(tree.right.left)
-                    @test isnothing(tree.right.right)
+            @test nodedata(tree) == 4
+                @test nodedata(leftnode(tree)) == 3
+                    @test isnothing(leftnode(leftnode(tree)))
+                    @test isnothing(rightnode(leftnode(tree)))
+                @test nodedata(rightnode(tree)) == 5
+                    @test isnothing(leftnode(rightnode(tree)))
+                    @test isnothing(rightnode(rightnode(tree)))
         end
     end
 
@@ -70,52 +71,52 @@ include("binary-search-tree.jl")
         @testset "smaller number at left node" begin
             tree = BinarySearchTree([4])
             push!(tree, 2)
-            @test tree.data == 4
-                @test tree.left.data == 2
-                    @test isnothing(tree.left.left)
-                    @test isnothing(tree.left.right)
-                @test isnothing(tree.right)
+            @test nodedata(tree) == 4
+                @test nodedata(leftnode(tree)) == 2
+                    @test isnothing(leftnode(leftnode(tree)))
+                    @test isnothing(rightnode(leftnode(tree)))
+                @test isnothing(rightnode(tree))
         end
 
         @testset "same number at left node" begin
             tree = BinarySearchTree([4])
             push!(tree, 4)
-            @test tree.data == 4
-                @test tree.left.data == 4
-                    @test isnothing(tree.left.left)
-                    @test isnothing(tree.left.right)
-                @test isnothing(tree.right)
+            @test nodedata(tree) == 4
+                @test nodedata(leftnode(tree)) == 4
+                    @test isnothing(leftnode(leftnode(tree)))
+                    @test isnothing(rightnode(leftnode(tree)))
+                @test isnothing(rightnode(tree))
         end
         
         @testset "greater number at right node" begin
             tree = BinarySearchTree([4])
             push!(tree, 5)
-            @test tree.data == 4
-                @test isnothing(tree.left)
-                @test tree.right.data == 5
-                    @test isnothing(tree.right.left)
-                    @test isnothing(tree.right.right)
+            @test nodedata(tree) == 4
+                @test isnothing(leftnode(tree))
+                @test nodedata(rightnode(tree)) == 5
+                    @test isnothing(leftnode(rightnode(tree)))
+                    @test isnothing(rightnode(rightnode(tree)))
         end
     end
 
     @testset "can create complex tree" begin
         tree = BinarySearchTree([4])
         foreach(node -> push!(tree, node), [2, 6, 1, 3, 5, 7])
-        @test tree.data == 4
-            @test tree.left.data == 2
-                @test tree.left.left.data == 1
-                    @test isnothing(tree.left.left.left)
-                    @test isnothing(tree.left.left.right)
-                @test tree.left.right.data == 3
-                    @test isnothing(tree.left.right.left)
-                    @test isnothing(tree.left.right.right)
-            @test tree.right.data == 6
-                @test tree.right.left.data == 5
-                    @test isnothing(tree.right.left.left)
-                    @test isnothing(tree.right.left.right)
-                @test tree.right.right.data == 7
-                    @test isnothing(tree.right.right.left)
-                    @test isnothing(tree.right.right.right)    
+        @test nodedata(tree) == 4
+            @test nodedata(leftnode(tree)) == 2
+                @test nodedata(leftnode(leftnode(tree))) == 1
+                    @test isnothing(leftnode(leftnode(leftnode(tree))))
+                    @test isnothing(rightnode(leftnode(leftnode(tree))))
+                @test nodedata(rightnode(leftnode(tree))) == 3
+                    @test isnothing(leftnode(rightnode(leftnode(tree))))
+                    @test isnothing(rightnode(rightnode(leftnode(tree))))
+            @test nodedata(rightnode(tree)) == 6
+                @test nodedata(leftnode(rightnode(tree))) == 5
+                    @test isnothing(leftnode(leftnode(rightnode(tree))))
+                    @test isnothing(rightnode(leftnode(rightnode(tree))))
+                @test nodedata(rightnode(rightnode(tree))) == 7
+                    @test isnothing(leftnode(rightnode(rightnode(tree))))
+                    @test isnothing(rightnode(rightnode(rightnode(tree))))
 
     end
 

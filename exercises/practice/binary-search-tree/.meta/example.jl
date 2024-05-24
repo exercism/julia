@@ -12,22 +12,26 @@ function BinarySearchTree(vector::Vector{T}) where T<:Real
     tree
 end
 
+nodedata(tree::BinarySearchTree) = tree.data
+rightnode(tree::BinarySearchTree) = tree.right
+leftnode(tree::BinarySearchTree) = tree.left
+
 function Base.in(node, tree::BinarySearchTree,)
-    tree.data == node && return true
-    if node ≤ tree.data
-        isnothing(tree.left) ? false : in(node, tree.left)
+    nodedata(tree) == node && return true
+    if node ≤ nodedata(tree)
+        isnothing(leftnode(tree)) ? false : in(node, leftnode(tree))
     else
-        isnothing(tree.right) ? false : in(node, tree.right)
+        isnothing(rightnode(tree)) ? false : in(node, rightnode(tree))
     end
 end
 
 function Base.push!(tree::BinarySearchTree, node::T) where T<:Real
-    if isnothing(tree.data)
+    if isnothing(nodedata(tree))
         tree.data = node
-    elseif node ≤ tree.data
-        isnothing(tree.left) ? (tree.left = BinarySearchTree(node)) : push!(tree.left, node)
+    elseif node ≤ nodedata(tree)
+        isnothing(leftnode(tree)) ? (tree.left = BinarySearchTree(node)) : push!(leftnode(tree), node)
     else
-        isnothing(tree.right) ? (tree.right = BinarySearchTree(node)) : push!(tree.right, node)
+        isnothing(rightnode(tree)) ? (tree.right = BinarySearchTree(node)) : push!(rightnode(tree), node)
     end
     tree
 end
@@ -38,9 +42,9 @@ function Base.append!(tree::BinarySearchTree, vector::Vector{T}) where T<:Real
 end
 
 function traverse(tree::BinarySearchTree, channel::Channel)
-    !isnothing(tree.left) && traverse(tree.left, channel)
-    put!(channel, tree.data)
-    !isnothing(tree.right) && traverse(tree.right, channel)
+    !isnothing(leftnode(tree)) && traverse(leftnode(tree), channel)
+    put!(channel, nodedata(tree))
+    !isnothing(rightnode(tree)) && traverse(rightnode(tree), channel)
 end
 
 Base.sort(tree::BinarySearchTree) = collect(Channel(channel -> traverse(tree, channel)))
