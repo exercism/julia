@@ -1,5 +1,5 @@
 function translate(phrase)
-    words = eachsplit(phrase, " ")
+    words = split(phrase, " ")
     fragments = map(translateFragment, words)
 
     join(fragments, " ")
