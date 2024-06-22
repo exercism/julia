@@ -1,0 +1,4 @@
+function translate(phrase)
+
+end
+

@@ -86,6 +86,14 @@
         ]
       },
       {
+        "slug": "pig-latin",
+        "name": "Pig Latin",
+        "uuid": "3c53b207-ffcb-4111-ba3e-3aece095e268",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "nucleotide-count",
         "name": "Nucleotide Count",
         "uuid": "54c24809-c6e7-419b-8ec3-6d8d128ca546",
