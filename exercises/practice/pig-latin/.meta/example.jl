@@ -1,17 +1,17 @@
 function translate(phrase)
     words = split(phrase, " ")
-    fragments = map(translateFragment, words)
+    fragments = map(translatefragment, words)
 
     join(fragments, " ")
 end
 
-vowelSound = r"^([aeiou]|xr|yt)"
-consonantSound = r"^([^aeiou]+(?=y)|[^aeiou]?qu|[^aeiou]+)([a-z]+)"
+vowelsound = r"^([aeiou]|xr|yt)"
+consonantsound = r"^([^aeiou]+(?=y)|[^aeiou]?qu|[^aeiou]+)([a-z]+)"
 
-function translateFragment(fragment)
+function translatefragment(fragment)
     translated = fragment
-    if !occursin(vowelSound, fragment)
-        translated = replace(fragment, consonantSound => s"\g<2>\g<1>")
+    if !occursin(vowelsound, fragment)
+        translated = replace(fragment, consonantsound => s"\g<2>\g<1>")
     end
 
     translated * "ay"
