@@ -1,0 +1,3 @@
+function proteins(strand)
+
+end
