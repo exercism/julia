@@ -929,6 +929,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 6
+      },
+      {
+        "slug": "two-bucket",
+        "name": "Two Bucket",
+        "uuid": "1c635f59-0308-49ab-9a50-b15b3454cf65",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
       }
     ]
   },
