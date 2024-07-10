@@ -945,6 +945,14 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 6
+      },
+      {
+        "slug": "dominoes",
+        "name": "Dominoes",
+        "uuid": "76e27165-47f5-4c4f-b747-c047872ff02c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
       }
     ]
   },
