@@ -29,7 +29,7 @@ include("pig-latin.jl")
         end
     end
 
-    @testset "some letter clusters are treated like a single consonant" begin
+    @testset "first letter and ay are moved to the end of words that start with consonants" begin
         @testset "word beginning with p" begin
             @test translate("pig") == "igpay"
         end
@@ -45,7 +45,9 @@ include("pig-latin.jl")
         @testset "word beginning with q without a following u" begin
             @test translate("qat") == "atqay"
         end
-    
+    end
+
+    @testset "some letter clusters are treated like a single consonant" begin
         @testset "word beginning with ch" begin
             @test translate("chair") == "airchay"
         end
@@ -79,7 +81,9 @@ include("pig-latin.jl")
         @testset "word beginning with xr" begin
             @test translate("xray") == "xrayay"
         end
-    
+    end
+
+    @testset "position of y in a word determines if it is a consonant or a vowel" begin
         @testset "y is treated like a consonant at the beginning of a word" begin
             @test translate("yellow") == "ellowyay"
         end
