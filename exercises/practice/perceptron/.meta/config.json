@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "depial"
+  ],
+  "contributors": [
+    "cmcaine"
+  ],
+  "files": {
+    "solution": [
+      "perceptron.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
+  },
+  "blurb": "Write your own machine learning algorithm"
+}
