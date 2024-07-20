@@ -1001,6 +1001,21 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 4
+      },
+      {
+        "slug": "perceptron",
+        "name": "Perceptron",
+        "uuid": "b43a938a-7bd2-4fe4-b16c-731e2e25e747",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3,
+        "topics": [
+          "machine learning",
+          "loops",
+          "arrays",
+          "logic",
+          "math"
+        ]
       }
     ]
   },
