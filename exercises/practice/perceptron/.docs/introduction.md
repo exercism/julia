@@ -1,5 +1,5 @@
 # Introduction
-
+**Note: This is quite a _mathsy_ exercise. If you don't enjoy solving maths-based exercises, maybe skip this one. But if you do, you'll enjoy this.**
 ### Perceptron
 [Perceptron](https://en.wikipedia.org/wiki/Perceptron) is one of the oldest and bestestly named machine learning algorithms out there. Since it is also quite simple to implement, it's a favorite place to start a machine learning journey. Perceptron is what is known as a linear classifier, which means that, if we have two labled classes of objects, for example in 2D space, it will search for a line that can be drawn to separate them. If such a line exists, Perceptron is guaranteed to find one. See Perceptron in action separating black and white dots below!
 
