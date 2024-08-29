@@ -5,7 +5,7 @@ function maximum_value(maximum_weight, items)
     numitems == 0 && return 0
 
     # Remember, Julia uses 1-based array indexing
-    # so amaxes[r,c] indexing needs to be r+1, c+1, compared to the Wiki reference
+    # so maxes[r,c] indexing needs to be r+1, c+1, compared to the Wiki reference
 
     maxes = zeros(UInt16, numitems + 1, maximum_weight + 1)
     for item_count in 1:numitems
