@@ -995,6 +995,14 @@
         "difficulty": 2
       },
       {
+        "slug": "kindergarten-garden",
+        "name": "Kindergarten Garden",
+        "uuid": "d196548e-ed57-43c3-b325-04c11d06397d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "meetup",
         "name": "Meetup",
         "uuid": "c620a897-b054-4d8e-a2e3-17a4c0a6f6fa",
