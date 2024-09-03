@@ -971,6 +971,14 @@
         "difficulty": 5
       },
       {
+        "slug": "knapsack",
+        "name": "Knapsack",
+        "uuid": "7c4ecd30-dbd0-489e-a68c-513e9ecb12d9",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "game-of-life",
         "name": "Conway's Game of Life",
         "uuid": "31e83423-a0c3-4745-8fca-24125e8ef6ce",
@@ -995,12 +1003,28 @@
         "difficulty": 3
       },
       {
+        "slug": "diamond",
+        "name": "Diamond",
+        "uuid": "e082b59e-5c2a-4474-8c73-ceb623bcd858",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "matrix",
         "name": "Matrix",
         "uuid": "9d5fb572-32cd-4657-a915-3c2822311af8",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
+      },
+      {
+        "slug": "kindergarten-garden",
+        "name": "Kindergarten Garden",
+        "uuid": "d196548e-ed57-43c3-b325-04c11d06397d",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
       },
       {
         "slug": "meetup",
@@ -1014,6 +1038,14 @@
         "slug": "palindrome-products",
         "name": "Palindrome Products",
         "uuid": "7ab2d0e6-6a39-4edf-86e9-1e49dfb8908e",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
+        "slug": "food-chain",
+        "name": "Food Chain",
+        "uuid": "dacbf1b1-586d-4f71-9941-c0cd36090264",
         "practices": [],
         "prerequisites": [],
         "difficulty": 4
