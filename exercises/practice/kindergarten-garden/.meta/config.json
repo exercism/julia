@@ -2,9 +2,6 @@
   "authors": [
     "colinleach"
   ],
-  "contributors": [
-    "depial"
-  ],
   "files": {
     "solution": [
       "kindergarten-garden.jl"
