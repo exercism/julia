@@ -1,0 +1,9 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [
+    "SaschaMann"
+  ],
+  "blurb": "Julia has boolean values true and false, operators ! (not), && (and), || (or)."
+}
