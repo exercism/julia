@@ -3,9 +3,77 @@
 The entire Julia track will require you to treat your solution like small libraries, i.e. you need to define functions, types etc. which will then be run against a test suite.
 For that reason, we will introduce named functions as the very first concept.
 
-## Functions
+Julia is a dynamic, strongly-typed programming langauge.
+The programming style is mainly functional, though with more flexibility than in languages such as Haskell.
 
-### Defining functions
+## Comments
+
+Two options are possible in Julia:
+- Single-line comments start with `#`
+- Multi-line comments start with `#=` and end with `=#`. Nesting is allowed.
+
+```julia
+# This is a single-line comment
+
+x = 3  # This is an inline comment
+
+#=
+	Multi-line comments can be used for longer explanations.
+
+	They are especially useful to comment out blocks of code during debugging.
+=#
+```
+
+## Variables and assignment
+
+To create a variable, just assign a value to it:
+
+```julia-repl
+julia> myvar = 42  # an integer
+42
+
+julia> name = "Maria"  # strings are surrounded by double-quotes ""
+"Maria"
+```
+
+Types are an important subject in Julia, but for now it is best to ignore them them.
+The compiler will infer a suitable type for any expression you use.
+
+## Constants
+
+Global variables, created outside any function, are:
+- Allowed.
+- Sometimes necessary.
+- Usually discouraged (only within `*.jl` files; the REPL operates differently).
+
+If a value needs to be available throughout the program, but is not expected to change, use a constant instead.
+
+Prefacing the assignemt with the `const` keyword allows the compiler to generate more efficient code.
+
+Accidentally trying to change the `const` value will give a warning:
+
+```julia-repl
+julia> const answer = 42
+42
+
+julia> answer = 24
+WARNING: redefinition of constant Main.answer. This may fail, cause incorrect answers, or produce other errors.
+24
+```
+
+## Arithmetic operators
+
+These mostly work conventionally:
+
+```julia
+2 + 3  # 5 (addition)
+2 - 3  # -1 (subtraction)
+2 * 3  # 6 (mutlplication)
+8 / 2  # 4.0 (division with floating-point result)
+8 % 3  # 2 (remainder)
+```
+
+## Functions
 
 There are two common ways to define a named function in Julia:
 
@@ -13,9 +81,16 @@ There are two common ways to define a named function in Julia:
 
     ```julia
     function muladd(x, y, z)
-        return x * y + z
+        x * y + z
     end
     ```
+
+    Indentation by 4 spaces is conventional for readability, but the compiler ignores this.
+    The `end` keyword is essential: more like Ruby than like Python.
+
+    Note that we could have written `return x * y + z`. 
+    However, Julia functions always return the last expression evaluated, so the `return` keyword is optional.
+    Many programmers prefer to include it to make their intentions more explicit.
 
 2. Using the "assignment form"
 
@@ -24,8 +99,9 @@ There are two common ways to define a named function in Julia:
     ```
 
     This is most commonly used for one-line function definitions or mathematical functions, where the function body is a single expression.
+    A `return` keyword is *never* used in the assignment form.
 
-### Invoking functions
+The two forms are equivalent, and are used in exactly the same way, so choose whichever is more readable.
 
 Invoking a function is done by specifying its name and passing arguments for each of the function's parameters:
 
@@ -37,88 +113,10 @@ muladd(10, 5, 1)
 square_plus_one(x) = muladd(x, x, 1)
 ```
 
-## Integers and Arithmetic operations
+## Naming conventions
 
-Integer literals in Julia are represented in the usual way.
-Underscores may be used as a digit separator.
+Like many languages, Julia requires that names (of variables, functions, and many other things) start with a letter, followed by any combination of letters, digits and underscores.
 
-```julia-repl
-julia> 1
-1
+By convention, variable, constant, and function names are *lowercase*, with underscores kept to a reasonable minimum.
 
-julia> -1234
--1234
-
-julia> 1_234_567_890
-1234567890
-```
-
-### Arithmetic operations
-
-The standard prefix and infix operations are available: `+`, `-`, `*`, `%`.
-
-```julia-repl
-julia> +16
-16
-
-julia> -16
--16
-
-julia> 16 + 6
-22
-
-julia> 16 - 6
-10
-
-julia> 16 * 6
-96
-
-julia> 16 % 6
-4
-```
-
-#### Division
-
-Dividing two numbers with the `/` operator will result in a floating point value.
-To perform integer division
-
-- use the `div(x, y)` function, or
-- use the `÷` operator (Julia source code is unicode-aware)
-
-```julia-repl
-julia> 16 / 6
-2.6666666666666665
-
-julia> div(16, 6)
-2
-
-julia> 16 ÷ 6
-2
-```
-
-~~~~exercism/note
-It's natural to use Unicode symbols in Julia source files, typically in mathematical expressions.
-When using the Julia REPL, or in other Julia editing environments, the division symbol can be entered by typing `\div` followed by the `Tab` key.
-More details can be found in the manual at [Unicode Input][unicode].
-
-[unicode]: https://docs.julialang.org/en/v1/manual/unicode-input/#Unicode-Input
-~~~~
-
-## Comments
-
-Julia supports two kinds of comments.
-Single line comments are preceded by `#` and multiline comments are inserted between `#=` and `=#`.
-
-```julia
-add(1, 3) # returns 4
-
-#= Some random code that's no longer needed but not deleted
-sub(x, y) = x - y
-mulsub(x, y, z) = sub(mul(x, y), z)
-=#
-```
-
-## Types
-
-Depending on which other programming languages you know, you may expect parameters, variables or return values to have explicit type annotations.
-For now, assume that Julia will infer the types automagically and don't worry about them, we will get to the specifics of the type system in later exercises.
+However, Julia uses Unicode throughout, so "letter" is interpreted quite flexibly: not just *English* letters.

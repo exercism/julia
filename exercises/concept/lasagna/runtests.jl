@@ -3,6 +3,12 @@ using Test
 include("lasagna.jl")
 
 @testset verbose = true "tests" begin
+    
+    @testset "expected bake time" begin
+        @test expected_bake_time == 60
+        @test isconst(typeof(expected_bake_time), expected_bake_time) == true
+    end
+    
     @testset "preparation time" begin
         @test preptime(2) == 4
         @test preptime(3) == 6
