@@ -12,9 +12,9 @@ include("lasagna.jl")
     end
     
     @testset "preparation time" begin
-        @test preptime(2) == 4
-        @test preptime(3) == 6
-        @test preptime(8) == 16
+        @test preparation_time(2) == 4
+        @test preparation_time(3) == 6
+        @test preparation_time(8) == 16
     end
 
     @testset "remaining time" begin
