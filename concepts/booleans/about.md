@@ -24,7 +24,7 @@ We can express statements like "is x less than 5 and not equal to y?" using [Boo
 
 In Julia (and many other programming languages), `&&` has a [higher precedence][operator-precedence] than `||` (in the same way that `*` is applied before `+`).
 This means that `true || false && true` evaluates to `true` because it is parsed as `(true || false) && true`.
-It is common to include explicit brackets anyway so that the reader doesn't need to think about this.
+It is common to include explicit parentheses anyway so that the reader doesn't need to think about this.
 
 ### Logical _not_
 
