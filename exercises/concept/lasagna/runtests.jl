@@ -6,7 +6,9 @@ include("lasagna.jl")
     
     @testset "expected bake time" begin
         @test expected_bake_time == 60
-        @test isconst(typeof(expected_bake_time), expected_bake_time) == true
+        if VERSION > v"1.7"
+            @test isconst(typeof(expected_bake_time), expected_bake_time) == true
+        end
     end
     
     @testset "preparation time" begin
