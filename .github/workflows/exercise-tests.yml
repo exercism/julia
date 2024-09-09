@@ -35,7 +35,7 @@ jobs:
         with:
           version: ${{ matrix.julia-version }}
 
-      - uses: julia-actions/cache@580d2b69d895343992af2cbad49c32a0149c2cde
+      - uses: julia-actions/cache@8608484607cba0bdb5437a7bad85d6502499d029
 
       - name: Install test dependencies
         run: julia --color=yes --project -e "using Pkg; Pkg.instantiate()"
@@ -61,7 +61,7 @@ jobs:
         run: julia --color=yes --project runtestrunner.jl
 
       - name: Upload reports as artifact
-        uses: actions/upload-artifact@0b2256b8c012f0828dc542b3febcab082c67f72b
+        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874
         with:
           name: test-reports
           path: ${{ steps.generate-reports.outputs.results-path }}
