@@ -17,7 +17,7 @@ Instead *(and please don't panic as you read this!)*, Julia relies on:
 
 These rather confusing terms should become clearer as we progress through the syllabus.
 
-The [offical documentation][official-documentation] contains a lot of valuable information for the current release, though it can be a bit overwhelming for beginners.
+The [official documentation][official-documentation] contains a lot of valuable information for the current release, though it can be a bit overwhelming for beginners.
 
 - [Manual][manual]
 - [Tutorials][tutorials]
