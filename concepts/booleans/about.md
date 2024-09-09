@@ -28,7 +28,7 @@ It is common to include explicit brackets anyway so that the reader doesn't need
 
 ### Logical _not_
 
-`!` represents the logical "not" operation in  Julia.
+`!` represents the logical "not" operation in Julia.
 Not is also called negation.
 
 ```julia-repl
