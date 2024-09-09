@@ -16,7 +16,7 @@ The goal of this exercise is to teach the student the fundamentals of the `basic
 
 ## Out of scope
 
-Everthing beyond the simplest minimum for the first exercise of a novice.
+Everything beyond the simplest minimum for the first exercise of a novice.
 
 ## Concepts
 
