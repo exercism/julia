@@ -65,7 +65,7 @@ There are two common ways to define a named function in Julia:
     ```
 
     Indentation by 4 spaces is conventional for readability, but the compiler ignores this.
-    The `end` keyword is essential: more like Ruby than like Python.
+    The `end` keyword is essential.
 
     Note that we could have written `return x * y + z`.
     However, Julia functions always return the last expression evaluated, so the `return` keyword is optional.
