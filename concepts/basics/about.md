@@ -1,6 +1,6 @@
 # About
 
-Julia is a dynamic, strongly-typed programming langauge.
+Julia is a dynamic, strongly-typed programming language.
 The programming styple is mainly functional, though with more flexibility than in languages such as Haskell.
 
 There is a strong and versatile type system, which will become important in later concepts. In practice, Julia will usually infer a suitable default from the context.
