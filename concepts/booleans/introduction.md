@@ -63,8 +63,6 @@ julia> (5 > 3) && (1 != 0)
 true
 ```
 
-Parentheses are optional and can make the code easier to read.
-
 ### Logical _or_
 
 `||` (two pipe characters) represents logical "or" in Julia.
