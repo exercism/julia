@@ -1,5 +1,4 @@
 {
-  "blurb": "Given a DNA strand, return its RNA Complement Transcription.",
   "authors": [
     "andrej-makarov-skrt"
   ],
@@ -18,6 +17,7 @@
       ".meta/example.jl"
     ]
   },
+  "blurb": "Given a DNA strand, return its RNA Complement Transcription.",
   "source": "Hyperphysics",
   "source_url": "https://web.archive.org/web/20220408112140/http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html"
 }

@@ -1,5 +1,4 @@
 {
-  "blurb": "Convert modern Arabic numbers into Roman numerals.",
   "authors": [
     "andrej-makarov-skrt"
   ],
@@ -18,6 +17,7 @@
       ".meta/example.jl"
     ]
   },
+  "blurb": "Convert modern Arabic numbers into Roman numerals.",
   "source": "The Roman Numeral Kata",
   "source_url": "https://codingdojo.org/kata/RomanNumerals/"
 }

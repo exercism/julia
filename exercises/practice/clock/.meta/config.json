@@ -1,5 +1,4 @@
 {
-  "blurb": "Implement a clock that handles times without dates.",
   "authors": [
     "SaschaMann"
   ],
@@ -17,5 +16,6 @@
       ".meta/example.jl"
     ]
   },
+  "blurb": "Implement a clock that handles times without dates.",
   "source": "Pairing session with Erin Drummond"
 }
