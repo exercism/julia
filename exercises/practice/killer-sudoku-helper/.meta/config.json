@@ -1,5 +1,4 @@
 {
-  "blurb": "Write a tool that makes it easier to solve Killer Sudokus",
   "authors": [
     "SaschaMann"
   ],
@@ -18,6 +17,7 @@
       ".meta/example.jl"
     ]
   },
+  "blurb": "Write a tool that makes it easier to solve Killer Sudokus",
   "source": "Created by Sascha Mann, Jeremy Walker, and BethanyG for the Julia track on Exercism.",
   "source_url": "https://github.com/exercism/julia/pull/413"
 }

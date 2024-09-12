@@ -1,9 +1,7 @@
 {
-  "blurb": "Implement rational numbers.",
   "authors": [
     "SaschaMann"
   ],
-  "contributors": [],
   "files": {
     "solution": [
       "rational-numbers.jl"
@@ -15,6 +13,7 @@
       ".meta/example.jl"
     ]
   },
+  "blurb": "Implement rational numbers.",
   "source": "Wikipedia",
   "source_url": "https://en.wikipedia.org/wiki/Rational_number"
 }

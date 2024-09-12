@@ -1,22 +1,21 @@
 {
-    "blurb": "Write a function to solve alphametics puzzles.",
-    "authors": [
-        "SaschaMann",
-        "cmcaine"
+  "authors": [
+    "SaschaMann",
+    "cmcaine"
+  ],
+  "files": {
+    "solution": [
+      "alphametics.jl"
     ],
-    "contributors": [],
-    "files": {
-        "solution": [
-            "alphametics.jl"
-        ],
-        "test": [
-            "runtests.jl"
-        ],
-        "example": [
-            ".meta/example.jl"
-        ],
-        "editor" : [
-            "permutations.jl"
-        ]
-    }
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ],
+    "editor": [
+      "permutations.jl"
+    ]
+  },
+  "blurb": "Write a function to solve alphametics puzzles."
 }
