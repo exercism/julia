@@ -20,7 +20,7 @@ In contrast to several other languages, Julia deliberately has no concept of "tr
 Only expressions which evaluate to `true` or `false` will be treated as a `Bool`.
 
 Specifically, empty arrays or strings will *not* be interpreted as `false`.
-There must be an appropriate test such as `isempty()` if you want special handlind for empty values.
+There must be an appropriate test such as `isempty()` if you want special handling for empty values.
 
 ## Boolean operators
 
@@ -59,7 +59,7 @@ julia> !false
 true
 ```
 
-These operators will be familiar to users of many other languages, though *not* Python.
+Similar operators will be conceptually familiar to users of many other languages, though the precise syntax may vary between languages.
 
 ## Operator precedence
 
