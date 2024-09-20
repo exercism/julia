@@ -1,0 +1,94 @@
+#!/usr/bin/env bash
+
+# Synopsis:
+# Verify that each exercise's example/exemplar solution passes the tests.
+# You can either verify all exercises or a single exercise.
+
+# Example: verify all exercises
+# bin/verify-exercises
+
+# Example: verify single exercise
+# bin/verify-exercises two-fer
+
+set -eo pipefail
+
+die() { echo "$*" >&2; exit 1; }
+
+required_tool() {
+    command -v "${1}" >/dev/null 2>&1 ||
+        die "${1} is required but not installed. Please install it and make sure it's in your PATH."
+}
+
+required_tool jq
+
+copy_example_or_examplar_to_solution() {
+    jq -c '[.files.solution, .files.exemplar // .files.example] | transpose | map({src: .[1], dst: .[0]}) | .[]' .meta/config.json \
+    | while read -r src_and_dst; do
+        cp "$(jq -r '.src' <<< "${src_and_dst}")" "$(jq -r '.dst' <<< "${src_and_dst}")"
+    done
+}
+
+unskip_tests() {
+    # shellcheck disable=SC2034
+    jq -r '.files.test[]' .meta/config.json | while read -r test_file; do
+        noop # TODO: replace this with the command to unskip the tests.
+        # Note: this function runs from within an exercise directory.
+        # Note: the exercise directory is a temporary directory, so feel
+        # free to modify its (test) files as needed.
+        # Note: ignore this function if either:
+        #   - skipping tests is not supported, or
+        #   - skipping tests does not require modifying the test files.
+        # Example: sed -i 's/test.skip/test/g' "${test_file}"
+    done
+}
+
+run_tests() {
+    noop # TODO: replace this with the command to run the tests for the exercise.
+    # Note: this function runs from within an exercise directory.
+    # Note: the exercise directory is a temporary directory, so feel
+    # free to modify its files as needed.
+    # Note: return a zero exit code if all tests pass, otherwise non-zero.
+    # Example: `npm test`
+    # Example: `python3 -m pytest two_fer_test.py`
+}
+
+verify_exercise() {
+    local dir
+    local slug
+    local tmp_dir
+
+    dir=$(realpath "${1}")
+    slug=$(basename "${dir}")
+    tmp_dir=$(mktemp -d -t "exercism-verify-${slug}-XXXXX")
+
+    echo "Verifying ${slug} exercise..."
+
+    (
+        trap 'rm -rf "$tmp_dir"' EXIT    # remove tempdir when subshell ends
+        cp -r "${dir}/." "${tmp_dir}"
+        cd "${tmp_dir}"
+
+        copy_example_or_examplar_to_solution
+        unskip_tests
+        run_tests
+    )
+}
+
+verify_exercises() {
+    local exercise_slug
+
+    exercise_slug="${1}"
+
+    shopt -s nullglob
+    count=0
+    for exercise_dir in ./exercises/{concept,practice}/${exercise_slug}/; do
+        if [[ -d "${exercise_dir}" ]]; then
+            verify_exercise "${exercise_dir}"
+            ((++count))
+        fi
+    done
+    ((count > 0)) || die 'no matching exercises found!'
+}
+
+exercise_slug="${1:-*}"
+verify_exercises "${exercise_slug}"
