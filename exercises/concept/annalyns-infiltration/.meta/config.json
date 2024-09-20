@@ -1,23 +1,26 @@
 {
-  "blurb": "Learn about boolean expressions by implementing the quest logic for a new RPG.",
-  "language_versions": "≥1.0",
+  "authors": [
+    "SaschaMann",
+    "colinleach"
+  ],
+  "contributors": [
+    "cmcaine",
+    "BNAndras"
+  ],
   "files": {
-    "exemplar": [
-      ".meta/exemplar.jl"
+    "solution": [
+      "annalyns-infiltration.jl"
     ],
     "test": [
       "runtests.jl"
     ],
-    "solution": [
-      "annalyns-infiltration.jl"
+    "exemplar": [
+      ".meta/exemplar.jl"
     ]
   },
-  "authors": [
-    "SaschaMann"
+  "language_versions": "≥1.0",
+  "forked_from": [
+    "javascript/annalyns-infiltration"
   ],
-  "contributors": [
-    "cmcaine",
-    "colinleach"
-  ],
-  "forked_from": ["javascript/annalyns-infiltration"]
+  "blurb": "Learn about boolean expressions by implementing the quest logic for a new RPG."
 }
