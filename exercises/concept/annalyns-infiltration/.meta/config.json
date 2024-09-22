@@ -1,0 +1,26 @@
+{
+  "authors": [
+    "SaschaMann",
+    "colinleach"
+  ],
+  "contributors": [
+    "cmcaine",
+    "BNAndras"
+  ],
+  "files": {
+    "solution": [
+      "annalyns-infiltration.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ]
+  },
+  "language_versions": "≥1.0",
+  "forked_from": [
+    "javascript/annalyns-infiltration"
+  ],
+  "blurb": "Learn about boolean expressions by implementing the quest logic for a new RPG."
+}
