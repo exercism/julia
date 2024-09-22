@@ -47,7 +47,7 @@ These mostly work conventionally:
 ```julia
 2 + 3  # 5 (addition)
 2 - 3  # -1 (subtraction)
-2 * 3  # 6 (mutlplication)
+2 * 3  # 6 (multiplication)
 8 / 2  # 4.0 (division with floating-point result)
 8 % 3  # 2 (remainder)
 ```
