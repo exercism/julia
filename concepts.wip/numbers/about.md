@@ -309,9 +309,33 @@ Alternatively, just use `float(5)` and let the compiler choose an appropriate ty
 **Float-to-integer** conversions are inevitably more complicated.
 What do you want to do with anything after the decimal point?
 
-- The `round()` function converts to the nearest integer, with ties such as 4.5 rounding to the nearest _even_ integer.
+- The `round()` function converts to the nearest whole number, with ties such as 4.5 rounding to the nearest _even_ whole number.
 - `floor()` rounds down, `ceil()` rounds up, `trunc()` rounds towards zero.
 - Attempting to cast directly, for example with `Int32()`, will fail with an [`InexactError`][inexact].
+
+However, by default these functions do not return the integer type you might have wanted.
+The desired output type can be specified.
+
+```julia-repl
+julia> round(4.5)
+4.0
+
+julia> round(Int64, 4.5)
+4
+
+julia> round(Int, 4.5)  # => default integer type
+4
+
+julia> ceil(Int16, 4.3)
+5
+```
+
+Rounding to a specified number of digits after the decimal point is also possible with the `digits` keyword.
+
+```julia-repl
+julia> round(π, digits=10)
+3.1415926536
+```
 
 See the [manual][round] for more details.
 
