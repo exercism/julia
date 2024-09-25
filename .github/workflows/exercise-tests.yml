@@ -17,8 +17,8 @@ on:
 
 jobs:
   test:
+    name: Julia ${{ matrix.julia-version }}
     runs-on: ubuntu-22.04
-    name: Julia ${{ matrix.julia-version }} - ${{ runs-on }}
     strategy:
       fail-fast: false
       matrix:
