@@ -526,6 +526,14 @@
         ]
       },
       {
+        "slug": "strain",
+        "name": "Strain",
+        "uuid": "b16f98d5-60af-4f03-922a-ff2a98fd5c2b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "protein-translation",
         "name": "Protein Translation",
         "uuid": "ef95ea34-cc9e-48aa-b2f9-6226134a3644",
