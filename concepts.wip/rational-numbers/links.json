@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://en.wikipedia.org/wiki/Rational_number",
+    "description": "Wikipedia article on rational numbers."
+  },
+  {
+    "url": "https://docs.julialang.org/en/v1/manual/complex-and-rational-numbers/#Rational-Numbers",
+    "description": "Section on rational numbers in the Julia manual."
+  },
+  {
+    "url": "https://docs.julialang.org/en/v1/manual/mathematical-operations/#Arithmetic-Operators",
+    "description": "Section on arithmetic operators in the Julia manual."
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Fraction#Simplifying_(reducing)_fractions",
+    "description": "Wikipedia article on lowest terms."
+  }
+]
