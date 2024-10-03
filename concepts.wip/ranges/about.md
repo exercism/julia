@@ -76,6 +76,24 @@ julia> collect('a':'d')
 The `Char` type will be covered in more detail in another Concept.
 For now, just treat these as single characters in single-quotes.
 
+## Functions and operators for ranges
+
+Check the limits of a range with `first()` and `last()`.
+
+Finding whether a particular value is part of a range is often useful.
+The underlying function for this is `in()`, but it is more common to use the infix operator `in` or its more mathematical synonym `∈`.
+In a suitable editor, the shortcut to `∈` is `\in` then tab.
+
+```julia
+ r = 1:10  # => 1:10
+ first(r)  # => 1
+ last(r)   # => 10
+ 7 in r    # => true
+ 11 ∈ r    # => false
+```
+
+The `in` or `∈` operator is used here with ranges, but can also be used with several other collection types such as vectors, sets and dictionaries.
+
 ## More on array indexing
 
 Integer ranges and arrays can be used in array indexing:
