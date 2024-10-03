@@ -86,5 +86,15 @@ n = n < 0 ? 0 : n
 
 Parentheses are not required by the compiler, but may improve readability.
 
+## Does Julia have a `match` statement?
+
+No match/case structure is currently part of the base language.
+
+For simple cases, use of `if..elseif..else` is recommended.
+
+For sophisticated pattern matching, similar to Scala, the `Match.jl` package is popular.
+However, as with most third-party packages, `Match` is not available in the Exercism test runner.
+
+
 [numeric-comparisons]: https://docs.julialang.org/en/v1/manual/mathematical-operations/#Numeric-Comparisons
 [conditional-eval]: https://docs.julialang.org/en/v1/manual/control-flow/#man-conditional-evaluation
