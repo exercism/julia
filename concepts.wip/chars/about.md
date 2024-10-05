@@ -76,6 +76,33 @@ julia> 'f' + ('A' - 'a')  # same as `uppercase('f')`
 'F': ASCII/Unicode U+0046 (category Lu: Letter, uppercase)
 ```
 
+## Functions for characters
+
+A subset of string-handling functions can also work on `Char` input.
+
+- For appropriate alphabets, change case with [`uppercase()`][uppercase] and [`lowercase()`][lowercase].
+- Test case with [`isuppercase()`][isuppercase] and [`islowercase()`][islowercase].
+- Test character type with:
+  - [`isletter()`][isletter], covers many alphabets
+  - [`isdigit()`][isdigit], tests for strictly 0:9
+  - [`isnumeric()`][isnumeric], broader than `isdigit`, so `true` for ¾ and various non-European scripts
+  - [`isxdigit()`][isxdigit], hexadecimal digits
+  - [`isascii()`][isascii], pre-Unicode character
+  - [`ispunct()`][ispunct], punctuation
+  - [`isspace()`][isspace], any whitespace character
+  - [`isprint()`][isprint], printable characters (opposite is `iscntrl()`)
+
+```julia
+islowercase('A')  # false
+uppercase('γ')  # 'Γ': Unicode U+0393 (category Lu: Letter, uppercase)
+ispunct('@')  # true
+isdigit('A')  # false
+isxdigit('A')  # true
+```
+
+For more specialized tests, we have [`in`][ranges].
+Also, regular expressions (the subject of another Concept) allow powerful search and manipulation.
+
 ## Storage
 
 Everything so far in the document seems relatively simple, so is there really not much to worry about?
@@ -96,3 +123,17 @@ This issue will become relevant in the Strings concept, when we look at indexing
 [utf-8]: https://en.wikipedia.org/wiki/UTF-8
 [chars]: https://docs.julialang.org/en/v1/manual/strings/#man-characters
 [strings]: https://docs.julialang.org/en/v1/manual/strings/
+[uppercase]: https://docs.julialang.org/en/v1/base/strings/#Base.Unicode.uppercase
+[lowercase]: https://docs.julialang.org/en/v1/base/strings/#Base.Unicode.lowercase
+[isuppercase]: https://docs.julialang.org/en/v1/base/strings/#Base.Unicode.isuppercase
+[islowercase]: https://docs.julialang.org/en/v1/base/strings/#Base.Unicode.islowercase
+[isletter]: https://docs.julialang.org/en/v1/base/strings/#Base.Unicode.isletter
+[isdigit]: https://docs.julialang.org/en/v1/base/strings/#Base.Unicode.isdigit
+[isnumeric]: https://docs.julialang.org/en/v1/base/strings/#Base.Unicode.isnumeric
+[isxdigit]: https://docs.julialang.org/en/v1/base/strings/#Base.Unicode.isxdigit
+[isascii]: https://docs.julialang.org/en/v1/base/strings/#Base.isascii
+[ispunct]: https://docs.julialang.org/en/v1/base/strings/#Base.Unicode.ispunct
+[isspace]: https://docs.julialang.org/en/v1/base/strings/#Base.Unicode.isspace
+[isprint]: https://docs.julialang.org/en/v1/base/strings/#Base.Unicode.isprint
+[iscntrl]: https://docs.julialang.org/en/v1/base/strings/#Base.Unicode.iscntrl
+
