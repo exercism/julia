@@ -41,6 +41,10 @@ julia> jha = 'झ'  # Devanagari alphabet
 
 julia> typeof(jha)
 Char
+
+
+julia> '❤'  # heart emoji
+'❤': Unicode U+2764 (category So: Symbol, other)
 ```
 
 We can see from the examples that the type is `Char`, and Julia has further information about the category of character.
@@ -49,7 +53,8 @@ Looking closer, it appears that these characters can be represented by 4 hexadec
 The full character set needs up to 6 hex digits.
 
 These numbers are called "code points", and currently range from U+0000 to U+10FFFF.
- 
+They display in the REPL, but within code use `codepoints()` to obtain them.
+
 Converting between `Char` and `Int` is simple:
 
 ```julia
@@ -112,10 +117,27 @@ Unfortunately, this is too optimistic!
 One complication comes from the need for "up to" 6 hex digits per code point.
 This means that different characters need different amounts of space in memory when UTF-8 encoded.
 
+A byte can only store (unsigned) numbers up to 255, two hex digits, so UTF-8 uses a variable number of bytes (1 to 4) to store a `Char`.
+These are called "code units", and the `ncodeunits()` function will return the number needed for a given character.
+
+```julia-repl
+julia> codepoint(jha)  # jha 'झ' is defined in an earlier example
+0x0000091d
+
+julia> ncodeunits(jha)
+3
+
+julia> ncodeunits('a')  # ASCII character
+1
+
+julia> ncodeunits('😱')  # emoji
+4
+```
+
 Also, not everything that can be displayed on screen has its own unique code point.
 Some visually-distinct characters are considered to be derived from others, so Unicode treats them as a parent character plus a modifier.
 
-This issue will become relevant in the Strings concept, when we look at indexing and its challenges.
+This issue affects Strings, where it presents challenges for indexing.
 
 
 [ascii]: https://en.wikipedia.org/wiki/ASCII
@@ -136,4 +158,4 @@ This issue will become relevant in the Strings concept, when we look at indexing
 [isspace]: https://docs.julialang.org/en/v1/base/strings/#Base.Unicode.isspace
 [isprint]: https://docs.julialang.org/en/v1/base/strings/#Base.Unicode.isprint
 [iscntrl]: https://docs.julialang.org/en/v1/base/strings/#Base.Unicode.iscntrl
-
+[ranges]: https://exercism.org/tracks/julia/concepts/ranges
