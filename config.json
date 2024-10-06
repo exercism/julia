@@ -57,6 +57,13 @@
           "basics"
         ],
         "status": "wip"
+      },
+      {
+        "slug": "squeaky-clean",
+        "name": "squeaky-clean",
+        "uuid": "7c06c4e8-4bc1-42c3-982a-f973f45193bf",
+        "concepts": [],
+        "prerequisites": []
       }
     ],
     "practice": [
