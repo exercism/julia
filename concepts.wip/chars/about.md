@@ -108,6 +108,38 @@ isxdigit('A')  # true
 For more specialized tests, we have [`in`][ranges].
 Also, regular expressions (the subject of another Concept) allow powerful search and manipulation.
 
+## Char Vector and String interconversions
+
+For String to Char Vector, we can use `collect()`.
+
+For Char Vector to String, there is the `String()' constructor.
+
+```julia-repl
+julia> s = "abcde"
+"abcde"
+
+julia> ca = collect(s)
+5-element Vector{Char}:
+ 'a': ASCII/Unicode U+0061 (category Ll: Letter, lowercase)
+ 'b': ASCII/Unicode U+0062 (category Ll: Letter, lowercase)
+ 'c': ASCII/Unicode U+0063 (category Ll: Letter, lowercase)
+ 'd': ASCII/Unicode U+0064 (category Ll: Letter, lowercase)
+ 'e': ASCII/Unicode U+0065 (category Ll: Letter, lowercase)
+
+julia> String(ca)
+"abcde"
+```
+
+This works with any characters, not just ASCII.
+
+```julia-repl
+julia> collect("❤,😱")
+3-element Vector{Char}:
+ '❤': Unicode U+2764 (category So: Symbol, other)
+ ',': ASCII/Unicode U+002C (category Po: Punctuation, other)
+ '😱': Unicode U+1F631 (category So: Symbol, other)
+```
+
 ## Storage
 
 Everything so far in the document seems relatively simple, so is there really not much to worry about?
