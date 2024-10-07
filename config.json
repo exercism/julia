@@ -542,6 +542,14 @@
         "difficulty": 2
       },
       {
+        "slug": "proverb",
+        "name": "Proverb",
+        "uuid": "8df744a9-6788-40b6-83c7-d39e705f17cf",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "trinary",
         "name": "Trinary",
         "uuid": "c09ed7ec-fa7c-4f6a-994f-3d3eb7f22df4",
