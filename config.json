@@ -57,6 +57,14 @@
           "basics"
         ],
         "status": "wip"
+      },
+      {
+        "slug": "currency-exchange",
+        "name": "currency-exchange",
+        "uuid": "6882a823-8c75-4b20-b6f3-2e87b574f4a8",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "wip"
       }
     ],
     "practice": [
