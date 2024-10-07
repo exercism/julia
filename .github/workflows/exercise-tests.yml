@@ -29,7 +29,7 @@ jobs:
             os: macos-14
 
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
+      - uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938
 
       - uses: julia-actions/setup-julia@780022b48dfc0c2c6b94cfee6a9284850107d037
         with:
@@ -48,7 +48,7 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
+      - uses: actions/checkout@d632683dd7b4114ad314bca15554477dd762a938
 
       - name: Pull julia-test-runner image
         run: docker pull exercism/julia-test-runner
