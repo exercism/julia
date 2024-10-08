@@ -112,13 +112,13 @@ Also, regular expressions (the subject of another Concept) allow powerful search
 
 For String to Char Vector, we can use `collect()`.
 
-For Char Vector to String, there is the `String()' constructor.
+For Char Vector to String, there is the `String()` constructor.
 
 ```julia-repl
 julia> s = "abcde"
 "abcde"
 
-julia> ca = collect(s)
+julia> cv = collect(s)
 5-element Vector{Char}:
  'a': ASCII/Unicode U+0061 (category Ll: Letter, lowercase)
  'b': ASCII/Unicode U+0062 (category Ll: Letter, lowercase)
@@ -126,7 +126,7 @@ julia> ca = collect(s)
  'd': ASCII/Unicode U+0064 (category Ll: Letter, lowercase)
  'e': ASCII/Unicode U+0065 (category Ll: Letter, lowercase)
 
-julia> String(ca)
+julia> String(cv)
 "abcde"
 ```
 
@@ -140,7 +140,15 @@ julia> collect("❤,😱")
  '😱': Unicode U+1F631 (category So: Symbol, other)
 ```
 
-## Storage
+Note that the `String()` constructor operates on a Vector.
+To _cast_ a single `Char` to a 1-character string, the function is `string()`, with lowercase `s`.
+
+```julia-repl
+julia> string('a')
+"a"
+```
+
+c## Storage
 
 Everything so far in the document seems relatively simple, so is there really not much to worry about?
 
