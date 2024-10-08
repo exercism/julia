@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://docs.julialang.org/en/v1/",
+    "description": "Official documentation"
+  },
+  {
+    "url": "https://docs.julialang.org/en/v1/manual/noteworthy-differences/#Noteworthy-differences-from-Python",
+    "description": "Noteworthy Differences from Python"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=X4Alzh3QyWU",
+    "description": "Exercism: A Brief Introduction to Julia"
+  },
+  {
+    "url": "https://julialang.org/learning/",
+    "description": "Get Started with Julia"
+  }
+]
