@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "Julia uses nothing for complete absence of a value, missing for gaps in our knowledge of the data, NaN for computation problems and unknown for some types of error state.."
+}
