@@ -75,6 +75,18 @@ Dict{Int64, Float64} with 5 entries:
   1 => 1.0
   ```
 
+In other languages, something very similar to a `Dict` might be called a dictionary (Python), a Hash (Ruby) or a HashMap (Java).
+
+For Pairs, whether in isolation or in a Vector, there are few constraints on the type of each component.
+
+To be valid in a `Dict`, the `Pair` must be a `key => value` pair, where the `key` is "hashable".
+Most importantly, this means the `key` must be _immutable_, so `Char`, `Int`, `String`, `Symbol`, and `Tuple` are all fine, but `Vector` is not allowed.
+
+If mutable keys are important to you, there is a separate but much less common [`IdDict`][iddict] type that can allow this.
+See the [manual][dict] for several other variants on the `Dict` type.
+
+### Modifying a Dict
+
 Entries can be added with a new key or overwritten with an existing key.
 
 ```julia-repl
@@ -94,15 +106,40 @@ Dict{Char, Int64} with 4 entries:
   'b' => 2
 ```
 
-In other languages, something very similar to a `Dict` might be called a dictionary (Python), a Hash (Ruby) or a HashMap (Java).
+To remove an entry, use the `delete!()` function, which will change the Dict if the key exists and silently do nothing otherwise.
 
-For Pairs, whether in isolation or in a Vector, there are few constraints on the type of each component.
+```julia-repl
+julia> delete!(pd, 'd')
+Dict{Char, Int64} with 3 entries:
+  'a' => 42
+  'c' => 3
+  'b' => 2
+```
 
-To be valid in a `Dict`, the `Pair` must be a `key => value` pair, where the `key` is "hashable".
-Most importantly, this means the `key` must be _immutable_, so `Char`, `Int`, `String`, `Symbol`, and `Tuple` are all fine, but `Vector` is not allowed.
+### Checking if a key or value exists
 
-If mutable keys are important to you, there is a separate but much less common [`IdDict`][iddict] type that can allow this.
-See the [manual][dict] for several other variants on the `Dict` type.
+There are different approaches.
+To check a key, there is a `haskey()` function:
+
+```julia-repl
+julia> haskey(pd, 'b')
+true
+```
+
+Alternatively, search either the keys or the values:
+
+```julia-repl
+julia> 'b' in keys(pd)
+true
+
+julia> 43 in values(pd)
+false
+
+julia> 42 ∈ values(pd)
+true
+```
+
+This remains efficient at scale, as the `keys()` and `values()` functions each return an iterator with a fast search algorithm.
 
 
 [pair]: https://docs.julialang.org/en/v1/base/collections/#Core.Pair
