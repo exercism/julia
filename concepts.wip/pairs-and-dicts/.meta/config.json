@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "A Dict is a collection of key => value Pairs, though the same Pair type has many other uses."
+}
