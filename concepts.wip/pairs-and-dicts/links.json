@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://docs.julialang.org/en/v1/base/collections/#Core.Pair",
+    "description": "Pair section in the manual."
+  },
+  {
+    "url": "https://docs.julialang.org/en/v1/base/collections/#Dictionaries",
+    "description": "Introduction to dictionaries in the manual."
+  }
+]
