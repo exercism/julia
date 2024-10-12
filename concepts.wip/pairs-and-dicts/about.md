@@ -48,7 +48,7 @@ julia> length(pv)
 3
 ```
 
-A [`Dict`][dict] is superficially similar, but storage is now implemented in a way that allows fast retrieval by key, even when the number of entries grows large.
+A [`Dict`][dict] is superficially similar, but storage is now implemented in a way that allows fast retrieval by key, known as a "hash table", even when the number of entries grows large.
 
 ```julia-repl
 julia> pd = Dict(pv)
