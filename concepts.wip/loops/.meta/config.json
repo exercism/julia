@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "It is possible to either loop until a condition is met, or loop over all elements in a collection."
+}
