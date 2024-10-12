@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://docs.julialang.org/en/v1/manual/strings/#man-characters",
+    "description": "Characters section from the manual."
+  },
+  {
+    "url": "https://home.unicode.org/",
+    "description": "Unicode official website."
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/UTF-8",
+    "description": "UTF-8 encoding."
+  }
+]
