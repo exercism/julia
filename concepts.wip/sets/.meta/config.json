@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "A Set in Julia is an unordered collection of unique entries, with fast algorithms for contains, union, intersection and difference operations."
+}
