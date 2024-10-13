@@ -60,7 +60,7 @@ true
 The following operations on pairs of Sets are supported (shortcuts to the operator symbol are shown in parentheses).
 
 - `union(A, B)` or `A ∪ B` (`\cup`): all entries in A or B or both.
-- `intersect(A, B)` or `A ∩ B` (`\cap`): all entries common to both A _and_ B.
+- `intersect(A, B)` or `A ∩ B` (`\cap`): all entries common to both A and B.
 - `setdiff(A, B)` (no symbol): entries in A but not in B.
 - `symdiff(A, B)` (no symbol): entries in either A or B but not both.
 - `issubset(A, B)` or `A ⊆ B` (`\subseteq`) or `B ⊇ A` (`\supseteq`): `true` if all entries in A are also in B.
