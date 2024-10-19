@@ -1,6 +1,6 @@
 [
-    {
-        "url": "https://docs.julialang.org/en/v1/stdlib/Random/",
-        "description": "Julia Manual"
-    }
+  {
+    "url": "https://docs.julialang.org/en/v1/stdlib/Random/",
+    "description": "Manual page for random functionality in the Base and Random modules."
+  }
 ]
