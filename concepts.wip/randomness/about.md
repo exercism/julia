@@ -263,6 +263,7 @@ For some more information, see the [`Statistics`][statistics] Concept.
 Most of the [`StatsBase`][statsbase] functions are quite technical and not relevant to this document.
 
 The exception is [`StatsBase.sample`][sbsample], which provides a full implementation of sampling with or without replacement (see an earlier section, above).
+There are also functions for weighted (non-uniform) sampling.
 
 ### The `Distributions.jl` package
 
