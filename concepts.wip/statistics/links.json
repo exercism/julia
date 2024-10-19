@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://docs.julialang.org/en/v1/stdlib/Statistics/",
+    "description": "Statistics module in the standard library."
+  },
+  {
+    "url": "https://juliapackages.com/u/juliastats",
+    "description": "Statistics-related packages for Julia."
+  }
+]
