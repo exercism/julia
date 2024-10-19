@@ -7,6 +7,8 @@ However, there are a few important differences.
 - Tuples are not required to be homogeneous: the type of each element is stored independently.
 - Tuples are immutable.
 
+Immutability allows more compiler optimizations and makes tuples more performant than vectors, so they should be preferred in cases where mutability is not necessary.
+
 ```julia-repl
 julia> t = (3, 5.2, "xyz")
 (3, 5.2, "xyz")
