@@ -1,5 +1,7 @@
 {
-  "authors": [],
+  "authors": [
+    "depial"
+  ],
   "files": {
     "solution": [
       "cater-waiter.jl"
