@@ -1,6 +1,6 @@
 """Functions for compiling dishes and ingredients for a catering company."""
 
-include(joinpath(dirname(@__DIR__), "sets_categories_data.jl"))
+include("sets_categories_data.jl")
 
 """Remove duplicates from `dish_ingredients`.
 

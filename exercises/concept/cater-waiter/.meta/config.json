@@ -4,7 +4,7 @@
   ],
   "files": {
     "solution": [
-      "cater-waiter.jl"
+      "sets.jl"
     ],
     "test": [
       "runtests.jl"
@@ -13,5 +13,6 @@
       ".meta/exemplar.jl"
     ]
   },
-  "blurb": "A Set in Julia is an unordered collection of unique entries, with fast algorithms for contains, union, intersection and difference operations."
+  "icon": "meetup",
+  "blurb": "Learn about sets by managing the menus and ingredients for your catering company's event."
 }
