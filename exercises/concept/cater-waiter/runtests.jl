@@ -1,8 +1,6 @@
 using Test 
 
 include("cater-waiter.jl")
-include("sets_categories_data.jl")
-include("sets_test_data.jl")
 
 @testset verbose=true "tests" begin
     @testset "clean ingredients" begin
