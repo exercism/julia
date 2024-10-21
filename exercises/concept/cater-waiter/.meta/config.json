@@ -4,7 +4,7 @@
   ],
   "files": {
     "solution": [
-      "sets.jl"
+      "cater-waiter.jl"
     ],
     "test": [
       "runtests.jl"
