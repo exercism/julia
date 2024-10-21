@@ -78,7 +78,7 @@ Fortunately, Julia has a "magic" dot to solve this problem very simply: `v .- 0.
 
 The next section explains why.
 
-## Broadcasting
+## [Broadcasting][broadcasting]
 
 So, `v - 0.5` fails but `v .- 0.5` succeeds, and we need to understand what the dot is doing.
 
@@ -254,3 +254,4 @@ julia> a[condition]
 [statistics]: https://exercism.org/tracks/julia/concepts/statistics
 [zip]: https://docs.julialang.org/en/v1/base/iterators/#Base.Iterators.zip
 [bitarray]: https://docs.julialang.org/en/v1/base/arrays/#Base.BitArray
+[broadcasting]: https://docs.julialang.org/en/v1/manual/arrays/#Broadcasting
