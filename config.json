@@ -62,7 +62,9 @@
         "slug": "cater-waiter",
         "name": "cater-waiter",
         "uuid": "40c83f3e-cf87-4f00-9205-8c002b419a8d",
-        "concepts": [],
+        "concepts": [
+          "sets"
+        ],
         "prerequisites": []
       }
     ],
