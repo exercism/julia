@@ -1,6 +1,10 @@
 [
-    {
-        "url": "https://docs.julialang.org/en/v1/manual/control-flow/#man-conditional-evaluation",
-        "description": "Julia Manual"
-    }
+  {
+    "url": "https://docs.julialang.org/en/v1/manual/mathematical-operations/#Numeric-Comparisons",
+    "description": "Numeric comparisons"
+  },
+  {
+    "url": "https://docs.julialang.org/en/v1/manual/control-flow/#man-conditional-evaluation",
+    "description": "Conditional evaluation"
+  }
 ]
