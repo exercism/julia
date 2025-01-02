@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://docs.julialang.org/en/v1/base/base/#Core.Tuple",
+    "description": "Tuple section in the manual."
+  },
+  {
+    "url": "https://docs.julialang.org/en/v1/base/base/#Core.NamedTuple",
+    "description": "NamedTuple section in the manual."
+  }
+]
