@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://docs.julialang.org/en/v1/manual/arrays/",
+    "description": "Arrays section in the Julia manual."
+  },
+  {
+    "url": "https://docs.julialang.org/en/v1/manual/arrays/#Construction-and-Initialization",
+    "description": "Constructing and initializing arrays."
+  },
+  {
+    "url": "https://docs.julialang.org/en/v1/base/collections/#Dequeues",
+    "description": "Functions for manipulating arrays."
+  }
+]
