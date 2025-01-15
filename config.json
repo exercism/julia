@@ -1090,6 +1090,11 @@
   },
   "concepts": [
     {
+      "uuid": "37ae4288-99d6-45bb-b550-766b03abb39f",
+      "slug": "basics",
+      "name": "Basics"
+    },
+    {
       "uuid": "32384ed4-ef26-4118-8ea3-4d44c331e828",
       "slug": "functions",
       "name": "Functions"
