@@ -245,4 +245,4 @@ So, you are probably using technology that relies on complex number calculations
 [complex]: https://docs.julialang.org/en/v1/manual/complex-and-rational-numbers/#Complex-Numbers
 [math-complex]: https://www.nagwa.com/en/videos/143121736364/
 [engineering-complex]: https://www.khanacademy.org/science/electrical-engineering/ee-circuit-analysis-topic/ee-ac-analysis/v/ee-complex-numbers
-[operators]: https://docs.python.org/3/library/stdtypes.html#numeric-types-int-float-complex
+[operators]: https://docs.julialang.org/en/v1/manual/mathematical-operations/#Arithmetic-Operators
