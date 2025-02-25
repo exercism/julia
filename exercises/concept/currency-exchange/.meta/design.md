@@ -19,7 +19,9 @@ The goal of this exercise is to teach the student how to use arithmetic operator
 
 The Concepts this exercise unlocks are:
 
-***TODO***
+- `conditionals`
+- `bitwise-operations`
+- `rational-numbers`
 
 ## Prerequisites
 
