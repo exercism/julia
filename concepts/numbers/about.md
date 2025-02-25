@@ -433,8 +433,5 @@ As well as rational numbers, later parts of the syllabus will discuss:
 [bigint]: https://docs.julialang.org/en/v1/base/numbers/#BigFloats-and-BigInts
 [conditionals]: https://exercism.org/tracks/julia/concepts/conditionals
 [isapprox]: https://docs.julialang.org/en/v1/base/math/#Base.isapprox
-<<<<<<< HEAD:concepts/numbers/about.md
 [operators]: https://docs.julialang.org/en/v1/manual/mathematical-operations/#Arithmetic-Operators
 [implicit-multiplication]: https://docs.julialang.org/en/v1/manual/integers-and-floating-point-numbers/#man-numeric-literal-coefficients
-=======
->>>>>>> origin/numbers-draft:concepts.wip/numbers/about.md
