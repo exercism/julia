@@ -368,6 +368,32 @@ Endless manual checking of values would be tedious to program, and would certain
 
 Stopping with an error message at every slight glitch would make your program _very_ unpopular with users!
 
+## Comparing floating-point values
+
+As described in the [`Conditionals`][conditionals] concept, equality testing is usually done with the `==` operator.
+
+This works well for integers, characters, strings, etc.
+However, floating-point values have limited precision, and different ways of calculating the same result can lead to slightly different values.
+For `Float64`, this will typically be around the 15th significant digit: a small difference, but not "equality".
+
+Traditionally, the advice to programmers is _never_ use `==` with floating-point values: the results are unpredictable.
+
+A widely-used alternative is to test the absolute value of the difference against some allowed tolerance (often called epsilon or ϵ).
+So instead of `a == b`, use `abs(a - b) < epsilon`.
+
+Julia provides a cleaner alternative with the [`isapprox()`][isapprox] function.
+
+For an absolute tolerance, the syntax is `isapprox(a, b, atol=epsilon`).
+The `atol` keyword is required in this case.
+
+The relative tolerance is often more useful.
+This is the default, so `isapprox(a, b)` will try to choose some sensible value for `rtol` (the rules are quite complicated).
+
+A relative tolerance can also be specified, as a fraction of the values being compared.
+So `isapprox(a, b, rtol=0.01` tests that the values are within 1% of each other.
+
+In the usual Julia fashion, there is a mathematical operator that is a synonym for the default case: `a ≈ b` (with the operator entered as `\approx` then `<tab>`).
+
 ## Related future concepts
 
 As well as rational numbers, later parts of the syllabus will discuss:
@@ -407,5 +433,8 @@ As well as rational numbers, later parts of the syllabus will discuss:
 [bigint]: https://docs.julialang.org/en/v1/base/numbers/#BigFloats-and-BigInts
 [conditionals]: https://exercism.org/tracks/julia/concepts/conditionals
 [isapprox]: https://docs.julialang.org/en/v1/base/math/#Base.isapprox
+<<<<<<< HEAD:concepts/numbers/about.md
 [operators]: https://docs.julialang.org/en/v1/manual/mathematical-operations/#Arithmetic-Operators
 [implicit-multiplication]: https://docs.julialang.org/en/v1/manual/integers-and-floating-point-numbers/#man-numeric-literal-coefficients
+=======
+>>>>>>> origin/numbers-draft:concepts.wip/numbers/about.md
