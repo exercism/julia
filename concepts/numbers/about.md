@@ -28,7 +28,7 @@ Internally, the compiler will use whatever signed integer type is most appropria
 On modern PCs this will usually be `Int64`, which is perfectly adequate for most tasks.
 
 [Types][types] will be discussed more fully in a future concept.
-For now, the _numeric_ types should hopefully be intuitive enough for this document to make sense.
+For now, the [_numeric_ types][numeric-types] should hopefully be intuitive enough for this document to make sense.
 
 As we will see in a later concept, Julia natively supports very large, multidimensional arrays.
 These can challenge both the amount of available memory, and the bandwidth for data transfers.
@@ -172,13 +172,13 @@ Also, the precision is limited, with a large but finite number of [significant d
 
 ## Arithmetic operators
 
-As discussed in the Basics concept, arithmetic operators mostly work the same as standard arithmetic, as taught to children.
+As discussed in the Basics concept, [arithmetic operators][operators] mostly work the same as standard arithmetic, as taught to children.
 Note that [exponentiation][exponentiation] uses `^`, _not_ `**` (both are common in other languages).
 
 ```julia
 2 + 3  # 5 (addition)
 2 - 3  # -1 (subtraction)
-2 * 3  # 6 (mutlplication)
+2 * 3  # 6 (multiplication)
 8 / 2  # 4.0 (division)
 8 % 3  # 2 (remainder)
 2 ^ 3  # 8 (exponentiation)
@@ -378,7 +378,8 @@ As well as rational numbers, later parts of the syllabus will discuss:
 
 [basics]: https://exercism.org/tracks/julia/concepts/basics
 [integer]: https://en.wikipedia.org/wiki/Integer
-[float]: https://en.wikipedia.org/wiki/Floating-point_arithmetic
+[numeric-types]: https://docs.julialang.org/en/v1/manual/integers-and-floating-point-numbers/
+[float]: https://docs.julialang.org/en/v1/manual/integers-and-floating-point-numbers/#Floating-Point-Numbers
 [types]: https://docs.julialang.org/en/v1/manual/types/
 [rational]: https://en.wikipedia.org/wiki/Rational_number
 [irrational]: https://en.wikipedia.org/wiki/Irrational_number
@@ -404,3 +405,5 @@ As well as rational numbers, later parts of the syllabus will discuss:
 [complex]: https://en.wikipedia.org/wiki/Complex_number
 [bitwise]: https://en.wikipedia.org/wiki/Bitwise_operation
 [bigint]: https://docs.julialang.org/en/v1/base/numbers/#BigFloats-and-BigInts
+[operators]: https://docs.julialang.org/en/v1/manual/mathematical-operations/#Arithmetic-Operators
+[implicit-multiplication]: https://docs.julialang.org/en/v1/manual/integers-and-floating-point-numbers/#man-numeric-literal-coefficients
