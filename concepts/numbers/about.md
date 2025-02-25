@@ -405,5 +405,7 @@ As well as rational numbers, later parts of the syllabus will discuss:
 [complex]: https://en.wikipedia.org/wiki/Complex_number
 [bitwise]: https://en.wikipedia.org/wiki/Bitwise_operation
 [bigint]: https://docs.julialang.org/en/v1/base/numbers/#BigFloats-and-BigInts
+[conditionals]: https://exercism.org/tracks/julia/concepts/conditionals
+[isapprox]: https://docs.julialang.org/en/v1/base/math/#Base.isapprox
 [operators]: https://docs.julialang.org/en/v1/manual/mathematical-operations/#Arithmetic-Operators
 [implicit-multiplication]: https://docs.julialang.org/en/v1/manual/integers-and-floating-point-numbers/#man-numeric-literal-coefficients
