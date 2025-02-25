@@ -1079,6 +1079,11 @@
       "uuid": "90365822-f58c-4e45-88be-430978b77e65",
       "slug": "comments",
       "name": "Comments"
+    },
+    {
+      "uuid": "978ef2c8-0cc2-431f-a1c0-48840e0b5445",
+      "slug": "numbers",
+      "name": "Numbers"
     }
   ],
   "key_features": [
