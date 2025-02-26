@@ -89,7 +89,7 @@ julia> myvar = "now a string"
 Global variables, created outside any function, are:
 - Allowed.
 - Sometimes necessary.
-- Usually discouraged (only within `*.jl` files; the REPL operates differently).
+- Usually discouraged (though only within `*.jl` files; the REPL operates differently).
 
 If a value needs to be available throughout the program, but is not expected to change, use a [constant][constants] instead.
 
@@ -113,7 +113,7 @@ WARNING: redefinition of constant Main.answer. This may fail, cause incorrect an
 ```julia
 2 + 3  # 5 (addition)
 2 - 3  # -1 (subtraction)
-2 * 3  # 6 (mutlplication)
+2 * 3  # 6 (multiplication)
 8 / 2  # 4.0 (division)
 8 % 3  # 2 (remainder)
 2 ^ 3  # 8 (exponentiation)
@@ -121,7 +121,7 @@ WARNING: redefinition of constant Main.answer. This may fail, cause incorrect an
 
 Note that division with `/` always gives a floating-point value.
 
-We will return to this in a later concept, which will discuss integer division with `div()` or `÷` to truncate and `//` to get a rational number.
+We will return to this in later concepts, which will discuss integer division with `div()` or `÷` to truncate and `//` to get a rational number.
 
 ## Functions
 
