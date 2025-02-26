@@ -3,7 +3,8 @@
 Julia is a dynamic, strongly-typed programming language.
 The programming style is mainly functional, though with more flexibility than in languages such as Haskell.
 
-There is a strong and versatile type system, which will become important in later concepts. In practice, Julia will usually infer a suitable default from the context.
+There is a strong and versatile type system, which will become important in later concepts. 
+In practice, Julia will usually infer a suitable default from the context.
 
 Despite its emphasis on readability, making it appear as a scripting language like Python and Ruby, Julia code is compiled before running.
 The Just In Time (JIT) compiler produces highly optimized code for each function as it is enountered, leading to high runtime speed.
@@ -124,7 +125,8 @@ We will return to this in a later concept, which will discuss integer division w
 
 ## Functions
 
-For best runtime performance, it is best to place most of the code inside [functions][functions]. Having lots of small functions is fine, in contrast to some other languages.
+For best runtime performance, it is best to place most of the code inside [functions][functions]. 
+Having lots of small functions is fine, in contrast to some other languages.
 
 There are two common ways to define a named function in Julia:
 
