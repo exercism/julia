@@ -16,8 +16,7 @@ julia> typeof(true)
 Bool
 ```
 
-In contrast to several other languages, Julia deliberately has no concept of "truthiness".
-Only expressions which evaluate to `true` or `false` will be treated as a `Bool`.
+In contrast to several other languages, Julia deliberately has no concept of "truthiness", and only expressions which evaluate to `true` or `false` will be treated as a `Bool`.
 
 Specifically, empty arrays or strings will *not* be interpreted as `false`.
 There must be an appropriate test such as `isempty()` if you want special handling for empty values.
