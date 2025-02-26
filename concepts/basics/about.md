@@ -35,6 +35,9 @@ Videos include:
 
 ## Comments
 
+Including comments in your code is extremely important to help humans read your code and understand your intentions: maybe other people, but also the future you.
+They are (mostly) ignored by the compiler.
+
 Two options are possible in Julia:
 - Single-line comments start with `#`
 - Multi-line comments start with `#=` and end with `=#`. Nesting is allowed.
