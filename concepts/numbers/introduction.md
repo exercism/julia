@@ -27,7 +27,7 @@ julia> large_number = 1_234_567_890
 
 ## Floating-point
 
-It will be no surprise that floating-point numbers optionally have a decimal point, and a fractional part after the point.
+It will be no surprise that floating-point numbers have a decimal point, and a fractional part after the point.
 
 ```julia-repl
 julia> f = 3.45
