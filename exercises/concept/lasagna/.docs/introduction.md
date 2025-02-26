@@ -42,7 +42,7 @@ This will typically be near the top of the `*.jl` file, before the function defi
 
 ## Arithmetic operators
 
-These mostly work conventionally:
+These are the same as in many other languages:
 
 ```julia
 2 + 3  # 5 (addition)
