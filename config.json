@@ -1095,6 +1095,11 @@
       "name": "Booleans"
     },
     {
+      "uuid": "813fb2fa-0068-4167-93d6-e8b8e7b7b55c",
+      "slug": "booleans",
+      "name": "Booleans"
+    },
+    {
       "uuid": "006ebce8-87cd-4695-87e6-8a7b8dc2f239",
       "slug": "integer-introduction",
       "name": "Integers and Arithmetic Operations"
