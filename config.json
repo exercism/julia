@@ -1091,8 +1091,8 @@
   "concepts": [
     {
       "uuid": "32384ed4-ef26-4118-8ea3-4d44c331e828",
-      "slug": "functions",
-      "name": "Functions"
+      "slug": "booleans",
+      "name": "Booleans"
     },
     {
       "uuid": "006ebce8-87cd-4695-87e6-8a7b8dc2f239",
