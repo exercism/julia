@@ -526,9 +526,25 @@
         ]
       },
       {
+        "slug": "strain",
+        "name": "Strain",
+        "uuid": "b16f98d5-60af-4f03-922a-ff2a98fd5c2b",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
         "slug": "protein-translation",
         "name": "Protein Translation",
         "uuid": "ef95ea34-cc9e-48aa-b2f9-6226134a3644",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "proverb",
+        "name": "Proverb",
+        "uuid": "8df744a9-6788-40b6-83c7-d39e705f17cf",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
@@ -641,6 +657,14 @@
         "slug": "matrix",
         "name": "Matrix",
         "uuid": "9d5fb572-32cd-4657-a915-3c2822311af8",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "queen-attack",
+        "name": "Queen Attack",
+        "uuid": "e68041f6-a661-41dd-94fb-2000095803ae",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
@@ -1067,8 +1091,8 @@
   "concepts": [
     {
       "uuid": "32384ed4-ef26-4118-8ea3-4d44c331e828",
-      "slug": "functions",
-      "name": "Functions"
+      "slug": "booleans",
+      "name": "Booleans"
     },
     {
       "uuid": "006ebce8-87cd-4695-87e6-8a7b8dc2f239",
@@ -1084,6 +1108,11 @@
       "uuid": "9babe703-1f5f-4f59-a4b2-349b8d461dd8",
       "slug": "conditionals",
       "name": "Conditionals"
+    },
+    {
+      "uuid": "90365822-f58c-4e45-88be-430978b77e65",
+      "slug": "numbers",
+      "name": "Numbers"
     }
   ],
   "key_features": [
