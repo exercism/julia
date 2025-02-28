@@ -22,20 +22,17 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        julia-version: ["1.6", "1", nightly]
+        julia-version: ["1.10", "1.11", nightly]
         os: [ubuntu-22.04, windows-2022, macos-14]
-        exclude:
-          - julia-version: 1.6
-            os: macos-14
 
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
 
-      - uses: julia-actions/setup-julia@780022b48dfc0c2c6b94cfee6a9284850107d037
+      - uses: julia-actions/setup-julia@5c9647d97b78a5debe5164e9eec09d653d29bd71
         with:
           version: ${{ matrix.julia-version }}
 
-      - uses: julia-actions/cache@8608484607cba0bdb5437a7bad85d6502499d029
+      - uses: julia-actions/cache@2b1bf4d8a138668ac719ea7ca149b53ed8d8401e
 
       - name: Install test dependencies
         run: julia --color=yes --project -e "using Pkg; Pkg.instantiate()"
@@ -48,7 +45,7 @@ jobs:
     runs-on: ubuntu-22.04
 
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
 
       - name: Pull julia-test-runner image
         run: docker pull exercism/julia-test-runner
@@ -61,7 +58,7 @@ jobs:
         run: julia --color=yes --project runtestrunner.jl
 
       - name: Upload reports as artifact
-        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874
+        uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08
         with:
           name: test-reports
           path: ${{ steps.generate-reports.outputs.results-path }}
