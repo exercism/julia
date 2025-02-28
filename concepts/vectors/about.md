@@ -7,54 +7,57 @@ Typically, the data will be stored in arrays (or some related type), so it is re
 
 Arrays can be of arbitrary size (subject only to memory constraints in your hardware), and can have arbitrarily many dimensions.
 
-However, this introductory Concept concentrates on the basics of 1-dimensional arrays.
-Other aspects, including the multidimensional case, will be covered later in the syllabus.
+Some types of arrays have special names (copied from Linear Algebra).
+A 1-Dimensional array is called a `Vector` and a 2-dimensional array is called a `Matrix`.
+Both are subtypes of `Array` in Julia.
 
-## Creating 1-D arrays
+This introductory Concept concentrates on the basics of Vectors.
+Higher-dimensional arrays will be covered later in the syllabus.
 
-In Julia, an [array][arrays] is an ordered sequence of values that can be accessed by index number.
+## Creating Vectors
 
-The simplest way to create an array is to list the values in square brackets:
+In Julia, a [Vector][arrays] is an ordered sequence of values that can be accessed by index number.
+
+The simplest way to create a Vector is to list the values in square brackets:
 
 ```julia-repl
-julia> numarray = [1, 4, 9]
+julia> num_vec = [1, 4, 9]
 3-element Vector{Int64}:
  1
  4
  9
 
-julia> str_array = ["arrays", "are", "important"]
+julia> str_vec = ["arrays", "are", "important"]
 3-element Vector{String}:
  "arrays"
  "are"
  "important"
 ```
 
-The result may not be quite what you were expecting.
-Here, "Vector" just means a 1-D array, and the Vector type matches the type of each element.
+The Vector type matches the type of each element.
 
 Technically, it is a _column_ vector, but please ignore that for now if you are unfamiliar with Linear Algebra.
 It should make more sense after the Multidimensional Arrays concept.
 
-_So arrays need to be homogeneous (all elements the same type)?_
+_So Vectors need to be homogeneous (all elements the same type)?_
 
 At some level, yes — and it is recommended to aim for this if you want the best performance.
 However, Julia can work round this limitation (when necessary) by using the `Any` type:
 
 ```julia-repl
-julia> mixed_array = [1, "str", 'c']
+julia> mixed_vector = [1, "str", 'c']
 3-element Vector{Any}:
  1
   "str"
   'c': ASCII/Unicode U+0063 (category Ll: Letter, lowercase)
 ```
 
-### Pre-filled arrays
+### Pre-filled Vectors
 
-It is very common to start from arrays of all-0 or all-1 values. For these, there are functions called (unsurprisingly) `zeros()` and `ones()`, which take the array size as a parameter.
+It is very common to start from vectors of all-0 or all-1 values. For these, there are functions called (unsurprisingly) `zeros()` and `ones()`, which take the vector size as a parameter.
 The default type is Float64, but other numeric types can optionally be specified.
 
-By extension, the `fill()` function takes both a value to repeat, and the desired array size.
+By extension, the `fill()` function takes both a value to repeat, and the desired vector size.
 
 ```julia-repl
 julia> zeros(3)
@@ -107,9 +110,9 @@ Note the convenience indexing with `end` (which is very useful) and `begin` (whi
 Python programmers may be wondering about negative indices.
 Don't: these are not part of Julia, and will raise a `BoundsError`, as will any index smaller than 1 or bigger than `length(squares)`.
 
-## Array operations
+## Vector operations
 
-Arrays in Julia are _mutable_: we can change the contents of individual cells.
+Vectors in Julia are _mutable_: we can change the contents of individual cells.
 
 ```julia-repl
 julia> vals = [1, 3, 5, 7]
@@ -131,16 +134,16 @@ julia> vals
  7
 ```
 
-There are many [functions available][dequeue] for manipulating 1-D arrays, though the Julia documentation generalizes them to "collections" rather than arrays.
+There are many [functions available][dequeue] for manipulating vectors, though the Julia documentation generalizes them to "collections" rather than vectors.
 
 Note that, by convention, functions that mutate their input have `!` in the name.
 The compiler will not enforce this, but it is a very _strong_ convention in the Julia world.
 
 These are a few of the useful functions:
 
-- To add values to the end of the array, use [`push!()`][push].
+- To add values to the end of the vector, use [`push!()`][push].
 - To remove the last value, use [`pop!()`][pop].
-- To operate on the start of the array, the corresponding functions are [`pushfirst!()`][pushfirst] and [`popfirst!()`][popfirst].
+- To operate on the start of the vector, the corresponding functions are [`pushfirst!()`][pushfirst] and [`popfirst!()`][popfirst].
 - To insert or remove an element at any position, there is [`insert!()`][insert] and [`deleteat!()`][deleteat].
 
 ```julia-repl
@@ -168,9 +171,9 @@ julia> vals
 
 ## Concatenation
 
-Array concatenation is fairly simple for 1-D arrays, though a glance at the manual gives warning of complexities in store when we consider multidimensional arrays.
+Concatenation is fairly simple for vectors, though a glance at the manual gives warning of complexities in store when we consider multidimensional arrays.
 
-The [`append!()][append] function can take a mixture of several arrays and single elements as input.
+The [`append!()][append] function can take a mixture of several vectors and single elements as input.
 
 ```julia-repl
 julia> append!([1, 2], [3, 4], [-1, -2], 15)
