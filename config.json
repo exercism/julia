@@ -57,6 +57,18 @@
           "basics"
         ],
         "status": "wip"
+      },
+      {
+        "slug": "elyses-enchantmants",
+        "name": "Elyses Enchantmants",
+        "uuid": "185683d8-96f7-4d51-8726-56e18b6ef0c7",
+        "concepts": [
+          "vectors"
+        ],
+        "prerequisites": [
+          "conditionals"
+        ],
+        "status": "wip"
       }
     ],
     "practice": [
