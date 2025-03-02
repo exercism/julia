@@ -1,8 +1,11 @@
+function rank_range() 
+end
 
-rank_range() = 1:8
+function file_range()
+end
 
-file_range() = 'A':'H'
+function ranks()
+end
 
-ranks() = collect(rank_range())
-
-files() = collect(file_range())
+function files()
+end
