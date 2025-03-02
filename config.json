@@ -57,6 +57,18 @@
           "basics"
         ],
         "status": "wip"
+      },
+      {
+        "slug": "chessboard",
+        "name": "chessboard",
+        "uuid": "48977bc8-36e7-41be-8fd5-99c49de00f20",
+        "concepts": [
+          "ranges"
+        ],
+        "prerequisites": [
+          "vectors"
+        ],
+        "status": "wip"
       }
     ],
     "practice": [
