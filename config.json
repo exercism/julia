@@ -1091,13 +1091,23 @@
   "concepts": [
     {
       "uuid": "32384ed4-ef26-4118-8ea3-4d44c331e828",
-      "slug": "functions",
-      "name": "Functions"
+      "slug": "booleans",
+      "name": "Booleans"
     },
     {
       "uuid": "006ebce8-87cd-4695-87e6-8a7b8dc2f239",
       "slug": "integer-introduction",
       "name": "Integers and Arithmetic Operations"
+    },
+    {
+      "uuid": "90365822-f58c-4e45-88be-430978b77e65",
+      "slug": "comments",
+      "name": "Comments"
+    },
+    {
+      "uuid": "3ce09c90-3096-4dcc-a53f-66d0054cbe43",
+      "slug": "ranges",
+      "name": "Ranges"
     },
     {
       "uuid": "90365822-f58c-4e45-88be-430978b77e65",
