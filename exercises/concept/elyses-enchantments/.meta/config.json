@@ -8,7 +8,7 @@
   ],
   "files": {
     "solution": [
-      "elyses-enchantmants.jl"
+      "elyses-enchantments.jl"
     ],
     "test": [
       "runtests.jl"
