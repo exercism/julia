@@ -57,6 +57,18 @@
         "status": "wip"
       },
       {
+        "slug": "elyses-enchantments",
+        "name": "Elyses Enchantments",
+        "uuid": "185683d8-96f7-4d51-8726-56e18b6ef0c7",
+        "concepts": [
+          "vectors"
+        ],
+        "prerequisites": [
+          "conditionals"
+          ],
+        "status": "wip"
+      },
+      {
         "slug": "cars-assemble",
         "name": "cars-assemble",
         "uuid": "6c23b2bb-3972-4865-b25f-f8804555fb0b",
