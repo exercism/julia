@@ -1,6 +1,6 @@
 using Test
 
-include("elyses-enchantmants.jl")
+include("elyses-enchantments.jl")
 
 @testset verbose = true "tests" begin
     @testset "Retrieve a card from a deck" begin
