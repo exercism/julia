@@ -65,7 +65,7 @@
         ],
         "prerequisites": [
           "conditionals"
-          ],
+        ],
         "status": "wip"
       },
       {
@@ -78,6 +78,19 @@
         "prerequisites": [
           "booleans",
           "numbers"
+        ],
+        "status": "wip"
+      },
+      {
+        "slug": "high-school-sweetheart",
+        "name": "high-school-sweetheart",
+        "uuid": "6e893250-7f36-4179-92c1-cfa453637149",
+        "concepts": [
+          "function-composition"
+        ],
+        "prerequisites": [
+          "functions", 
+          "strings"
         ],
         "status": "wip"
       }
