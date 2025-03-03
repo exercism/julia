@@ -13,7 +13,7 @@ Each of the required functions takes a single integer parameter, the speed of th
 
 ## 1. Calculate the success rate
 
-Implement the `success_rate()` method to calculate the ratio of an item being created without error for a given speed. 
+Implement the `success_rate()` method to calculate the probability of an item being created without error for a given speed. 
 The following table shows how speed influences the success rate:
 
 - `0`: 0% success rate.
