@@ -62,7 +62,7 @@ squares[begin]  # 0 ("begin" is synonym for 1)
 squares[end]  # 16 ("end" is synonym for length(squares))
 ```
 
-Note the convenience indexing with `end` (which is very useful) and `begin` (which is probably not).
+Note the convenience of indexing with `end` (which is very useful) and `begin` (which is probably not).
 
 Python programmers may be wondering about negative indices.
 Don't: these are not part of Julia, and will raise a `BoundsError`, as will any index smaller than 1 or bigger than `length(squares)`.
