@@ -1106,6 +1106,11 @@
       "name": "Booleans"
     },
     {
+      "uuid": "9f3b90c3-87b4-48cb-81d0-fb6867a20cac",
+      "slug": "vectors",
+      "name": "Vectors"
+    },
+    {
       "uuid": "006ebce8-87cd-4695-87e6-8a7b8dc2f239",
       "slug": "integer-introduction",
       "name": "Integers and Arithmetic Operations"
