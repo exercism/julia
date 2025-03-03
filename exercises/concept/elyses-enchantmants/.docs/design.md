@@ -10,7 +10,7 @@ The goal of this exercise is to teach the student the basics of vectors (1-D arr
 - Know how to create vectors.
 - Understand vector indexing
 - Know that negative indices are not allowed.
-- Know how to modify, insert and delete enties
+- Know how to modify, insert and delete entries
 
 ## Out of scope
 
