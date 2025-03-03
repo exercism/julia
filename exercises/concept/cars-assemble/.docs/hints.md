@@ -9,7 +9,7 @@
 ## 2. Calculate the production rate per hour
 
 - The total theoretical production rate depends on the base production rate (a constant) and the speed.
-- Return the actual production rate, which also depends on the success rate,
+- Return the actual production rate, which also depends on the success rate.
 
 ## 3. Calculate the number of working items produced per minute
 
