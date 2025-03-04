@@ -25,20 +25,20 @@ julia> file_range()
 # output omitted
 ```
 
-## 3. Transform the rank range into a list of ranks
+## 3. Transform the rank range into a vector of ranks
 
-Implement the `ranks()` function. It should return a list of integers, from 1 to 8. 
-Do not write the list by hand, generate it from the range returned by the `rank_range()` function.
+Implement the `ranks()` function. It should return a vector of integers, from 1 to 8. 
+Do not write the vector by hand, generate it from the range returned by the `rank_range()` function.
 
 ```julia-repl
 julia> ranks()
 [1, 2, 3, 4, 5, 6, 7, 8]
 ```
 
-## 4. Transform the file range into a list of files
+## 4. Transform the file range into a vector of files
 
-Implement the `files` function. It should return a list of characters, from 'A' to 'H'. 
-Do not write the list by hand, generate it from the range returned by the `file_range()` function.
+Implement the `files` function. It should return a vector of characters, from 'A' to 'H'. 
+Do not write the vector by hand, generate it from the range returned by the `file_range()` function.
 
 ```julia-repl
 julia> files()
