@@ -1141,11 +1141,6 @@
       "name": "Vectors"
     },
     {
-      "uuid": "006ebce8-87cd-4695-87e6-8a7b8dc2f239",
-      "slug": "integer-introduction",
-      "name": "Integers and Arithmetic Operations"
-    },
-    {
       "uuid": "9babe703-1f5f-4f59-a4b2-349b8d461dd8",
       "slug": "conditionals",
       "name": "Conditionals"
