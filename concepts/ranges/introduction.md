@@ -18,7 +18,7 @@ Ranges are very common: not just to save you typing, but also as return types fr
 Note that ranges are _not_ vectors.
 They are just a set of instructions to generate a sequence ("lazy" evaluation, or an "iterator").
 
-If you need an vector, use the `collect()` function for conversion:
+If you need a range as a vector, use the `collect()` function for conversion:
 
 ```julia-repl
 julia> collect(0:5)
