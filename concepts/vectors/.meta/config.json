@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "Arrays are a huge and very important topic in Julia. This concept covers the basics of 1-D arrays and ranges."
+}
