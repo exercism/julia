@@ -1161,6 +1161,11 @@
       "uuid": "90365822-f58c-4e45-88be-430978b77e65",
       "slug": "numbers",
       "name": "Numbers"
+    },
+    {
+      "uuid": "3ce09c90-3096-4dcc-a53f-66d0054cbe43",
+      "slug": "ranges",
+      "name": "Ranges"
     }
   ],
   "key_features": [
