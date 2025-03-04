@@ -57,6 +57,18 @@
         "status": "wip"
       },
       {
+        "slug": "currency-exchange",
+        "name": "currency-exchange",
+        "uuid": "6882a823-8c75-4b20-b6f3-2e87b574f4a8",
+        "concepts": [
+          "numbers"
+        ],
+        "prerequisites": [
+          "basics"
+        ],
+        "status": "wip"
+      },
+      {
         "slug": "elyses-enchantments",
         "name": "Elyses Enchantments",
         "uuid": "185683d8-96f7-4d51-8726-56e18b6ef0c7",
