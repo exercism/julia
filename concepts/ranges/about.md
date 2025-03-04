@@ -21,7 +21,7 @@ Arrays are defined at the start ("greedy" evaluation), and need storage proporti
 
 In contrast, ranges are just a set of instructions to generate a sequence ("lazy" evaluation, or an "iterator").
 
-If you need an array, use the [`collect()`][collect1] function for conversion:
+If you need a range as an array, use the [`collect()`][collect1] function for conversion:
 
 ```julia-repl
 julia> collect(0:5)
