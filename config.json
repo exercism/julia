@@ -66,6 +66,7 @@
         "prerequisites": [
           "vectors"
         ],
+        "status": "wip"
       },
       {
         "slug": "currency-exchange",
