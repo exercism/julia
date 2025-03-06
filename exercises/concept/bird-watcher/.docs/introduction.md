@@ -97,7 +97,7 @@ This is at the heart of `broadcasting`.
 
 ## Indexing
 
-Selecting elements of avector by index number has been discussed in previous Concepts.
+Selecting elements of a vector by index number has been discussed in previous Concepts.
 
 ```julia
 a = collect('A':'Z')  # => 26-element Vector{Char}
@@ -138,7 +138,7 @@ julia> a[a .< 'D' .|| a .> 'W']
  'Z': ASCII/Unicode U+005A (category Lu: Letter, uppercase)
 ```
 
-vectorA reminder that the "vector" can in fact be any appropriate ordered iterable, such as a range:
+A reminder that the "vector" can in fact be any appropriate ordered iterable, such as a range:
 
 ```julia-repl
 julia> n = 3:10
