@@ -65,6 +65,9 @@ In each case, the counts are arranged by day of the week, from Monday as the fir
 Implement the `average_per_day()` function that returns the average for 2 weeks.
 
 ```julia-repl
-
+week1 = [7, 2, 9, 1, 3, 0, 10]
+week2 = [2, 6, 4, 1, 3, 8, 9]
+average_per_day(week1, week2)
+# => [4.5, 4.0, 6.5, 1.0, 4.0, 9.5]
 ```
 
