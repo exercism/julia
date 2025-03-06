@@ -58,7 +58,7 @@
       },
       {
         "slug": "chessboard",
-        "name": "chessboard",
+        "name": "Chessboard",
         "uuid": "48977bc8-36e7-41be-8fd5-99c49de00f20",
         "concepts": [
           "ranges"
@@ -70,7 +70,7 @@
       },
       {
         "slug": "currency-exchange",
-        "name": "currency-exchange",
+        "name": "Currency Exchange",
         "uuid": "6882a823-8c75-4b20-b6f3-2e87b574f4a8",
         "concepts": [
           "numbers"
@@ -94,7 +94,7 @@
       },
       {
         "slug": "cars-assemble",
-        "name": "cars-assemble",
+        "name": "Cars Assemble",
         "uuid": "6c23b2bb-3972-4865-b25f-f8804555fb0b",
         "concepts": [
           "conditionals"
@@ -107,7 +107,7 @@
       },
       {
         "slug": "high-school-sweetheart",
-        "name": "high-school-sweetheart",
+        "name": "High School Sweetheart",
         "uuid": "6e893250-7f36-4179-92c1-cfa453637149",
         "concepts": [
           "function-composition"
@@ -120,7 +120,7 @@
       },
       {
         "slug": "bird-watcher",
-        "name": "bird-watcher",
+        "name": "Bird Watcher",
         "uuid": "6e6968db-e320-4c73-b692-9f58248d20a3",
         "concepts": [
           "vector-operations"
