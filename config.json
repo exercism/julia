@@ -39,7 +39,9 @@
         "name": "Lasagna",
         "uuid": "39ebdd04-4f84-4817-bf9d-f1f9e066c283",
         "concepts": [
-          "basics"
+          "functions",
+          "integer-introduction",
+          "comments"
         ],
         "prerequisites": [],
         "status": "wip"
@@ -113,8 +115,20 @@
           "function-composition"
         ],
         "prerequisites": [
-          "functions", 
+          "functions",
           "strings"
+        ],
+        "status": "wip"
+      },
+      {
+        "slug": "bird-watcher",
+        "name": "bird-watcher",
+        "uuid": "6e6968db-e320-4c73-b692-9f58248d20a3",
+        "concepts": [
+          "vector-operations"
+        ],
+        "prerequisites": [
+          "ranges"
         ],
         "status": "wip"
       }
