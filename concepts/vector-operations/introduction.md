@@ -1,6 +1,6 @@
 # Introduction
 
-In the [`Vectors`][vectors] Concept, we said that "arrays are at the heart of the Julia language" and a vector is a 1-dimensional.
+In the [`Vectors`][vectors] Concept, we said that "arrays are at the heart of the Julia language" and a vector is a 1-dimensional array.
 
 Given this, we could reasonably hope that the language provides many versatile and powerful ways to _do things_ with vectors, whatever that means.
 
@@ -53,7 +53,7 @@ Two things, which combine to give the desired result.
 
 ### 1. Element-wise application
 
-Firstly, adding a dot before any infix operator means "apply this operation to each element separately".
+Firstly, adding a dot _before_ any infix operator means "apply this operation to each element separately".
 
 Similarly, adding a dot _after_ a function name "vectorizes" it, even if the function was written for scalar inputs.
 

@@ -1,14 +1,14 @@
 # About
 
-In the [`Arrays`][arrays] Concept, we said that "arrays are at the heart of the Julia language".
+In the [`Vectors`][vectors] Concept, we said that "arrays are at the heart of the Julia language" and a vector is a 1-dimensional array.
 
-Given this, we could reasonably hope that the language provides many versatile and powerful ways to _do things_ with arrays, whatever that means.
+Given this, we could reasonably hope that the language provides many versatile and powerful ways to _do things_ with vectors, whatever that means.
 
-A note on terminology: though this document talks a lot about "arrays", much of it also applies to any iterable type: [ranges][ranges], [tuples][tuples], [sets][sets], and various others.
+A note on terminology: though this document talks a lot about "vectors", much of it also applies to any iterable type: [ranges][ranges], [tuples][tuples], [sets][sets], and various others.
 
-## Functions expecting array input
+## Functions expecting vector input
 
-Some very simple functions take an array input and (for 1-D input) return a scalar output.
+Some very simple functions take a vector input and (for 1-D input) return a scalar output.
 
 ```julia
 v = [2, 3, 4]
@@ -22,7 +22,7 @@ If that makes no sense to you, skip worrying about it for now.
 There are many more functions of this type.
 See the [`Statistics`][statistics] Concept for some examples.
 
-There are also functions that operate on multiple arrays, such as the (very useful) [`zip`][zip].
+There are also functions that operate on multiple vectors, such as the (very useful) [`zip`][zip].
 
 ```julia-repl
 julia> z = zip( 1:3, ['a', 'b', 'c'], ["I", "make", "tuples"] )
@@ -66,7 +66,7 @@ julia> v - [0.5, 0.5, 0.5]
  1.2
 ```
 
-Successful, but quite tedious and memory-hungry as the arrays get longer.
+Successful, but quite tedious and memory-hungry as the vectors get longer.
 
 Depending on how far you have reached in the syllabus, you can probably think of other approaches:
 
@@ -86,7 +86,7 @@ Two things, which combine to give the desired result.
 
 ### 1) Element-wise application
 
-Firstly, adding a dot before any infix operator means "apply this operation to each element separately".
+Firstly, adding a dot _before_ any infix operator means "apply this operation to each element separately".
 
 Similarly, adding a dot _after_ a function name "vectorizes" it, even if the function was written for scalar inputs.
 
@@ -114,7 +114,7 @@ julia> v .- [0.5, 0.5, 0.5]
  1.2
 ```
 
-What about arrays of unequal length?
+What about vectors of unequal length?
 
 ```julia-repl
 julia> v .- [0.5, 0.5]
@@ -174,7 +174,7 @@ _Julia follows the rules of mathematics, in this as in everything_.
 
 ## Indexing
 
-Selecting elements of an array by index number has been discussed in previous Concepts.
+Selecting elements of a vector by index number has been discussed in previous Concepts.
 
 ```julia
 a = collect('A':'Z')  # => 26-element Vector{Char}
@@ -185,7 +185,7 @@ a[2]  # => 'B'
 # index with a range
  a[12:2:18]  # => ['L', 'N', 'P, 'R']
  
- # index with another array
+ # index with another vector
  a[ [1, 3, 5] ]  # => ['A', 'C', 'E']
 ```
 
@@ -215,7 +215,7 @@ julia> a[a .< 'D' .|| a .> 'W']
  'Z': ASCII/Unicode U+005A (category Lu: Letter, uppercase)
 ```
 
-A reminder that the "array" can in fact be any appropriate ordered iterable, such as a range:
+A reminder that the "vector" can in fact be any appropriate ordered iterable, such as a range:
 
 ```julia-repl
 julia> n = 3:10
@@ -247,7 +247,7 @@ julia> a[condition]
  'C': ASCII/Unicode U+0043 (category Lu: Letter, uppercase)
 ```
 
-[arrays]: https://exercism.org/tracks/julia/concepts/arrays
+[vectors]: https://exercism.org/tracks/julia/concepts/arrays
 [ranges]: https://exercism.org/tracks/julia/concepts/ranges
 [sets]: https://exercism.org/tracks/julia/concepts/sets
 [tuples]: https://exercism.org/tracks/julia/concepts/tuples
