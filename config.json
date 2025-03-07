@@ -113,8 +113,7 @@
           "function-composition"
         ],
         "prerequisites": [
-          "functions",
-          "strings"
+          "functions"
         ],
         "status": "wip"
       },
