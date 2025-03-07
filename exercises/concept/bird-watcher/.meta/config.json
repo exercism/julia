@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "files": {
+    "solution": [
+      "bird-watcher.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ]
+  },
+  "forked_from": [
+    "Csharp/bird-watcher"
+  ],
+  "blurb": "Learn about Julia vector operations by keeping track of how many birds visit your garden."
+}
