@@ -1192,8 +1192,8 @@
       "name": "Ranges"
     },
     {
-      "uuid": "5379ae32-d656-4cdf-8f3b-7cbf2e9e2ca0"
-      "slug": "vector-operations"
+      "uuid": "5379ae32-d656-4cdf-8f3b-7cbf2e9e2ca0",
+      "slug": "vector-operations",
       "name": "Vector Operations"
     }
   ],
