@@ -1195,6 +1195,11 @@
       "uuid": "e3d18763-a079-4000-a3e4-9938a7f0712b",
       "slug": "vector-operations",
       "name": "Vector Operations"
+    },
+    {
+      "uuid": "c6920164-6c6e-4f82-8d85-ba179ef906d5",
+      "slug": "function-composition",
+      "name": "Function Composition"
     }
   ],
   "key_features": [
