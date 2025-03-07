@@ -1190,6 +1190,11 @@
       "uuid": "3ce09c90-3096-4dcc-a53f-66d0054cbe43",
       "slug": "ranges",
       "name": "Ranges"
+    },
+    {
+      "uuid": "e3d18763-a079-4000-a3e4-9938a7f0712b",
+      "slug": "vector-operations",
+      "name": "Vector Operations"
     }
   ],
   "key_features": [
