@@ -1,0 +1,22 @@
+{
+  "blurb": "Learn about vectors and pairs by helping Elyse practice magic tricks.",
+  "language_versions": "≥1.0",
+  "files": {
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "solution": [
+      "enchantments.jl"
+    ]
+  },
+  "contributors": [
+    "cmcaine"
+  ],
+  "authors": [
+    "SaschaMann"
+  ],
+  "forked_from": ["javascript/enchantments"]
+}
