@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "Ranges in Julia return a lazily-evaluated collection that can be iterated over, or converted to an array."
+}
