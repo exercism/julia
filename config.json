@@ -1176,6 +1176,11 @@
       "name": "Vectors"
     },
     {
+      "uuid": "67dfc465-1a97-4bc1-9177-97e3a3ba55da",
+      "slug": "sets",
+      "name": "Sets"
+    },
+    {
       "uuid": "9babe703-1f5f-4f59-a4b2-349b8d461dd8",
       "slug": "conditionals",
       "name": "Conditionals"
