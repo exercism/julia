@@ -1,27 +1,46 @@
-function clean_ingredients(dish_name, dish_ingredients)
+# function clean_ingredients(dish_name, dish_ingredients)
 
-end
+# end
 
-function check_drinks(drink_name, drink_ingredients)
+# function check_drinks(drink_name, drink_ingredients)
     
-end
+# end
+
+# function categorize_dish(dish_name, dish_ingredients)
+
+# end
+
+# function tag_special_ingredients(dish)
+
+# end
+
+# function compile_ingredients(dishes)
+
+# end
+
+# function separate_appetizers(dishes, appetizers)
+
+# end
+
+# function singleton_ingredients(dishes, intersection)
+
+# end
+
+clean_ingredients(dish_name, dish_ingredients) = (dish_name, Set(dish_ingredients))
+
+check_drinks(drink_name, drink_ingredients) =
+    drink_name * (isdisjoint(drink_ingredients, ALCOHOLS) ? " Mocktail" : " Cocktail")
 
 function categorize_dish(dish_name, dish_ingredients)
-
+    for category in ("VEGAN"=>VEGAN, "VEGETARIAN"=>VEGETARIAN, "PALEO"=>PALEO, "KETO"=>KETO, "OMNIVORE"=>OMNIVORE)
+        dish_ingredients ⊆ category.second && return dish_name * ": " * category.first
+    end
 end
+    
+tag_special_ingredients((dish_name, dish_ingredients)) = (dish_name, SPECIAL_INGREDIENTS ∩ dish_ingredients)
 
-function tag_special_ingredients(dish)
+compile_ingredients(dishes) = union(dishes...)
 
-end
+separate_appetizers(dishes, appetizers) = setdiff(dishes, appetizers)
 
-function compile_ingredients(dishes)
-
-end
-
-function separate_appetizers(dishes, appetizers)
-
-end
-
-function singleton_ingredients(dishes, intersection)
-
-end
+singleton_ingredients(dishes, intersection) = setdiff(union(dishes...), intersection)

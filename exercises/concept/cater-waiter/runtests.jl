@@ -1,8 +1,11 @@
 using Test 
 
 include("cater-waiter.jl")
-include("sets_categories_data.jl")
 include("sets_test_data.jl")
+include("sets_categories_data.jl")
+
+using .SetsTestData
+using .SetsCategoriesData
 
 
 @testset verbose=true "tests" begin

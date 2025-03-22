@@ -1,4 +1,21 @@
+module SetsTestData
+
 include("sets_categories_data.jl")
+
+using .SetsCategoriesData
+
+export  recipes_with_duplicates,
+        recipes_without_duplicates,
+        all_drinks,
+        drink_names,
+        dishes_categorized,
+        dishes_to_special_label,
+        dishes_labeled,
+        ingredients_only,
+        dishes_and_appetizers,
+        dishes_cleaned,
+        dishes_and_overlap,
+        singletons        
 
 ###################################
 # Data for test_clean_ingredients #
@@ -452,3 +469,5 @@ backup_singletons = [Set(["black-eyed peas", "coriander", "cashews", "yellow spl
                      Set(["treviso", "cashews", "mexican oregano", "pumpkin puree", "purple sweet potato", "homemade apricot honey preserves", "apple cider vinegar", "homemade tamarind concentrate", "paleo parmesan cheese", "pineapple", "green bell pepper", "chipotles", "nutmeg", "ground cumin", "coconut yogurt", "kale", "mangoes", "red bell pepper", "dried apricots", "garlic powder", "pepitas", "white vinegar", "scallions", "avocados", "shredded red cabbage", "smoked paprika", "lime juice", "flank steak", "fresh parsley", "shallots", "chiles de árbol", "yellow bell pepper", "white chicken", "whole chicken", "chili powder", "bacon", "avocado mayonnaise", "cilantro", "limes", "lemons", "green onions", "avocado oil", "cloves", "lacinato kale", "lime zest", "paleo mayonnaise", "radishes", "mango", "dijon mustard", "mustard seed", "cider vinegar", "pork chops", "castelfranco radicchio", "water", "allspice", "seranno chili", "cilantro leaves", "onion", "tilapia", "fresh cilantro leaves", "worcestershire sauce", "almond butter", "fresh thai chili", "fresh red chili", "chives", "roma tomatoes"]),
                      Set(["dried fenugreek leaves", "apple cider vinegar", "cinnamon sticks", "roasted chicken", "cumin", "mangoes", "heavy cream", "micro cilantro", "white vinegar", "red chili powder", "cinnamon powder", "mustard seeds", "red wine vinegar", "mirin", "cinnamon", "green chili", "avocado oil", "curry leaves", "star anise", "dijon mustard", "crunchy peanut butter", "grilled king fish", "chicken", "fresh basil", "cashew nuts", "pink peppercorns", "pork belly", "spinach", "watercress", "whole small crimini mushrooms", "coconut flour", "fresh ginger", "fennel bulb", "harissa", "tahini", "mozzarella cheese", "scallions", "sriacha", "fresh parsley", "thyme", "light soy sauce", "cream cheese", "hing", "coriander seeds", "sour cream", "turmeric powder", "castelfranco radicchio", "parmesan", "toasted buckwheat", "coriander powder", "dark soy sauce", "granny smith apples", "parsley", "shrimp", "garlic paste", "roasted peanuts", "turmeric", "carrot", "garam masala", "clove powder", "cucumbers", "tomato paste", "almond meal", "dutch carrot", "brussel sprouts", "red and green thai chili", "shallots", "nigella seeds", "cardamom powder", "watermelon radishes", "flaxmeal", "cilantro", "fennel seeds", "chipotle chili", "ghee", "parmesan cheese", "radishes", "pork chops", "cilantro leaves", "fresh greek yogurt", "cardamom", "mango powder", "onion", "oregano", "fresh red chili", "pecans", "salmon fillets", "basil", "green cabbage", "cumin powder", "almond flour", "lemon", "boned chicken", "oyster sauce", "soy sauce", "little gem lettuce heads", "peanut oil", "peanuts", "caster sugar", "salmon steaks", "ginger garlic paste", "green onions", "vinegar", "cloves", "kecap manis", "avocado", "chili flakes", "red chili flakes", "tomatoes"]),
                      Set(["coriander", "white wine", "fish stock", "apple cider vinegar", "salsa", "rhubarb", "beef brisket", "cinnamon sticks", "cumin", "roasted chicken", "chicken wings", "white vinegar", "sriracha", "slivered almonds", "fresh thyme", "scotch bonnet pepper", "zucchini", "hazelnuts", "pani puri", "yukon gold potato", "toasted bread", "chicken", "yoghurt", "maggi cubes", "couscous", "roma tomatoes", "celery seeds", "chaat masala", "white pepper", "black cardamom", "harissa", "red snapper", "green cardamom", "crushed red pepper flakes", "tahini", "mexican crema", "chiles de árbol", "tomato", "baby squid", "mussels", "chipotle adobo sauce", "shelled large shrimp", "tomato puree", "chickpeas", "fresh tortillas", "flat-leaf parsley", "anaheim chili", "parsley", "shrimp", "chile manzano", "vegetable bullion", "prawns", "cherry tomatoes", "marjoram", "beer", "green bell pepper", "date syrup", "guajillo chile", "baby scallops", "yellow mustard", "black chickpeas", "bell pepper", "filo pastry", "thin sev", "bacon", "white wine vinegar", "limes", "rice", "serrano chili", "brown sugar", "parmesan cheese", "poblano chili", "fennel bulbs", "clams", "baby carrot", "arborio risotto rice", "oregano", "oaxaca cheese", "green cabbage", "yellow onion", "balsamic vinegar", "whole-milk yogurt", "sugar", "red bell pepper", "pepitas", "red pepper flakes", "oranges", "yellow bell pepper", "summer squash", "cloves", "red cabbage", "black peppercorns", "fresh ricotta", "crab legs", "scallion chutney", "sesame seeds", "vegetable oil"])]
+
+end
