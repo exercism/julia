@@ -1199,6 +1199,11 @@
       "uuid": "c6920164-6c6e-4f82-8d85-ba179ef906d5",
       "slug": "function-composition",
       "name": "Function Composition"
+    },
+    {
+      "uuid": "95b8b60b-fd78-4ec1-9d1c-ac3f11107727",
+      "slug": "chars",
+      "name": "Chars"
     }
   ],
   "key_features": [

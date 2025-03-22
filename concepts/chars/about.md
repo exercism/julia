@@ -148,7 +148,7 @@ julia> string('a')
 "a"
 ```
 
-c## Storage
+## Storage
 
 Everything so far in the document seems relatively simple, so is there really not much to worry about?
 
