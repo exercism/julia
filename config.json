@@ -57,6 +57,18 @@
         "status": "wip"
       },
       {
+        "slug": "squeaky-clean",
+        "name": "Squeaky Clean",
+        "uuid": "7c06c4e8-4bc1-42c3-982a-f973f45193bf",
+        "concepts": [
+          "chars"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
+        "status": "wip"
+      },
+      {
         "slug": "chessboard",
         "name": "Chessboard",
         "uuid": "48977bc8-36e7-41be-8fd5-99c49de00f20",
@@ -135,6 +147,18 @@
         "uuid": "6e6968db-e320-4c73-b692-9f58248d20a3",
         "concepts": [
           "vector-operations"
+        ],
+        "prerequisites": [
+          "ranges"
+        ],
+        "status": "wip"
+      },
+      {
+        "uuid": "e12feb9d-1235-4a7b-8c89-edf5c1577ef6",
+        "slug": "log-levels",
+        "name": "Log Levels",
+        "concepts": [
+          "strings"
         ],
         "prerequisites": [
           "ranges"
@@ -1188,6 +1212,11 @@
       "name": "Vectors"
     },
     {
+      "uuid": "67dfc465-1a97-4bc1-9177-97e3a3ba55da",
+      "slug": "sets",
+      "name": "Sets"
+    },
+    {
       "uuid": "9babe703-1f5f-4f59-a4b2-349b8d461dd8",
       "slug": "conditionals",
       "name": "Conditionals"
@@ -1203,6 +1232,11 @@
       "name": "Ranges"
     },
     {
+      "uuid": "d87a0356-d5ee-43b1-8105-0a65caeea540",
+      "slug": "strings",
+      "name": "Strings"
+    },
+    {
       "uuid": "e3d18763-a079-4000-a3e4-9938a7f0712b",
       "slug": "vector-operations",
       "name": "Vector Operations"
@@ -1211,6 +1245,11 @@
       "uuid": "c6920164-6c6e-4f82-8d85-ba179ef906d5",
       "slug": "function-composition",
       "name": "Function Composition"
+    },
+    {
+      "uuid": "95b8b60b-fd78-4ec1-9d1c-ac3f11107727",
+      "slug": "chars",
+      "name": "Chars"
     }
   ],
   "key_features": [
