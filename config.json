@@ -155,10 +155,11 @@
       },
       {
         "slug": "cater-waiter",
-        "name": "cater-waiter",
+        "name": "Cater Waiter",
         "uuid": "61e3bb88-a9a5-4978-bc55-1d87de9f2b70",
-        "concepts": [],
-        "prerequisites": []
+        "concepts": ["sets"],
+        "prerequisites": [],
+        "status": "wip"
       }
     ],
     "practice": [
