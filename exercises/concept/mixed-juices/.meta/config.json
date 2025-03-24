@@ -13,6 +13,8 @@
       ".meta/exemplar.jl"
     ]
   },
-  "forked_from": ["javascript/mixed-juices"],
+  "forked_from": [
+    "javascript/mixed-juices"
+  ],
   "blurb": "Help Li Mei operate her juice store with loops"
 }
