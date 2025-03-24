@@ -11,6 +11,10 @@
     ],
     "exemplar": [
       ".meta/exemplar.jl"
+    ],
+    "editor": [
+      "sets_test_data.jl",
+      "sets_categories_data.jl"
     ]
   },
   "icon": "meetup",
