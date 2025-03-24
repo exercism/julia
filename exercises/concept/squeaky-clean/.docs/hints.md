@@ -11,7 +11,7 @@
 
 ## 3. Convert camel-case to kebab-case
 
-- See [this method][isuppercase] to check if a character is case.
+- See [this method][isuppercase] to check if a character is upper case.
 - See [this method][lowercase] to convert a character to lower case.
 
 ## 5. Omit Greek lower case letters
