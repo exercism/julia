@@ -57,6 +57,18 @@
         "status": "wip"
       },
       {
+        "slug": "squeaky-clean",
+        "name": "Squeaky Clean",
+        "uuid": "7c06c4e8-4bc1-42c3-982a-f973f45193bf",
+        "concepts": [
+          "chars"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
+        "status": "wip"
+      },
+      {
         "slug": "chessboard",
         "name": "Chessboard",
         "uuid": "48977bc8-36e7-41be-8fd5-99c49de00f20",
