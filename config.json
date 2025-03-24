@@ -1191,6 +1191,11 @@
       "name": "Ranges"
     },
     {
+      "uuid": "d87a0356-d5ee-43b1-8105-0a65caeea540",
+      "slug": "strings",
+      "name": "Strings"
+    },
+    {
       "uuid": "e3d18763-a079-4000-a3e4-9938a7f0712b",
       "slug": "vector-operations",
       "name": "Vector Operations"
