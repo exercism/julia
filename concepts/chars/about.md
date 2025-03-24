@@ -104,6 +104,16 @@ ispunct('@')  # true
 isdigit('A')  # false
 isxdigit('A')  # true
 ```
+To check if a character is present in a string, we have [`in`][ranges].
+Note that this differs from substrings:
+
+```julia-repl
+julia> 'a' ∈ "xabcahliazlnkiw"
+true
+
+julia> "a" ∈ "xabcahliazlnkiw"
+use occursin(needle, haystack) for string containment
+```
 
 Also, regular expressions (the subject of another Concept) allow powerful search and manipulation.
 
