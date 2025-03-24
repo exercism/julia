@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "Julia supports composing multiple functions into one, and piping data through a chain of functions."
+}

@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "files": {
+    "solution": [
+      "log-levels.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ]
+  },
+  "forked_from": [
+    "fsharp/log-levels"
+  ],
+  "blurb": "Learn basic string manipulation in Julia by processing a log file."
+}
