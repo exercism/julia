@@ -14,16 +14,16 @@ For all other drinks (e.g., special offers) you can assume a preparation time of
 To help your friend, write a function `time_to_mix_juice` that takes a juice from the menu as an argument and returns the number of minutes it takes to mix that drink.
 
 ```julia-repl
-time_to_mix_juice("Tropical Island")
-# => 3
+julia> time_to_mix_juice("Tropical Island")
+3
 
-time_to_mix_juice("Berries & Lime")
-# => 2.5
+julia> time_to_mix_juice("Berries & Lime")
+2.5
 ```
 
 ## 2. Replenish the lime wedge supply
 
-A lot of Li Mei"s creations include lime wedges, either as an ingredient or as part of the decoration.
+A lot of Li Mei's creations include lime wedges, either as an ingredient or as part of the decoration.
 So when she starts her shift in the morning she needs to make sure the bin of lime wedges is full for the day ahead.
 
 Implement the function `limes_to_cut` which takes the number of lime wedges Li Mei needs to cut and an array representing the supply of whole limes she has at hand.
@@ -35,8 +35,8 @@ Li Mei would like to know in advance how many limes she needs to cut.
 The `limes_to_cut` function should return the number of limes to cut.
 
 ```julia-repl
-limes_to_cut(25, ["small", "small", "large", "medium", "small"])
-# => 4
+julia> limes_to_cut(25, ["small", "small", "large", "medium", "small"])
+4
 ```
 
 ## 3. List the times to mix each order in the queue
@@ -46,15 +46,15 @@ Li Mei likes to keep track of how long it will take to mix the orders customers 
 Implement the `order_times` function, which takes a queue of orders and returns a vector of times to mix.
 
 ```julia-repl
-order_times(["Energizer", "Tropical Island"])
-# => [1.5, 3.0]
+julia> order_times(["Energizer", "Tropical Island"])
+[1.5, 3.0]
 ```
 
 ## 4. Finish up the shift
 
 Li Mei always works until 3pm.
 Then her employee Dmitry takes over.
-There are often drinks that have been ordered but are not prepared yet when Li Mei"s shift ends.
+There are often drinks that have been ordered but are not prepared yet when Li Mei's shift ends.
 Dmitry will then prepare the remaining juices.
 
 To make the hand-over easier, implement a function `remaining_orders` which takes the number of minutes left in Li Mei"s shift and an array of juices that have been ordered but not prepared yet.
@@ -67,6 +67,6 @@ If Li Mei starts to mix a certain juice, she will always finish it even if she h
 If there are no remaining orders left that Dmitry needs to take care of, an empty vector should be returned.
 
 ```julia-repl
-remaining_orders(5, ["Energizer", "All or Nothing", "Green Garden"])
-# => ["Green Garden"]
+julia> remaining_orders(5, ["Energizer", "All or Nothing", "Green Garden"])
+["Green Garden"]
 ```
