@@ -142,14 +142,26 @@
         "status": "wip"
       },
       {
-        "uuid": "e12feb9d-1235-4a7b-8c89-edf5c1577ef6",
         "slug": "log-levels",
         "name": "Log Levels",
+        "uuid": "e12feb9d-1235-4a7b-8c89-edf5c1577ef6",
         "concepts": [
           "strings"
         ],
         "prerequisites": [
           "ranges"
+        ],
+        "status": "wip"
+      },
+      {
+        "slug": "cater-waiter",
+        "name": "Cater Waiter",
+        "uuid": "61e3bb88-a9a5-4978-bc55-1d87de9f2b70",
+        "concepts": [
+          "sets"
+        ],
+        "prerequisites": [
+          "loops"
         ],
         "status": "wip"
       }
