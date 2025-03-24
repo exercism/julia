@@ -108,9 +108,11 @@ To check if a character is present in a string, we have [`in`][ranges].
 Note that this differs from substrings:
 
 ```julia-repl
+# char search
 julia> 'a' ∈ "xabcahliazlnkiw"
 true
 
+# substring search
 julia> "a" ∈ "xabcahliazlnkiw"
 use occursin(needle, haystack) for string containment
 ```
