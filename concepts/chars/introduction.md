@@ -172,5 +172,3 @@ julia> ncodeunits('😱')  # emoji
 
 Also, not everything that can be displayed on screen has its own unique code point.
 Some visually-distinct characters are considered to be derived from others, so Unicode treats them as a parent character plus a modifier.
-
-This issue affects Strings, where it presents challenges for indexing.
