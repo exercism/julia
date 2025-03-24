@@ -1230,6 +1230,11 @@
       "name": "Vector Operations"
     },
     {
+      "uuid": "a2e2c150-1641-40d7-8885-53495e78ddf6",
+      "slug": "loops",
+      "name": "Loops"
+    },
+    {
       "uuid": "c6920164-6c6e-4f82-8d85-ba179ef906d5",
       "slug": "function-composition",
       "name": "Function Composition"
