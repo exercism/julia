@@ -27,11 +27,11 @@ For the purposes of this exercise, cocktails will only include alcohols from the
 
 ```julia-repl
 julia> include("sets_categories_data.jl");
+
 julia> check_drinks("Honeydew Cucumber", ["honeydew", "coconut water", "mint leaves", "lime juice", "salt", "english cucumber"])
-...
 "Honeydew Cucumber Mocktail"
+
 julia> check_drinks("Shirley Tonic", ["cinnamon stick", "scotch", "whole cloves", "ginger", "pomegranate juice", "sugar", "club soda"])
-...
 "Shirley Tonic Cocktail"
 ```
 
