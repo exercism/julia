@@ -13,9 +13,9 @@
       ".meta/exemplar.jl"
     ]
   },
-  "icon": "hyperia-forex",
   "forked_from": [
     "python/currency-exchange"
   ],
+  "icon": "hyperia-forex",
   "blurb": "Learn about numbers by solving Chandler's currency exchange conundrums."
 }

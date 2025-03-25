@@ -1,6 +1,10 @@
 {
-  "authors": ["depial"],
-  "contributors": ["colinleach"],
+  "authors": [
+    "depial"
+  ],
+  "contributors": [
+    "colinleach"
+  ],
   "files": {
     "solution": [
       "high-school-sweetheart.jl"
