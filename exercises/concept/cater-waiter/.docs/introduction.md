@@ -50,8 +50,8 @@ The following operations on pairs of Sets are supported (shortcuts to the operat
 - `isdisjoint(A, B)` (no symbol): `true` if A and B contain no entries in common (so intersect is empty).
 
 ```julia-repl
-s1 = Set(1:4)
-s2 = Set(3:6)
+julia> s1 = Set(1:4);
+julia> s2 = Set(3:6);
 julia> s1 ∪ s2  # union
 Set([5, 4, 6, 2, 3, 1])
 
