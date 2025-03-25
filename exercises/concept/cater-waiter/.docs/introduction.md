@@ -10,37 +10,22 @@ Create them with the `Set()` constructor, using any iterator as the parameter.
 
 ```julia-repl
 julia> s1 = Set(1:4)
-Set{Int64} with 4 elements:
-  4
-  2
-  3
-  1
+Set([4, 2, 3, 1])
 ```
 
 Add new elements with `push!()` (the same as with arrays), and remove them with `delete!()`.
 
 ```julia-repl
 julia> push!(s1, 5)
-Set{Int64} with 5 elements:
-  5
-  4
-  2
-  3
-  1
+Set([5, 4, 2, 3, 1])
+
 # Duplicates are ignored
 julia> push!(s1, 3)
-Set{Int64} with 5 elements:
-  5
-  4
-  2
-  3
-  1
+Set([5, 4, 2, 3, 1])
+
 julia> delete!(s1, 5)
-Set{Int64} with 4 elements:
-  4
-  2
-  3
-  1
+Set([4, 2, 3, 1])
+
 julia> length(s1)  # length counts entries, despite the non-sequential type
 4
 ```
@@ -68,28 +53,16 @@ The following operations on pairs of Sets are supported (shortcuts to the operat
 s1 = Set(1:4)
 s2 = Set(3:6)
 julia> s1 ∪ s2  # union
-Set{Int64} with 6 elements:
-  5
-  4
-  6
-  2
-  3
-  1
+Set([5, 4, 6, 2, 3, 1])
+
 julia> s1 ∩ s2  # intersect
-Set{Int64} with 2 elements:
-  4
-  3
+Set([4, 3])
   
 julia> setdiff(s1, s2)
-Set{Int64} with 2 elements:
-  2
-  1
+Set([2, 1])
+
 julia> symdiff(s1, s2)
-Set{Int64} with 4 elements:
-  5
-  6
-  2
-  1
+Set([5, 6, 2, 1])
   
 julia> s1 ⊇ s2  # issubset
 false
