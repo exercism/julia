@@ -13,7 +13,8 @@ If an empty string is passed to the `clean` function, an empty string should be 
 Implement the `transform` function to replace any hyphens with underscores.
 
 ```julia
-transform('-')  # => "_"
+julia> transform('-')
+"_"
 ```
 
 ## 2. Remove all whitespace
@@ -22,7 +23,8 @@ Remove all whitespace characters.
 This will include leading and trailing whitespace.
 
 ```julia
-transform(' ')  # => ""
+julia> transform(' ')
+""
 ```
 
 ## 3. Convert camelCase to kebab-case
@@ -30,7 +32,8 @@ transform(' ')  # => ""
 Modify the `transform` function to convert camelCase to kebab-case
 
 ```julia
-transform('D')  # => "-d"
+julia> transform('D')
+"-d"
 ```
 
 ## 4. Omit characters that are digits
@@ -38,7 +41,8 @@ transform('D')  # => "-d"
 Modify the `transform` function to omit any characters that are numeric.
 
 ```julia
-transform('7')  # => ""
+julia> transform('7')
+""
 ```
 
 ## 5. Replace Greek lower case letters with question marks
@@ -46,7 +50,8 @@ transform('7')  # => ""
 Modify the `transform` function to replace any Greek letters in the range 'α' to 'ω'.
 
 ```julia
-transform('β') # => "?"
+julia> transform('β')
+"?"
 ```
 
 ## 6. Combine these operations to operate on a string
@@ -56,5 +61,6 @@ Implement the `clean` function to apply these operations to an entire string.
 Characters which fall outside the rules should pass through unchanged.
 
 ```julia
-clean("  a2b Cd-ω😀  ") #  => "ab-cd_?😀"
+julia> clean("  a2b Cd-ω😀  ")
+"ab-cd_?😀"
 ```

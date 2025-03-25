@@ -14,7 +14,8 @@ This function should return the value of the exchanged currency.
 **Note:** If your currency is USD and you want to exchange USD for EUR with an exchange rate of `1.20`, then `1.20 USD == 1 EUR`.
 
 ```julia
-exchange_money(127.5, 1.2)  # => 106.25
+julia> exchange_money(127.5, 1.2)
+106.25
 ```
 
 ## 2. Calculate currency left after an exchange
@@ -27,7 +28,8 @@ Create the `get_change()` function, taking 2 parameters:
 This function should return the amount of money that *is left* from the budget.
 
 ```julia
-get_change(127.5, 120)  # => 7.5
+julia> get_change(127.5, 120)
+7.5
 ```
 
 ## 3. Calculate value of bills
@@ -43,7 +45,8 @@ Your function should return only the total value of the bills (_excluding fracti
 Unfortunately, the booth gets to keep the remainder/change as an added bonus.
 
 ```julia
-get_value_of_bills(5, 128)  # => 640
+julia> get_value_of_bills(5, 128)
+640
 ```
 
 ## 4. Calculate number of bills
@@ -56,7 +59,8 @@ Remember -- you can only receive _whole bills_, not fractions of bills, so remem
 Effectively, you are rounding _down_ to the nearest whole bill/denomination.
 
 ```julia
-get_number_of_bills(127.5, 5)  # => 25
+julia> get_number_of_bills(127.5, 5)
+25
 ```
 
 ## 5. Calculate leftover after exchanging into bills
@@ -67,7 +71,8 @@ This function should return the _leftover amount_ that cannot be returned from y
 It is very important to know exactly how much the booth gets to keep.
 
 ```julia
-get_leftover_of_bills(127.5, 20)  # => 7.5
+julia> get_leftover_of_bills(127.5, 20)
+7.5
 ```
 
 ## 6. Calculate value after exchange
@@ -84,6 +89,9 @@ Remember that the currency *denomination* is a whole number, and cannot be sub-d
 **Note:** Returned value should be an integer type.
 
 ```julia
-exchangeable_value(127.25, 1.20, 10, 20)  # => 80
-exchangeable_value(127.25, 1.20, 10, 5)  # => 95
+julia> exchangeable_value(127.25, 1.20, 10, 20)
+80
+
+julia> exchangeable_value(127.25, 1.20, 10, 5)
+95
 ```
