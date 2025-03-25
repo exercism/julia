@@ -82,9 +82,7 @@ Implement the `compile_ingredients(<dishes>)` function that takes a `vector` of 
 Each individual dish is represented by its `set` of ingredients.
 
 ```julia-repl
-julia> dishes = [Set(["tofu", "soy sauce", "ginger", "corn starch", "garlic", "brown sugar", "sesame seeds", "lemon juice"]),
-                 Set(["pork tenderloin", "arugula", "pears", "blue cheese", "pine nuts","balsamic vinegar", "onions", "black pepper"]),
-                 Set(["honeydew", "coconut water", "mint leaves", "lime juice", "salt", "english cucumber"])];
+julia> dishes = [Set(["tofu", "soy sauce", "ginger", "corn starch", "garlic", "brown sugar", "sesame seeds", "lemon juice"]), Set(["pork tenderloin", "arugula", "pears", "blue cheese", "pine nuts","balsamic vinegar", "onions", "black pepper"]), Set(["honeydew", "coconut water", "mint leaves", "lime juice", "salt", "english cucumber"])];
 
 julia> compile_ingredients(dishes)
 Set(["arugula", "brown sugar", "honeydew", "coconut water", "english cucumber", "balsamic vinegar", "mint leaves", "pears", "pork tenderloin", "ginger", "blue cheese", "soy sauce", "sesame seeds", "black pepper", "garlic", "lime juice", "corn starch", "pine nuts", "lemon juice", "onions", "salt", "tofu"])
@@ -100,13 +98,9 @@ The function should return a `vector` with the list of dish names with appetizer
 Either the `<dishes>` or `<appetizers>` `vector` could contain duplicates and may require de-duping.
 
 ```julia-repl
-julia> dishes =    ["Avocado Deviled Eggs","Flank Steak with Chimichurri and Asparagus", "Kingfish Lettuce Cups",
-                    "Grilled Flank Steak with Caesar Salad","Vegetarian Khoresh Bademjan","Avocado Deviled Eggs",
-                    "Barley Risotto","Kingfish Lettuce Cups"];
+julia> dishes = ["Avocado Deviled Eggs","Flank Steak with Chimichurri and Asparagus", "Kingfish Lettuce Cups", "Grilled Flank Steak with Caesar Salad","Vegetarian Khoresh Bademjan","Avocado Deviled Eggs", "Barley Risotto","Kingfish Lettuce Cups"];
           
-julia> appetizers = ["Kingfish Lettuce Cups","Avocado Deviled Eggs","Satay Steak Skewers",
-                     "Dahi Puri with Black Chickpeas","Avocado Deviled Eggs","Asparagus Puffs",
-                     "Asparagus Puffs"];
+julia> appetizers = ["Kingfish Lettuce Cups","Avocado Deviled Eggs","Satay Steak Skewers", "Dahi Puri with Black Chickpeas","Avocado Deviled Eggs","Asparagus Puffs", "Asparagus Puffs"];
               
 julia> separate_appetizers(dishes, appetizers)
 ["Vegetarian Khoresh Bademjan", "Barley Risotto", "Flank Steak with Chimichurri and Asparagus", "Grilled Flank Steak with Caesar Salad"]
