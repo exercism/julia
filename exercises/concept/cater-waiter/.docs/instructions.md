@@ -19,19 +19,19 @@ julia> clean_ingredients("Punjabi-Style Chole", ["onions", "tomatoes", "ginger p
 ## 2. Cocktails and Mocktails
 
 The event is going to include both cocktails and "mocktails" - mixed drinks _without_ the alcohol.
- You need to ensure that "mocktail" drinks are truly non-alcoholic and the cocktails do indeed _include_ alcohol.
+You need to ensure that "mocktail" drinks are truly non-alcoholic and the cocktails do indeed _include_ alcohol.
 
 Implement the `check_drinks(<drink_name>, <drink_ingredients>)` function that takes the name of a drink and a `vector` of ingredients.
- The function should return the name of the drink followed by "Mocktail" if the drink has no alcoholic ingredients, and drink name followed by "Cocktail" if the drink includes alcohol.
-  For the purposes of this exercise, cocktails will only include alcohols from the ALCOHOLS constant in `sets_categories_data.jl`:
+The function should return the name of the drink followed by "Mocktail" if the drink has no alcoholic ingredients, and drink name followed by "Cocktail" if the drink includes alcohol.
+For the purposes of this exercise, cocktails will only include alcohols from the ALCOHOLS constant in `sets_categories_data.jl`:
 
 ```julia-repl
-julia> include("sets_categories_data.jl") 
+julia> include("sets_categories_data.jl");
+
 julia> check_drinks("Honeydew Cucumber", ["honeydew", "coconut water", "mint leaves", "lime juice", "salt", "english cucumber"])
-...
 "Honeydew Cucumber Mocktail"
+
 julia> check_drinks("Shirley Tonic", ["cinnamon stick", "scotch", "whole cloves", "ginger", "pomegranate juice", "sugar", "club soda"])
-...
 "Shirley Tonic Cocktail"
 ```
 
@@ -44,12 +44,12 @@ The function should return a string with the `dish name: <CATEGORY>` (_which mea
 All dishes will "fit" into one of the categories found in `sets_categories_data.jl` (VEGAN, VEGETARIAN, PALEO, KETO, or OMNIVORE).
 
 ```julia-repl
-julia> include("sets_categories_data.jl")
+julia> include("sets_categories_data.jl");
+
 julia> categorize_dish("Sticky Lemon Tofu", Set(["tofu", "soy sauce", "salt", "black pepper", "cornstarch", "vegetable oil", "garlic", "ginger", "water", "vegetable stock", "lemon juice", "lemon zest", "sugar"]))
-...
 "Sticky Lemon Tofu: VEGAN"
->>> categorize_dish("Shrimp Bacon and Crispy Chickpea Tacos with Salsa de Guacamole", Set(["shrimp", "bacon", "avocado", "chickpeas", "fresh tortillas", "sea salt", "guajillo chile", "slivered almonds", "olive oil", "butter", "black pepper", "garlic", "onion"]))
-...
+
+julia> categorize_dish("Shrimp Bacon and Crispy Chickpea Tacos with Salsa de Guacamole", Set(["shrimp", "bacon", "avocado", "chickpeas", "fresh tortillas", "sea salt", "guajillo chile", "slivered almonds", "olive oil", "butter", "black pepper", "garlic", "onion"]))
 "Shrimp Bacon and Crispy Chickpea Tacos with Salsa de Guacamole: OMNIVORE"
 ```
 
@@ -63,14 +63,14 @@ Return the dish name followed by the `set` of ingredients that require a special
 Dish ingredients inside a `vector` may or may not have duplicates.
  For the purposes of this exercise, all allergens or special ingredients that need to be labeled are in the SPECIAL_INGREDIENTS constant found in `sets_categories_data.py`.
 
-```julia-reple
-julia> include("sets_categories_data.jl")
+```julia-repl
+julia> include("sets_categories_data.jl");
+
 julia> tag_special_ingredients(("Ginger Glazed Tofu Cutlets", ["tofu", "soy sauce", "ginger", "corn starch", "garlic", "brown sugar", "sesame seeds", "lemon juice"]))
-...
 ("Ginger Glazed Tofu Cutlets", Set(["garlic","soy sauce","tofu"]))
->>> tag_special_ingredients(("Arugula and Roasted Pork Salad", ["pork tenderloin", "arugula", "pears", "blue cheese", "pine nuts", "balsamic vinegar", "onions", "black pepper"
+
+julia> tag_special_ingredients(("Arugula and Roasted Pork Salad", ["pork tenderloin", "arugula", "pears", "blue cheese", "pine nuts", "balsamic vinegar", "onions", "black pepper"
 ]))
-...
 ("Arugula and Roasted Pork Salad", Set(["pork tenderloin", "blue cheese", "pine nuts", "onions"]))
 ```
 
@@ -82,12 +82,11 @@ Implement the `compile_ingredients(<dishes>)` function that takes a `vector` of 
 Each individual dish is represented by its `set` of ingredients.
 
 ```julia-repl
-dishes = [Set(["tofu", "soy sauce", "ginger", "corn starch", "garlic", "brown sugar", "sesame seeds", "lemon juice"]),
-          Set(["pork tenderloin", "arugula", "pears", "blue cheese", "pine nuts",
-             "balsamic vinegar", "onions", "black pepper"]),
-          Set(["honeydew", "coconut water", "mint leaves", "lime juice", "salt", "english cucumber"])]
+julia> dishes = [Set(["tofu", "soy sauce", "ginger", "corn starch", "garlic", "brown sugar", "sesame seeds", "lemon juice"]),
+                 Set(["pork tenderloin", "arugula", "pears", "blue cheese", "pine nuts","balsamic vinegar", "onions", "black pepper"]),
+                 Set(["honeydew", "coconut water", "mint leaves", "lime juice", "salt", "english cucumber"])];
+
 julia> compile_ingredients(dishes)
-...
 Set(["arugula", "brown sugar", "honeydew", "coconut water", "english cucumber", "balsamic vinegar", "mint leaves", "pears", "pork tenderloin", "ginger", "blue cheese", "soy sauce", "sesame seeds", "black pepper", "garlic", "lime juice", "corn starch", "pine nuts", "lemon juice", "onions", "salt", "tofu"])
 ```
 
@@ -101,18 +100,16 @@ The function should return a `vector` with the list of dish names with appetizer
 Either the `<dishes>` or `<appetizers>` `vector` could contain duplicates and may require de-duping.
 
 ```julia-repl
-dishes =    ["Avocado Deviled Eggs","Flank Steak with Chimichurri and Asparagus", "Kingfish Lettuce Cups",
-             "Grilled Flank Steak with Caesar Salad","Vegetarian Khoresh Bademjan","Avocado Deviled Eggs",
-             "Barley Risotto","Kingfish Lettuce Cups"]
+julia> dishes =    ["Avocado Deviled Eggs","Flank Steak with Chimichurri and Asparagus", "Kingfish Lettuce Cups",
+                    "Grilled Flank Steak with Caesar Salad","Vegetarian Khoresh Bademjan","Avocado Deviled Eggs",
+                    "Barley Risotto","Kingfish Lettuce Cups"];
           
-appetizers = ["Kingfish Lettuce Cups","Avocado Deviled Eggs","Satay Steak Skewers",
-              "Dahi Puri with Black Chickpeas","Avocado Deviled Eggs","Asparagus Puffs",
-              "Asparagus Puffs"]
+julia> appetizers = ["Kingfish Lettuce Cups","Avocado Deviled Eggs","Satay Steak Skewers",
+                     "Dahi Puri with Black Chickpeas","Avocado Deviled Eggs","Asparagus Puffs",
+                     "Asparagus Puffs"];
               
 julia> separate_appetizers(dishes, appetizers)
-...
-["Vegetarian Khoresh Bademjan", "Barley Risotto", "Flank Steak with Chimichurri and Asparagus", 
- "Grilled Flank Steak with Caesar Salad"]
+["Vegetarian Khoresh Bademjan", "Barley Risotto", "Flank Steak with Chimichurri and Asparagus", "Grilled Flank Steak with Caesar Salad"]
 ```
 
 ## 7. Find Ingredients Used in Only One Recipe
@@ -126,8 +123,8 @@ Each `<CATEGORY>_INTERSECTIONS` is a `set` of ingredients that appear in more th
 Using set operations, your function should return a `set` of "singleton" ingredients (_ingredients appearing in only one dish in the category_).
 
 ```julia-repl
-julia> include("sets_categories_data.jl")
+julia> include("sets_categories_data.jl");
+
 julia> singleton_ingredients(example_dishes, EXAMPLE_INTERSECTION)
-...
 Set(["garlic powder", "sunflower oil", "mixed herbs", "cornstarch", "celeriac", "honey", "mushrooms", "bell pepper", "rosemary", "parsley", "lemon", "yeast", "vegetable oil", "vegetable stock", "silken tofu", "tofu", "cashews", "lemon zest", "smoked tofu", "spaghetti", "ginger", "breadcrumbs", "tomatoes", "barley malt", "red pepper flakes", "oregano", "red onion", "fresh basil"])
 ```
