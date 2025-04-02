@@ -1,8 +1,8 @@
-time_to_mix_juice(juice)
+function time_to_mix_juice(juice)
 
 end
 
-wedges_from_lime(size)
+function wedges_from_lime(size)
 
 end
 
