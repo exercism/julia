@@ -9,7 +9,7 @@ test_only.
 """
 # Used by runtests.jl and runtestrunner.jl
 function eachexercise(fn, test_only=[])
-    for exercise_type in ("concept", "concept.wip", "practice")
+    for exercise_type in ("concept.wip", "concept", "practice")
         !isdir("exercises/$exercise_type") && continue
         for exercise in readdir(joinpath("exercises", exercise_type))
             # Allow only testing specified exercises
