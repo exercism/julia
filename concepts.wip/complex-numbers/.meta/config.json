@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "Complex numbers are very widely used in engineering and the physical sciences. They are a standard numerical type in Julia."
+}
