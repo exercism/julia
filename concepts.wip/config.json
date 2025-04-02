@@ -11,7 +11,7 @@
           "comments"
         ],
         "prerequisites": [],
-        "status": "wip"
+        "status": "deprecated"
       },
       {
         "uuid": "84480c18-327e-47ea-94e7-9e14f2146643",
@@ -50,7 +50,7 @@
           "functions",
           "docstrings"
         ],
-        "status": "wip"
+        "status": "deprecated"
       },
       {
         "uuid": "3c0ab989-6544-4a1a-8e93-c2b5dc3d4109",
@@ -141,7 +141,7 @@
           "booleans",
           "docstrings"
         ],
-        "status": "wip"
+        "status": "deprecated"
       },
       {
         "uuid": "fe7f6097-36b7-42a2-bbd4-f706fb4c08b1",
