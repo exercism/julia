@@ -27,8 +27,8 @@
       },
       {
         "uuid": "05cfc609-3a14-479a-b6fa-6d2a53ad111c",
-        "name": "Old Annalyn's Infiltration",
-        "slug": "old-annalyns-infiltration",
+        "name": "Annalyn's Infiltration",
+        "slug": "annalyns-infiltration",
         "concepts": [],
         "prerequisites": [],
         "status": "deprecated"
