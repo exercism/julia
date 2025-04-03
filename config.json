@@ -47,7 +47,7 @@
       {
         "slug": "annalyns-infiltration",
         "name": "Annalyns Infiltration",
-        "uuid": "05cfc609-3a14-479a-b6fa-6d2a53ad111c",
+        "uuid": "603c7f88-5250-427e-b5d8-f8306fdd9b03",
         "concepts": [
           "booleans"
         ],
@@ -1229,7 +1229,7 @@
       "name": "Sets"
     },
     {
-      "uuid": "0d312606-7738-4b0a-9c33-564c40c6f35d",
+      "uuid": "9babe703-1f5f-4f59-a4b2-349b8d461dd8",
       "slug": "conditionals",
       "name": "Conditionals"
     },
