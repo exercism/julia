@@ -1,5 +1,7 @@
 # Hints
 
+Using complex numbers for rotations in 2D can leave things much cleaner and numerically more precise.
+
 ## 1. Define a 2D vector rotation function
 
 - [Euler's formula][euler] is your friend here.
@@ -14,13 +16,14 @@
 
 ## 3. Define a function to tell the time on the stopwatch
 
-- Use your `timearg` function.
+- This is a good opportunity to use your `timearg` function.
 - There is an inbuilt method [rad2deg][rad2deg] to convert from radians to degrees.
 - Minutes are the [`abs`][abs] value of the vector.
 
 ## 4. Define a function to set a timer
 
-- Consider using the [polar form][euler] of a complex number.
+- Consider using the [polar form][euler] of a complex number (e.g. `m*ℯ^(iθ)`).
+- There is an inbuilt method [deg2rad][deg2rad] to convert from degrees to radians.
 - A rotation may be needed to redefine the zero point.
 
 [euler]: https://docs.julialang.org/en/v1/base/math/#Base.cis
@@ -30,3 +33,4 @@
 [angle]: https://docs.julialang.org/en/v1/base/math/#Base.angle
 [abs]: https://docs.julialang.org/en/v1/base/math/#Base.abs
 [rad2deg]: https://docs.julialang.org/en/v1/base/math/#Base.Math.rad2deg
+[deg2rad]: https://docs.julialang.org/en/v1/base/math/#Base.Math.deg2rad
