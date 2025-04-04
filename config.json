@@ -176,6 +176,18 @@
           "loops"
         ],
         "status": "wip"
+      },
+      {
+        "slug": "strange-stopwatch",
+        "name": "Strange Stopwatch",
+        "uuid": "6428590f-2bf3-4ca3-b4e9-dea11aceea83",
+        "concepts": [
+          "complex-numbers"
+        ],
+        "prerequisites": [
+          "numbers", "strings", "function-composition"
+        ],
+        "status": "wip"
       }
     ],
     "practice": [
