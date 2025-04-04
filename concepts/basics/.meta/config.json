@@ -1,0 +1,10 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [
+    "SaschaMann",
+    "cmcaine"
+  ],
+  "blurb": "An introduction to Julia variables, constants and functions."
+}

@@ -39,9 +39,7 @@
         "name": "Lasagna",
         "uuid": "39ebdd04-4f84-4817-bf9d-f1f9e066c283",
         "concepts": [
-          "functions",
-          "integer-introduction",
-          "comments"
+          "basics"
         ],
         "prerequisites": [],
         "status": "wip"
@@ -55,6 +53,127 @@
         ],
         "prerequisites": [
           "basics"
+        ],
+        "status": "wip"
+      },
+      {
+        "slug": "squeaky-clean",
+        "name": "Squeaky Clean",
+        "uuid": "7c06c4e8-4bc1-42c3-982a-f973f45193bf",
+        "concepts": [
+          "chars"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
+        "status": "wip"
+      },
+      {
+        "slug": "chessboard",
+        "name": "Chessboard",
+        "uuid": "48977bc8-36e7-41be-8fd5-99c49de00f20",
+        "concepts": [
+          "ranges"
+        ],
+        "prerequisites": [
+          "vectors"
+        ],
+        "status": "wip"
+      },
+      {
+        "slug": "mixed-juices",
+        "name": "Mixed Juices",
+        "uuid": "5f181d2c-bb18-4f5d-b674-459674f7bd8e",
+        "concepts": [
+          "loops"
+        ],
+        "prerequisites": [
+          "ranges"
+        ],
+        "status": "wip"
+      },
+      {
+        "slug": "currency-exchange",
+        "name": "Currency Exchange",
+        "uuid": "6882a823-8c75-4b20-b6f3-2e87b574f4a8",
+        "concepts": [
+          "numbers"
+        ],
+        "prerequisites": [
+          "basics"
+        ],
+        "status": "wip"
+      },
+      {
+        "slug": "elyses-enchantments",
+        "name": "Elyses Enchantments",
+        "uuid": "185683d8-96f7-4d51-8726-56e18b6ef0c7",
+        "concepts": [
+          "vectors"
+        ],
+        "prerequisites": [
+          "conditionals"
+        ],
+        "status": "wip"
+      },
+      {
+        "slug": "cars-assemble",
+        "name": "Cars Assemble",
+        "uuid": "6c23b2bb-3972-4865-b25f-f8804555fb0b",
+        "concepts": [
+          "conditionals"
+        ],
+        "prerequisites": [
+          "booleans",
+          "numbers"
+        ],
+        "status": "wip"
+      },
+      {
+        "slug": "high-school-sweetheart",
+        "name": "High School Sweetheart",
+        "uuid": "6e893250-7f36-4179-92c1-cfa453637149",
+        "concepts": [
+          "function-composition"
+        ],
+        "prerequisites": [
+          "functions"
+        ],
+        "status": "wip"
+      },
+      {
+        "slug": "bird-watcher",
+        "name": "Bird Watcher",
+        "uuid": "6e6968db-e320-4c73-b692-9f58248d20a3",
+        "concepts": [
+          "vector-operations"
+        ],
+        "prerequisites": [
+          "ranges"
+        ],
+        "status": "wip"
+      },
+      {
+        "slug": "log-levels",
+        "name": "Log Levels",
+        "uuid": "e12feb9d-1235-4a7b-8c89-edf5c1577ef6",
+        "concepts": [
+          "strings"
+        ],
+        "prerequisites": [
+          "ranges"
+        ],
+        "status": "wip"
+      },
+      {
+        "slug": "cater-waiter",
+        "name": "Cater Waiter",
+        "uuid": "61e3bb88-a9a5-4978-bc55-1d87de9f2b70",
+        "concepts": [
+          "sets"
+        ],
+        "prerequisites": [
+          "loops"
         ],
         "status": "wip"
       }
@@ -537,6 +656,14 @@
         "slug": "protein-translation",
         "name": "Protein Translation",
         "uuid": "ef95ea34-cc9e-48aa-b2f9-6226134a3644",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "proverb",
+        "name": "Proverb",
+        "uuid": "8df744a9-6788-40b6-83c7-d39e705f17cf",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
@@ -1082,19 +1209,64 @@
   },
   "concepts": [
     {
-      "uuid": "32384ed4-ef26-4118-8ea3-4d44c331e828",
-      "slug": "functions",
-      "name": "Functions"
+      "uuid": "006ebce8-87cd-4695-87e6-8a7b8dc2f239",
+      "slug": "basics",
+      "name": "Basics"
     },
     {
-      "uuid": "006ebce8-87cd-4695-87e6-8a7b8dc2f239",
-      "slug": "integer-introduction",
-      "name": "Integers and Arithmetic Operations"
+      "uuid": "32384ed4-ef26-4118-8ea3-4d44c331e828",
+      "slug": "booleans",
+      "name": "Booleans"
+    },
+    {
+      "uuid": "9f3b90c3-87b4-48cb-81d0-fb6867a20cac",
+      "slug": "vectors",
+      "name": "Vectors"
+    },
+    {
+      "uuid": "67dfc465-1a97-4bc1-9177-97e3a3ba55da",
+      "slug": "sets",
+      "name": "Sets"
+    },
+    {
+      "uuid": "9babe703-1f5f-4f59-a4b2-349b8d461dd8",
+      "slug": "conditionals",
+      "name": "Conditionals"
     },
     {
       "uuid": "90365822-f58c-4e45-88be-430978b77e65",
-      "slug": "comments",
-      "name": "Comments"
+      "slug": "numbers",
+      "name": "Numbers"
+    },
+    {
+      "uuid": "3ce09c90-3096-4dcc-a53f-66d0054cbe43",
+      "slug": "ranges",
+      "name": "Ranges"
+    },
+    {
+      "uuid": "d87a0356-d5ee-43b1-8105-0a65caeea540",
+      "slug": "strings",
+      "name": "Strings"
+    },
+    {
+      "uuid": "e3d18763-a079-4000-a3e4-9938a7f0712b",
+      "slug": "vector-operations",
+      "name": "Vector Operations"
+    },
+    {
+      "uuid": "a2e2c150-1641-40d7-8885-53495e78ddf6",
+      "slug": "loops",
+      "name": "Loops"
+    },
+    {
+      "uuid": "c6920164-6c6e-4f82-8d85-ba179ef906d5",
+      "slug": "function-composition",
+      "name": "Function Composition"
+    },
+    {
+      "uuid": "95b8b60b-fd78-4ec1-9d1c-ac3f11107727",
+      "slug": "chars",
+      "name": "Chars"
     }
   ],
   "key_features": [

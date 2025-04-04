@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://docs.julialang.org/en/v1/manual/integers-and-floating-point-numbers/#Integers-and-Floating-Point-Numbers",
+    "description": "Julia manual page for numbers"
+  },
+  {
+    "url": "https://docs.julialang.org/en/v1/base/numbers/",
+    "description": "Julia documentation for number types in Base"
+  }
+]
