@@ -5,250 +5,137 @@
         "uuid": "39ebdd04-4f84-4817-bf9d-f1f9e066c283",
         "name": "Lasagna",
         "slug": "lasagna",
-        "concepts": [
-          "functions",
-          "integer-introduction",
-          "comments"
-        ],
+        "concepts": [],
         "prerequisites": [],
-        "status": "wip"
+        "status": "deprecated"
       },
       {
         "uuid": "84480c18-327e-47ea-94e7-9e14f2146643",
         "name": "Documented Lasagna",
         "slug": "documented-lasagna",
-        "concepts": [
-          "docstrings"
-        ],
-        "prerequisites": [
-          "functions"
-        ],
-        "status": "wip"
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
       },
       {
         "uuid": "d8528c41-5611-4e92-90b2-fd29777d23cf",
         "name": "Welcome to the Tech Palace!",
         "slug": "tech-palace",
-        "concepts": [
-          "strings"
-        ],
-        "prerequisites": [
-          "functions",
-          "docstrings"
-        ],
-        "status": "wip"
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
       },
       {
         "uuid": "05cfc609-3a14-479a-b6fa-6d2a53ad111c",
-        "name": "Annalyn's Infiltration",
-        "slug": "annalyns-infiltration",
-        "concepts": [
-          "boolean-logic",
-          "booleans"
-        ],
-        "prerequisites": [
-          "functions",
-          "docstrings"
-        ],
-        "status": "wip"
+        "name": "Old Annalyn's Infiltration",
+        "slug": "old-annalyns-infiltration",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
       },
       {
         "uuid": "3c0ab989-6544-4a1a-8e93-c2b5dc3d4109",
         "name": "Annalyn's Infiltration Ⅱ",
         "slug": "annalyns-infiltration2",
-        "concepts": [
-          "randomness",
-          "methods"
-        ],
-        "prerequisites": [
-          "booleans"
-        ],
-        "status": "wip"
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
       },
       {
         "uuid": "60e480e9-7f6f-460a-b753-f333a37d3e0c",
         "name": "DND Character",
         "slug": "dnd-char",
-        "concepts": [
-          "kwdef",
-          "using-macros"
-        ],
-        "prerequisites": [
-          "immutable-structs",
-          "vectors",
-          "randomness",
-          "keyword-arguments"
-        ],
-        "status": "wip"
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
       },
       {
         "uuid": "f2f696e6-8a6a-4c8c-ae0b-d940d8579905",
         "slug": "leap",
         "name": "Leap",
-        "concepts": [
-          "arithmetic-operators",
-          "integer-equality",
-          "boolean-expressions"
-        ],
-        "prerequisites": [
-          "functions",
-          "boolean-logic",
-          "booleans",
-          "docstrings"
-        ],
-        "status": "wip"
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
       },
       {
         "uuid": "b615a19c-ab76-4f93-985f-7e4c628b6939",
         "name": "Vexing Vehicle Purchase",
         "slug": "vehicle-purchase",
-        "concepts": [
-          "conditionals",
-          "if-expressions",
-          "ternary-operator",
-          "short-circuit-evaluation"
-        ],
-        "prerequisites": [
-          "boolean-expressions",
-          "strings"
-        ],
-        "status": "wip"
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
       },
       {
         "uuid": "4b3e6780-b566-4315-a7b0-45500883f050",
         "name": "Name Badge",
         "slug": "name-badge",
-        "concepts": [
-          "nothingness"
-        ],
-        "prerequisites": [
-          "strings",
-          "string-manipulation",
-          "conditionals"
-        ],
-        "status": "wip"
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
       },
       {
         "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",
         "name": "Elyse's Enchantments",
         "slug": "elyses-enchantments",
-        "concepts": [
-          "vectors",
-          "pairs"
-        ],
-        "prerequisites": [
-          "functions",
-          "booleans",
-          "docstrings"
-        ],
-        "status": "wip"
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
       },
       {
         "uuid": "fe7f6097-36b7-42a2-bbd4-f706fb4c08b1",
         "name": "Elyse's Analytic Enchantments",
         "slug": "elyses-analytic-enchantments",
-        "concepts": [
-          "predicates"
-        ],
-        "prerequisites": [
-          "vectors",
-          "nothingness",
-          "conditionals"
-        ],
-        "status": "wip"
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
       },
       {
         "uuid": "21ba9b66-5410-4748-9e6f-e8a96871d9bf",
         "name": "High Score",
         "slug": "high-score",
-        "concepts": [
-          "dictionaries",
-          "optional-arguments"
-        ],
-        "prerequisites": [
-          "methods",
-          "strings",
-          "pairs",
-          "vectors"
-        ],
-        "status": "wip"
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
       },
       {
         "uuid": "36cbda04-3921-4491-9ec6-76951f00aa00",
         "name": "The Exercism Matrix",
         "slug": "exercism-matrix",
-        "concepts": [
-          "matrices-introduction"
-        ],
-        "prerequisites": [
-          "functions",
-          "vectors",
-          "docstrings"
-        ],
-        "status": "wip"
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
       },
       {
         "uuid": "68001762-8a35-4494-9de4-624ca9efb5cd",
         "name": "Encounters",
         "slug": "encounters",
-        "concepts": [
-          "multiple-dispatch"
-        ],
-        "prerequisites": [
-          "composite-types",
-          "abstract-types",
-          "methods"
-        ],
-        "status": "wip"
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
       },
       {
         "uuid": "2b2b8bed-ff39-4e77-a2fe-254125b53a1c",
         "name": "🕑🕤🕗",
         "slug": "emoji-times",
-        "concepts": [
-          "unicode-identifiers",
-          "emoji-symbols"
-        ],
-        "prerequisites": [
-          "symbols",
-          "composite-types",
-          "methods",
-          "constants"
-        ],
-        "status": "wip"
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
       },
       {
         "uuid": "0e7ecc5e-b4d6-4ead-bfaa-a2ebdddcff47",
         "name": "Stage Heralding",
         "slug": "stage-heralding",
-        "concepts": [
-          "regex",
-          "string-literals-using"
-        ],
-        "prerequisites": [
-          "strings",
-          "conditionals",
-          "nothingness"
-        ],
-        "status": "wip"
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
       },
       {
         "uuid": "9a864ac5-0fda-4ba2-bccc-702a1444c412",
         "name": "Fibonacci Iterator",
         "slug": "fibonacci-iterator",
-        "concepts": [
-          "iterator-protocol"
-        ],
-        "prerequisites": [
-          "multiple-dispatch",
-          "numbers",
-          "loops",
-          "nothingness",
-          "parametric-types",
-          "tuples",
-          "optional-arguments"
-        ],
-        "status": "wip"
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
       }
     ]
   },
