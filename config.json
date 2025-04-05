@@ -148,7 +148,7 @@
           "function-composition"
         ],
         "prerequisites": [
-          "functions"
+          "loops"
         ],
         "status": "wip"
       },
