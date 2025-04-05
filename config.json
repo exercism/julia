@@ -130,6 +130,18 @@
         "status": "wip"
       },
       {
+        "slug": "inventory-management",
+        "name": "Inventory Management",
+        "uuid": "53e333ee-4aad-4c1e-9347-4cc17abacad3",
+        "concepts": [
+          "pairs-and-dicts"
+        ],
+        "prerequisites": [
+          "loops"
+        ],
+        "status": "wip"
+      },
+      {
         "slug": "high-school-sweetheart",
         "name": "High School Sweetheart",
         "uuid": "6e893250-7f36-4179-92c1-cfa453637149",
@@ -137,7 +149,7 @@
           "function-composition"
         ],
         "prerequisites": [
-          "functions"
+          "loops"
         ],
         "status": "wip"
       },
@@ -176,6 +188,14 @@
           "loops"
         ],
         "status": "wip"
+      },
+      {
+        "slug": "old-annalyns-infiltration",
+        "name": "Old Annalyn's Infiltration",
+        "uuid": "05cfc609-3a14-479a-b6fa-6d2a53ad111c",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
       }
     ],
     "practice": [
@@ -1267,6 +1287,11 @@
       "uuid": "95b8b60b-fd78-4ec1-9d1c-ac3f11107727",
       "slug": "chars",
       "name": "Chars"
+    },
+    {
+      "uuid": "0d312606-7738-4b0a-9c33-564c40c6f35d",
+      "slug": "pairs-and-dicts",
+      "name": "Pairs And Dicts"
     }
   ],
   "key_features": [
