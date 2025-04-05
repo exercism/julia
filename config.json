@@ -200,6 +200,14 @@
           "numbers", "strings", "function-composition"
         ],
         "status": "wip"
+      }.
+      {
+        "slug": "old-annalyns-infiltration",
+        "name": "Old Annalyn's Infiltration",
+        "uuid": "05cfc609-3a14-479a-b6fa-6d2a53ad111c",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
       }
     ],
     "practice": [
