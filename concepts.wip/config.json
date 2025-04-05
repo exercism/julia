@@ -2,14 +2,6 @@
   "exercises" : {
     "concept": [
       {
-        "uuid": "39ebdd04-4f84-4817-bf9d-f1f9e066c283",
-        "name": "Lasagna",
-        "slug": "lasagna",
-        "concepts": [],
-        "prerequisites": [],
-        "status": "deprecated"
-      },
-      {
         "uuid": "84480c18-327e-47ea-94e7-9e14f2146643",
         "name": "Documented Lasagna",
         "slug": "documented-lasagna",
@@ -21,14 +13,6 @@
         "uuid": "d8528c41-5611-4e92-90b2-fd29777d23cf",
         "name": "Welcome to the Tech Palace!",
         "slug": "tech-palace",
-        "concepts": [],
-        "prerequisites": [],
-        "status": "deprecated"
-      },
-      {
-        "uuid": "05cfc609-3a14-479a-b6fa-6d2a53ad111c",
-        "name": "Old Annalyn's Infiltration",
-        "slug": "old-annalyns-infiltration",
         "concepts": [],
         "prerequisites": [],
         "status": "deprecated"
