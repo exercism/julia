@@ -1267,6 +1267,11 @@
       "uuid": "95b8b60b-fd78-4ec1-9d1c-ac3f11107727",
       "slug": "chars",
       "name": "Chars"
+    },
+    {
+      "uuid": "0d312606-7738-4b0a-9c33-564c40c6f35d",
+      "slug": "pairs-and-dicts",
+      "name": "Pairs And Dicts"
     }
   ],
   "key_features": [
