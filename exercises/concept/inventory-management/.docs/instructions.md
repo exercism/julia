@@ -41,8 +41,8 @@ Dict("coal" => 2, "diamond" => 0, "iron" => 3)
 ```
 
 Item counts in the inventory should not be allowed to fall below 0.
- If the number of times an item appears on the input `vector` exceeds the count available, the quantity listed for that item should remain at 0.
- Additional requests for removing counts should be ignored once the count falls to zero.
+If the number of times an item appears on the input `vector` exceeds the count available, the quantity listed for that item should remain at 0.
+Additional requests for removing counts should be ignored once the count falls to zero.
 
 ```julia-repl
 julia> decrement_items(Dict("coal" => 2, "wood" => 1, "diamond" => 2), ["coal", "coal", "wood", "wood", "diamond"])
