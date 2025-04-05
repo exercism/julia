@@ -87,7 +87,7 @@ See the [manual][dict] for several other variants on the `Dict` type.
 
 ### Modifying a Dict
 
-Entries can be added with a new key or overwritten with an existing key.
+Entries can be added, with a new key, or overwritten, with an existing key.
 
 ```julia-repl
 # Add
