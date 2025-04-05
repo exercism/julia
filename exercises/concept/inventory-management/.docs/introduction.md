@@ -51,7 +51,7 @@ julia> length(pv)
 A `Dict` is superficially similar, but storage is now implemented in a way that allows fast retrieval by key, even when the number of entries grows large.
 
 ```julia-repl
-julia> pd = Dict(pv)
+julia> pd = Dict('a' => 1, 'b' => 2, 'c' => 3)
 Dict{Char, Int64} with 3 entries:
   'a' => 1
   'c' => 3
@@ -84,9 +84,15 @@ Most importantly, this means the `key` must be _immutable_, so `Char`, `Int`, `S
 
 ### Modifying a Dict
 
-Entries can be added with a new key or overwritten with an existing key.
+Entries can be added, with a new key, or overwritten, with an existing key.
 
 ```julia-repl
+julia> pd
+Dict{Char, Int64} with 3 entries:
+  'a' => 1
+  'c' => 3
+  'b' => 2
+
 # Add
 julia> pd['d'] = 4
 4
