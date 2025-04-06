@@ -222,8 +222,14 @@
         "slug": "leap",
         "name": "Leap",
         "uuid": "8740c914-f008-4b6b-8e7d-7470e78e6a8e",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "booleans"
+        ],
+        "prerequisites": [
+          "basics",
+          "booleans",
+          "numbers"
+        ],
         "difficulty": 1,
         "topics": [
           "math",
@@ -273,8 +279,14 @@
         "slug": "raindrops",
         "name": "Raindrops",
         "uuid": "7a083573-2c68-47cc-8bc8-c0e483cf0e50",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "conditionals"
+        ],
+        "prerequisites": [
+          "conditionals",
+          "numbers",
+          "booleans"
+        ],
         "difficulty": 1,
         "topics": [
           "arrays",
