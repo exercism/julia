@@ -196,6 +196,14 @@
         "concepts": [],
         "prerequisites": [],
         "status": "deprecated"
+      },
+      {
+        "slug": "old-elyses-enchantments",
+        "name": "Old Elyse's Enchantments",
+        "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
       }
     ],
     "practice": [
