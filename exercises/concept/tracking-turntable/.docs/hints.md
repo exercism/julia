@@ -23,5 +23,3 @@ Using complex numbers for rotations in 2D can leave things much cleaner and nume
 [imaginary]: https://docs.julialang.org/en/v1/base/math/#Base.imag
 [angle]: https://docs.julialang.org/en/v1/base/math/#Base.angle
 [abs]: https://docs.julialang.org/en/v1/base/math/#Base.abs
-[rad2deg]: https://docs.julialang.org/en/v1/base/math/#Base.Math.rad2deg
-[deg2rad]: https://docs.julialang.org/en/v1/base/math/#Base.Math.deg2rad
