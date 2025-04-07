@@ -39,16 +39,6 @@ julia> a = 1.2; b = 3.4; complex(a, b)
 1.2 + 3.4im
 ```
 
-You may wonder, why `im` rather than `i` or `j`?
-
-Most engineers are happy with `j`.
-Most scientists and mathematicians prefer the mathematical notation `i` for _imaginary_, but that notation conflicts with the use of `i` to mean _current_ in Electrical Engineering.
-
-The [manual][complex] states that "Using mathematicians' i or engineers' j for this global constant was rejected since they are such popular index variable names".
-
-By happy coincidence, this also avoids long arguments between engineers and everyone else.
-Feel free to form your own judgement about whether this influenced the decision.
-
 To access the parts of a complex number individually:
 
 ```julia-repl
@@ -127,7 +117,6 @@ julia> 2^z1  # another exponentiation
 ## Functions
 
 There are several functions, in addition to `real()` and `imag()`, with particular relevance for complex numbers.
-Please skip over these if they make no sense to you!
 
 - `conj()` simply flips the sign of the imaginary part of a complex number (_from + to - or vice-versa_).
     - Because of the way complex multiplication works, this is more useful than you might think.
@@ -177,14 +166,23 @@ julia> exp(1im * π) ≈ cis(π) ≈ cispi(1)
 true
 ```
 
-The approximate equality above is because the function `cispi` can give nicer numerical output when dealing with arguments which are factors of π.
+The approximate equality above is because the functions `cis` and `cispi` can give nicer numerical outputs, with `cispi` in particular when dealing with arguments that are arbitrary factors of π.
 
 ```julia-repl
-julia> x = π/2;
-julia> cis(x)
+julia> cis(π)
+-1.0 + 0.0im
+
+julia> cispi(1)
+-1.0 + 0.0im
+
+julia> θ = π/2;
+julia> exp(im*θ)
 6.123233995736766e-17 + 1.0im
 
-julia> cispi(x / π)
+julia> cis(θ)
+6.123233995736766e-17 + 1.0im
+
+julia> cispi(θ / π) # θ/π == 1/2
 0.0 + 1.0im
 ```
 
