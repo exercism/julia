@@ -1,7 +1,6 @@
 using Test
 
-#include("tracking-turntable.jl")
-include(".meta/exemplar.jl")
+include("tracking-turntable.jl")
 
 @testset verbose = true "tests" begin
     @testset "complex from cartesian" begin
