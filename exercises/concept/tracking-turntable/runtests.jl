@@ -1,8 +1,27 @@
 using Test
 
-include("tracking-turntable.jl")
+#include("tracking-turntable.jl")
+include(".meta/exemplar.jl")
 
 @testset verbose = true "tests" begin
+    @testset "complex from cartesian" begin
+        @test z(1, 1) ≈ 1 + 1im
+
+        @test z(4.5, -7.3) ≈ 4.5 - 7.3im
+
+        @test z(-π, 42.24) ≈ -π + 42.24im
+    end
+    
+    @testset "complex from polar" begin
+        @test euler(1, π) ≈ -1.0 + 0.0im
+
+        @test euler(3, π/2) ≈ 0.0 + 3.0im
+
+        @test isapprox(euler(2, -π/4), √2 - √2im; atol=1e-2)
+
+        @test isapprox(euler(2.5, -4π/3), -1.25 + 2.165im; atol=1e-2)
+    end
+
     @testset "rotations" begin
         x, y = rotate(1, 0, π/2)
         @test isapprox(x, 0.0; atol=1e-2) && isapprox(y, 1.0; atol=1e-2)
