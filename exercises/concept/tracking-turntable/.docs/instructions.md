@@ -4,15 +4,15 @@ Turndit Inc. is producing a new turntable which can skip between tracks on a rec
 
 There are two parts to the setup:
 
-The needle is suspended above the turntable and can move vertically and horizontally across the record.
+The needle is suspended above the turntable and can move left/right and forwards/backwards across the record (think claw machine!).
 Since the mechanism controlling the needle moves linearly, it keeps track of its position in a pair of coordinates `(x, y)`, with the origin at the center of the record.
 
 There is a further optical setup which keeps track of where the needle is and where the previous or next song begins.
 Since the record is rotating, it's easier to track the radial difference and the angular separation between the two points, `(Δr, Δθ)`, again with the origin at the center of the record.
 
-Turndit needs to know how to find the new `(x, y)` coordinates for the needle to move to when a different track is selected.
+Turndit needs to know how to find the new `(x, y)` coordinates to which the needle will move when a different track is selected.
 
-These operations can be done through trigonometric functions and/or rotation matrices, but they can be made simpler (and more fun, I assure you) with the use of complex numbers via rotations and radial displacements.
+These operations can be done through trigonometric functions and/or rotation matrices, but they can be made simpler (and more fun, I assure you!) with the use of complex numbers via rotations and radial displacements.
 
 This ease results from Euler's elegant formula, `ℯ^(iθ) = cos(θ) + isin(θ) = x + iy`, where `i = √-1` is the imaginary unit.
 

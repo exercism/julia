@@ -166,7 +166,7 @@ julia> exp(1im * π) ≈ cis(π) ≈ cispi(1)
 true
 ```
 
-The approximate equality above is because the functions `cis` and `cispi` can give nicer numerical outputs, with `cispi` in particular when dealing with arguments that are arbitrary factors of π.
+The approximate equality above is because the functions `cis` and `cispi` can give nicer numerical outputs, with `cispi` in particular when dealing with arguments that are arbitrary factors of π (e.g. radians!).
 
 ```julia-repl
 julia> cis(π)
@@ -182,7 +182,7 @@ julia> exp(im*θ)
 julia> cis(θ)
 6.123233995736766e-17 + 1.0im
 
-julia> cispi(θ / π) # θ/π == 1/2
+julia> cispi(θ / π)  # θ/π == 1/2
 0.0 + 1.0im
 ```
 
