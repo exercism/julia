@@ -1165,7 +1165,7 @@
       },
       {
         "slug": "fft",
-        "name": "fft",
+        "name": "FFT",
         "uuid": "d1a733da-acd5-4166-927e-044c051e153c",
         "practices": [
           "complex-numbers"
