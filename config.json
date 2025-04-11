@@ -204,6 +204,110 @@
         "concepts": [],
         "prerequisites": [],
         "status": "deprecated"
+      },
+      {
+        "slug": "old-documented-lasagna",
+        "name": "Old Documented Lasagna",
+        "uuid": "84480c18-327e-47ea-94e7-9e14f2146643",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-tech-palace",
+        "name": "Old Welcome to the Tech Palace!",
+        "uuid": "d8528c41-5611-4e92-90b2-fd29777d23cf",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-annalyns-infiltration2",
+        "name": "Old Annalyn's Infiltration Ⅱ",
+        "uuid": "3c0ab989-6544-4a1a-8e93-c2b5dc3d4109",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-dnd-char",
+        "name": "Old DND Character",
+        "uuid": "60e480e9-7f6f-460a-b753-f333a37d3e0c",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-vehicle-purchase",
+        "name": "Old Vehicle Purchase",
+        "uuid": "b615a19c-ab76-4f93-985f-7e4c628b6939",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-name-badge",
+        "name": "Old Name Badge",
+        "uuid": "4b3e6780-b566-4315-a7b0-45500883f050",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-elyses-analytic-enchantments",
+        "name": "Old Elyse's Analytic Enchantments",
+        "uuid": "fe7f6097-36b7-42a2-bbd4-f706fb4c08b1",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-high-score",
+        "name": "Old High Score",
+        "uuid": "21ba9b66-5410-4748-9e6f-e8a96871d9bf",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-exercism-matrix",
+        "name": "Old The Exercism Matrix",
+        "uuid": "36cbda04-3921-4491-9ec6-76951f00aa00",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-encounters",
+        "name": "Old Encounters",
+        "uuid": "68001762-8a35-4494-9de4-624ca9efb5cd",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-emoji-times",
+        "name": "Old 🕑🕤🕗",
+        "uuid": "2b2b8bed-ff39-4e77-a2fe-254125b53a1c",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-stage-heralding",
+        "name": "Old Stage Heralding",
+        "uuid": "0e7ecc5e-b4d6-4ead-bfaa-a2ebdddcff47",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-fibonacci-iterator",
+        "name": "Old Fibonacci Iterator",
+        "uuid": "9a864ac5-0fda-4ba2-bccc-702a1444c412",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
       }
     ],
     "practice": [

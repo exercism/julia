@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "SaschaMann"
+  ],
+  "contributors": [
+    "cmcaine"
+  ],
+  "files": {
+    "solution": [
+      "welcome.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ]
+  },
+  "language_versions": "≥1.0",
+  "forked_from": [
+    "go/welcome-to-the-tech-palace"
+  ],
+  "blurb": "Learn about strings by generating text for a store's welcome sign."
+}
