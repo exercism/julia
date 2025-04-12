@@ -1403,6 +1403,11 @@
       "name": "Loops"
     },
     {
+      "uuid": "7d701c5e-2ea6-4a59-a9d8-82a17e8b285c",
+      "slug": "functions",
+      "name": "Functions"
+    },
+    {
       "uuid": "c6920164-6c6e-4f82-8d85-ba179ef906d5",
       "slug": "function-composition",
       "name": "Function Composition"
