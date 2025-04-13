@@ -1413,6 +1413,11 @@
       "name": "Chars"
     },
     {
+      "uuid": "fa7e4654-5e7a-44e8-9ab5-2852b4a7adfe",
+      "slug": "tuples",
+      "name": "Tuples"
+    },
+    {
       "uuid": "0d312606-7738-4b0a-9c33-564c40c6f35d",
       "slug": "pairs-and-dicts",
       "name": "Pairs And Dicts"
