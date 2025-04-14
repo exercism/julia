@@ -28,19 +28,19 @@ They've also been given blank maps with a starting place marked YOU ARE HERE.
 
 | Location Name                         | Coordinates | Quadrant |
 | ------------------------------------- | ----------- | --------- |
-| Seaside Cottages                      | (1, 'C')    | Blue      |
-| Aqua Lagoon (Island of Mystery)       | (1, 'F')    | Yellow    |
-| Deserted Docks                        | (2, 'A')    | Blue      |
-| Spiky Rocks                           | (3, 'D')    | Yellow    |
-| Abandoned Lighthouse                  | (4, 'B')    | Blue      |
-| Hidden Spring (Island of Mystery)     | (4, 'E')    | Yellow    |
-| Stormy Breakwater                     | (5, 'B')    | Purple    |
-| Old Schooner                          | (6, 'A')    | Purple    |
-| Tangled Seaweed Patch                 | (6, 'D')    | Orange    |
-| Quiet Inlet (Island of Mystery)       | (7, 'E')    | Orange    |
-| Windswept Hilltop (Island of Mystery) | (7, 'F')    | Orange    |
-| Harbor Managers Office                | (8, 'A')    | Purple    |
-| Foggy Seacave                         | (8, 'C')    | Purple    |
+| Seaside Cottages                      | ('1', 'C')    | Blue      |
+| Aqua Lagoon (Island of Mystery)       | ('1', 'F')    | Yellow    |
+| Deserted Docks                        | ('2', 'A')    | Blue      |
+| Spiky Rocks                           | ('3', 'D')    | Yellow    |
+| Abandoned Lighthouse                  | ('4', 'B')    | Blue      |
+| Hidden Spring (Island of Mystery)     | ('4', 'E')    | Yellow    |
+| Stormy Breakwater                     | ('5', 'B')    | Purple    |
+| Old Schooner                          | ('6', 'A')    | Purple    |
+| Tangled Seaweed Patch                 | ('6', 'D')    | Orange    |
+| Quiet Inlet (Island of Mystery)       | ('7', 'E')    | Orange    |
+| Windswept Hilltop (Island of Mystery) | ('7', 'F')    | Orange    |
+| Harbor Managers Office                | ('8', 'A')    | Purple    |
+| Foggy Seacave                         | ('8', 'C')    | Purple    |
 
 </td></tr>
 </table>
