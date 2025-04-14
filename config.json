@@ -212,7 +212,8 @@
         "concepts": ["complex-numbers"],
         "prerequisites": [
           "numbers",
-          "function-composition"
+          "function-composition",
+          "functions"
         ],
         "status": "wip"
       }
