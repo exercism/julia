@@ -130,6 +130,18 @@
         "status": "wip"
       },
       {
+        "slug": "tisbury-treasure-hunt",
+        "name": "Tisbury Treasure Hunt",
+        "uuid": "3fbcfcde-822e-4d20-90f5-43588a4051a0",
+        "concepts": [
+          "tuples"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
+        "status": "wip"
+      },
+      {
         "slug": "inventory-management",
         "name": "Inventory Management",
         "uuid": "53e333ee-4aad-4c1e-9347-4cc17abacad3",
@@ -1416,6 +1428,11 @@
       "name": "Loops"
     },
     {
+      "uuid": "7d701c5e-2ea6-4a59-a9d8-82a17e8b285c",
+      "slug": "functions",
+      "name": "Functions"
+    },
+    {
       "uuid": "c6920164-6c6e-4f82-8d85-ba179ef906d5",
       "slug": "function-composition",
       "name": "Function Composition"
@@ -1424,6 +1441,11 @@
       "uuid": "95b8b60b-fd78-4ec1-9d1c-ac3f11107727",
       "slug": "chars",
       "name": "Chars"
+    },
+    {
+      "uuid": "fa7e4654-5e7a-44e8-9ab5-2852b4a7adfe",
+      "slug": "tuples",
+      "name": "Tuples"
     },
     {
       "uuid": "0d312606-7738-4b0a-9c33-564c40c6f35d",

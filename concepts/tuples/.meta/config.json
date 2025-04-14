@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "Tuples are similar to arrays, but immutable. The individual entries can have names."
+}
