@@ -36,7 +36,15 @@ This is equivalent to what some other languages call a "lambda function".
 
 Note that multiple arguments need parentheses, as in `(x, y) -> x * y`.
 
-Anonymous functions are common in Julia code, especially when combined with higher-order functions such as `map()` and `filter()`.
+Anonymous functions are common in Julia code, especially when combined with higher-order functions such as `map()` and `filter()` (which will be covered in more detail in a later concept).
+
+```julia-repl
+julia> map(x -> x^4, [1, 2, 3])
+3-element Vector{Int64}:
+  1
+ 16
+ 81
+```
 
 ## Function arguments
 

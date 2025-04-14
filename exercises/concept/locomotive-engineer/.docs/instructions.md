@@ -75,33 +75,3 @@ The function should return a consolidated `Dict` with all routing information.
 julia> extend_route_information(Dict("from" => "Berlin", "to" => "Hamburg"), :length = "100", :speed = "50")
 Dict("from" => "Berlin", "to" => "Hamburg", :length => "100", :speed => "50")
 ```
-
-<!-- ## 5. Fix the wagon depot
-
-When Linus was surveying the wagon depot they noticed that the wagons were not getting stored in the correct order.
-In addition to an ID, each wagon has a color that corresponds to the type of cargo it carries.
-Wagons are stored in the depot in grids, where each column in the grid has wagons of the same color.
-
-However, the logistics system shows `vectors` of wagons to be stored in the depot have their _rows_ grouped by color.
-But for the storage grid to work correctly, each _row_ should have three different colors so that the _columns_ align by color.
-Your friend would like you to sort out the wagon depot `vectors`, so that the wagons get stored correctly.
-
-Implement a function called `fix_wagon_depot()` that accepts a `vector` of three items.
-Each `vector` item is a sublist (or "row") that contains three `tuples`.
-Each `tuple` is a `<wagon ID> => <wagon color>` pair.
-
-Your function should return a `vector` with the three "row" `vectors` reordered to have the wagons swapped into their correct positions.
-
-```julia-repl
-julia> fix_wagon_depot([
-                    [(2, "red"), (4, "red"), (8, "red")],
-                    [(5, "blue"), (9, "blue"), (13,"blue")],
-                    [(3, "orange"), (7, "orange"), (11, "orange")],
-                    ])
-
-[
-[(2, "red"), (5, "blue"), (3, "orange")],
-[(4, "red"), (9, "blue"), (7, "orange")],
-[(8, "red"), (13,"blue"), (11, "orange")]
-]
-``` -->

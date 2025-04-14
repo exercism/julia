@@ -23,7 +23,7 @@ The Concepts this exercise unlocks are:
 - `function-composition`
 - `higher-order-functions`
 - `multiple-dispatch`
-- `complex-numbers` (probably?)
+- `complex-numbers`
 
 ## Prerequisites
 

@@ -1,4 +1,4 @@
-get_vector_of_wagons(args...) = collect(args)
+get_vector_of_wagons(args...) = [args...]
 
 function fix_vector_of_wagons(each_wagons_id, missing_wagons)
     (first, second, locomotive, rest...) = each_wagons_id
