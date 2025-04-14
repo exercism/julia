@@ -5,8 +5,10 @@
 The [Fourier Transform](https://en.wikipedia.org/wiki/Fourier_transform) is used a common site in physics and mathematics, which means it has many everyday uses as well. 
 The short of it is that the transform takes an input, often in time or space domains, and transforms it to the frequency domain.
 In effect, with an input signal that is made of a jumble (i.e. superposition) of different frequencies, the transform will separate the frequencies out and show their relative strengths.
-The inverse transform does, well, it goes the other way, just as you'd expect.
-For this reason, it's a principal tool in signal processing and many other data science applications, and therefore perhaps more widely used than one might first imagine, which also makes it a prime example of where imaginary numbers make themselves indispensable.
+This allows for the constituents of the signal to be analyzed or manipulated.
+For this reason, it's a principal tool in signal processing (e.g. filtering, compression, etc.) and many data science applications.
+Therefore, it's perhaps more widely used than one might first imagine, which also makes it a prime example of where imaginary numbers make themselves *indispensable*, since the output of the Fourier Transform is a complex number in general.
+One other nice property of the transform is that it is invertible, with a form that is almost identical to the forward transform.
 
 While the Fourier Transform has an integral formulation, we are digital, so we're interested in the discrete version.
 The derivation of the transform is beyond the scope of this exercise, but the forward [discrete transform](https://en.wikipedia.org/wiki/Discrete_Fourier_transform) (to the frequency domain)takes the following form:
