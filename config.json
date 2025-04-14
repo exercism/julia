@@ -154,6 +154,19 @@
         "status": "wip"
       },
       {
+        "slug": "locomotive-engineer",
+        "name": "Locomotive Engineer",
+        "uuid": "3341044c-6dd6-4a7b-a841-3a1215cd177b",
+        "concepts": [
+          "functions"
+        ],
+        "prerequisites": [
+          "vector-operations",
+          "pairs-and-dicts"
+        ],
+        "status": "wip"
+      },
+      {
         "slug": "high-school-sweetheart",
         "name": "High School Sweetheart",
         "uuid": "6e893250-7f36-4179-92c1-cfa453637149",
