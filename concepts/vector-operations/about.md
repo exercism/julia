@@ -247,6 +247,27 @@ julia> a[condition]
  'C': ASCII/Unicode U+0043 (category Lu: Letter, uppercase)
 ```
 
+## Comprehensions
+
+Anyone who likes list comprehensions in Python will be pleased to know that Julia uses [similar syntax][comprehensions].
+
+```julia-repl
+julia> [n for n in 1:10 if n%3 == 0]
+3-element Vector{Int64}:
+ 3
+ 6
+ 9
+
+ julia> [uppercase(c) for c in "Julia" if c > 'h']
+3-element Vector{Char}:
+ 'U': ASCII/Unicode U+0055 (category Lu: Letter, uppercase)
+ 'L': ASCII/Unicode U+004C (category Lu: Letter, uppercase)
+ 'I': ASCII/Unicode U+0049 (category Lu: Letter, uppercase)
+```
+
+_Similar_ syntax, but not _identical_.
+There is some divergence for multiple variables and/or multi-dimensional arrays, so this topic will be covered in more detail in a later Concept.
+
 [vectors]: https://exercism.org/tracks/julia/concepts/arrays
 [ranges]: https://exercism.org/tracks/julia/concepts/ranges
 [sets]: https://exercism.org/tracks/julia/concepts/sets
@@ -255,3 +276,4 @@ julia> a[condition]
 [zip]: https://docs.julialang.org/en/v1/base/iterators/#Base.Iterators.zip
 [bitarray]: https://docs.julialang.org/en/v1/base/arrays/#Base.BitArray
 [broadcasting]: https://docs.julialang.org/en/v1/manual/arrays/#Broadcasting
+[comprehensions]: https://docs.julialang.org/en/v1/manual/arrays/#man-comprehensions
