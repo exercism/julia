@@ -27,6 +27,13 @@ julia> t[2]
 julia> t[2] = 7.3
 ERROR: MethodError: no method matching setindex!(::Tuple{Int64, Float64, String}
 ```
+There is also a `Tuple()` constructor, which will turn any iterable collection into a tuple.
+Usefully, this treats a string as an iterable collection of characters.
+
+```julia-repl
+julia> Tuple("Julia")
+('J', 'u', 'l', 'i', 'a')
+```
 
 For any tuple, it is possible to access elements by index or loop over them.
 
