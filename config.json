@@ -174,7 +174,8 @@
           "function-composition"
         ],
         "prerequisites": [
-          "loops"
+          "functions",
+          "strings"
         ],
         "status": "wip"
       },
