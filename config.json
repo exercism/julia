@@ -42,7 +42,7 @@
           "basics"
         ],
         "prerequisites": [],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "annalyns-infiltration",
@@ -54,7 +54,7 @@
         "prerequisites": [
           "basics"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "squeaky-clean",
@@ -66,7 +66,7 @@
         "prerequisites": [
           "strings"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "chessboard",
@@ -78,7 +78,7 @@
         "prerequisites": [
           "vectors"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "mixed-juices",
@@ -90,7 +90,7 @@
         "prerequisites": [
           "ranges"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "currency-exchange",
@@ -102,7 +102,7 @@
         "prerequisites": [
           "basics"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "elyses-enchantments",
@@ -114,7 +114,7 @@
         "prerequisites": [
           "conditionals"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "cars-assemble",
@@ -127,7 +127,7 @@
           "booleans",
           "numbers"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "tisbury-treasure-hunt",
@@ -139,7 +139,7 @@
         "prerequisites": [
           "strings"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "inventory-management",
@@ -151,7 +151,7 @@
         "prerequisites": [
           "loops"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "locomotive-engineer",
@@ -164,7 +164,7 @@
           "vector-operations",
           "pairs-and-dicts"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "high-school-sweetheart",
@@ -177,7 +177,7 @@
           "functions",
           "strings"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "bird-watcher",
@@ -189,7 +189,7 @@
         "prerequisites": [
           "ranges"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "log-levels",
@@ -201,7 +201,7 @@
         "prerequisites": [
           "ranges"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "cater-waiter",
@@ -213,7 +213,7 @@
         "prerequisites": [
           "loops"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "old-annalyns-infiltration",
