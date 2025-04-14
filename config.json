@@ -130,6 +130,18 @@
         "status": "wip"
       },
       {
+        "slug": "tisbury-treasure-hunt",
+        "name": "Tisbury Treasure Hunt",
+        "uuid": "3fbcfcde-822e-4d20-90f5-43588a4051a0",
+        "concepts": [
+          "tuples"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
+        "status": "wip"
+      },
+      {
         "slug": "inventory-management",
         "name": "Inventory Management",
         "uuid": "53e333ee-4aad-4c1e-9347-4cc17abacad3",
