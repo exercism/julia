@@ -1,7 +1,3 @@
-function split_msg(msg)
-
-end
-
 function message(msg)
 
 end
