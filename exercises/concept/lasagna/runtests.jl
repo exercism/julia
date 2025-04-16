@@ -7,7 +7,7 @@ include("lasagna.jl")
     @testset "expected bake time" begin
         @test expected_bake_time == 60
         if VERSION > v"1.7"
-            @test isconst(typeof(expected_bake_time), expected_bake_time) == true
+            @test isconst(@__MODULE__, :expected_bake_time) == true
         end
     end
     
