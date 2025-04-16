@@ -31,7 +31,7 @@
 
 ## 4. Label Allergens and Restricted Foods
 
-- A set _intersection_ are the elements shared between `<set_1>` and `<set_2>`.
+- A set _intersection_ is the elements shared between `<set_1>` and `<set_2>`.
 - The set method equivalent of `∩` is `intersect(<set>, <iterable>)` or `∩(<set>, <iterable>)`.
 - Elements within Tuples can be accessed from the left using a 1-based index number, or from the right using an `end`-based index number (e.g. `<tuple>[end]`).
 - The `Set()` constructor can take any [iterable][iterable] as an argument. Vectors are iterable.
