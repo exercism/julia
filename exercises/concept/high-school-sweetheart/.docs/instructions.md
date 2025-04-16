@@ -1,6 +1,6 @@
 # Instructions
 
-In this exercise, you are going to help high school sweethearts profess their love on social media by generating a unicode heart with their initial:
+In this exercise, you are going to help high school sweethearts profess their love on social media by generating a unicode heart with their initials:
 
 ```
 ❤ J.  +  M. ❤

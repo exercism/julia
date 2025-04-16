@@ -12,7 +12,7 @@ For each of the four possible options you need to write a function that tells th
 
 ## 1. Check if the 'Fast Attack' option should be shown
 
-If the knight is sleeping, then Annalyn will be able to make a quick attack into the camp before he can wake up properly and get his armour on.
+If the knight is sleeping then Annalyn will be able to make a quick attack into the camp before he can wake up properly and get his armour on.
 
 Implement a function named `can_do_fast_attack` that takes a boolean value which indicates if the knight is awake.
 This function returns `true` if the 'Fast Attack' action is available based on the state of the character. Otherwise, returns `false`:
@@ -45,7 +45,7 @@ true
 ## 3. Check if the 'Signal Prisoner' option should be shown
 
 The prisoner can be signalled using bird sounds if she is awake and the archer is sleeping.
-If the archer is awake then  can't be safely signaled because the archer is also trained in bird signalling.
+If the archer is awake then she can't be safely signaled because the archer is also trained in bird signalling.
 
 Implement a function named `can_signal_prisoner` that takes two boolean values, indicating if the archer and prisoner, respectively, are awake.
 The function returns `true` if the 'Signal Prisoner' action is available based on the state of the characters.
@@ -63,11 +63,11 @@ true
 
 Annalyn can try sneaking into the camp to free her friend. This is a risky thing to do and can only succeed in one of two ways:
 
-- If Annalyn has her pet dog with her she can rescue the prisoner if the archer is asleep.
+- If Annalyn has her pet dog with her, she can rescue the prisoner if the archer is asleep.
   The knight is scared of the dog and the archer will not have time to get ready before Annalyn and her friend can escape.
 
 - If Annalyn does not have her dog then she and the prisoner must be very sneaky!
-  Annalyn can free the prisoner if they are awake and the knight and archer are both sleeping, but if he prisoner is sleeping they can't be rescued: they would be startled by Annalyn's sudden appearance and wake up the knight and archer.
+  Annalyn can free the prisoner if she is awake and the knight and archer are both sleeping, but if the prisoner is sleeping, she can't be rescued: she would be startled by Annalyn's sudden appearance and wake up the knight and archer.
 
 Implement a function named `can_free_prisoner` that takes four boolean values.
 The first three parameters indicate if the knight, archer and prisoner, respectively, are awake.
