@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [
+    "cmcaine",
+    "SaschaMann"
+  ],
+  "files": {
+    "solution": [
+      "elyses-enchantments.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ]
+  },
+  "forked_from": [
+    "javascript/enchantments"
+  ],
+  "blurb": "Help Elyse with her Enchantments and learn about vectors in the process."
+}

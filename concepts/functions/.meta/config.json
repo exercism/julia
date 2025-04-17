@@ -1,10 +1,7 @@
 {
-  "blurb": "A brief introduction to defining functions in Julia",
   "authors": [
-    "SaschaMann"
+    "colinleach"
   ],
-  "contributors": [
-    "ErikSchierboom",
-    "glennj"
-  ]
+  "contributors": [],
+  "blurb": "Functions are central to Julia, so will be the focus of several concepts. This one covers function arguments, splat, and slurp."
 }

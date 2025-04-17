@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "SaschaMann"
+  ],
+  "contributors": [
+    "cmcaine"
+  ],
+  "files": {
+    "solution": [
+      "enchantments.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ]
+  },
+  "language_versions": "≥1.0",
+  "forked_from": [
+    "javascript/enchantments"
+  ],
+  "blurb": "Learn about vectors and pairs by helping Elyse practice magic tricks."
+}

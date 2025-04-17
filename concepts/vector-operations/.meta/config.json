@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "Julia provides many ways to operate on an array, either as a unit or element-wise."
+}

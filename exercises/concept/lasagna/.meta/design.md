@@ -2,7 +2,7 @@
 
 ## Goal
 
-The goal of this exercise is to teach the student the fundamentals of the Concept of functions in Julia, so that they are able to understand the basic structure of Exercism exercises.
+The goal of this exercise is to teach the student the fundamentals of the `basics` Concept in Julia, so that they are able to understand the basic structure of Exercism exercises.
 
 ## Learning objectives
 
@@ -11,17 +11,18 @@ The goal of this exercise is to teach the student the fundamentals of the Concep
 - Know how to call a function.
 - Know about implicit `return`s.
 - Know how to define an integer.
+- Know how to define a global constant.
 - Know how to use mathematical operators on integers.
 
 ## Out of scope
+
+Everything beyond the simplest minimum for the first exercise of a novice.
 
 ## Concepts
 
 The Concepts this exercise practices are:
 
-- `functions`: Defining a function with one or more positional arguments that returns something. Bare minimum to be able to understand the basic structure of Exercism exercises.
-- `integers-introduction`: Present integer literals and basic arithmetic operations.
-- `comments`
+- `basics`: Defining a constant. Defining a function with one or more positional arguments that returns something. Bare minimum to be able to understand the basic structure of Exercism exercises.
 
 ## Prerequisites
 
