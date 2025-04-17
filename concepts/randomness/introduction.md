@@ -27,6 +27,7 @@ What this function does depends on the arguments you give it.
 There are _many_ options.
 
 With no arguments, it generates a float between 0 and 1.
+This is a `uniform` with all values equally likely, as discussed in the Working with Distributions section, below.
 
 A single integer argument generates a vector of that length.
 
@@ -155,18 +156,27 @@ There will be more to say about this in the `Statistics` Concept.
 Short for "random normal", this is similar to the floating-point variant of `rand()` except that values are distributed as a Gaussian with mean 0 and standard deviation 1.
 
 Again, you may want to scale the raw output from `randn` for standard deviation, and displace it for the mean.
+The example below converts to mean 30 and StdDev 5.
 
 ```julia-repl
-julia> randn(5)
+julia> raw = randn(5)
 5-element Vector{Float64}:
- -2.072481073894565
- -1.4138480399699225
-  0.004142896124356481
-  0.4670319074567224
-  0.554217625875170
+  3.0762588867281475
+  1.5101100620253902
+ -0.5914858221637778
+  0.684175554069735
+ -0.8416433926114673
+
+julia> raw * 5 .+ 30
+5-element Vector{Float64}:
+ 45.38129443364074
+ 37.55055031012695
+ 27.04257088918111
+ 33.420877770348675
+ 25.791783036942665
 ```
 
-It is hard to tell from looking at the output that these cluster closer to zero than for a uniform distribution.
+It is hard to tell from looking at the output that the raw output clusters closer to zero than for a uniform distribution.
 If you doubt it, generate 1000 or more and plot them to make it more obvious.
 
 ## The `Random` module
