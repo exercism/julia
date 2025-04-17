@@ -23,12 +23,12 @@ Julia divides random functionality into multiple locations:
 
 ## The `rand()` function
 
-What this function does depends on the parameters you give it.
+What this function does depends on the arguments you give it.
 There are _many_ options.
 
-With no parameters, it generates a float between 0 and 1.
+With no arguments, it generates a float between 0 and 1.
 
-A single integer parameter generates a vector of that length.
+A single integer argument generates a vector of that length.
 
 ```julia-repl
 julia> rand()
@@ -45,7 +45,7 @@ julia> rand(5)
 
 For a different range, just shift and scale the result appropriately.
 
-The example below uses [broadcasting][broadcasting] for the subtraction, which will be covered in another Concept.
+The example below uses [broadcasting][broadcasting] for the subtraction, covered in the [Vector Operations][vector-ops] Concept.
 The `.-` simply applies this arithmetic to each vector element.
 
 ```julia-repl
@@ -59,7 +59,7 @@ julia> (rand(5) .- 0.5) * 2
   0.9880834344780736
 ```
 
-With a type as the only parameter, `rand` will use the `typemin` and `typemax` as limits.
+With a type as the only argument, `rand` will use the `typemin` and `typemax` as limits.
 This is probably not what you want!
 
 For random integers, we can supply a range, plus optionally how many values to generate.
@@ -298,3 +298,4 @@ For a much wider range of options, there is the [`Distributions.jl`][distributio
 [poisson]: https://en.wikipedia.org/wiki/Poisson_distribution
 [distributions]: https://juliastats.org/Distributions.jl/latest/
 [statistics]: https://exercism.org/tracks/julia/concepts/statistics
+[vector-ops]: https://exercism.org/tracks/julia/concepts/vector-operations
