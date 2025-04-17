@@ -216,6 +216,20 @@
         "status": "beta"
       },
       {
+        "slug": "tracking-turntable",
+        "name": "Tracking Turntable",
+        "uuid": "85cec5ea-2ed4-4f9a-b629-b7f03bdc5108",
+        "concepts": [
+          "complex-numbers"
+        ],
+        "prerequisites": [
+          "numbers",
+          "function-composition",
+          "functions"
+        ],
+        "status": "wip"
+      },
+      {
         "slug": "old-annalyns-infiltration",
         "name": "Old Annalyn's Infiltration",
         "uuid": "05cfc609-3a14-479a-b6fa-6d2a53ad111c",
@@ -230,18 +244,6 @@
         "concepts": [],
         "prerequisites": [],
         "status": "deprecated"
-      },
-      {
-        "slug": "tracking-turntable",
-        "name": "Tracking Turntable",
-        "uuid": "85cec5ea-2ed4-4f9a-b629-b7f03bdc5108",
-        "concepts": ["complex-numbers"],
-        "prerequisites": [
-          "numbers",
-          "function-composition",
-          "functions"
-        ],
-        "status": "wip"
       },
       {
         "slug": "old-documented-lasagna",
