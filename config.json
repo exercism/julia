@@ -1452,6 +1452,11 @@
       "uuid": "0d312606-7738-4b0a-9c33-564c40c6f35d",
       "slug": "pairs-and-dicts",
       "name": "Pairs And Dicts"
+    },
+    {
+      "uuid": "f181529f-ed95-4978-987c-ea4c0dff7dde",
+      "slug": "statistics",
+      "name": "Statistics"
     }
   ],
   "key_features": [

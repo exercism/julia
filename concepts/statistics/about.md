@@ -8,8 +8,8 @@ At its simplest, statistics can involve ways to summarize an iterable collection
 Newcomers to Julia may be surprised at how few functions are built in to the language by default:
 
 - [`sum`][sum], to add up numbers.
-- [`min`][min] and [`max`][max] to get the extreme values of the given parameters.
-- [`extrema`][extrema] to get the (min, max) tuple of an iterable.
+- [`min`][min] and [`max`][max], to get the extreme values of the given parameters.
+- [`extrema`][extrema], to get the (min, max) tuple of an iterable.
 - [`length`][length], to count all values.
 - [`count`][count], to count only values meeting some criterion.
 
@@ -23,12 +23,6 @@ julia> v = collect(1:0.2:3)
 
 julia> mean(v)
 2.0
-
-julia> std(v)
-0.66332495807108
-
-julia> var(v)
-0.44000000000000006
 
 julia> extrema(v)
 (1.0, 3.0)
