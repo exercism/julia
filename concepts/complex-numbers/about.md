@@ -92,7 +92,7 @@ This is a simple idea, but it leads to interesting consequences.
 
 ## Arithmetic
 
-Most of the [`operators`][operators] used with floats and integers also work with complex numbers:
+All of the standard mathematical `operators` and elementary functions used with floats and integers also work with complex numbers. A small sample:
 
 ```julia-repl
 julia> z1 = 1.5 + 2im
