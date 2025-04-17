@@ -200,7 +200,7 @@ julia> exp(1im * π) ≈ cis(π) ≈ cispi(1)
 true
 ```
 
-The approximate equality above is because the functions `cis` and `cispi` can give nicer numerical outputs, with `cispi` in particular when dealing with arguments that are arbitrary factors of π (e.g. radians!).
+The approximate equality above is because the functions [`cis`][cis] and [`cispi`][cispi] can give nicer numerical outputs, with `cispi` in particular when dealing with arguments that are arbitrary factors of π (e.g. radians!).
 
 ```julia-repl
 julia> cis(π)
@@ -271,3 +271,5 @@ So, you are probably using technology that relies on complex number calculations
 [math-complex]: https://www.nagwa.com/en/videos/143121736364/
 [engineering-complex]: https://www.khanacademy.org/science/electrical-engineering/ee-circuit-analysis-topic/ee-ac-analysis/v/ee-complex-numbers
 [operators]: https://docs.julialang.org/en/v1/manual/mathematical-operations/#Arithmetic-Operators
+[cis]: https://docs.julialang.org/en/v1/base/math/#Base.cis
+[cispi]: https://docs.julialang.org/en/v1/base/math/#Base.cispi
