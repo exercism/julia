@@ -176,8 +176,6 @@ A partial explanation, for the mathematically-minded _(again, feel free to skip)
 - The same complex number can be represented in `(r, θ)` notation, using polar coordinates.
 - Here, `r` and `θ` are given by `abs(z1)` and `angle(z1)` respectively.
 
-
-
 Here is an example using some constants:
 
 ```julia-repl
@@ -194,6 +192,33 @@ julia> round(imag(euler), digits=15)  # round to 15 decimal places
 So a simple expression with three of the most important constants in nature `e`, `i` (or `j`) and `pi` gives the result `-1`.
 Some people believe this is the most beautiful result in all of mathematics.
 It dates back to around 1740.
+
+The polar `(r, θ)` notation is so useful, that there are built-in functions `cis` and `cispi` for constructing it more efficiently.
+
+```julia-repl
+julia> exp(1im * π) ≈ cis(π) ≈ cispi(1)
+true
+```
+
+The approximate equality above is because the functions `cis` and `cispi` can give nicer numerical outputs, with `cispi` in particular when dealing with arguments that are arbitrary factors of π (e.g. radians!).
+
+```julia-repl
+julia> cis(π)
+-1.0 + 0.0im
+
+julia> cispi(1)
+-1.0 + 0.0im
+
+julia> θ = π/2;
+julia> exp(im*θ)
+6.123233995736766e-17 + 1.0im
+
+julia> cis(θ)
+6.123233995736766e-17 + 1.0im
+
+julia> cispi(θ / π)  # θ/π == 1/2
+0.0 + 1.0im
+```
 
 -----
 
