@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "depial"
+  ],
+  "files": {
+    "solution": [
+      "cater-waiter.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ],
+    "editor": [
+      "sets_categories_data.jl"
+    ]
+  },
+  "icon": "meetup",
+  "blurb": "Learn about sets by managing the menus and ingredients for your catering company's event."
+}

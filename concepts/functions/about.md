@@ -1,73 +1,231 @@
 # About
 
-## Summary
+The [`Basics`][basics] Concept introduced two ways to define a [function][functions].
 
-This exercise showed how to:
-
-- Define functions that take one or more arguments and return a value.
-- Do arithmetic calculations with integers.
-- Invoke functions.
-
-### Defining functions
-
-There are two common ways to define a named function in Julia:
+Most generally, the multiline form:
 
 ```julia
 function muladd(x, y, z)
-    return x * y + z
+    x * y + z
 end
 ```
 
-and
-
+The "assignment", or "single-line" form for short definitions:
 ```julia
 muladd(x, y, z) = x * y + z
 ```
 
-The latter is most commonly used for one-line function definitions or mathematical functions.
+In a third and even shorter form, a short, single-use function can be created without a name:
 
-### Invoking functions
+```julia-repl
+julia> map(x -> 2x, 1:3)
+4-element Vector{Int64}:
+ 2
+ 4
+ 6
 
-Invoking a function is done by specifying its name and passing arguments for each of the function's parameters:
-
-```julia
-add(x, y) = x + y
-mul(x, y) = x * y
-muladd(x, y, z) = add(mul(x, y), z)
+julia> map((x, y) -> x * y, 1:3, 4:6)
+3-element Vector{Int64}:
+  4
+ 10
+ 18
 ```
 
-### Implicit returns
+In this case, `x -> 2x` is an ["anonymous function"][anonymous-function].
+This is equivalent to what some other languages call a "lambda function".
 
-The `return` statement is optional in Julia.
-The last value in the function body will be returned implicitly:
+Note that multiple arguments need parentheses, as in `(x, y) -> x * y`.
 
-```julia
-function preptime(layers)
-    return 2 * layers
-end
+Anonymous functions are common in Julia code, especially when combined with [higher-order functions][HOF] such as `map()` and `filter()`.
+
+## Function arguments
+
+So far in the syllabus, we have only looked at functions which have a precise number of arguments, and require function calls to supply all of them, in the correct order.
+This would be limiting and inconvenient, so there are several other options.
+
+### Optional arguments
+
+Like many languages, Julia allows function definitions to supply default values for individual arguments.
+
+Function call can then either supply a value for that argument, or omit it and rely on the default.
+
+```julia-repl
+julia> f(x, y=10) = x * y
+f (generic function with 2 methods)
+
+julia> f(2, 3)
+6
+
+julia> f(2)
+20
 ```
 
-and
+All arguments _without_ defaults must come before any arguments _with_ defaults, meaning that `f(x=2, y)` would be invalid.
 
-```julia
-function preptime(layers)
-    2 * layers
-end
+### Keyword arguments
+
+All the examples so far use `positional arguments`, where values supplied in a function call must match the order of the corresponding arguments in the function definition.
+
+Like many languages, Julia also allows `keyword arguments`.
+Function calls must specify the argument name, but multiple keyword arguments can then be specified in any order.
+
+A distinctive feature of Julia is that the keyword arguments (if any) in the function definition must be preceded by a semicolon `;` to separate them from any positional arguments.
+A function call can use either `;` or `,` between the last positional argument and the first keyword argument.
+
+```julia-repl
+julia> b(x; y) = x + y
+b (generic function with 1 method)
+
+julia> b(2, y=3)
+5
+
+# keyword is required when calling
+julia> b(2, 3)
+ERROR: MethodError: no method matching b(::Int64, ::Int64)
+The function `b` exists, but no method is defined for this combination of argument types.
 ```
 
-are equivalent.
+Default values can optionally be specified, exactly as for positional arguments.
 
-### Further details
+It is common to end up with syntax like `myarg=myarg` within a function call, when a variable with the same name as the parameter was pre-calculated.
+A shorthand syntax is allowed in this situation:
 
-For more information about functions, consider taking a look at the [Julia Manual][functions]. Note that the concepts after the "The `return` Keyword" section will be introduced in future exercises.
+```julia-repl
+julia> width = 4.0
+4.0
 
-### Naming
+julia> height = √ width
+2.0
 
-Julia code often uses "germaniccase" for short function and variable names, e.g. `preptime`, `isbits`, or `eigvals`, while longer names use "snake_case", e.g. `total_working_time`.
-The line when to use which is a bit blurry.
-Some Julia style guides suggest using snake_case for all function and variable names, e.g. the [Blue Style][blue-style], but Julia's standard and Base libraries [prefer germaniccase][style-guide].
-Julia programs generally do not use "lowerCamelCase" anywhere and reserve "UpperCamelCase" for type names, which we will get to later.
+julia> area(; width, height) = width * height
+area (generic function with 1 method)
 
-[blue-style]: https://github.com/invenia/BlueStyle
+# repetition
+julia> area(; width=width, height=height)
+8.0
+
+# shorthand form
+julia> area(; width, height)
+8.0
+```
+
+### Splat and slurp
+
+These are the standard names for a useful aspect of Julia syntax, in case you wondered.
+Both refer to the `...` operator.
+
+#### Splat
+
+Splatting is used in function _calls_, to expand collections into individual values required by the function.
+
+This may be easier to demonstrate than to explain:
+
+```julia-repl
+julia> fxyz(x, y, z) = x * y * z
+fxyz (generic function with 1 method)
+
+julia> xyz = [2, 3, 4]
+3-element Vector{Int64}:
+ 2
+ 3
+ 4
+
+# Using the vector directly in a function call is invalid
+julia> fxyz(xyz)
+ERROR: MethodError: no method matching fxyz(::Vector{Int64})
+The function `fxyz` exists, but no method is defined for this combination of argument types.
+
+# splatting converts the vector to 3 numbers, used as positional argumants
+julia> fxyz(xyz...)
+24
+```
+
+Some "function calls" are hidden by syntactic sugar, so splatting can also be used in less obvious ways.
+
+For example, multiple assignment uses a tuple constructor function internally:
+
+```julia-repl
+julia> first, rest... = [1, 2, 3, 4]
+4-element Vector{Int64}:
+ 1
+ 2
+ 3
+ 4
+
+julia> first
+1
+
+julia> rest
+3-element Vector{Int64}:
+ 2
+ 3
+ 4
+```
+
+Keyword arguments can also be supplied by splatting, typically using a `named tuple`. 
+A `Dict` will also work, but the keys must be symbols (strings will not work here).
+
+```julia-repl
+# function with 3 keyword arguments
+julia> fabc(; a, b, c) = a + b + c
+fabc (generic function with 1 method)
+
+# named tuple
+julia> abc_nt = (a=2, b=3, c=4)
+(a = 2, b = 3, c = 4)
+
+# there are no positional arguments, so need to use ; before kw argument
+julia> fabc(;abc_nt...)
+9
+
+# Dict
+julia> abc_dict = Dict(:a=>2, :b=>3, :c=>4)
+Dict{Symbol, Int64} with 3 entries:
+  :a => 2
+  :b => 3
+  :c => 4
+
+julia> fabc(;abc_dict...)
+9
+```
+
+#### Slurp
+
+Slurping is used in the function _definition_, to pack an arbitrary number of individual values into a collection.
+
+```julia-repl
+julia> f_more(i, j, more...) = i + j + sum(more)
+f_more (generic function with 1 method)
+
+julia> f_more(1, 3, 5, 7, 9, 11)
+36
+```
+
+The name of the slurped argument (in this case `more`) is not significant.
+The type of this variable is chosen by the compiler, but for positional arguments is likely to be `tuple` or something similar.
+
+Keyword arguments can also be slurped, giving a `Dict` (or similar).
+
+```julia-repl
+julia> f_kwslurp(x, y; switches...) = :mult in keys(switches) ? x * y : x + y
+f_kwslurp (generic function with 1 method)
+
+julia> f_kwslurp(5, 6; mult=true)
+30
+
+julia> f_kwslurp(5, 6)
+11
+```
+
+Any keyword arguments can be used in the call.
+It is for the function definition to decide which keywords to respond to and which to ignore.
+
+
+[basics]: https://exercism.org/tracks/julia/concepts/basics
+[anonymous-function]: https://docs.julialang.org/en/v1/manual/functions/#man-anonymous-functions
+[HOF]: https://en.wikipedia.org/wiki/Higher-order_function
+[named-tuple]: https://exercism.org/tracks/julia/concepts/sets
+[dict]: https://exercism.org/tracks/julia/concepts/pairs-and-dicts
+[splat]: https://docs.julialang.org/en/v1/manual/functions/#Varargs-Functions
 [functions]: https://docs.julialang.org/en/v1/manual/functions/
-[style-guide]: https://docs.julialang.org/en/v1/manual/style-guide/#Use-naming-conventions-consistent-with-Julia-base/
+[struct]: https://docs.julialang.org/en/v1/base/base/#struct

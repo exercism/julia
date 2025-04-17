@@ -3,7 +3,7 @@
   "slug": "julia",
   "active": true,
   "status": {
-    "concept_exercises": false,
+    "concept_exercises": true,
     "test_runner": true,
     "representer": false,
     "analyzer": false
@@ -39,12 +39,10 @@
         "name": "Lasagna",
         "uuid": "39ebdd04-4f84-4817-bf9d-f1f9e066c283",
         "concepts": [
-          "functions",
-          "integer-introduction",
-          "comments"
+          "basics"
         ],
         "prerequisites": [],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "annalyns-infiltration",
@@ -56,7 +54,286 @@
         "prerequisites": [
           "basics"
         ],
-        "status": "wip"
+        "status": "beta"
+      },
+      {
+        "slug": "squeaky-clean",
+        "name": "Squeaky Clean",
+        "uuid": "7c06c4e8-4bc1-42c3-982a-f973f45193bf",
+        "concepts": [
+          "chars"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "chessboard",
+        "name": "Chessboard",
+        "uuid": "48977bc8-36e7-41be-8fd5-99c49de00f20",
+        "concepts": [
+          "ranges"
+        ],
+        "prerequisites": [
+          "vectors"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "mixed-juices",
+        "name": "Mixed Juices",
+        "uuid": "5f181d2c-bb18-4f5d-b674-459674f7bd8e",
+        "concepts": [
+          "loops"
+        ],
+        "prerequisites": [
+          "ranges"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "currency-exchange",
+        "name": "Currency Exchange",
+        "uuid": "6882a823-8c75-4b20-b6f3-2e87b574f4a8",
+        "concepts": [
+          "numbers"
+        ],
+        "prerequisites": [
+          "basics"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "elyses-enchantments",
+        "name": "Elyses Enchantments",
+        "uuid": "185683d8-96f7-4d51-8726-56e18b6ef0c7",
+        "concepts": [
+          "vectors"
+        ],
+        "prerequisites": [
+          "conditionals"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "cars-assemble",
+        "name": "Cars Assemble",
+        "uuid": "6c23b2bb-3972-4865-b25f-f8804555fb0b",
+        "concepts": [
+          "conditionals"
+        ],
+        "prerequisites": [
+          "booleans",
+          "numbers"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "tisbury-treasure-hunt",
+        "name": "Tisbury Treasure Hunt",
+        "uuid": "3fbcfcde-822e-4d20-90f5-43588a4051a0",
+        "concepts": [
+          "tuples"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "inventory-management",
+        "name": "Inventory Management",
+        "uuid": "53e333ee-4aad-4c1e-9347-4cc17abacad3",
+        "concepts": [
+          "pairs-and-dicts"
+        ],
+        "prerequisites": [
+          "loops"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "locomotive-engineer",
+        "name": "Locomotive Engineer",
+        "uuid": "3341044c-6dd6-4a7b-a841-3a1215cd177b",
+        "concepts": [
+          "functions"
+        ],
+        "prerequisites": [
+          "vector-operations",
+          "pairs-and-dicts"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "high-school-sweetheart",
+        "name": "High School Sweetheart",
+        "uuid": "6e893250-7f36-4179-92c1-cfa453637149",
+        "concepts": [
+          "function-composition"
+        ],
+        "prerequisites": [
+          "functions",
+          "strings"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "bird-watcher",
+        "name": "Bird Watcher",
+        "uuid": "6e6968db-e320-4c73-b692-9f58248d20a3",
+        "concepts": [
+          "vector-operations"
+        ],
+        "prerequisites": [
+          "ranges"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "log-levels",
+        "name": "Log Levels",
+        "uuid": "e12feb9d-1235-4a7b-8c89-edf5c1577ef6",
+        "concepts": [
+          "strings"
+        ],
+        "prerequisites": [
+          "ranges"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "cater-waiter",
+        "name": "Cater Waiter",
+        "uuid": "61e3bb88-a9a5-4978-bc55-1d87de9f2b70",
+        "concepts": [
+          "sets"
+        ],
+        "prerequisites": [
+          "loops"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "old-annalyns-infiltration",
+        "name": "Old Annalyn's Infiltration",
+        "uuid": "05cfc609-3a14-479a-b6fa-6d2a53ad111c",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-elyses-enchantments",
+        "name": "Old Elyse's Enchantments",
+        "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-documented-lasagna",
+        "name": "Old Documented Lasagna",
+        "uuid": "84480c18-327e-47ea-94e7-9e14f2146643",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-tech-palace",
+        "name": "Old Welcome to the Tech Palace!",
+        "uuid": "d8528c41-5611-4e92-90b2-fd29777d23cf",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-annalyns-infiltration2",
+        "name": "Old Annalyn's Infiltration Ⅱ",
+        "uuid": "3c0ab989-6544-4a1a-8e93-c2b5dc3d4109",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-dnd-char",
+        "name": "Old DND Character",
+        "uuid": "60e480e9-7f6f-460a-b753-f333a37d3e0c",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-vehicle-purchase",
+        "name": "Old Vehicle Purchase",
+        "uuid": "b615a19c-ab76-4f93-985f-7e4c628b6939",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-name-badge",
+        "name": "Old Name Badge",
+        "uuid": "4b3e6780-b566-4315-a7b0-45500883f050",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-elyses-analytic-enchantments",
+        "name": "Old Elyse's Analytic Enchantments",
+        "uuid": "fe7f6097-36b7-42a2-bbd4-f706fb4c08b1",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-high-score",
+        "name": "Old High Score",
+        "uuid": "21ba9b66-5410-4748-9e6f-e8a96871d9bf",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-exercism-matrix",
+        "name": "Old The Exercism Matrix",
+        "uuid": "36cbda04-3921-4491-9ec6-76951f00aa00",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-encounters",
+        "name": "Old Encounters",
+        "uuid": "68001762-8a35-4494-9de4-624ca9efb5cd",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-emoji-times",
+        "name": "Old 🕑🕤🕗",
+        "uuid": "2b2b8bed-ff39-4e77-a2fe-254125b53a1c",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-stage-heralding",
+        "name": "Old Stage Heralding",
+        "uuid": "0e7ecc5e-b4d6-4ead-bfaa-a2ebdddcff47",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
+      },
+      {
+        "slug": "old-fibonacci-iterator",
+        "name": "Old Fibonacci Iterator",
+        "uuid": "9a864ac5-0fda-4ba2-bccc-702a1444c412",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "deprecated"
       }
     ],
     "practice": [
@@ -75,8 +352,14 @@
         "slug": "leap",
         "name": "Leap",
         "uuid": "8740c914-f008-4b6b-8e7d-7470e78e6a8e",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "booleans"
+        ],
+        "prerequisites": [
+          "basics",
+          "booleans",
+          "numbers"
+        ],
         "difficulty": 1,
         "topics": [
           "math",
@@ -126,8 +409,14 @@
         "slug": "raindrops",
         "name": "Raindrops",
         "uuid": "7a083573-2c68-47cc-8bc8-c0e483cf0e50",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "conditionals"
+        ],
+        "prerequisites": [
+          "conditionals",
+          "numbers",
+          "booleans"
+        ],
         "difficulty": 1,
         "topics": [
           "arrays",
@@ -537,6 +826,14 @@
         "slug": "protein-translation",
         "name": "Protein Translation",
         "uuid": "ef95ea34-cc9e-48aa-b2f9-6226134a3644",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2
+      },
+      {
+        "slug": "proverb",
+        "name": "Proverb",
+        "uuid": "8df744a9-6788-40b6-83c7-d39e705f17cf",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2
@@ -1082,19 +1379,89 @@
   },
   "concepts": [
     {
+      "uuid": "006ebce8-87cd-4695-87e6-8a7b8dc2f239",
+      "slug": "basics",
+      "name": "Basics"
+    },
+    {
       "uuid": "32384ed4-ef26-4118-8ea3-4d44c331e828",
+      "slug": "booleans",
+      "name": "Booleans"
+    },
+    {
+      "uuid": "9f3b90c3-87b4-48cb-81d0-fb6867a20cac",
+      "slug": "vectors",
+      "name": "Vectors"
+    },
+    {
+      "uuid": "67dfc465-1a97-4bc1-9177-97e3a3ba55da",
+      "slug": "sets",
+      "name": "Sets"
+    },
+    {
+      "uuid": "9babe703-1f5f-4f59-a4b2-349b8d461dd8",
+      "slug": "conditionals",
+      "name": "Conditionals"
+    },
+    {
+      "uuid": "90365822-f58c-4e45-88be-430978b77e65",
+      "slug": "numbers",
+      "name": "Numbers"
+    },
+    {
+      "uuid": "3ce09c90-3096-4dcc-a53f-66d0054cbe43",
+      "slug": "ranges",
+      "name": "Ranges"
+    },
+    {
+      "uuid": "d87a0356-d5ee-43b1-8105-0a65caeea540",
+      "slug": "strings",
+      "name": "Strings"
+    },
+    {
+      "uuid": "e3d18763-a079-4000-a3e4-9938a7f0712b",
+      "slug": "vector-operations",
+      "name": "Vector Operations"
+    },
+    {
+      "uuid": "a2e2c150-1641-40d7-8885-53495e78ddf6",
+      "slug": "loops",
+      "name": "Loops"
+    },
+    {
+      "uuid": "7d701c5e-2ea6-4a59-a9d8-82a17e8b285c",
       "slug": "functions",
       "name": "Functions"
     },
     {
-      "uuid": "006ebce8-87cd-4695-87e6-8a7b8dc2f239",
-      "slug": "integer-introduction",
-      "name": "Integers and Arithmetic Operations"
+      "uuid": "c6920164-6c6e-4f82-8d85-ba179ef906d5",
+      "slug": "function-composition",
+      "name": "Function Composition"
     },
     {
-      "uuid": "90365822-f58c-4e45-88be-430978b77e65",
-      "slug": "comments",
-      "name": "Comments"
+      "uuid": "95b8b60b-fd78-4ec1-9d1c-ac3f11107727",
+      "slug": "chars",
+      "name": "Chars"
+    },
+    {
+      "uuid": "fa7e4654-5e7a-44e8-9ab5-2852b4a7adfe",
+      "slug": "tuples",
+      "name": "Tuples"
+    },
+    {
+      "uuid": "0d312606-7738-4b0a-9c33-564c40c6f35d",
+      "slug": "pairs-and-dicts",
+      "name": "Pairs And Dicts"
+    },
+    {
+      "uuid": "c91bb493-98f7-4e5c-8e34-320cb9e290e2",
+      "slug": "randomness",
+      "name": "Randomness"
+    },
+    {
+      "uuid": "f181529f-ed95-4978-987c-ea4c0dff7dde",
+      "slug": "statistics",
+      "name": "Statistics"
     }
   ],
   "key_features": [

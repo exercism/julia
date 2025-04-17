@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "Strings in Julia are an ordered, immutable collection of Unicode characters."
+}

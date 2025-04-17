@@ -1,0 +1,24 @@
+{
+  "authors": [
+    "SaschaMann"
+  ],
+  "contributors": [
+    "cmcaine"
+  ],
+  "files": {
+    "solution": [
+      "vehicle-purchase.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ]
+  },
+  "language_versions": "≥1.0",
+  "forked_from": [
+    "swift/vehicle-purchase"
+  ],
+  "blurb": "Learn about conditionals by deciding on a new vehicle to purchase."
+}

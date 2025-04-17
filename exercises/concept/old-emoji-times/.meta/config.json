@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "cmcaine",
+    "SaschaMann"
+  ],
+  "files": {
+    "solution": [
+      "emoji-times.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ]
+  },
+  "language_versions": "≥1.0",
+  "blurb": "Learn about unicode identifiers by doing emoji clock arithmetics."
+}
