@@ -89,7 +89,7 @@ This is a simple idea, but it leads to interesting consequences.
 
 ## Arithmetic
 
-All of the standard mathematical `operators`] and elementary functions used with floats and integers also work with complex numbers. A small sample:
+All of the standard mathematical `operators` and elementary functions used with floats and integers also work with complex numbers. A small sample:
 
 ```julia-repl
 julia> z1 = 1.5 + 2im
@@ -159,7 +159,7 @@ julia> round(imag(euler), digits=15)  # round to 15 decimal places
 0.0
 ```
 
-The polar `(r, θ)` notation is so useful, that there are built-in functions `cis` and `cispi` for constructing it more efficiently.
+The polar `(r, θ)` notation is so useful, that there are built-in functions `cis` (short for cos(x) + isin(x)) and `cispi` (short for cos(πx) + isin(πx)) which can help in constructing it more efficiently.
 
 ```julia-repl
 julia> exp(1im * π) ≈ cis(π) ≈ cispi(1)
