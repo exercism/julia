@@ -1462,6 +1462,11 @@
       "uuid": "f181529f-ed95-4978-987c-ea4c0dff7dde",
       "slug": "statistics",
       "name": "Statistics"
+    },
+    {
+      "uuid": "5f4da09d-05cb-4a10-8dfb-3bb30eed822a",
+      "slug": "complex-numbers",
+      "name": "Complex Numbers"
     }
   ],
   "key_features": [
