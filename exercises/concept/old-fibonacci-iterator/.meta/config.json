@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "SaschaMann"
+  ],
+  "contributors": [
+    "cmcaine",
+    "miguelraz",
+    "iHiD"
+  ],
+  "files": {
+    "solution": [
+      "fibonacci.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ]
+  },
+  "language_versions": "≥1.0",
+  "blurb": "Learn about the iteration protocol by implementing a Fibonacci Iterator."
+}

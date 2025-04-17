@@ -1,8 +1,19 @@
 # Introduction
 
-Your friend Ashley enjoys art inspired by mathematics and you would like to make them a cute birthday card.
-You have seen the variety of patterns (rays, parabolas, partial symmetry, oh my) in [this plot of pythagorean triplets][plot] and think you could make something neat with them.
+You are an accomplished problem-solver, known for your ability to tackle the most challenging mathematical puzzles.
+One evening, you receive an urgent letter from an inventor called the Triangle Tinkerer, who is working on a groundbreaking new project.
+The letter reads:
 
-The next step on your creative journey is to find some pythagorean triplets!
+> Dear Mathematician,
+>
+> I need your help.
+> I am designing a device that relies on the unique properties of Pythagorean triplets — sets of three integers that satisfy the equation a² + b² = c².
+> This device will revolutionize navigation, but for it to work, I must program it with every possible triplet where the sum of a, b, and c equals a specific number, N.
+> Calculating these triplets by hand would take me years, but I hear you are more than up to the task.
+>
+> Time is of the essence.
+> The future of my invention — and perhaps even the future of mathematical innovation — rests on your ability to solve this problem.
 
-[plot]: https://en.wikipedia.org/wiki/Pythagorean_triple#/media/File:Pythagorean_triple_scatterplot.svg
+Motivated by the importance of the task, you set out to find all Pythagorean triplets that satisfy the condition.
+Your work could have far-reaching implications, unlocking new possibilities in science and engineering.
+Can you rise to the challenge and make history?

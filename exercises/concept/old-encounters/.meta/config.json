@@ -1,0 +1,18 @@
+{
+  "authors": [
+    "SaschaMann"
+  ],
+  "files": {
+    "solution": [
+      "encounters.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ]
+  },
+  "language_versions": "≥1.0",
+  "blurb": "Learn about multiple dispatch by simulating encounters between pets and other entities."
+}
