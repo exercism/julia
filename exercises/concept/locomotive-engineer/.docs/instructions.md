@@ -1,8 +1,8 @@
 # Instructions
 
 Your friend Linus is a Locomotive Engineer who drives cargo trains between cities.
-Although they are amazing at handling trains, they are not amazing at handling logistics or computers.
-They would like to enlist your programming help organizing train details and correcting mistakes in route data.
+Although he is amazing at handling trains, he is not amazing at handling logistics or computers.
+He would like to enlist your programming help organizing train details and correcting mistakes in route data.
 
 ~~~~exercism/note
 This exercise could easily be solved using slicing, indexing, and various `Dict` methods.
@@ -11,7 +11,7 @@ However, we would like you to practice packing, unpacking, and multiple assignme
 
 ## 1. Create a vector of all wagons
 
-Your friend has been keeping track of each wagon identifier (ID), but they are never sure how many wagons the system is going to have to process at any given time. It would be much easier for the rest of the logistics program to have this data packaged into a unified `vector`.
+Your friend has been keeping track of each wagon identifier (ID), but he is never sure how many wagons the system is going to have to process at any given time. It would be much easier for the rest of the logistics program to have this data packaged into a unified `vector`.
 
 Implement a function `get_vector_of_wagons()` that accepts an arbitrary number of wagon IDs.
 Each ID will be a positive integer.

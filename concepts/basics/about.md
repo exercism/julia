@@ -96,7 +96,7 @@ Global variables, created outside any function, are:
 
 If a value needs to be available throughout the program, but is not expected to change, use a [constant][constants] instead.
 
-Prefacing the assignemt with the `const` keyword allows the compiler to generate more efficient code.
+Prefacing the assignment with the `const` keyword allows the compiler to generate more efficient code.
 
 Accidentally trying to change the `const` value will give a warning:
 
