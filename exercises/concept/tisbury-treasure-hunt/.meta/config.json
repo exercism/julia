@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "files": {
+    "solution": [
+      "tisbury-treasure-hunt.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ]
+  },
+  "forked_from": [
+    "python/tisbury-treasure-hunt",
+    "fsharp/tisbury-treasure-hunt"
+  ],
+  "blurb": "Learn about tuples by helping out competitors in the Tisbury Treasure Hunt."
+}

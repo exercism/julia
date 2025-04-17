@@ -5,7 +5,7 @@ It is possible to write a long book about it, and several people have done so (s
 
 ## A very brief history
 
-Handling characters in computers was much simpler in earlier decades, when programmers assumed that English is the only important language.
+Handling characters in computers was much simpler in earlier decades, when programmers assumed that English was the only important language.
 So: 26 letters, upper and lower case, 10 digits, several punctuation marks, plus a code (0x07) to ring a bell, and it all fitted into 7 bits: the [ASCII][ascii] character set.
 
 Naturally, people started asking what about à, ä and Ł, then other people started asking about ऄ, ஹ and ญ, and young people wanted emojis 😱.

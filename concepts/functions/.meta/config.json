@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "Functions are central to Julia, so will be the focus of several concepts. This one covers function arguments, splat, and slurp."
+}

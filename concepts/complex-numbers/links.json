@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://docs.julialang.org/en/v1/manual/complex-and-rational-numbers/#Complex-Numbers",
+    "description": "Complex number section in the Julia manual."
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Complex_number",
+    "description": "Wikipedia: Complex Number."
+  },
+  {
+    "url": "https://www.nagwa.com/en/videos/143121736364/",
+    "description": "Mathematical view of complex numbers (video)."
+  },
+  {
+    "url": "https://www.khanacademy.org/science/electrical-engineering/ee-circuit-analysis-topic/ee-ac-analysis/v/ee-complex-numbers",
+    "description": "Engineering view of complex numbers, from the Khan Academy."
+  }
+]
