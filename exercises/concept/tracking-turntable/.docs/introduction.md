@@ -3,7 +3,7 @@
 `Complex numbers` are not complicated.
 They just need a less alarming name.
 
-They are so useful, especially in engineering and science, that Julia includes [complex numbers][complex] as standard numeric types alongside integers and floating-point numbers.
+They are so useful, especially in engineering and science, that Julia includes complex numbers as standard numeric types alongside integers and floating-point numbers.
 
 ## Basics
 
@@ -16,13 +16,10 @@ To create complex numbers from two real numbers, just add the suffix `im` to the
 ```julia-repl
 julia> z = 1.2 + 3.4im
 1.2 + 3.4im
-
 julia> typeof(z)
 ComplexF64 (alias for Complex{Float64})
-
 julia> zi = 1 + 2im
 1 + 2im
-
 julia> typeof(zi)
 Complex{Int64}
 ```
@@ -44,10 +41,8 @@ To access the parts of a complex number individually:
 ```julia-repl
 julia> z = 1.2 + 3.4im
 1.2 + 3.4im
-
 julia> real(z)
 1.2
-
 julia> imag(z)
 3.4
 ```
@@ -65,13 +60,10 @@ However, it is still a complex number in Julia.
 ```julia-repl
 julia> zr = 1.2 + 0im
 1.2 + 0.0im
-
 julia> typeof(zr)
 ComplexF64 (alias for Complex{Float64})
-
 julia> zi = 3.4im
 0.0 + 3.4im
-
 julia> typeof(zi)
 ComplexF64 (alias for Complex{Float64})
 ```
@@ -89,27 +81,21 @@ This is a simple idea, but it leads to interesting consequences.
 
 ## Arithmetic
 
-All of the standard mathematical [`operators`][operators] and elementary functions used with floats and integers also work with complex numbers. A small sample:
+All of the standard mathematical `operators` and elementary functions used with floats and integers also work with complex numbers. A small sample:
 
 ```julia-repl
 julia> z1 = 1.5 + 2im
 1.5 + 2.0im
-
 julia> z2 = 2 + 1.5im
 2.0 + 1.5im
-
 julia> z1 + z2  # addition
 3.5 + 3.5im
-
 julia> z1 * z2  # multiplication
 0.0 + 6.25im
-
 julia> z1 / z2  # division
 0.96 + 0.28im
-
 julia> z1^2  # exponentiation
 -1.75 + 6.0im
-
 julia> 2^z1  # another exponentiation
 0.5188946835878313 + 2.7804223253571183im
 ```
@@ -127,16 +113,12 @@ There are several functions, in addition to `real()` and `imag()`, with particul
 ```julia-repl
 julia> z1
 1.5 + 2.0im
-
 julia> conj(z1)
 1.5 - 2.0im
-
 julia> abs(z1)
 2.5
-
 julia> abs2(z1)
 6.25
-
 julia> angle(z1)
 0.9272952180016122
 ```
@@ -151,15 +133,13 @@ Here is an example using some constants:
 ```julia-repl
 julia> euler = exp(1im * π)
 -1.0 + 1.2246467991473532e-16im
-
 julia> real(euler)
 -1.0
-
 julia> round(imag(euler), digits=15)  # round to 15 decimal places
 0.0
 ```
 
-The polar `(r, θ)` notation is so useful, that there are built-in functions `cis` and `cispi` for constructing it more efficiently.
+The polar `(r, θ)` notation is so useful, that there are built-in functions `cis` (short for `cos(x) + isin(x)`) and `cispi` (short for `cos(πx) + isin(πx)`) which can help in constructing it more efficiently.
 
 ```julia-repl
 julia> exp(1im * π) ≈ cis(π) ≈ cispi(1)
@@ -171,22 +151,13 @@ The approximate equality above is because the functions `cis` and `cispi` can gi
 ```julia-repl
 julia> cis(π)
 -1.0 + 0.0im
-
 julia> cispi(1)
 -1.0 + 0.0im
-
 julia> θ = π/2;
 julia> exp(im*θ)
 6.123233995736766e-17 + 1.0im
-
 julia> cis(θ)
 6.123233995736766e-17 + 1.0im
-
 julia> cispi(θ / π)  # θ/π == 1/2
 0.0 + 1.0im
 ```
-
-[complex]: https://docs.julialang.org/en/v1/manual/complex-and-rational-numbers/#Complex-Numbers
-[math-complex]: https://www.nagwa.com/en/videos/143121736364/
-[engineering-complex]: https://www.khanacademy.org/science/electrical-engineering/ee-circuit-analysis-topic/ee-ac-analysis/v/ee-complex-numbers
-[operators]: https://docs.julialang.org/en/v1/manual/mathematical-operations/#Arithmetic-Operators

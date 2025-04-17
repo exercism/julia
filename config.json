@@ -233,7 +233,7 @@
       },
       {
         "slug": "tracking-turntable",
-        "name": "tracking-turntable",
+        "name": "Tracking Turntable",
         "uuid": "85cec5ea-2ed4-4f9a-b629-b7f03bdc5108",
         "concepts": ["complex-numbers"],
         "prerequisites": [
