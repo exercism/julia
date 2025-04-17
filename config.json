@@ -1454,6 +1454,11 @@
       "name": "Pairs And Dicts"
     },
     {
+      "uuid": "c91bb493-98f7-4e5c-8e34-320cb9e290e2",
+      "slug": "randomness",
+      "name": "Randomness"
+    },
+    {
       "uuid": "f181529f-ed95-4978-987c-ea4c0dff7dde",
       "slug": "statistics",
       "name": "Statistics"
