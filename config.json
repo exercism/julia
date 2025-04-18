@@ -1464,6 +1464,11 @@
       "name": "Statistics"
     },
     {
+      "uuid": "a149319b-198d-41b3-b41d-878b1bb1d9bb",
+      "slug": "rational-numbers",
+      "name": "Rational Numbers"
+    },
+    {
       "uuid": "5f4da09d-05cb-4a10-8dfb-3bb30eed822a",
       "slug": "complex-numbers",
       "name": "Complex Numbers"

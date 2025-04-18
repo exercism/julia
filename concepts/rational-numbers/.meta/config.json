@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "Rational numbers are just fractions: the ratio of two integers. They are a standard numerical type in Julia."
+}
