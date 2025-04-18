@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "Julia has a very wide range of statistical functions, and many of them have been moved to the Statistics module."
+}
