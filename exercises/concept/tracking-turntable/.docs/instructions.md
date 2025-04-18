@@ -12,17 +12,10 @@ Since the record is rotating, it's easier to track the radial difference and the
 
 Turndit needs to know how to find the new `(x, y)` coordinates to which the needle will move when a different track is selected.
 
-These operations can be done through trigonometric functions and/or rotation matrices, but they can be made simpler (and more fun, I assure you!) with the use of complex numbers via rotations and radial displacements. In fact, each function in this exercise can be written in assigment form (i.e. a one-liner) using complex numbers and built-in Julia methods/functionality, should you so desire.
-
-This ease results from Euler's elegant formula, `ℯ^(iθ) = cos(θ) + isin(θ) = x + iy`, where `i = √-1` is the imaginary unit and `|x + iy| = 1`.
-With `r = |x + iy|`, we have the more general polar form of `r * ℯ^(iθ) = r * (cos(θ) + isin(θ)) = x + iy`.
-
-
-For rotations, the complex number `z = x + iy`, can be rotated an angle `θ` about the origin with a simple multiplication: `z * ℯ^(iθ)`.
-Note that the `x` and `y` here are just the usual coordinates on the real 2D Cartesian plane, and a positive angle results in a *counterclockwise* rotation, while a negative angle results in a *clockwise* one.
-
-Likewise simply, a radial displacement `Δr` can be made by adding it to the magnitude `r` of a complex number in the polar form (eg. `z = r * ℯ^(iθ)` -> `z' = (r + Δr) * ℯ^(iθ)`).
-Note how the angular part stays the same and only the magnitude, `r`, is varied, as expected.
+~~~~exercism/note
+These operations can be done through trigonometric functions and/or rotation matrices, but they can be made simpler (and more fun, I assure you!) with the use of complex numbers via rotations and radial displacements. 
+In fact, each function in this exercise can be written in assigment form (i.e. a one-liner) using complex numbers and built-in Julia methods/functionality, should you so desire.
+~~~~
 
 ## 1. Construct a complex number from Cartesian coordinates
 
