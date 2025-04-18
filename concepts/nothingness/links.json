@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://docs.julialang.org/en/v1/manual/faq/#Nothingness-and-missing-values",
+    "description": "General introduction in the Julia manual."
+  },
+  {
+    "url": "https://docs.julialang.org/en/v1/base/base/#Core.Nothing",
+    "description": "Manual section on `nothing`."
+  },
+  {
+    "url": "https://docs.julialang.org/en/v1/base/base/#Base.missing",
+    "description": "Manual section on `missing`."
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/NaN",
+    "description": "NaN Wikipedia page."
+  }
+]
