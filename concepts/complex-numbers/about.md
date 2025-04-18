@@ -193,7 +193,11 @@ So a simple expression with three of the most important constants in nature `e`,
 Some people believe this is the most beautiful result in all of mathematics.
 It dates back to around 1740.
 
-The polar `(r, θ)` notation is so useful, that there are built-in functions `cis` (short for cos(x) + isin(x)) and `cispi` (short for cos(πx) + isin(πx)) which can help in constructing it more efficiently.
+The polar `(r, θ)` notation is so useful, that there are built-in functions `cis` (short for `cos(x) + isin(x)`) and `cispi` (short for `cos(πx) + isin(πx)`) which can help in constructing it more efficiently.
+
+The usefulness of polar notation is found in Euler's elegant formula, `ℯ^(iθ) = cos(θ) + isin(θ) = x + iy`, where `|x + iy| = 1`.
+With `|x + iy| = r`, we have the more general polar form of `r * ℯ^(iθ) = r * (cos(θ) + isin(θ)) = x + iy`.
+Note that the exponential form, in particular, is compact and easy to manipulate.
 
 ```julia-repl
 julia> exp(1im * π) ≈ cis(π) ≈ cispi(1)
@@ -219,6 +223,14 @@ julia> cis(θ)
 julia> cispi(θ / π)  # θ/π == 1/2
 0.0 + 1.0im
 ```
+
+Incidentally, this makes complex numbers very useful for performing rotations and radial displacements in 2D.
+
+For rotations, the complex number `z = x + iy`, can be rotated an angle `θ` about the origin with a simple multiplication: `z * ℯ^(iθ)`.
+Note that the `x` and `y` here are just the usual coordinates on the real 2D Cartesian plane, and a positive angle results in a *counterclockwise* rotation, while a negative angle results in a *clockwise* one.
+
+Likewise simply, a radial displacement `Δr` can be made by adding it to the magnitude `r` of a complex number in the polar form (eg. `z = r * ℯ^(iθ)` -> `z' = (r + Δr) * ℯ^(iθ)`).
+Note how the angular part stays the same and only the magnitude, `r`, is varied, as expected.
 
 -----
 
