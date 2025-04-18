@@ -189,3 +189,11 @@ julia> cis(θ)
 julia> cispi(θ / π)  # θ/π == 1/2
 0.0 + 1.0im
 ```
+
+Incidentally, this makes complex numbers very useful for performing rotations and radial displacements in 2D.
+
+For rotations, the complex number `z = x + iy`, can be rotated an angle `θ` about the origin with a simple multiplication: `z * ℯ^(iθ)`.
+Note that the `x` and `y` here are just the usual coordinates on the real 2D Cartesian plane, and a positive angle results in a *counterclockwise* rotation, while a negative angle results in a *clockwise* one.
+
+Likewise simply, a radial displacement `Δr` can be made by adding it to the magnitude `r` of a complex number in the polar form (eg. `z = r * ℯ^(iθ)` -> `z' = (r + Δr) * ℯ^(iθ)`).
+Note how the angular part stays the same and only the magnitude, `r`, is varied, as expected.
