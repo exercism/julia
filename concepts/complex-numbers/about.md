@@ -193,7 +193,11 @@ So a simple expression with three of the most important constants in nature `e`,
 Some people believe this is the most beautiful result in all of mathematics.
 It dates back to around 1740.
 
-The polar `(r, θ)` notation is so useful, that there are built-in functions `cis` (short for cos(x) + isin(x)) and `cispi` (short for cos(πx) + isin(πx)) which can help in constructing it more efficiently.
+The polar `(r, θ)` notation is so useful, that there are built-in functions `cis` (short for `cos(x) + isin(x)`) and `cispi` (short for `cos(πx) + isin(πx)`) which can help in constructing it more efficiently.
+
+The usefulness of polar notation is found in Euler's elegant formula, `ℯ^(iθ) = cos(θ) + isin(θ) = x + iy`, where `|x + iy| = 1`.
+With `|x + iy| = r`, we have the more general polar form of `r * ℯ^(iθ) = r * (cos(θ) + isin(θ)) = x + iy`.
+Note that the exponential form, in particular, is compact and easy to manipulate.
 
 ```julia-repl
 julia> exp(1im * π) ≈ cis(π) ≈ cispi(1)
