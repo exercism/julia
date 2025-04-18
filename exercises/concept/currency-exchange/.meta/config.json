@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "files": {
+    "solution": [
+      "currency-exchange.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ]
+  },
+  "forked_from": [
+    "python/currency-exchange"
+  ],
+  "icon": "hyperia-forex",
+  "blurb": "Learn about numbers by solving Chandler's currency exchange conundrums."
+}
