@@ -216,6 +216,20 @@
         "status": "beta"
       },
       {
+        "slug": "tracking-turntable",
+        "name": "Tracking Turntable",
+        "uuid": "85cec5ea-2ed4-4f9a-b629-b7f03bdc5108",
+        "concepts": [
+          "complex-numbers"
+        ],
+        "prerequisites": [
+          "numbers",
+          "function-composition",
+          "functions"
+        ],
+        "status": "wip"
+      },
+      {
         "slug": "old-annalyns-infiltration",
         "name": "Old Annalyn's Infiltration",
         "uuid": "05cfc609-3a14-479a-b6fa-6d2a53ad111c",
@@ -1462,6 +1476,11 @@
       "uuid": "f181529f-ed95-4978-987c-ea4c0dff7dde",
       "slug": "statistics",
       "name": "Statistics"
+    },
+    {
+      "uuid": "a149319b-198d-41b3-b41d-878b1bb1d9bb",
+      "slug": "rational-numbers",
+      "name": "Rational Numbers"
     },
     {
       "uuid": "5f4da09d-05cb-4a10-8dfb-3bb30eed822a",
