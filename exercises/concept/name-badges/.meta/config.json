@@ -1,13 +1,10 @@
 {
   "authors": [
-    "SaschaMann"
-  ],
-  "contributors": [
-    "cmcaine"
+    "colinleach"
   ],
   "files": {
     "solution": [
-      "namebadge.jl"
+      "name-badges.jl"
     ],
     "test": [
       "runtests.jl"
@@ -16,9 +13,8 @@
       ".meta/exemplar.jl"
     ]
   },
-  "language_versions": "≥1.1",
   "forked_from": [
     "elixir/name-badge"
   ],
-  "blurb": "Learn nothing."
+  "blurb": "Handle missing values in employee name badges."
 }
