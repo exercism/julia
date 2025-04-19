@@ -129,8 +129,12 @@ julia> filter(!isnan, [1, 2, NaN])
 
 ## Undefined data
 
-This is not something you are ever likely to want, but there are ways to create composite types (such as [`struct`][struct]) with uninitialized fields.
-Julia usually tries to protect you by using default values, but can only do this if it has enough information to infer the field type.
+This is something you are likely use less frequently.
+Exceptions include:
+- There are ways to create composite types (such as [`struct`][struct]) with uninitialized fields.
+Julia usually tries to use default values, but can only do this if it has enough information to infer the field type.
+- In some cases, initializing a vector as `undef` can be a flexible and performant approach.
+This has been used, for example, in community solutions to the [Circular Buffer][circbuff] exercise (an advanced technique, but this is graded as a hard exercise).
 
 Getting an [`undef`][undef] result from an attempt to access a value is an error state, typically flagged with an [`UndefRefError`][UndefRefError].
 
@@ -147,3 +151,4 @@ Getting an [`undef`][undef] result from an attempt to access a value is an error
 [struct]: https://docs.julialang.org/en/v1/base/base/#struct
 [undef]: https://docs.julialang.org/en/v1/base/arrays/#Core.undef
 [UndefRefError]: https://docs.julialang.org/en/v1/base/base/#Core.UndefRefError
+[circbuff]: https://exercism.org/tracks/julia/exercises/circular-buffer
