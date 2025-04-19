@@ -230,6 +230,18 @@
         "status": "beta"
       },
       {
+        "slug": "name-badges",
+        "name": "Name Badges",
+        "uuid": "4b3e6780-b566-4315-a7b0-45500883f050",
+        "concepts": [
+          "nothingness"
+        ],
+        "prerequisites": [
+          "functions"
+        ],
+        "status": "beta"
+      },
+      {
         "slug": "old-annalyns-infiltration",
         "name": "Old Annalyn's Infiltration",
         "uuid": "05cfc609-3a14-479a-b6fa-6d2a53ad111c",
@@ -281,14 +293,6 @@
         "slug": "old-vehicle-purchase",
         "name": "Old Vehicle Purchase",
         "uuid": "b615a19c-ab76-4f93-985f-7e4c628b6939",
-        "concepts": [],
-        "prerequisites": [],
-        "status": "deprecated"
-      },
-      {
-        "slug": "old-name-badge",
-        "name": "Old Name Badge",
-        "uuid": "4b3e6780-b566-4315-a7b0-45500883f050",
         "concepts": [],
         "prerequisites": [],
         "status": "deprecated"
