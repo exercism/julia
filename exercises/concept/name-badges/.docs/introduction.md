@@ -25,7 +25,8 @@ One common use of `nothing` is as a return (non-)value for functions which are u
 
 ## `missing`
 
-For situations where a value exists in theory but we don't know what it is, `missing` is used. For example, when counting vehicles traveling on a road, human observers might go off sick or automatic sensors break down, but the traffic continues to flow.
+For situations where a value exists in theory but we don't know what it is, `missing` is used. 
+For example, when counting vehicles traveling on a road, human observers might need a break or automatic sensors break down, but the traffic continues to flow.
 
 Thus `missing` is a placeholder, warning humans that they need to make a decision about how to handle this gap in the data.
 
