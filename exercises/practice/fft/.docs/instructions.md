@@ -1,8 +1,8 @@
 # Instructions
 
 Your friend is a sound engineer who has asked you to help them code up a Fourier Transform for some proprietary software they are putting together.
-Since you want to geth this right, you will first implement the Discrete Fourier Transform (DFT) in all its naive glory.
-This could then be used to test the correctness of your true objective, the Fast Fourier Transform (FFT).
+Since you want to get this right, you will first implement the Discrete Fourier Transform (DFT) in all its naive glory.
+This could then be used to test the correctness of your final objective, the Fast Fourier Transform (FFT).
 
 ## 1. DFT
 
