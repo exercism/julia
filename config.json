@@ -1312,6 +1312,16 @@
         "difficulty": 6
       },
       {
+        "slug": "fft",
+        "name": "FFT",
+        "uuid": "d1a733da-acd5-4166-927e-044c051e153c",
+        "practices": [
+          "complex-numbers"
+        ],
+        "prerequisites": [],
+        "difficulty": 6
+      },
+      {
         "slug": "pythagorean-triplet",
         "name": "Pythagorean Triplet",
         "uuid": "a534b8ed-da88-4945-bb25-f6633977740b",
