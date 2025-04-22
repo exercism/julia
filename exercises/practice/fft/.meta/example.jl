@@ -1,7 +1,7 @@
 function dft(x)
     N = length(x)
     n = 0:(N-1)
-    M = cispi.(-2n' * n / N)
+    M = @. cispi(-2n' * n / N)
     M * x
 end
 
