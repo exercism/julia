@@ -13,7 +13,7 @@ Therefore, it's perhaps more widely used than one might first imagine, which als
 While the Fourier Transform has an integral formulation, we are digital, so we're interested in the discrete version.
 The derivation of the transform is beyond the scope of this exercise, but the forward [discrete transform](https://en.wikipedia.org/wiki/Discrete_Fourier_transform) (to the frequency domain)takes the following form:
 `Xₖ = Σ xₙ * ℯ^(-2iπk * n/N)`
-Here, the sum runs over `n` and `N` is the number of samples, `k` is the frequency, `i` the imaginary unit and `xₙ` is an individual sample.
+Here, the sum runs over `n`, and `N` is the number of samples, `k` is the frequency, `i` the imaginary unit and `xₙ` is an individual sample.
 
 ### Fast Fourier Transform
 

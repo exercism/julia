@@ -6,7 +6,7 @@
 - Loops are generally slower than matrix multiplication.
 
 ## 2. FFT
-- As stated in the introduction, this is typically done with a divide-and-conquer strategy, so recursion is likely your friend, by while loops are not ruled out (and can even be more efficient).
+- As stated in the introduction, this is typically done with a divide-and-conquer strategy, so recursion is likely your friend, but while loops are not ruled out (and can even be more efficient).
 - An outline of an algorithm is as follows:
     - When the length of the input vector is less than or equal to 1, return the input vector. Otherwise...
     - The signal is split into two parts, the elements with even indices `Xₑ` and the elements with odd indices `Xₒ`.
