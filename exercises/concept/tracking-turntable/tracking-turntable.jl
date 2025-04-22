@@ -1,3 +1,11 @@
+function z(x, y)
+
+end
+
+function euler(r, θ)
+
+end
+
 function rotate(x, y, θ)
 
 end

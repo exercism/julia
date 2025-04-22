@@ -230,6 +230,18 @@
         "status": "beta"
       },
       {
+        "slug": "name-badges",
+        "name": "Name Badges",
+        "uuid": "4b3e6780-b566-4315-a7b0-45500883f050",
+        "concepts": [
+          "nothingness"
+        ],
+        "prerequisites": [
+          "functions"
+        ],
+        "status": "beta"
+      },
+      {
         "slug": "old-annalyns-infiltration",
         "name": "Old Annalyn's Infiltration",
         "uuid": "05cfc609-3a14-479a-b6fa-6d2a53ad111c",
@@ -281,14 +293,6 @@
         "slug": "old-vehicle-purchase",
         "name": "Old Vehicle Purchase",
         "uuid": "b615a19c-ab76-4f93-985f-7e4c628b6939",
-        "concepts": [],
-        "prerequisites": [],
-        "status": "deprecated"
-      },
-      {
-        "slug": "old-name-badge",
-        "name": "Old Name Badge",
-        "uuid": "4b3e6780-b566-4315-a7b0-45500883f050",
         "concepts": [],
         "prerequisites": [],
         "status": "deprecated"
@@ -1476,6 +1480,11 @@
       "uuid": "0d312606-7738-4b0a-9c33-564c40c6f35d",
       "slug": "pairs-and-dicts",
       "name": "Pairs And Dicts"
+    },
+    {
+      "uuid": "82847597-92f5-4ff6-94a6-b7a2313f1da8",
+      "slug": "nothingness",
+      "name": "Nothingness"
     },
     {
       "uuid": "c91bb493-98f7-4e5c-8e34-320cb9e290e2",
