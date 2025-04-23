@@ -27,7 +27,7 @@ What this function does depends on the arguments you give it.
 There are _many_ options.
 
 With no arguments, it generates a float between 0 and 1.
-This is a `uniform` with all values equally likely, as discussed in the Working with Distributions section, below.
+This is a `uniform` distribution with all values equally likely, as discussed in the Working with Distributions section, below.
 
 A single integer argument generates a vector of that length.
 
