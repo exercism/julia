@@ -27,7 +27,7 @@ What this function does depends on the arguments you give it.
 There are _many_ options.
 
 With no arguments, it generates a float between 0 and 1.
-This is a `uniform` with all values equally likely, as discussed in the Working with Distributions section, below.
+This is a `uniform` distribution with all values equally likely, as discussed in the Working with Distributions section, below.
 
 A single integer argument generates a vector of that length.
 
@@ -80,6 +80,18 @@ julia> rand(1:10, 5)
 
 In the `rand(1:10, 5)` example above, notice that there are (coincidentally) repeating values, because each pick is independent.
 This is "sampling with replacement", discussed in more detail below.
+
+For floating-point values in a range, you will usually need to specify a step size.
+Otherwise the step will default to 1.0, which is rarely useful.
+
+```julia-repl
+julia> rand(2.4:0.01:3.2, 4)
+4-element Vector{Float64}:
+ 3.19
+ 2.53
+ 3.14
+ 3.13
+```
 
 Alternatively, supply an array or tuple, and `rand` will return a random entry:
 
