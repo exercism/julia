@@ -242,12 +242,16 @@
         "status": "beta"
       },
       {
-        "slug": "old-annalyns-infiltration",
-        "name": "Old Annalyn's Infiltration",
+        "slug": "captains-log",
+        "name": "Captains Log",
         "uuid": "05cfc609-3a14-479a-b6fa-6d2a53ad111c",
-        "concepts": [],
-        "prerequisites": [],
-        "status": "deprecated"
+        "concepts": [
+          "randomness"
+        ],
+        "prerequisites": [
+          "functions"
+        ],
+        "status": "beta"
       },
       {
         "slug": "old-elyses-enchantments",
