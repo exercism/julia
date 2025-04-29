@@ -61,3 +61,35 @@ The examples so far loop over the range `1:10`, where the value is also the loop
 
 More generally, the index may be needed and not just the value.
 For this, the `eachindex()` function is used, for example `for i in eachindex(my_array) ... end`.
+
+## Comprehensions
+
+Writing explicit loops tends to be less common in Julia than in many traditional languages, because there are various more concise options.
+
+A particularly common situation is when we need to build a new vector from the elements of some other collection (vector, string, set ... there are many possibilities).
+
+Anyone who likes list comprehensions in Python will be pleased to know that Julia can use similar syntax.
+
+The essence of this is to set up a very compact loop inside a vector.
+
+The simplest syntax is of the form `result = [f(x) for x in some_collection]`.
+
+With a traditional loop, that might be written:
+
+```julia
+result = []
+for x in some_collection
+    push!(result, f(x))
+end
+```
+
+Optionally, a conditional can be added at the end, to select only matching elements in the collection:
+
+```julia-repl
+# multiples of 3
+julia> [n^2 for n in 1:10 if n%3 == 0]
+3-element Vector{Int64}:
+  9
+ 36
+ 81
+```
