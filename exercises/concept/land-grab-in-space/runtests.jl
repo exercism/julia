@@ -73,7 +73,7 @@ include("land-grab-in-space.jl")
             @test get_claim_with_longest_side(register) == longer
         end
 
-        @testset "single plot" begin
+        @testset "multiple plots" begin
             longer1 = Plot(bottom_left=Coord(10, 1), top_right=Coord(20, 2))
             longer2 = Plot(bottom_left=Coord(12, 4), top_right=Coord(22, 4))
             shorter = Plot(bottom_left=Coord(1, 1), top_right=Coord(2, 2))
