@@ -1509,6 +1509,11 @@
       "uuid": "5f4da09d-05cb-4a10-8dfb-3bb30eed822a",
       "slug": "complex-numbers",
       "name": "Complex Numbers"
+    },
+    {
+      "uuid": "d776c30c-6cfd-4a7e-a443-b960e069d8aa",
+      "slug": "composite-types",
+      "name": "Composite Types"
     }
   ],
   "key_features": [
