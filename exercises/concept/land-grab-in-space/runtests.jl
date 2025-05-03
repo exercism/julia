@@ -78,7 +78,7 @@ include("land-grab-in-space.jl")
             longer2 = Plot(bottom_left=Coord(12, 4), top_right=Coord(22, 4))
             shorter = Plot(bottom_left=Coord(1, 1), top_right=Coord(2, 2))
             register = Set{Plot}([longer1, shorter, longer2])
-            @test get_claim_with_longest_side(register) == [longer1, longer2]
+            @test get_claim_with_longest_side(register) == Set([longer1, longer2])
         end
     end
 end

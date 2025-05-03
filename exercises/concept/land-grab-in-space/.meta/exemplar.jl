@@ -26,5 +26,5 @@ function get_claim_with_longest_side(register::Set{Plot})
     lengths = get_longest_side.(claims)
     maxlen = maximum(lengths)
     result = [claim for (len, claim) in zip(lengths, claims) if len == maxlen]
-    length(result) > 1 ? result : result[1]
+    length(result) > 1 ? Set(result) : result[1]
 end
