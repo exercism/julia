@@ -10,7 +10,8 @@ In the [`Types` Concept][types], we learned that:
 - Indivisible types, such as `Char` or `Int64`, are called [`primitive types`][primitive].
 
 Only `primitive` types follow the abstract versus concrete pattern in its simple form.
-`Vector` is a collection, separable into elements with their own type.
+
+One example of types which are not primitive are Collections, such as Vector or Set.
 
 ```julia-repl
 julia> isprimitivetype(Int)
@@ -22,7 +23,7 @@ false
 
 _A collection of what?_
 
-Each vector (or set) is a collection of elements with some uniform type, which can either be specified with a _parameter_ in braces `{ }`, or omitted for type inference to determine.
+Each Vector (or Set) is a collection of elements with some uniform type, which can either be specified with a _parameter_ in braces `{ }`, or omitted for type inference to determine.
 
 ```julia-repl
 julia> v = [1, 2, 3]
