@@ -5,7 +5,7 @@ You have been tasked by the claims department of Isaac's Asteroid Exploration Co
 Every time a asteroid is ready for exploitation speculators are invited to stake their claim to a plot of land. 
 The asteroid's land is divided into non-overlapping rectangular plots.
 Dimensions differ, but all have sides parallel to the coordinate axes.
-Speculators claim the land by specifying its coordinates.
+Speculators claim one of the plots of land by specifying its coordinates.
 
 Your goal is to develop a performant system to handle the land rush that has in the past caused the website to crash.
 
