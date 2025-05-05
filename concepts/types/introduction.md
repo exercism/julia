@@ -17,6 +17,37 @@ We never specified the types, but Julia assigned them regardless.
 
 The JIT compiler will look through (all) the code, see how a variable is used, and _infer_ a suitable default type compatible with that usage.
 
+## Type promotion
+
+There have been many examples in previous concepts which coerce numerical types into uniformity, starting with the simplest arithmetic.
+
+```julia-repl
+julia> 2 + 1.3
+3.3
+```
+
+We added an integer (Int64) and a floating-point (Float64) number and got a Float64 result.
+Similarly:
+
+```julia-repl
+julia> nums = (3, 4.1, 1//4)
+(3, 4.1, 1//4)
+
+julia> typeof(nums)
+Tuple{Int64, Float64, Rational{Int64}}
+
+julia> [nums...]
+3-element Vector{Float64}:
+ 3.0
+ 4.1
+ 0.25
+```
+
+In the case above, a tuple preserved the type of each element, but converting to a vector changed all of them to a uniform Float64.
+
+The Julia compiler understands which type conversions are possible: integer to float is no problem, float to integer loses precision so an `InexactError` is raised.
+Type promotion converts all the values in the expression to a common type, versatile enough to be compatible with all the inputs.
+
 ## Type assignment
 
 Relying on type inference is fine for solving simple tutorial exercises, but for bigger programs you are likely to need more precise control.
@@ -85,7 +116,7 @@ Note that there is an `@assert` macro for other forms of assertion.
 
 ## The Type Hierarchy
 
-`int64`, `Int16`, `String`, `Char`: where do these types "come from".
+`Int64`, `Int16`, `String`, `Char`: where do these types "come from".
 
 In many object-oriented (OO) languages, each type is a class, subclassing arranges them in a class hierarchy, and class methods define the behaviors.
 
