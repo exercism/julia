@@ -47,8 +47,8 @@ julia> maximum(v)
 - You already wrote a function to calculate the longest side of a plot, and can apply this to the whole collection.
 - See Task 5 for a note on `max` versus `maximum`.
 - Find one or more plots with the maximum length.
-- Return either a `Plot` or a `Vector{Plot}` as appropriate.
-- 
+- Return the results as a `Set{Plot}`.
+
 
 [push]: https://docs.julialang.org/en/v1/base/collections/#Base.push!
 [max]: https://docs.julialang.org/en/v1/base/math/#Base.max

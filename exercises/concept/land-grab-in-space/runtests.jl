@@ -31,7 +31,7 @@ include("land-grab-in-space.jl")
 
         @testset "does not exist" begin
             plot1 = Plot(bottom_left=Coord(1, 1), top_right=Coord(2, 3))
-            plot2 = Plot(bottom_left=Coord(1, 0), top_right=Coord(2, 5))
+            plot2 = Plot(bottom_left=Coord(3, 0), top_right=Coord(4, 5))
             register = Set{Plot}([plot1,])
             @test !is_claim_staked(plot2, register)
         end
@@ -70,7 +70,7 @@ include("land-grab-in-space.jl")
             longer = Plot(bottom_left=Coord(10, 1), top_right=Coord(20, 2))
             shorter = Plot(bottom_left=Coord(1, 1), top_right=Coord(2, 2))
             register = Set{Plot}([longer, shorter])
-            @test get_claim_with_longest_side(register) == longer
+            @test get_claim_with_longest_side(register) == Set{Plot}([longer,])
         end
 
         @testset "multiple plots" begin
@@ -78,7 +78,7 @@ include("land-grab-in-space.jl")
             longer2 = Plot(bottom_left=Coord(12, 4), top_right=Coord(22, 4))
             shorter = Plot(bottom_left=Coord(1, 1), top_right=Coord(2, 2))
             register = Set{Plot}([longer1, shorter, longer2])
-            @test get_claim_with_longest_side(register) == Set([longer1, longer2])
+            @test get_claim_with_longest_side(register) == Set{Plot}([longer1, longer2])
         end
     end
 end

@@ -3,7 +3,8 @@
 You have been tasked by the claims department of Isaac's Asteroid Exploration Co. to improve the performance of their land claim system.
 
 Every time a asteroid is ready for exploitation speculators are invited to stake their claim to a plot of land. 
-The asteroid's land is divided into rectangular plots, with sides parallel to the coordinate axes.
+The asteroid's land is divided into non-overlapping rectangular plots.
+Dimensions differ, but all have sides parallel to the coordinate axes.
 Speculators claim the land by specifying its coordinates.
 
 Your goal is to develop a performant system to handle the land rush that has in the past caused the website to crash.
@@ -38,7 +39,7 @@ Coord(0x0014, 0x0002)
 
 ## 3. Check whether your claim has already been filed
 
-There is competition for these claims, so before your claim is allowed it will be checked agains existing claims in the register.
+There is competition for these claims, so before your claim is allowed it will be checked against existing claims in the register.
 
 Implement the `is_claim_staked()` function to determine whether a claim has already been staked.
 
@@ -88,5 +89,4 @@ julia> get_claim_with_longest_side(register)
 Plot(Coord(0x0005, 0x0003), Coord(0x000a, 0x0005))
 ```
 
-If there is a single longest plot, return the `Plot`.
-In the event of a tie, return a vector of longest plots.
+Return the Plot(s) as a `Set`, with one element if there is a single longest plot, multiple in the event of a tie.
