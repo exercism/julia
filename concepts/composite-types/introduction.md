@@ -36,6 +36,7 @@ julia> fred.age
 A few points are worth noting in the above example:
 
 - No type is specified for `id`, so the compiler interprets this as `id::Any`.
+  - In practice, it is best to help the compiler by specifying the type of a field with a concrete type
 - The type name is used as a constructor, as in `Person(id, name, age)`, to give an instance of type `Person`.
 - Individual fields can be accessed with dot notation, the same as named tuples.
 

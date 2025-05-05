@@ -38,6 +38,8 @@ julia> fred.age
 A few points are worth noting in the above example:
 
 - No type is specified for `id`, so the compiler interprets this as `id::Any`.
+  - **Note:**: in practice, it is best to help the compiler by specifying the type of a field with a concrete type.
+  - We will see in a [future Concept][parametric] that using parameters is another option.
 - The type name is used as a constructor, as in `Person(id, name, age)`, to give an instance of type `Person`.
 - Individual fields can be accessed with dot notation, the same as [named tuples][named-tuple].
 
@@ -163,18 +165,26 @@ Suppose we want constraints on the _values_ passed in, not just the _types_?
 
 Then we can include an `inner constructor` within the type definition, to carry out appropriate checks.
 
-For example, we have an abstract type `Point`, intended to take `(x, y)` coordinates, but want a subtype with the constraint `y > x`.
+For example, we have an abstract type `AbstractPoint`, intended to take `(x, y)` coordinates, but want a subtype with the constraint `y > x`.
 
 ```julia-repl
-julia> abstract type Point end
+julia> abstract type AbstractPoint end;
 
-julia> struct ConstrainedPoint <: Point
+julia> struct Point <: AbstractPoint
+           x::Integer
+           y::Integer
+       end;
+
+julia> struct ConstrainedPoint <: AbstractPoint
            x::Integer
            y::Integer
            
            ConstrainedPoint(x, y) =
                y > x ? new(x, y) : @error("require y > x")
-       end
+       end;
+       
+julia> Point(3, 2)
+Point(3, 2)
 
 julia> ConstrainedPoint(3, 2)
 Error: require y > x
@@ -190,9 +200,8 @@ Alternatively, you may prefer to uses a placeholder such as `nothing` or `missin
 See the [`Nothingness`][nothingness] Concept for more on these.
 
 
-
-
 [primitive]: https://docs.julialang.org/en/v1/manual/types/#Primitive-Types
 [composite-types]: https://docs.julialang.org/en/v1/manual/types/#Composite-Types
 [named-tuple]: https://exercism.org/tracks/julia/concepts/tuples
 [nothingness]: https://exercism.org/tracks/julia/concepts/nothingness
+[parametric]: https://exercism.org/tracks/julia/concepts/parametric-types
