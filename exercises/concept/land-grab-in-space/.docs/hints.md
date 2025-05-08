@@ -43,8 +43,8 @@ julia> maximum(v)
 ## 6. Find the plot claimed that has the longest side, for research purposes.
 
 - The register is a Set, unordered but iterable.
-- It may be convenient to convert the register to something ordered, for example with `collect()`.
-- You already wrote a function to calculate the longest side of a plot, and can apply this to the whole collection.
+  - It may be convenient to convert the register to something ordered, for example with `collect()`.
+  - You already wrote a function to calculate the longest side of a plot, and could apply this to the whole collection.
 - See Task 5 for a note on `max` versus `maximum`.
 - Find one or more plots with the maximum length.
 - Return the results as a `Set{Plot}`.
