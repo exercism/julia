@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "It is common in Julia to define custom composite types (structs), with named fields, to model the problem being addressed."
+}
