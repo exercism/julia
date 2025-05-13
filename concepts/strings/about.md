@@ -176,7 +176,7 @@ Workarounds include:
 
 For finer control over string assembly, Julia copies the `sprintf` function from C (and several later languages: Wikipedia [lists][printf-ports] about 30).
 
-In Julia, this is implemented as a [`macro`][macro] within the `Printf` module, hence the `@` suffix.
+In Julia, this is implemented as a [`macro`][macro] within the `Printf` module, hence the `@` prefix.
 
 ```julia-repl
 julia> using Printf

@@ -154,7 +154,7 @@ Note the limitation that interpolation does not currently allow formatting, such
 
 For finer control over string assembly, Julia copies the `sprintf` function from C (and several later languages: Wikipedia lists about 30).
 
-In Julia, this is implemented as a `macro` within the `Printf` module, hence the `@` suffix.
+In Julia, this is implemented as a `macro` within the `Printf` module, hence the `@` prefix.
 
 ```julia-repl
 julia> using Printf
