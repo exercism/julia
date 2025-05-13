@@ -191,7 +191,7 @@ julia> @sprintf("A circle of radius %.1f has area %.2f", r, π * r^2)
 ## String functions
 
 For simplicity, this section will concentrate on functions that return a new string and leave the input unchanged.
-Many have an an equivalent, named with a `!` suffix, that modify the input in place.
+Many have an equivalent, named with a `!` suffix, that modify the input in place.
 
 ### Length
 
