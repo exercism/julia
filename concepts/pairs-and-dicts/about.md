@@ -66,6 +66,13 @@ ERROR: KeyError: key 'd' not found
 
 # Generators are accepted in the constructor (and note the unordered output)
 julia> Dict(x => x^2 for x in 1:5)
+Dict{Int64, Int64} with 5 entries:
+  5 => 25
+  4 => 16
+  2 => 4
+  3 => 9
+  1 => 1
+
 julia> Dict(x => 1 / x for x in 1:5)
 Dict{Int64, Float64} with 5 entries:
   5 => 0.2
