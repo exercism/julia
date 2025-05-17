@@ -1,7 +1,8 @@
 # Instructions
 
-In this exercise you'll be implementing a simulation of encounters.
+In this exercise you will be implementing a simulation of encounters.
 This will familiarise you with the basics of multiple dispatch, Julia's main paradigm.
+
 Everything you might need to know can be found in the [Methods](https://docs.julialang.org/en/v1/manual/methods/) chapter of the Julia Manual.
 
 In general, encounters involve one party `a` meeting another party `b` and reacting to it.

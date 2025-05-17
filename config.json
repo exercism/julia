@@ -266,6 +266,19 @@
         "status": "wip"
       },
       {
+        "slug": "encounters",
+        "name": "Encounters",
+        "uuid": "68001762-8a35-4494-9de4-624ca9efb5cd",
+        "concepts": [
+          "multiple-dispatch"
+        ],
+        "prerequisites": [
+          "Parametric-types",
+          "type-unions"
+        ],
+        "status": "wip"
+      },
+      {
         "slug": "old-elyses-enchantments",
         "name": "Old Elyse's Enchantments",
         "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",
@@ -333,14 +346,6 @@
         "slug": "old-exercism-matrix",
         "name": "Old The Exercism Matrix",
         "uuid": "36cbda04-3921-4491-9ec6-76951f00aa00",
-        "concepts": [],
-        "prerequisites": [],
-        "status": "deprecated"
-      },
-      {
-        "slug": "old-encounters",
-        "name": "Old Encounters",
-        "uuid": "68001762-8a35-4494-9de4-624ca9efb5cd",
         "concepts": [],
         "prerequisites": [],
         "status": "deprecated"
