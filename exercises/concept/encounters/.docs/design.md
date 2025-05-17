@@ -6,11 +6,16 @@ The goal of this exercise is to introduce the student to multiple dispatch, Juli
 
 ## Learning objectives
 
-- 
+- Understand how to create multiple methods for a function.
+- Understand something of how Julia chooses the "best" method to dispatch.
+- Understand something of why multiple dispatch is so important in making Julia performant.
 
 ## Out of scope
 
-- 
+These features are not currently covered, though this could be up for discussion in future.
+
+- Method ambiguity
+- Parametric methods
 
 ## Concepts
 
