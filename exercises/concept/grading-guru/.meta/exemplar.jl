@@ -1,7 +1,7 @@
 demote(num) = 
     if typeof(num) == Float64  return ceil(UInt8, num)
     elseif num isa Integer     return convert(Int8, num)
-    else                       return "MethodError: no method matching preprocess(::$(typeof(x)))"
+    else                       return "MethodError: no method matching preprocess(::$(typeof(num)))"
 end
 
 preprocess(coll) =
