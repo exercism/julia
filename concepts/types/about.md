@@ -123,7 +123,7 @@ Note that there is an [`@assert`][assert] macro for other forms of assertion.
 
 ## The Type Hierarchy
 
-`Int64`, `Int16`, `String`, `Char`: where do these types "come from".
+`Int64`, `Int16`, `String`, `Char`: where do these types _"come from"_.
 
 In many object-oriented (OO) languages, each type is a class, subclassing arranges them in a class hierarchy, and class methods define the behaviors.
 
@@ -289,7 +289,13 @@ julia> isconcretetype(Vector), isabstracttype(Vector)
 (false, false)
 ```
 
+Though `Vector` is not a concrete types, the elements are concrete.
+The `eltype()` (element type) function extracts this type:
 
+```julia-repl
+julia> eltype([1, 2.3])
+Float64
+```
 
 
 [dijkstra]: https://en.wikipedia.org/wiki/Edsger_W._Dijkstra

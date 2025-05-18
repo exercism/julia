@@ -116,7 +116,7 @@ Note that there is an `@assert` macro for other forms of assertion.
 
 ## The Type Hierarchy
 
-`Int64`, `Int16`, `String`, `Char`: where do these types "come from".
+`Int64`, `Int16`, `String`, `Char`: where do these types _"come from"_.
 
 In many object-oriented (OO) languages, each type is a class, subclassing arranges them in a class hierarchy, and class methods define the behaviors.
 
