@@ -224,6 +224,11 @@ julia> Int64 <: Number
 true
 ```
 
+Testing for types can be used to control flow within a function, but this is relatively unusual in idiomatic Julia.
+
+We will see in the Multiple Dispatch Concept that it is often more efficient to add types to function arguments and let Julia's dispatch mechanism handle such logic.
+However, there are multiple further type-related concepts we need to discuss before we reach Multiple Dispatch.
+
 ## Abstract versus Concrete Types
 
 We saw that the type hierarchy forms a tree structure (in the Computer Science sense, with the root at the top).
