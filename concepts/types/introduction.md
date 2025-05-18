@@ -112,8 +112,6 @@ ERROR: TypeError: in typeassert, expected Number, got a value of type String
 
 Commonly, this might be used with the return value of a function, as a simple last check that the function behaved as expected.
 
-Note that there is an `@assert` macro for other forms of assertion.
-
 ## The Type Hierarchy
 
 `Int64`, `Int16`, `String`, `Char`: where do these types _"come from"_.
