@@ -379,7 +379,8 @@
         "prerequisites": [
           "function-composition",
           "vector-operations",
-          "sets"
+          "sets",
+          "strings"
         ]
       }
     ],
