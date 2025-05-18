@@ -368,6 +368,19 @@
         "concepts": [],
         "prerequisites": [],
         "status": "deprecated"
+      },
+      {
+        "slug": "grading-guru",
+        "name": "Grading Guru",
+        "uuid": "e0ca86c9-d8da-4b62-935d-b800e5afef91",
+        "concepts": [
+          "types"
+        ],
+        "prerequisites": [
+          "function-composition",
+          "vector-operations",
+          "sets"
+        ]
       }
     ],
     "practice": [
