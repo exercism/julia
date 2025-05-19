@@ -30,4 +30,3 @@ The Concepts this exercise unlocks are:
 - `function-composition`
 - `vector-operations`
 - `sets`
-- `strings`
