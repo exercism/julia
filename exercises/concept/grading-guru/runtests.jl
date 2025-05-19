@@ -17,10 +17,10 @@ include("grading-guru.jl")
         end
 
         @testset "Invalid Inputs" begin
-            @test demote("42") == "MethodError: no method matching preprocess(::String)"
-            @test demote(21+42im) == "MethodError: no method matching preprocess(::Complex{Int64})"
-            @test demote([2, 4, 5]) == "MethodError: no method matching preprocess(::Vector{Int64})"
-            @test demote(Set([2, 4, 5])) == "MethodError: no method matching preprocess(::Set{Int64})"
+            @test_throws MethodError demote("42")
+            @test_throws MethodError demote(21+42im)
+            @test_throws MethodError demote([2, 4, 5])
+            @test_throws MethodError demote(Set([2, 4, 5]))
         end
     end
 
@@ -41,11 +41,11 @@ include("grading-guru.jl")
         end
 
         @testset "Invalid Inputs" begin
-            @test preprocess(42) == "MethodError: no method matching preprocess(::Int64)"
-            @test preprocess(42.0) == "MethodError: no method matching preprocess(::Float64)"
-            @test preprocess("42") == "MethodError: no method matching preprocess(::String)"
-            @test preprocess(1-4im) == "MethodError: no method matching preprocess(::Complex{Int64})"
-            @test demote(π) == "MethodError: no method matching preprocess(::Irrational{:π})"
+            @test_throws MethodError preprocess(42)
+            @test_throws MethodError preprocess(42.0)
+            @test_throws MethodError preprocess("42")
+            @test_throws MethodError preprocess(1-4im)
+            @test_throws MethodError preprocess(π)
         end
     end
 end
