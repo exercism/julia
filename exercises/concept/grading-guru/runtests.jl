@@ -17,6 +17,7 @@ include("grading-guru.jl")
         end
 
         @testset "Invalid Inputs" begin
+            @test_throws MethodError demote(Float32(4.2))
             @test_throws MethodError demote("42")
             @test_throws MethodError demote(21+42im)
             @test_throws MethodError demote([2, 4, 5])
