@@ -16,6 +16,7 @@ These will be covered in following Concepts:
 
 - Type Unions
 - Parametric Types
+- Composite Types
 - Multiple Dispatch
 
 ## Concepts
