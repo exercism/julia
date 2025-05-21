@@ -254,6 +254,20 @@
         "status": "beta"
       },
       {
+        "slug": "grading-guru",
+        "name": "Grading Guru",
+        "uuid": "e0ca86c9-d8da-4b62-935d-b800e5afef91",
+        "concepts": [
+          "types"
+        ],
+        "prerequisites": [
+          "function-composition",
+          "vector-operations",
+          "sets"
+        ],
+        "status": "wip"
+      },
+      {
         "slug": "land-grab-in-space",
         "name": "Land Grab In Space",
         "uuid": "59bf219e-b94e-4d74-8a0c-0d2fc8b86e8b",
@@ -262,6 +276,19 @@
         ],
         "prerequisites": [
           "types"
+        ],
+        "status": "wip"
+      },
+      {
+        "slug": "treasure-chest",
+        "name": "Treasure Chest",
+        "uuid": "6c11a9c6-4ad9-435b-b85c-62d99ff4f00d",
+        "concepts": [
+          "parametric-types"
+        ],
+        "prerequisites": [
+          "composite-types",
+          "nothingness"
         ],
         "status": "wip"
       },
@@ -368,20 +395,6 @@
         "concepts": [],
         "prerequisites": [],
         "status": "deprecated"
-      },
-      {
-        "slug": "grading-guru",
-        "name": "Grading Guru",
-        "uuid": "e0ca86c9-d8da-4b62-935d-b800e5afef91",
-        "concepts": [
-          "types"
-        ],
-        "prerequisites": [
-          "function-composition",
-          "vector-operations",
-          "sets"
-        ],
-        "status": "wip"
       }
     ],
     "practice": [

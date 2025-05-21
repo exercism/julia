@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "files": {
+    "solution": [
+      "treasure-chest.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ]
+  },
+  "forked_from": [
+    "elm/treasure-chest"
+  ],
+  "blurb": "Learn how to create and use Julia parametric types by creating a Treasure Chest"
+}
