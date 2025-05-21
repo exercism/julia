@@ -254,6 +254,18 @@
         "status": "beta"
       },
       {
+        "slug": "land-grab-in-space",
+        "name": "Land Grab In Space",
+        "uuid": "59bf219e-b94e-4d74-8a0c-0d2fc8b86e8b",
+        "concepts": [
+          "composite-types"
+        ],
+        "prerequisites": [
+          "types"
+        ],
+        "status": "wip"
+      },
+      {
         "slug": "old-elyses-enchantments",
         "name": "Old Elyse's Enchantments",
         "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",
@@ -356,6 +368,20 @@
         "concepts": [],
         "prerequisites": [],
         "status": "deprecated"
+      },
+      {
+        "slug": "grading-guru",
+        "name": "Grading Guru",
+        "uuid": "e0ca86c9-d8da-4b62-935d-b800e5afef91",
+        "concepts": [
+          "types"
+        ],
+        "prerequisites": [
+          "function-composition",
+          "vector-operations",
+          "sets"
+        ],
+        "status": "wip"
       }
     ],
     "practice": [
@@ -1514,6 +1540,11 @@
       "uuid": "dd4b20d7-9a3d-4647-a3a7-4937e61f0171",
       "slug": "parametric-types",
       "name": "Parametric Types"
+    },
+    {
+      "uuid": "d776c30c-6cfd-4a7e-a443-b960e069d8aa",
+      "slug": "composite-types",
+      "name": "Composite Types"
     }
   ],
   "key_features": [

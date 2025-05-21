@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "files": {
+    "solution": [
+      "land-grab-in-space.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ]
+  },
+  "forked_from": [
+    "csharp/land-grab-in-space"
+  ],
+  "blurb": "Learn about composite types by improving the performance of a land claim system."
+}
