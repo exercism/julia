@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "Julia allows arbitrary types to be combined into a Union type. This is particularly useful as a way to handle missing values."
+}
