@@ -1537,6 +1537,11 @@
       "name": "Complex Numbers"
     },
     {
+      "uuid": "ed7ca1c8-647f-4b33-897b-805f7ec3945a",
+      "slug": "types",
+      "name": "Types"
+    },
+    {
       "uuid": "d776c30c-6cfd-4a7e-a443-b960e069d8aa",
       "slug": "composite-types",
       "name": "Composite Types"
