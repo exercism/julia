@@ -28,9 +28,9 @@ throw(MethodError(demote, (n,)))
 ## 1. Demote the grades
 
 Implement the `demote(n)` method.
-With a `Float64` input, it should round up to the nearest whole number and return a `UInt8` data type.
-With an arbitrary `Integer`, it should return the same integer in a `Int8` data type.
-All other inputs should throw a MethodError.
+- With a `Float64` input, it should round up to the nearest whole number and return a `UInt8` data type.
+- With an arbitrary `Integer`, it should return the same integer in a `Int8` data type.
+- All other inputs should throw a MethodError.
 
 ```julia-repl
 julia> demote(4.2)::UInt8
@@ -46,9 +46,9 @@ MethodError: no method matching demote(::String)     #output truncated
 ## 2. Preprocess the data
 
 Implement the `preprocess(coll)` method.
-With a `Vector` input, it should demote all the numbers and reverse the vector.
-With a `Set` input, it should demote all the numbers and return a sorted vector in descending order.
-All other inputs should throw a MethodError.
+- With a `Vector` input, it should demote all the numbers and reverse the vector.
+- With a `Set` input, it should demote all the numbers and return a sorted vector in descending order.
+- All other inputs should throw a MethodError.
 
 ```julia-repl
 julia> preprocess([1, 2, 3])
