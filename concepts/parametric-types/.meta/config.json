@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "Parametric types in Julia are (loosely) similar to generic types in other programming languages."
+}
