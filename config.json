@@ -273,8 +273,7 @@
           "multiple-dispatch"
         ],
         "prerequisites": [
-          "parametric-types",
-          "type-unions"
+          "parametric-types"
         ],
         "status": "wip"
       },
