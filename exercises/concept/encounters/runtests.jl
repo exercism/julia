@@ -3,7 +3,9 @@ using Test
 include("encounters.jl")
 
 # define a new type of Pet to test the fallback
-# this belongs to a testset below but struct definitions within the local scope of testsets are not supported in Julia <1.1
+# this belongs to a testset below but struct definitions within the local scope of testsets 
+#  are not supported in Julia <1.1
+
 struct Horse <: Pet
     name::String
 end
@@ -61,7 +63,9 @@ car = Car("W-12345X")
     end
 
     # Test generic fallback with a random type
-    # In practice this would be nonsense, but here we want to ensure the student doesn't implement a specific method for a given type
+    # In practice this would be nonsense, but here we want to ensure the student 
+    #   doesn't implement a specific method for a given type
+    
     typename = Symbol("RandomType", rand(UInt))
     @eval struct $typename end
     @eval name(::$typename) = $(string(typename))
