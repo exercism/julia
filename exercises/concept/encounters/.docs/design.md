@@ -26,7 +26,6 @@ The Concepts this exercise unlocks are:
 ## Prerequisites
 
 - `parametric-types`
-- `type-unions`
 
 ## Source
 
