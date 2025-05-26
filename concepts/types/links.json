@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://docs.julialang.org/en/v1/manual/types/",
+    "description": "Julia manual, section on Types"
+  },
+  {
+    "url": "https://scls.gitbooks.io/ljthw/content/_chapters/06-ex3.html",
+    "description": "Types chapter from Learn Julia the Hard Way, on GitBooks"
+  }
+]
