@@ -11,7 +11,7 @@ In the [`Types` Concept][types], we learned that:
 
 Only `primitive` types follow the abstract versus concrete pattern in its simple form.
 
-One example of types which are not primitive are Collections, such as Vector or Set.
+One example of types which are not primitive are Collections, such as `Vector` or `Set`.
 
 ```julia-repl
 julia> isprimitivetype(Int)
@@ -68,6 +68,9 @@ Point{Int8}(17, 23)
 
 julia> typeof(int8point)
 Point{Int8}
+
+julia> Point(Int8(17), Int8(23))
+Point{Int8}(17, 23)
 ```
 
 Naturally, this approach also works with collections in fields:
