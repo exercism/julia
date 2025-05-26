@@ -275,7 +275,7 @@
         "prerequisites": [
           "parametric-types"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "old-elyses-enchantments",
