@@ -265,7 +265,7 @@
           "vector-operations",
           "sets"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "land-grab-in-space",
@@ -277,7 +277,7 @@
         "prerequisites": [
           "types"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "treasure-chest",
@@ -1548,6 +1548,11 @@
       "uuid": "5f4da09d-05cb-4a10-8dfb-3bb30eed822a",
       "slug": "complex-numbers",
       "name": "Complex Numbers"
+    },
+    {
+      "uuid": "ed7ca1c8-647f-4b33-897b-805f7ec3945a",
+      "slug": "types",
+      "name": "Types"
     },
     {
       "uuid": "d776c30c-6cfd-4a7e-a443-b960e069d8aa",
