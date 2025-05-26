@@ -6,7 +6,6 @@
 
 ## 2. Define the get_treasure() function
 
-- This task just uses simple logic.
 - A [ternary operator][ternary] is sufficient.
 
 ## 3. Define the multiply_treasure function
