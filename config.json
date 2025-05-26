@@ -254,6 +254,20 @@
         "status": "beta"
       },
       {
+        "slug": "grading-guru",
+        "name": "Grading Guru",
+        "uuid": "e0ca86c9-d8da-4b62-935d-b800e5afef91",
+        "concepts": [
+          "types"
+        ],
+        "prerequisites": [
+          "function-composition",
+          "vector-operations",
+          "sets"
+        ],
+        "status": "beta"
+      },
+      {
         "slug": "land-grab-in-space",
         "name": "Land Grab In Space",
         "uuid": "59bf219e-b94e-4d74-8a0c-0d2fc8b86e8b",
@@ -263,7 +277,20 @@
         "prerequisites": [
           "types"
         ],
-        "status": "wip"
+        "status": "beta"
+      },
+      {
+        "slug": "treasure-chest",
+        "name": "Treasure Chest",
+        "uuid": "6c11a9c6-4ad9-435b-b85c-62d99ff4f00d",
+        "concepts": [
+          "parametric-types"
+        ],
+        "prerequisites": [
+          "composite-types",
+          "nothingness"
+        ],
+        "status": "beta"
       },
       {
         "slug": "old-elyses-enchantments",
@@ -1521,6 +1548,16 @@
       "uuid": "5f4da09d-05cb-4a10-8dfb-3bb30eed822a",
       "slug": "complex-numbers",
       "name": "Complex Numbers"
+    },
+    {
+      "uuid": "dd4b20d7-9a3d-4647-a3a7-4937e61f0171",
+      "slug": "parametric-types",
+      "name": "Parametric Types"
+    },
+    {
+      "uuid": "ed7ca1c8-647f-4b33-897b-805f7ec3945a",
+      "slug": "types",
+      "name": "Types"
     },
     {
       "uuid": "d776c30c-6cfd-4a7e-a443-b960e069d8aa",

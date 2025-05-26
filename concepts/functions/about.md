@@ -135,7 +135,7 @@ julia> fxyz(xyz)
 ERROR: MethodError: no method matching fxyz(::Vector{Int64})
 The function `fxyz` exists, but no method is defined for this combination of argument types.
 
-# splatting converts the vector to 3 numbers, used as positional argumants
+# splatting converts the vector to 3 numbers, used as positional arguments
 julia> fxyz(xyz...)
 24
 ```
