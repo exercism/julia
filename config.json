@@ -254,6 +254,20 @@
         "status": "beta"
       },
       {
+        "slug": "grading-guru",
+        "name": "Grading Guru",
+        "uuid": "e0ca86c9-d8da-4b62-935d-b800e5afef91",
+        "concepts": [
+          "types"
+        ],
+        "prerequisites": [
+          "function-composition",
+          "vector-operations",
+          "sets"
+        ],
+        "status": "beta"
+      },
+      {
         "slug": "land-grab-in-space",
         "name": "Land Grab In Space",
         "uuid": "59bf219e-b94e-4d74-8a0c-0d2fc8b86e8b",
@@ -263,7 +277,7 @@
         "prerequisites": [
           "types"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "old-elyses-enchantments",
@@ -368,20 +382,6 @@
         "concepts": [],
         "prerequisites": [],
         "status": "deprecated"
-      },
-      {
-        "slug": "grading-guru",
-        "name": "Grading Guru",
-        "uuid": "e0ca86c9-d8da-4b62-935d-b800e5afef91",
-        "concepts": [
-          "types"
-        ],
-        "prerequisites": [
-          "function-composition",
-          "vector-operations",
-          "sets"
-        ],
-        "status": "wip"
       }
     ],
     "practice": [
