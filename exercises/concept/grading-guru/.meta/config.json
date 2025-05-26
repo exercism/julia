@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "depial"
+  ],
+  "files": {
+    "solution": [
+      "grading-guru.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ]
+  },
+  "blurb": "Learn about types by doing a bit of data engineering"
+}
