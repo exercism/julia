@@ -280,6 +280,19 @@
         "status": "beta"
       },
       {
+        "slug": "treasure-chest",
+        "name": "Treasure Chest",
+        "uuid": "6c11a9c6-4ad9-435b-b85c-62d99ff4f00d",
+        "concepts": [
+          "parametric-types"
+        ],
+        "prerequisites": [
+          "composite-types",
+          "nothingness"
+        ],
+        "status": "beta"
+      },
+      {
         "slug": "old-elyses-enchantments",
         "name": "Old Elyse's Enchantments",
         "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",
