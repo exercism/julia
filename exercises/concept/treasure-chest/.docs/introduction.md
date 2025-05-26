@@ -67,6 +67,9 @@ Point{Int8}(17, 23)
 
 julia> typeof(int8point)
 Point{Int8}
+
+julia> Point(Int8(17), Int8(23))
+Point{Int8}(17, 23)
 ```
 
 Naturally, this approach also works with collections in fields:
