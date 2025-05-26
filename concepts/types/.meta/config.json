@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "Julia is not object-oriented and has no object hierarchy. Instead, it hs a type hierarchy which is central to how the language is used."
+}
