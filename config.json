@@ -1537,6 +1537,11 @@
       "name": "Complex Numbers"
     },
     {
+      "uuid": "dd4b20d7-9a3d-4647-a3a7-4937e61f0171",
+      "slug": "parametric-types",
+      "name": "Parametric Types"
+    },
+    {
       "uuid": "ed7ca1c8-647f-4b33-897b-805f7ec3945a",
       "slug": "types",
       "name": "Types"
