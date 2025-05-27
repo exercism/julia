@@ -1,6 +1,6 @@
 # Introduction
 
-By this point in the syllabus, you already saw a lot of function definitions.
+By this point in the syllabus, you have already seen a lot of function definitions.
 Usually, these were presented without much comment about the output in the REPL:
 
 ```julia-repl
@@ -27,7 +27,8 @@ julia> f(x, y) = x * y
 f (generic function with 4 methods)
 ```
 
-It appears that new definitions of the same function are added to a list, instead of overwriting the old definition.
+It appears that new definitions of the same function are called "methods".
+Methods are added to a list, instead of overwriting the old definition.
 
 We can easily list the methods:
 
@@ -73,8 +74,9 @@ More formally, the tuple is _mapped_ to a return value.
 
 ## How do functions handle different numbers and types of arguments?
 
+This is usually referred to as "polymorphism"
+
 This has been a big topic in computer science for several decades, and different approaches have been adopted.
-This is usually referred to as "polymorphism".
 
 Julia's approach is unusual, though not unique.
 
@@ -94,7 +96,7 @@ Note that Julia is dynamically typed, so method dispatch happens at _run time_.
 ## Multiple Dispatch: an example
 
 The previous section had a lot of words, so let's translate those ideas into code.
-For simplicity, the functions below have only one argumant, but it is not unusual to find functions with dozens of arguments (such as in plotting packages, or machine learning).
+For simplicity, the functions below have only one argument, but it is not unusual to find functions with dozens of arguments (such as in plotting packages, or machine learning).
 
 Start by defining some custom types, to represent geometric shapes.
 
@@ -150,6 +152,42 @@ Rectangle(1.4, 2.1)
 julia> area(rectangle)  # call signature Tuple{Rectangle}
 2.94
 ```
+
+## Parametric methods
+
+Method signatures can take dummy type values, in roughly the same way as parametric types.
+
+The syntax is distinctive, requiring a `where` clause:
+
+```julia-repl
+julia> same_type(v::Vector{T}, x::T) where {T} = true
+same_type (generic function with 1 method)
+
+julia> same_type([1, 2], 3)
+true
+
+julia> same_type([1, 2], "three")
+ERROR: MethodError: no method matching same_type(::Vector{Int64}, ::String)
+```
+
+The above example requires both arguments to use the same type `T`, whatever that is.
+
+We can be more specific by putting a constraint on `T`:
+
+```julia-repl
+julia> same_type(v::Vector{T}, x::T) where {T<:Number} = true
+same_type (generic function with 2 methods)
+```
+
+With this method, only identical numeric types return `true`.
+
+Multiple dummy variables are possible, comma-separated in the `where` clause.
+
+```julia-repl
+julia> myfunc(a::S, b::T) where {S, T} = true
+myfunc (generic function with 1 method)
+```
+
 
 ## Conclusion
 
