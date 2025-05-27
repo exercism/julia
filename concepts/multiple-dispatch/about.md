@@ -154,7 +154,7 @@ julia> area(rectangle)  # call signature Tuple{Rectangle}
 2.94
 ```
 
-## Parametric methods
+## [Parametric methods][parametric]
 
 Method signatures can take dummy type values, in roughly the same way as parametric types.
 
@@ -247,3 +247,4 @@ This is unfortunate, but unavoidable: we needed a series of quite advanced conce
 [methoderror]: https://docs.julialang.org/en/v1/base/base/#Core.MethodError
 [instance]: https://en.wikipedia.org/wiki/Instance_(computer_science)
 [single-dispatch]: https://en.wikipedia.org/wiki/Dynamic_dispatch
+[parametric]: https://docs.julialang.org/en/v1/manual/methods/#Parametric-Methods
