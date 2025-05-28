@@ -171,7 +171,7 @@ julia> same_type([1, 2], "three")
 ERROR: MethodError: no method matching same_type(::Vector{Int64}, ::String)
 ```
 
-The above example requires both arguments to use the same type `T`, whatever that is.
+The above example requires both arguments to use the same type `T`, whatever it may be.
 
 We can be more specific by putting a constraint on `T`:
 
@@ -195,6 +195,38 @@ func (generic function with 2 methods)
 
 One difference is that the type values `S` and `T` are available to use within the function body of the second method.
 This is the sort of trick you may not use often, but it can save a lot of trouble in some circumstances.
+
+For example, in the following parametric type definition, the fields need to be of the same type `T`, which is constrained to be a subtype of `Real`:
+```julia
+struct Point{T<:Real}
+    x::T
+    y::T
+end
+```
+This `Point` definition accepts an `x` and a `y` of the same type, or it can accept an `x` and a `y` of different types, but an explicit conversion type must then be provided.
+```julia-repl
+julia> Point(4, 5)
+ Point{Int64}(4, 5)
+
+julia> Point(3.5, 2)
+ MethodError: no method matching Point(::Float64, ::Int64)    # Output truncated for brevity
+
+julia> Point{Float32}(3.5, 2)
+ Point{Float32}(3.5f0, 2.0f0)
+
+julia> Point{Int64}(3.5, 2) 
+ InexactError: Int64(3.5)      # Output truncated for brevity
+```
+While this level of control over the types may be desirable, it may also be useful to have a bit of abstraction.
+```julia
+Point(x::T, y::S) where {T<:Real, S<:Real} = Point{promote_type(T,  S)}(x, y)
+```
+This outer constructor provides this by allowing for a `Point` to accept inhomogeneous types for `x` and `y` without explicitly specifying the conversion type.
+The type values `T` and `S` are used in the function body in `promote_type(T, S)` to provide the explicit conversion type for the original definition.
+```julia-repl
+julia> Point(3.5, 2)
+ Point{Float64}(3.5, 2.0)
+```
 
 ## Comparison with other languages
 
