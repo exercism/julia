@@ -23,6 +23,7 @@ Abstract types and type inheritance were discussed in the [Composite Types][comp
 ## 5. Define a fallback reaction for encounters between pets
 
 - The second argument is now a `Pet` other than `Cat` or `Dog`, so add a `meet` method.
+- Declaring abstract parameter types or constraining them via parametric methods are two ways to accomplish this.
 
 ## 6. Define a fallback if a pet encounters something it doesn't know
 
