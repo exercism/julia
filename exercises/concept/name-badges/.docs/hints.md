@@ -1,20 +1,20 @@
 # Hints
 
-The first three tasks all call the same `print_name_badge()` function.
+The first three tasks all call the same `create_name_badge()` function.
 Implementation of this can be built up stepwise, adding logic for tasks 2 and 3 as you proceed.
 
-## 1. Print a badge for an employee
+## 1. Create a badge for an employee
 
 - This is the default case, just assemble the 3 arguments into a suitable string.
 - [String interpolatation][interpolation] is probably the easiest approach.
 
-## 2. Print a badge for a new employee
+## 2. Create a badge for a new employee
 
 - Now the iID is `missing,` so the target string format is different.
 - [`ismissing()][ismissing] is useful here.
 - Julia has a [ternary operator][ternary] with concise syntax.
 
-## 3. Print a badge for the owner
+## 3. Create a badge for the owner
 
 - Now the department is `nothing`.
 - There is an [`isnothing()`][isnothing] function.
