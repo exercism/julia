@@ -1,6 +1,6 @@
 # Hints
 
-The first three tasks all call the same `create_name_badge()` function.
+The first three tasks all call the same `print_name_badge()` function.
 Implementation of this can be built up stepwise, adding logic for tasks 2 and 3 as you proceed.
 
 ## 1. Create a badge for an employee

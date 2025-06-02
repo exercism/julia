@@ -2,20 +2,14 @@ using Test
 
 include("name-badges.jl")
 
-try
-    create_name_badge
-catch err
-    global create_name_badge = print_name_badge
-end
-
 @testset verbose = true "tests" begin
-    @testset "1. create_name_badge" begin
-        @testset "prints the employee badge with full data" begin
+    @testset "1. print_name_badge" begin
+        @testset "creates the employee badge with full data" begin
             id = 455
             name = "Mary M. Brown"
             department = "MARKETING"
             expected = "[455] - Mary M. Brown - MARKETING"
-            @test create_name_badge(id, name, department) == expected
+            @test print_name_badge(id, name, department) == expected
         end
         
         @testset "uppercases the department" begin
@@ -23,7 +17,7 @@ end
             name = "Jack McGregor"
             department = "Procurement"
             expected = "[89] - Jack McGregor - PROCUREMENT"
-            @test create_name_badge(id, name, department) == expected
+            @test print_name_badge(id, name, department) == expected
         end
     end
         
@@ -33,17 +27,17 @@ end
             name = "Barbara White"
             department = "SECURITY"
             expected = "Barbara White - SECURITY"
-            @test create_name_badge(id, name, department) == expected
+            @test print_name_badge(id, name, department) == expected
         end
     end
 
-    @testset "3. prints the owner badge" begin
-        @testset "prints the owner badge" begin
+    @testset "3. creates the owner badge" begin
+        @testset "creates the owner badge" begin
             id = 1
             name = "Anna Johnson"
             department = nothing
             expected = "[1] - Anna Johnson - OWNER"
-            @test create_name_badge(id, name, department) == expected
+            @test print_name_badge(id, name, department) == expected
         end
     end
 
