@@ -48,7 +48,7 @@ Implement the `salaries_no_id` function that takes a vector of IDs and a corresp
 
 ```julia-repl
 julia> ids = [204, missing, 210, 352, missing, 263]
-julia> salaries  [23, 21, 47, 35, 17, 101] * 1000
+julia> salaries = [23, 21, 47, 35, 17, 101] * 1000
 julia> salaries_no_id(ids, salaries)
 38,000
 ```
