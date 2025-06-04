@@ -4,7 +4,7 @@ include("name-badges.jl")
 
 @testset verbose = true "tests" begin
     @testset "1. print_name_badge" begin
-        @testset "prints the employee badge with full data" begin
+        @testset "creates the employee badge with full data" begin
             id = 455
             name = "Mary M. Brown"
             department = "MARKETING"
@@ -22,7 +22,7 @@ include("name-badges.jl")
     end
         
     @testset "2. New employee" begin
-        @testset "prints the employee badge without id" begin
+        @testset "create the employee badge without id" begin
             id = missing
             name = "Barbara White"
             department = "SECURITY"
@@ -31,8 +31,8 @@ include("name-badges.jl")
         end
     end
 
-    @testset "3. prints the owner badge" begin
-        @testset "prints the owner badge" begin
+    @testset "3. creates the owner badge" begin
+        @testset "creates the owner badge" begin
             id = 1
             name = "Anna Johnson"
             department = nothing
