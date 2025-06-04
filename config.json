@@ -1569,6 +1569,11 @@
       "name": "Composite Types"
     },
     {
+      "uuid": "c4be3c93-355a-468d-9bb8-5a9d64d2284d",
+      "slug": "type-unions",
+      "name": "Type Unions"
+    },
+    {
       "uuid": "bfb68abf-c6c6-44a8-a5ad-627381142d4a",
       "slug": "multiple-dispatch",
       "name": "Multiple Dispatch"
