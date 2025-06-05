@@ -13,7 +13,7 @@ Once you have implemented the function to convert the grades, you will need to w
 
 In both functions, you will need to handle invlalid inputs by throwing a MethodError.
 
-~~~~exercism-note
+~~~~exercism/note
 Exception handling will be covered in a later Concept, so for the purposes of this exercise, you can use the following syntax:
 ```julia
 throw(MethodError(f, args))

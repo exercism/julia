@@ -34,7 +34,7 @@ What's the use of a log if it doesn't include dates?
 
 A stardate is a floating point number. The adventures of the _Starship Enterprise_ from the first season of _The Next Generation_ take place between the stardates 41000.0 and 42000.0. The "4" stands for the 24th century, the "1" for the first season.
 
-Implement the function `random_stardate` that returns a floating point number between 41000.0 and 42000.0 (inclusive).
+Implement the function `random_stardate` that returns a floating point number between 41000.0 (inclusive) and 42000.0.
 
 ```julia-repl
 julia> random_stardate()
