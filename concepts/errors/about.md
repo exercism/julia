@@ -4,10 +4,10 @@ Programmers generally try to write perfect software, and generally fail.
 
 Things go wrong, unexpectedly, and we need to be able to deal with that.
 
-Some language designers believe that the priority is to detect an error as quickly as possible, and terminate execution with an informative message to aid debugging.
+Some language designers believe that the priority is to detect an error as quickly as possible, then terminate execution with an informative message to aid debugging.
 
 Data science languages tend to take a more nuanced approach.
-Some errors are so serious that immediate termination is necessary, but sometimes it is better to flag a problem as something to be dealt with later, then continue execution.
+Some errors are so serious that immediate termination is necessary, but often it is better to flag a problem as something to be dealt with later, then continue execution.
 
 We saw in the [Nothingness][nothingness] Concept that Julia provides various placeholders for problematic values: [`nothing`][nothing], [`NaN`][NaN] and `Inf`.
 Whether these are a better approach than program termination in a particular situation is a matter for programmer judgement.
@@ -15,7 +15,7 @@ Whether these are a better approach than program termination in a particular sit
 _A point of nomenclature_ before getting into the details: the Julia documentation treats the words "error" and "exception" as largely interchangeable.
 The content below may be equally inconsistent.
 
-## Standard errors
+## Standard error types
 
 By this point in the syllabus, you must have seen many error messages from Julia.
 For example:
@@ -70,12 +70,12 @@ Note that the `error()` function should not be confused with the [`@error`][erro
 
 The function generates an exception, which will be passed up the call stack.
 
-The macro, along with its [`@debug`][debug_macro], [`@info`][info_macro] and [`@warn`][warn_macro] counterparts, is part of the `Logging` module, and intended to generate informative messages without altering proram flow.
+The macro, along with its [`@debug`][debug_macro], [`@info`][info_macro] and [`@warn`][warn_macro] counterparts, is part of the `Logging` module, and intended to generate informative messages without altering program flow.
 
 ## Custom errors
 
 Creating new error types is in principle very easy.
-Just add another subtype of `Exception`
+Just add another subtype of `Exception`:
 
 ```julia-repl
 julia> struct MyError <: Exception end
@@ -85,6 +85,7 @@ ERROR: MyError
 ```
 
 However, the above example has no fields and the constructor takes no arguments, so we have no control over the error message.
+We can add a message field:
 
 ```julia-repl
 julia> struct AnotherError <: Exception
