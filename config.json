@@ -1569,6 +1569,11 @@
       "name": "Composite Types"
     },
     {
+      "uuid": "c7e50660-e119-4de8-8380-18eee2fca5fa",
+      "slug": "errors",
+      "name": "Errors"
+    },
+    {
       "uuid": "c4be3c93-355a-468d-9bb8-5a9d64d2284d",
       "slug": "type-unions",
       "name": "Type Unions"

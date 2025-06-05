@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "This concept covers the various types of errors in Julia, and the flexible range of ways to generate and handle them."
+}
