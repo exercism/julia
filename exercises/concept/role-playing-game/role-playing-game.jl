@@ -5,7 +5,7 @@ IntOrNothing = # type union definition
     
 end
 
-function introduce(player)
+function introduce(player::Player)
     
 end
 
@@ -17,14 +17,10 @@ function increment(name)
     
 end
 
-function title(player)
+function title(player::Player)
 
 end
 
-function revive(player)
-    
-end
-
-function castspell(player, cost)
+function revive(player::Player)
     
 end

@@ -312,7 +312,7 @@
           "type-unions"
         ],
         "prerequisites": [
-          "composite-types",
+          "parametric-types",
           "nothingness"
         ],
         "status": "beta"

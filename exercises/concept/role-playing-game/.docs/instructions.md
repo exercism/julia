@@ -139,34 +139,3 @@ Player(missing, 12, 0, 5)
 julia> revive(deadplayer2)
 Player(missing, 12, 100, 105)
 ```
-
-## 7. Implement the spell casting function
-
-The `castspell` function takes as arguments a `Player` as well as an `Int` indicating how much mana the spell costs.
-
-A successful spell cast does damage equal to two times the mana cost of the spell.
-However, if the player has insufficient mana, the mana depletes to `nothing` while trying to cast, but no damage is done since casting fails.
-If the player does not even have a mana pool, attempting to cast the spell must decrease their health by the mana cost of the spell and does no damage.
-Be aware that the players health cannot be below zero `0`.
-
-The `castspell` function returns the amount of damage that the cast spell performs.
-
-```julia-repl
-julia> wizard = Player(level=18, health=63, mana=30)
-Player(missing, 18, 63, 30)
-
-julia> castspell(wizard, 14)
-28
-
-julia> wizard.mana
-16
-
-julia> warlock = Player(level=3, health=36, mana=12)
-Player(missing, 3, 36, 12)
-
-julia> castspell(warlock, 14)
-0
-
-julia> warlock.mana
-
-```

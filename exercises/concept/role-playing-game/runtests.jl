@@ -100,27 +100,4 @@ include("role-playing-game.jl")
             @test isnothing(player.mana)
         end
     end
-
-    @testset "Implement the spell casting function" begin
-        @testset "no mana" begin
-            player1 = Player()
-            damage = castspell(player1, 40)
-            @test damage == 0
-            @test player1.health == 60
-        end
-
-        @testset "insufficient mana" begin
-            player2 = Player(name="Baboo", level=2, mana=25)
-            damage = castspell(player2, 35)
-            @test damage == 0
-            @test isnothing(player2.mana)
-        end
-
-        @testset "sufficient mana" begin
-            player3 = Player(name="player", level=42, mana=57)
-            damage = castspell(player3, 15)
-            @test damage == 30
-            @test player3.mana == 42
-        end
-    end
 end

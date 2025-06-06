@@ -20,16 +20,3 @@ function revive(player::Player)
     player.health, player.mana = 100, increment(player.mana)
     player
 end
-
-function castspell(player::Player, cost::Int)
-    if isnothing(player.mana)
-        player.health = max(0, player.health - cost)
-        0
-    elseif player.mana < cost
-        player.mana = nothing
-        0
-    else
-        player.mana -= cost
-        2cost
-    end
-end
