@@ -57,7 +57,7 @@ julia> f("ab") # strings are repeated 3 times
 ```
 
 Here, we gave the type a name, which can provide convenient shorthand but is not strictly necessary.
-The function g(z::Union{Integer, String}) = z^3 behaves the same way.
+The function `g(z::Union{Integer, String}) = z^3` behaves the same way.
 
 There will be much more to say about function signatures in the Multiple Dispatch Concept.
 
