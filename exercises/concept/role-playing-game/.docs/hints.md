@@ -4,7 +4,7 @@ This exercise is centered around a keyword composite type with type unions.
 
 ## 1. Define type unions
 
-- See the example where a type was named.
+- See the example in the introduction where a type was named.
 
 ## 2. Implement the Player composite type
 
@@ -19,8 +19,8 @@ This exercise is centered around a keyword composite type with type unions.
 
 ## 4. Implement increment methods
 
-- The arguments of the methods need to be annotated with the correct types.
-- See further examples of argument annotation in the introduction.
+- The arguments of the methods need to be annotated with the correct types for `name` and `mana`.
+- See further examples of function signatures / argument annotation in the introduction.
 - [Ternary operators][control-flow] can also be used here for one line solutions.
 - It may be helpful to study/review the Concept on `Multiple Dispatch` if needed.
 

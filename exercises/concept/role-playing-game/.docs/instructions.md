@@ -9,8 +9,8 @@ Define a type union of `Int64` and `Nothing` named `IntOrNothing` which can be u
 
 ## 2. Implement the Player composite type
 
-The Player composite type should contain four fields, having type annotations and default values:
-- The `name` can be a `String`, but has a default of `missing`
+The Player composite type should contain four fields, each having a type annotation and a default value:
+- The `name` is a `StringOrMissing`, with a default of `missing`
 - The `level` is an `Int64`, with a default of `0`
 - The `health` is an `Int64`, with a default of `100`
 - The `mana` is an `IntOrNothing`, with a default of `nothing`
@@ -22,8 +22,8 @@ Player(missing, 0, 100, nothing)
 julia> wealthyplayer = Player(mana=100)
 Player(missing, 0, 100, 100)
 
-julia> greatplayer = Player(name="Guilian the Great", level=10)
-Player("Guilian the Great", 10, 100, nothing)
+julia> namedplayer = Player(name="Guilian", level=10)
+Player("Guilian", 10, 100, nothing)
 ```
 
 ## 3. Introduce yourself
@@ -44,12 +44,12 @@ julia> introduce(Player(name="Merlin", level=2, health=8))
 ## 4. Implement increment methods
 
 The `increment` helper function has two methods, each with a different function signature.
-The arguments need type annotations to make the signatures explicit.
+The argument of each needs a type annotation to make the signature explicit.
 
-The `increment` method for giving a title should take a `name` and a `health`.
-If the name is `missing` or the health is `100` the title "The Great" is given as a name.
-Otherwise the title " the Great" is added onto the name.
-This `increment` function returns the new name.
+The `increment` method for names should take a player's `name`.
+- If the name is `missing` the title "The Great" is given as a name.
+- Otherwise the title " the Great" is added onto the name.
+This `increment` method returns the new name.
 
 ```julia-repl
 julia> player1 = Player(name="Ogre", level=5, health=49, mana=26)
@@ -86,13 +86,13 @@ julia> increment(player4.mana)
 
 ## 5. Implement the title function
 
-The `title` function should increment a player's name based on their level.
+The `title` function should increment a player's name to give a title, depending on their level.
 
 The `increment` helper function should be used depending on the level of the player.
 - If the player has the maximum level `42`, the name should be passed to the `increment` function.
 - Otherwise, no title is given and the player's name remains the same.
 
-The `title` function returns the player's name.
+The `title` function then returns the player's name.
 
 ```julia-repl
 julia> player1 = Player(level=42, health=12)
@@ -138,4 +138,10 @@ Player(missing, 12, 0, 5)
 
 julia> revive(deadplayer2)
 Player(missing, 12, 100, 105)
+
+julia> aliveplayer = Player(level=23, health=1)
+Player(missing, 23, 1, nothing)
+
+julia> revive(aliveplayer)
+Player(missing, 23, 1, nothing)
 ```
