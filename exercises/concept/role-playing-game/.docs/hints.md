@@ -8,7 +8,7 @@ This exercise is centered around a keyword composite type with type unions.
 
 ## 2. Implement the Player composite type
 
-- All fields should be annotated, two of which are type unions
+- All fields should be "annotated" (see `Node` example in introduction), two of which with type unions
 - All fields should have the default values in the instructions
 
 ## 3. Introduce yourself

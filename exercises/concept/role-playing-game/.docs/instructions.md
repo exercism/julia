@@ -13,7 +13,7 @@ The Player composite type should contain four fields, having type annotations an
 - The `name` can be a `String`, but has a default of `missing`
 - The `level` is an `Int64`, with a default of `0`
 - The `health` is an `Int64`, with a default of `100`
-- The `mana` which is an `IntOrNothing`, with a default of `nothing`
+- The `mana` is an `IntOrNothing`, with a default of `nothing`
  
 ```julia-repl
 julia> defaultplayer = Player()
