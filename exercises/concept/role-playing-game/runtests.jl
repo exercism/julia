@@ -34,13 +34,11 @@ include("role-playing-game.jl")
     end
 
     @testset "3. Introduce yourself" begin
-        @testset "with their own name" begin
-            namedplayer = Player(name="Gandalf", level=1, health=42)
-            @test introduce(namedplayer) == "Gandalf"
+        namedplayer = Player(name="Gandalf", level=1, health=42)
+        @test introduce(namedplayer) == "Gandalf"
 
-            unnamedplayer = Player(level=1, health=42)
-            @test introduce(unnamedplayer) == "Mighty Magician"
-        end
+        unnamedplayer = Player(level=1, health=42)
+        @test introduce(unnamedplayer) == "Mighty Magician"
     end
 
     @testset "4. Implement increment methods" begin
@@ -56,7 +54,7 @@ include("role-playing-game.jl")
     end
 
     @testset "5. Implement the title function" begin
-        @testset "lower level" begin
+        @testset "level < 42" begin
             defaultplayer = Player()
             title(defaultplayer)
             @test ismissing(defaultplayer.name)
@@ -66,7 +64,7 @@ include("role-playing-game.jl")
             @test namedplayer.name == "Willard"
         end
 
-        @testset "top level" begin
+        @testset "level = 42" begin
             namedplayer1 = Player(name="Genie", level=42, health=50)
             title(namedplayer1)
             @test namedplayer1.name == "Genie the Great"
