@@ -14,7 +14,7 @@ The Player composite type should contain four fields, each having a type annotat
 - The `level` is an `Int64`, with a default of `0`
 - The `health` is an `Int64`, with a default of `100`
 - The `mana` is an `IntOrNothing`, with a default of `nothing`
- 
+
 ```julia-repl
 julia> defaultplayer = Player()
 Player(missing, 0, 100, nothing)
@@ -47,8 +47,9 @@ The `increment` helper function has two methods, each with a different function 
 The argument of each needs a type annotation to make the signature explicit.
 
 The `increment` method for names should take a player's `name`.
-- If the name is `missing` the title "The Great" is given as a name.
+- If the name is `missing` return the title "The Great".
 - Otherwise the title " the Great" is added onto the name.
+
 This `increment` method returns the new name.
 
 ```julia-repl
@@ -66,9 +67,10 @@ julia> increment(player2.name)
 ```
 
 The `increment` method for mana should take a player's `mana`.
-- If the player's mana is `missing`, their mana should be set to `50`.
-- Otherwise their mana should be increased by `100`.
-This `increment` method returns the mana.
+- If the player's mana is `missing`, return a value of `50`.
+- Otherwise the mana should be increased by `100`.
+
+This `increment` method returns the updated mana.
 
 ```julia-repl
 julia> player3 = Player(level=3)
@@ -86,13 +88,12 @@ julia> increment(player4.mana)
 
 ## 5. Implement the title function
 
-The `title` function should increment a player's name to give a title, depending on their level.
+The highest level in the game is `42`.  To recognize the accomplishment of players who achieve this level, a title is attached to their names.  The `title` function updates a player's name as follows.
 
-The `increment` helper function should be used depending on the level of the player.
-- If the player has the maximum level `42`, the name should be passed to the `increment` function.
-- Otherwise, no title is given and the player's name remains the same.
+- If the player's level is 42, the name is updated using the `increment` function.
+- Otherwise, the name remains unchanged.
 
-The `title` function then returns the player's name.
+In either case, the `title` function returns the player's name.
 
 ```julia-repl
 julia> player1 = Player(level=42, health=12)
@@ -118,11 +119,11 @@ julia> title(player3)
 
 The `revive` function should check that the player's character is indeed dead (their health has reached `0`).
 
-If they are dead:
+If the player is dead:
 - The player should be revived with `100` health.
-- The player's mana should be incremented with the `increment` function.
-If they are alive:
-- Nothing happens to the player
+- The player's mana should be incremented using the `increment` function.
+
+If the player is  alive, nothing happens to the player
 
 The `revive` function should return the player.
 
