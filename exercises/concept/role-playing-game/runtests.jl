@@ -4,8 +4,8 @@ include("role-playing-game.jl")
 
 @testset verbose = true "tests" begin
     @testset "1. Define type unions" begin
-        @test IntOrNothing === Union{Int, Nothing}
         @test StringOrMissing === Union{String, Missing}
+        @test IntOrNothing === Union{Int, Nothing}
     end
 
     @testset "2. Implement the Player composite type" begin
@@ -56,22 +56,22 @@ include("role-playing-game.jl")
     @testset "5. Implement the title function" begin
         @testset "level < 42" begin
             defaultplayer = Player()
-            title(defaultplayer)
-            @test ismissing(defaultplayer.name)
+            name = title(defaultplayer)
+            @test ismissing(name) && ismissing(defaultplayer.name)
             
             namedplayer = Player(name="Willard", level=21)
-            title(Player(name="Willard", level=21))
-            @test namedplayer.name == "Willard"
+            name = title(Player(name="Willard", level=21))
+            @test name == namedplayer.name == "Willard"
         end
 
         @testset "level = 42" begin
-            namedplayer1 = Player(name="Genie", level=42, health=50)
-            title(namedplayer1)
-            @test namedplayer1.name == "Genie the Great"
+            namedplayer = Player(name="Genie", level=42, health=50)
+            name = title(namedplayer)
+            @test name == namedplayer.name == "Genie the Great"
             
             unnamedplayer = Player(level=42)
-            title(unnamedplayer) 
-            @test unnamedplayer.name == "The Great"
+            name = title(unnamedplayer) 
+            @test name == unnamedplayer.name == "The Great"
         end
     end
 

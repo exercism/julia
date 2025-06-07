@@ -1,8 +1,8 @@
-IntOrNothing = Union{Int, Nothing}
 StringOrMissing = Union{String, Missing}
+IntOrNothing = Union{Int, Nothing}
 
 @kwdef mutable struct Player
-    name::Union{String, Missing} = missing
+    name::StringOrMissing = missing
     level::Int = 0
     health::Int = 100
     mana::IntOrNothing = nothing
