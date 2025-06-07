@@ -305,6 +305,19 @@
         "status": "beta"
       },
       {
+        "slug": "role-playing-game",
+        "name": "Role Playing Game",
+        "uuid": "d4743644-05c7-47c6-a55d-423f76cf0d1f",
+        "concepts": [
+          "type-unions"
+        ],
+        "prerequisites": [
+          "parametric-types",
+          "nothingness"
+        ],
+        "status": "beta"
+      },
+      {
         "slug": "old-elyses-enchantments",
         "name": "Old Elyse's Enchantments",
         "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",

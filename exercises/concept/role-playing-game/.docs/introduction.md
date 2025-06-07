@@ -9,16 +9,12 @@ For example:
 ```julia-repl
 julia> x::Number = 3
 3
-
 julia> typeof(x)  # one subtype of Number
 Int64
-
 julia> x = 4.2
 4.2
-
 julia> typeof(x) # another subtype of Number
 Float64
-
 julia> x = "fail" # not a number type!
 ERROR: MethodError: Cannot `convert` an object of type String to an object of type Number
 ```
@@ -35,16 +31,12 @@ For a better approach, we have the `Union{ }` syntax, with two or more types lis
 ```julia-repl
 julia> y::Union{Integer, String} = 4
 4
-
 julia> typeof(y)
 Int64
-
 julia> y = "works"
 "works"
-
 julia> typeof(y)
 String
-
 julia> y = 5.3
 ERROR: MethodError: Cannot `convert` an object of type 
   Float64 to an object of type 
@@ -56,13 +48,10 @@ Another example uses the same type union in a function signature:
 ```julia-repl
 julia> IntOrString = Union{Integer, String}
 Union{Integer, String}
-
 julia> f(z::IntOrString) = z^3
 f (generic function with 1 method)
-
 julia> f(2) # integers are cubed
 8
-
 julia> f("ab") # strings are repeated 3 times
 "ababab"
 ```
@@ -97,7 +86,6 @@ The example below is very contrived, but missing values are common in real-world
 ```julia-repl
 julia> q(x::Real) = x >= 0 ? sqrt(x) : missing  # skip negative values
 q (generic function with 1 method)
-
 julia> vals::Vector{Union{Real, Missing}} = q.([4, 3.1, -1, 0])
 4-element Vector{Union{Missing, Float64}}:
  2.0
