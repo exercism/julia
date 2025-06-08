@@ -130,6 +130,18 @@
         "status": "beta"
       },
       {
+        "slug": "secrets",
+        "name": "Secrets",
+        "uuid": "7643efdd-42db-40ad-b6d0-b244f59b1fee",
+        "concepts": [
+          "bitwise-operations"
+        ],
+        "prerequisites": [
+          "conditionals"
+        ],
+        "status": "beta"
+      },
+      {
         "slug": "tisbury-treasure-hunt",
         "name": "Tisbury Treasure Hunt",
         "uuid": "3fbcfcde-822e-4d20-90f5-43588a4051a0",
