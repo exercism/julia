@@ -1497,6 +1497,11 @@
       "name": "Numbers"
     },
     {
+      "uuid": "bc8ffcd6-0569-4c97-8f98-a3acaaba22ab",
+      "slug": "bitwise-operations",
+      "name": "Bitwise Operations"
+    },
+    {
       "uuid": "3ce09c90-3096-4dcc-a53f-66d0054cbe43",
       "slug": "ranges",
       "name": "Ranges"

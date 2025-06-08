@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "Julia provides a rich set of bitwise operations that allow you to manipulate the individual bits of integers."
+}
