@@ -66,12 +66,6 @@ julia> happy || error("😞 something went wrong")
 ERROR: 😞 something went wrong
 ```
 
-Note that the `error()` function should not be confused with the [`@error`][error_macro] macro.
-
-The function generates an exception, which will be passed up the call stack.
-
-The macro, along with its [`@debug`][debug_macro], [`@info`][info_macro] and [`@warn`][warn_macro] counterparts, is part of the `Logging` module, and intended to generate informative messages without altering program flow.
-
 ## Custom errors
 
 Creating new error types is in principle very easy.
@@ -174,6 +168,25 @@ If you supply, for example, a string argument, there is no recovery except askin
 
 As a final catch-all, we added [`rethrow()`][rethrow] for anything which is neither `DomainError` nor `MethodError`.
 
+## Logging
+
+Note that the `error()` function, discussed above, should not be confused with the [`@error`][error_macro] macro.
+
+The function generates an exception, which will be passed up the call stack unless caught.
+
+The `@error` macro, along with its [`@debug`][debug_macro], [`@info`][info_macro] and [`@warn`][warn_macro] counterparts, is part of the [`Logging`][logging] module, and intended to generate informative messages without altering program flow.
+
+Output goes to the terminal by default (color-coded by severity), though in a real application there are many other possibilities.
+
+```julia-repl
+julia> @warn "Something looks not quite right"
+┌ Warning: Something looks not quite right
+└ @ Main REPL[55]:1
+
+julia> @error "Panic!"
+┌ Error: Panic!
+└ @ Main REPL[56]:1
+```
 
 
 [nothingness]: https://exercism.org/tracks/julia/concepts/nothingness
@@ -192,3 +205,4 @@ As a final catch-all, we added [`rethrow()`][rethrow] for anything which is neit
 [try-catch]: https://docs.julialang.org/en/v1/manual/control-flow/#The-try/catch-statement
 [types]: https://exercism.org/tracks/julia/concepts/types
 [rethrow]: https://docs.julialang.org/en/v1/base/base/#Base.rethrow
+[logging]: https://docs.julialang.org/en/v1/stdlib/Logging/
