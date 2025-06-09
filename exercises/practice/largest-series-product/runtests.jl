@@ -40,19 +40,19 @@ include("largest-series-product.jl")
     end
 
     @testset "error handling" begin
-        @testset "span longer than string length" begin
+        @testset "rejects span longer than string length" begin
             @test_throws ArgumentError largest_product("123", 4)
         end
 
-        @testset "empty string and nonzero span" begin
+        @testset "rejects empty string and nonzero span" begin
             @test_throws ArgumentError largest_product("", 1)
         end
 
-        @testset "invalid character in digits" begin
+        @testset "rejects invalid character in digits" begin
             @test_throws ArgumentError largest_product("1234a5", 2)
         end
 
-        @testset "negative span" begin
+        @testset "rejects negative span" begin
             @test_throws ArgumentError largest_product("12345", -1)
         end
     end

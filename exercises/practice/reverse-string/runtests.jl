@@ -35,10 +35,16 @@ include("reverse-string.jl")
         @test myreverse("hi 🐱") == "🐱 ih"
     end
 
+    @testset "wide characters" begin
+        @test myreverse("子猫") == "猫子"
+    end
+
     if @isdefined(TEST_GRAPHEMES)
         @eval @testset "graphemes" begin
             @test myreverse("as⃝df̅") == "f̅ds⃝a"
             @test myreverse("hi 👋🏾") == "👋🏾 ih"
+            @test myreverse("Würstchenstand") == "dnatsnehctsrüW"
+            @test myreverse("ผู้เขียนโปรแกรม") == "มรกแรปโนยขีเผู้"
         end
     end
 end
