@@ -168,7 +168,10 @@ If you supply, for example, a string argument, there is no recovery except askin
 
 As a final catch-all, we added [`rethrow()`][rethrow] for anything which is neither `DomainError` nor `MethodError`.
 
-There is also an optional `finally` clause which can be used for cleaning up external resources: closing files, dropping database connections...
+There are also more optional clauses:
+
+- [`else`][else], which is run if the `try` clause succeeds;
+- [`finally`][finally], which can be used for cleaning up external resources, regardless of whether the `try` succeeds or fails: closing files, dropping database connections...
 
 ***Note:*** Sometimes a `try...catch` is what you need, but please avoid over-using it.
 If an `if...else` block can be used instead, it will be much more performant than catching exceptions.
@@ -213,3 +216,5 @@ See also the previous example, under `try...catch`.
 [types]: https://exercism.org/tracks/julia/concepts/types
 [rethrow]: https://docs.julialang.org/en/v1/base/base/#Base.rethrow
 [logging]: https://docs.julialang.org/en/v1/stdlib/Logging/
+[else]: https://docs.julialang.org/en/v1/manual/control-flow/#else-Clauses
+[finally]: https://docs.julialang.org/en/v1/manual/control-flow/#finally-Clauses
