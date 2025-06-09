@@ -330,6 +330,18 @@
         "status": "beta"
       },
       {
+        "slug": "factory-sensors",
+        "name": "factory-sensors",
+        "uuid": "9035258e-2f00-44ca-b1dd-15180eb5bea2",
+        "concepts": [
+          "errors"
+        ],
+        "prerequisites": [
+          "composite-types",
+          "nothingness"
+        ]
+      },
+      {
         "slug": "old-elyses-enchantments",
         "name": "Old Elyse's Enchantments",
         "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",
