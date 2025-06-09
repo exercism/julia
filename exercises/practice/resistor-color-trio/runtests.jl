@@ -59,7 +59,7 @@ include("resistor-color-trio.jl")
         @test label(["black", "grey", "black"]) == "8 ohms"
     end
 
-    @tetset "Ignore extra colors" begin
+    @testset "Ignore extra colors" begin
         @test label(["blue", "green", "yellow", "orange"]) == "650 kiloohms"
     end
 end
