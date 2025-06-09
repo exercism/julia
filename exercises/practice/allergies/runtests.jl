@@ -11,6 +11,7 @@ include("allergies.jl")
             @test  allergic_to(3, "eggs")
             @test !allergic_to(2, "eggs")
             @test  allergic_to(255, "eggs")
+            @test  allergic_to(257, "eggs")
         end
 
         @testset "testing for peanuts allergy" begin

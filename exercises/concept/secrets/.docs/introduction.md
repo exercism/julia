@@ -8,7 +8,7 @@ High-level languages like Julia usually abstract away most of this detail.
 However, a full range of bit-level operations are available in the base language.
 
 ***Note:*** To see human-readable binary output in the REPL, nearly all the examples below need to be wrapped in a `bitstring()` function.
-This is visually distracting, so most occurences of this function have been edited out.
+This is visually distracting, so most occurrences of this function have been edited out.
 
 ## Bit-shift operations
 

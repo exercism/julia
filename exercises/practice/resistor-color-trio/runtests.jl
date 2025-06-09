@@ -42,4 +42,24 @@ include("resistor-color-trio.jl")
     @testset "White and black and white" begin
         @test label(["white", "black", "white"]) == "90 gigaohms"
     end
+
+    @testset "Blue and violet and blue" begin
+        @test label(["blue", "violet", "blue"]) == "67 megaohms"
+    end
+
+    @testset "Minimum possible value" begin
+        @test label(["black", "black", "black"]) == "0 ohms"
+    end
+
+    @testset "Maximum possible value" begin
+        @test label(["white", "white", "white"]) == "99 gigaohms"
+    end
+
+    @testset "First two colors make an invalid octal number" begin
+        @test label(["black", "grey", "black"]) == "8 ohms"
+    end
+
+    @testset "Ignore extra colors" begin
+        @test label(["blue", "green", "yellow", "orange"]) == "650 kiloohms"
+    end
 end

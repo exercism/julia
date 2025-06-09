@@ -45,6 +45,10 @@ include("pig-latin.jl")
         @testset "word beginning with q without a following u" begin
             @test translate("qat") == "atqay"
         end
+
+        @testset "word beginning with consonant and vowel containing qu" begin
+            @test translate("liquid") == "iquidlay"
+        end
     end
 
     @testset "some letter clusters are treated like a single consonant" begin

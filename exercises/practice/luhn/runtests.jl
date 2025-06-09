@@ -28,6 +28,10 @@ include("luhn.jl")
             @test !luhn("1 2345 6789 1234 5678 9012")
         end
 
+        @testset "invalid long number with a remainder divisible by 5" begin
+            @test !luhn("1 2345 6789 1234 5678 9013")
+        end
+
         @testset "valid strings with a non-digit added at the end become invalid" begin
             @test !luhn("059a")
         end
@@ -50,6 +54,10 @@ include("luhn.jl")
 
         @testset "using ascii value for doubled non-digit isn't allowed" begin
             @test !luhn(":9")
+        end
+
+        @testset "non-numeric, non-space char in the middle with a sum that's divisible by 10 isn't allowed" begin
+            @test !luhn("59%59")
         end
     end
 
@@ -80,6 +88,14 @@ include("luhn.jl")
 
         @testset "input digit 9 is correctly converted to output digit 9" begin
             @test luhn("091")
+        end
+
+        @testset "valid luhn with an odd number of digits and non zero first digit" begin
+            @test luhn("109")
+        end
+
+        @testset "very long input is valid" begin
+            @test luhn("9999999999 9999999999 9999999999 9999999999")
         end
     end
 end
