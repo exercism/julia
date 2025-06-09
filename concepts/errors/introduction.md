@@ -138,7 +138,7 @@ This continues up the call stack, until the top-level code terminates with an er
 
 At any stage, the error can be intercepted with a `try...catch` block which attempts to handle it.
 
-```julia
+```julia-repl
 julia> n = -1;
 julia> try
            log_n = log(n)
@@ -168,6 +168,9 @@ If you supply, for example, a string argument, there is no recovery except askin
 
 As a final catch-all, we added `rethrow()` for anything which is neither `DomainError` nor `MethodError`.
 
+***Note:*** Sometimes a `try...catch` is what you need, but please avoid over-using it.
+If an `if...else` block can be used instead, it will be much more performant than catching exceptions.
+
 ## Logging
 
 Note that the `error()` function, discussed above, should not be confused with the `@error` macro.
@@ -187,6 +190,8 @@ julia> @error "Panic!"
 ┌ Error: Panic!
 └ @ Main REPL[56]:1
 ```
+
+See also the previous example, under `try...catch`.
 
 
 [nothingness]: https://exercism.org/tracks/julia/concepts/nothingness
