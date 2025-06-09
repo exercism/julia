@@ -11,6 +11,7 @@ questions = (
         "Wait! Hang on. Are you going to be OK?",
         "Okay if like my  spacebar  quite a bit?   ",
         "Oida?",
+        "heyBob": "\nDoes this cryogenic chamber make\n me look fat?"
 )
 
 yells = (
@@ -38,7 +39,6 @@ miscs = (
         "Es ist okay, wenn du nicht für den BND arbeiten möchtest.",
         "1, 2, 3",
         "Ending with ? means a question.",
-        "\nDoes this cryogenic chamber make me look fat?\nno",
         "         hmmmmmmm...",
         "This is a statement ending with whitespace      ",
         "Oida.",
