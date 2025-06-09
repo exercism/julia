@@ -58,6 +58,10 @@ end
         @test_throws DomainError ISBN("3132P34035")
         # input is too long but contains a valid ISBN
         @test_throws DomainError ISBN("98245726788")
+        # invalid check digit in isbn is not treated as zero
+        @test_throws DomainError ISBN("4-598-21507-B")
+        # invalid characters are not ignored before checking length
+        @test_throws DomainError ISBN("3598P215088")
     end
 
     @testset "ISBNs compare equal when they're the same number" begin

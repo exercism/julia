@@ -59,4 +59,8 @@ include("word-count.jl")
     @testset "alternating word separators not detected as a word" begin
         @test wordcount(",\n,one,\n ,two \n 'three'") == Dict("one" => 1, "two" => 1, "three" => 1)
     end
+
+    @testset "quotation for word with apostrophe" begin
+        @test wordcount("can, can't, 'can't'") == Dict("can" => 1, "can't" => 2)
+    end
 end

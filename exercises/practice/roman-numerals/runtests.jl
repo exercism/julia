@@ -31,6 +31,7 @@ samples = Dict(
     2017 => "MMXVII",
     3000 => "MMM",
     3001 => "MMMI",
+    3888 => "MMMDCCCLXXXVIII",
     3999 => "MMMCMXCIX",
 )
 
