@@ -339,7 +339,8 @@
         "prerequisites": [
           "composite-types",
           "nothingness"
-        ]
+        ],
+        "status": "beta"
       },
       {
         "slug": "old-elyses-enchantments",
