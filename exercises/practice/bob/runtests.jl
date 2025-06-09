@@ -11,7 +11,7 @@ questions = (
         "Wait! Hang on. Are you going to be OK?",
         "Okay if like my  spacebar  quite a bit?   ",
         "Oida?",
-        "heyBob": "\nDoes this cryogenic chamber make\n me look fat?"
+        "\nDoes this cryogenic chamber make\n me look fat?"
 )
 
 yells = (
