@@ -2,7 +2,11 @@ import Base: AbstractSet, isempty, length, in, issubset, iterate,
              push!, ==, copy, intersect!, intersect, union!, union
 
 struct CustomSet{T} <: AbstractSet{T}
-    elements::Array{T, 1}
+    elements::Vector{T}
+    function CustomSet(x)
+        s = unique(x)
+        new{eltype(s)}(s)
+    end
 end
 
 isempty(s::CustomSet) = isempty(s.elements)
