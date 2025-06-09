@@ -156,8 +156,11 @@ julia> try
 
            elseif problem isa MethodError # no idea what n is
                @error "please supply a valid argument"
+ 
+           else
+              rethrow() # the error could be anything else
            end
-       end
+      end
 ┌ Warning: you may have supplied a negative real number: -1
 └ @ Main REPL[3]:5
 [ Info: trying with complex argument
@@ -167,7 +170,9 @@ julia> try
 In the example above, `log(n)` needs `n` to be either a positive real value, or any complex value.
 The `try ... catch` traps problems with negative real values, returning the correct complex answer `iπ` in mathematical notation.
 
-If you supply, for axample, a string argument, there is no recovery except asking the user to correct it.
+If you supply, for example, a string argument, there is no recovery except asking the user to correct it.
+
+As a final catch-all, we added `rethrow()` for anything which is neither `DomainError` nor `MethodError`.
 
 [nothingness]: https://exercism.org/tracks/julia/concepts/nothingness
 [errors]: https://docs.julialang.org/en/v1/manual/control-flow/#Built-in-Exceptions
