@@ -17,7 +17,7 @@ include("anagram.jl")
         end
 
         @testset "detects two anagrams" begin
-            @test detect_anagrams("master", ["stream", "pigeon", "maters"]) == ["stream", "maters"]
+            @test detect_anagrams("solemn", ["lemons", "cherry", "melons"]) == ["lemons", "melons"]
         end
 
         @testset "does not detect anagram subsets" begin
@@ -65,23 +65,35 @@ include("anagram.jl")
         end
 
         @testset "does not detect a anagram if the original word is repeated" begin
-            @test detect_anagrams("go", ["go Go GO"]) == String[]
+            @test detect_anagrams("go", ["goGoGO"]) == String[]
         end
 
         @testset "anagrams must use all letters exactly once" begin
             @test detect_anagrams("tapper", ["patter"]) == String[]
         end
 
-        @testset "words are not anagrams of themselves (case-insensitive)" begin
-            @test detect_anagrams("BANANA", ["BANANA", "Banana", "banana"]) == String[]
+        @testset "words are not anagrams of themselves" begin
+            @test detect_anagrams("BANANA", ["BANANA"]) == String[]
+        end
+
+        @testset "words are not anagrams of themselves even if letter case is partially different" begin
+            @test detect_anagrams("BANANA", ["Banana"]) == String[]
+        end
+
+        @testset "words are not anagrams of themselves even if letter case is completely different" begin
+            @test detect_anagrams("BANANA", ["banana"]) == String[]
         end
 
         @testset "words other than themselves can be anagrams" begin
-            @test detect_anagrams("LISTEN", ["Listen", "Silent", "LISTEN"]) == ["Silent"]
+            @test detect_anagrams("LISTEN", ["Silent", "LISTEN"]) == ["Silent"]
         end
 
         @testset "capital word is not own anagram" begin
             @test detect_anagrams("BANANA", ["Banana"]) == String[]
+        end
+
+        @testset "handles case of greek letters" begin
+            @test detect_anagrams("ΑΒΓ", ["ΒΓΑ", "ΒΓΔ", "γβα", "αβγ"]) == ["ΒΓΑ", "γβα"]
         end
     end
 end
