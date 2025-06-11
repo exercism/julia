@@ -331,7 +331,7 @@
       },
       {
         "slug": "factory-sensors",
-        "name": "factory-sensors",
+        "name": "Factory Sensors",
         "uuid": "9035258e-2f00-44ca-b1dd-15180eb5bea2",
         "concepts": [
           "errors"
