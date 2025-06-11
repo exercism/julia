@@ -25,4 +25,3 @@
 - If you use them, you should be able to check independently if both functions throw errors and add the appropriate logs.
 - A variable defined outside of a `try...catch` block can be updated from inside the block if needed.
 - Reminder: if one check or both checks fail, you only need to throw one `MachineError` after the logs have been added.
-- 
