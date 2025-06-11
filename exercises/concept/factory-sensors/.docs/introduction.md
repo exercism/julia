@@ -9,7 +9,7 @@ Some language designers believe that the priority is to detect an error as quick
 Data science languages tend to take a more nuanced approach.
 Some errors are so serious that immediate termination is necessary, but often it is better to flag a problem as something to be dealt with later, then continue execution.
 
-We saw in the [Nothingness][nothingness] Concept that Julia provides various placeholders for problematic values: `nothing`, `NaN` and `Inf`.
+We saw in the [Nothingness][nothingness] Concept that Julia provides various placeholders for problematic values: `missing`, `NaN` and `Inf`.
 Whether these are a better approach than program termination in a particular situation is a matter for programmer judgement.
 
 _A point of nomenclature_ before getting into the details: the Julia documentation treats the words "error" and "exception" as largely interchangeable.
@@ -39,7 +39,7 @@ Exception
 
 Some of the standard error types might be useful to generate in your own code.
 
-Like all concrete types, the errors have constuctors.
+Like all concrete types, the errors have constructors.
 They take a variety of arguments, so check the [documentation][errors] for the one you want to use.
 
 ```julia-repl
@@ -117,6 +117,7 @@ julia> try
            log_n = log(n)
        catch problem
            if problem isa DomainError # number out of range
+               # See next section for more on @warn and @info
                @warn "you may have supplied a negative real number: $n"
                @info "trying with complex argument"
                log_n = log(Complex(n))  # fallback calculation
