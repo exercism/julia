@@ -10,7 +10,7 @@ Your first mission is to write a piece of software to monitor the humidity level
 
 You need to implement a function in the software that will throw an error if the humidity percentage is too high.
 If the humidity is at an acceptable level, a info log will be added.
-The function should be called `humiditycheck` and take the humidity percentage as a parameter.
+The function should be called `humiditycheck` and take the humidity percentage as an argument.
 
 You should halt with an ErrorException (the exact message is not important, but must contain the measured humidity level) if the percentage exceeds 70%. 
 Otherwise, add an Info log, with the message `"humidity level check passed: h%"`, where `h` is the humidity percentage.
@@ -34,7 +34,7 @@ The machine is equipped with a sensor that measures its internal temperature.
 You should know that the sensor is very sensitive and often breaks.
 In this case, the technicians will need to change it.
 
-Your job is to implement a function `temperaturecheck` that takes the temperature as a parameter and either adds a log if all is well or throws an error if the sensor is broken or if the machine starts overheating.
+Your job is to implement a function `temperaturecheck` that takes the temperature as an argument and either adds a log if all is well or throws an error if the sensor is broken or if the machine starts overheating.
 Knowing that you will later need to react differently depending on the error, you need a mechanism to differentiate the two kinds of errors.
 
 - If the sensor is broken, the temperature will be `nothing`.
