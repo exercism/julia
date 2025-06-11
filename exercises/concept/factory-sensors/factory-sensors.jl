@@ -1,11 +1,13 @@
-function humidity_level_ok(pct_humidity)
+function humiditycheckk(pct_humidity)
 
 end
 
-function temperature_ok(temperature)
+function temperaturecheck(temperature)
 
 end
 
-function monitor_the_machine(pct_humidity, temperature)
+# define MachineError here
+
+function machinemonitor(pct_humidity, temperature)
     
 end
