@@ -1,4 +1,4 @@
-function humiditycheckk(pct_humidity)
+function humiditycheck(pct_humidity)
     
 end
 
