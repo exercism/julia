@@ -1,4 +1,4 @@
-# About
+# Introduction
 
 Programmers generally try to write perfect software, and generally fail.
 
@@ -9,7 +9,7 @@ Some language designers believe that the priority is to detect an error as quick
 Data science languages tend to take a more nuanced approach.
 Some errors are so serious that immediate termination is necessary, but often it is better to flag a problem as something to be dealt with later, then continue execution.
 
-We saw in the [Nothingness][nothingness] Concept that Julia provides various placeholders for problematic values: [`nothing`][nothing], [`NaN`][NaN] and `Inf`.
+We saw in the [Nothingness][nothingness] Concept that Julia provides various placeholders for problematic values: `missing`, `NaN` and `Inf`.
 Whether these are a better approach than program termination in a particular situation is a matter for programmer judgement.
 
 _A point of nomenclature_ before getting into the details: the Julia documentation treats the words "error" and "exception" as largely interchangeable.
@@ -39,7 +39,7 @@ Exception
 
 Some of the standard error types might be useful to generate in your own code.
 
-Like all concrete types, the errors have constuctors.
+Like all concrete types, the errors have constructors.
 They take a variety of arguments, so check the [documentation][errors] for the one you want to use.
 
 ```julia-repl
@@ -47,7 +47,7 @@ julia> DomainError(42, "out of range")
 DomainError(42, "out of range")
 ```
 
-To use the error, wrap the constructor in a [`throw()`][throw] function:
+To use the error, wrap the constructor in a `throw()` function:
 
 ```julia-repl
 julia> throw(DomainError(42, "out of range"))
@@ -57,7 +57,7 @@ out of range
 
 ## `error()`
 
-For a quick-and-dirty approach, the [`error()`][error] function can be convenient.
+For a quick-and-dirty approach, the `error()` function can be convenient.
 It takes a string (or the components of a string) as argument:
 
 ```julia-repl
@@ -78,33 +78,6 @@ julia> throw(MyError)
 ERROR: MyError
 ```
 
-However, the above example has no fields and the constructor takes no arguments, so we have no control over the error message.
-We can add a message field:
-
-```julia-repl
-julia> struct AnotherError <: Exception
-           msg::String
-       end
-
-julia> throw(AnotherError("Wrong!"))
-ERROR: AnotherError("Wrong!")
-```
-
-Simply printing out the constructor is not yet quite right.
-Compare the earlier example where we threw a `DomainError`.
-
-To have a custom error handled in the same was as built-in errors, we need to add a [`showerror()`][showerror] method:
-
-```julia-repl
-julia> Base.showerror(io::IO, e::AnotherError) =
-           print(io, "AnotherError: ", e.msg)
-
-julia> throw(AnotherError("Wrong!"))
-ERROR: AnotherError: Wrong!
-```
-
-This rather poorly-documented feature in essence hooks our custom error type into Julia's standard error-handling system.
-
 ## Assertions
 
 The basic idea of an assertion is "this statement ought to be true, so complain loudly if it is false."
@@ -120,7 +93,7 @@ julia> "two"::Number
 ERROR: TypeError: in typeassert, expected Number, got a value of type String
 ```
 
-More generally, the [`@assert`][assert] macro lets us test any expression that evaluates to a boolean:
+More generally, the `@assert` macro lets us test any expression that evaluates to a boolean:
 
 ```julia-repl
 julia> n = 22;
@@ -136,7 +109,7 @@ By default, an error immediately terminates the current function, and the error 
 
 This continues up the call stack, until the top-level code terminates with an error message.
 
-At any stage, the error can be intercepted with a [`try...catch`][try-catch] block which attempts to handle it.
+At any stage, the error can be intercepted with a `try...catch` block which attempts to handle it.
 
 ```julia-repl
 julia> n = -1;
@@ -144,6 +117,7 @@ julia> try
            log_n = log(n)
        catch problem
            if problem isa DomainError # number out of range
+               # See next section for more on @warn and @info
                @warn "you may have supplied a negative real number: $n"
                @info "trying with complex argument"
                log_n = log(Complex(n))  # fallback calculation
@@ -166,23 +140,18 @@ The `try ... catch` traps problems with negative real values, returning the corr
 
 If you supply, for example, a string argument, there is no recovery except asking the user to correct it.
 
-As a final catch-all, we added [`rethrow()`][rethrow] for anything which is neither `DomainError` nor `MethodError`.
-
-There are also more optional clauses:
-
-- [`else`][else], which is run if the `try` clause succeeds;
-- [`finally`][finally], which can be used for cleaning up external resources, regardless of whether the `try` succeeds or fails: closing files, dropping database connections...
+As a final catch-all, we added `rethrow()` for anything which is neither `DomainError` nor `MethodError`.
 
 ***Note:*** Sometimes a `try...catch` is what you need, but please avoid over-using it.
 If an `if...else` block can be used instead, it will be much more performant than catching exceptions.
 
 ## Logging
 
-Note that the `error()` function, discussed above, should not be confused with the [`@error`][error_macro] macro.
+Note that the `error()` function, discussed above, should not be confused with the `@error` macro.
 
 The function generates an exception, which will be passed up the call stack unless caught.
 
-The `@error` macro, along with its [`@debug`][debug_macro], [`@info`][info_macro] and [`@warn`][warn_macro] counterparts, is part of the [`Logging`][logging] module, and intended to generate informative messages without altering program flow.
+The `@error` macro, along with its `@debug`, `@info` and `@warn` counterparts, is part of the `Logging` module, and intended to generate informative messages without altering program flow.
 
 Output goes to the terminal by default (color-coded by severity), though in a real application there are many other possibilities.
 
@@ -200,21 +169,5 @@ See also the previous example, under `try...catch`.
 
 
 [nothingness]: https://exercism.org/tracks/julia/concepts/nothingness
-[nothing]: https://docs.julialang.org/en/v1/base/base/#Core.Nothing
-[missing]: https://docs.julialang.org/en/v1/base/base/#Base.missing
-[NaN]: https://en.wikipedia.org/wiki/NaN
 [errors]: https://docs.julialang.org/en/v1/manual/control-flow/#Built-in-Exceptions
-[assert]: https://docs.julialang.org/en/v1/base/base/#Base.@assert
-[showerror]: https://docs.julialang.org/en/v1/base/io-network/#Base.showerror
-[error_macro]: https://docs.julialang.org/en/v1/stdlib/Logging/#Logging.Error
-[debug_macro]: https://docs.julialang.org/en/v1/stdlib/Logging/#Logging.Debug
-[info_macro]: https://docs.julialang.org/en/v1/stdlib/Logging/#Logging.Info
-[warn_macro]: https://docs.julialang.org/en/v1/stdlib/Logging/#Logging.Warn
-[error]: https://docs.julialang.org/en/v1/manual/control-flow/#Errors 
-[throw]: https://docs.julialang.org/en/v1/manual/control-flow/#The-%5Bthrow%5D(@ref)-function
-[try-catch]: https://docs.julialang.org/en/v1/manual/control-flow/#The-try/catch-statement
 [types]: https://exercism.org/tracks/julia/concepts/types
-[rethrow]: https://docs.julialang.org/en/v1/base/base/#Base.rethrow
-[logging]: https://docs.julialang.org/en/v1/stdlib/Logging/
-[else]: https://docs.julialang.org/en/v1/manual/control-flow/#else-Clauses
-[finally]: https://docs.julialang.org/en/v1/manual/control-flow/#finally-Clauses
