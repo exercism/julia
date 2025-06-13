@@ -857,8 +857,14 @@
         "slug": "secret-handshake",
         "name": "Secret Handshake",
         "uuid": "d2c85375-c0e7-4e04-88f1-08736e5afa04",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "bitwise-operations"
+        ],
+        "prerequisites": [
+          "bitwise-operations",
+          "conditionals",
+          "vector-operations"
+        ],
         "difficulty": 2,
         "topics": [
           "arrays",
