@@ -39,3 +39,6 @@ function exp(z::ComplexNumber)
     e_re = exp(z_re)
     ComplexNumber(e_re * cos(z_im), e_re * sin(z_im))
 end
+
+enable_syntaxsugar_tests = true
+enable_realcomplex_tests = true
