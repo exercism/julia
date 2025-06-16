@@ -174,7 +174,8 @@
         ],
         "prerequisites": [
           "vector-operations",
-          "pairs-and-dicts"
+          "pairs-and-dicts",
+          "tuples"
         ],
         "status": "beta"
       },
@@ -500,8 +501,12 @@
         "slug": "difference-of-squares",
         "name": "Difference of Squares",
         "uuid": "16550822-4751-4bb3-9e15-80361006e2d6",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "numbers"
+        ],
+        "prerequisites": [
+          "numbers"
+        ],
         "difficulty": 1,
         "topics": [
           "generators",
@@ -531,8 +536,13 @@
         "slug": "darts",
         "name": "Darts",
         "uuid": "25e1ab6b-782b-4892-8220-f332ebe44b23",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "conditionals"
+        ],
+        "prerequisites": [
+          "conditionals",
+          "numbers"
+        ],
         "difficulty": 1,
         "topics": [
           "conditionals",
@@ -797,16 +807,25 @@
         "slug": "eliuds-eggs",
         "name": "Eliud's Eggs",
         "uuid": "cc2a6031-d5fa-465b-aa28-13186d7eb202",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "bitwise-operations"
+        ],
+        "prerequisites": [
+          "bitwise-operations"
+        ],
         "difficulty": 1
       },
       {
         "slug": "two-fer",
         "name": "Two-Fer",
         "uuid": "91a8a9c0-041c-4e2e-97fc-dae149ef69f9",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "functions"
+        ],
+        "prerequisites": [
+          "functions",
+          "strings"
+        ],
         "difficulty": 1
       },
       {
@@ -821,8 +840,13 @@
         "slug": "rotational-cipher",
         "name": "Rotational Cipher",
         "uuid": "79ea05f1-3f27-4b92-bc47-0cebcd8d5a6f",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "chars"
+        ],
+        "prerequisites": [
+          "chars",
+          "strings"
+        ],
         "difficulty": 2,
         "topics": [
           "metaprogramming",
@@ -834,8 +858,14 @@
         "slug": "secret-handshake",
         "name": "Secret Handshake",
         "uuid": "d2c85375-c0e7-4e04-88f1-08736e5afa04",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "bitwise-operations"
+        ],
+        "prerequisites": [
+          "bitwise-operations",
+          "conditionals",
+          "vector-operations"
+        ],
         "difficulty": 2,
         "topics": [
           "arrays",
@@ -893,8 +923,13 @@
         "slug": "collatz-conjecture",
         "name": "Collatz Conjecture",
         "uuid": "d1d5a74a-d488-4e2e-bd63-b74730057c98",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "conditionals"
+        ],
+        "prerequisites": [
+          "conditionals",
+          "numbers"
+        ],
         "difficulty": 2,
         "topics": [
           "exception_handling",
@@ -975,8 +1010,14 @@
         "slug": "bob",
         "name": "Bob",
         "uuid": "9474a13b-09c1-4e4d-90e3-1a14fde5eb62",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "conditionals",
+          "strings"
+        ],
+        "prerequisites": [
+          "conditionals",
+          "strings"
+        ],
         "difficulty": 2,
         "topics": [
           "conditionals",
@@ -1041,8 +1082,12 @@
         "slug": "space-age",
         "name": "Space Age",
         "uuid": "f4bfe822-90cc-4183-8a50-081ff0fdb512",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "pairs-and-dicts"
+        ],
+        "prerequisites": [
+          "pairs-and-dicts"
+        ],
         "difficulty": 2
       },
       {
@@ -1057,16 +1102,27 @@
         "slug": "queen-attack",
         "name": "Queen Attack",
         "uuid": "e68041f6-a661-41dd-94fb-2000095803ae",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "composite-types",
+          "errors"
+        ],
+        "prerequisites": [
+          "composite-types",
+          "errors"
+        ],
         "difficulty": 2
       },
       {
         "slug": "reverse-string",
         "name": "Reverse String",
         "uuid": "e73f19f7-17bc-4d51-a00a-c2b58c1fa8e6",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "chars"
+        ],
+        "prerequisites": [
+          "chars",
+          "strings"
+        ],
         "difficulty": 3,
         "topics": [
           "generics",
@@ -1105,8 +1161,14 @@
         "slug": "perfect-numbers",
         "name": "Perfect Numbers",
         "uuid": "4fc89443-1c5c-492a-850f-7990869caae6",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "conditionals",
+          "numbers"
+        ],
+        "prerequisites": [
+          "conditionals",
+          "numbers"
+        ],
         "difficulty": 3,
         "topics": [
           "loops",
@@ -1160,8 +1222,13 @@
         "slug": "diamond",
         "name": "Diamond",
         "uuid": "e082b59e-5c2a-4474-8c73-ceb623bcd858",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "chars"
+        ],
+        "prerequisites": [
+          "chars",
+          "strings"
+        ],
         "difficulty": 3
       },
       {
