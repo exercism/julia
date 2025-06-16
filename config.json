@@ -174,7 +174,8 @@
         ],
         "prerequisites": [
           "vector-operations",
-          "pairs-and-dicts"
+          "pairs-and-dicts",
+          "tuples"
         ],
         "status": "beta"
       },
