@@ -4,10 +4,11 @@ The Julia Base implementation of complex numbers can be found here: https://gith
 
 ---
 
-You can work on the bonus exercises by changing `@test_skip` to `@test`.
-
 ## Bonus A
-Implement the exponential function on complex numbers `exp(::ComplexNumber)`.
+You can work on the bonus exercises involving arithmetic between real numbers and complex numbers by uncommenting:
+`# enable_realcomplex_tests = true` in the stub `complex-numbers.jl` or in `runtests.jl`
 
 ## Bonus B
-Implement `jm` analogous to `im` so that `1 + 1jm == ComplexNumber(1, 1)`.
+You can work on the bonus exercises between real numbers and complex numbers by uncommenting:
+`# enable_syntaxsugar_tests = true` in the stub `complex-numbers.jl` or in `runtests.jl`
+Then, implement `jm` analogous to `im` so that `1 + 1jm == ComplexNumber(1, 1)`.
