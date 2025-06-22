@@ -344,6 +344,18 @@
         "status": "beta"
       },
       {
+        "slug": "problematic-probabilities",
+        "name": "Problematic Probabilities",
+        "uuid": "f3fe4029-03fd-4dde-aeeb-a05f4873f377",
+        "concepts": [
+          "rational-numbers"
+        ],
+        "prerequisites": [
+          "loops"
+        ],
+        "status": "beta"
+      },
+      {
         "slug": "old-elyses-enchantments",
         "name": "Old Elyse's Enchantments",
         "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",
