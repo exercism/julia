@@ -31,7 +31,7 @@ Similarly, the `probabilities(successes, trials)` function takes two arrays, `su
 It returns an array of floats of the successes over the number of trials, in the same order as the input arrays.
 
 ```julia-repl
-julia> prababilities(([1, 2, 3], [4, 5, 6]))
+julia> probabilities(([1, 2, 3], [4, 5, 6]))
 3-element Vector{Float64}:
  0.25
  0.4
