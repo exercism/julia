@@ -45,6 +45,11 @@ include("eachexercise.jl")
                     Base.include(m, joinpath(exercise_path, aux_file))
                 end
             end
+            if haskey(cfg["files"], "editor")
+                for aux_file in cfg["files"]["editor"]
+                    Base.include(m, joinpath(exercise_path, aux_file))
+                end
+            end
             Base.include(m, joinpath(exercise_path, "runtests.jl"))
         end
     end

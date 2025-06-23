@@ -31,6 +31,13 @@ eachexercise(ARGS) do exercise, exercise_type, exercise_path, example_path
         end
     end
 
+    # Copy editor files to temporary directory
+    if haskey(meta_cfg["files"], "editor")
+        for aux_file in meta_cfg["files"]["editor"]
+            cp(joinpath(exercise_path, aux_file), joinpath(tmp, aux_file))
+        end
+    end
+
     # Copy runtests.jl to temporary directory
     cp(joinpath(exercise_path, "runtests.jl"), joinpath(tmp, "runtests.jl"))
 
