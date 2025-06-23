@@ -13,7 +13,7 @@
     "example": [
       ".meta/example.jl"
     ],
-    "auxiliary": [
+    "editor": [
       "permutations.jl"
     ]
   },
