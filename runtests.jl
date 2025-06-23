@@ -40,6 +40,11 @@ include("eachexercise.jl")
             # so we define our own.
             @eval m include(s) = Base.include($m, $example_path)
             running_in_gha || @info "[$(uppercase(exercise_type))] Testing $exercise"
+            if haskey(cfg["files"], "editor")
+                for aux_file in meta_cfg["files"]["editor"]
+                    Base.include(m, joinpath(exercise_path, aux_file))
+                end
+            end
             Base.include(m, joinpath(exercise_path, "runtests.jl"))
         end
     end
