@@ -27,7 +27,7 @@ eachexercise(ARGS) do exercise, exercise_type, exercise_path, example_path
     # Copy auxiliary files to temporary directory
     if haskey(meta_cfg["files"], "editor")
         for aux_file in meta_cfg["files"]["editor"]
-            cp(joinpath(example_path, aux_file), joinpath(tmp, aux_file))
+            cp(joinpath(exercise_path, aux_file), joinpath(tmp, aux_file))
         end
     end
 
