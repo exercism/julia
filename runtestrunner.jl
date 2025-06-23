@@ -23,6 +23,15 @@ eachexercise(ARGS) do exercise, exercise_type, exercise_path, example_path
     # Copy solution to temporary directory
     tmp = mktempdir(; prefix="jl_$(exercise)_")
     cp(example_path, joinpath(tmp, solution_file))
+
+    # Copy auxiliary files to temporary directory
+    if haskey(meta_cfg["files"], "editor")
+        for aux_file in meta_cfg["files"]["editor"]
+            cp(joinpath(example_path, aux_file), joinpath(tmp, aux_file))
+        end
+    end
+
+    # Copy runtests.jl to temporary directory
     cp(joinpath(exercise_path, "runtests.jl"), joinpath(tmp, "runtests.jl"))
 
     # Run test-runner
