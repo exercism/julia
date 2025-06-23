@@ -12,7 +12,7 @@
     "exemplar": [
       ".meta/exemplar.jl"
     ],
-    "editor": [
+    "auxiliary": [
       "sets_categories_data.jl"
     ]
   },
