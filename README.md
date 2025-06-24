@@ -59,7 +59,7 @@ end
 Where the `"tests"` testset is a *verbose* wrapper for *non-verbose* exercise specific testing (used for formatting testing output).
 In other words, all (exercise specific) inner `testset` should omit `verbose = true` (e.g. first line: `@testset "testset name" begin`).
 
-Should helper files be needed for testing or boilerplate, place them in the same top-level folder as `runtests.jl` and explicitly `include` them in `runtests.jl`:
+If helper files are needed for testing or boilerplate, place them in the same top-level folder as `runtests.jl` and explicitly `include` them in `runtests.jl`:
 ```julia
 using Test
 
