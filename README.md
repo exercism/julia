@@ -22,3 +22,92 @@ Your example solutions should adhere to the following guidelines:
 - use lower case for method names, add underscores if necessary
 
 These are based on the [General Formatting Guidelines](https://github.com/JuliaLang/julia/blob/master/CONTRIBUTING.md#general-formatting-guidelines-for-julia-code-contributions) for contributions to the Julia codebase.
+
+## Exercise Formatting Guidelines
+
+### stub.jl
+The solution file `stub.jl` takes the exercise name by defaul, in kebab case if necessary (e.g. `exercise-name.jl`).
+- The content of `concept exercise` stubs have function skeletons by defalut, (some of) which can be omitted if the exercise emphasizes manual coding of new concepts.
+- The content of `practice exercise` stubs is left to the discretion of the author.
+
+When function skeletons are provided, they should include a blank new line with a four space indentation for the body.
+
+```julia
+function fun1(arg1)
+
+end
+
+function fun2(arg2, arg3)
+    
+end
+```
+
+### runtests.jl
+*Every* `runtests.jl` file should have the following skeleton:
+
+```julia
+using Test
+
+include("stub.jl")
+
+@testset verbose = true "tests" begin
+    
+    # Exercise specific testing: @testset / @test
+
+end
+```
+Where the `"tests"` testset is a wrapper for exercise specific testing (used for formatting testing output).
+
+Should helper files be needed for testing or boilerplate, place them in the same top-level folder as `runtests.jl` and explicitly `include` them in `runtests.jl`:
+```julia
+using Test
+
+include("stub.jl")
+include("testtools.jl")
+include("boilerplate.jl")
+
+@testset verbose = true "tests" begin
+    
+    # Exercise specific testing: @testset / @test
+
+end
+```
+**Note**: Students will not need to `import`/`include` any boilerplate for use in `stub.jl`, but this can be encouraged for instructional purposes if desired.
+Likewise, `.meta/example.jl` or `.meta/exemplar.jl` does not need to `import`/`include` any boilerplate.
+
+### config.json
+If helper files are needed, `.meta/config.json` should then take an entry under the `"files"` property.
+1. If the file is meant to be visible to the student, use `editor`:
+```json
+  "files": {
+    "solution": [
+      "stub.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ],
+    "editor": [
+      "boilerplate.jl"
+    ]
+  },
+```
+2. If the file is *not* meant to be visible to the student, use `auxiliary`:
+```json
+  "files": {
+    "solution": [
+      "stub.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ],
+    "auxiliary": [
+      "testtools.jl"
+    ]
+  },
+```
