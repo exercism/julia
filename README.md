@@ -26,8 +26,8 @@ These are based on the [General Formatting Guidelines](https://github.com/JuliaL
 ## Exercise Formatting Guidelines
 
 ### stub.jl
-The solution file `stub.jl` takes the exercise name by defaul, in kebab case if necessary (e.g. `exercise-name.jl`).
-- The content of `concept exercise` stubs have function skeletons by defalut, (some of) which can be omitted if the exercise emphasizes manual coding of new concepts.
+The solution file `stub.jl` takes the exercise name by default, in kebab case if necessary (e.g. `exercise-name.jl`).
+- The content of `concept exercise` stubs have function skeletons by default, (some of) which can be omitted if the exercise emphasizes manual coding of new concepts.
 - The content of `practice exercise` stubs is left to the discretion of the author.
 
 When function skeletons are provided, they should include a blank new line with a four space indentation for the body.
