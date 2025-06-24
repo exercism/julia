@@ -78,7 +78,7 @@ Likewise, `.meta/example.jl` or `.meta/exemplar.jl` does not need to `import`/`i
 
 ### config.json
 If helper files are needed, `.meta/config.json` should then take an entry under the `"files"` property.
-1. If the file is meant to be visible to the student, use `editor`:
+1. If the file is meant to be visible to the student (e.g. [Alphametics](https://github.com/exercism/julia/tree/main/exercises/practice/alphametics)), use `editor`:
 ```json
   "files": {
     "solution": [
@@ -95,7 +95,7 @@ If helper files are needed, `.meta/config.json` should then take an entry under 
     ]
   },
 ```
-2. If the file is *not* meant to be visible to the student, use `auxiliary`:
+2. If the file is *not* meant to be visible to the student (e.g. [Cater Waiter](https://github.com/exercism/julia/tree/main/exercises/concept/cater-waiter)), use `auxiliary`:
 ```json
   "files": {
     "solution": [
