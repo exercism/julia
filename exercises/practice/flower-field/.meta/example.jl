@@ -1,7 +1,7 @@
 # function to check if the current character represents a flower or not
 isflower(ch) = (ch == '*' ? 1 : 0)
 
-function annotate(garden)
+function annotate(flowerfield)
 
     # ans will store our final output of the program
     ans = []
