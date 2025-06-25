@@ -913,9 +913,9 @@
         ]
       },
       {
-        "slug": "minesweeper",
-        "name": "Minesweeper",
-        "uuid": "9a47bffd-4dd2-48ce-b47b-753271305966",
+        "slug": "flower-field",
+        "name": "Flower Field",
+        "uuid": "3115d01d-8ca0-484d-a6f4-8c85da234b0e",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2,
@@ -930,6 +930,15 @@
           "arrays",
           "text_formatting"
         ]
+      },
+      {
+        "slug": "minesweeper",
+        "name": "Minesweeper",
+        "uuid": "9a47bffd-4dd2-48ce-b47b-753271305966",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "status": "deprecated"
       },
       {
         "slug": "collatz-conjecture",
