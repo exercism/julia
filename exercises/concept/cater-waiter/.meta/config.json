@@ -11,8 +11,10 @@
     ],
     "exemplar": [
       ".meta/exemplar.jl"
+    ],
+    "auxiliary": [
+      "sets_categories_data.jl"  },
     ]
-  },
   "icon": "meetup",
   "blurb": "Learn about sets by managing the menus and ingredients for your catering company's event."
 }
