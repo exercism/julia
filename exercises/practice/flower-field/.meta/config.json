@@ -1,0 +1,21 @@
+{
+  "authors": [
+    "habere-et-dispertire"
+  ],
+  "contributors": [
+    "IsaccG",
+    "kotp"
+  ],
+  "files": {
+    "solution": [
+      "flower-field.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
+  },
+  "blurb": "Mark all the flowers in a garden."
+}
