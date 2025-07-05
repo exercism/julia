@@ -356,6 +356,18 @@
         "status": "beta"
       },
       {
+        "slug": "booking-up-for-beauty",
+        "name": "Booking Up For Beauty",
+        "uuid": "27a0096a-e86b-46a2-ad04-b6c7e25417cf",
+        "concepts": [
+          "dates-times"
+        ],
+        "prerequisites": [
+          "types"
+        ],
+        "status": "beta"
+      },
+      {
         "slug": "old-elyses-enchantments",
         "name": "Old Elyse's Enchantments",
         "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",

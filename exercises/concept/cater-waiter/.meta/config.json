@@ -11,9 +11,6 @@
     ],
     "exemplar": [
       ".meta/exemplar.jl"
-    ],
-    "auxiliary": [
-      "sets_categories_data.jl"
     ]
   },
   "icon": "meetup",
