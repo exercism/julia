@@ -1,5 +1,3 @@
-include("sets_categories_data.jl")
-
 function clean_ingredients(dish_name, dish_ingredients)
 
 end

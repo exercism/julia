@@ -344,6 +344,18 @@
         "status": "beta"
       },
       {
+        "slug": "problematic-probabilities",
+        "name": "Problematic Probabilities",
+        "uuid": "f3fe4029-03fd-4dde-aeeb-a05f4873f377",
+        "concepts": [
+          "rational-numbers"
+        ],
+        "prerequisites": [
+          "loops"
+        ],
+        "status": "beta"
+      },
+      {
         "slug": "old-elyses-enchantments",
         "name": "Old Elyse's Enchantments",
         "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",
@@ -901,9 +913,9 @@
         ]
       },
       {
-        "slug": "minesweeper",
-        "name": "Minesweeper",
-        "uuid": "9a47bffd-4dd2-48ce-b47b-753271305966",
+        "slug": "flower-field",
+        "name": "Flower Field",
+        "uuid": "3115d01d-8ca0-484d-a6f4-8c85da234b0e",
         "practices": [],
         "prerequisites": [],
         "difficulty": 2,
@@ -918,6 +930,15 @@
           "arrays",
           "text_formatting"
         ]
+      },
+      {
+        "slug": "minesweeper",
+        "name": "Minesweeper",
+        "uuid": "9a47bffd-4dd2-48ce-b47b-753271305966",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 2,
+        "status": "deprecated"
       },
       {
         "slug": "collatz-conjecture",
