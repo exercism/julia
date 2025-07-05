@@ -432,3 +432,6 @@ Various other special strings are less common in Exercism-style programming, tho
 [dicts-pairs]: https://exercism.org/tracks/julia/concepts/dicts-and-pairs
 [round]: https://docs.julialang.org/en/v1/base/math/#Base.round
 [macro]:https://docs.julialang.org/en/v1/manual/metaprogramming/#man-macros
+[occursin]: https://docs.julialang.org/en/v1/base/strings/#Base.occursin
+[contains]: https://docs.julialang.org/en/v1/base/strings/#Base.contains
+[printf-ports]: https://en.wikipedia.org/wiki/Printf
