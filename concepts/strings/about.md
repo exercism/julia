@@ -371,7 +371,8 @@ julia> string(42, base=2)
 ```
 
 Parsing a string to get a numeric value is slightly more complicated, with more potential for error.
-Specifying the target numeric type is obligatory, specifying the base is optional and defaults to 10.
+Specifying the target numeric type is obligatory.
+Specifying the base is optional and defaults to 10.
 
 ```julia-repl
 julia> parse(Int, "42")
@@ -389,7 +390,7 @@ julia> parse(Int, "42 ")  # whitespace may be tolerated
 
 ## Special strings
 
-Sometimes it is useful to suppress the usual interpolation and excaping within strings.
+Sometimes it is useful to suppress the usual interpolation and escaping within strings.
 For this, preface the opening quote with `raw`.
 
 ```julia-repl
@@ -416,7 +417,6 @@ Various other special strings are less common in Exercism-style programming, tho
 [ascii]: https://en.wikipedia.org/wiki/ASCII
 [beowulf]: https://en.wikipedia.org/wiki/Beowulf
 [PyFormattedStrings]: https://juliahub.com/ui/Packages/General/PyFormattedStrings/0.1.10
-
 [strip]: https://docs.julialang.org/en/v1/base/strings/#Base.strip
 [split]: https://docs.julialang.org/en/v1/base/strings/#Base.split
 [replace]: https://docs.julialang.org/en/v1/base/collections/#Base.replace-Tuple{Any,%20Vararg{Pair}}
@@ -432,3 +432,6 @@ Various other special strings are less common in Exercism-style programming, tho
 [dicts-pairs]: https://exercism.org/tracks/julia/concepts/dicts-and-pairs
 [round]: https://docs.julialang.org/en/v1/base/math/#Base.round
 [macro]:https://docs.julialang.org/en/v1/manual/metaprogramming/#man-macros
+[occursin]: https://docs.julialang.org/en/v1/base/strings/#Base.occursin
+[contains]: https://docs.julialang.org/en/v1/base/strings/#Base.contains
+[printf-ports]: https://en.wikipedia.org/wiki/Printf
