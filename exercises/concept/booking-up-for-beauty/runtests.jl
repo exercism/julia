@@ -7,6 +7,7 @@ include("booking-up-for-beauty.jl")
 
     @testset "1. Parse all-number appointment date" begin
         @test schedule_appointment("7/25/2019 13:45:00") == DateTime(2019, 07, 25, 13, 45, 0)
+        @test schedule_appointment("7/8/2021 8:00:00") == DateTime(2021, 07, 08, 8, 00, 0)
     end
 
     @testset "2. Check if an appointment has already passed" begin

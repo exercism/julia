@@ -57,7 +57,9 @@ Perhaps the most frequent needs are:
 - Calculate the interval between two such values.
 - Get the current date (with `today()`) and/or time (with `now()`).
 
+~~~~exercism/note
 To reduce visual distraction, most of the example code in the rest of this document assumes `using Dates`, and avoids including the module name `Dates.` in function calls.
+~~~~
 
 ### Date and time formats
 
@@ -158,6 +160,9 @@ All the parameters are optional and will default to `0`.
 ```julia-repl
 julia> Time(14, 57, 25, 142)
 14:57:25.142
+
+julia> Time(14, 57, 25, 142, 32)`
+14:57:25.142032
 
 julia> Time("14:57:25.142")
 14:57:25.142
@@ -320,6 +325,8 @@ julia> Dates.format(dt1, dateformat"e, u d")
 "Mon, Jun 23"
 ```
 
+As [documented][wiki-format], `"e, u d"` gives the abbreviated text representation for weekday and month.
+
 Text representation defaults to English.
 Other languages can be added, though support for this is currently sub-optimal.
 
@@ -327,6 +334,7 @@ Other languages can be added, though support for this is currently sub-optimal.
 [ISO8601]: https://en.wikipedia.org/wiki/ISO_8601
 [Dates]: https://docs.julialang.org/en/v1/stdlib/Dates/
 [Wikibook]: https://en.wikibooks.org/wiki/Introducing_Julia/Working_with_dates_and_times
+[wiki-format]: https://en.wikibooks.org/wiki/Introducing_Julia/Working_with_dates_and_times#Date_formatting
 [type-hierarchy]: https://en.wikibooks.org/wiki/Introducing_Julia/Working_with_dates_and_times#/media/File:Julia-time-type-hierarchy.svg
 [period]: https://docs.julialang.org/en/v1/stdlib/Dates/#Period-Types
 [canonicalize]: https://docs.julialang.org/en/v1/stdlib/Dates/#Dates.canonicalize
