@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "Handling dates and times in software is a surprisingly complex challenge. Julia supplies a variety of types and functions to cover many use cases."
+}
