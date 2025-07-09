@@ -356,6 +356,18 @@
         "status": "beta"
       },
       {
+        "slug": "booking-up-for-beauty",
+        "name": "Booking Up For Beauty",
+        "uuid": "27a0096a-e86b-46a2-ad04-b6c7e25417cf",
+        "concepts": [
+          "dates-times"
+        ],
+        "prerequisites": [
+          "types"
+        ],
+        "status": "beta"
+      },
+      {
         "slug": "old-elyses-enchantments",
         "name": "Old Elyse's Enchantments",
         "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",
@@ -752,8 +764,12 @@
         "slug": "gigasecond",
         "name": "Gigasecond",
         "uuid": "c64e03cc-1952-4b2d-9a53-25c43187a4e6",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "dates-times"
+        ],
+        "prerequisites": [
+          "dates-times"
+        ],
         "difficulty": 1,
         "topics": [
           "dates"
@@ -1314,8 +1330,12 @@
         "slug": "meetup",
         "name": "Meetup",
         "uuid": "c620a897-b054-4d8e-a2e3-17a4c0a6f6fa",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "dates-times"
+        ],
+        "prerequisites": [
+          "dates-times"
+        ],
         "difficulty": 4
       },
       {
@@ -1713,6 +1733,11 @@
       "uuid": "bfb68abf-c6c6-44a8-a5ad-627381142d4a",
       "slug": "multiple-dispatch",
       "name": "Multiple Dispatch"
+    },
+    {
+      "uuid": "d5371653-e0ce-493a-a21f-16a8cb0c554d",
+      "slug": "dates-times",
+      "name": "Dates and Times"
     }
   ],
   "key_features": [
