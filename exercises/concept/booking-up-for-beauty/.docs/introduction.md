@@ -156,10 +156,10 @@ julia> Time(14, 57, 25, 142)
 
 julia> Time("14:57:25.142")
 14:57:25.142
-```
 
-julia> Time(14, 57, 25, 142, 32)`
+julia> Time(14, 57, 25, 142, 32)
 14:57:25.142032
+```
 
 As with `Date`, individual parts are available with accessor functions:
 
@@ -281,4 +281,5 @@ Other languages can be added, though support for this is currently sub-optimal.
 [compound-period]: https://docs.julialang.org/en/v1/stdlib/Dates/#Dates.CompoundPeriod
 [dateformat]: https://docs.julialang.org/en/v1/stdlib/Dates/#Dates.DateFormat
 [format]: https://docs.julialang.org/en/v1/stdlib/Dates/#Dates.format-Tuple{TimeType,%20AbstractString}
+[wiki-format]: https://en.wikibooks.org/wiki/Introducing_Julia/Working_with_dates_and_times#Date_formatting
 [rounding]: https://docs.julialang.org/en/v1/stdlib/Dates/#Rounding
