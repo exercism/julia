@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "Higher-order functions either take other functions as arguments or return them as results. Julia has all the built-in filter, map and reduce functions of a purely-functional language."
+}
