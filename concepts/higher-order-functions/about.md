@@ -6,11 +6,11 @@ Technically, a `Higher Order Function` is simply a function which does at least 
 - Returns a function as its result.
 
 Within the world of functional programming, usage tends to be narrower.
-The term usually refers to functions such as `filter`, `map` and `reduce` which apply a function across the elements of a collection.
+The term usually refers to functions such as `filter`, `map` and `reduce` which apply a passed-in function to the elements of a collection.
 
 ## Operating on collections
 
-By this point in the syllabus, we already saw various ways to apply some operation to all elements of some iterable collection, such as a Vector:
+By this point in the syllabus, we have already seen various ways to apply some operation to all elements of an iterable collection, such as a Vector:
 
 - Use a [loop][loops] (like most programming languages since the dawn of digital computing).
 - Use a [comprehension][comprehensions] (Python-style).
@@ -20,12 +20,12 @@ This Concept will focus on higher-order functions (familiar from any functional 
 
 Other possible approaches include:
 
-- Recursion (as in ML-family languages). Julia allows this, but without tail-recursion optimization it risks stack overflow.
-- Metprogramming with macros (traditionally a Lisp feature). This is widely used in advanced Julia programming, but approach with caution in most cases. Other options are likely to be easier to write and much easier to debug.
+- Recursion (as in ML-family languages). Julia allows this, but without tail-call optimization it risks stack overflow.
+- Metprogramming with macros (traditionally a Lisp feature). This is widely used in advanced Julia programming, but _approach with caution_ in most cases. Other options are likely to be easier to write and much easier to debug.
 
 ## Filtering
 
-The [`filter()`][filter] function takes a function with a boolean return value and applies it along a collection.
+The [`filter()`][filter] function takes a function with a boolean return value and applies it to a collection.
 Only elements returning `true` are included in the return value.
 
 ```julia-repl
@@ -52,7 +52,7 @@ julia> filter(x -> x % 3 == 0, 1:20)
  18
 ```
 
-There is also an in-place version, [`filter!()`][filter-bang], as there is for most of the functions in this Concept.
+There is also an in-place version, [`filter!()`][filter-bang], as there is for many of the functions in this Concept.
 
 ## Mapping
 
@@ -89,10 +89,9 @@ _This is only a rough analogy, implying nothing about the implementation!_
 As with `zip()`, collections of mismatched shape are truncated to the dimension(s) of the smallest.
 
 Sometimes only the side effects of the passed-in function are needed, such as a database write or a `push!` to an array..
-Then the more efficient higher-order function is [`foreach()`][foreach], which returns `nothing`.
+Then the more efficient higher-order function is [`foreach()`][foreach], which always returns [`nothing`][nothingness].
 
 For large collections, `map()` can be expensive.
-
 Parallel computing is outside the scope of this Concept, but it may be useful to know that [`Distributed.pmap()`][pmap] exists and can spread the computation over a pool of workers.
 The `Distributed` package _is_ available in the Exercism test runner.
 
@@ -113,7 +112,7 @@ julia> prod(1:4) # multiply
 _These special functions are highly optimized and should always be used when available._
 Other examples include `maximum()` and `minimum()`, logical functions `all()` and `any()`, and many statistical functions.
 
-_For illustration only_, consider the same functionality implemented with the more generic `reduce()` _(recall that infix operators `+` and `*` are really functions internally)_.
+_For illustration only_, consider the same functionality implemented with the more generic `reduce()` (recall that infix operators `+` and `*` are really functions internally).
 
 ```julia-repl
 julia> reduce(+, 1:4) # add
@@ -142,7 +141,7 @@ julia> foldr(-, 1:3) # 1 - (2 - 3)
 2
 ```
 
-For such simple examples, this may seem like more functions than we need to do essentially the same thing.
+For such simple examples, this may seem like more functions than we really need to do essentially the same thing.
 
 The situation will become more nuanced with some later concepts:
 
@@ -156,9 +155,10 @@ Combining a `map` operation with a `reduce` is very common in various programmin
 We could sequentially run `map`, then run `reduce` on an intermediate collection.
 However, this is inefficient at best, and scales very badly as the collection gets larger.
 
-It is _strongly_ recommended to use the combined [`mapreduce()`][mapreduce] function instead, because it can use a much more performant algorithm which interleaves the map/reduce operations.
+It is _strongly_ recommended to use the combined [`mapreduce()`][mapreduce] function instead.
+It can use a much more performant algorithm which interleaves the map/reduce operations.
 
-Thefirst argument is the function to map with, the second argument is the reduce operator.
+The first argument is the function to map with, the second argument is the reduce operator.
 
 ```julia-repl
 julia> mapreduce(x -> x^2 + 1, +, 1:3)
@@ -178,6 +178,7 @@ As we might expect, Julia also has [`mapfoldl()`][mapfoldl] and [`mapfoldr()`][m
 [loops]: https://exercism.org/tracks/julia/concepts/loops
 [broadcasting]: https://exercism.org/tracks/julia/concepts/vector-operations
 [comprehensions]: https://exercism.org/tracks/julia/concepts/loops
+[nothingness]: https://exercism.org/tracks/julia/concepts/nothingness
 [zip]: https://docs.julialang.org/en/v1/base/iterators/#Base.Iterators.zip
 [filter]: https://docs.julialang.org/en/v1/base/collections/#Base.filter
 [filter-bang]: https://docs.julialang.org/en/v1/base/collections/#Base.filter!
