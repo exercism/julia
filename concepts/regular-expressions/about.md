@@ -13,7 +13,7 @@ Some resources to refresh your regular expression knowledge are listed below.
 ~~~~
 
 - [Regex101][regex101]
-- [regexr][regexr]
+- [RegExr][regexr]
 - [RexEgg][rexegg]
 - [RegexOne][regexone]
 - [Regular Expressions Info][regex-info]
