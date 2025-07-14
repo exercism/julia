@@ -1,5 +1,9 @@
 [
   {
+    "url": "https://en.wikipedia.org/wiki/Higher-order_function",
+    "description": "Wikipedia: higher-order functions."
+  },
+  {
     "url": "https://docs.julialang.org/en/v1/base/collections/#Base.filter",
     "description": "Manual: filter function."
   },
