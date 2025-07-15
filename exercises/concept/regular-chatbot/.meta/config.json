@@ -1,0 +1,20 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "files": {
+    "solution": [
+      "regular-chatbot.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ]
+  },
+  "forked_from": [
+    "javascript/regular-chatbot"
+  ],
+  "blurb": "Learn the basics of regular expressions with Julia by helping a chatbot understand humans."
+}
