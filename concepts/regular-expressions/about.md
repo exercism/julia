@@ -152,7 +152,7 @@ julia> replace("first second", r"(\w+) (?<agroup>\w+)" => s"\g<agroup> \1")
 "second first"
 ```
 
-The second example above shows how both numbered and named capture groups can be used in the replacement.
+The second example above shows how both numbered and named capture groups can be used in the replacement, within an `s" "` string.
 
 See the [manual][regex] for more details: this is a topic which constantly forces most programmers back to the documentation!
 
