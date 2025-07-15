@@ -22,7 +22,7 @@ Some resources to refresh your regular expression knowledge are listed below.
 A regular expression in Julia is simply a string prefaced by `r` before the opening `"`.
 All the basic functionality is part of the standard library, with no barriers to using a Regex anywhere in code.
 
-In fact, many of the functions already discussed in the [`Strings`][strings] Concept are designed for Regex searches as standard.
+In fact, many of the functions already discussed in the [`Strings`][strings] Concept are designed for Regex searches as standard, such as [`occursin()`][occursin].
 
 ```julia-repl
 julia> re = r"test$"
@@ -39,9 +39,19 @@ julia> occursin(re, "these are tests")
 false
 ```
 
+Modifier characters can follow the closing quote, such as `i` for a case-insensitive match.
+
+```julia-repl
+julia> occursin(r"test", "Testing")
+false
+
+julia> occursin(r"test"i, "Testing")
+true
+```
+
 ## Captures
 
-Commonly, we want to know _what_ matches. This is achieved by including capture groups in parentheses within the regex, then using the `match()` function.
+Commonly, we want to know _what_ matches. This is achieved by including capture groups in parentheses within the regex, then using the [`match()`][match] function.
 
 ```julia-repl
 julia> m = match(r"(\d+g) .* (\d+ml)", "dissolve 25g sugar in 200ml water")
@@ -93,11 +103,45 @@ julia> m = match(r"(\wat)", "cat, sat, mat", 5)
 RegexMatch("sat", 1="sat")
 ```
 
+In Julia, `match()` will only find the _first_ match within the target string: there is no global modifier as in some other languages.
+
+Instead, we have [`eachmatch()`][eachmatch], which returns an iterator of matches.
+This is lazily evaluated, so you may need convert it to your desired format.
+
+```julia-repl
+julia> matches = eachmatch(r"(\wat)", "cat, sat, mat")
+Base.RegexMatchIterator{String}(r"(\wat)", "cat, sat, mat", false)
+
+# convert to vector
+julia> collect(matches)
+3-element Vector{RegexMatch}:
+ RegexMatch("cat", 1="cat")
+ RegexMatch("sat", 1="sat")
+ RegexMatch("mat", 1="mat")
+
+# convert with comprehension
+julia> [m.match for m in matches]
+3-element Vector{SubString{String}}:
+ "cat"
+ "sat"
+ "mat"
+
+# broadcast an anonymous function
+julia> (m -> m.match).(matches)
+3-element Vector{SubString{String}}:
+ "cat"
+ "sat"
+ "mat"
+```
+
+Overlapping matches are not allowed by default.
+Add `overlap = true` as a keyword argument to override this.
+
 ## Replace
 
 One common reason to use a Regex is to replace the match with a different string.
 
-The `replace()` function was discussed in the [`Strings`][strings] Concept, using string literals to search on.
+The [`replace()`][replace] function was discussed in the [`Strings`][strings] Concept, using string literals to search on.
 The same function can exploit the full power of Regex matching.
 
 ```julia-repl
@@ -123,3 +167,8 @@ See the [manual][regex] for more details: this is a topic which constantly force
 [regex-info]: https://www.regular-expressions.info/
 [rexegg]: https://www.rexegg.com/
 [regexone]: https://regexone.com/
+
+[occursin]: https://docs.julialang.org/en/v1/base/strings/#Base.occursin
+[match]: https://docs.julialang.org/en/v1/base/strings/#Base.match
+[eachmatch]: https://docs.julialang.org/en/v1/base/strings/#Base.eachmatch
+[replace]: https://docs.julialang.org/en/v1/base/strings/#Base.replace-Tuple{IO,%20AbstractString,%20Vararg{Pair}}
