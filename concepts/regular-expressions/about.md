@@ -106,7 +106,7 @@ RegexMatch("sat", 1="sat")
 In Julia, `match()` will only find the _first_ match within the target string: there is no global modifier as in some other languages.
 
 Instead, we have [`eachmatch()`][eachmatch], which returns an iterator of matches.
-This is lazily evaluated, so you may need convert it to your desired format.
+This is lazily evaluated, so you may need to convert it to your desired format.
 
 ```julia-repl
 julia> matches = eachmatch(r"(\wat)", "cat, sat, mat")
