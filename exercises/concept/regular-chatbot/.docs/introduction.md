@@ -1,4 +1,4 @@
-# About
+# Introduction
 
 Regular expressions are a highly versatile way to _pattern match_ strings, using a Domain Specific Language (DSL) designed for the purpose.
 
@@ -20,7 +20,7 @@ Some resources to refresh your regular expression knowledge are listed below.
 
 
 A regular expression in Julia is simply a string prefaced by `r` before the opening `"`.
-All the basic functionality is part of the standard library, with no barriers to using a Regex anywhere in code.
+All the basic functionality is part of the standard library.
 
 In fact, many of the functions already discussed in the [`Strings`][strings] Concept are designed for Regex searches as standard, such as `occursin()`.
 
@@ -106,7 +106,7 @@ RegexMatch("sat", 1="sat")
 In Julia, `match()` will only find the _first_ match within the target string: there is no global modifier as in some other languages.
 
 Instead, we have [`eachmatch()`][eachmatch], which returns an iterator of matches.
-This is lazily evaluated, so you may need convert it to your desired format.
+This is lazily evaluated, so you may need to convert it to your desired format.
 
 ```julia-repl
 julia> matches = eachmatch(r"(\wat)", "cat, sat, mat")

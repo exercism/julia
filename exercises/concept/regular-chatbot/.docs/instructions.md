@@ -31,7 +31,7 @@ julia> is_valid_command("CHATBOT, do you have a solution for this challenge?")
 True
 ```
 
-## 2. Remove encrypted emojis
+## 2. Remove Encrypted Emojis
 
 The Chatbot has a difficult time understanding how humans use emojis to express their emotions.
 
@@ -66,7 +66,7 @@ julia> check_phone_number("659-771-594")
 "Oops, it seems like I can't reach out to 659-771-594"
 ```
 
-## 4. Get website link
+## 4. Get Website Link
 
 The Chatbot is a really curious software. Even though he can search on the internet about a particular topic, he likes to ask users about cool websites or URL’s to go find relevant information.
 
@@ -82,7 +82,7 @@ julia> getURL("I learned a lot from exercism.org")
 ["exercism.org"]
 ```
 
-## 5. Greet the user
+## 5. Greet the User
 
 For storing data from all the persons who have had a conversation with, the chatbot is able to get the Full Name from the user’s profile in this style: **“smith, john”**.
 
