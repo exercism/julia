@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "Julia uses the PCRE2 library to support regular expressions in a popular, modern dialect."
+}
