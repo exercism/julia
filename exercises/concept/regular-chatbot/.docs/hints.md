@@ -10,6 +10,7 @@ Pre-defining each regular expression as a `const` can be helpful style (for clar
 
 - The anchor character for start of string is `^`.
 - You only need a true/false from the regex search.
+- This could be solved without use of a Regex, but please stay within the spirit of a Concept exercise.
 
 ## 2. Remove Encrypted Emojis
 
