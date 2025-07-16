@@ -10,7 +10,6 @@ Pre-defining each regular expression as a `const` can be helpful style (for clar
 
 - The anchor character for start of string is `^`.
 - You only need a true/false from the regex search.
-- Using [`startswith()`][startswith] is probably more efficient than a Regex, but not _quite_ in the spirit of a Concept exercise.
 
 ## 2. Remove Encrypted Emojis
 
