@@ -368,6 +368,18 @@
         "status": "beta"
       },
       {
+        "slug": "regular-chatbot",
+        "name": "Regular Chatbot",
+        "uuid": "44cf4edf-d34a-4753-83b3-b09a42889f2d",
+        "concepts": [
+          "regular-expressions"
+        ],
+        "prerequisites": [
+          "nothingness"
+        ],
+        "status": "beta"
+      },
+      {
         "slug": "old-elyses-enchantments",
         "name": "Old Elyse's Enchantments",
         "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",
