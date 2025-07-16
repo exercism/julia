@@ -3,10 +3,18 @@ using Test
 include("wordy.jl")
 
 @testset verbose = true "tests" begin
+    @testset "just a zero" begin
+        @test wordy("What is 0?") == 0
+    end
+
     @testset "just a number" begin
         @test wordy("What is 5?") == 5
     end
     
+    @testset "just a negative number" begin
+        @test wordy("What is -123?") == -123
+    end
+
     @testset "addition" begin
         @test wordy("What is 1 plus 1?") == 2
     end
@@ -14,7 +22,15 @@ include("wordy.jl")
     @testset "more addition" begin
         @test wordy("What is 53 plus 2?") == 55
     end
-    
+
+    @testset "addition with a left hand zero" begin
+        @test wordy("What is 0 plus 2?") == 2
+    end
+
+    @testset "addition with a right hand zero" begin
+        @test wordy("What is 3 plus 0?") == 3
+    end
+
     @testset "addition with negative numbers" begin
         @test wordy("What is -1 plus -10?") == -11
     end

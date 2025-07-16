@@ -1657,6 +1657,11 @@
       "name": "Strings"
     },
     {
+      "uuid": "504fd0a6-aa62-490b-b090-a89dd79b57c7",
+      "slug": "regular-expressions",
+      "name": "Regular Expressions"
+    },
+    {
       "uuid": "e3d18763-a079-4000-a3e4-9938a7f0712b",
       "slug": "vector-operations",
       "name": "Vector Operations"

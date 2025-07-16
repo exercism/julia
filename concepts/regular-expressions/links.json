@@ -1,0 +1,30 @@
+[
+  {
+    "url": "https://docs.julialang.org/en/v1/manual/strings/#man-regex-literals",
+    "description": "Julia manual, regular expressions page"
+  },
+  {
+    "url": "https://www.pcre.org/current/doc/html/pcre2syntax.html",
+    "description": "PCRE syntax reference"
+  },
+  {
+    "url": "https://regex101.com/",
+    "description": "Regex101 online playground"
+  },
+  {
+    "url": "https://regexone.com/",
+    "description": "RegexOne interactive tutorial"
+  },
+  {
+    "url": "https://regexr.com/",
+    "description": "RegExr interactive tutorial"
+  },
+  {
+    "url": "https://www.rexegg.com/",
+    "description": "RexEgg"
+  },
+  {
+    "url": "https://www.regular-expressions.info/",
+    "description": "Multiple tutorials"
+  }
+]
