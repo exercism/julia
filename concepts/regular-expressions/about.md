@@ -20,7 +20,7 @@ Some resources to refresh your regular expression knowledge are listed below.
 
 
 A regular expression in Julia is simply a string prefaced by `r` before the opening `"`.
-All the basic functionality is part of the standard library, with no barriers to using a Regex anywhere in code.
+All the basic functionality is part of the standard library.
 
 In fact, many of the functions already discussed in the [`Strings`][strings] Concept are designed for Regex searches as standard, such as [`occursin()`][occursin].
 
