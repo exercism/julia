@@ -137,6 +137,19 @@ julia> (m -> m.match).(matches)
 Overlapping matches are not allowed by default.
 Add `overlap = true` as a keyword argument to override this.
 
+```julia-repl
+julia> eachmatch(r"aba", "abababa") |> collect  # matches at positions 1, 5
+2-element Vector{RegexMatch}:
+ RegexMatch("aba")
+ RegexMatch("aba")
+
+julia> eachmatch(r"aba", "abababa"; overlap = true) |> collect  # also matches at position 3
+3-element Vector{RegexMatch}:
+ RegexMatch("aba")
+ RegexMatch("aba")
+ RegexMatch("aba")
+```
+
 ## Replace
 
 One common reason to use a Regex is to replace the match with a different string.
