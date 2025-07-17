@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://en.wikipedia.org/wiki/Higher-order_function",
+    "description": "Wikipedia: higher-order functions."
+  },
+  {
+    "url": "https://docs.julialang.org/en/v1/base/collections/#Base.filter",
+    "description": "Manual: filter function."
+  },
+  {
+    "url": "https://docs.julialang.org/en/v1/base/collections/#Base.map",
+    "description": "Manual: map function."
+  },
+  {
+    "url": "https://docs.julialang.org/en/v1/base/collections/#Base.reduce-Tuple{Any,%20Any}",
+    "description": "Manual: reduce function."
+  }
+]
