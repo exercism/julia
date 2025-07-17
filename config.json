@@ -1682,6 +1682,11 @@
       "name": "Function Composition"
     },
     {
+      "uuid": "51433acb-1740-477b-bc9b-75af68d08519",
+      "slug": "multi-dimensional-arrays",
+      "name": "Multi Dimensional Arrays"
+    },
+    {
       "uuid": "95b8b60b-fd78-4ec1-9d1c-ac3f11107727",
       "slug": "chars",
       "name": "Chars"
