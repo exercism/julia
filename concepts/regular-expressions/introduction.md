@@ -7,7 +7,7 @@ Instead, it wraps the popular [PCRE2][PCRE] library, thus providing a Regex synt
 
 ~~~~exercism/note
 This Julia syllabus assumes that you are already familiar with basic Regex syntax.
-We will concentrate solely on [Julia-specific features][regex].
+We will concentrate solely on Julia-specific features.
 
 Some resources to refresh your regular expression knowledge are listed below.
 ~~~~
@@ -18,6 +18,7 @@ Some resources to refresh your regular expression knowledge are listed below.
 - [RegexOne][regexone]
 - [Regular Expressions Info][regex-info]
 
+Julia's interface to regular expressions is described in the [manual][regex].
 
 A regular expression in Julia is simply a string prefaced by `r` before the opening `"`.
 All the basic functionality is part of the standard library.
