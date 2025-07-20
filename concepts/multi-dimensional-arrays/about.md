@@ -49,40 +49,40 @@ In general, spaces join things horizontally, semicolons join things vertically.
 The reference to "things" is deliberately vague, as Julia will try to work with what you give it.
 
 ```julia-repl
-julia> [v w]
+julia> [v 2v]
 3×2 Matrix{Int64}:
- 1  1
- 2  2
- 3  3
+ 1  2
+ 2  4
+ 3  6
 
-julia> [v; w]
+julia> [v; 2v]
 6-element Vector{Int64}:
  1
  2
  3
- 1
  2
- 3
+ 4
+ 6
 ```
 
 There are functions [`hcat()`][hcat] and [`vcat()`][vcat] that do the same thing, making more expicit that these are horizontal and vertical concatenations.
 The higher-dimensional generalization is the [`cat()`][cat] function.
 
 ```julia-repl
-julia> hcat(v, w)
+jjulia> hcat(v, 2v)
 3×2 Matrix{Int64}:
- 1  1
- 2  2
- 3  3
+ 1  2
+ 2  4
+ 3  6
 
-julia> vcat(v, w)
+julia> vcat(v, 2v)
 6-element Vector{Int64}:
  1
  2
  3
- 1
  2
- 3
+ 4
+ 6
 ```
 
 Typing explicit matrices is conveniently done in row-major order, because that fits with human intuition (easier to look at, for cultures with horizontal text):
@@ -94,7 +94,7 @@ julia> m = [1 2 3; 4 5 6]
  4  5  6
 ```
 
-However, be aware that Julia (like Fortran, R and Matlab, but _unlike_ C/C++ or NumPy) stores N-dimension arrays in column-major order, and this can make a huge performance difference if you loop over the elements.
+However, be aware that Julia (like Fortran, R and Matlab, but _unlike_ C/C++ or NumPy) stores N-dimension arrays in [column-major order][col-major], and this can make a huge performance difference if you loop over the elements.
 _Help your CPU cache to help you!_
 
 ```julia-repl
@@ -108,7 +108,7 @@ julia> reshape(collect(1:6), 2, 3)
 
 The example above takes the integers 1 to 6 and fills in a 2×3 Matrix with them column-wise.
 
-There are various utility functions to construct common types of array (uniform or random).
+There are various [utility functions][array-construct] to construct common types of array (uniform or random).
 
 ```julia-repl
 julia> zeros(2, 3)  # see also ones()
@@ -152,10 +152,10 @@ The last example is perhaps surprising: a _single_ index is not an error, and re
 
 The explanation goes back to the comment about column-major order: Julia goes down col 1, then col 2, until it finds the 3rd element _in memory_.
 
-Be careful: this has some uses but is more likely to be confusing!
+Be careful: this has some uses when writing general-purpose libraries, but is more likely to be confusing!
 
 A similar issue arises when querying the size of an array.
-`length()` gives the total number of elements, `size()` gives a tuple with the length of each dimension.
+[`length()`][length] gives the total number of elements, [`size()`][size] gives a tuple of [`ndims()`][ndims] elements with the length of each dimension.
 
 ```julia-repl
 julia> m
@@ -175,7 +175,9 @@ julia> ndims(m)  # how many dimensions? Like `m |> size |> length`
 
 ### Indexing with ranges and arrays
 
-We can easily copy a sub-matrix:
+We can easily copy a sub-matrix. 
+
+In the example below, the [`reshape()`][reshape] function coerces an array to the specified dimensions by filling column-wise, then we slice it.
 
 ```julia-repl
 julia> m12 = reshape(collect(1:12), 4, 3)
@@ -212,7 +214,7 @@ julia> m12[[1, 3], :]  # rows 1 and 3
 
 ## Applying functions to an array
 
-We have previously seen aggregation functions such as `sum()` and `maximum()` applied to 1-D collections, where they operate on all the elements and return a scalar result.
+We have previously seen aggregation functions such as [`sum()`][sum] and [`maximum()`][max] applied to 1-D collections, where they operate on all the elements and return a scalar result.
 
 This also works in higher dimensions.
 However, we may want to apply the function to only one dimension, for example by summing down or across to return an array with a `singleton dimension` of size 1.
@@ -250,7 +252,7 @@ By extension, higher-dimensional arrays can reduce multiple dimensions, if `dims
 
 ## Writing dimension-aware functions
 
-The `dims` keyword argument is common in built-in functions like `sum()`, but how do we write something equivalent in our own code?
+The `dims` keyword argument is common in built-in functions like [`sum()`][sum], but how do we write something equivalent in our own code?
 
 One good answer is to use higher-order functions such as [`reduce()`][reduce], and this will be covered in some detail in a later Concept.
 
@@ -274,12 +276,12 @@ julia> eachcol(m)
 ```
 
 The type is a bit alarming, but only because this is a _view_ into the original array, letting us work on it without copying.
-Julia arrays can potentially be Terabytes in size, so copying is a performance nightmare!
+Julia arrays can potentially be Terabytes in size, so copying is potentially a performance nightmare!
 
 A view like this can be used for looping, broadcasting, or all the other operations we saw in the syllabus so far.
 
 Also, comprehensions can be powerful and versatile with array input.
-Simple cases were mentioned in the [Loops][loops] concept, but there will be an expanded discussion in a lter concept.
+Simple cases were mentioned in the [Loops][loops] concept, but there will be an expanded discussion in a later concept.
 
 ## Broadcasting in multiple dimansions
 
@@ -299,7 +301,7 @@ julia> v .- 0.5
  1.2
 ```
 
-The dotted operator `.-` treats the singleton `0.5` as equivalent to `[0.5, 0.5, 0.5]` by `broadcasting` it to match dimensions, then does the subtraction element-wise.
+The dotted operator `.-` treats the singleton `0.5` as equivalent to `[0.5, 0.5, 0.5]` by [`broadcasting`][broadcasting] it to match dimensions, then does the subtraction element-wise.
 
 Extending this to higher dimensions is really just more of the same.
 
@@ -341,3 +343,12 @@ In general, Julia will broadcast any singleton dimension(s) to match the shape o
 [eachcol]: https://docs.julialang.org/en/v1/base/arrays/#Base.eachcol
 [eachslice]: https://docs.julialang.org/en/v1/base/arrays/#Base.eachslice
 [vector-ops]: https://exercism.org/tracks/julia/concepts/vector-operations
+[col-major]: https://en.wikipedia.org/wiki/Row-_and_column-major_order
+[array-construct]: https://docs.julialang.org/en/v1/manual/arrays/#Construction-and-Initialization
+[length]: https://docs.julialang.org/en/v1/base/arrays/#Base.length-Tuple%7BAbstractArray%7D
+[size]: https://docs.julialang.org/en/v1/base/arrays/#Base.size
+[ndims]: https://docs.julialang.org/en/v1/base/arrays/#Base.ndims
+[reshape]: https://docs.julialang.org/en/v1/base/arrays/#Base.reshape
+[sum]: https://docs.julialang.org/en/v1/base/collections/#Base.sum
+[max]: https://docs.julialang.org/en/v1/base/collections/#Base.maximum
+[broadcasting]: https://docs.julialang.org/en/v1/manual/arrays/#Broadcasting
