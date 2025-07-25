@@ -1,6 +1,6 @@
 # About
 
-Technically, a `Higher Order Function` is simply a function which does at least one of:
+Technically, a [`Higher Order Function`][HOFunc] is simply a function which does at least one of:
 
 - Accepts a function as one of its arguments.
 - Returns a function as its result.
@@ -10,7 +10,7 @@ The term usually refers to functions such as `filter`, `map` and `reduce` which 
 
 ## Operating on collections
 
-By this point in the syllabus, we have already seen various ways to apply some operation to all elements of an iterable collection, such as a Vector:
+By this point in the syllabus, we have already seen various ways to apply an operation to all elements of an iterable collection, such as a Vector:
 
 - Use a [loop][loops] (like most programming languages since the dawn of digital computing).
 - Use a [comprehension][comprehensions] (Python-style).
@@ -22,7 +22,7 @@ Other possible approaches include:
 
 - Recursion (as in ML-family languages). 
   - Julia allows this, but without tail-call optimization it risks stack overflow.
-- Metprogramming with macros (traditionally a Lisp feature). 
+- Metaprogramming with macros (traditionally a Lisp feature). 
   - This is widely used in advanced Julia programming, but _approach with caution_ in most cases. 
   - Other options are likely to be easier to write and much easier to debug.
 
@@ -57,7 +57,7 @@ julia> filter(isodd, m)
  3
 ```
 
-The examples above use built-in functions, but use of anonymous functions is very common in this context.
+The examples above use built-in functions, but use of [anonymous functions][anonymous] is very common in this context.
 
 ```julia-repl
 julia> filter(x -> x % 3 == 0, 1:20)
@@ -172,7 +172,7 @@ There is the additional problem that floating-point errors can accumulate across
 
 The direction of Julia's `reduce` function is implementation-dependent and not guaranteed.
 
-To control direction explicitly, there are [`foldl()`][foldl] and [`foldr()`][foldr] functions.
+To control direction explicitly, there are [`foldl()`][foldl] and [`foldr()`][foldr] functions, notionally starting at the "left" and "right" respectively (actually top and bottom, for a Vector).
 
 ```julia-repl
 julia> foldl(-, 1:3) # (1 - 2) - 3
@@ -229,4 +229,5 @@ As we might expect, Julia also has [`mapfoldl()`][mapfoldl] and [`mapfoldr()`][m
 [mapreduce]: https://docs.julialang.org/en/v1/base/collections/#Base.mapreduce-Tuple%7BAny,%20Any,%20Any%7D
 [mapfoldl]: https://docs.julialang.org/en/v1/base/collections/#Base.mapfoldl-Tuple{Any,%20Any,%20Any}
 [mapfoldr]: https://docs.julialang.org/en/v1/base/collections/#Base.mapfoldr-Tuple{Any,%20Any,%20Any}
-
+[HOFunc]: https://en.wikipedia.org/wiki/Higher-order_function
+[anonymous]: https://docs.julialang.org/en/v1/manual/functions/#man-anonymous-functions
