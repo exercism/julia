@@ -185,7 +185,7 @@ julia> foldr(-, 1:3) # 1 - (2 - 3)
 Note that these are intended for collections that can be treated as one-dimensional, returning a scalar result.
 Use of a `dims` argument is not supported for `foldl` and `foldr`, only for `reduce`.
 
-use of reduce functions will become more nuanced with parallel computing, where out-of-sequence calculations are normal (though beyond the scope of this Concept).
+Use of reduce functions will become more nuanced with parallel computing, where out-of-sequence calculations are normal (though beyond the scope of this Concept).
 
 ## MapReduce
 
