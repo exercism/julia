@@ -9,7 +9,7 @@ Comprehensions] are an option rather than a necessity for Julia programmers, as 
 However, a comprehension will often provide a simple, readable and performant way to construct an array.
 Use is ultimately a matter of personal taste, and how you feel about Python versus functional languages.
 
-The syntex is mostly a direct copy of Python, but with extensions for higher-dimensional arrays.
+The syntax is mostly a direct copy of Python, but with extensions for higher-dimensional arrays.
 
 ## Single variable
 
@@ -68,10 +68,11 @@ julia> [x * y for x in 1:3 for y in 4:6]
 julia> [x * y for x in 1:3 for y in 4:6 if isodd(x * y)]
 2-element Vector{Int64}:
   5
+ 15
 ```
 
 This is equivalent to nested loops.
-The output is one-dimensional, even with matrix input collections.
+The output is one-dimensional, even with matrix input.
 
 ```julia-repl
 julia> m
