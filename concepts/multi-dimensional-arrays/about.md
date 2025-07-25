@@ -3,7 +3,7 @@
 Far back in the [Vectors][vectors] Concept, we noted that "_arrays can be of arbitrary size (subject only to memory constraints in your hardware), and can have arbitrarily many dimensions._"
 
 Since then, we have largely ignored arrays with more than one dimension, just to keep things simple.
-This will make more sense if you try reading the Julia reference documents, in their full complexity.
+This decision will make more sense if you try reading the Julia reference documents, in their full complexity.
 
 However, higher dimensional arrays are _very, very_ important in scientific computing, so we need to understand them.
 
@@ -42,11 +42,11 @@ julia> u = [1 2 3]
  1  2  3
 ```
 
-Julia now defines this as a 1×3 Matrix (in other contexts, we would call it a row vector).
+Julia now defines this as a 1×3 Matrix (in other contexts, we would call it a `row vector`).
 
-In general, spaces join things horizontally, semicolons join things vertically.
+In general, spaces join things horizontally, semicolons (or newlines) join things vertically.
 
-The reference to "things" is deliberately vague, as Julia will try to work with what you give it.
+The reference to "things" is deliberately vague, as Julia will try to work with whatever you give it.
 
 ```julia-repl
 julia> [v 2v]
@@ -279,7 +279,7 @@ julia> maximum(m; dims=2)
  6
 ```
 
-The value of `dims` is the _dimension that becomes singleton_, so `1 => 1×3` and `2 => 2×1` in the above examples.
+The value of `dims` is the _dimension that becomes singleton_, so `dims=1 => 1×3` and `dims=2 => 2×1` in the above examples.
 
 By extension, higher-dimensional arrays can reduce multiple dimensions, if `dims` is set to an array or range _(again, understanding the output may need some thought!)_.
 
