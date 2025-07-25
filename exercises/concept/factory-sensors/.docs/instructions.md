@@ -72,7 +72,7 @@ Beyond returning the logs from the previous functions, this wrapper will also ne
 - If either or both of the checks fail, a single `MachineError` should be thrown after the logs are added.
 - If all is well, only the logs from `humiditycheck` and `temperaturecheck` will be added.
 
-Implement a function `monitor_the_machine()` that takes humidity and temperature as arguments.
+Implement a function `machinemonitor()` that takes humidity and temperature as arguments.
 
 ```julia-repl
 julia> machinemonitor(42, 450)
