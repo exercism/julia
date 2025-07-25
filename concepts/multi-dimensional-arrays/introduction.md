@@ -65,8 +65,8 @@ julia> [v; 2v]
  6
 ```
 
-There are functions [`hcat()`][hcat] and [`vcat()`][vcat] that do the same thing, making more expicit that these are horizontal and vertical concatenations.
-The higher-dimensional generalization is the [`cat()`][cat] function.
+There are functions `hcat()`and `vcat()` that do the same thing, making more expicit that these are horizontal and vertical concatenations.
+The higher-dimensional generalization is the `cat()` function.
 
 ```julia-repl
 jjulia> hcat(v, 2v)
@@ -108,7 +108,7 @@ julia> reshape(collect(1:6), 2, 3)
 
 The example above takes the integers 1 to 6 and fills in a 2×3 Matrix with them column-wise.
 
-There are various [utility functions][array-construct] to construct common types of array (uniform or random).
+There are various utility functions to construct common types of array (uniform or random).
 
 ```julia-repl
 julia> zeros(2, 3)  # see also ones()
@@ -132,7 +132,7 @@ julia> rand(Float32, 2, 3)  # random numbers in the interval [0, 1)
 NumPy enthusiasts will be aware that `np.linspace` is a widely-used function to generate an array of specified length, with specified endpoints and evenly-spaced values.
 This is typically used as the x-axis of a graph, or as the independent variable in linear models.
 
-Julia has no exact equivalent, but the very flexible [`range()`][range] function can mimic it by specifying the lower and upper bounds, plus the `length` keyword argument.
+Julia has no exact equivalent, but the very flexible `range()` function can mimic it by specifying the lower and upper bounds, plus the `length` keyword argument.
 
 ```julia-repl
 julia> x = range(0, 2π; length=100)
@@ -152,7 +152,7 @@ julia> vals = [x sin.(x) cos.(x)]
 
 The `StepRangeLen` can be used like a vector, including conversion to a matrix column.
 
-See also the equivalent [`logrange()`][logrange] function, to generate values equally-spaced on a log axis.
+See also the equivalent `logrange()` function, to generate values equally-spaced on a log axis.
 
 ## Indexing
 
@@ -182,7 +182,7 @@ The explanation goes back to the comment about column-major order: Julia goes do
 Be careful: this has some uses when writing general-purpose libraries, but is more likely to be confusing!
 
 A similar issue arises when querying the size of an array.
-[`length()`][length] gives the total number of elements, [`size()`][size] gives a tuple of [`ndims()`][ndims] elements with the length of each dimension.
+`length()` gives the total number of elements, `size()` gives a tuple of `ndims()` elements with the length of each dimension.
 
 ```julia-repl
 julia> m
@@ -204,7 +204,7 @@ julia> ndims(m)  # how many dimensions? Like `m |> size |> length`
 
 We can easily copy a sub-matrix. 
 
-In the example below, the [`reshape()`][reshape] function coerces an array to the specified dimensions by filling column-wise, then we slice it.
+In the example below, the `reshape()` function coerces an array to the specified dimensions by filling column-wise, then we slice it.
 
 ```julia-repl
 julia> m12 = reshape(collect(1:12), 4, 3)
@@ -241,7 +241,7 @@ julia> m12[[1, 3], :]  # rows 1 and 3
 
 ## Applying functions to an array
 
-We have previously seen aggregation functions such as [`sum()`][sum] and [`maximum()`][max] applied to 1-D collections, where they operate on all the elements and return a scalar result.
+We have previously seen aggregation functions such as `sum()` and `maximum()` applied to 1-D collections, where they operate on all the elements and return a scalar result.
 
 This also works in higher dimensions.
 However, we may want to apply the function to only one dimension, for example by summing down or across to return an array with a `singleton dimension` of size 1.
@@ -279,13 +279,13 @@ By extension, higher-dimensional arrays can reduce multiple dimensions, if `dims
 
 ## Writing dimension-aware functions
 
-The `dims` keyword argument is common in built-in functions like [`sum()`][sum], but how do we write something equivalent in our own code?
+The `dims` keyword argument is common in built-in functions like `sum()`, but how do we write something equivalent in our own code?
 
-One good answer is to use higher-order functions such as [`reduce()`][reduce], and this will be covered in some detail in a later Concept.
+One good answer is to use higher-order functions such as `reduce()`, and this will be covered in some detail in a later Concept.
 
 Alternatively, Julia provides several functions that let us treat N-dimensional arrays as if they were nested vectors of vectors.
 
-For matrices, [`eachrow()`][eachrow] and [`eachcol()`][eachcol] are convenient, but the more general function is [`eachslice()`][eachslice] that can handle arbitrary dimensions.
+For matrices, `eachrow()` and `eachcol()` are convenient, but the more general function is `eachslice()` that can handle arbitrary dimensions.
 
 ```julia-repl
 # m is as in the previous examples
@@ -328,7 +328,7 @@ julia> v .- 0.5
  1.2
 ```
 
-The dotted operator `.-` treats the singleton `0.5` as equivalent to `[0.5, 0.5, 0.5]` by [`broadcasting`][broadcasting] it to match dimensions, then does the subtraction element-wise.
+The dotted operator `.-` treats the singleton `0.5` as equivalent to `[0.5, 0.5, 0.5]` by `broadcasting` it to match dimensions, then does the subtraction element-wise.
 
 Extending this to higher dimensions is really just more of the same.
 
@@ -362,22 +362,5 @@ In general, Julia will broadcast any singleton dimension(s) to match the shape o
 
 [vectors]: https://exercism.org/tracks/julia/concepts/vectors
 [loops]: https://exercism.org/tracks/julia/concepts/loops
-[hcat]: https://docs.julialang.org/en/v1/base/arrays/#Base.hcat
-[vcat]: https://docs.julialang.org/en/v1/base/arrays/#Base.vcat
-[cat]: https://docs.julialang.org/en/v1/base/arrays/#Base.cat
-[reduce]: https://docs.julialang.org/en/v1/base/collections/#Base.reduce-Tuple{Any,%20Any}
-[eachrow]: https://docs.julialang.org/en/v1/base/arrays/#Base.eachrow
-[eachcol]: https://docs.julialang.org/en/v1/base/arrays/#Base.eachcol
-[eachslice]: https://docs.julialang.org/en/v1/base/arrays/#Base.eachslice
 [vector-ops]: https://exercism.org/tracks/julia/concepts/vector-operations
 [col-major]: https://en.wikipedia.org/wiki/Row-_and_column-major_order
-[array-construct]: https://docs.julialang.org/en/v1/manual/arrays/#Construction-and-Initialization
-[length]: https://docs.julialang.org/en/v1/base/arrays/#Base.length-Tuple%7BAbstractArray%7D
-[size]: https://docs.julialang.org/en/v1/base/arrays/#Base.size
-[ndims]: https://docs.julialang.org/en/v1/base/arrays/#Base.ndims
-[reshape]: https://docs.julialang.org/en/v1/base/arrays/#Base.reshape
-[sum]: https://docs.julialang.org/en/v1/base/collections/#Base.sum
-[max]: https://docs.julialang.org/en/v1/base/collections/#Base.maximum
-[broadcasting]: https://docs.julialang.org/en/v1/manual/arrays/#Broadcasting
-[range]: https://docs.julialang.org/en/v1/base/math/#Base.range
-[logrange]: https://docs.julialang.org/en/v1/base/math/#Base.logrange
