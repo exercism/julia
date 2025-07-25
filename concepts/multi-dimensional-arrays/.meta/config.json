@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "Arrays of arbitrary size and arbitrary number of dimensions are central to the design of Julia, and there is an extremely rich variety of ways to work with them."
+}

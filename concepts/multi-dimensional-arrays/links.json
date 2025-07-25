@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://docs.julialang.org/en/v1/manual/arrays/",
+    "description": "Manual: single- and multi-dimensional arrays."
+  },
+  {
+    "url": "https://en.wikibooks.org/wiki/Introducing_Julia/Arrays_and_tuples#Creating_2D_arrays_and_matrices",
+    "description": "Wikibook: 2-D arrays and matrices."
+  }
+]
