@@ -14,18 +14,21 @@ By this point in the syllabus, we have already seen various ways to apply some o
 
 - Use a [loop][loops] (like most programming languages since the dawn of digital computing).
 - Use a [comprehension][comprehensions] (Python-style).
-- Use [broadcasting][broadcasting] (distinctively Julia syntax, though with a debt to R and NumPy).
+- Use [broadcasting][broadcasting] (distinctively Julia syntax, though with a large debt to R, Matlab and NumPy).
 
 This Concept will focus on higher-order functions (familiar from any functional language, such as Haskell or F#).
 
 Other possible approaches include:
 
-- Recursion (as in ML-family languages). Julia allows this, but without tail-call optimization it risks stack overflow.
-- Metprogramming with macros (traditionally a Lisp feature). This is widely used in advanced Julia programming, but _approach with caution_ in most cases. Other options are likely to be easier to write and much easier to debug.
+- Recursion (as in ML-family languages). 
+  - Julia allows this, but without tail-call optimization it risks stack overflow.
+- Metprogramming with macros (traditionally a Lisp feature). 
+  - This is widely used in advanced Julia programming, but _approach with caution_ in most cases. 
+  - Other options are likely to be easier to write and much easier to debug.
 
 ## Filtering
 
-The [`filter()`][filter] function takes a function with a boolean return value and applies it to a collection.
+The [`filter()`][filter] function takes a passed-in function with a boolean return value and applies it to a collection.
 Only elements returning `true` are included in the return value.
 
 ```julia-repl
@@ -37,6 +40,21 @@ julia> filter(iseven, 1:6)
 
 julia> filter(!isascii, "Hrōðgār")
 "ōðā"
+```
+
+With multi-dimensional arrays, `filter` destroys the shape and returns a Vector.
+
+```julia-repl
+julia> m
+2×3 Matrix{Int64}:
+ 1  2  3
+ 4  5  6
+
+julia> filter(isodd, m)
+3-element Vector{Int64}:
+ 1
+ 5
+ 3
 ```
 
 The examples above use built-in functions, but use of anonymous functions is very common in this context.
@@ -57,7 +75,7 @@ There is also an in-place version, [`filter!()`][filter-bang], as there is for m
 ## Mapping
 
 The [`map()`][map] function transforms a collection by applying a function to each element.
-This can be similar to [broadcasting][broadcasting] in simple cases, though differences become important with multidimensional collections.
+This can be similar to [broadcasting][broadcasting] in simple cases, with the output shape matching the input.
 
 ```julia-repl
 julia> map(√, [1, 4, 9])
@@ -72,6 +90,16 @@ julia> map(x -> x^2 + 1, 1:4)
   5
  10
  17
+
+julia> m
+2×3 Matrix{Int64}:
+ 1  2  3
+ 4  5  6
+
+julia> map(√, m)
+2×3 Matrix{Float64}:
+ 1.0  1.41421  1.73205
+ 2.0  2.23607  2.44949
 ```
 
 `map()` will also operate element-wise on multiple collections.
@@ -83,7 +111,7 @@ julia> map(*, [1, 2], [3, 4])
  8
 ```
 
-Conceptually, we can think of this as equivalent to running [`zip()`][zip] on the input collections, then `map()` on each element of the intermediate result.
+Conceptually, we can think of this as equivalent to running [`zip()`][zip] on the multiple input collections, then `map()` on each element of the intermediate result.
 _This is only a rough analogy, implying nothing about the implementation!_
 
 As with `zip()`, collections of mismatched shape are truncated to the dimension(s) of the smallest.
@@ -122,6 +150,19 @@ julia> reduce(*, 1:4) # multiply
 24
 ```
 
+As with `sum()` and other aggregation functions, `reduce()` can take an optional keyword argument `dims`, to specify the dimension(s) to reduce.
+
+```julia-repl
+julia> m
+2×3 Matrix{Int64}:
+ 1  2  3
+ 4  5  6
+
+julia> reduce(+, m; dims=1)
+1×3 Matrix{Int64}:
+ 5  7  9
+```
+
 These are easy examples, because add and multiply are both commutative (`1+2 == 2+1`) and associative ( `(1+2)+3 == 1+(2+3)` ).
 
 This is far from universal!
@@ -141,12 +182,10 @@ julia> foldr(-, 1:3) # 1 - (2 - 3)
 2
 ```
 
-For such simple examples, this may seem like more functions than we really need to do essentially the same thing.
+Note that these are intended for collections that can be treated as one-dimensional, returning a scalar result.
+Use of a `dims` argument is not supported for `foldl` and `foldr`, only for `reduce`.
 
-The situation will become more nuanced with some later concepts:
-
-- N-dimensional arrays, which can be sliced and reduced in many ways.
-- Parallel computing, where out-of-sequence calculations are normal.
+use of reduce functions will become more nuanced with parallel computing, where out-of-sequence calculations are normal (though beyond the scope of this Concept).
 
 ## MapReduce
 
@@ -156,7 +195,7 @@ We could sequentially run `map`, then run `reduce` on an intermediate collection
 However, this is inefficient at best, and scales very badly as the collection gets larger.
 
 It is _strongly_ recommended to use the combined [`mapreduce()`][mapreduce] function instead.
-It can use a much more performant algorithm which interleaves the map/reduce operations.
+It can implement a much more performant algorithm which interleaves the map/reduce operations.
 
 The first argument is the function to map with, the second argument is the reduce operator.
 
@@ -172,7 +211,6 @@ julia> sum(map(x -> x^2 + 1, 1:3))
 MapReduce operations are especially popular with big data systems (Hadoop, Spark, etc), as they can operate in real time on streams of arbitrary and unknown length without exploding memory usage.
 
 As we might expect, Julia also has [`mapfoldl()`][mapfoldl] and [`mapfoldr()`][mapfoldr] functions for sitations where direction is important.
-
 
 
 [loops]: https://exercism.org/tracks/julia/concepts/loops
