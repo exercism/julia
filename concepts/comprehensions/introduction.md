@@ -16,7 +16,7 @@ The syntax is mostly a direct copy of Python, but with extensions for higher-dim
 Very Pythonic, including the optional `if` clause.
 
 ```julia-repl
-ulia> [x^2 for x in 1:3]
+julia> [x^2 for x in 1:3]
 3-element Vector{Int64}:
  1
  4
@@ -50,7 +50,7 @@ julia> [x^2 for x in m if isodd(x^2)]
 
 ## Multi-variable, Vector output
 
-Like Python, we can have multiple `for` clauses with different variables, with the same or different collections.
+Like Python, we can have multiple `for` clauses with different variables, with the same or input different collections.
 
 ```julia-repl
 julia> [x * y for x in 1:3 for y in 4:6]
