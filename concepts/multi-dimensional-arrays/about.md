@@ -127,6 +127,39 @@ julia> rand(Float32, 2, 3)  # random numbers in the interval [0, 1)
  0.388451  0.109176  0.850381
 ```
 
+### Generating evenly-spaced values
+
+NumPy enthusiasts will be aware that `np.linspace` is a widely-used function to generate an array of specified length, with specified endpoints and evenly-spaced values.
+This is typically used as the x-axis of a graph, or as the independent variable in linear models.
+
+Julia has no exact equivalent, but the very flexible [`range()`][range] function can mimic it by specifying the lower and upper bounds, plus the `length` keyword argument.
+
+Anyone working locally, with access to the `Plots` package, can run this code:
+
+```julia-repl
+julia> using Plots
+
+julia> x = range(0, 2π; length=100)
+0.0:0.06346651825433926:6.283185307179586
+
+julia> typeof(x)
+StepRangeLen{Float64, Base.TwicePrecision{Float64}, Base.TwicePrecision{Float64}, Int64}
+
+julia> vals = [x sin.(x) cos.(x)]
+100×3 Matrix{Float64}:
+ 0.0         0.0           1.0
+ 0.0634665   0.0634239     0.997987
+ 0.126933    0.126592      0.991955
+ 0.1904      0.189251      0.981929
+(...truncated)
+
+julia> plot(vals[:, 1], vals[:, 2:3])
+```
+
+The `StepRangeLen` can be used like a vector, including conversion to a matrix column.
+
+See also the equivalent [`logrange()`][logrange] function, to generate values equally-spaced on a log axis.
+
 ## Indexing
 
 For a 2-D array, we generally use two indices in `[row, col]` order.
@@ -352,3 +385,5 @@ In general, Julia will broadcast any singleton dimension(s) to match the shape o
 [sum]: https://docs.julialang.org/en/v1/base/collections/#Base.sum
 [max]: https://docs.julialang.org/en/v1/base/collections/#Base.maximum
 [broadcasting]: https://docs.julialang.org/en/v1/manual/arrays/#Broadcasting
+[range]: https://docs.julialang.org/en/v1/base/math/#Base.range
+[logrange]: https://docs.julialang.org/en/v1/base/math/#Base.logrange
