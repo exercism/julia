@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "The concept and most of the syntax of comprehensions and generators is copied from Python, but Julia also handles multi-dimansional arrays."
+}
