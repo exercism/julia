@@ -1,0 +1,14 @@
+[
+  {
+    "url": "https://docs.julialang.org/en/v1/manual/arrays/#man-comprehensions",
+    "description": "Julia manual: comprehensions."
+  },
+  {
+    "url": "https://docs.julialang.org/en/v1/manual/arrays/#man-generators",
+    "description": "Julia manual: generators."
+  },
+  {
+    "url": "https://en.wikibooks.org/wiki/Introducing_Julia/Controlling_the_flow#Comprehensions",
+    "description": "Wikibook: comprehensions and generators."
+  }
+]
