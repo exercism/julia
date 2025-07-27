@@ -29,7 +29,7 @@ Other possible approaches include:
 ## Filtering
 
 The `filter()` function takes a passed-in function with a boolean return value and applies it to a collection.
-Only elements returning `true` are included in the return value.
+Only elements returning `true` are included in the return value, which is of the same _basic_ type as the input (see below).
 
 ```julia-repl
 julia> filter(iseven, 1:6)
@@ -38,11 +38,16 @@ julia> filter(iseven, 1:6)
  4
  6
 
+# String is a collection of Chars, so String in -> String out
 julia> filter(!isascii, "Hrōðgār")
 "ōðā"
+
+# tuple input -> tuple output
+julia> filter(iseven, (1, 2, 3, 4, 5))
+(2, 4)
 ```
 
-With multi-dimensional arrays, `filter` destroys the shape and returns a Vector.
+With multi-dimensional arrays, `filter` flattens the input dimensions and returns a Vector: _the main exception to any rule about output type matching input type_.
 
 ```julia-repl
 julia> m
@@ -116,8 +121,8 @@ _This is only a rough analogy, implying nothing about the implementation!_
 
 As with `zip()`, collections of mismatched shape are truncated to the dimension(s) of the smallest.
 
-Sometimes only the side effects of the passed-in function are needed, such as a database write or a `push!` to an array..
-Then the more efficient higher-order function is `foreach()`, which always returns [`nothing`][nothingness].
+Sometimes only the side effects of the passed-in function are needed, such as a database write or a `push!` to an array.
+Then the higher-order function `foreach()` is available, which always returns [`nothing`][nothingness].
 
 ## Reducing
 
@@ -206,6 +211,6 @@ As we might expect, Julia also has `mapfoldl()` and `mapfoldr()` functions for s
 
 
 [loops]: https://exercism.org/tracks/julia/concepts/loops
-[comprehensions]: https://exercism.org/tracks/julia/concepts/loops
+[comprehensions]: https://exercism.org/tracks/julia/concepts/comprehensions
 [nothingness]: https://exercism.org/tracks/julia/concepts/nothingness
 [broadcasting]: https://exercism.org/tracks/julia/concepts/vector-operations
