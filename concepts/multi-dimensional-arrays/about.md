@@ -12,6 +12,39 @@ However, higher dimensional arrays are _very, very_ important in scientific comp
 Examples in this document will mostly be matrices.
 Working with 3 or more dimensions is syntactically near-identical, but the output is difficult and confusing to read (on a 2-D screen).
 
+The [`type`][types] of an N-dimensional of [`eltype`][eltype] `T` is `Array{T, N}`.
+
+For convenience, and consistency with mathematical nomenclature, Julia defines some type aliases: `Vector{T}` for `Array{T, 1}` and `Matrix{T}` for `Array{T, 2}`.
+
+```julia-repl
+# 3-D array
+julia> m3 = ones(2, 3, 4);
+
+julia> typeof(m3)
+Array{Float64, 3}
+
+# Vector
+julia> v = [1, 2]
+2-element Vector{Int64}:
+ 1
+ 2
+
+julia> typeof(v) == Array{Int64, 1}
+true
+
+# Matrix
+julia> m
+2×3 Matrix{Int64}:
+ 1  2  3
+ 4  5  6
+
+julia> typeof(m)
+Matrix{Int64} (alias for Array{Int64, 2})
+
+julia> typeof(m) == Array{Int64, 2}
+true
+```
+
 ## Constructing arrays
 
 We have created lots of vectors by putting a comma-separated list in square brackets.
@@ -245,6 +278,24 @@ julia> m12[[1, 3], :]  # rows 1 and 3
  3  7  11
 ```
 
+A `:` by itself will flatten any array to a Vector, column-wise.
+
+```julia-repl
+julia> m
+2×3 Matrix{Int64}:
+ 1  2  3
+ 4  5  6
+
+julia> m[:]
+6-element Vector{Int64}:
+ 1
+ 4
+ 2
+ 5
+ 3
+ 6
+```
+
 ## Applying functions to an array
 
 We have previously seen aggregation functions such as [`sum()`][sum] and [`maximum()`][max] applied to 1-D collections, where they operate on all the elements and return a scalar result.
@@ -387,3 +438,5 @@ In general, Julia will broadcast any singleton dimension(s) to match the shape o
 [broadcasting]: https://docs.julialang.org/en/v1/manual/arrays/#Broadcasting
 [range]: https://docs.julialang.org/en/v1/base/math/#Base.range
 [logrange]: https://docs.julialang.org/en/v1/base/math/#Base.logrange
+[eltype]: https://docs.julialang.org/en/v1/base/collections/#Base.eltype
+[types]: https://exercism.org/tracks/julia/concepts/types
