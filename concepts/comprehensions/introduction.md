@@ -112,9 +112,34 @@ Higher dimensions are possible, with the usual warnings about readability of the
 
 The previous sections have concentrated on array output, with the comprehension placed inside brackets `[ ... ]`.
 
-Omitting the brackets gives a `generator expression`: a lazily-evaluated iterator which can yield the next value on demand.
+When the brackets are replaced by parentheses `( ... )` something different happens: we get a `generator expression`: a lazily-evaluated iterator which can yield the next value on demand.
 
-When the result of the comprehension is immediately used for further processing, a generator can be memory-efficient, avoiding the need to store a large intermediate array.
+```julia-repl
+julia> g = ((x, y) for x in 1:3, y in 4:6)
+Base.Generator{Base.Iterators.ProductIterator{Tuple{UnitRange{Int64}, UnitRange{Int64}}}, var"#9#10"}(var"#9#10"(), Base.Iterators.ProductIterator{Tuple{UnitRange{Int64}, UnitRange{Int64}}}((1:3, 4:6)))
+
+# Indexing fails with a generator, the entries don't exist yet
+julia> g[1, 2]
+ERROR: MethodError: no method matching getindex(::Base.Generator{Base.Iterators.ProductIterator{Tuple{UnitRange{…}, UnitRange{…}}}, var"#9#10"}, ::Int64, ::Int64)
+
+# conversion to array
+julia> collect(g)
+3×3 Matrix{Tuple{Int64, Int64}}:
+ (1, 4)  (1, 5)  (1, 6)
+ (2, 4)  (2, 5)  (2, 6)
+ (3, 4)  (3, 5)  (3, 6)
+
+# generators are mainly designed for iteration
+julia> [i * j for (i, j) in g]
+3×3 Matrix{Int64}:
+  4   5   6
+  8  10  12
+ 12  15  18
+```
+
+When the result of a comprehension is immediately used for further processing, a generator can be memory-efficient, avoiding the need to store a large intermediate array.
+
+A generator used as a function argument does not need additional parentheses.
 
 ```julia-repl
 # inefficient
@@ -123,12 +148,12 @@ julia> v = [x^2 for x in 1:1e6];
 julia> sum(v)
 3.333338333335e17
 
-# better
+# better - use a generator
 julia> sum(x^2 for x in 1:1e6)
 3.3333383333312755e17
 ```
 
-Syntax is identical to comprehensions, other than the surrounding brackets.
+Generator syntax is identical to comprehensions, other than the surrounding brackets.
 
 Generators can also be convenient in dictionary constructors.
 
