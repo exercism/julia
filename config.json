@@ -1677,9 +1677,19 @@
       "name": "Functions"
     },
     {
+      "uuid": "4a2d6c00-fde7-49b6-836c-09f36088fa24",
+      "slug": "higher-order-functions",
+      "name": "Higher Order Functions"
+    },
+    {
       "uuid": "c6920164-6c6e-4f82-8d85-ba179ef906d5",
       "slug": "function-composition",
       "name": "Function Composition"
+    },
+    {
+      "uuid": "51433acb-1740-477b-bc9b-75af68d08519",
+      "slug": "multi-dimensional-arrays",
+      "name": "Multi Dimensional Arrays"
     },
     {
       "uuid": "95b8b60b-fd78-4ec1-9d1c-ac3f11107727",
@@ -1755,6 +1765,11 @@
       "uuid": "d5371653-e0ce-493a-a21f-16a8cb0c554d",
       "slug": "dates-times",
       "name": "Dates and Times"
+    },
+    {
+      "uuid": "2ab44d06-717e-4bc4-b38b-906d9673e9bb",
+      "slug": "comprehensions",
+      "name": "Comprehensions"
     }
   ],
   "key_features": [
