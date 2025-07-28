@@ -1677,6 +1677,11 @@
       "name": "Functions"
     },
     {
+      "uuid": "4a2d6c00-fde7-49b6-836c-09f36088fa24",
+      "slug": "higher-order-functions",
+      "name": "Higher Order Functions"
+    },
+    {
       "uuid": "c6920164-6c6e-4f82-8d85-ba179ef906d5",
       "slug": "function-composition",
       "name": "Function Composition"
