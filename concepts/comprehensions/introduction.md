@@ -50,7 +50,7 @@ julia> [x^2 for x in m if isodd(x^2)]
 
 ## Multi-variable, Vector output
 
-Like Python, we can have multiple `for` clauses with different variables, with the same or input different collections.
+Like Python, we can have multiple `for` clauses with different variables, with the same or different input collections.
 
 ```julia-repl
 julia> [x * y for x in 1:3 for y in 4:6]
