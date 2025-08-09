@@ -1770,6 +1770,11 @@
       "uuid": "2ab44d06-717e-4bc4-b38b-906d9673e9bb",
       "slug": "comprehensions",
       "name": "Comprehensions"
+    },
+    {
+      "uuid": "2bc53c5a-76a6-4f7a-9920-a5110f298254",
+      "slug": "dict-functions",
+      "name": "Dict Functions"
     }
   ],
   "key_features": [
