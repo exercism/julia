@@ -380,6 +380,14 @@
         "status": "beta"
       },
       {
+        "slug": "boutique-suggestions",
+        "name": "boutique-suggestions",
+        "uuid": "316a30a1-0be6-4b30-b242-7c638cba0aee",
+        "concepts": [],
+        "prerequisites": [],
+        "status": "wip"
+      },
+      {
         "slug": "old-elyses-enchantments",
         "name": "Old Elyse's Enchantments",
         "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",
