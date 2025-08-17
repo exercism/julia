@@ -24,7 +24,7 @@ julia> d[4]
 ERROR: KeyError: key 4 not found
 ```
 
-We could test for the key before trying to retrieve it (with something like `4 ∈ keys(d)`), but it can be useful to just get a default value for missing keys.
+We could test for the key before trying to retrieve it (with something like `haskey(d, 4)` or `4 ∈ keys(d)`), but it can be useful to just get a default value for missing keys.
 
 For this, we have the [`get()`][get] function and its mutating variant [`get!()`][get-bang].
 These differ in whether the "missing" key is added to the `Dict`.
@@ -109,7 +109,7 @@ julia> [v for v in values(d)]
 
 Combining two `Dict`s can be useful, but we need to be clear about what we intend to do with keys that are present in more than one input.
 
-The [`merge()`][merge] function will combine an arbitrary number of supplied `Dict`s in a left-to right fashion.
+The [`merge()`][merge] and [`merge!()`][merge-bang] functions will combine an arbitrary number of supplied `Dict`s in a left-to right fashion.
 
 Existing keys have their values simply overwritten, so the right-most `Dict` "wins".
 
@@ -132,7 +132,7 @@ Dict{String, Any} with 3 entries:
   "coords" => (3, 2)
 ```
 
-The [`mergewith()`][mergewith] function lets us supply a function as the first argument, to define how repeated keys should be merged.
+The [`mergewith()`][mergewith] and [`mergewith!()`][mergewith-bang] functions lets us supply a function as the first argument, to define how repeated keys should be merged.
 Addition is a simple example.
 
 ```julia-repl
@@ -179,7 +179,9 @@ For multiple [`Set`s][sets], the corresponding merge function is [`union`][union
 [get]: https://docs.julialang.org/en/v1/base/collections/#Base.get
 [get-bang]: https://docs.julialang.org/en/v1/base/collections/#Base.get!
 [merge]: https://docs.julialang.org/en/v1/base/collections/#Base.merge
+[merge-bang]: https://docs.julialang.org/en/v1/base/collections/#Base.merge!
 [mergewith]: https://docs.julialang.org/en/v1/base/collections/#Base.mergewith
+[mergewith-bang]: https://docs.julialang.org/en/v1/base/collections/#Base.mergewith!
 [multidim]: https://exercism.org/tracks/julia/concepts/multi-dimensional-arrays
 [vcat]: https://docs.julialang.org/en/v1/base/arrays/#Base.vcat
 [union]: https://docs.julialang.org/en/v1/base/collections/#Base.union
