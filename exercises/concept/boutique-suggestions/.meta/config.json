@@ -1,0 +1,23 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "files": {
+    "solution": [
+      "boutique-suggestions.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ],
+    "auxiliary": [
+      "testtools.jl"
+    ]
+  },
+  "forked_from": [
+    "elixir/boutique-suggestions"
+  ],
+  "blurb": "Learn about comprehensions by generating outfit suggestions for the clients of your fashion boutique."
+}
