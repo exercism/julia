@@ -388,7 +388,8 @@
         ],
         "prerequisites": [
           "pairs-and-dicts"
-        ]
+        ],
+        "status": "beta"
       },
       {
         "slug": "old-elyses-enchantments",
