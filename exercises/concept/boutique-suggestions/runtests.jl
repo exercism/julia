@@ -1,7 +1,6 @@
 using Test
 
 include("boutique-suggestions.jl")
-include("testtools.jl")
 
 @testset verbose = true "tests" begin
     testitem = Dict ∘ zip
