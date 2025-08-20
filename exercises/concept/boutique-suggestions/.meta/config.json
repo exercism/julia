@@ -11,9 +11,6 @@
     ],
     "exemplar": [
       ".meta/exemplar.jl"
-    ],
-    "auxiliary": [
-      "testtools.jl"
     ]
   },
   "forked_from": [

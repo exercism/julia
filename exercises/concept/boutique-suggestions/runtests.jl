@@ -4,6 +4,7 @@ include("boutique-suggestions.jl")
 include("testtools.jl")
 
 @testset verbose = true "tests" begin
+    testitem = Dict ∘ zip
     @testset "Create clothing item" begin
         @testset "Creates an item with canonical categories" begin
             categories = ("item_name", "price", "color", "base_color")

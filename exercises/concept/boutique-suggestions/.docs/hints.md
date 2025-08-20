@@ -4,7 +4,7 @@
 
 - Some functions can be used with the comprehension syntax to construct them.
 - `Dict` is just such a function, review **Generator expressions** in the introduction.
-- The category at index `i` matches with the quality at index `i`
+- The category at index `i` matches with the quality at index `i` ([eachindex()][index] may be useful)
 
 ## 2. Suggest combinations
 
@@ -23,3 +23,5 @@
 - You will need to compare the `base_color` from both pieces of clothing and discard the outfits that have the same `base_color`.
 - With `Matrix` input, make sure your output is in the most efficient order (i.e. column major).
 - Review **Single variable** in the introduction.
+
+[index]: https://docs.julialang.org/en/v1/base/arrays/#Base.eachindex

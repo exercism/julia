@@ -387,9 +387,10 @@
           "comprehensions"
         ],
         "prerequisites": [
-          "pairs-and-dicts"
+          "pairs-and-dicts",
+          "multi-dimensional-arrays"
         ],
-        "status": "beta"
+        "status": "wip"
       },
       {
         "slug": "old-elyses-enchantments",
