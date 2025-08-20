@@ -380,6 +380,19 @@
         "status": "beta"
       },
       {
+        "slug": "boutique-suggestions",
+        "name": "Boutique Suggestions",
+        "uuid": "e8019ab1-f82a-4fd2-bcc3-b72c460a4db2",
+        "concepts": [
+          "comprehensions"
+        ],
+        "prerequisites": [
+          "pairs-and-dicts",
+          "multi-dimensional-arrays"
+        ],
+        "status": "wip"
+      },
+      {
         "slug": "old-elyses-enchantments",
         "name": "Old Elyse's Enchantments",
         "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",
