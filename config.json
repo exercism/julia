@@ -393,6 +393,18 @@
         "status": "wip"
       },
       {
+        "slug": "exercism-matrix",
+        "name": "Exercism Matrix",
+        "uuid": "36cbda04-3921-4491-9ec6-76951f00aa00",
+        "concepts": [
+          "multi-dimensional-arrays"
+        ],
+        "prerequisites": [
+          "function-composition"
+        ],
+        "status": "wip"
+      },
+      {
         "slug": "old-elyses-enchantments",
         "name": "Old Elyse's Enchantments",
         "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",
@@ -452,14 +464,6 @@
         "slug": "old-high-score",
         "name": "Old High Score",
         "uuid": "21ba9b66-5410-4748-9e6f-e8a96871d9bf",
-        "concepts": [],
-        "prerequisites": [],
-        "status": "deprecated"
-      },
-      {
-        "slug": "old-exercism-matrix",
-        "name": "Old The Exercism Matrix",
-        "uuid": "36cbda04-3921-4491-9ec6-76951f00aa00",
         "concepts": [],
         "prerequisites": [],
         "status": "deprecated"
