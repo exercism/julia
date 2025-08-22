@@ -1,6 +1,6 @@
 # Hints
 
-This is a short and simple exercise, so it is best to avoid complicating it.
+The introduction contains most of what is needed for this exercise.
 
 ## 1. Define the Exercism logo `Matrix`
 
@@ -15,8 +15,8 @@ This is a short and simple exercise, so it is best to avoid complicating it.
 ## 3. Put together a stickerwall
 
 - Use your `frown()` function.
-- The `vcat()` and `hcat()` functions are your friend here.
-- The `ones()` and `zeros()` functions can be quite useful.
+- The `vcat()` and `hcat()` functions, or their equivalents, are your friends here.
+- The `ones()` and `zeros()` functions can also be quite useful.
 
 ## 4. Change dots to column pixel counts
 
