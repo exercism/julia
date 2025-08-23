@@ -17,10 +17,10 @@ function increment(name)
     
 end
 
-function title(player::Player)
+function title!(player::Player)
 
 end
 
-function revive(player::Player)
+function revive!(player::Player)
     
 end

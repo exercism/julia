@@ -88,36 +88,45 @@ julia> increment(player4.mana)
 
 ## 5. Implement the title function
 
-The highest level in the game is `42`.  To recognize the accomplishment of players who achieve this level, a title is attached to their names.  The `title` function updates a player's name as follows.
+The highest level in the game is `42`.  To recognize the accomplishment of players who achieve this level, a title is attached to their names.  The `title!` function updates a player's name as follows.
 
 - If the player's level is 42, the name is updated using the `increment` function.
 - Otherwise, the name remains unchanged.
 
-In either case, the `title` function returns the player's name.
+In either case, the `title!` function returns the player's name.
 
 ```julia-repl
 julia> player1 = Player(level=42, health=12)
 Player(missing, 42, 12, nothing)
 
-julia> title(player1)
+julia> title!(player1)
+"The Great"
+
+julia> player1.name
 "The Great"
 
 julia> player2 = Player(name="Svengali", level=42, health=36, mana=54)
 Player("Svengali", 42, 36, 54)
 
-julia> title(player2)
+julia> title!(player2)
+"Svengali the Great"
+
+julia> player2.name
 "Svengali the Great"
 
 julia> player3 = Player(name="Rasputin", level=21, health=100, mana=54)
 Player("Rasputin", 21, 100, 54)
 
-julia> title(player3)
+julia> title!(player3)
+"Rasputin"
+
+julia> player3.name
 "Rasputin"
 ```
 
 ## 6. Implement the revive function
 
-The `revive` function should check that the player's character is indeed dead (their health has reached `0`).
+The `revive!` function should check that the player's character is indeed dead (their health has reached `0`).
 
 If the player is dead:
 - The player should be revived with `100` health.
@@ -125,24 +134,24 @@ If the player is dead:
 
 If the player is  alive, nothing happens to the player
 
-The `revive` function should return the player.
+The `revive!` function should return the player.
 
 ```julia-repl
 julia> deadplayer1 = Player(level=2, health=0)
 Player(missing, 2, 0, nothing)
 
-julia> revive(deadplayer1)
+julia> revive!(deadplayer1)
 Player(missing, 2, 100, 50)
 
 julia> deadplayer2 = Player(level=12, health=0, mana=5)
 Player(missing, 12, 0, 5)
 
-julia> revive(deadplayer2)
+julia> revive!(deadplayer2)
 Player(missing, 12, 100, 105)
 
 julia> aliveplayer = Player(level=23, health=1)
 Player(missing, 23, 1, nothing)
 
-julia> revive(aliveplayer)
+julia> revive!(aliveplayer)
 Player(missing, 23, 1, nothing)
 ```
