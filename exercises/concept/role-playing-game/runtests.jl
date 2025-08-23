@@ -54,7 +54,7 @@ include("role-playing-game.jl")
     end
 
     @testset "5. Implement the title function" begin
-        @isdefined(title) && (title! = title)
+        @isdefined(title) && (global title! = title)
         @testset "level < 42" begin
             defaultplayer = Player()
             name = title!(defaultplayer)
@@ -77,7 +77,7 @@ include("role-playing-game.jl")
     end
 
     @testset "6. Implement the revive function" begin
-        @isdefined(revive) && (revive! = revive)
+        @isdefined(revive) && (global revive! = revive)
         @testset "dead player" begin
             player1 = Player(level=42, health=0)
             @test revive!(player1) isa Player
