@@ -54,38 +54,40 @@ include("role-playing-game.jl")
     end
 
     @testset "5. Implement the title function" begin
+        @isdefined(title) && (title! = title)
         @testset "level < 42" begin
             defaultplayer = Player()
-            name = title(defaultplayer)
+            name = title!(defaultplayer)
             @test ismissing(name) && ismissing(defaultplayer.name)
             
             namedplayer = Player(name="Willard", level=21)
-            name = title(Player(name="Willard", level=21))
+            name = title!(Player(name="Willard", level=21))
             @test name == namedplayer.name == "Willard"
         end
 
         @testset "level = 42" begin
             namedplayer = Player(name="Genie", level=42, health=50)
-            name = title(namedplayer)
+            name = title!(namedplayer)
             @test name == namedplayer.name == "Genie the Great"
             
             unnamedplayer = Player(level=42)
-            name = title(unnamedplayer) 
+            name = title!(unnamedplayer) 
             @test name == unnamedplayer.name == "The Great"
         end
     end
 
     @testset "6. Implement the revive function" begin
+        @isdefined(revive) && (revive! = revive)
         @testset "dead player" begin
             player1 = Player(level=42, health=0)
-            @test revive(player1) isa Player
+            @test revive!(player1) isa Player
             @test ismissing(player1.name)
             @test player1.level == 42
             @test player1.health == 100
             @test player1.mana == 50
 
             player2 = Player(level=17, health=0, mana=78)
-            @test revive(player2) isa Player
+            @test revive!(player2) isa Player
             @test player2.level == 17
             @test player2.health == 100
             @test player2.mana == 178
@@ -93,7 +95,7 @@ include("role-playing-game.jl")
 
         @testset "alive player" begin
             player = Player(level=5, health=1)
-            @test revive(player) isa Player
+            @test revive!(player) isa Player
             @test player.health == 1
             @test isnothing(player.mana)
         end
