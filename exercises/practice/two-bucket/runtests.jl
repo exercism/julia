@@ -27,6 +27,14 @@ include("two-bucket.jl")
         @test twobucket(2, 3, 3, 1) == (2, 2, 2)
     end
 
+    @testset "Measure using bucket one much bigger than bucket two" begin
+        @test twobucket(5, 1, 2, 1) == (6, 1, 1)
+    end
+
+    @testset "Measure using bucket one much smaller than bucket two" begin
+        @test twobucket(3, 15, 9, 1) == (6, 2, 0)
+    end
+
     @testset "Not possible to reach the goal" begin
         @test_throws DomainError twobucket(6, 15, 5, 1) 
     end
