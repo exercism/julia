@@ -1544,6 +1544,20 @@
         "difficulty": 6
       },
       {
+        "slug": "baffling-birthdays",
+        "name": "Baffling Birthdays",
+        "uuid": "19ed90f8-7178-4906-8c81-a0c702d56a25",
+        "practices": [
+          "dates-times",
+          "randomness"
+        ],
+        "prerequisites": [
+          "dates-times",
+          "randomness"
+        ],
+        "difficulty": 6
+      },
+      {
         "slug": "pythagorean-triplet",
         "name": "Pythagorean Triplet",
         "uuid": "a534b8ed-da88-4945-bb25-f6633977740b",
