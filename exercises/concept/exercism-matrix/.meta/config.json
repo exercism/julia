@@ -13,6 +13,5 @@
       ".meta/exemplar.jl"
     ]
   },
-  "language_versions": "≥1.0",
-  "blurb": "Learn about matrices by making the Exercism logo frown."
+  "blurb": "Learn about multi-dimensional arrays with the Exercism logo."
 }

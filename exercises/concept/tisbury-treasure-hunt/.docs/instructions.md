@@ -73,10 +73,10 @@ Return **`true`** if the coordinates "match", and return **`false`** if they do 
 Re-format coordinates as needed for accurate comparison.
 
 ```julia-repl
-julia> compare_records("Brass Spyglass", "4B"), ("Seaside Cottages", ('1', 'C'), "blue")
+julia> compare_records(("Brass Spyglass", "4B"), ("Seaside Cottages", ('1', 'C'), "blue"))
 false
 
-julia> compare_records("Model Ship in Large Bottle", "8A"), ("Harbor Managers Office", ('8', 'A'), "purple")
+julia> compare_records(("Model Ship in Large Bottle", "8A"), ("Harbor Managers Office", ('8', 'A'), "purple"))
 true
 ```
 
@@ -88,9 +88,9 @@ If the coordinates _do not_ match, return an empty tuple.
 Re-format coordinates as needed for accurate comparison.
 
 ```julia-repl
-julia> create_record("Brass Spyglass", "4B"), ("Abandoned Lighthouse", ('4', 'B'), "Blue")
+julia> create_record(("Brass Spyglass", "4B"), ("Abandoned Lighthouse", ('4', 'B'), "Blue"))
 ("4B", "Abandoned Lighthouse", "Blue", "Brass Spyglass")
 
-julia> create_record("Brass Spyglass", "4B"), ("Seaside Cottages", ('1', 'C'), "Blue")
+julia> create_record(("Brass Spyglass", "4B"), ("Seaside Cottages", ('1', 'C'), "Blue"))
 ()
 ```
