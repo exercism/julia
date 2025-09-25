@@ -1,4 +1,4 @@
-using Dates, Random
+using Dates
 
 function shared_birthday(birthdates)
     birthdays = [(day(date), month(date)) for date in Date.(birthdates)]
@@ -16,5 +16,5 @@ random_birthdates(groupsize) = [random_birthdate() for _ in 1:groupsize]
 function estimate_probability_of_shared_birthday(groupsize)
     reps = 10_000
     are_shared = [shared_birthday(random_birthdates(groupsize)) for _ in 1:reps]
-    sum(are_shared) * 100.0 / reps
+    (are_shared |> sum |> float) / reps
 end

@@ -66,8 +66,7 @@ include("baffling-birthdays.jl")
         end
 
         @testset "Random birthdates are not in leap years" begin
-            # I admit .! wasn't the first thing I tried
-            @test all( .!isleapyear.(random_birthdates(100)) )
+            @test all(!isleapyear, random_birthdates(100))
         end
 
         @testset "Random birthdates appear random" begin
@@ -91,16 +90,16 @@ include("baffling-birthdays.jl")
         end
 
         @testset "among ten people" begin
-            @test isapprox(estimate_probability_of_shared_birthday(10), 11.694818, atol=1.0)
+            @test isapprox(estimate_probability_of_shared_birthday(10), 0.11694818, atol=0.01)
         end
 
         # this mid-value is noisier, so the atol is increased
         @testset "among twenty-three people" begin
-            @test isapprox(estimate_probability_of_shared_birthday(23), 50.729723, atol=3.0)
+            @test isapprox(estimate_probability_of_shared_birthday(23), 0.50729723, atol=0.03)
         end
 
         @testset "among seventy people" begin
-            @test isapprox(estimate_probability_of_shared_birthday(70), 99.915958, atol=1.0)
+            @test isapprox(estimate_probability_of_shared_birthday(70), 0.99915958, atol=0.01)
         end
     end
 end
