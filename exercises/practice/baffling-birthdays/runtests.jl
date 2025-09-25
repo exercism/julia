@@ -85,6 +85,7 @@ include("baffling-birthdays.jl")
         # Elixir is more sophisticated: 
         #   https://github.com/exercism/elixir/blob/main/exercises/practice/baffling-birthdays/test/baffling_birthdays_test.exs
 
+        # this should be very, very close to zero!
         @testset "for one person" begin
             @test isapprox(estimate_probability_of_shared_birthday(1), 0.0, atol = 0.1)
         end
