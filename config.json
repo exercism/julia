@@ -1558,6 +1558,19 @@
         "difficulty": 6
       },
       {
+        "slug": "intergalactic-transmission",
+        "name": "Intergalactic Transmission",
+        "uuid": "5cac3770-abd2-48ec-b54d-96957355f620",
+        "practices": [
+          "bitwise-operations"
+        ],
+        "prerequisites": [
+          "bitwise-operations",
+          "loops"
+        ],
+        "difficulty": 6
+      },
+      {
         "slug": "pythagorean-triplet",
         "name": "Pythagorean Triplet",
         "uuid": "a534b8ed-da88-4945-bb25-f6633977740b",
