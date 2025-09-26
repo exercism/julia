@@ -13,6 +13,7 @@
   - The [`bitstring()`][bitstring] function can be useful in debugging, as it outputs a human-readable binary format.
 - A raw message comes in a vector of 8-bit chunks, and needs to be converted to 7-bit chunks in the higher-order bits plus a parity bit as the LSB.
   - Use bit-masks with `&` or `|` to isolate the bits you want.
+  - Left-shift (`<<`) and logical right-shift (`>>>`) operators are important.
   - Plan a way to carry excess bits to the next round of processing.
   - The carry makes it hard to handle input bytes independently of one another, so looping (or perhaps recursion) is probably easier than trying to use higher-order functions.
   - Encoded messages are typically longer (more bytes) than the raw message, to accommodate a parity bit per byte.
