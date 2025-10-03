@@ -1544,6 +1544,19 @@
         "difficulty": 6
       },
       {
+        "slug": "intergalactic-transmission",
+        "name": "Intergalactic Transmission",
+        "uuid": "5cac3770-abd2-48ec-b54d-96957355f620",
+        "practices": [
+          "bitwise-operations"
+        ],
+        "prerequisites": [
+          "bitwise-operations",
+          "loops"
+        ],
+        "difficulty": 6
+      },
+      {
         "slug": "baffling-birthdays",
         "name": "Baffling Birthdays",
         "uuid": "19ed90f8-7178-4906-8c81-a0c702d56a25",
