@@ -9,8 +9,9 @@
   - The [Julia manual][Dates].
   - The [Wikibook][Wikibook].
 - At a minimum, you will need familiarity with [DateTime][datetime] constructors and adding or subtracting [Periods][period].
-- Useful functions include [`dayofweek()`][dayofweek] and (optionally) [`lastdayofmonth()`][lastdayofmonth].
+- Useful functions include [`dayofweek()`][dayofweek] and (optionally) [`lastdayofmonth()`][lastdayofmonth] or [`lastdayofquarter()`][lastdayofquarter].
 - To extract integers from strings, the [`parse()`][parse] function will be important.
+- The functions [`tonext()`][tonext] and [`toprev()`][toprev] could be useful in an approach including higher order functions.
 
 
 [dates-times]: https://exercism.org/tracks/julia/concepts/dates-times
@@ -21,5 +22,8 @@
 [query-func]: https://docs.julialang.org/en/v1/stdlib/Dates/#Query-Functions
 [dayofweek]: https://docs.julialang.org/en/v1/stdlib/Dates/#Dates.dayofweek
 [lastdayofmonth]: https://docs.julialang.org/en/v1/stdlib/Dates/#Dates.lastdayofmonth
+[lastdayofquarter]: https://docs.julialang.org/en/v1/stdlib/Dates/#Dates.lastdayofquarter
 [datetime]: https://docs.julialang.org/en/v1/stdlib/Dates/#Dates.DateTime-NTuple{7,%20Int64}
 [parse]: https://docs.julialang.org/en/v1/base/numbers/#Base.parse
+[tonext]: https://docs.julialang.org/en/v1/stdlib/Dates/#Dates.tonext-Tuple{Function,%20TimeType}
+[toprev]: https://docs.julialang.org/en/v1/stdlib/Dates/#Dates.toprev-Tuple{Function,%20TimeType}
