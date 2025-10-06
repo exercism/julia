@@ -1,0 +1,3 @@
+function prime(num)
+    
+end
