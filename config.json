@@ -1527,6 +1527,14 @@
         "difficulty": 5
       },
       {
+        "slug": "state-of-tic-tac-toe",
+        "name": "State of Tic-Tac-Toe",
+        "uuid": "7b671783-360e-4bd1-b114-941bb79e6b3c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "e4b19962-ebc1-4f12-9ac8-45f17faeaa55",
