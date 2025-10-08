@@ -1306,6 +1306,14 @@
         "difficulty": 3
       },
       {
+        "slug": "nth-prime",
+        "name": "Nth Prime",
+        "uuid": "956e496c-2960-467c-993e-8af1425c023f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "all-your-base",
         "name": "All Your Base",
         "uuid": "6fa91607-d772-47af-9520-de26bbb8addb",
