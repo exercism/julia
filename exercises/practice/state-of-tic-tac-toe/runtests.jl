@@ -120,10 +120,6 @@ include("state-of-tic-tac-toe.jl")
             @test_throws ErrorException gamestate(["OOX", "   ", "   "])
         end
 
-        @testset "Invalid board" begin
-            @test_throws ErrorException gamestate(["XXX", "OOO", "   "])
-        end
-
         @testset "Invalid board: X won and O kept playing" begin
             @test_throws ErrorException gamestate(["XXX", "OOO", "   "])
         end
