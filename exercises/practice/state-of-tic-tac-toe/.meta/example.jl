@@ -6,7 +6,30 @@ function gamestate(board)
     (maxi == 3 || mini == -3) ? "win" : 0 ∈ M ? "ongoing" : "draw"
 end
 
+# Same version. spread out a bit:
+# function gamestate(board)
+#     # create a Matrix of the board with ' ' => 0, 'X' => 1, and 'O' => -1
+#     M = reshape([col == ' ' ? 0 : (-1)^(col == 'O') for row in board for col in row], (3,3))
+    
+#     # Sum colums, rows and diagonals, keep the minimum and the maximum (± 3 indicates a win).
+#     mini, maxi = extrema([sum(M, dims=1)..., sum(M, dims=2)..., M[1,1]+M[2,2]+M[3,3], M[1,3]+M[2,2]+M[3,1]])
 
+#     # A board is invalid if either: the total sum is not 0 or 1; or X and O have simultaneously won.
+#     if sum(M) ∉ (0, 1) || maxi == 3 && mini == -3
+#         error("Invalid board")
+#     end
+
+#     # Check for a win, blank squares indicate an ongoing game, everything else is a draw.
+#     if maxi == 3 || mini == -3
+#         "win"
+#     elseif 0 ∈ M
+#         "ongoing"
+#     else
+#         "draw"
+#     end
+# end
+
+# ======================================================================================
 
 # Both solutions below are adapted from 2020 versions by Sascha Mann and Jeremy Walker
 # Significant changes were needed to pass the current tests
