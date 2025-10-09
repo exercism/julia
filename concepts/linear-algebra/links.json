@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://en.wikipedia.org/wiki/Linear_algebra",
+    "description": "Wikipedia entry on Linear Algebra."
+  },
+  {
+    "url": "https://docs.julialang.org/en/v1/stdlib/LinearAlgebra/",
+    "description": "Julia's LinearAlgebra module."
+  }
+]
