@@ -390,7 +390,7 @@
           "pairs-and-dicts",
           "multi-dimensional-arrays"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "exercism-matrix",
@@ -402,7 +402,7 @@
         "prerequisites": [
           "function-composition"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "cheese-club",
@@ -414,7 +414,7 @@
         "prerequisites": [
           "multi-dimensional-arrays"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "old-elyses-enchantments",
