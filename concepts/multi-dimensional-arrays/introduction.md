@@ -1,6 +1,6 @@
 # Introduction
 
-Far back in the [Vectors][vectors] Concept, we noted that "_arrays can be of arbitrary size (subject only to memory constraints in your hardware), and can have arbitrarily many dimensions._"
+Far back in the `Vectors` Concept, we noted that "_arrays can be of arbitrary size (subject only to memory constraints in your hardware), and can have arbitrarily many dimensions._"
 
 Since then, we have largely ignored arrays with more than one dimension, just to keep things simple.
 This decision will make more sense if you try reading the Julia reference documents, in their full complexity.
@@ -94,7 +94,7 @@ julia> m = [1 2 3; 4 5 6]
  4  5  6
 ```
 
-However, be aware that Julia (like Fortran, R and Matlab, but _unlike_ C/C++ or NumPy) stores N-dimension arrays in [column-major order][col-major], and this can make a huge performance difference if you loop over the elements.
+However, be aware that Julia (like Fortran, R and Matlab, but _unlike_ C/C++ or NumPy) stores N-dimension arrays in column-major order, and this can make a huge performance difference if you loop over the elements.
 _Help your CPU cache to help you!_
 
 ```julia-repl
@@ -126,33 +126,6 @@ julia> rand(Float32, 2, 3)  # random numbers in the interval [0, 1)
  0.768823  0.169633  0.632565
  0.388451  0.109176  0.850381
 ```
-
-### Generating evenly-spaced values
-
-NumPy enthusiasts will be aware that `np.linspace` is a widely-used function to generate an array of specified length, with specified endpoints and evenly-spaced values.
-This is typically used as the x-axis of a graph, or as the independent variable in linear models.
-
-Julia has no exact equivalent, but the very flexible `range()` function can mimic it by specifying the lower and upper bounds, plus the `length` keyword argument.
-
-```julia-repl
-julia> x = range(0, 2π; length=100)
-0.0:0.06346651825433926:6.283185307179586
-
-julia> typeof(x)
-StepRangeLen{Float64, Base.TwicePrecision{Float64}, Base.TwicePrecision{Float64}, Int64}
-
-julia> vals = [x sin.(x) cos.(x)]
-100×3 Matrix{Float64}:
- 0.0         0.0           1.0
- 0.0634665   0.0634239     0.997987
- 0.126933    0.126592      0.991955
- 0.1904      0.189251      0.981929
-(...truncated)
-```
-
-The `StepRangeLen` can be used like a vector, including conversion to a matrix column.
-
-See also the equivalent `logrange()` function, to generate values equally-spaced on a log axis.
 
 ## Indexing
 
@@ -308,11 +281,11 @@ Julia arrays can potentially be Terabytes in size, so copying is potentially a p
 A view like this can be used for looping, broadcasting, or all the other operations we saw in the syllabus so far.
 
 Also, comprehensions can be powerful and versatile with array input.
-Simple cases were mentioned in the [Loops][loops] concept, but there will be an expanded discussion in a later concept.
+Simple cases were mentioned in the `Loops` concept, but there will be an expanded discussion in a later concept.
 
 ## Broadcasting in multiple dimansions
 
-We discussed the 1-D case in the [Vector Operations][vector-ops] concept.
+We discussed the 1-D case in the `Vector Operations` concept.
 
 ```julia-repl
 julia> v = [1.2, 1.5, 1.7]
@@ -358,9 +331,3 @@ julia> (x -> x^2).(m)  # broadcast a function to all elements
 ```
 
 In general, Julia will broadcast any singleton dimension(s) to match the shape of the larger array.
-
-
-[vectors]: https://exercism.org/tracks/julia/concepts/vectors
-[loops]: https://exercism.org/tracks/julia/concepts/loops
-[vector-ops]: https://exercism.org/tracks/julia/concepts/vector-operations
-[col-major]: https://en.wikipedia.org/wiki/Row-_and_column-major_order
