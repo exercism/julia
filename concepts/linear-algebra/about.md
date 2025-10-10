@@ -53,7 +53,7 @@ julia> [1 0 0; 0 2 0; 0 0 3]
 
 If you really want to swap rows with columns, the function [`permutedims()`][permutedims] will do this and give you a new matrix.
 
-This involves copying, whish is slow and memory-hungry when working with large matrices.
+This involves copying, which is slow and memory-hungry when working with large matrices.
 
 For Linear Algebra purposes, the [`transpose()`][transpose] function is more useful, as it quickly creates a lazy wrapper around the original matrix.
 
@@ -119,12 +119,21 @@ julia> [1, 2] .* [3, 4]
 
 This extremely common operation is written in textbooks as `u ⋅ v`, and called the "dot" product.
 
+Two vectors can be multiplied with the usual `*` operator, but only if the left vector is an `adjoint`: conveniently written `u' * v`.
+This should become clearer in the later section on matrix multiplication.
+
+```julia-repl
+julia> using LinearAlgebra
+
+# with u' * v syntax
+julia> [1, 2]' * [3, 4]
+11
+```
+
 The raised (_center_) dot is available in Julia (entered `\cdot` tab) as syntactic sugar for the `dot()` function.
+There is no need to specify the adjoint, as this detail is handled automatically.
 
 A dot product is equivalent to the _sum_ of the element-wise product, as in the example below.
-
-Also, two vectors can be multiplied with the usual `*` operator, but only if the left vector is an `adjoint`: conveniently written `u' * v`.
-This should become clearer in the later section on matrix multiplication.
 
 ```julia-repl
 julia> using LinearAlgebra
@@ -139,10 +148,6 @@ julia> [1, 2] ⋅ [3, 4]
 
 # with element-wise syntax
 julia> sum([1, 2] .* [3, 4])
-11
-
-# with u' * v syntax
-julia> [1, 2]' * [3, 4]
 11
 ```
 
@@ -179,7 +184,7 @@ julia> cross([1, 2, 3], [3, 4, 5])
 ```
 
 Notice that this operation is restricted to length-3 vectors (equivalent to Euclidian space with orthogonal `x, y, z` axes).
-Mathematicians are happy to define the operation for other dimensions, with higher-order tensors as the result.
+Mathematicians are happy to define the operation for other dimensions, with an incomprehensible word salad (higher-order tensors, wedge product, exterior product, multivectors...) as the result.
 _Most of us run away or quickly change the subject at that point!_
 
 ### Norms
@@ -194,7 +199,7 @@ This root-mean-square operation is the _Pythagorean distance_ from the origin (i
 If we visualize the vector as an arrow, with its tail at the origin, the 2-norm is the _length_ of the arrow.
 
 Any p-norm can be calculated by providing `p` as the 2nd argument.
-The 1-norm is sometimes useful: it is simply the sum of the entries (so very quick and easy to calculate).
+The 1-norm is sometimes useful: it is simply the sum of the absolute values of the entries (so very quick and easy to calculate).
 
 ```julia-repl
 # defaults to the 2-norm
@@ -202,7 +207,7 @@ julia> norm([1, 2, 3])
 3.7416573867739413
 
 # the 1-norm
-julia> norm([1, 2, 3], 1)
+julia> norm([1, -2, 3], 1)
 6.0
 ```
 
@@ -267,15 +272,15 @@ julia> B * A
 ```
 
 As shown in the example above, matrix multiplication _does not commute_: there is no simple relationship between `A*B` and `B*A`.
-0
+
 This is probably hard to visualize for anyone new to it, just by reading the words.
-YouTube has lots of videos demonstrating it graphically, so search for "matrix multiplication" and choose one with yourr preferred style, detail level and language.
+YouTube has lots of videos demonstrating it graphically, so search for "matrix multiplication" and choose one with your preferred style, detail level and language.
 
 ### Dimensions
 
 The dot product of two vectors relies on them having equal length.
 
-By extension, for matrix multiplication the _rows_ of the left matrix must match the _columns_ of the right matrix.
+By extension, for matrix multiplication the _number of columns_ of the left matrix must match the _number of rows_ of the right matrix.
 
 Expressing the sizes as `(nrows, ncols)` tuples, as output by `size(A)`, we have `(a, b) * (b, c) -> (a, c)`.
 The "inner" dimensions, here `b` and `b`, are compatible with taking dot products.
