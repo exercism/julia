@@ -405,6 +405,18 @@
         "status": "wip"
       },
       {
+        "slug": "cheese-club",
+        "name": "Cheese Club",
+        "uuid": "f0e2feee-1668-4331-ba22-28be406fb839",
+        "concepts": [
+          "higher-order-functions"
+        ],
+        "prerequisites": [
+          "multi-dimensional-arrays"
+        ],
+        "status": "wip"
+      },
+      {
         "slug": "old-elyses-enchantments",
         "name": "Old Elyse's Enchantments",
         "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",
