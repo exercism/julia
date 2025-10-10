@@ -80,7 +80,7 @@ There is also an in-place version, `filter!()`, as there is for many of the func
 ## Mapping
 
 The `map()` function transforms a collection by applying a function to each element.
-This can be similar to [broadcasting][broadcasting] in simple cases, with the output shape matching the input.
+This can be similar to broadcasting in simple cases, with the output shape matching the input.
 
 ```julia-repl
 julia> map(√, [1, 4, 9])
@@ -122,7 +122,7 @@ _This is only a rough analogy, implying nothing about the implementation!_
 As with `zip()`, collections of mismatched shape are truncated to the dimension(s) of the smallest.
 
 Sometimes only the side effects of the passed-in function are needed, such as a database write or a `push!` to an array.
-Then the higher-order function `foreach()` is available, which always returns [`nothing`][nothingness].
+Then the higher-order function `foreach()` is available, which always returns `nothing`.
 
 ## Reducing
 
