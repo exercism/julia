@@ -12,9 +12,9 @@ The term usually refers to functions such as `filter`, `map` and `reduce` which 
 
 By this point in the syllabus, we have already seen various ways to apply an operation to all elements of an iterable collection, such as a Vector:
 
-- Use a [loop][loops] (like most programming languages since the dawn of digital computing).
-- Use a [comprehension][comprehensions] (Python-style).
-- Use [broadcasting][broadcasting] (distinctively Julia syntax, though with a large debt to R, Matlab and NumPy).
+- Use a loop (like most programming languages since the dawn of digital computing).
+- Use a comprehension (Python-style).
+- Use broadcasting (distinctively Julia syntax, though with a large debt to R, Matlab and NumPy).
 
 This Concept will focus on higher-order functions (familiar from any functional language, such as Haskell or F#).
 
@@ -80,7 +80,7 @@ There is also an in-place version, `filter!()`, as there is for many of the func
 ## Mapping
 
 The `map()` function transforms a collection by applying a function to each element.
-This can be similar to [broadcasting][broadcasting] in simple cases, with the output shape matching the input.
+This can be similar to broadcasting in simple cases, with the output shape matching the input.
 
 ```julia-repl
 julia> map(√, [1, 4, 9])
@@ -122,7 +122,7 @@ _This is only a rough analogy, implying nothing about the implementation!_
 As with `zip()`, collections of mismatched shape are truncated to the dimension(s) of the smallest.
 
 Sometimes only the side effects of the passed-in function are needed, such as a database write or a `push!` to an array.
-Then the higher-order function `foreach()` is available, which always returns [`nothing`][nothingness].
+Then the higher-order function `foreach()` is available, which always returns `nothing`.
 
 ## Reducing
 
@@ -208,9 +208,3 @@ julia> sum(map(x -> x^2 + 1, 1:3))
 ```
 
 As we might expect, Julia also has `mapfoldl()` and `mapfoldr()` functions for sitations where direction is important.
-
-
-[loops]: https://exercism.org/tracks/julia/concepts/loops
-[comprehensions]: https://exercism.org/tracks/julia/concepts/comprehensions
-[nothingness]: https://exercism.org/tracks/julia/concepts/nothingness
-[broadcasting]: https://exercism.org/tracks/julia/concepts/vector-operations
