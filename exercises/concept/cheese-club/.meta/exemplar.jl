@@ -3,7 +3,7 @@ function all_15(ratings)
 end
 
 function emphatics(customers)
-    filter(customer -> all_15(customer[2]), customers)
+    filter(customer -> all_15(customer.second), customers)
 end
 
 function tobinary(ratings)
