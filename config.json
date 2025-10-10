@@ -409,7 +409,7 @@
         "name": "Cheese Club",
         "uuid": "f0e2feee-1668-4331-ba22-28be406fb839",
         "concepts": [
-          "hiher-order-functions"
+          "higher-order-functions"
         ],
         "prerequisites": [
           "multi-dimensional-arrays"
