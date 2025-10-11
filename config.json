@@ -1854,6 +1854,11 @@
       "uuid": "2ab44d06-717e-4bc4-b38b-906d9673e9bb",
       "slug": "comprehensions",
       "name": "Comprehensions"
+    },
+    {
+      "uuid": "fedcb6b9-5847-4b37-ae79-883e15a150a5",
+      "slug": "linear-algebra-basics",
+      "name": "Linear Algebra Basics"
     }
   ],
   "key_features": [
