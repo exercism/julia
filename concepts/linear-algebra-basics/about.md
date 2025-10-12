@@ -146,6 +146,10 @@ There is no need to specify the adjoint, as this detail is handled automatically
 ```julia-repl
 julia> using LinearAlgebra
 
+# with element-wise syntax
+julia> sum([1, 2] .* [3, 4])
+11
+
 # with u' * v syntax
 julia> [1, 2]' * [3, 4]
 11
@@ -157,13 +161,9 @@ julia> dot([1, 2], [3, 4])
 # with \cdot syntax
 julia> [1, 2] ⋅ [3, 4]
 11
-
-# with element-wise syntax
-julia> sum([1, 2] .* [3, 4])
-11
 ```
 
-For complex-valued vectors, the left vector needs to be the conjugate (sign flipped).
+For complex-valued vectors, the left vector needs to be the conjugate (sign flipped on the imaginary part).
 The `dot` function does this automatically, the `u'` syntax does it explicitly, but `sum(u .* v)` will fail if `u` and `v` are complex.
 
 ### Vectors, cross product
@@ -254,22 +254,29 @@ julia> A * v
 
 A matrix * matrix multiplication extends this across the columns of the matrix on the right.
 
-For `C = A * B`, the first row of `A` is dotted with each column of `B` to give the top row of `C`, the second row gives the second row, and so on down.
+For `C = A * B`, we can consider that `A` multiplies each column of `B` to give the corresponding column of `C`: a series of matrix-vector multiplications.
+
+Equivalently, we could say that the first row of `A` is dotted with each column of `B` to give the top row of `C`, the second row gives the second row, and so on down.
+
+There are several such mental representations, and interested students can watch an entire [MIT lecture][OCW-mult] discussing them.
 
 ```julia-repl
 julia> A
 2×2 Matrix{Int64}:
  1  2
  3  4
+
 julia> B = [5 7; 6 8]
 2×2 Matrix{Int64}:
  5  7
  6  8
+
 # left column is the same as A*v previously
 julia> A * B
 2×2 Matrix{Int64}:
  17  23
  39  53
+ 
 julia> B * A
 2×2 Matrix{Int64}:
  26  38
@@ -432,3 +439,4 @@ _Adding several more orders of magnitude will need better hardware..._
 [pinv]: https://docs.julialang.org/en/v1/stdlib/LinearAlgebra/#LinearAlgebra.pinv
 [underdet]: https://discourse.julialang.org/t/underdetermined-linear-system-general-solution/37865/2
 [nullspace]: https://docs.julialang.org/en/v1/stdlib/LinearAlgebra/#LinearAlgebra.nullspace
+[OCW-mult]: https://www.youtube.com/watch?v=FX4C-JpTFgY&list=PLE7DDD91010BC51F8&index=4
