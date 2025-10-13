@@ -4,7 +4,7 @@ Anyone who has used Python has almost certainly used list comprehensions, which 
 
 Something so convenient gradually finds its way into other languages, including Julia.
 
-Comprehensions] are an option rather than a necessity for Julia programmers, as there are usually alternatives (broadcasting, higher-order functions, etc).
+Comprehensions are an option rather than a necessity for Julia programmers, as there are usually alternatives (broadcasting, higher-order functions, etc).
 
 However, a comprehension will often provide a simple, readable and performant way to construct an array.
 Use is ultimately a matter of personal taste, and how you feel about Python versus functional languages.
@@ -21,7 +21,6 @@ julia> [x^2 for x in 1:3]
  1
  4
  9
-
 julia> [x^2 for x in 1:3 if isodd(x^2)]
 2-element Vector{Int64}:
  1
@@ -35,12 +34,10 @@ julia> m
 2×3 Matrix{Int64}:
  1  2  3
  4  5  6
-
 julia> [x^2 for x in m]
 2×3 Matrix{Int64}:
   1   4   9
  16  25  36
-
 julia> [x^2 for x in m if isodd(x^2)] 
 3-element Vector{Int64}:
   1
@@ -64,7 +61,6 @@ julia> [x * y for x in 1:3 for y in 4:6]
  12
  15
  18
-
 julia> [x * y for x in 1:3 for y in 4:6 if isodd(x * y)]
 2-element Vector{Int64}:
   5
@@ -79,7 +75,6 @@ julia> m
 2×3 Matrix{Int64}:
  1  2  3
  4  5  6
-
 julia> [x*y for x in m for y in m]
 36-element Vector{Int64}:
   1
@@ -117,18 +112,15 @@ When the brackets are replaced by parentheses `( ... )` something different happ
 ```julia-repl
 julia> g = ((x, y) for x in 1:3, y in 4:6)
 Base.Generator{Base.Iterators.ProductIterator{Tuple{UnitRange{Int64}, UnitRange{Int64}}}, var"#9#10"}(var"#9#10"(), Base.Iterators.ProductIterator{Tuple{UnitRange{Int64}, UnitRange{Int64}}}((1:3, 4:6)))
-
 # Indexing fails with a generator, the entries don't exist yet
 julia> g[1, 2]
 ERROR: MethodError: no method matching getindex(::Base.Generator{Base.Iterators.ProductIterator{Tuple{UnitRange{…}, UnitRange{…}}}, var"#9#10"}, ::Int64, ::Int64)
-
 # conversion to array
 julia> collect(g)
 3×3 Matrix{Tuple{Int64, Int64}}:
  (1, 4)  (1, 5)  (1, 6)
  (2, 4)  (2, 5)  (2, 6)
  (3, 4)  (3, 5)  (3, 6)
-
 # generators are mainly designed for iteration
 julia> [i * j for (i, j) in g]
 3×3 Matrix{Int64}:
@@ -144,10 +136,8 @@ A generator used as a function argument does not need additional parentheses.
 ```julia-repl
 # inefficient
 julia> v = [x^2 for x in 1:1e6];
-
 julia> sum(v)
 3.333338333335e17
-
 # better - use a generator
 julia> sum(x^2 for x in 1:1e6)
 3.3333383333312755e17

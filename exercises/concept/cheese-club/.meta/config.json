@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "depial"
+  ],
+  "files": {
+    "solution": [
+      "cheese-club.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ]
+  },
+  "blurb": "Use higher order functions to wrangle some data for a cheese club"
+}

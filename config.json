@@ -390,7 +390,7 @@
           "pairs-and-dicts",
           "multi-dimensional-arrays"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "exercism-matrix",
@@ -402,7 +402,19 @@
         "prerequisites": [
           "function-composition"
         ],
-        "status": "wip"
+        "status": "beta"
+      },
+      {
+        "slug": "cheese-club",
+        "name": "Cheese Club",
+        "uuid": "f0e2feee-1668-4331-ba22-28be406fb839",
+        "concepts": [
+          "higher-order-functions"
+        ],
+        "prerequisites": [
+          "multi-dimensional-arrays"
+        ],
+        "status": "beta"
       },
       {
         "slug": "old-elyses-enchantments",
@@ -1306,6 +1318,14 @@
         "difficulty": 3
       },
       {
+        "slug": "nth-prime",
+        "name": "Nth Prime",
+        "uuid": "956e496c-2960-467c-993e-8af1425c023f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "all-your-base",
         "name": "All Your Base",
         "uuid": "6fa91607-d772-47af-9520-de26bbb8addb",
@@ -1381,6 +1401,18 @@
         "uuid": "dacbf1b1-586d-4f71-9941-c0cd36090264",
         "practices": [],
         "prerequisites": [],
+        "difficulty": 4
+      },
+      {
+        "slug": "swift-scheduling",
+        "name": "Swift Scheduling",
+        "uuid": "16cd6419-2e94-4648-9796-24a245e4f812",
+        "practices": [
+          "dates-times"
+        ],
+        "prerequisites": [
+          "dates-times"
+        ],
         "difficulty": 4
       },
       {
@@ -1507,6 +1539,14 @@
         "difficulty": 5
       },
       {
+        "slug": "state-of-tic-tac-toe",
+        "name": "State of Tic-Tac-Toe",
+        "uuid": "7b671783-360e-4bd1-b114-941bb79e6b3c",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "robot-simulator",
         "name": "Robot Simulator",
         "uuid": "e4b19962-ebc1-4f12-9ac8-45f17faeaa55",
@@ -1541,6 +1581,33 @@
           "complex-numbers"
         ],
         "prerequisites": [],
+        "difficulty": 6
+      },
+      {
+        "slug": "intergalactic-transmission",
+        "name": "Intergalactic Transmission",
+        "uuid": "5cac3770-abd2-48ec-b54d-96957355f620",
+        "practices": [
+          "bitwise-operations"
+        ],
+        "prerequisites": [
+          "bitwise-operations",
+          "loops"
+        ],
+        "difficulty": 6
+      },
+      {
+        "slug": "baffling-birthdays",
+        "name": "Baffling Birthdays",
+        "uuid": "19ed90f8-7178-4906-8c81-a0c702d56a25",
+        "practices": [
+          "dates-times",
+          "randomness"
+        ],
+        "prerequisites": [
+          "dates-times",
+          "randomness"
+        ],
         "difficulty": 6
       },
       {
@@ -1787,6 +1854,11 @@
       "uuid": "2ab44d06-717e-4bc4-b38b-906d9673e9bb",
       "slug": "comprehensions",
       "name": "Comprehensions"
+    },
+    {
+      "uuid": "fedcb6b9-5847-4b37-ae79-883e15a150a5",
+      "slug": "linear-algebra-basics",
+      "name": "Linear Algebra Basics"
     }
   ],
   "key_features": [
