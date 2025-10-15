@@ -15,6 +15,7 @@
 - The mean is found by summing the data and dividing by the number of events.
 - Use your `rationalize` and `probabilities` functions.
 - If a discrepancy is found between using floats and rationals, return the rational number.
+- The `float()` function may be needed in the comparison (see the introduction).
 - Loops or vector operations can be employed.
 
 ## 4. Check the independent probability
