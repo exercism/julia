@@ -38,10 +38,10 @@ car = Car("W-12345X")
     end
 
     @testset "3. meets" begin
-        @test meets(buddy, sadie) = "sniffs"
-        @test meets(buddy, minka) = "chases"
-        @test meets(felix, sadie) = "hisses"
-        @test meets(minka, felix) = "slinks"
+        @test meets(buddy, sadie) == "sniffs"
+        @test meets(buddy, minka) == "chases"
+        @test meets(felix, sadie) == "hisses"
+        @test meets(minka, felix) == "slinks"
     end
 
     @testset "4. encounters" begin
