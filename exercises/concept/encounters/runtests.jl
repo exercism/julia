@@ -25,26 +25,33 @@ jenny = Horse("Jenny")
 car = Car("W-12345X")
 
 @testset verbose = true "tests" begin
-    @testset "type abstraction" begin
+    @testset "1. type abstraction" begin
         @test Dog <: Pet
         @test Cat <: Pet
     end
 
-    @testset "names" begin
+    @testset "2. names" begin
         @test name(buddy) == "Buddy"
         @test name(sadie) == "Sadie"
         @test name(minka) == "Minka"
         @test name(felix) == "Felix"
     end
 
-    @testset "encounters" begin
+    @testset "3. meets" begin
+        @test meets(buddy, sadie) = "sniffs"
+        @test meets(buddy, minka) = "chases"
+        @test meets(felix, sadie) = "hisses"
+        @test meets(minka, felix) = "slinks"
+    end
+
+    @testset "4. encounters" begin
         @test encounter(sadie, buddy) == "Sadie meets Buddy and sniffs."
         @test encounter(buddy, felix) == "Buddy meets Felix and chases."
         @test encounter(minka, sadie) == "Minka meets Sadie and hisses."
         @test encounter(felix, minka) == "Felix meets Minka and slinks."
     end
 
-    @testset "pet fallbacks" begin
+    @testset "5. pet fallbacks" begin
         @test encounter(buddy, jenny) == "Buddy meets Jenny and is cautious."
         @test encounter(sadie, jenny) == "Sadie meets Jenny and is cautious."
         @test encounter(minka, jenny) == "Minka meets Jenny and is cautious."
@@ -56,7 +63,7 @@ car = Car("W-12345X")
         @test encounter(jenny, felix) == "Jenny meets Felix and is cautious."
     end
 
-    @testset "non-pet fallback" begin
+    @testset "6. non-pet fallback" begin
         @test encounter(buddy, car) == "Buddy meets W-12345X and runs away."
         @test encounter(minka, car) == "Minka meets W-12345X and runs away."
         @test encounter(jenny, car) == "Jenny meets W-12345X and runs away."
@@ -71,7 +78,7 @@ car = Car("W-12345X")
     @eval name(::$typename) = $(string(typename))
     @eval t = $typename()
 
-    @testset "generic fallback" begin
+    @testset "7. generic fallback" begin
         @test encounter(t, buddy) == "$(name(t)) meets Buddy and nothing happens."
         @test encounter(buddy, t) == "Buddy meets $(name(t)) and runs away."
     end

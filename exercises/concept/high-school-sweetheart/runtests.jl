@@ -3,7 +3,7 @@ using Test
 include("high-school-sweetheart.jl")
 
 @testset verbose = true "tests" begin
-    @testset "cleanupname" begin
+    @testset "1. cleanupname" begin
         @testset "should remove `-` when inside a name" begin
             @test cleanupname("John-Doe") == "John Doe"
         end
@@ -13,7 +13,7 @@ include("high-school-sweetheart.jl")
         end
     end
 
-    @testset "firstletter" begin
+    @testset "2. firstletter" begin
         @testset "gets the first letter" begin
             @test firstletter("Mary") == "M"
         end
@@ -27,7 +27,7 @@ include("high-school-sweetheart.jl")
         end
     end
 
-    @testset "initial" begin
+    @testset "3. initial" begin
         @testset "gets the first letter and appends a dot" begin
             @test initial("Betty") == "B."
         end
@@ -37,7 +37,7 @@ include("high-school-sweetheart.jl")
         end
     end
 
-    @testset "couple" begin
+    @testset "4. couple" begin
         @testset "prints the couple's initials inside a heart" begin
             @test couple("Avery", "Charlie") == "❤ A.  +  C. ❤"
         end
