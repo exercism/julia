@@ -14,11 +14,11 @@ Pre-defining each regular expression as a `const` can be helpful style (for clar
 
 ## 2. Remove Encrypted Emojis
 
-- A simple [`replace()][replace].
+- A simple [`replace()`][replace].
 
 ## 3. Check Valid Phone Number
 
-- Needs a longer, but quiite repetitive Regex.
+- Needs a longer, but quite repetitive Regex.
 - `n` consecutive occurences can be specified with `{n}` syntax.
 - We only need a true/false for the match.
 
