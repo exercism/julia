@@ -3,17 +3,17 @@ using Test
 include("problematic-probabilities.jl")
 
 @testset verbose = true "tests" begin
-    @testset "rationalize" begin
+    @testset "1. rationalize" begin
         @test rationalize([2], [4]) == [1//2]
         @test rationalize([1, 2, 3, 4], [2, 3, 4, 5]) == [1//2, 2//3, 3//4, 4//5]
     end
 
-    @testset "probabilities" begin
+    @testset "2. probabilities" begin
         @test probabilities([2], [4]) == [2/4]
         @test probabilities([1, 2, 3, 4], [2, 3, 4, 5]) == [1/2, 2/3, 3/4, 4/5]
     end
 
-    @testset "check mean" begin
+    @testset "3. check mean" begin
         successes, trials = [5, 8, 6, 1, 5], [11, 16, 17, 22, 18]
         @test checkmean(successes, trials)
 
@@ -27,7 +27,7 @@ include("problematic-probabilities.jl")
         @test checkmean(successes, trials) == 2399//11550
     end
 
-    @testset "check probability" begin
+    @testset "4. check probability" begin
         successes, trials = [4, 2, 4, 3, 2], [18, 20, 18, 25, 22]
         @test checkprob(successes, trials)
 

@@ -10,12 +10,12 @@ if VERSION < v"1.1"
 end
 
 @testset verbose = true "tests" begin
-    @testset "fast attack" begin
+    @testset "1. fast attack" begin
         @test !can_do_fast_attack(true)
         @test  can_do_fast_attack(false)
     end
 
-    @testset "spying" begin
+    @testset "2. spying" begin
         character_state_combinations = Bool[
             0 0 0 0;
             0 0 1 1;
@@ -31,7 +31,7 @@ end
         end
     end
 
-    @testset "signaling prisoner" begin
+    @testset "3. signaling prisoner" begin
         character_state_combinations = Bool[
             0 0 0;
             0 1 1;
@@ -44,7 +44,7 @@ end
         end
     end
 
-    @testset "freeing prisoner" begin
+    @testset "4. freeing prisoner" begin
         character_state_combinations = Bool[
             0 0 0 0 0;
             0 0 0 1 1;

@@ -3,7 +3,7 @@ using Test
 include("elyses-enchantments.jl")
 
 @testset verbose = true "tests" begin
-    @testset "Retrieve a card from a deck" begin
+    @testset "1. Retrieve a card from a deck" begin
         
         @testset "get the first card" begin
             stack = [1, 2, 3]
@@ -25,7 +25,7 @@ include("elyses-enchantments.jl")
 
     end
 
-    @testset "Replace a card in a deck" begin
+    @testset "2. Replace a card in a deck" begin
 
         @testset "replace the first card with a 7" begin
             stack = [1, 2, 3]
@@ -50,7 +50,7 @@ include("elyses-enchantments.jl")
         
     end
 
-    @testset "Add a card at the top" begin
+    @testset "3. Add a card at the top" begin
 
         @testset "adding a second card at the top" begin
             stack = [1]
@@ -78,7 +78,7 @@ include("elyses-enchantments.jl")
 
     end
 
-    @testset "Removing a card" begin
+    @testset "4. Removing a card" begin
 
         @testset "remove the card at the bottom" begin
             stack = [1, 2, 3, 4]
@@ -100,7 +100,7 @@ include("elyses-enchantments.jl")
 
     end
 
-    @testset "Removing a card from the top" begin
+    @testset "5. Removing a card from the top" begin
 
         @testset "remove the only card from the top" begin
             stack = [1]
@@ -114,7 +114,7 @@ include("elyses-enchantments.jl")
 
     end
 
-    @testset "Add a card at the bottom" begin
+    @testset "6. Add a card at the bottom" begin
 
         @testset "adding a second card to the bottom" begin
             stack = [1]
@@ -142,7 +142,7 @@ include("elyses-enchantments.jl")
 
     end
 
-    @testset "Remove a card from the bottom" begin
+    @testset "7. Remove a card from the bottom" begin
 
         @testset "remove the only card from the bottom" begin
             stack = [1]
@@ -156,7 +156,7 @@ include("elyses-enchantments.jl")
 
     end
 
-    @testset "Check size of stack" begin
+    @testset "8. Check size of stack" begin
 
         @testset "an empty stack of cards" begin
             stack = []

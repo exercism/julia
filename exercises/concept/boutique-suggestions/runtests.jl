@@ -4,7 +4,7 @@ include("boutique-suggestions.jl")
 
 @testset verbose = true "tests" begin
     testitem = Dict ∘ zip
-    @testset "Create clothing item" begin
+    @testset "1. Create clothing item" begin
         @testset "Creates an item with canonical categories" begin
             categories = ("item_name", "price", "color", "base_color")
             qualities = ("Long Sleeve T-shirt", 19.95, "Deep Red", "red")
@@ -20,7 +20,7 @@ include("boutique-suggestions.jl")
         end
     end
     
-    @testset "Suggest combinations" begin
+    @testset "2. Suggest combinations" begin
         @testset "Generates one pair from one top and one bottom" begin
             categories = ("item_name", "price", "color", "base_color")
 
@@ -58,7 +58,7 @@ include("boutique-suggestions.jl")
        end
     end
 
-    @testset "Add up outfit prices" begin
+    @testset "3. Add up outfit prices" begin
         @testset "Returns a Vector for Vector input" begin
             categories = ("item_name", "price", "color", "base_color")
 
@@ -98,7 +98,7 @@ include("boutique-suggestions.jl")
        end
     end
 
-    @testset "Filter out clashing outfits" begin
+    @testset "4. Filter out clashing outfits" begin
         @testset "Filters suggestions that 'clash'" begin
             categories = ("item_name", "price", "color", "base_color")
             topqualities = ("Long Sleeve T-shirt", 19.95, "Deep Red", "red")
