@@ -417,6 +417,18 @@
         "status": "beta"
       },
       {
+        "slug": "mecha-munch-management",
+        "name": "Mecha Munch Management",
+        "uuid": "a3236d06-39d9-4132-9262-f8fab7b49f1f",
+        "concepts": [
+          "dict-functions"
+        ],
+        "prerequisites": [
+          "higher-order-functions"
+        ],
+        "status": "wip"
+      },
+      {
         "slug": "old-elyses-enchantments",
         "name": "Old Elyse's Enchantments",
         "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",
