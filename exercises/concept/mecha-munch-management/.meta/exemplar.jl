@@ -6,7 +6,7 @@ end
 update_recipes! = merge!
 
 function send_to_store(cart, aisles)
-    sort!([aisles[item] => cart[item] for item in keys(cart)], by=first)
+    sort!([aisles[item] => cart[item] for item in keys(cart)])
 end
 
 function update_store_inventory!(inventory, cart)
