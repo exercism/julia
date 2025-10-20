@@ -426,7 +426,7 @@
         "prerequisites": [
           "higher-order-functions"
         ],
-        "status": "wip"
+        "status": "beta"
       },
       {
         "slug": "old-elyses-enchantments",
