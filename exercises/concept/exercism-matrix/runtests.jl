@@ -3,7 +3,7 @@ using Test
 include("exercism-matrix.jl")
 
 @testset verbose = true "tests" begin
-    @testset "construct E" begin
+    @testset "1. construct E" begin
         @test E == [
             0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 1 0 0;
             0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0;
@@ -21,7 +21,7 @@ include("exercism-matrix.jl")
         @test isconst(@__MODULE__, :E)
     end
 
-    @testset "sadexercism" begin
+    @testset "2. sadexercism" begin
         @test frown(E) == [
             0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 1 0 0;
             0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0;
@@ -55,7 +55,7 @@ include("exercism-matrix.jl")
         @test Ẽ != E
     end
 
-    @testset "stickerwall" begin
+    @testset "3. stickerwall" begin
         @test stickerwall(E) == [
             0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 1 0 0;
             0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0;
@@ -85,7 +85,7 @@ include("exercism-matrix.jl")
         ]
     end
 
-    @testset "dots to column pixel counts" begin
+    @testset "4. dots to column pixel counts" begin
         @test colpixelcount(E) == [
             0 0 2 2 0 0 0 0 0 0 0 0 0 0 2 2 0 0;
             0 8 0 0 0 0 0 0 0 0 0 0 0 0 0 0 8 0;
@@ -140,7 +140,7 @@ include("exercism-matrix.jl")
         ]
     end
 
-    @testset "render" begin
+    @testset "5. render" begin
         @test render(E) == "  XX          XX  \n X              X \n X   X      X   X \n X  X X    X X  X \n X              X \nX                X\n X    X    X    X \n X     X  X     X \n X      XX      X \n X              X \n  XX          XX  "
  
         @test render(colpixelcount(E)) == render(E)

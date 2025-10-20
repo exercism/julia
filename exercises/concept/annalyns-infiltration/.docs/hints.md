@@ -19,5 +19,10 @@
 - In general, use of parentheses is encouraged to make your intention clearer.
 - For more details check out the Operator Precedence section on the [official Julia documentation][operator-precedence].
 
+## 4. Check if the 'Free Prisoner' option should be shown
+
+- Boolean operators execute in the order of their precedence (from highest to lowest): `!`, `&&`, `||`.
+- In general, use of parentheses is encouraged to make your intention clearer.
+
 [boolean-operators]: https://docs.julialang.org/en/v1/manual/mathematical-operations/#Boolean-Operators
 [operator-precedence]: https://docs.julialang.org/en/v1/manual/mathematical-operations/#Operator-Precedence-and-Associativity

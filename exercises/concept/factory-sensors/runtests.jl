@@ -26,7 +26,11 @@ include("factory-sensors.jl")
         end
     end
 
-    @testset "3. Monitor the machine" begin
+    @testset "3. Define a custom error" begin
+        @test @isdefined MachineError
+    end
+
+    @testset "4. Monitor the machine" begin
         @testset "Passing" begin
             @test_logs (:info, "humidity level check passed: 53%") (:info, "temperature check passed: 200 °C") machinemonitor(53, 200)
         end

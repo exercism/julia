@@ -4,7 +4,7 @@ include("cars-assemble.jl")
 
 @testset verbose = true "tests" begin
 
-    @testset "success_rate" begin
+    @testset "1. success_rate" begin
         @testset "Success rate for speed zero" begin
             speed = 0
             @test isapprox(success_rate(speed), 0.0, atol=1e-3)
@@ -36,7 +36,7 @@ include("cars-assemble.jl")
         end
     end
     
-    @testset "production_rate_per_hour" begin
+    @testset "2. production_rate_per_hour" begin
         @testset "Production rate per hour for speed zero" begin
             speed = 0
             @test isapprox(production_rate_per_hour(speed), 0.0, atol=1e-3)
@@ -68,7 +68,7 @@ include("cars-assemble.jl")
         end
     end
 
-    @testset "working_items_per_minute" begin
+    @testset "3. working_items_per_minute" begin
         @testset "Working items per minute for speed zero" begin
             speed = 0
             @test typeof(working_items_per_minute(speed)) == Int

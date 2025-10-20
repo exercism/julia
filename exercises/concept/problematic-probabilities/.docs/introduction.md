@@ -65,3 +65,35 @@ julia> 3//4 + 5.3  # rational and float => float
 julia> float(3//4)  # casting
 0.75
 ```
+
+## Other operations
+
+In Julia, rational numbers are just numbers.
+The compiler will usually convert types as necessary.
+
+However, beware that comparisons work for fractions with a finite decimal representation:
+
+```julia-repl
+julia> 3//4 == 0.75
+true
+
+julia> 3//4 < 0.74
+false
+```
+
+But, otherwise, a `Rational` should be cast to a `Float` for comparisons:
+
+```julia-repl
+julia> 1//3 == 1/3
+false
+
+julia> float(1//3) == 1/3
+true
+```
+
+Mathematical functions take rationals as input, but may give a floating-point result:
+
+```julia-repl
+julia> sqrt(9//16)
+0.75
+```
