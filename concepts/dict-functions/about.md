@@ -155,7 +155,7 @@ Dict{String, Any} with 3 entries:
 ```
 
 Concatenating two vectors is another popular operation when merging.
-For this, Julia uses the [`vcat()`][vcat] function, for reasons that will become clearer in the [`Multi Dimensional Arrays`][multidim] Concept.
+For this, Julia uses the [`vcat()`][vcat] function, for reasons explained in the [`Multi Dimensional Arrays`][multidim] Concept.
 
 ```julia-repl
 julia> d7 = Dict("vals" => [1, 2, 3])
