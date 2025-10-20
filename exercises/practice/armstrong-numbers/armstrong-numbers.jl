@@ -1,0 +1,3 @@
+function isarmstrong(n)
+
+end
