@@ -173,6 +173,8 @@ Dict{String, Vector{Int64}} with 1 entry:
 
 For multiple [`Set`s][sets], the corresponding merge function is [`union`][union].
 
+Note that the `mergewith` functions are a good example of [Higher Order Functions][hof] in action.
+
 
 [pairs-dicts]: https://exercism.org/tracks/julia/concepts/pairs-and-dicts
 [dict]: https://docs.julialang.org/en/v1/base/collections/#Dictionaries
@@ -186,3 +188,4 @@ For multiple [`Set`s][sets], the corresponding merge function is [`union`][union
 [vcat]: https://docs.julialang.org/en/v1/base/arrays/#Base.vcat
 [union]: https://docs.julialang.org/en/v1/base/collections/#Base.union
 [sets]: https://exercism.org/tracks/julia/concepts/sets
+[hof]: https://exercism.org/tracks/julia/concepts/higher-order-functions
