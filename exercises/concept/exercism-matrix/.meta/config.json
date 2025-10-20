@@ -1,0 +1,17 @@
+{
+  "authors": [
+    "SaschaMann"
+  ],
+  "files": {
+    "solution": [
+      "exercism-matrix.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ]
+  },
+  "blurb": "Learn about multi-dimensional arrays with the Exercism logo."
+}

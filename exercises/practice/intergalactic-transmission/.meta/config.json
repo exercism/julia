@@ -1,0 +1,19 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "files": {
+    "solution": [
+      "intergalactic-transmission.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "example": [
+      ".meta/example.jl"
+    ]
+  },
+  "blurb": "Add parity bits to a message for transmission",
+  "source": "Kah Goh",
+  "source_url": "https://github.com/exercism/problem-specifications/pull/2543"
+}

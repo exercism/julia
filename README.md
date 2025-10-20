@@ -56,10 +56,32 @@ include("stub.jl")
 
 end
 ```
+
 Where the `"tests"` testset is a *verbose* wrapper for *non-verbose* exercise specific testing (used for formatting testing output).
 In other words, all (exercise specific) inner `testset` should omit `verbose = true` (e.g. first line: `@testset "testset name" begin`).
 
+Required for Concept exercise, and optional for Practice exercises, each task should map to a testset with the same leading number in the name. For example:
+
+```julia
+using Test
+
+include("stub.jl")
+
+@testset verbose = true "tests" begin
+
+    @testset "1. first task name" begin
+        # Task specific testing: @testset / @test
+    end
+
+    @testset "2. second task name" begin
+        # Task specific testing: @testset / @test
+    end
+
+end
+```
+
 If helper files are needed for testing or boilerplate, place them in the same top-level folder as `runtests.jl` and explicitly `include` them in `runtests.jl`:
+
 ```julia
 using Test
 
@@ -73,12 +95,14 @@ include("boilerplate.jl")
 
 end
 ```
+
 **Note**: Students will not need to `import`/`include` any boilerplate for use in `stub.jl`, but this can be encouraged for instructional purposes if desired.
 Likewise, `.meta/example.jl` or `.meta/exemplar.jl` does not need to `import`/`include` any boilerplate.
 
 ### config.json
 If helper files are needed, `.meta/config.json` should then take an entry under the `"files"` property.
 1. If the file is meant to be visible to the student (e.g. [Alphametics](https://github.com/exercism/julia/tree/main/exercises/practice/alphametics)), use `editor`:
+
 ```json
   "files": {
     "solution": [
@@ -95,7 +119,9 @@ If helper files are needed, `.meta/config.json` should then take an entry under 
     ]
   },
 ```
+
 2. If the file is *not* meant to be visible to the student (e.g. [Cater Waiter](https://github.com/exercism/julia/tree/main/exercises/concept/cater-waiter)), use `auxiliary`:
+
 ```json
   "files": {
     "solution": [
