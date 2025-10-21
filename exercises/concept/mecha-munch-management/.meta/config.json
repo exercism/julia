@@ -1,0 +1,22 @@
+{
+  "authors": [
+    "meatball133",
+    "BethanyG"
+  ],
+  "files": {
+    "solution": [
+      "mecha-munch-management.jl"
+    ],
+    "test": [
+      "runtests.jl"
+    ],
+    "exemplar": [
+      ".meta/exemplar.jl"
+    ]
+  },
+  "forked_from": [
+    "python/mecha-munch-management"
+  ],
+  "icon": "gross-store",
+  "blurb": "Learn about dictionary methods by building a shopping cart MVP for the Mecha Munch grocery app."
+}
