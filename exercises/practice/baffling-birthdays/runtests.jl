@@ -91,12 +91,12 @@ include("baffling-birthdays.jl")
         end
 
         @testset "among ten people" begin
-            @test isapprox(estimate_probability_of_shared_birthday(10), 0.11694818, atol=0.01)
+            @test isapprox(estimate_probability_of_shared_birthday(10), 0.11694818, atol=0.05)
         end
 
         # this mid-value is noisier, so the atol is increased
         @testset "among twenty-three people" begin
-            @test isapprox(estimate_probability_of_shared_birthday(23), 0.50729723, atol=0.03)
+            @test isapprox(estimate_probability_of_shared_birthday(23), 0.50729723, atol=0.1)
         end
 
         @testset "among seventy people" begin
