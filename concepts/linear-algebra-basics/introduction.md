@@ -135,7 +135,7 @@ julia> [1, 2] .* [3, 4]
 
 This extremely common operation is written in textbooks as `u ⋅ v`, and called the "dot" product.
 
-A dot product is equivalent to the _sum_ of the element-wise product, as in the example below.
+A dot product is equivalent to the _sum_ of the element-wise product.
 
 Two vectors can be multiplied with the usual `*` operator, but only if the left vector is an `adjoint`: conveniently written `u' * v`.
 This should become clearer in the later section on matrix multiplication.
