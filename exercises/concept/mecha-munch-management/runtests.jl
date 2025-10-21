@@ -3,7 +3,6 @@ using Test
 include("mecha-munch-management.jl")
 
 @testset "tests" verbose = true begin
-
     @testset "1. Add items to cart" begin
         cart = Dict("Banana" => 3, "Apple" => 2, "Orange" => 1)
         items = ("Apple", "Apple", "Orange", "Apple", "Banana")
