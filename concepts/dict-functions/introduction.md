@@ -171,10 +171,9 @@ Dict{String, Vector{Int64}} with 1 entry:
   "vals" => [1, 2, 3, 4, 5]
 ```
 
-For multiple [`Set`s][sets], the corresponding merge function is `union`.
-
 Note that the `mergewith` functions are a good example of [Higher Order Functions][hof] in action.
 
+For multiple [`Set`s][sets], the corresponding merge function is `union`.
 
 [pairs-dicts]: https://exercism.org/tracks/julia/concepts/pairs-and-dicts
 [multidim]: https://exercism.org/tracks/julia/concepts/multi-dimensional-arrays
