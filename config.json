@@ -1856,6 +1856,11 @@
       "name": "Comprehensions"
     },
     {
+      "uuid": "2bc53c5a-76a6-4f7a-9920-a5110f298254",
+      "slug": "dict-functions",
+      "name": "Dict Functions"
+    },
+    {
       "uuid": "fedcb6b9-5847-4b37-ae79-883e15a150a5",
       "slug": "linear-algebra-basics",
       "name": "Linear Algebra Basics"
