@@ -18,7 +18,7 @@ julia> rank_range()
 ## 2. Define the file range
 
 Implement the `file_range()` function. 
-It should return a range of integers, from the uppercase letter A, to the uppercase letter H.
+It should return a range of characters, from the uppercase letter A, to the uppercase letter H.
 
 ```julia-repl
 julia> file_range()
