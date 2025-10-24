@@ -10,7 +10,7 @@ function send_to_store(cart, aislecodes)
     
 end
 
-function update_store_inventory!(cart, inventory)
+function update_store_inventory!(inventory, cart)
     
 end
 
