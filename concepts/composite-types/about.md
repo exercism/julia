@@ -7,7 +7,7 @@ It is often useful to define custom types in our programs.
 Creating new primitive types is possible, but rarely done.
 The built-in [primitive types][primitive] are not an arbitrary choice: they closely match the standard types in the LLVM compiler used by Julia for JIT compilation.
 
-Much more useful is the the ability to define [composite types][composite], with named fields.
+Much more useful is the the ability to define [composite types][composite-types], with named fields.
 
 Other languages have something similar, calling them `structs` or `records`.
 The Julia documentation refers to them as `composite types`, though (in a slight mismatch) the language syntax defines them with the `struct` keyword.
@@ -163,7 +163,7 @@ Field types will be checked for compatibility with the type definition, and an e
 
 Suppose we want constraints on the _values_ passed in, not just the _types_?
 
-Then we can include an `inner constructor` within the type definition, to carry out appropriate checks.
+Then we can include an `inner constructor` within the type definition, to carry out appropriate checks prom.
 
 For example, we have an abstract type `AbstractPoint`, intended to take `(x, y)` coordinates, but want a subtype with the constraint `y > x`.
 
