@@ -163,7 +163,7 @@ Field types will be checked for compatibility with the type definition, and an e
 
 Suppose we want constraints on the _values_ passed in, not just the _types_?
 
-Then we can include an `inner constructor` within the type definition, to carry out appropriate checks prom.
+Then we can include an `inner constructor` within the type definition, to carry out appropriate checks.
 
 For example, we have an abstract type `AbstractPoint`, intended to take `(x, y)` coordinates, but want a subtype with the constraint `y > x`.
 
