@@ -306,7 +306,7 @@ Float64
 [dijkstra]: https://en.wikipedia.org/wiki/Edsger_W._Dijkstra
 [hierarchy-diagram]: https://discourse.julialang.org/t/diagram-with-all-julia-types/5018
 [primitive]: https://docs.julialang.org/en/v1/manual/types/#Primitive-Types
-[types]: "https://docs.julialang.org/en/v1/manual/types/"
+[types]: https://docs.julialang.org/en/v1/manual/types/
 [inference]: https://en.wikipedia.org/wiki/Type_inference
 [numbers]: https://exercism.org/tracks/julia/concepts/numbers
 [assert]: https://docs.julialang.org/en/v1/base/base/#Base.@assert
