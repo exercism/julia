@@ -195,7 +195,7 @@ false
 The type equality must be exact, as this form of comparison has no understanding of the type hierarchy.
 
 More flexibly, [`isa`][isa] will tell us if a value has either the same type as a comparator, or a subtype of it.
-It can be used in either function or infix form.
+It can be used in either infix or function form.
 
 ```julia-repl
 julia> 12 isa Int64
