@@ -19,7 +19,7 @@ include("alphametics.jl")
         @test solve("ACA + DD == BD") === nothing
     end
 
-    @testset "puzzle with two digits and final carry" begin
+    @testset "puzzle with two digits final carry" begin
         @test solve("A + A + A + A + A + A + A + A + A + A + A + B == BCC") == Dict(
             'A' => 9,
             'B' => 1,
