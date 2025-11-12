@@ -16,6 +16,6 @@ function decrement_items(inventory, items)
     inventory
 end
 
-remove_item(inventory, item) = delete!(inventory, item)
+remove_item!(inventory, item) = delete!(inventory, item)
 
 list_inventory(inventory) = sort([item for item in inventory if item.second > 0])
