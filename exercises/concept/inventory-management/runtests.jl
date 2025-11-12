@@ -57,17 +57,17 @@ include("inventory-management.jl")
     end
 
     @testset "4. remove_item" begin
-        @isdefined(remove_item) && (global remove_item! = remove_item)
+        @isdefined(remove_item!) && (global remove_item = remove_item!)
         @testset "test_remove_item" begin
             inventory = Dict("iron" => 1, "diamond" => 2, "gold" => 1)
             expected = Dict("iron" => 1, "gold" => 1)
-            @test remove_item!(inventory, "diamond") == expected
+            @test remove_item(inventory, "diamond") == expected
         end
 
         @testset "test_remove_item_not_in_inventory" begin
             inventory = Dict("iron" => 1, "diamond" => 2, "gold" => 1)
             expected = Dict("iron" => 1, "gold" => 1, "diamond" => 2)
-            @test remove_item!(inventory, "wood") == expected
+            @test remove_item(inventory, "wood") == expected
         end
     end
 

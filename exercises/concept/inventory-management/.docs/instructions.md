@@ -10,6 +10,10 @@ You will also have to handle deleting items from an inventory by decreasing quan
 
 Finally, you will need to implement a function that will return all the key-value pairs in a given inventory as a `vector` of `pair`s.
 
+~~~~exercism/note
+The tests in this exercise are mutation agnostic, but the function names indicate they should be non-mutating.
+If you would like to use functions from the introduction while not mutating the input, the function `copy()` will be helpful.
+~~~~
 
 ## 1. Create an inventory based on a vector
 
@@ -51,7 +55,7 @@ Dict("coal" => 0, "wood" => 0, "diamond" => 1)
 
 ## 4. Remove an entry entirely from the inventory
 
-Implement the `remove_item!(<inventory dict>, <item>)` function that removes an item and its count entirely from an inventory:
+Implement the `remove_item(<inventory dict>, <item>)` function that removes an item and its count entirely from an inventory:
 
 ```julia-repl
 julia> remove_item!(Dict("coal" => 2, "wood" => 1, "diamond" => 2), "coal")
@@ -61,7 +65,7 @@ Dict("wood" => 1, "diamond" => 2)
 If the item is not found in the inventory, the function should return the original inventory unchanged.
 
 ```julia-repl
-julia> remove_item!(Dict("coal" => 2, "wood" => 1, "diamond" => 2), "gold")
+julia> remove_item(Dict("coal" => 2, "wood" => 1, "diamond" => 2), "gold")
 Dict("coal" => 2, "wood" => 1, "diamond" => 2)
 ```
 

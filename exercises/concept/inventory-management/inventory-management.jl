@@ -10,7 +10,7 @@ function decrement_items(inventory, items)
 
 end
 
-function remove_item!(inventory, item)
+function remove_item(inventory, item)
 
 end
 

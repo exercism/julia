@@ -1,5 +1,8 @@
 # Hints
 
+**Remember**: The tests in this exercise are mutation agnostic, but the function names indicate they should be non-mutating.
+If you would like to use functions from the introduction while not mutating the input, the function `copy()` will be helpful.
+
 ## 1. Create an inventory based on a vector
 
 - It may help to look at Task 2 before starting this.
@@ -18,7 +21,6 @@
 ## 4. Remove an entry entirely from the inventory
 
 - Julia has a function to do exactly this: read the Introduction.
-- Remember, since this function has a `!`, it mutates the input.
 
 ## 5. Return the entire content of the inventory
 
