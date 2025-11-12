@@ -17,7 +17,8 @@
 
 ## 4. Remove an entry entirely from the inventory
 
-Julia has a function to do exactly this: read the Introduction.
+- Julia has a function to do exactly this: read the Introduction.
+- Remember, since this function has a `!`, it mutates the input.
 
 ## 5. Return the entire content of the inventory
 

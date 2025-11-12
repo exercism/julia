@@ -51,17 +51,17 @@ Dict("coal" => 0, "wood" => 0, "diamond" => 1)
 
 ## 4. Remove an entry entirely from the inventory
 
-Implement the `remove_item(<inventory dict>, <item>)` function that removes an item and its count entirely from an inventory:
+Implement the `remove_item!(<inventory dict>, <item>)` function that removes an item and its count entirely from an inventory:
 
 ```julia-repl
-julia> remove_item(Dict("coal" => 2, "wood" => 1, "diamond" => 2), "coal")
+julia> remove_item!(Dict("coal" => 2, "wood" => 1, "diamond" => 2), "coal")
 Dict("wood" => 1, "diamond" => 2)
 ```
 
 If the item is not found in the inventory, the function should return the original inventory unchanged.
 
 ```julia-repl
-julia> remove_item(Dict("coal" => 2, "wood" => 1, "diamond" => 2), "gold")
+julia> remove_item!(Dict("coal" => 2, "wood" => 1, "diamond" => 2), "gold")
 Dict("coal" => 2, "wood" => 1, "diamond" => 2)
 ```
 
