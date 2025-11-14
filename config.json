@@ -1073,12 +1073,7 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 2,
-        "topics": [
-          "arrays",
-          "integers",
-          "math",
-          "strings"
-        ]
+        "status": "deprecated"
       },
       {
         "slug": "accumulate",
