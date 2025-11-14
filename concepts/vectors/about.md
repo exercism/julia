@@ -52,6 +52,16 @@ julia> mixed_vector = [1, "str", 'c']
   'c': ASCII/Unicode U+0063 (category Ll: Letter, lowercase)
 ```
 
+When creating an empty Vector, Julia defaults to the element type `Any`, but this can be defined more specifically by annotating the empty array with the desired element type.
+
+```julia-repl
+julia> empty_vec = []
+Any[]
+
+julia> empty_int_vec = Int64[]
+Int64[]
+```
+
 ### Pre-filled Vectors
 
 It is very common to start from vectors of all-0 or all-1 values. For these, there are functions called (unsurprisingly) `zeros()` and `ones()`, which take the vector size as a parameter.

@@ -1,7 +1,6 @@
-using Test
+using Test, Combinatorics
 
 include("alphametics.jl")
-include("permutations.jl")
 
 @testset verbose = true "tests" begin
     @testset "puzzle with three letters" begin

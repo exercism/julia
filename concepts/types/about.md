@@ -195,7 +195,7 @@ false
 The type equality must be exact, as this form of comparison has no understanding of the type hierarchy.
 
 More flexibly, [`isa`][isa] will tell us if a value has either the same type as a comparator, or a subtype of it.
-It can be used in either function or infix form.
+It can be used in either infix or function form.
 
 ```julia-repl
 julia> 12 isa Int64
@@ -306,7 +306,7 @@ Float64
 [dijkstra]: https://en.wikipedia.org/wiki/Edsger_W._Dijkstra
 [hierarchy-diagram]: https://discourse.julialang.org/t/diagram-with-all-julia-types/5018
 [primitive]: https://docs.julialang.org/en/v1/manual/types/#Primitive-Types
-[types]: "https://docs.julialang.org/en/v1/manual/types/"
+[types]: https://docs.julialang.org/en/v1/manual/types/
 [inference]: https://en.wikipedia.org/wiki/Type_inference
 [numbers]: https://exercism.org/tracks/julia/concepts/numbers
 [assert]: https://docs.julialang.org/en/v1/base/base/#Base.@assert
