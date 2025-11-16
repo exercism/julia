@@ -20,13 +20,7 @@ end
 
 frown(E) = frown!(copy(E))
 
-stickerwall(E) = vcat(
-    hcat(E, zeros(Int, size(E, 1)), ones(Int, size(E, 1)), zeros(Int, size(E, 1)), vcat(frown(E))),
-    hcat(zeros(Int, size(E, 2) + 1)', [1], zeros(Int, size(E, 2) + 1)'),
-    ones(Int, 2size(E, 2) + 3)',
-    hcat(zeros(Int, size(E, 2) + 1)', [1], zeros(Int, size(E, 2) + 1)'),
-    hcat(vcat(frown(E)), zeros(Int, size(E, 1)), ones(Int, size(E, 1)), zeros(Int, size(E, 1)), E)
-)
+stickerwall(E) = vcat(hcat(E, frown(E)), ones(Int, (1, 2size(E, 2))), hcat(frown(E), E))
 
 function colpixelcount(E)
     E .* sum(E, dims=1)
