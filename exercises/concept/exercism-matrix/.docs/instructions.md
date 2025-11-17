@@ -69,31 +69,29 @@ Define the function `stickerwall()`, which takes the Exercism matrix as input.
 Return a `Matrix` of the dot matrix which renders as:
 
 ```julia
-  XX          XX   X   XX          XX
- X              X  X  X              X
- X   X      X   X  X  X   X      X   X
- X  X X    X X  X  X  X  X X    X X  X
- X              X  X  X              X
-X                X X X                X
- X    X    X    X  X  X      XX      X
- X     X  X     X  X  X     X  X     X
- X      XX      X  X  X    X    X    X
- X              X  X  X              X
-  XX          XX   X   XX          XX
-                   X
-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-                   X
-  XX          XX   X   XX          XX
- X              X  X  X              X
- X   X      X   X  X  X   X      X   X
- X  X X    X X  X  X  X  X X    X X  X
- X              X  X  X              X
-X                X X X                X
- X      XX      X  X  X    X    X    X
- X     X  X     X  X  X     X  X     X
- X    X    X    X  X  X      XX      X
- X              X  X  X              X
-  XX          XX   X   XX          XX
+  XX          XX    XX          XX
+ X              X  X              X
+ X   X      X   X  X   X      X   X
+ X  X X    X X  X  X  X X    X X  X
+ X              X  X              X
+X                XX                X
+ X    X    X    X  X      XX      X
+ X     X  X     X  X     X  X     X
+ X      XX      X  X    X    X    X
+ X              X  X              X
+  XX          XX    XX          XX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  XX          XX    XX          XX
+ X              X  X              X
+ X   X      X   X  X   X      X   X
+ X  X X    X X  X  X  X X    X X  X
+ X              X  X              X
+X                XX                X
+ X      XX      X  X    X    X    X
+ X     X  X     X  X     X  X     X
+ X    X    X    X  X      XX      X
+ X              X  X              X
+  XX          XX    XX          XX
 ```
 
 ## 4. Change dots to column pixel counts

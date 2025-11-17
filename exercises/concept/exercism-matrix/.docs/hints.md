@@ -1,6 +1,7 @@
 # Hints
 
 The introduction contains most of what is needed for this exercise.
+Task 5 (rendering) can be done earlier to help with visualization, but be careful to take into account different possible dot values.
 
 ## 1. Define the Exercism logo `Matrix`
 
@@ -16,15 +17,17 @@ The introduction contains most of what is needed for this exercise.
 
 - Use your `frown()` function.
 - The `vcat()` and `hcat()` functions, or their equivalents, are your friends here.
-- The `ones()` and `zeros()` functions can also be quite useful.
+- Notice there is a row of `1`s (i.e. `X`s) separating the top half from the bottom half.
+- The function `ones()` can be used if desired, but be careful with its shape.
 
 ## 4. Change dots to column pixel counts
 
 - Broadcasting is a great way to do this concisely.
 - To broadcast, you'll need a vector with the column dot counts.
-- To get a vector with column dot count, you can apply a function to the `Matrix`.
+- To get a vector with column dot counts, you can apply a function to the `Matrix` with the `dims` specified.
 
 ## 5. Render a dot matrix
 
-- Using `eachrow()` to loop may work well here.
-- The function `join()` can also help.
+- The dots (e.g. `1`, `2`, etc.) and `0`s need to be changed to `X`s and `O`s, respectively.
+- Using `eachrow()` to loop may work here.
+- The function `join()` can also help to make things more concise.
