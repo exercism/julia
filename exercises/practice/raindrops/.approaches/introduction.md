@@ -2,7 +2,7 @@
 
 You can solve this exercise a great number of ways!
 
-Bedcause this is a very small problem, almost any solution is likely to be fast enough for most purposes.
+Because this is a very small problem, almost any solution is likely to be fast enough for most purposes.
 
 Clarity and readability are generally the priority, though we will make a few comments on performance in proparation for future challenges where speed matters. 
 
@@ -82,7 +82,7 @@ function raindrops1a(number)
 end
 ```
 
-While ternary operators can be nested, that quickly becomes confusing and offers little advantage.
+While ternary operators can be nested, that quickly becomes confusing and offers little further advantage.
 
 ### Lookup
 
