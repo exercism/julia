@@ -113,8 +113,9 @@ function raindrops2(number)
 end
 ```
 
-The [`@inbounds()` macro][ref-bounds] disables bounds checking, as a (risky) performance enhancement.
-Use with caution!
+The [`@inbounds()` macro][ref-bounds] disables bounds checking.
+- This is a (risky) performance enhancement when bounds are well known/defined.
+- Use with caution only when certain of the bounds!
 
 ### Switch
 
