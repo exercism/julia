@@ -23,6 +23,7 @@ julia> [input...]
 
 ## 3. Add missing stops
 
+- Remember, this function doesn't mutate the input!
 - Only the stop name is needed, not the stop number, so each pair must be split.
 - There are multiple ways to assemple the vector of names:
   -  Array [comprehension][comprehensions]
