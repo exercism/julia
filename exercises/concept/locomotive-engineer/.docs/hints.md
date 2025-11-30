@@ -19,10 +19,11 @@ julia> [input...]
 ## 2. Fix the vector of wagons
 
 - It is useful to split the front wagons and the engine from everything else, so that they can be reassembled in the correct order.
-- Multiple assignment with splatting may help you.
+- Multiple assignment with splatting may help you (see introduction).
 
 ## 3. Add missing stops
 
+- Remember, this function doesn't mutate the input!
 - Only the stop name is needed, not the stop number, so each pair must be split.
 - There are multiple ways to assemple the vector of names:
   -  Array [comprehension][comprehensions]
