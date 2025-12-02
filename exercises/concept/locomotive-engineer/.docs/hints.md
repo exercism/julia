@@ -2,7 +2,8 @@
 
 ## 1. Create a vector of all wagons
 
-- The [`collect()`][collect] function is useful here.
+- A classic for loop with `push!` to a `Vector` will work.
+- Otherwise, the [`collect()`][collect] function can be more concise.
 - Alternatively, splatting works within a vector constructor:
 
 ```julia-repl
@@ -23,7 +24,7 @@ julia> [input...]
 
 ## 3. Add missing stops
 
-- Remember, this function doesn't mutate the input!
+- Remember, this function doesn't mutate the input! Create a new `Dict`.
 - Only the stop name is needed, not the stop number, so each pair must be split.
 - There are multiple ways to assemple the vector of names:
   -  Array [comprehension][comprehensions]
@@ -38,8 +39,8 @@ true
 ## 4. Extend routing information
 
 - After slurping, `more_route_information` is a `Pairs()` collection.
-- The [`merge()`][merge] function will combine two or more `Dicts`, but will also accept a `Pairs()` collection.
-  Explicit conversion to a `Dict` is possible but unnecessary.
+- The [`merge()`][merge] function will combine two or more `Dict`s, but will also accept a `Pairs()` collection.
+  Explicit conversion of the `Pairs()` collection to a `Dict` is possible but unnecessary.
 
 
 [collect]: https://docs.julialang.org/en/v1/base/collections/#Base.collect-Tuple{Any}
