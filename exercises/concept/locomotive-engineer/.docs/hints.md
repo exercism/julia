@@ -2,7 +2,7 @@
 
 ## 1. Create a vector of all wagons
 
-- A classic for loop with `push!` to a `Vector` will work.
+- A classic for/while loop with `push!` to a `Vector` will work.
 - Otherwise, the [`collect()`][collect] function can be more concise.
 - Alternatively, splatting works within a vector constructor:
 
@@ -27,6 +27,7 @@ julia> [input...]
 - Remember, this function doesn't mutate the input! Create a new `Dict`.
 - Only the stop name is needed, not the stop number, so each pair must be split.
 - There are multiple ways to assemple the vector of names:
+  -  For/While Loop with `push!()` to a `Vector`.
   -  Array [comprehension][comprehensions]
   -  [`map()`][map] a function over the vector.
   -  [Broadcasting][broadcasting] of an [anonymous][anonymous] function is possible:
