@@ -1,4 +1,5 @@
-using Test, Combinatorics
+using Test
+using Combinatorics: permutations # comment out or remove if Combinatorics.jl is not installed
 
 include("alphametics.jl")
 
