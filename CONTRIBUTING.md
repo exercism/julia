@@ -95,7 +95,7 @@ After following the steps above, your exercise should contain _at least_ the fol
 
 Further, an entry in `config.json` was added for the exercise.
 
-It may contain further files, e.g. to add additional information or provide extra code. This is the bare minimum.
+It may contain further files, e.g. to add additional information or provide extra code. This is the bare minimum. See `README.md` for further formatting standards.
 
 Take a look at the `exercise/` directory or commit history for examples, or at this [example](https://github.com/exercism/julia/pull/560) of what a PR adding a new exercise should look like.
 

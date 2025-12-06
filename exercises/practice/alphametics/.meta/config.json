@@ -12,6 +12,9 @@
     ],
     "example": [
       ".meta/example.jl"
+    ],
+    "editor": [
+      "permutations.jl"
     ]
   },
   "blurb": "Given an alphametics puzzle, find the correct solution."
