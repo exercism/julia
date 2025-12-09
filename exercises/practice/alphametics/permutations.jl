@@ -26,73 +26,71 @@
 #    FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 #    DEALINGS IN THE SOFTWARE.
 
-# TODO: Uncomment below for use locally (not available in web editor)
+# Combinatorics/src/permutations.jl
 
-# # Combinatorics/src/permutations.jl
+struct Permutations{T}
+    a::T
+    t::Int
+end
 
-# struct Permutations{T}
-#     a::T
-#     t::Int
-# end
+Base.eltype(::Type{Permutations{T}}) where {T} = Vector{eltype(T)}
 
-# Base.eltype(::Type{Permutations{T}}) where {T} = Vector{eltype(T)}
+function Base.length(p::Permutations)
+    length(p.data) < p.length && return 0
+    return Int(prod(length(p.data) - p.length + 1:length(p.data)))
+end
 
-# function Base.length(p::Permutations)
-#     length(p.data) < p.length && return 0
-#     return Int(prod(length(p.data) - p.length + 1:length(p.data)))
-# end
+"""
+    permutations(a)
+Generate all permutations of an indexable object `a` in lexicographic order. Because the number of permutations
+can be very large, this function returns an iterator object.
+Use `collect(permutations(a))` to get an array of all permutations.
+"""
+permutations(a) = Permutations(a, length(a))
 
-# """
-#     permutations(a)
-# Generate all permutations of an indexable object `a` in lexicographic order. Because the number of permutations
-# can be very large, this function returns an iterator object.
-# Use `collect(permutations(a))` to get an array of all permutations.
-# """
-# permutations(a) = Permutations(a, length(a))
+"""
+    permutations(a, t)
+Generate all size `t` permutations of an indexable object `a`.
+"""
+function permutations(a, t::Integer)
+    if t < 0
+        t = length(a) + 1
+    end
+    Permutations(a, t)
+end
 
-# """
-#     permutations(a, t)
-# Generate all size `t` permutations of an indexable object `a`.
-# """
-# function permutations(a, t::Integer)
-#     if t < 0
-#         t = length(a) + 1
-#     end
-#     Permutations(a, t)
-# end
+function Base.iterate(p::Permutations, s = collect(1:length(p.a)))
+    (!isempty(s) && max(s[1], p.t) > length(p.a) || (isempty(s) && p.t > 0)) && return
+    nextpermutation(p.a, p.t ,s)
+end
 
-# function Base.iterate(p::Permutations, s = collect(1:length(p.a)))
-#     (!isempty(s) && max(s[1], p.t) > length(p.a) || (isempty(s) && p.t > 0)) && return
-#     nextpermutation(p.a, p.t ,s)
-# end
-
-# function nextpermutation(m, t, state)
-#     perm = [m[state[i]] for i in 1:t]
-#     n = length(state)
-#     if t <= 0
-#         return(perm, [n+1])
-#     end
-#     s = copy(state)
-#     if t < n
-#         j = t + 1
-#         while j <= n &&  s[t] >= s[j]; j+=1; end
-#     end
-#     if t < n && j <= n
-#         s[t], s[j] = s[j], s[t]
-#     else
-#         if t < n
-#             reverse!(s, t+1)
-#         end
-#         i = t - 1
-#         while i>=1 && s[i] >= s[i+1]; i -= 1; end
-#         if i > 0
-#             j = n
-#             while j>i && s[i] >= s[j]; j -= 1; end
-#             s[i], s[j] = s[j], s[i]
-#             reverse!(s, i+1)
-#         else
-#             s[1] = n+1
-#         end
-#     end
-#     return (perm, s)
-# end
+function nextpermutation(m, t, state)
+    perm = [m[state[i]] for i in 1:t]
+    n = length(state)
+    if t <= 0
+        return(perm, [n+1])
+    end
+    s = copy(state)
+    if t < n
+        j = t + 1
+        while j <= n &&  s[t] >= s[j]; j+=1; end
+    end
+    if t < n && j <= n
+        s[t], s[j] = s[j], s[t]
+    else
+        if t < n
+            reverse!(s, t+1)
+        end
+        i = t - 1
+        while i>=1 && s[i] >= s[i+1]; i -= 1; end
+        if i > 0
+            j = n
+            while j>i && s[i] >= s[j]; j -= 1; end
+            s[i], s[j] = s[j], s[i]
+            reverse!(s, i+1)
+        else
+            s[1] = n+1
+        end
+    end
+    return (perm, s)
+end

@@ -1,7 +1,7 @@
 using Test
-using Combinatorics: permutations # comment out or remove if Combinatorics.jl is not installed
 
 include("alphametics.jl")
+include("permutations.jl")
 
 @testset verbose = true "tests" begin
     @testset "puzzle with three letters" begin
@@ -72,8 +72,6 @@ include("alphametics.jl")
             'Y' => 2
         )
     end
-
-    # TODO: Use Combinatorics.jl versions 1.0.2 or >1.0.3 if using permutations(a, t), v1.0.3 is too slow for the following tests.
     
     @testset "puzzle with ten letters" begin
         @test solve("AND + A + STRONG + OFFENSE + AS + A + GOOD == DEFENSE") == Dict(
