@@ -29,8 +29,8 @@
 # Combinatorics/src/permutations.jl
 
 struct Permutations{T}
-    a::T
-    t::Int
+    data::T
+    length::Int
 end
 
 Base.eltype(::Type{Permutations{T}}) where {T} = Vector{eltype(T)}
@@ -41,56 +41,60 @@ function Base.length(p::Permutations)
 end
 
 """
-    permutations(a)
-Generate all permutations of an indexable object `a` in lexicographic order. Because the number of permutations
+    permutations(data)
+Generate all permutations of an indexable object `data` in lexicographic order. Because the number of permutations
 can be very large, this function returns an iterator object.
-Use `collect(permutations(a))` to get an array of all permutations.
+Use `collect(permutations(data))` to get an array of all permutations.
 """
-permutations(a) = Permutations(a, length(a))
+permutations(data) = Permutations(data, length(data))
 
 """
-    permutations(a, t)
-Generate all size `t` permutations of an indexable object `a`.
+    permutations(data, len)
+Generate all size `len` permutations of an indexable object `data`.
 """
-function permutations(a, t::Integer)
-    if t < 0
-        t = length(a) + 1
+function permutations(data, len::Integer)
+    if len < 0
+        len = length(data) + 1
     end
-    Permutations(a, t)
+    Permutations(data, len)
 end
 
-function Base.iterate(p::Permutations, s = collect(1:length(p.a)))
-    (!isempty(s) && max(s[1], p.t) > length(p.a) || (isempty(s) && p.t > 0)) && return
-    nextpermutation(p.a, p.t ,s)
+function Base.iterate(p::Permutations, state = collect(1:length(p.data)))
+    (!isempty(state) && max(state[1], p.length) > length(p.data) || (isempty(state) && p.length > 0)) && return nothing
+    nextpermutation(p.data, p.length , state)
 end
 
-function nextpermutation(m, t, state)
-    perm = [m[state[i]] for i in 1:t]
-    n = length(state)
-    if t <= 0
-        return(perm, [n+1])
+function nextpermutation(data, len, state)
+    perm = [data[state[i]] for i in 1:len]
+    statelen = length(state)
+    
+    len ≤ 0 && return (perm, [statelen+1])
+    
+    statecopy = copy(state)
+    if len < statelen
+        j = len + 1
+        while j ≤ statelen &&  statecopy[len] ≥ statecopy[j]
+            j += 1
+        end
     end
-    s = copy(state)
-    if t < n
-        j = t + 1
-        while j <= n &&  s[t] >= s[j]; j+=1; end
-    end
-    if t < n && j <= n
-        s[t], s[j] = s[j], s[t]
+    if len < statelen && j ≤ statelen
+        statecopy[len], statecopy[j] = statecopy[j], statecopy[len]
     else
-        if t < n
-            reverse!(s, t+1)
+        len < statelen && reverse!(statecopy, len+1)
+        i = len - 1
+        while i ≥ 1 && statecopy[i] ≥ statecopy[i+1]
+            i -= 1
         end
-        i = t - 1
-        while i>=1 && s[i] >= s[i+1]; i -= 1; end
         if i > 0
-            j = n
-            while j>i && s[i] >= s[j]; j -= 1; end
-            s[i], s[j] = s[j], s[i]
-            reverse!(s, i+1)
+            j = statelen
+            while j > i && statecopy[i] >= statecopy[j]
+                j -= 1
+            end
+            statecopy[i], statecopy[j] = statecopy[j], statecopy[i]
+            reverse!(statecopy, i+1)
         else
-            s[1] = n+1
+            statecopy[1] = statelen + 1
         end
     end
-    return (perm, s)
+    return (perm, statecopy)
 end
