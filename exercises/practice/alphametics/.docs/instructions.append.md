@@ -11,7 +11,7 @@ You may (or may not!) want to call the function `permutations(a, t)` from [Combi
 
 ~~~~exercism/caution
 
-If you use Combinatorics.jl v1.0.3 locally, `permutations(a, t)` is very slow on the large tests.
-Use either the provided file `permutations.jl`, Combinatorics.jl v1.0.2, or, should it exist, a release after v1.0.3.
+If you use `Combinatorics.jl` `v1.0.3` locally, `permutations(a, t)` is *very* slow on the large tests.
+Use either the provided file `permutations.jl`, upgrade to `Combinatorics.jl` `v≥1.1.0` or "downgrade" to `v1.0.2`.
 
 ~~~~
