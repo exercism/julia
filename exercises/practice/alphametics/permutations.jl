@@ -1,8 +1,5 @@
 # Extract of Combinatorics.jl
 #
-# You may (or may not!) want to call the function `permutations(a, t)` in your
-# solution.
-#
 # License:
 #
 #    Copyright (c) 2013-2015: Alessandro Andrioni, Jiahao Chen and other
@@ -30,14 +27,14 @@
 
 struct Permutations{T}
     data::T
-    length::Int
+    permlen::Int
 end
 
 Base.eltype(::Type{Permutations{T}}) where {T} = Vector{eltype(T)}
 
 function Base.length(p::Permutations)
-    length(p.data) < p.length && return 0
-    return Int(prod(length(p.data) - p.length + 1:length(p.data)))
+    length(p.data) < p.permlen && return 0
+    return Int(prod(length(p.data) - p.permlen + 1:length(p.data)))
 end
 
 """
@@ -46,55 +43,54 @@ Generate all permutations of an indexable object `data` in lexicographic order. 
 can be very large, this function returns an iterator object.
 Use `collect(permutations(data))` to get an array of all permutations.
 """
-permutations(data) = Permutations(data, length(data))
+permutations(data) = permutations(data, length(data))
 
 """
-    permutations(data, len)
-Generate all size `len` permutations of an indexable object `data`.
+    permutations(data, permlen)
+Generate all size `permlen` permutations of an indexable object `data`.
 """
-function permutations(data, len::Integer)
-    if len < 0
-        len = length(data) + 1
+function permutations(data, permlen::Integer)
+    if permlen < 0
+        permlen = length(data) + 1
     end
-    Permutations(data, len)
+    Permutations(data, permlen)
 end
 
-function Base.iterate(p::Permutations, state = collect(1:length(p.data)))
-    (!isempty(state) && max(state[1], p.length) > length(p.data) || (isempty(state) && p.length > 0)) && return nothing
-    nextpermutation(p.data, p.length , state)
+function Base.iterate(p::Permutations, state = collect(eachindex(p.data)))
+    (!isempty(state) && max(state[1], p.permlen) > length(p.data) || (isempty(state) && p.permlen > 0)) && return nothing
+    nextpermutation!(p.data, p.permlen, state)
 end
 
-function nextpermutation(data, len, state)
-    perm = [data[state[i]] for i in 1:len]
+function nextpermutation!(data, permlen, state)
+    perm = [data[state[i]] for i in 1:permlen]
     statelen = length(state)
     
-    len ≤ 0 && return (perm, [statelen+1])
+    permlen ≤ 0 && return (perm, [statelen + 1])
     
-    statecopy = copy(state)
-    if len < statelen
-        j = len + 1
-        while j ≤ statelen &&  statecopy[len] ≥ statecopy[j]
+    if permlen < statelen
+        j = permlen + 1
+        while j ≤ statelen &&  state[permlen] ≥ state[j]
             j += 1
         end
     end
-    if len < statelen && j ≤ statelen
-        statecopy[len], statecopy[j] = statecopy[j], statecopy[len]
+    if permlen < statelen && j ≤ statelen
+        state[permlen], state[j] = state[j], state[permlen]
     else
-        len < statelen && reverse!(statecopy, len+1)
-        i = len - 1
-        while i ≥ 1 && statecopy[i] ≥ statecopy[i+1]
+        permlen < statelen && reverse!(state, permlen+1)
+        i = permlen - 1
+        while i ≥ 1 && state[i] ≥ state[i+1]
             i -= 1
         end
         if i > 0
             j = statelen
-            while j > i && statecopy[i] >= statecopy[j]
+            while j > i && state[i] ≥ state[j]
                 j -= 1
             end
-            statecopy[i], statecopy[j] = statecopy[j], statecopy[i]
-            reverse!(statecopy, i+1)
+            state[i], state[j] = state[j], state[i]
+            reverse!(state, i+1)
         else
-            statecopy[1] = statelen + 1
+            state[1] = statelen + 1
         end
     end
-    return (perm, statecopy)
+    return (perm, state)
 end
