@@ -1871,6 +1871,11 @@
       "uuid": "fedcb6b9-5847-4b37-ae79-883e15a150a5",
       "slug": "linear-algebra-basics",
       "name": "Linear Algebra Basics"
+    },
+    {
+      "uuid": "f08aaaf0-5c3e-4e11-8855-3d88bd358ec3",
+      "slug": "linear-equation-solving",
+      "name": "Linear Equation Solving"
     }
   ],
   "key_features": [

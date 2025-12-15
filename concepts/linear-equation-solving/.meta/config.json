@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "Systems of linear equations are generally solved by Linear Algebra techniques, all fully supported in Julia."
+}
