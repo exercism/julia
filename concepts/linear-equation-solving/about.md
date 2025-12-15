@@ -54,7 +54,7 @@ Any values where `x = 0.75y` will be a solution.
 These `(x, y)` values lie along a line in 2-D space.
 There are an infinite number of solutions, and they form the [nullspace][wiki-nullspace] of the matrix.
 
-The rows in the matrix are not [linearly independent][indep] in this case, and the [rank][rank] of the matrix is less than the row count.
+The rows in the matrix are not [linearly independent][indep] in this case, and the [rank][rank] of the matrix is less than the row or column count.
 
 ```julia-repl
 julia> A = [4 -3; 8 -6]
@@ -65,16 +65,22 @@ julia> A = [4 -3; 8 -6]
 julia> det(A)
 0.0
 
-julia> rank(A)  # number of linearly-independent rows
+julia> size(A)  # total number of rows and columns
+(2, 2)
+
+julia> rank(A)  # number of linearly-independent rows (or columns)
 1
 
 julia> nullspace(A)
 2×1 Matrix{Float64}:
  -0.6
  -0.8
+
+julia> nullspace(A) |> norm  # Julia returns unit vectors when possible
+1.0
 ```
 
-The [`nullspace()`][ref-nullspace] function returns a single point, but any scalar multiple of this vector is also in the nullspace.
+The [`nullspace()`][ref-nullspace] function returns a single point, chosen to be [normalized][wiki-unit-vec] to a unit vector, but any scalar multiple of this vector is also in the nullspace.
 
 ## Solving **A x = b**
 
@@ -312,7 +318,7 @@ julia> F.values
   0.27984674554472466
  10.720153254455274
 
-# each column is an eigenvector
+# each column is an eigenvector, normalized to a unit vector
 julia> F.vectors
 2×2 Matrix{Float64}:
  -0.497417  0.945605
@@ -321,6 +327,9 @@ julia> F.vectors
 
 In general, an `n×n` matrix will have `n` eigenvalues, though not always _distinct_ values.
 Think of them as the roots of an `n`th-order polynomial (called the [characteristic polynomial][wiki-char-poly]), which can be repeated, and are often complex even for a real-valued matrix.
+
+Each eigenvector represents a direction, and any scalar multiple is also a valid eigenvector.
+For convenience in further calculations, Julia returns unit vectors with a [norm][wiki-norm] of 1.
 
 ### Applications
 
@@ -386,3 +395,5 @@ The garage mechanic no doubt avoids doing the math (in contrast to aircraft desi
 [wiki-nullspace]: https://en.wikipedia.org/wiki/Kernel_(linear_algebra)#Representation_as_matrix_multiplication
 [wiki-determinant]: https://en.wikipedia.org/wiki/Determinant
 [ref-multistats]: https://juliastats.org/MultivariateStats.jl/dev/pca/
+[wiki-unit-vec]: https://en.wikipedia.org/wiki/Unit_vector
+[wiki-norm]: https://en.wikipedia.org/wiki/Norm_(mathematics)
