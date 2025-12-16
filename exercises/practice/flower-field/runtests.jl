@@ -120,4 +120,10 @@ include("flower-field.jl")
                "111111"]
         @test annotate(flowerfield) == out
     end
+
+    @testset "multiple adjacent flowers" begin
+        flowerfield = [" ** "]
+        out = ["1**1"]
+        @test annotate(flowerfield) == out
+    end    
 end

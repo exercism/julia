@@ -62,6 +62,10 @@ end
         @test_throws DomainError ISBN("4-598-21507-B")
         # invalid characters are not ignored before checking length
         @test_throws DomainError ISBN("3598P215088")
+        # only one check digit is allowed
+        @test_throws DomainError ISBN("3-598-21508-96")
+        # X is not substituted by the value 10
+        @test_throws DomainError ISBN("3-598-2X507-5")
     end
 
     @testset "ISBNs compare equal when they're the same number" begin
