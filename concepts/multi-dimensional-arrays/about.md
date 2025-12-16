@@ -416,6 +416,24 @@ julia> (x -> x^2).(m)  # broadcast a function to all elements
 
 In general, Julia will broadcast any singleton dimension(s) to match the shape of the larger array.
 
+## Further Reading
+
+Many common operations on Vectors and Matrices fall under the general heading of Linear Algebra.
+
+There are (currently) two additional Concepts on the Exercism website, which are document-only until we can design exercises to pair with them.
+
+1. [Linear Algebra Basics][concept-linalg-basics] mainly discusses various types of multiplication.
+2. [Linear Equation Solving][concept-lin-eq-solve] discusses systems of linear equations and how to solve them efficiently.
+
+~~~~exercism/advanced
+There may in future be a third Concept on matrix factorizations.
+
+However, please be aware that Linear Algebra Basics is fairly mathematical, and may not suit all students.
+
+The later concepts (equation solving and factorizations) are more advanced, and only really aimed at people comfortable with college-level mathematics.
+
+Apologies, but this is the nature of the subject, and an important use case for Julia.
+~~~~
 
 [vectors]: https://exercism.org/tracks/julia/concepts/vectors
 [loops]: https://exercism.org/tracks/julia/concepts/loops
@@ -440,3 +458,5 @@ In general, Julia will broadcast any singleton dimension(s) to match the shape o
 [logrange]: https://docs.julialang.org/en/v1/base/math/#Base.logrange
 [eltype]: https://docs.julialang.org/en/v1/base/collections/#Base.eltype
 [types]: https://exercism.org/tracks/julia/concepts/types
+[concept-linalg-basics]: https://exercism.org/tracks/julia/concepts/linear-algebra-basics
+[concept-lin-eq-solve]: https://exercism.org/tracks/julia/concepts/linear-equation-solving
