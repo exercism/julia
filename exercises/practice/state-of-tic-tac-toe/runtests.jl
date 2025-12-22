@@ -34,10 +34,6 @@ include("state-of-tic-tac-toe.jl")
         end
 
         @testset "Finished game where X won via middle row victory" begin
-            @test gamestate(["O O", "XXX", " O "]) == "win"
-        end
-
-        @testset "Finished game where X won via middle row victory" begin
             @test gamestate(["O  ", "XXX", " O "]) == "win"
         end
 
