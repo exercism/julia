@@ -39,15 +39,17 @@ end
 
 """
     permutations(data)
-Generate all permutations of an indexable object `data` in lexicographic order. Because the number of permutations
-can be very large, this function returns an iterator object.
+Generate all permutations of an indexable object `data` in index-based lexicographic order. 
+Because the number of permutations can be very large, this function returns an iterator object.
 Use `collect(permutations(data))` to get an array of all permutations.
 """
 permutations(data) = permutations(data, length(data))
 
 """
     permutations(data, permlen)
-Generate all size `permlen` permutations of an indexable object `data`.
+Generate all size `permlen` permutations of an indexable object `data` in index-based lexicographic order.
+Because the number of permutations can be very large, this function returns an iterator object.
+Use `collect(permutations(data))` to get an array of all permutations.
 """
 function permutations(data, permlen::Integer)
     if permlen < 0
@@ -61,36 +63,36 @@ function Base.iterate(p::Permutations, state = collect(eachindex(p.data)))
     nextpermutation!(p.data, p.permlen, state)
 end
 
-function nextpermutation!(data, permlen, state)
-    perm = [data[state[i]] for i in 1:permlen]
-    statelen = length(state)
+function nextpermutation!(data, permlen, idxvec)
+    perm = data[@view idxvec[1:permlen]]
+    idxveclen = length(idxvec)
     
-    permlen ≤ 0 && return (perm, [statelen + 1])
+    permlen ≤ 0 && return (perm, [idxveclen + 1])
     
-    if permlen < statelen
+    if permlen < idxveclen
         j = permlen + 1
-        while j ≤ statelen &&  state[permlen] ≥ state[j]
+        while j ≤ idxveclen &&  idxvec[permlen] ≥ idxvec[j]
             j += 1
         end
     end
-    if permlen < statelen && j ≤ statelen
-        state[permlen], state[j] = state[j], state[permlen]
+    if permlen < idxveclen && j ≤ idxveclen
+        idxvec[permlen], idxvec[j] = idxvec[j], idxvec[permlen]
     else
-        permlen < statelen && reverse!(state, permlen+1)
+        permlen < idxveclen && reverse!(idxvec, permlen+1)
         i = permlen - 1
-        while i ≥ 1 && state[i] ≥ state[i+1]
+        while i ≥ 1 && idxvec[i] ≥ idxvec[i+1]
             i -= 1
         end
         if i > 0
-            j = statelen
-            while j > i && state[i] ≥ state[j]
+            j = idxveclen
+            while j > i && idxvec[i] ≥ idxvec[j]
                 j -= 1
             end
-            state[i], state[j] = state[j], state[i]
-            reverse!(state, i+1)
+            idxvec[i], idxvec[j] = idxvec[j], idxvec[i]
+            reverse!(idxvec, i+1)
         else
-            state[1] = statelen + 1
+            idxvec[1] = idxveclen + 1
         end
     end
-    return (perm, state)
+    return perm, idxvec
 end
