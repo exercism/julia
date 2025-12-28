@@ -1640,6 +1640,14 @@
         ]
       },
       {
+        "slug": "satellite",
+        "name": "Satellite",
+        "uuid": "1ad5b338-8f5f-45ae-bf36-314f3d8dd2c5",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
+      },
+      {
         "slug": "custom-set",
         "name": "Custom Set",
         "uuid": "b47377f7-84af-4a10-83ef-c2444a4f8940",
