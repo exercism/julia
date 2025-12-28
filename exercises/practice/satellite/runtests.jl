@@ -4,8 +4,8 @@ include("satellite.jl")
 
 @testset verbose = true "tests" begin
     @testset "Empty tree" begin
-        preorder = []
-        inorder = []
+        preorder = String[]
+        inorder = String[]
         @test isnothing(tree_from_traversals(preorder, inorder))
     end
 

@@ -14,11 +14,15 @@ function tree_from_traversals(preorder, inorder)
     length(preorder) == length(unique(preorder)) || 
         throw(ArgumentError("traversals must contain unique items"))
 
+    tree(preorder, inorder)
+end
+
+function tree(preorder, inorder)
     isempty(preorder) && return(nothing)
 
     root = preorder[1]
     inx = findfirst(==(root), inorder)
-    left = tree_from_traversals(preorder[2:inx], inorder[1:inx - 1])
-    right = tree_from_traversals(preorder[inx + 1:end], inorder[inx + 1:end])
+    left = tree(preorder[2:inx], inorder[1:inx - 1])
+    right = tree(preorder[inx + 1:end], inorder[inx + 1:end])
     Tree(root, left, right)
 end
