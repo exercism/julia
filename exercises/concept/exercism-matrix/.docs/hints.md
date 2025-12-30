@@ -23,11 +23,11 @@ Task 5 (rendering) can be done earlier to help with visualization, but be carefu
 ## 4. Change dots to column pixel counts
 
 - Broadcasting is a great way to do this concisely.
-- To broadcast, you'll need a vector with the column dot counts.
+- To broadcast, you'll need a *row* vector with the column dot counts.
 - To get a vector with column dot counts, you can apply a function to the `Matrix` with the `dims` specified.
 
 ## 5. Render a dot matrix
 
-- The dots (e.g. `1`, `2`, etc.) and `0`s need to be changed to `X`s and `O`s, respectively.
-- Using `eachrow()` to loop may work here.
-- The function `join()` can also help to make things more concise.
+- The dots (e.g. `1`, `2`, etc.) and `0`s need to be changed to `"X"` and `" "`, respectively.
+- Using `eachrow()` for an inner loop may be useful here but is not necessary.
+- The function `join()` can also help to make things more concise and could even be broadcast.
