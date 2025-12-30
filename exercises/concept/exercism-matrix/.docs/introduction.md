@@ -305,8 +305,7 @@ The dotted operator `.-` treats the singleton `0.5` as equivalent to `[0.5, 0.5,
 
 Extending this to higher dimensions is really just more of the same.
 
-You may feel at first that the scope for programmer confusion scales exponentially in the number of dimensions, but practice helps a lot.
-Also, familiarity with NumPy arrays translates quite well to Julia, despite the different syntax.
+For example, when broadcasting the multiplication of a 2x1 row vector `[1.0 1.5 2.0]` with the 2x3 matrix [1 2 3; 4 5 6], broadcasting is equivalent to broadcasting `[1.0 1.5 2.0]` to `[1.0 1.5 2.0; 1.0 1.5 2.0]` with multiplication then done element-wise.
 
 ```julia-repl
 julia> m
@@ -314,15 +313,36 @@ julia> m
  1  2  3
  4  5  6
 
-julia> m .* [1.0 1.5 2.0]  # broadcast a row vector down
+julia> m .* [1.0 1.5 2.0]  # broadcast a 1x3 row vector down
 2×3 Matrix{Float64}:
  1.0  3.0   6.0
  4.0  7.5  12.0
 
-julia> m ./ [1, 2]  # broadcast a column vector across
+julia> m .* [1.0 1.5 2.0; 1.0 1.5 2.0]  # 2x3 elementwise multiplication
+2×3 Matrix{Float64}:
+ 1.0  3.0   6.0
+ 4.0  7.5  12.0
+
+julia> m ./ [1, 2]  # broadcast a 2x1 column vector across
 2×3 Matrix{Float64}:
  1.0  2.0  3.0
  2.0  2.5  3.0
+
+julia> m ./ [1 1 1; 2 2 2]  # 2x3 elementwise division
+2×3 Matrix{Float64}:
+ 1.0  2.0  3.0
+ 2.0  2.5  3.0
+```
+
+**Note:** It is the non-singleton dimensions should match in size (e.g. `2x3 Matrix .* 2x1 Matrix`) for broadcasting.
+
+Furthermore, a function can be broadcast to each element of a `Matrix` exactly how it is done with a `Vector`.
+
+```julia-repl
+julia> m
+2×3 Matrix{Int64}:
+ 1  2  3
+ 4  5  6
 
 julia> (x -> x^2).(m)  # broadcast a function to all elements
 2×3 Matrix{Int64}:
@@ -330,4 +350,5 @@ julia> (x -> x^2).(m)  # broadcast a function to all elements
  16  25  36
 ```
 
-In general, Julia will broadcast any singleton dimension(s) to match the shape of the larger array.
+You may feel at first that the scope for programmer confusion scales exponentially in the number of dimensions, but practice helps a lot.
+Also, familiarity with NumPy arrays translates quite well to Julia, despite the different syntax.
