@@ -1,0 +1,10 @@
+[
+  {
+    "url": "https://docs.julialang.org/en/v1/base/sort/",
+    "description": "Sorting section in the Julia manual."
+  },
+  {
+    "url": "https://en.wikibooks.org/wiki/Introducing_Julia/Arrays_and_tuples#Sorting_arrays",
+    "description": "Julia Wikibook: sorting arrays."
+  }
+]
