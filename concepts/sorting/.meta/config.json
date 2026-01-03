@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "Sorting an array may seem simple, but there is a lot of algorithmic sophistication involved, well supported in Julia."
+}
