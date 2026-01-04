@@ -157,17 +157,22 @@ julia> sort(j, by=uppercase)
  'l': ASCII/Unicode U+006C (category Ll: Letter, lowercase)
  'u': ASCII/Unicode U+0075 (category Ll: Letter, lowercase)
 
-julia> tups = [(1, 3), (5, 2), (3, 4), (4, 1)];
+julia> vecs = [[1, 3], [4, 2], [3, 4], [2, 1]];
 
-julia> sort(tups, by=last)
-4-element Vector{Tuple{Int64, Int64, Int64}}:
- (4, 1)
- (5, 2)
- (1, 3)
- (3, 4)
+julia> sort(vecs)  # by default sorts by the first element of the (2-element) vectors
+4-element Vector{Vector{Int64}}:
+ [1, 3]
+ [2, 1]
+ [3, 4]
+ [4, 2]
+
+julia> sort(vecs, by=last)
+4-element Vector{Vector{Int64}}:
+ [2, 1]
+ [4, 2]
+ [1, 3]
+ [3, 4]
 ```
-
-The final example about will be explained in more detail in the [Tuples Concept][concept-tuples].
 
 For [multi-dimensional arrays][concept-mda], we can specify a `dims` keyword to control the direction of sorting.
 
