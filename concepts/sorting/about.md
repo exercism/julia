@@ -91,7 +91,7 @@ true
 
 Now the input `Vector` is sorted in-place, without copying, and the original ordering is lost permanently.
 
-This can be efficient, it can be buggy and dangerous, it can be confusing to other people using your code.
+This can be efficient, it can be buggy and lead to unexpected [side-effects][wiki-side-effect], it can be confusing to other people using your code.
 _Choose carefully!_
 
 [`sort!()`][ref-sort!] is a [mutating function][ref-mutating-func], and by (_very strong_) convention, any function that mutates its inputs has a `!` appended to its name, as a warning to programmers.
@@ -156,7 +156,18 @@ julia> sort(j, by=uppercase)
  'J': ASCII/Unicode U+004A (category Lu: Letter, uppercase)
  'l': ASCII/Unicode U+006C (category Ll: Letter, lowercase)
  'u': ASCII/Unicode U+0075 (category Ll: Letter, lowercase)
+
+julia> tups = [(1, 3), (5, 2), (3, 4), (4, 1)];
+
+julia> sort(tups, by=last)
+4-element Vector{Tuple{Int64, Int64, Int64}}:
+ (4, 1)
+ (5, 2)
+ (1, 3)
+ (3, 4)
 ```
+
+The final example about will be explained in more detail in the [Tuples Concept][concept-tuples].
 
 For [multi-dimensional arrays][concept-mda], we can specify a `dims` keyword to control the direction of sorting.
 
@@ -213,8 +224,8 @@ julia> langs[inxs[1:2]]  # slice the indices
  "Elixir"
 ```
 
-Each index in `langs` is an integer in the [range][concept-range] `1:length(langs)`.
-Output from [`sortperm()`][ref-sortperm] is a [permutation][wiki-permutation] of these integers, corresponding to a sort of the input vector.
+Because `langs` is a Vector, each index is an integer in the [range][concept-range] `1:length(langs)`.
+Output from calling [sortperm()][ref-sortperm] on a Vector is a [permutation][wiki-permutation] of these integers, corresponding to a sort of the input Vector.
 
 ## Partial sort
 
@@ -226,12 +237,7 @@ Julia provides the [`partialsort()`][ref-partialsort] and [`partialsort!()`][ref
 The second argument can be either an integer or a range, representing the index/indices of the sorted input:
 
 ```julia-repl
-julia> vsq = [3, 2, 4, 1].^2  # would be [1, 4, 9, 16] after a full sort
-4-element Vector{Int64}:
-  9
-  4
- 16
-  1
+julia> vsq = [9, 4, 16, 1];  # would be [1, 4, 9, 16] after a full sort
 
 julia> partialsort(vsq, 4)
 16
@@ -302,11 +308,13 @@ This chapter covers 391 dense and intellectually challenging pages, so the Exerc
 [ref-algorithms]: https://docs.julialang.org/en/v1/base/sort/#Sorting-Algorithms
 [wiki-permutation]: https://en.wikipedia.org/wiki/Permutation
 [wiki-pure-func]: https://en.wikipedia.org/wiki/Pure_function
+[wiki-side-effect]: https://en.wikipedia.org/wiki/Side_effect_(computer_science)
 [ref-mutating-func]: https://docs.julialang.org/en/v1/manual/style-guide/#bang-convention
 [concept-mda]: https://exercism.org/tracks/julia/concepts/multi-dimensional-arrays
 [concept-range]: https://exercism.org/tracks/julia/concepts/ranges
 [concept-multiple-dispatch]: https://exercism.org/tracks/julia/concepts/multiple-dispatch
 [concept-composite-types]: https://exercism.org/tracks/julia/concepts/composite-types
+[concept-tuples]: https://exercism.org/tracks/julia/concepts/tuples
 [ref-sortperm]: https://docs.julialang.org/en/v1/base/sort/#Base.sortperm
 [wiki-partial-sort]: https://en.wikipedia.org/wiki/Partial_sorting
 [ref-partialsort]: https://docs.julialang.org/en/v1/base/sort/#Base.Sort.partialsort

@@ -203,7 +203,7 @@ Julia provides the `partialsort()` and `partialsort!()` functions, which guarant
 The second argument can be either an integer or a range, representing the index/indices of the sorted input:
 
 ```julia-repl
-julia> vsq = [9, 4, 16, 1];
+julia> vsq = [9, 4, 16, 1];  # would be [1, 4, 9, 16] after a full sort
 
 julia> partialsort(vsq, 4)
 16
@@ -216,6 +216,5 @@ julia> partialsort(vsq, 2:3)
 
 [wiki-permutation]: https://en.wikipedia.org/wiki/Permutation
 [wiki-pure-func]: https://en.wikipedia.org/wiki/Pure_function
-[concept-mda]: https://exercism.org/tracks/julia/concepts/multi-dimensional-arrays
 [concept-range]: https://exercism.org/tracks/julia/concepts/ranges
 [wiki-partial-sort]: https://en.wikipedia.org/wiki/Partial_sorting
