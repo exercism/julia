@@ -91,7 +91,7 @@ true
 
 Now the input `Vector` is sorted in-place, without copying, and the original ordering is lost permanently.
 
-This can be efficient, it can be buggy and dangerous, it can be confusing to other people using your code.
+This can be efficient, it can be buggy and lead to unexpected side-effects, it can be confusing to other people using your code.
 _Choose carefully!_
 
 `sort!()` is a "mutating function", and by (_very strong_) convention, any function that mutates its inputs has a `!` appended to its name, as a warning to programmers.
@@ -156,6 +156,22 @@ julia> sort(j, by=uppercase)
  'J': ASCII/Unicode U+004A (category Lu: Letter, uppercase)
  'l': ASCII/Unicode U+006C (category Ll: Letter, lowercase)
  'u': ASCII/Unicode U+0075 (category Ll: Letter, lowercase)
+
+julia> vecs = [[1, 3], [4, 2], [3, 4], [2, 1]];
+
+julia> sort(vecs)  # by default sorts by the first element of the (2-element) vectors
+4-element Vector{Vector{Int64}}:
+ [1, 3]
+ [2, 1]
+ [3, 4]
+ [4, 2]
+
+julia> sort(vecs, by=last)
+4-element Vector{Vector{Int64}}:
+ [2, 1]
+ [4, 2]
+ [1, 3]
+ [3, 4]
 ```
 
 ## Sort index array
@@ -190,7 +206,7 @@ julia> langs[inxs[1:2]]  # slice the indices
  "Elixir"
 ```
 
-Each index in `langs` is an integer in the [range][concept-range] `1:length(langs)`.
+Because `langs` is a Vector, each index is an integer in the [range][concept-range] `1:length(langs)`.
 Output from `sortperm()` is a [permutation][wiki-permutation] of these integers, corresponding to a sort of the input vector.
 
 ## Partial sort
