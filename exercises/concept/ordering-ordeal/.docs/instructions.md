@@ -45,7 +45,7 @@ julia> qty
 As stated above, you need to keep track of the customers in a defined order.
 
 Write a function `sortcustomer(cust, srtperm)` which takes a `Vector` of customers `cust` and a `Vector` sort permutation `srtperm`.
-This function returns a new array with the customers in the order proscribed by the sort permutation.
+This function returns a new array with the customers in the order prescribed by the sort permutation.
 
 ```julia-repl
 julia> cust = ["a", "b", "c"]

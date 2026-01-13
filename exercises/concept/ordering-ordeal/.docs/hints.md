@@ -11,7 +11,7 @@ Remember, turtles are cold-blooded animals, so make sure they are warm before gi
 ## 2. Sort customer
 
 - A new array with the customers ordered should be returned (i.e. do not sort in-place)
-- An sort permutation (i.e. index array) can be used like indices.
+- A sort permutation (i.e. index array) can be used like indices.
 
 ## 3. Production Schedule
 
