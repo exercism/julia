@@ -200,7 +200,7 @@
           "vector-operations"
         ],
         "prerequisites": [
-          "ranges"
+          "sorting"
         ],
         "status": "beta"
       },
