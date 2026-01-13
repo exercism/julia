@@ -10,5 +10,5 @@ end
 
 function production_schedule(cust, qty)
     srtperm = sortquantity!(qty)
-    sortcust(cust, srtperm), sortperm(srtperm)
+    sortcustomer(cust, srtperm), sortperm(srtperm)
 end
