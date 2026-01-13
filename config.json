@@ -200,7 +200,7 @@
           "vector-operations"
         ],
         "prerequisites": [
-          "ranges"
+          "sorting"
         ],
         "status": "beta"
       },
@@ -425,6 +425,18 @@
         ],
         "prerequisites": [
           "higher-order-functions"
+        ],
+        "status": "beta"
+      },
+      {
+        "slug": "ordering-ordeal",
+        "name": "Ordering Ordeal",
+        "uuid": "0ecd182c-8fc6-4a4c-b5f7-183d1cb6199c",
+        "concepts": [
+          "sorting"
+        ],
+        "prerequisites": [
+          "ranges"
         ],
         "status": "beta"
       },
