@@ -1,13 +1,13 @@
 # Instructions
 
-You have been hired as a Assistant Production Engineer in a company that is produces quilts for turtles.
+You have been hired as a Assistant Production Engineer in a company that produces quilts for turtles.
 
 Orders come in throughout the day as a customer name or number and an order quantity. 
 These are then processed in the morning before the day's production starts.
 
 You get to go home with full pay as soon as all the day's orders are filled, so there's incentive to shorten the workday as much as possible.
 Since each order is handled by a single machine, scheduling the largest orders first allows the overhead of starting a job to be pushed onto the smaller orders, shortening the total production time.
-Therefore, you have decided to provide some sorting functions to help with this scheduling, so you can get home to knit a sweater for your turtle.
+Therefore, you have decided to provide some sorting functions to help with this scheduling speed-up, so you can get home to knit a sweater for your turtle.
 
 ## 1. Sort quantity!
 

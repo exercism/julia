@@ -1,5 +1,7 @@
 # Hints
 
+Remember, turtles are cold-blooded animals, so make sure they are warm before giving them a quilt or sweater.
+
 ## 1. Sort quantity!
 
 - Your returned sort permutation needs to be in descending order.
