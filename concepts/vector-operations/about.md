@@ -16,7 +16,7 @@ length(v)  # => 3
 sum(v)  # => 9
 ```
 
-When we reach the Concept on multidimensional arrays, it will become clearer that this is _dimension reduction_ rather than necessarily returning a scalar.
+When we reach the Concept on [multidimensional arrays][concept-multi-dimensional-arrays], it will become clearer that this is _dimension reduction_ rather than necessarily returning a scalar.
 If that makes no sense to you, skip worrying about it for now.
 
 There are many more functions of this type.
@@ -134,6 +134,8 @@ This is at the heart of `broadcasting`.
 
 Anyone worrying about memory usage from this "repetition" can relax: it is implemented in a very efficient way that does not actually copy the values in memory.
 
+Programmers familiar with broadcasting in other languages should note that Julia's approach is (mostly) similar to NumPy, but much less tolerant of size mismatches than R.
+
 ### Broadcasting in-place
 
 If memory usage is a concern, then in-place operations are a common way to look to reduce allocations.
@@ -180,6 +182,7 @@ julia> v
  4
  5
 ```
+
 But be careful! The dot before the assignment operator `.=` is important.
 
 ```julia-repl
@@ -197,6 +200,7 @@ julia> v
  3
  4
 ```
+
 This appears to have worked in the same way, but here `v .+ 1` created a new vector `[2, 3, 4]` and then assigned it to the variable `v`, leaving the initial vector `[1, 2, 3]` in memory to be garbage collected.
 This ends up using twice as much memory as the previous example that reuses the memory allocated for the initial vector.
 
@@ -205,8 +209,6 @@ For example, given two vectors `v` and `w` of the same size:
 
 - `v .= w` produces a copy of `w` in the memory location of `v`. Further changes in `v` do not affect `w` and vice versa.
 - `v = w` produces another pointer to the memory location of `w` with the name `v`. Further changes in `v` are reflected in `w` and vice versa.
-
-Programmers familiar with broadcasting in other languages should note that Julia's approach is (mostly) similar to NumPy, but much less tolerant of size mismatches than R.
 
 ### Un-dotted operators: a cautionary tale
 
@@ -327,3 +329,4 @@ julia> a[condition]
 [zip]: https://docs.julialang.org/en/v1/base/iterators/#Base.Iterators.zip
 [bitarray]: https://docs.julialang.org/en/v1/base/arrays/#Base.BitArray
 [broadcasting]: https://docs.julialang.org/en/v1/manual/arrays/#Broadcasting
+[concept-multi-dimensional-arrays]: https://exercism.org/tracks/julia/concepts/multi-dimensional-arrays
