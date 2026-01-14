@@ -134,6 +134,78 @@ This is at the heart of `broadcasting`.
 
 Anyone worrying about memory usage from this "repetition" can relax: it is implemented in a very efficient way that does not actually copy the values in memory.
 
+### Broadcasting in-place
+
+If memory usage is a concern, then in-place operations are a normal way to look to reduce allocations.
+However, the broadcasting operations in the examples above return a new `Vector` instead of modifying the original.
+
+```julia-repl
+julia> v = [1, 2, 3]
+3-element Vector{Int64}:
+ 1
+ 2
+ 3
+
+julia> v .+ 1
+3-element Vector{Int64}:
+ 2
+ 3
+ 4
+
+julia> v
+3-element Vector{Int64}:
+ 1
+ 2
+ 3
+```
+
+To modify in-place, the modification needs to be broadcast.
+
+```julia-repl
+julia> v .= v .+ 1
+3-element Vector{Int64}:
+ 2
+ 3
+ 4
+
+julia> v
+3-element Vector{Int64}:
+ 2
+ 3
+ 4
+
+julia> v .+= 1  # equivalent operation to above
+3-element Vector{Int64}:
+ 3
+ 4
+ 5
+```
+But be careful! The dot before the assignment operator `.=` is important.
+
+```julia-repl
+julia> v = [1, 2, 3];
+
+julia> v = v .+ 1
+3-element Vector{Int64}:
+ 2
+ 3
+ 4
+
+julia> v
+3-element Vector{Int64}:
+ 2
+ 3
+ 4
+```
+This appears to have worked in the same way, but here `v .+ 1` created a new `Vector` and then assigned it to the variable `v`, leaving the initial `Vector` in memory to be garbage collected.
+This ends up using twice as much memory as the previous example which reuses the memory allocation of the initial `Vector`.
+
+Likewise, there are related subtlties when broadcasting with `Vector`s of the same size.
+For example, given two `Vector`s `v` and `w` of the same size:
+
+- `v .= w` produces a copy of `w` in the memory location of `v`. Further changes in `v` do not affect `w` and vice versa.
+- `v = w` produces another pointer to the memory location of `w` with the name `v`. Further changes in `v` are reflected in `w` and vice versa.
+
 Programmers familiar with broadcasting in other languages should note that Julia's approach is (mostly) similar to NumPy, but much less tolerant of size mismatches than R.
 
 ### Un-dotted operators: a cautionary tale
