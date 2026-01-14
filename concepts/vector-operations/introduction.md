@@ -98,29 +98,10 @@ This is at the heart of `broadcasting`.
 ### Broadcasting in-place
 
 If memory usage is a concern, then in-place operations are a common way to look to reduce allocations.
+
 However, the broadcasting operations in the examples above create a new `Vector` instead of modifying the original.
 
-```julia-repl
-julia> v = [1, 2, 3]
-3-element Vector{Int64}:
- 1
- 2
- 3
-
-julia> v .+ 1
-3-element Vector{Int64}:
- 2
- 3
- 4
-
-julia> v
-3-element Vector{Int64}:
- 1
- 2
- 3
-```
-
-To modify `v` in-place, the modification needs to be broadcast.
+To modify the original `Vector` in-place, the modification needs to be broadcast.
 
 ```julia-repl
 julia> v .= v .+ 1
