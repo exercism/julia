@@ -95,6 +95,53 @@ In general, unequal lengths are an error, _except_ when one has length 1 (techni
 Singletons like `[0.5,]` or just `0.5` are automatically expanded to the necessary length by repetition.
 This is at the heart of `broadcasting`.
 
+### Broadcasting in-place
+
+If memory usage is a concern, then in-place operations are a common way to look to reduce allocations.
+However, the broadcasting operations in the examples above create a new `Vector` instead of modifying the original.
+
+```julia-repl
+julia> v = [1, 2, 3]
+3-element Vector{Int64}:
+ 1
+ 2
+ 3
+
+julia> v .+ 1
+3-element Vector{Int64}:
+ 2
+ 3
+ 4
+
+julia> v
+3-element Vector{Int64}:
+ 1
+ 2
+ 3
+```
+
+To modify `v` in-place, the modification needs to be broadcast.
+
+```julia-repl
+julia> v .= v .+ 1
+3-element Vector{Int64}:
+ 2
+ 3
+ 4
+
+julia> v .+= 1  # equivalent operation to above
+3-element Vector{Int64}:
+ 3
+ 4
+ 5
+
+julia> v
+3-element Vector{Int64}:
+ 3
+ 4
+ 5
+```
+
 ## Indexing
 
 Selecting elements of a vector by index number has been discussed in previous Concepts.
