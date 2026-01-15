@@ -42,7 +42,7 @@ include("ordering-ordeal.jl")
     end
 
     @testset "3. Production schedule" begin
-        @isdefined(production_schedule) && (production_schedule! = production_schedule)
+        @isdefined(production_schedule) && (global production_schedule! = production_schedule)
         @test production_schedule!(["a", "b", "c"], [2, 3, 1]) == (["b", "a", "c"], [2, 1, 3])
         @test production_schedule!(["a", "b", "c"], [6, 5, 7]) == (["c", "a", "b"], [2, 3, 1])
 
