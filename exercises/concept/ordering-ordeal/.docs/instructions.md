@@ -12,8 +12,9 @@ Therefore, you have decided to provide some sorting functions to help with this 
 ## 1. Sort quantity!
 
 As noted, the array of quantities will need to be sorted from largest to smallest.
-Due to the potentially large size of these arrays, they should be sorted in-place.
-To keep track of everything correctly, you will also need to be able to sort the array of customers to match the quantities.
+Due to the potentially large size of these arrays, they should be sorted *in-place*.
+To keep track of everything correctly, you will also need to be able to sort the array of customers to match the quantities, so a sort permutation of the quantities will be needed.
+
 Write a function `sortquantity!(qty)` which takes a `Vector` of `Integer` quantities.
 This function sorts the input `qty` in-place in descending order and returns a sort permutation of this ordering.
 
@@ -32,7 +33,7 @@ julia> sortquantity!(qty)
  4
  3
 
-julia> qty
+julia> qty # original vector is sorted in-place
 4-element Vector{Int64}:
  9
  8
@@ -60,36 +61,36 @@ julia> sortcustomer(cust, [2, 3, 1])
  "c"
  "a"
 
-julia> cust
+julia> cust # original vector remains unsorted
 3-element Vector{String}:
  "a"
  "b"
  "c"
 ```
 
-## 3. Production Schedule
+## 3. Production schedule!
 
 Now you can put it all together to help keep those turtles warm!
-You can now sort the quantities and customers properly, but you need to recover the original ordering for shipping.
+You can now sort the quantities and customers properly, but you need to be able to recover the original ordering for shipping.
 This can be done with an inverse sort permutation.
 
-Write a function `production_schedule(cust, qty)` which takes a `Vector` of customers and a `Vector` of quantities.
+Write a function `production_schedule!(cust, qty)` which takes a `Vector` of customers and a `Vector` of quantities.
 This function sorts the quantities in-place in descending order.
-It returns a new `Vector` of customers sorted in the same order as the quantities and an inverse sort permutation which can be used to restore the original ordering.
+It returns a new `Vector` of customers sorted in the same order as the quantities and an *inverse* sort permutation which can be used to restore the sorted vectors to their original ordering.
 
 ```julia-repl
 julia> cust, qty = ["a", "b", "c"], [2, 3, 1]
 (["a", "b", "c"], [2, 3, 1])
 
-julia> orderedcust, invperm = production_schedule(cust, qty)
+julia> orderedcust, invperm = production_schedule!(cust, qty)
 (["b", "a", "c"], [2, 1, 3])
 
-julia> qty
+julia> qty # has been sorted in-place
 3-element Vector{Int64}:
  3
  2
  1
 
-julia> orderedcust[invperm], qty[invperm]
+julia> orderedcust[invperm], qty[invperm] # inverse permutation gives original ordering
 (["a", "b", "c"], [2, 3, 1])
 ```

@@ -6,6 +6,6 @@ function sortcustomer(cust, srtperm)
     
 end
 
-function production_schedule(cust, qty)
+function production_schedule!(cust, qty)
     
 end
