@@ -1,7 +1,6 @@
 using Test
 
-#include("ordering-ordeal.jl")
-include(".meta/exemplar.jl")
+include("ordering-ordeal.jl")
 
 @testset verbose = true "tests" begin
     
