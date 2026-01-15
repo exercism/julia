@@ -10,7 +10,7 @@ include("ordering-ordeal.jl")
             @test sortquantity!([8, 9, 5, 6]) == [2, 1, 4, 3]
         end
 
-        @testset "Sort in place" begin
+        @testset "Sorted in place" begin
             qty_12345 = [1, 2, 3, 4, 5]
             @test sortquantity!(qty_12345) == [5, 4, 3, 2, 1]
             @test qty_12345 == [5, 4, 3, 2, 1]
@@ -22,11 +22,23 @@ include("ordering-ordeal.jl")
     end
 
     @testset "2. Sort customer" begin
-        @test sortcustomer(["a", "b", "c", "d", "e"], [5, 4, 3, 2, 1]) == ["e", "d", "c", "b", "a"]
-        @test sortcustomer(["a", "b", "c", "d", "e"], sortquantity!([1, 2, 3, 4, 5])) == ["e", "d", "c", "b", "a"]
+        @testset "Sort" begin
+            @test sortcustomer(["a", "b", "c", "d", "e"], [5, 4, 3, 2, 1]) == ["e", "d", "c", "b", "a"]
+            @test sortcustomer(["a", "b", "c", "d", "e"], sortquantity!([1, 2, 3, 4, 5])) == ["e", "d", "c", "b", "a"]
 
-        @test sortcustomer([1223, 7654, 3232, 8743], [2, 1, 4, 3]) == [7654, 1223, 8743, 3232]
-        @test sortcustomer([1223, 7654, 3232, 8743], sortquantity!([8, 9, 5, 6])) == [7654, 1223, 8743, 3232]
+            @test sortcustomer([1223, 7654, 3232, 8743], [2, 1, 4, 3]) == [7654, 1223, 8743, 3232]
+            @test sortcustomer([1223, 7654, 3232, 8743], sortquantity!([8, 9, 5, 6])) == [7654, 1223, 8743, 3232]
+        end
+
+        @testset "Not sorted in-place" begin
+            cust_abcde = ["a", "b", "c", "d", "e"]
+            sortcustomer(cust_abcde, [5, 4, 3, 2, 1])
+            @test cust_abcde == ["a", "b", "c", "d", "e"]
+            
+            cust = [1223, 7654, 3232, 8743]
+            sortcustomer([1223, 7654, 3232, 8743], [2, 1, 4, 3])
+            @test cust == [1223, 7654, 3232, 8743]
+        end
     end
 
     @testset "3. Production schedule" begin
