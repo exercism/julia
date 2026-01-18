@@ -1264,7 +1264,8 @@
         ],
         "prerequisites": [
           "conditionals",
-          "numbers"
+          "numbers",
+          "errors"
         ],
         "difficulty": 3,
         "topics": [

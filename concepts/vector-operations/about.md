@@ -207,7 +207,7 @@ This ends up using twice as much memory as the previous example that reuses the 
 Likewise, there are related subtlties when broadcasting with vectors of the same size.
 For example, given two vectors `v` and `w` of the same size:
 
-- `v .= w` produces a copy of `w` in the memory location of `v`. Further changes in `v` do not affect `w` and vice versa.
+- `v .= w` produces a [`copy`][copy] of `w` in the memory location of `v`. Further changes in `v` do not affect `w` and vice versa.
 - `v = w` produces another pointer to the memory location of `w` with the name `v`. Further changes in `v` are reflected in `w` and vice versa.
 
 ### Un-dotted operators: a cautionary tale
@@ -330,3 +330,4 @@ julia> a[condition]
 [bitarray]: https://docs.julialang.org/en/v1/base/arrays/#Base.BitArray
 [broadcasting]: https://docs.julialang.org/en/v1/manual/arrays/#Broadcasting
 [concept-multi-dimensional-arrays]: https://exercism.org/tracks/julia/concepts/multi-dimensional-arrays
+[copy]: https://docs.julialang.org/en/v1/base/base/#Base.copy

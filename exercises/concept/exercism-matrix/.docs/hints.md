@@ -11,7 +11,7 @@ Task 5 (rendering) can be done earlier to help with visualization, but be carefu
 
 - Remember that functions ending in `!` mutate the input (modify in-place), while others do not.
 - `frown!` can be done via assignment of specific elements, or (less efficiently) by swapping two rows.
-- `frown` is going to be very similar to `frown!`, just returning a copy of the input matrix.
+- `frown` is going to be very similar to `frown!`, just returning a `copy` of the input matrix.
 
 ## 3. Put together a stickerwall
 
