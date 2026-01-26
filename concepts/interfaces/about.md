@@ -24,7 +24,7 @@ Previously in the syllabus, we have seen several ways that Julia can operate on 
 
 Clearly, Julia knows how to step through standard collections item by item: vectors and ranges in the above examples, also Sets, Dicts, etc.
 
-How do we add this capability to our own custom collections, especially if they are lazily iterated like a generator?
+How do we add this capability to our own custom collections, especially if they can be lazily iterated like a generator?
 
 ### Minimal requirements
 
@@ -35,7 +35,7 @@ To create a sequence for iteration, we need (at least) two things:
 
 Julia achieves these tasks with methods of the `Base.iterate()` function.
 
-1. `Base.iterate(iter)` returns a tuple of the _first_ item and next state, or `nothing` if there is no first item.
+1. `Base.iterate(iter)` returns a tuple of the _first_ item and initial state, or `nothing` if there is no first item.
 2. `Base.iterate(iter, state)` returns a tuple of the _next_ item and next state, or `nothing` if there is no next item.
 
 [Multiple dispatch][concept-multiple-dispatch] is central to this.
@@ -56,6 +56,9 @@ julia> struct Powers
            count::Int   # maximum length of the sequence
        end
 ```
+
+----
+***The next bit is still contentious***
 
 Now we can define the `iterate()` methods for this type, but what is `state`?
 
@@ -89,6 +92,8 @@ Defining `Base.iterate(P::Powers, state=(1, 0))` is exactly equivalent to defini
 
 [concept-functions]: https://exercism.org/tracks/julia/concepts/functions
 ~~~~
+
+----
 
 So far, we already have some useful functionality: for the first 4 powers of 3, we can loop through the results, check if a given number is in the results, and apply aggregate function such as `sum()`.
 
@@ -255,16 +260,12 @@ julia> p[3]
 ```
 
 Note that we did not define `iterate()` in this case.
-Julia supplies that automatically, based on our definition of `getindex()`.
+Julia supplies a default implementation automatically, based on our definition of `getindex()`.
+
+Defining our own version of `iterate()` is still possible, and in some cases might be more efficient.
 
 Using the `AbstractArray` interface is especially valuable if we want higher-dimensional iteration.
 At the risk of stretching the toy example beyond its breaking point, this might mean the first `m` powers of numbers in `1:n`, which will iteratively define a size `(m, n)` array.
-
-***TODO:*** decide if this is enough, or we need an implementation.
-
-### [Custom Broadcasting][ref-cust-broadcasting]
-
-***TODO:*** Think of something to say, or remove this heading
 
 ### [Rounding][ref-rounding]
 
@@ -336,9 +337,10 @@ In particular, the name of the interface might never be mentioned in the impleme
 
 However, they are surprisingly simple in practice:
 
-1. Find out which methods are required (from the [documentation][ref-interfaces]).
-2. Implement those methods for your custom type; typically just a few methods, and quite short and simple.
-3. Let [Multiple Dispatch][concept-multiple-dispatch] take care of the rest, automatically.
+1. Define a suitable type, deciding whether subtyping is useful or not.
+2. Find out which methods are required (from the [documentation][ref-interfaces]).
+3. Implement those methods for your custom type; typically just a few methods, and quite short and simple.
+4. Let [Multiple Dispatch][concept-multiple-dispatch] take care of the rest, automatically.
 
 
 [concept-multiple-dispatch]: https://exercism.org/tracks/julia/concepts/multiple-dispatch
