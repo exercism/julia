@@ -28,9 +28,17 @@
 struct Permutations{T}
     data::T
     permlen::Int
+    function Permutations{T}(a, t::Integer) where T<:Vector
+        if t < 0
+            t = length(a) + 1
+        end
+        data = sizehint!(eltype(T)[], length(a))
+        foreach(i -> push!(data, a[i]), eachindex(a))
+        new{T}(data, t)
+    end
 end
 
-Base.eltype(::Type{Permutations{T}}) where {T} = Vector{eltype(T)}
+Base.eltype(::Type{Permutations{T}}) where T = T
 
 function Base.length(p::Permutations)
     length(p.data) < p.permlen && return 0
@@ -51,19 +59,14 @@ Generate all size `permlen` permutations of an indexable object `data` in index-
 Because the number of permutations can be very large, this function returns an iterator object.
 Use `collect(permutations(data))` to get an array of all permutations.
 """
-function permutations(data, permlen::Integer)
-    if permlen < 0
-        permlen = length(data) + 1
-    end
-    Permutations(data, permlen)
-end
+permutations(data, permlen::Integer) = Permutations{Vector{eltype(data)}}(data, permlen)
 
-function Base.iterate(p::Permutations, state = collect(eachindex(p.data)))
+function Base.iterate(p::Permutations, state::Vector{Int} = collect(eachindex(p.data)))
     (!isempty(state) && max(state[1], p.permlen) > length(p.data) || (isempty(state) && p.permlen > 0)) && return nothing
     nextpermutation!(p.data, p.permlen, state)
 end
 
-function nextpermutation!(data, permlen, idxvec)
+function nextpermutation!(data::Vector, permlen::Int, idxvec::Vector{Int})
     perm = data[@view idxvec[1:permlen]]
     idxveclen = length(idxvec)
     
@@ -76,7 +79,7 @@ function nextpermutation!(data, permlen, idxvec)
         end
     end
     if permlen < idxveclen && j ≤ idxveclen
-        idxvec[permlen], idxvec[j] = idxvec[j], idxvec[permlen]
+        idxvec[permlen], idxvec[j] = idxvec[j], idxvec[permlen]; nothing
     else
         permlen < idxveclen && reverse!(idxvec, permlen+1)
         i = permlen - 1
@@ -93,6 +96,7 @@ function nextpermutation!(data, permlen, idxvec)
         else
             idxvec[1] = idxveclen + 1
         end
+        nothing
     end
     return perm, idxvec
 end
