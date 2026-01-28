@@ -1,0 +1,7 @@
+{
+  "authors": [
+    "colinleach"
+  ],
+  "contributors": [],
+  "blurb": "Julia defines a series of informal interfaces that custom types can implement to interoperate with the language and its standard library."
+}
