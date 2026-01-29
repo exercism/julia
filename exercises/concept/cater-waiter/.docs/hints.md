@@ -23,7 +23,7 @@
 
 - Using loops to iterate through the available meal categories might be useful here.
 - If all the elements of `set_1` are contained within `set_2`, then `set_1 ⊆ set_2`.
-- The method equivalent of `⊆` is `issubset(set, iterable)`
+- The method equivalent of `set ⊆ iterable` is `issubset(set, iterable)`
 - Tuples can contain any data type, including other tuples.  Tuples can be formed using `(element_1, element_2)`.
 - Elements within Tuples can be accessed from the left using a 1-based index number, or from the right using an `end`-based index number (e.g. `tuple[end]`).
 - The `Set()` constructor can take any [iterable][iterable] as an argument. Vectors are iterable.
