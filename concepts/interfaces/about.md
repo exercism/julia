@@ -66,7 +66,9 @@ It is up to you to decide what information you need to keep track of.
 In this case, we need the most recent power of `n`, and how many items in the sequence have been returned so far.
 These two numbers are wrapped in the `state` tuple, to define `iterate(P::Powers, state)`.
 
-To get the first item, some iterators need a complicated setup, but in this case we just need to define a simple "zeroth" state: 1 as the base number (becuase `n^0 == 1` for any value of `n`), and 0 previous items.
+To get the first item, some iterators need a complicated setup.
+Quite often, we just need to define a simple starting condition.
+In this case, 1 is the base number to be repeatedly multipled by `n`, and there are 0 previous items.
 
 ```julia-repl
 julia> function Base.iterate(P::Powers, state)
