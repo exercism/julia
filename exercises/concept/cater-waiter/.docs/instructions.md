@@ -105,7 +105,7 @@ julia> separate_appetizers(dishes, appetizers)
 Within each category (`VEGAN`, `VEGETARIAN`, `PALEO`, `KETO`, or `OMNIVORE`), you're going to pull out ingredients that appear in only one dish.
 These "singleton" ingredients will be assigned a special shopper to ensure they're not forgotten in the rush to get everything else done.
 
-Implement the `singleton_ingredients(dishes, INTERSECTION)` function that takes a `Vector` of dishes and a `CATEGORY_INTERSECTION` constant for the same category.
+Implement the `singleton_ingredients(dishes, intersection)` function that takes a `Vector` of dishes and a `CATEGORY_INTERSECTION` constant for the same category.
 Each dish is represented by a `Set` of its ingredients.
 Each `CATEGORY_INTERSECTION` is a `Set` of ingredients that appear in more than one dish in the category.
 Using set operations, your function should return a `Set` of "singleton" ingredients (_ingredients appearing in only one dish in the category_).

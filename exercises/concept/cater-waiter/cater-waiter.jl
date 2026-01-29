@@ -22,6 +22,6 @@ function separate_appetizers(dishes, appetizers)
     
 end
 
-function singleton_ingredients(dishes, INTERSECTION)
+function singleton_ingredients(dishes, intersection)
     
 end
