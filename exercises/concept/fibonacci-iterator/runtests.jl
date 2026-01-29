@@ -15,10 +15,10 @@ const fib = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597
     end
 
     @testset "Fib does not contain fields to store state internally" begin
-        # Backport fieldtypes for Julia 1.0
-        if VERSION < v"1.1"
-            @eval fieldtypes(T::Type) = ntuple(i -> fieldtype(T, i), fieldcount(T))
-        end
+        # Backport fieldtypes for Julia 1.0 - no longer relevant
+        # if VERSION < v"1.1"
+        #     @eval fieldtypes(T::Type) = ntuple(i -> fieldtype(T, i), fieldcount(T))
+        # end
 
         # Ensure only one numeric value (n) can be stored
         # This should prevent Fib types that use a tuple or struct to store more state

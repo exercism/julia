@@ -441,6 +441,18 @@
         "status": "beta"
       },
       {
+        "slug": "fibonacci-iterator",
+        "name": "Fibonacci Iterator",
+        "uuid": "9a864ac5-0fda-4ba2-bccc-702a1444c412",
+        "concepts": [
+          "interfaces"
+        ],
+        "prerequisites": [
+          "multiple-dispatch"
+        ],
+        "status": "beta"
+      },
+      {
         "slug": "old-elyses-enchantments",
         "name": "Old Elyse's Enchantments",
         "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",
@@ -516,14 +528,6 @@
         "slug": "old-stage-heralding",
         "name": "Old Stage Heralding",
         "uuid": "0e7ecc5e-b4d6-4ead-bfaa-a2ebdddcff47",
-        "concepts": [],
-        "prerequisites": [],
-        "status": "deprecated"
-      },
-      {
-        "slug": "old-fibonacci-iterator",
-        "name": "Old Fibonacci Iterator",
-        "uuid": "9a864ac5-0fda-4ba2-bccc-702a1444c412",
         "concepts": [],
         "prerequisites": [],
         "status": "deprecated"
