@@ -93,6 +93,8 @@ Defining `Base.iterate(P::Powers, state=(1, 0))` is exactly equivalent to defini
 [concept-functions]: https://exercism.org/tracks/julia/concepts/functions
 ~~~~
 
+***End of contentious block***
+
 ----
 
 So far, we already have some useful functionality: for the first 4 powers of 3, we can loop through the results, check if a given number is in the results, and apply aggregate function such as `sum()`.
@@ -219,9 +221,10 @@ It may be worth thinking about alternative interfaces that provide a better star
 In this case, we could consider making `Powers` a subtype of [`AbstractArray`][ref-abstractarray], which gives us a lot of array-like behavior for free.
 
 For the `Powers` sequence, the corresponding array is of integers, with 1 dimension.
+You will sometimes see this written `AbstractArray{Int, 1}`, but the aliases `AbstractVector{Int}` for 1-D and `AbstractMatrix{Int}` for 2-D are more common in newer Julia code.
 
 ```julia-repl
-julia> struct Powers_array <: AbstractArray{Int, 1}
+julia> struct PowersArray <: AbstractVector{Int}
            n::Int
            count::Int
        end
@@ -230,7 +233,7 @@ julia> struct Powers_array <: AbstractArray{Int, 1}
 Rather than `length()`, we now need to define `size()` with a tuple of lengths along each dimension: only one dimension in this case.
 
 ```julia-repl
-julia> Base.size(PA::Powers_array) = (PA.count,)
+julia> Base.size(PA::PowersArray) = (PA.count,)
 ```
 
 How do we want to index the entries?
@@ -244,12 +247,12 @@ These are called `Cartesian` and `Linear` respectively.
 We only have one dimension in the example, so linear indexing is appropriate.
 
 ```julia-repl
-julia> Base.IndexStyle(::Type{<:Powers_array}) = IndexLinear()
+julia> Base.IndexStyle(::Type{PowersArray}) = IndexLinear()
 
-julia> Base.getindex(PA::Powers_array, i::Int) = PA.n ^ i
+julia> Base.getindex(PA::PowersArray, i::Int) = PA.n ^ i
 
-julia> p = Powers_array(3, 4)
-4-element Powers_array:
+julia> p = PowersArray(3, 4)
+4-element PowersArray:
   3
   9
  27
@@ -266,6 +269,34 @@ Defining our own version of `iterate()` is still possible, and in some cases mig
 
 Using the `AbstractArray` interface is especially valuable if we want higher-dimensional iteration.
 At the risk of stretching the toy example beyond its breaking point, this might mean the first `m` powers of numbers in `1:n`, which will iteratively define a size `(m, n)` array.
+
+```julia-repl
+struct PowersMatrix{Int} <: AbstractMatrix{Int}
+    ns::AbstractVector{Int}
+    count::Int
+end
+
+Base.size(PM::PowersMatrix) = (PM.count, length(PM.ns))
+Base.IndexStyle(::Type{PowersMatrix}) = IndexCartesian()
+Base.getindex(PM::PowersMatrix, i::Int, j::Int) = PM.ns[j] ^ i
+
+julia> PM = PowersMatrix(2:6, 4)
+4×5 PowersMatrix{Int64}:
+  2   3    4    5     6
+  4   9   16   25    36
+  8  27   64  125   216
+ 16  81  256  625  1296
+
+julia> PM[3, 2]
+27
+
+julia> PM[7] # column major linear indexing
+27
+
+julia> PM[21]
+BoundsError: attempt to access 4×5 PowersMatrix{Int64} at index [21]
+[...]
+```
 
 ### [Rounding][ref-rounding]
 
