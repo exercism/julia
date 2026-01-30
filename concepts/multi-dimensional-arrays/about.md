@@ -389,7 +389,7 @@ The dotted operator `.-` treats the singleton `0.5` as equivalent to `[0.5, 0.5,
 
 Extending this to higher dimensions is really just more of the same.
 
-For example, when broadcasting the multiplication of a 2x1 row vector `[1.0 1.5 2.0]` with the 2x3 matrix [1 2 3; 4 5 6], broadcasting is equivalent to broadcasting `[1.0 1.5 2.0]` to `[1.0 1.5 2.0; 1.0 1.5 2.0]` with multiplication then done element-wise.
+For example, when broadcasting the multiplication of a 2x1 row vector `[1.0 1.5 2.0]` with the 2x3 matrix `[1 2 3; 4 5 6]`, it is equivalent to broadcasting `[1.0 1.5 2.0]` to `[1.0 1.5 2.0; 1.0 1.5 2.0]` with multiplication then done element-wise.
 
 ```julia-repl
 julia> m
