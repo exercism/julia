@@ -6,8 +6,8 @@ const fib = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597
 
 @testset verbose = true "tests" begin
     @testset "Fiberator is defined" begin
-        @test isdefined(@__MODULE__, :Fib)
-        @test typeof(Fiberator(100)) == Fib
+        @test isdefined(@__MODULE__, :Fiberator)
+        @test typeof(Fiberator(100)) == Fiberator
     end
 
     @testset "Can be iterated" begin
@@ -21,7 +21,7 @@ const fib = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597
         # end
 
         # Ensure only one numeric value (n) can be stored
-        # This should prevent Fib types that use a tuple or struct to store more state
+        # This should prevent Fiberator types that use a tuple or struct to store more state
         @test fieldcount(Fiberator) == 1
         @test fieldtypes(Fiberator)[1] <: Number
     end
