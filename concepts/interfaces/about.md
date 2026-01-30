@@ -57,9 +57,6 @@ julia> struct Powers
        end
 ```
 
-----
-***The next bit is still contentious***
-
 Now we can define the `iterate()` methods for this type, but what is `state`?
 
 It is up to you to decide what information you need to keep track of.
@@ -95,11 +92,7 @@ Defining `Base.iterate(P::Powers, state=(1, 0))` is exactly equivalent to defini
 [concept-functions]: https://exercism.org/tracks/julia/concepts/functions
 ~~~~
 
-***End of contentious block***
-
-----
-
-So far, we already have some useful functionality: for the first 4 powers of 3, we can loop through the results, check if a given number is in the results, and apply aggregate function such as `sum()`.
+So far, we already have some useful functionality: for the first 4 powers of 3, we can loop through the results, check if a given number is in the results, and apply aggregate functions such as `sum()`.
 
 ```julia-repl
 julia> for p in Powers(3, 4)
