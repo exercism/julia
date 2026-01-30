@@ -8,11 +8,11 @@ How do we inherit and extend existing behaviors?
 
 We saw in previous concepts how to create a type hierarchy, as well as learning how Julia uses [multiple dispatch][concept-multiple-dispatch] to choose methods based on argument types.
 
-Julia also has several informal [interfaces][ref-interfaces], which let your custom types hook into behaviors already defined for standard types.
+Julia also has several informal interfaces, which let your custom types hook into behaviors already defined for standard types.
 
 This is most easily illustrated with the Iterator interface.
 
-## [Iterators][ref-iterators]
+## Iterators
 
 Previously in the syllabus, we have seen several ways that Julia can operate on each element of a collection.
 
@@ -41,7 +41,7 @@ Julia achieves these tasks with methods of the `Base.iterate()` function.
 [Multiple dispatch][concept-multiple-dispatch] is central to this.
 The type of `iter` determines which methods are called, and the number of arguments determines whether the first or next item is returned.
 
-Methods for standard types are already defined: `Vector`, `Range`, `Set`, etc ([currently][ref-iterations-collections] 14 types in total).
+Methods for standard types are already defined: `Vector`, `Range`, `Set`, etc (currently 14 types in total).
 
 For a custom `MyType` to share the same behaviors, we need to define `Base.iterate(iter::MyType)` and `Base.iterate(iter::MyType, state)`.
 
@@ -57,16 +57,15 @@ julia> struct Powers
        end
 ```
 
-----
-***The next bit is still contentious***
-
 Now we can define the `iterate()` methods for this type, but what is `state`?
 
 It is up to you to decide what information you need to keep track of.
 In this case, we need the most recent power of `n`, and how many items in the sequence have been returned so far.
 These two numbers are wrapped in the `state` tuple, to define `iterate(P::Powers, state)`.
 
-To get the first item, some iterators need a complicated setup, but in this case we just need to define a simple "zeroth" state: 1 as the base number (becuase `n^0 == 1` for any value of `n`), and 0 previous items.
+To get the first item, some iterators need a complicated setup.
+Quite often, we just need to define a simple starting condition.
+In this case, 1 is the base number to be repeatedly multipled by `n`, and there are 0 previous items.
 
 ```julia-repl
 julia> function Base.iterate(P::Powers, state)
@@ -83,21 +82,7 @@ julia> Base.iterate(P::Powers) = iterate(P, (1, 0))
 
 Alternatively, we could use an optional argument for the state: `Base.iterate(P::Powers, state=(1, 0))`.
 
-~~~~exercism/advanced
-When we introduced optional arguments in the [Functions][concept-functions] concept, nothing was said about implementation.
-
-Since then, we learned about multiple dipatch, so it now makes more sense to know that Julia automatically converts a function _with_ optional arguments to multiple methods _without_ optional arguments.
-
-Defining `Base.iterate(P::Powers, state=(1, 0))` is exactly equivalent to defining both `Base.iterate(P::Powers, state)` and `Base.iterate(P::Powers)` separately.
-
-[concept-functions]: https://exercism.org/tracks/julia/concepts/functions
-~~~~
-
-***End of contentious block***
-
-----
-
-So far, we already have some useful functionality: for the first 4 powers of 3, we can loop through the results, check if a given number is in the results, and apply aggregate function such as `sum()`.
+So far, we already have some useful functionality: for the first 4 powers of 3, we can loop through the results, check if a given number is in the results, and apply aggregate functions such as `sum()`.
 
 ```julia-repl
 julia> for p in Powers(3, 4)
@@ -121,7 +106,7 @@ Despite this good start, not everything works yet.
 
 ```julia-repl
 julia> [p for p in Powers(3, 4)]
-ERROR: MethodError: no method matching length(::Powers)
+ERROR: MethodError: no method matching length(::Powers) (from the documentation][ref-interfaces])
 The function `length` exists, but no method is defined for this combination of argument types.
 You may need to implement the `length` method or define `IteratorSize` for this type to be `SizeUnknown`.
 ```
@@ -187,18 +172,7 @@ However, they are surprisingly simple in practice:
 
 [concept-multiple-dispatch]: https://exercism.org/tracks/julia/concepts/multiple-dispatch
 [wiki-subclass]: https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)#Subclasses_and_superclasses
-[ref-interfaces]: https://docs.julialang.org/en/v1/manual/interfaces/
-[ref-iterators]: https://docs.julialang.org/en/v1/manual/interfaces/#man-interface-iteration
-[ref-iterations-collections]: https://docs.julialang.org/en/v1/base/collections/#lib-collections-iteration
-[ref-indexing]: https://docs.julialang.org/en/v1/manual/interfaces/#Indexing
 [concept-multi-dimensional-arrays]: https://exercism.org/tracks/julia/concepts/multi-dimensional-arrays
-[wiki-mixins]: https://en.wikipedia.org/wiki/Mixin
-[ref-abstractarray]: https://docs.julialang.org/en/v1/manual/interfaces/#man-interface-array
-[ref-round]: https://docs.julialang.org/en/v1/base/math/#Base.round
-[ref-roundingmode]: https://docs.julialang.org/en/v1/base/math/#Base.Rounding.RoundingMode
-[ref-cust-broadcasting]: https://docs.julialang.org/en/v1/manual/interfaces/#man-interfaces-broadcasting
-[ref-rounding]: https://docs.julialang.org/en/v1/manual/interfaces/#man-rounding-interface
-[ref-round-periods]: https://docs.julialang.org/en/v1/stdlib/Dates/#Base.round-Tuple{Union{Day,%20Week,%20TimePeriod},%20Union{Day,%20Week,%20TimePeriod},%20RoundingMode{:NearestTiesUp}}
 [concept-loops]: https://exercism.org/tracks/julia/concepts/loops
 [concept-vector-operations]: https://exercism.org/tracks/julia/concepts/vector-operations
 [concept-hof]: https://exercism.org/tracks/julia/concepts/higher-order-functions

@@ -1,10 +1,10 @@
 # Step 1
-struct Fib
+struct Fiberator
     n::Int
 end
 
 # Step 2
-function Base.iterate(fib::Fib, state=(i=1, vals=(1, 1)))
+function Base.iterate(fib::Fiberator, state=(i=1, vals=(1, 1)))
     state.i > fib.n && return nothing
 
     if state.i <= 2
@@ -18,7 +18,7 @@ function Base.iterate(fib::Fib, state=(i=1, vals=(1, 1)))
 end
 
 # Step 3
-Base.length(fib::Fib) = fib.n
+Base.length(fib::Fiberator) = fib.n
 
 # Step 4
-Base.eltype(::Type{Fib}) = Int
+Base.eltype(::Type{Fiberator}) = Int
