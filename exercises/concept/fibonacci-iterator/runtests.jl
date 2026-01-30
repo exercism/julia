@@ -8,10 +8,6 @@ const fib = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597
     @testset "1. Fiberator is defined" begin
         @test isdefined(@__MODULE__, :Fiberator)
         @test typeof(Fiberator(100)) == Fiberator
-    end
-
-    @testset "2. Can be iterated" begin
-        @test [a for a in Fiberator(50)] == fib
         @testset "Fiberator does not contain fields to store state internally" begin
             # Backport fieldtypes for Julia 1.0 - no longer relevant
             # if VERSION < v"1.1"
@@ -23,6 +19,10 @@ const fib = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597
             @test fieldcount(Fiberator) == 1
             @test fieldtypes(Fiberator)[1] <: Number
         end
+    end
+
+    @testset "2. Can be iterated" begin
+        @test [a for a in Fiberator(50)] == fib
     end
 
     @testset "3. Can be collected" begin
