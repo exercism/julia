@@ -25,7 +25,7 @@ include("chessboard.jl")
     end
 
     @testset "4. files is a vector of characters from 'A' to 'H'" begin
-        @test ranks() == [1, 2, 3, 4, 5, 6, 7, 8]
+        @test files() == ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
     end
 
 end
