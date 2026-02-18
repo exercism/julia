@@ -848,8 +848,12 @@
         "slug": "phone-number",
         "name": "Phone Number",
         "uuid": "f7a3f344-a9fa-4a36-ac44-12bc8673899e",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "regular-expressions"
+        ],
+        "prerequisites": [
+          "regular-expressions"
+        ],
         "difficulty": 1,
         "topics": [
           "conditionals",
@@ -929,8 +933,12 @@
         "slug": "pig-latin",
         "name": "Pig Latin",
         "uuid": "3c53b207-ffcb-4111-ba3e-3aece095e268",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "regular-expressions"
+        ],
+        "prerequisites": [
+          "regular-expressions"
+        ],
         "difficulty": 2
       },
       {
@@ -1309,8 +1317,12 @@
         "slug": "wordy",
         "name": "Wordy",
         "uuid": "1f6ffc9c-5996-4269-a9b8-cb4914e222dd",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "regular-expressions"
+        ],
+        "prerequisites": [
+          "regular-expressions"
+        ],
         "difficulty": 3
       },
       {
