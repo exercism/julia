@@ -49,12 +49,12 @@ include("captains-log.jl")
 
         @testset "stardates are not all similar" begin
             n_small = sum(random_stardates .< 41333)
-            n_mid = sum(41333 .< random_stardates .< 41667)
-            n_large = sum(random_stardates .> 41667)
+            n_mid = sum(41333 .≤ random_stardates .< 41667)
+            n_large = sum(random_stardates .≥ 41667)
             n_expected = length(random_stardates) / 3
             
             uniform_if = sum(((n_small, n_mid, n_large) .- n_expected) .^ 2) / n_expected
-            @test uniform_if < 6
+            @test uniform_if < 6 # startdates should have uniform distribution
         end
     end
 
@@ -67,8 +67,8 @@ include("captains-log.jl")
 
         @testset "stardates are not all similar" begin
             n_small = sum(rounded_stardates .< 41333)
-            n_mid = sum(41333 .<= rounded_stardates .< 41667)
-            n_large = sum(rounded_stardates .>= 41667)
+            n_mid = sum(41333 .≤ rounded_stardates .< 41667)
+            n_large = sum(rounded_stardates .≥ 41667)
             n_expected = length(rounded_stardates) / 3
 
             uniform_if = sum(((n_small, n_mid, n_large) .- n_expected) .^ 2) / n_expected
