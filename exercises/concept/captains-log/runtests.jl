@@ -105,7 +105,7 @@ include("captains-log.jl")
         end
 
         @testset "startships are chosen at random" begin
-            @test all([any(fleet .!= starships[1:length(fleet)]) for fleet in chosen_starships])
+            @test all([sum(fleet .== starships[1:length(fleet)]) ≤ 3  for fleet in chosen_starships])
         end
     end
 
