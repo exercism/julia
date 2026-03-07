@@ -32,11 +32,11 @@ include("captains-log.jl")
         end
 
         @testset "all registry numbers have the correct prefix" begin
-            @test all([length(regno) == 8 for regno in random_registry])
+            @test all([startswith(regno, "NCC-") for regno in random_registry])
         end
 
         @testset "all registry numbers have the correct numeric range" begin
-            @test all([length(regno) == 8 for regno in random_registry])
+            @test all([1000 ≤ parse(Int, regno[5:end]) ≤ 9999 for regno in random_registry])
         end
     end
     
@@ -44,22 +44,17 @@ include("captains-log.jl")
         random_stardates = [random_stardate() for _ in 1:repeats]
 
         @testset "stardates have the correct numeric range" begin
-            @test all([41000 <= stardate <= 42000 for stardate in random_stardates])
+            @test all(41000 .<= random_stardates .<= 42000)
         end
 
-# The next test is crude! To do it properly, see:
-#   https://rosettacode.org/wiki/Verify_distribution_uniformity/Chi-squared_test#Julia
-#  - but that needs the Distributions package
-
         @testset "stardates are not all similar" begin
-            small = random_stardates[random_stardates .< 41333]
-            mid = random_stardates[41333 .< random_stardates .< 41667]
-            large = random_stardates[random_stardates .> 41667]
-            limit = 100
-
-            @test length(small) > limit
-            @test length(mid) > limit
-            @test length(large) > limit
+            n_small = sum(random_stardates .< 41333)
+            n_mid = sum(41333 .≤ random_stardates .< 41667)
+            n_large = sum(random_stardates .≥ 41667)
+            n_expected = length(random_stardates) / 3
+            
+            uniform_if = sum(((n_small, n_mid, n_large) .- n_expected) .^ 2) / n_expected
+            @test uniform_if < 6 # startdates should have uniform distribution
         end
     end
 
@@ -67,18 +62,17 @@ include("captains-log.jl")
         rounded_stardates = [random_stardate_v2() for _ in 1:repeats]
 
         @testset "stardates have the correct numeric range" begin
-            @test all([41000 <= stardate <= 42000 for stardate in rounded_stardates])
+            @test all(41000 .<= rounded_stardates .<= 42000)
         end
 
         @testset "stardates are not all similar" begin
-            small = rounded_stardates[rounded_stardates .< 41333]
-            mid = rounded_stardates[41333 .< rounded_stardates .< 41667]
-            large = rounded_stardates[rounded_stardates .> 41667]
-            limit = 100
+            n_small = sum(rounded_stardates .< 41333)
+            n_mid = sum(41333 .≤ rounded_stardates .< 41667)
+            n_large = sum(rounded_stardates .≥ 41667)
+            n_expected = length(rounded_stardates) / 3
 
-            @test length(small) > limit
-            @test length(mid) > limit
-            @test length(large) > limit
+            uniform_if = sum(((n_small, n_mid, n_large) .- n_expected) .^ 2) / n_expected
+            @test uniform_if < 6 # startdates should have uniform distribution
         end
 
         @testset "stardates have one decimal place" begin
@@ -88,16 +82,24 @@ include("captains-log.jl")
     end
 
     @testset "5. Pick some random starships from a list" begin
-        ships = unique([random_ship_registry_number() for _ in 1:100])
-        lengths = [rand(1:20) for _ in 1:100]
-        chosen_starships = [pick_starships(ships, len) for len in lengths]
+        starships = unique([random_ship_registry_number() for _ in 1:100])
+        lengths = rand(1:20, 100)
+        chosen_starships = [pick_starships(copy(starships), len) for len in lengths]
 
         @testset "starships are taken from the input list" begin
-            @test all([all(ship ∈ ships for ship in fleet) for fleet in chosen_starships])
+            @test all([all([starship ∈ starships for starship in fleet]) for fleet in chosen_starships])
         end
 
-        @testset "all chosen ships are unique" begin
+        @testset "all chosen starships are unique" begin
             @test all([length(fleet) == length(unique(fleet)) for fleet in chosen_starships]) 
+        end
+
+        @testset "all chosen starship fleets are of correct size" begin
+            @test all(length.(chosen_starships) .== lengths)
+        end
+
+        @testset "starships are chosen at random" begin
+            @test all([sum(fleet .== starships[1:length(fleet)]) ≤ 3  for fleet in chosen_starships])
         end
     end
 
