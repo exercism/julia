@@ -32,11 +32,11 @@ include("captains-log.jl")
         end
 
         @testset "all registry numbers have the correct prefix" begin
-            @test all([length(regno) == 8 for regno in random_registry])
+            @test all([startswith(regno, "NCC-") for regno in random_registry])
         end
 
         @testset "all registry numbers have the correct numeric range" begin
-            @test all([length(regno) == 8 for regno in random_registry])
+            @test all([1000 ≤ parse(Int, regno[5:end]) ≤ 9999 for regno in random_registry])
         end
     end
     
@@ -88,16 +88,24 @@ include("captains-log.jl")
     end
 
     @testset "5. Pick some random starships from a list" begin
-        ships = unique([random_ship_registry_number() for _ in 1:100])
-        lengths = [rand(1:20) for _ in 1:100]
-        chosen_starships = [pick_starships(ships, len) for len in lengths]
+        starships = unique([random_ship_registry_number() for _ in 1:100])
+        lengths = rand(1:20, 100)
+        chosen_starships = [pick_starships(copy(starships), len) for len in lengths]
 
         @testset "starships are taken from the input list" begin
-            @test all([all(ship ∈ ships for ship in fleet) for fleet in chosen_starships])
+            @test all([all([starship ∈ starships for starship in fleet]) for fleet in chosen_starships])
         end
 
         @testset "all chosen ships are unique" begin
             @test all([length(fleet) == length(unique(fleet)) for fleet in chosen_starships]) 
+        end
+
+        @testset "all fleets are of correct size" begin
+            @test all(length.(chosen_starships) .== lengths)
+        end
+
+        @testset "startships are chosen at random" begin
+            @test all([any(fleet .!= starships[1:length(fleet)]) for fleet in chosen_starships])
         end
     end
 
