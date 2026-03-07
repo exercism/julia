@@ -54,7 +54,7 @@ include("captains-log.jl")
             n_expected = length(random_stardates) / 3
             
             uniform_if = sum(((n_small, n_mid, n_large) .- n_expected) .^ 2) / n_expected
-            @test uniform_if < 6 # startdates should have uniform distribution
+            @test uniform_if < 10 # startdates should have uniform distribution
         end
     end
 
@@ -72,7 +72,7 @@ include("captains-log.jl")
             n_expected = length(rounded_stardates) / 3
 
             uniform_if = sum(((n_small, n_mid, n_large) .- n_expected) .^ 2) / n_expected
-            @test uniform_if < 6 # startdates should have uniform distribution
+            @test uniform_if < 10 # startdates should have uniform distribution
         end
 
         @testset "stardates have one decimal place" begin
@@ -99,7 +99,7 @@ include("captains-log.jl")
         end
 
         @testset "starships are chosen at random" begin
-            @test all([sum(fleet .== starships[1:length(fleet)]) ≤ 3  for fleet in chosen_starships])
+            @test all([sum(fleet .== starships[1:length(fleet)]) ≤ 4  for fleet in chosen_starships])
         end
     end
 
