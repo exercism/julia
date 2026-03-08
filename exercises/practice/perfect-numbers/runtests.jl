@@ -37,6 +37,10 @@ include("perfect-numbers.jl")
             @test isabundant(33550335)
         end
 
+        @testset "Perfect square abundant number is classified correctly" begin
+            @test isabundant(196)
+        end
+
         @testset "Correctly handles non-abundant numbers" begin
             @test !isabundant(6)
             @test !isabundant(32)
