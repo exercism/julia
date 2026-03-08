@@ -44,6 +44,7 @@ Julia achieves these tasks with methods of the `Base.iterate()` function with th
 3. Repeats step 2 until termination.
 
 These steps are all done "under-the-hood", which means the method calls and the state are managed internally by the iteration protocol (with the state remaining opaque), and only the item is exposed to high-level constructs, such as loops.
+In other words, we only ever see the `item` while everything else remains in a black box.
 
 [Multiple dispatch][concept-multiple-dispatch] is central to this.
 The type of `iter` determines which methods are called, and the number of arguments determines whether the first or next item is returned.
