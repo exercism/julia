@@ -33,19 +33,28 @@ To create a sequence for iteration, we need (at least) two things:
 1. A way to get the _first_ item.
 2. A way to get the _next_ item from the current state.
 
-Julia achieves these tasks with methods of the `Base.iterate()` function.
+Julia achieves these tasks with methods of the `Base.iterate()` function with the following steps:
 
-1. `Base.iterate(iter)` returns a tuple of the _first_ item and initial state, or `nothing` if there is no first item.
-2. `Base.iterate(iter, state)` returns a tuple of the _next_ item and next state, or `nothing` if there is no next item.
+1. `Base.iterate(iter)` is automatically called first.
+  - If there is nothing to iterate, returns `nothing`.
+  - Else, returns the `Tuple` of the first returned item and the first state: `(firstitem, firststate)`.
+2. `Base.iterate(iter, state)` is automatically called if an item was returned the previous iteration, taking `firststate` as its `state` argument.
+  - If iteration terminates, returns `nothing`.
+  - Else, returns the `Tuple` of the next item and the next state: `(nextitem, nextstate)`.
+3. Repeats step 2 until termination.
+
+These steps are all done "under-the-hood", which means the method calls and the state are managed internally by the iteration protocol (with the state remaining opaque), and only the item is exposed to high-level constructs, such as loops.
 
 [Multiple dispatch][concept-multiple-dispatch] is central to this.
 The type of `iter` determines which methods are called, and the number of arguments determines whether the first or next item is returned.
 
 Methods for standard types are already defined: `Vector`, `Range`, `Set`, etc ([currently][ref-iterations-collections] 14 types in total).
 
-For a custom `MyType` to share the same behaviors, we need to define `Base.iterate(iter::MyType)` and `Base.iterate(iter::MyType, state)`.
+For a custom `MyType` to share the same behaviors, we first need to define:
+- `Base.iterate(iter::MyType)`
+- `Base.iterate(iter::MyType, state)`
 
-That probably sounds confusing in the abstract, but can be quite simple.
+All of this probably sounds confusing in the abstract, but it can be quite simple.
 For illustration, imagine that we want a type that gives powers of a given integer `n`, up to a maximum count.
 
 First, define a custom type:
@@ -57,30 +66,46 @@ julia> struct Powers
        end
 ```
 
-Now we can define the `iterate()` methods for this type, but what is `state`?
+We can now define the `iterate` methods for this type, but what are the first item and first state?
 
-It is up to you to decide what information you need to keep track of.
-In this case, we need the most recent power of `n`, and how many items in the sequence have been returned so far.
-These two numbers are wrapped in the `state` tuple, to define `iterate(P::Powers, state)`.
+To get the first item, some iterators need a complicated setup, but in this toy case, we can notice that the first item returned is just the base number, so we simply need to check if the value of `count` is greater than or equal to one.
 
-To get the first item, some iterators need a complicated setup.
-Quite often, we just need to define a simple starting condition.
-In this case, 1 is the base number to be repeatedly multipled by `n`, and there are 0 previous items.
+Now we can consider the first state, which carries information that is used for the next iteration.
+It is up to you to decide what information you need to keep track of to do this, and it can be any type.
+
+In this case, we could just keep track of the "index" to raise `n` to, or we can find a more performant option by using the most recent power of `n` (i.e. the returned item) and the next "index" in the sequence.
+These two numbers can be wrapped in a `Tuple` and returned as the `state`.
 
 ```julia-repl
-julia> function Base.iterate(P::Powers, state)
-            curr, index = state
-            next = curr * P.n
-            if index < P.count
-                return (next, (next, index + 1))
+julia> function Base.iterate(p::Powers)
+            if 1 ≤ p.count             # if iteration should continue
+                return (p.n, (p.n, 2)) # return (firstitem, firststate)
             end
-            return nothing
+            return nothing             # else terminate iteration
        end
-
-julia> Base.iterate(P::Powers) = iterate(P, (1, 0))
 ```
 
-Alternatively, we could use an optional argument for the state: `Base.iterate(P::Powers, state=(1, 0))`.
+In this example, the first item (`p.n`) is returned to the loop and the first state `(p.n, 2)` is passed to the `iterate(P::Powers, state)` method.
+There we can process the state to produce the next item by multiplying the current item by the base number, thereby increasing its power by `1`.
+
+```julia-repl
+julia> function Base.iterate(p::Powers, state)
+            curr, index = state                  # unpack the state
+            next = curr * p.n                    # create next item
+            if index ≤ p.count                   # if iteration should continue
+                return (next, (next, index + 1)) # return (nextitem, nextstate)
+            end
+            return nothing                       # else terminate iteration
+       end
+```
+
+If the index value is still within `count`, the `Tuple` is returned with the `next` item and the incremented `(next, index + 1)` state.
+When the `index` value exceeds `count`, then `nothing` is returned instead, to indicate iteration has terminated.
+
+Maybe you have noticed that the `iterate(p::Powers)` and `iterate(p::Powers, state)` methods have fairly similar function bodies.
+In fact, if we're clever, this similarity allows for a streamlined implementation by using only the two argument version with a default argument for the state: `Base.iterate(p::Powers, state=(1, 1))`
+With that, we wouldn't need the separate single argument `iterate(p::Powers)`.
+This is commonly done in practice when possible.
 
 ~~~~exercism/advanced
 When we introduced optional arguments in the [Functions][concept-functions] concept, nothing was said about implementation.
