@@ -1,4 +1,4 @@
-# Define a custom type Fib
+# Define a custom type Fiberator
 
 
 # Implement `iterate` method(s)
