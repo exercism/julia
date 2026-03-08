@@ -2,7 +2,7 @@
 
 In this exercise you're going to write an iterator that iterates through the first `n` elements of the [Fibonacci sequence](https://en.wikipedia.org/wiki/Fibonacci_number).
 
-### Fibonacci sequence
+**Fibonacci sequence**
 
 The Fibonacci sequence is a sequence of numbers, where every element of the sequence is calculated by adding the two numbers that come before it.
 You can think of a sequence as a list of numbers in a certain order.
@@ -61,7 +61,7 @@ julia> for a in Fiberator(10)
 55
 ```
 
-### Note
+**Note**
 You can ignore integer overflow in your implementation.
 The tests will only use `n` small enough to not cause overflow problems.
 

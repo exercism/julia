@@ -36,11 +36,11 @@ To create a sequence for iteration, we need (at least) two things:
 Julia achieves these tasks with methods of the `Base.iterate()` function with the following steps:
 
 1. `Base.iterate(iter)` is automatically called first.
-  - If there is nothing to iterate, returns `nothing`.
-  - Else, returns the `Tuple` of the first returned item and the first state: `(firstitem, firststate)`.
+    - If there is nothing to iterate, returns `nothing`.
+    - Else, returns the `Tuple` of the first returned item and the first state: `(firstitem, firststate)`.
 2. `Base.iterate(iter, state)` is automatically called if an item was returned the previous iteration, taking `firststate` as its `state` argument.
-  - If iteration terminates, returns `nothing`.
-  - Else, returns the `Tuple` of the next item and the next state: `(nextitem, nextstate)`.
+    - If iteration terminates, returns `nothing`.
+    - Else, returns the `Tuple` of the next item and the next state: `(nextitem, nextstate)`.
 3. Repeats step 2 until termination.
 
 These steps are all done "under-the-hood", which means the method calls and the state are managed internally by the iteration protocol (with the state remaining opaque), and only the item is exposed to high-level constructs, such as loops.
