@@ -60,11 +60,11 @@ For illustration, imagine that we want a type that gives powers of a given integ
 
 First, define a custom type:
 
-```julia-repl
-julia> struct Powers
-           n::Int       # base number to raise to a power
-           count::Int   # maximum length of the sequence
-       end
+```julia
+struct Powers
+    n::Int      # base number to raise to a power
+    count::Int  # maximum length of the sequence
+end
 ```
 
 We can now define the `iterate` methods for this type, but what are the first item and first state?
@@ -77,27 +77,37 @@ It is up to you to decide what information you need to keep track of to do this,
 In this case, we could just keep track of the "index" to raise `n` to, or we can find a more performant option by using the most recent power of `n` (i.e. the returned item) and the next "index" in the sequence.
 These two numbers can be wrapped in a `Tuple` and returned as the `state`.
 
-```julia-repl
-julia> function Base.iterate(p::Powers)
-            if 1 ≤ p.count             # if iteration should continue
-                return (p.n, (p.n, 2)) # return (firstitem, firststate)
-            end
-            return nothing             # else terminate iteration
-       end
+```julia
+function Base.iterate(p::Powers)
+    # if iteration should continue
+    if 1 ≤ p.count
+        # return (firstitem, firststate)
+        return (p.n, (p.n, 2)) 
+    end
+    # else terminate iteration
+    return nothing
+end
 ```
 
 In this example, the first item (`p.n`) is returned to the loop and the first state `(p.n, 2)` is passed to the `iterate(P::Powers, state)` method.
 There we can process the state to produce the next item by multiplying the current item by the base number, thereby increasing its power by `1`.
 
-```julia-repl
-julia> function Base.iterate(p::Powers, state)
-            curr, index = state                  # unpack the state
-            next = curr * p.n                    # create next item
-            if index ≤ p.count                   # if iteration should continue
-                return (next, (next, index + 1)) # return (nextitem, nextstate)
-            end
-            return nothing                       # else terminate iteration
-       end
+```julia
+function Base.iterate(p::Powers, state)
+    # unpack the state
+    curr, index = state
+
+    # create next item                 
+    next = curr * p.n
+
+    # if iteration should continue
+    if index ≤ p.count
+        # return (nextitem, nextstate)
+        return (next, (next, index + 1))
+    end
+    # else terminate iteration
+    return nothing
+end
 ```
 
 If the index value is still within `count`, the `Tuple` is returned with the `next` item and the incremented `(next, index + 1)` state.
@@ -113,7 +123,7 @@ When we introduced optional arguments in the [Functions][concept-functions] conc
 
 Since then, we learned about multiple dipatch, so it now makes more sense to know that Julia automatically converts a function _with_ optional arguments to multiple methods _without_ optional arguments.
 
-Defining `Base.iterate(P::Powers, state=(1, 0))` is exactly equivalent to defining both `Base.iterate(P::Powers, state)` and `Base.iterate(P::Powers)` separately.
+Defining `Base.iterate(P::Powers, state=(1, 1))` is exactly equivalent to defining both `Base.iterate(P::Powers, state)` and `Base.iterate(P::Powers)` separately.
 
 [concept-functions]: https://exercism.org/tracks/julia/concepts/functions
 ~~~~
