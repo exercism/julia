@@ -81,7 +81,7 @@ Create the `exchangeable_value()` function, taking `budget`, `exchange_rate`, `s
 
 Parameter `spread` is the *percentage taken* as an exchange fee, written as an integer.
 It needs to be converted to decimal by dividing it by 100.
-If `1.00 EUR == 1.20 USD` and the *spread* is `10`, the actual exchange rate will be: `1.00 EUR == 1.32 USD` because 10% of 1.20 is 0.12, and this additional fee is added to the exchange.
+If `1.00 EUR == 1.20 USD` and the *spread* is `10`, the total exchange rate will actually be: `1.00 EUR == 1.32 USD` because 10% of 1.20 is 0.12, and this additional fee is added to the exchange.
 
 This function should return the maximum value of the new currency after calculating the *exchange rate* plus the *spread*.
 Remember that the currency *denomination* is a whole number, and cannot be sub-divided.

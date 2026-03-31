@@ -30,9 +30,14 @@
 
 ## 6. Calculate value after exchange
 
-- You need to calculate `spread` percent of `exchange_rate` using multiplication operator and add it to `exchange_rate` to get the exchanged currency.
-- The actual rate needs to be computed. Remember to add exchange _rate_ and exchange _fee_.
-- You can get exchanged money affected by commission by using a divide operation, plus type casting to integer if necessary.
+- You need to calculate `spread` percent of `exchange_rate` using multiplication operator and add it to `exchange_rate` to get the total exchange rate (see example in instructions).
+- Once you have the total exchange rate from `exchange_rate`, you need to calculate the total value of an exchange.
+- With the total exchange rate, the exchange can be done in three steps in the app:
+    - You can calculated the exchangeable value from scratch, or...
+    - You can use three of your functions from earlier tasks.
+- Pay attention to the order of processing functions, 
+    - Start with a function that uses an exchange rate.
+    - The output of a function should hint at which is needed next.
 
 [division-operator]: https://docs.julialang.org/en/v1/manual/mathematical-operations/#Arithmetic-Operators
 [multiplication-operator]: https://docs.julialang.org/en/v1/manual/mathematical-operations/#Arithmetic-Operators#Arithmetic-Operators
