@@ -1681,8 +1681,13 @@
         "slug": "custom-set",
         "name": "Custom Set",
         "uuid": "b47377f7-84af-4a10-83ef-c2444a4f8940",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "multiple-dispatch",
+          "interfaces"
+        ],
+        "prerequisites": [
+          "interfaces"
+        ],
         "difficulty": 8,
         "topics": [
           "iterators",
@@ -1694,8 +1699,12 @@
         "slug": "rational-numbers",
         "name": "Rational Numbers",
         "uuid": "0caf0209-be6e-4585-a90b-e41c94c5fa40",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "multiple-dispatch"
+        ],
+        "prerequisites": [
+          "multiple-dispatch"
+        ],
         "difficulty": 8,
         "topics": [
           "math",
@@ -1707,8 +1716,12 @@
         "slug": "circular-buffer",
         "name": "Circular Buffer",
         "uuid": "3dc9bbde-d344-4a36-a7e1-433637974dfc",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "multiple-dispatch"
+        ],
+        "prerequisites": [
+          "multiple-dispatch"
+        ],
         "difficulty": 8,
         "topics": [
           "data_structures",
@@ -1720,8 +1733,12 @@
         "slug": "complex-numbers",
         "name": "Complex Numbers",
         "uuid": "eca7e62c-7bbf-436c-8011-2920cb2ab1c1",
-        "practices": [],
-        "prerequisites": [],
+        "practices": [
+          "multiple-dispatch"
+        ],
+        "prerequisites": [
+          "multiple-dispatch"
+        ],
         "difficulty": 10,
         "topics": [
           "math",
