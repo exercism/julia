@@ -1,0 +1,14 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header()}}
+{%- macro test_case(case) %}
+    {%- set input = case["input"] %}
+    @testset "{{ case["description"]}}" begin
+        @test acronym("{{ case["input"]["phrase"] }}") == "{{ case["expected"] }}"
+    end
+    {%- endmacro %}
+    {%- for case in cases -%}
+    {{ test_case(case) }}
+    {%- endfor %}
+end
