@@ -284,11 +284,10 @@ def load_additional_tests(exercise: Path) -> List[TypeJSON]:
 
 def format_file(path: Path) -> NoReturn:
     """
-    Runs air auto-formatter on file at path
+    Runs JuliaFormatter auto-formatter on file at path
     """
 
     jl.seval("using JuliaFormatter")
-    # check_call(["air", "format", path])
     style = jl.JuliaFormatter.YASStyle()
     jl.JuliaFormatter.format_file(str(path), style, verbose=True, remove_extra_newlines=True)
 
@@ -430,9 +429,9 @@ def generate(
     """
     Primary entry point. Generates test files for all exercises matching exercise_glob
     """
-    # air must be installed or all test files will error
-    if not shutil.which("air"):
-        logger.error("the air-formatter utility must be installed")
+    # JuliaFormatter must be installed or all test files will error
+    if not shutil.which("JuliaFormatter"):
+        logger.error("the JuliaFormatter utility must be installed")
         sys.exit(1)
     loader = FileSystemLoader(["config", "exercises"])
     env = Environment(loader=loader, keep_trailing_newline=True)
