@@ -430,7 +430,7 @@ def generate(
     Primary entry point. Generates test files for all exercises matching exercise_glob
     """
     # JuliaFormatter must be installed or all test files will error
-    if not shutil.which("JuliaFormatter"):
+    if not shutil.which("jlfmt"):
         logger.error("the JuliaFormatter utility must be installed")
         sys.exit(1)
     loader = FileSystemLoader(["config", "exercises"])
