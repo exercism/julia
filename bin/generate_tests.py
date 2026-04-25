@@ -287,9 +287,13 @@ def format_file(path: Path) -> NoReturn:
     Runs JuliaFormatter auto-formatter on file at path
     """
 
-    jl.seval("using JuliaFormatter")
-    style = jl.JuliaFormatter.YASStyle()
-    jl.JuliaFormatter.format_file(str(path), style, verbose=True, remove_extra_newlines=True)
+    #below is the juliacall method
+    # jl.seval("using JuliaFormatter")
+    # style = jl.JuliaFormatter.YASStyle()
+    # jl.JuliaFormatter.format_file(str(path), style, verbose=True, remove_extra_newlines=True)
+
+    # This uses subprocess to shell out and call jlfmt from the command line
+    check_call(["jlfmt", path, "-i", "-v", "--style=yas"])
 
 
 def check_template(slug: str, tests_path: Path, tmpfile: Path):
