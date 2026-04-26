@@ -41,9 +41,6 @@ from tempfile import NamedTemporaryFile
 from textwrap import wrap
 from typing import Any, Dict, List, NoReturn, Union
 
-import juliacall
-from juliacall import Main as jl
-
 
 # Tomli was subsumed into Python 3.11.x, but was renamed to tomllib.
 # This avoids ci failures for Python < 3.11.2.
@@ -287,13 +284,8 @@ def format_file(path: Path) -> NoReturn:
     Runs JuliaFormatter auto-formatter on file at path
     """
 
-    #below is the juliacall method
-    # jl.seval("using JuliaFormatter")
-    # style = jl.JuliaFormatter.YASStyle()
-    # jl.JuliaFormatter.format_file(str(path), style, verbose=True, remove_extra_newlines=True)
-
     # This uses subprocess to shell out and call jlfmt from the command line
-    check_call(["jlfmt", path, "-i", "-v", "--style=yas"])
+    check_call(["jlfmt", path, "-i", "-v", "--style=yas", "--remove_extra_newlines"])
 
 
 def check_template(slug: str, tests_path: Path, tmpfile: Path):

@@ -7,8 +7,9 @@
     @testset "{{ case["description"]}}" begin
         @test acronym("{{ case["input"]["phrase"] }}") == "{{ case["expected"] }}"
     end
-    {%- endmacro %}
-    {%- for case in cases -%}
+    {% endmacro %}
+
+    {% for case in cases -%}
     {{ test_case(case) }}
-    {%- endfor %}
+    {% endfor %}
 end
