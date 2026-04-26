@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/acronym/canonical-data.json
+# File last updated on 2026-04-26
+
 using Test
 
 include("acronym.jl")
@@ -24,7 +28,8 @@ include("acronym.jl")
     end
 
     @testset "very long abbreviation" begin
-        @test acronym("Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me") == "ROTFLSHTMDCOALM"
+        @test acronym("Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me") ==
+              "ROTFLSHTMDCOALM"
     end
 
     @testset "consecutive delimiters" begin

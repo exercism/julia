@@ -1,0 +1,8 @@
+Jinja2~=3.1.6
+juliacall==0.9.31
+markupsafe==3.0.2
+pytest-subtests~=0.14.2
+pytest~=8.4.0
+python-dateutil~=2.9.0
+requests~=2.32.4
+tomli>=2.2.1; python_full_version < '3.11.2'
