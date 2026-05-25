@@ -1,5 +1,7 @@
 # Instructions append
 
+## Implementation
+
 When an input is invalid your function must throw an `ArgumentError`.
 Invalid inputs include:
 - `apple`
