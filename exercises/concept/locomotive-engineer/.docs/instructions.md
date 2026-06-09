@@ -93,15 +93,14 @@ The function should return a consolidated `Dict` with all routing information.
 
 ```julia-repl
 julia> extend_route_information(Dict("from" => "Berlin", "to" => "Hamburg"); length = "100", speed = "50")
-Dict{Any, String} with 5 entries:
-  :temperature   => "20"
-  :timeOfArrival => "10:30"
-  "to"           => "London"
-  "from"         => "Paris"
-  :length        => "15"
+Dict{Any, String} with 4 entries:
+  :speed  => "50"
+  "to"    => "Hamburg"
+  "from"  => "Berlin"
+  :length => "100"
 
 
-julia> extend_route_information(Dict("from" => "Berlin", "to" => "Hamburg"), length = "100", speed = "50")
+julia> extend_route_information(Dict("from" => "Paris", "to" => "London"), length = "15", temperature = "20", timeOfArrival = "10:30")
 Dict{Any, String} with 5 entries:
   :temperature   => "20"
   :timeOfArrival => "10:30"
