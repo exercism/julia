@@ -13,7 +13,7 @@ While there may be different ways to solve the following tasks, each can be solv
 
 ## 1. Classify customers
 
-The rating system has a five star basis, which is simply consists of integers `1:5`.
+The rating system has a five star basis, which simply consists of integers `1:5`.
 The emphatic customers will only give ratings of `1` or `5`, and we want to know if a customer exhibits this behavior.
 
 Implement `all_15()` which takes a vector of ratings and returns `true` if all ratings are either `1` or `5`, and false otherwise.
