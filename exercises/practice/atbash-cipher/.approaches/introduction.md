@@ -171,13 +171,11 @@ end
 A solution by [halfdan](https://exercism.io/tracks/julia/exercises/atbash-cipher/solutions/419b6f4d04974a63b7f8531e8ad2808c).
 
 ~~~~exercism/caution
-
 This solution will mangle non-[ascii][ascii] letter characters and pass-through symbols, separators, etc.
 because it assumes that `isletter(c)` is the same as `c in 'a':'z' || c in 'A':'Z'` (it actually matches all unicode letters).
 This is a common mistake and can cause real issues!
 
 If you want to ensure your input is ascii you can use `ascii()`, or `isascii()`, or the Strs.jl package.
-
 ~~~~
 
 ```julia
