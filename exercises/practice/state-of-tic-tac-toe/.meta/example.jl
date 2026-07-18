@@ -2,7 +2,8 @@
 function gamestate(board)
     M = reshape([col == ' ' ? 0 : (-1)^(col == 'O') for row in board for col in row], (3,3))
     mini, maxi = extrema([sum(M, dims=1)..., sum(M, dims=2)..., M[1,1]+M[2,2]+M[3,3], M[1,3]+M[2,2]+M[3,1]])
-    (sum(M) ∉ (0, 1) || maxi == 3 && mini == -3) && error("Invalid board")
+    invalid = sum(M) ∉ (0, 1) || (maxi == 3 && mini == -3) || (maxi == 3 && sum(M) != 1) || (mini == -3 && sum(M) != 0)
+    invalid && error("Invalid board")
     (maxi == 3 || mini == -3) ? "win" : 0 ∈ M ? "ongoing" : "draw"
 end
 
@@ -15,7 +16,7 @@ end
 #     mini, maxi = extrema([sum(M, dims=1)..., sum(M, dims=2)..., M[1,1]+M[2,2]+M[3,3], M[1,3]+M[2,2]+M[3,1]])
 
 #     # A board is invalid if either: the total sum is not 0 or 1; or X and O have simultaneously won.
-#     if sum(M) ∉ (0, 1) || maxi == 3 && mini == -3
+#     if sum(M) ∉ (0, 1) || maxi == 3 && mini == -3 || (maxi == 3 && sum(M) != 1) || (mini == -3 && sum(M) != 0)
 #         error("Invalid board")
 #     end
 
@@ -70,6 +71,11 @@ end
 #     o_wins = wins(b_int, o)
 #     (sum(x_wins) > 0 && sum(o_wins) > 0) && error("Too many wins!")
 
+#     x_has_win = sum(x_wins) > 0 || valid_double_win(x_wins)
+#     o_has_win = sum(o_wins) > 0 || valid_double_win(o_wins)
+#     x_has_win && sum(b_int) != 1 && error("Invalid board: turn count doesn't match X win")
+#     o_has_win && sum(b_int) != 0 && error("Invalid board: turn count doesn't match O win")
+
 #     total_wins = sum(x_wins) + sum(o_wins)
 #     if total_wins == 1 || valid_double_win(x_wins) || valid_double_win(o_wins)
 #         "win"
@@ -122,6 +128,11 @@ end
 #     x_wins = wins(b, "X")
 #     o_wins = wins(b, "O")
 #     (sum(x_wins) > 0 && sum(o_wins) > 0) && error("Too many wins!")
+
+#     x_has_win = sum(x_wins) > 0 || valid_double_win(x_wins)
+#     o_has_win = sum(o_wins) > 0 || valid_double_win(o_wins)
+#     x_has_win && nₓ != nₒ + 1 && error("Invalid board: turn count doesn't match X win")
+#     o_has_win && nₓ != nₒ && error("Invalid board: turn count doesn't match O win")
 
 #     total_wins = sum(x_wins) + sum(o_wins)
 #     if total_wins == 1 || valid_double_win(x_wins) || valid_double_win(o_wins)
