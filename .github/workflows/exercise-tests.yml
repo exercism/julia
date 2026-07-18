@@ -28,8 +28,6 @@ jobs:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
 
       - uses: julia-actions/setup-julia@fa02766e078afaaf09b14210362cee14137e6a32
-        with:
-          version: ${{ matrix.julia-version }}
 
       - uses: julia-actions/cache@a45e8fa8be21c18a06b7177052533149e61e9b38
 
@@ -48,6 +46,10 @@ jobs:
 
       - name: Pull julia-test-runner image
         run: docker pull exercism/julia-test-runner
+
+      - uses: julia-actions/setup-julia@fa02766e078afaaf09b14210362cee14137e6a32
+        with:
+          version: nightly
 
       - name: Install Julia dependencies
         run: julia --color=yes --project -e "using Pkg; Pkg.instantiate()"
