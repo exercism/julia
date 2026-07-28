@@ -930,6 +930,18 @@
         "difficulty": 1
       },
       {
+        "slug": "line-up",
+        "name": "Line Up",
+        "uuid": "656ea68f-30c4-41fe-ad1a-03e2969ac66e",
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
+        "difficulty": 1
+      },
+      {
         "slug": "pig-latin",
         "name": "Pig Latin",
         "uuid": "3c53b207-ffcb-4111-ba3e-3aece095e268",
