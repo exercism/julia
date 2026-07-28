@@ -86,6 +86,18 @@
         "uuid": "5f181d2c-bb18-4f5d-b674-459674f7bd8e",
         "concepts": [
           "loops"
+    ]
+  },
+  "concepts": [
+    {
+      "uuid": "006ebce8-87cd-4695-87e6-8a7b8dc2f239",
+      "slug": "basics",
+      "name": "Basics"
+    },
+    {
+      "uuid": "32384ed4-ef26-4118-8ea3-4d44c331e828",
+      "slug": "booleans",
+      "
         ],
         "prerequisites": [
           "ranges"
@@ -930,6 +942,18 @@
         "difficulty": 1
       },
       {
+        "slug": "line-up",
+        "name": "Line Up",
+        "uuid": "656ea68f-30c4-41fe-ad1a-03e2969ac66e",
+        "practices": [
+          "strings"
+        ],
+        "prerequisites": [
+          "strings"
+        ],
+        "difficulty": 1
+      },
+      {
         "slug": "pig-latin",
         "name": "Pig Latin",
         "uuid": "3c53b207-ffcb-4111-ba3e-3aece095e268",
@@ -1736,18 +1760,6 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 10
-      },
-      {
-        "slug": "line-up",
-        "name": "Line Up",
-        "uuid": "656ea68f-30c4-41fe-ad1a-03e2969ac66e",
-        "practices": [
-          "strings"
-        ],
-        "prerequisites": [
-          "strings"
-        ],
-        "difficulty": 1
       }
     ]
   },
