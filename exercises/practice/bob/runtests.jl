@@ -1,91 +1,104 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/bob/canonical-data.json
+# File last updated on 2026-07-28
+
 using Test
 
 include("bob.jl")
 
-questions = (
-        "Does this cryogenic chamber make me look fat?",
-        "Hä?",
-        "You are, what, like 15?",
-        "fffbbcbeab?",
-        "4?", ":) ?",
-        "Wait! Hang on. Are you going to be OK?",
-        "Okay if like my  spacebar  quite a bit?   ",
-        "Oida?",
-        "\nDoes this cryogenic chamber make\n me look fat?"
-)
-
-yells = (
-        "WATCH OUT!",
-        "FCECDFCAAB",
-        "FCÄEÜCÖDFCẞAB",
-        "1, 2, 3 GO!",
-        "ZOMG THE %^*@#\$(*^ ZOMBIES ARE COMING!!11!!1!",
-        "I HATE YOU",
-        "I HATE THE DENTIST",
-        "OIDA!",
-)
-
-silences = (
-        "",
-        "          ",
-        "\t\t\t\t\t\t\t\t\t\t",
-        "\n\r \t",
-)
-
-miscs = (
-        "Tom-ay-to, tom-aaaah-to.",
-        "Let's go make out behind the gym!",
-        "It's OK if you don't want to work for the NSA.",
-        "Es ist okay, wenn du nicht für den BND arbeiten möchtest.",
-        "1, 2, 3",
-        "Ending with ? means a question.",
-        "         hmmmmmmm...",
-        "This is a statement ending with whitespace      ",
-        "Oida.",
-)
-
-forceful_questions = (
-        "WHAT THE HELL WERE YOU THINKING?",
-        "WAS ZUR HÖLLE GEHT HIER VOR?",
-        "OIDA?",
-)
-
-response = Dict(
-        :question => "Sure.",
-        :yelling => "Whoa, chill out!",
-        :silence => "Fine. Be that way!",
-        :misc => "Whatever.",
-        :forceful_question => "Calm down, I know what I'm doing!",
-)
-
 @testset verbose = true "tests" begin
-    @testset "questions" begin
-        @testset "$question" for question in questions
-            @test bob(question) == response[:question]
-        end
+    @testset "asking a question" begin
+        @test bob("""Does this cryogenic chamber make me look fat?""") == "Sure."
     end
 
-    @testset "yelling" begin
-        @testset "$yell" for yell in yells
-            @test bob(yell) == response[:yelling]
-        end
+    @testset "shouting" begin
+        @test bob("""WATCH OUT!""") == "Whoa, chill out!"
+    end
+
+    @testset "forceful question" begin
+        @test bob("""WHAT'S GOING ON?""") == "Calm down, I know what I'm doing!"
     end
 
     @testset "silence" begin
-        @testset "$silence" for silence in silences
-            @test bob(silence) == response[:silence]
-        end
+        @test bob("""""") == "Fine. Be that way!"
     end
 
-    @testset "misc" begin
-        @testset "$misc" for misc in miscs
-            @test bob(misc) == response[:misc]
-        end
+    @testset "stating something" begin
+        @test bob("""Tom-ay-to, tom-aaaah-to.""") == "Whatever."
     end
 
-    @testset "forceful questions" begin
-        @testset "$question" for question in forceful_questions
-            @test bob(question) == response[:forceful_question]
-        end 
+    @testset "asking a numeric question" begin
+        @test bob("""You are, what, like 15?""") == "Sure."
+    end
+
+    @testset "asking gibberish" begin
+        @test bob("""fffbbcbeab?""") == "Sure."
+    end
+
+    @testset "question with no letters" begin
+        @test bob("""4?""") == "Sure."
+    end
+
+    @testset "non-letters with question" begin
+        @test bob(""":) ?""") == "Sure."
+    end
+
+    @testset "prattling on" begin
+        @test bob("""Wait! Hang on. Are you going to be OK?""") == "Sure."
+    end
+
+    @testset "ending with whitespace" begin
+        @test bob("""Okay if like my  spacebar  quite a bit?   """) == "Sure."
+    end
+
+    @testset "multiple line question" begin
+        @test bob("""
+Does this cryogenic chamber make
+ me look fat?""") == "Sure."
+    end
+
+    @testset "shouting gibberish" begin
+        @test bob("""FCECDFCAAB""") == "Whoa, chill out!"
+    end
+
+    @testset "shouting a statement containing a question mark" begin
+        @test bob("""DO LIONS EAT PEOPLE? AHHHHH.""") == "Whoa, chill out!"
+    end
+
+    @testset "shouting numbers" begin
+        @test bob("""1, 2, 3 GO!""") == "Whoa, chill out!"
+    end
+
+    @testset "shouting with no exclamation mark" begin
+        @test bob("""I HATE THE DENTIST""") == "Whoa, chill out!"
+    end
+
+    @testset "prolonged silence" begin
+        @test bob("""          """) == "Fine. Be that way!"
+    end
+
+    @testset "alternate silence" begin
+        @test bob("""										""") == "Fine. Be that way!"
+    end
+
+    @testset "other whitespace" begin
+        @test bob("""
+   """) == "Fine. Be that way!"
+    end
+
+    @testset "no letters" begin
+        @test bob("""1, 2, 3""") == "Whatever."
+    end
+
+    @testset "statement containing question mark" begin
+        @test bob("""Ending with ? means a question.""") == "Whatever."
+    end
+
+    @testset "starting with whitespace" begin
+        @test bob("""         hmmmmmmm...""") == "Whatever."
+    end
+
+    @testset "non-question ending with whitespace" begin
+        @test bob("""This is a statement ending with whitespace      """) == "Whatever."
     end
 end
