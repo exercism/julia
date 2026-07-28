@@ -86,6 +86,10 @@ Does this cryogenic chamber make
    """) == "Fine. Be that way!"
     end
 
+    @testset "using acronyms in regular speech" begin
+        @test bob("""It's OK if you don't want to go work for NASA.""") == "Whatever."
+    end
+
     @testset "no letters" begin
         @test bob("""1, 2, 3""") == "Whatever."
     end
