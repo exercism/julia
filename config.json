@@ -86,18 +86,6 @@
         "uuid": "5f181d2c-bb18-4f5d-b674-459674f7bd8e",
         "concepts": [
           "loops"
-    ]
-  },
-  "concepts": [
-    {
-      "uuid": "006ebce8-87cd-4695-87e6-8a7b8dc2f239",
-      "slug": "basics",
-      "name": "Basics"
-    },
-    {
-      "uuid": "32384ed4-ef26-4118-8ea3-4d44c331e828",
-      "slug": "booleans",
-      "
         ],
         "prerequisites": [
           "ranges"
