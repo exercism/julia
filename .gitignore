@@ -6,3 +6,5 @@ tmp/
 Manifest.toml
 
 .idea/
+
+*.pyc
