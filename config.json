@@ -1375,6 +1375,14 @@
         "difficulty": 3
       },
       {
+        "slug": "simple-cipher",
+        "name": "Simple Cipher",
+        "uuid": "2ed6a6b2-4fc6-4c18-bafb-48d2f012fdc4",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 3
+      },
+      {
         "slug": "all-your-base",
         "name": "All Your Base",
         "uuid": "6fa91607-d772-47af-9520-de26bbb8addb",
