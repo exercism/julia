@@ -1,0 +1,59 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header()}}
+{%- macro test_case(subcase) %}
+    {%- set input = subcase["input"] %}
+    @testset "{{ subcase["description"]}}" begin
+    {% if subcase["property"] == "encode" %}
+        {% set text = subcase["input"]["plaintext"] %}
+    {% else %}
+        {% set text = subcase["input"]["ciphertext"] %}
+    {% endif %}
+        @test {{ subcase["property"] }}("{{ text }}", "{{ subcase["input"]["key"] }}") == "{{ subcase["expected"] }}"
+    end
+{% endmacro %}
+
+{%- macro test_random_cases(case) %}
+{# Hand-coded. Building from canonical-data is possible but complex, and low-value. #}
+    @testset "Can encode" begin
+        key = generate_key()
+        @test encode("aaaaaaaaaa", key) == key[1:10]
+    end
+    
+    @testset "Can decode" begin
+        key = generate_key()
+        @test decode(key[1:10], key) == "aaaaaaaaaa"
+    end
+    
+    @testset "Is reversible. I.e., if you apply decode in a encoded result, you must see the same plaintext encode parameter as a result of the decode method" begin
+        key = generate_key()
+        @test decode(encode("abcdefghij", key), key) == "abcdefghij"
+    end
+    
+    @testset "Key is made only of lowercase letters" begin
+        key = generate_key()
+        @test occursin(r"^[a-z]+$", key)
+    end
+{% endmacro %}
+
+{% for case in cases -%}
+    @testset "{{ case["description"]}}" begin
+    {% if case["description"].startswith("Random") %}
+        {{ test_random_cases(case) }}
+    {% else %}
+        {% for subcase in case["cases"] %}
+        {% if subcase["input"]["ciphertext"] != "cipher.encode" %}
+        {{ test_case(subcase) }}
+        {% endif%}
+        {% endfor %}
+    {% endif%}
+
+        @testset "Is reversible. I.e., if you apply decode in a encoded result, you must see the same plaintext encode parameter as a result of the decode method" begin
+            @test decode(encode("abcdefghij", "abcdefghij"), "abcdefghij") == "abcdefghij"
+        end
+
+    end
+
+{% endfor %}
+end
