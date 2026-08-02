@@ -1473,6 +1473,14 @@
         "difficulty": 4
       },
       {
+        "slug": "rectangles",
+        "name": "Rectangles",
+        "uuid": "6284512a-b40a-4e81-8d4f-712d729cc419",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "killer-sudoku-helper",
         "name": "Killer Sudoku Helper",
         "uuid": "e0142403-af9e-406e-827a-1fd37187d1ea",
