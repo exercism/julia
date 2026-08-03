@@ -1,0 +1,3 @@
+function rectangles(strings)
+    
+end
