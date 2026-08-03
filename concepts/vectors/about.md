@@ -183,7 +183,7 @@ julia> vals
 
 Concatenation is fairly simple for vectors, though a glance at the manual gives warning of complexities in store when we consider multidimensional arrays.
 
-The [`append!()][append] function can take a mixture of several vectors and single elements as input.
+The [`append!()`][append] function can take a mixture of several vectors and single elements as input.
 
 ```julia-repl
 julia> append!([1, 2], [3, 4], [-1, -2], 15)
