@@ -1,7 +1,7 @@
 # Instructions
 
 Your working for a robotics startup which is developing a simple robot as a proof-of-concept.
-You've been tasked with providing some functionality to control the motion of the robot.
+You have been tasked with providing some functionality to control the motion of the robot.
 
 ## 1. Orient the Robot
 
@@ -23,7 +23,7 @@ julia> orientrobot([[-1,1],[1,0],[-1,-1]])
 Next, we need functionality on how to change the direction of motion.
 To do this, we need to rotate the robot to face where it wants to go.
 
-Implement the `rotaterobot(orientation, θ)` function, which takes the robot's orientation matrix and an angle `θ` to rotate around.
+Implement the `rotaterobot(orientation, θ)` function, which takes the robot's orientation matrix and an angle `θ` to rotate *counterclockwise* around.
 Return the new orientation matrix.
 
 ```julia-repl
