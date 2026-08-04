@@ -9,7 +9,7 @@ function rotaterobot(orientation, θ)
 end
 
 function robotoriented(orientation, direction)
-    orientation[:, 2] ⋅ norm(direction) ≈ 1
+    orientation[:, 2] ⋅ direction / norm(direction) ≈ 1
 end
 
 function bodylocation(orientation, position)

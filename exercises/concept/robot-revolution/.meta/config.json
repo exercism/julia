@@ -1,5 +1,7 @@
 {
-  "authors": [],
+  "authors": [
+    "depial"
+  ],
   "files": {
     "solution": [
       "robot-revolution.jl"
@@ -11,5 +13,5 @@
       ".meta/exemplar.jl"
     ]
   },
-  "blurb": ""
+  "blurb": "Use basic linear algebra functionality to control a robot"
 }
