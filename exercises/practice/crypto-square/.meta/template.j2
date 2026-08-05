@@ -1,0 +1,14 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header()}}
+{%- macro test_case(case) %}
+    @testset "{{ case["description"]}}" begin
+        @test {{ case["property"] }}("{{ case["input"]["plaintext"] }}") == "{{ case["expected"] }}"
+    end
+{% endmacro %}
+
+    {% for case in cases -%}
+    {{ test_case(case) }}
+    {% endfor %}
+end
