@@ -453,6 +453,18 @@
         "status": "beta"
       },
       {
+        "slug": "robot-revolution",
+        "name": "Robot Revolution",
+        "uuid": "655b974a-85ab-4e73-8bfb-b49b493f6dce",
+        "concepts": [
+          "linear-algebra-basics"
+        ],
+        "prerequisites": [
+          "multi-dimensional-arrays"
+        ],
+        "status": "beta"
+      },
+      {
         "slug": "old-elyses-enchantments",
         "name": "Old Elyse's Enchantments",
         "uuid": "234466a0-08ce-45a1-aebc-5ec0b0cde24f",
