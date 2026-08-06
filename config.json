@@ -1395,6 +1395,18 @@
         "difficulty": 3
       },
       {
+        "slug": "crypto-square",
+        "name": "Crypto Square",
+        "uuid": "edd63978-7d19-4e10-9cb8-d39d0433638d",
+        "practices": [
+          "multi-dimensional-arrays"
+        ],
+        "prerequisites": [
+          "multi-dimensional-arrays"
+        ],
+        "difficulty": 3
+      },
+      {
         "slug": "all-your-base",
         "name": "All Your Base",
         "uuid": "6fa91607-d772-47af-9520-de26bbb8addb",
