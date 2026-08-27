@@ -1,11 +1,11 @@
 # Instructions
 
-Your working for a robotics startup which is developing a simple robot as a proof-of-concept.
+You are working for a robotics startup which is developing a simple robot as a proof-of-concept.
 You have been tasked with providing some functionality to control the motion of the robot.
 
 ## 1. Orient the Robot
 
-The robot has three markers, which are 1 unit of distance from its center, to keep track of its orientation and extension.
+To keep track of the robot's orientation and extension, it has three markers which are 1 unit of distance from its center.
 To initialize its position, we need to take the three directional vectors, normalize them, and put them in a matrix.
 
 Implement the `orientrobot(vectors)` function, which takes a vector of three vectors.
@@ -71,24 +71,4 @@ julia> bodylocation(orientmatrix, [5, 3])
 2×3 Matrix{Float64}:
  4.29289  6.0  4.29289
  3.70711  3.0  2.29289
-```
-
-## 5. Translate Robot
-
-To move a robot from one place to another, we use a normalized direction vector, and a scale factor, which determines the magnitude of the movement.
-To get the new position, these two are combined and added to the current position of the center of the robot.
-
-Implement the `translaterobot(position, direction, scale)` which takes the position vector, a direction vector and a scale.
-Return the new position vector of the robot.
-
-```julia-repl
-julia> translaterobot([0, 0], [1, 0], 5)
-2-element Vector{Int64}:
- 5
- 0
-
-julia> translaterobot([3, 2], [√2/2, √2/2], 2)
-2-element Vector{Float64}:
- 5.82842712474619
- 4.82842712474619
 ```

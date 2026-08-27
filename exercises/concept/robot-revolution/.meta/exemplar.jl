@@ -15,7 +15,3 @@ end
 function bodylocation(orientation, position)
     orientation .+ position
 end
-
-function translaterobot(position, direction, scale)
-    position .+ scale * direction
-end

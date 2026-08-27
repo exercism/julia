@@ -13,16 +13,13 @@
 - Remember, it is the *second* column of the matrix which indicates orientation.
 - This can be checked with a dot product.
 - It might be helpful to normalize the vectors.
-- The following identity could be helpful: `x⋅y = ||x||*||y||cos(θ)` where `||x|| = norm(x)` 
+- The following identity could be helpful: `x⋅y = ||x||*||y||cos(θ)` where [`||x|| = norm(x)`][norm-ref] 
 
 ## 4. Robot Body Coordinates
 - This is very straightforward, but elementwise operations are important.
 - Remember the orientation matrix can be seen as three position vectors from the origin.
 
-## 5. Translate Robot
-- A variation on the previous task.
-- The order of operations is important.
-
 [hcat-ref]: https://docs.julialang.org/en/v1/base/arrays/#Base.hcat
 [reshape-ref]: https://docs.julialang.org/en/v1/base/arrays/#Base.reshape
 [stack-ref]: https://docs.julialang.org/en/v1/base/arrays/#Base.stack
+[norm-ref]: https://docs.julialang.org/en/v1/stdlib/LinearAlgebra/#LinearAlgebra.norm
