@@ -166,36 +166,6 @@ julia> [1, 2] ⋅ [3, 4]
 For complex-valued vectors, the left vector needs to be the conjugate (sign flipped on the imaginary part).
 The `dot` function does this automatically, the `u'` syntax does it explicitly, but `sum(u .* v)` will fail if `u` and `v` are complex.
 
-### Vectors, cross product
-
-_A bit of nostalgia for anyone who has taken an Electricity and Magnetism course in the past!
-Also, engineers familiar with calculating torque or angular momentum vectors._
-
-Whereas the dot product converts two vectors to a `scalar`, the cross product converts two 3-vectors to a third 3-vector.
-
-In the geometric representation of the vector space, the new vector is _perpendicular_ the the plane containing the two input vectors.
-If the two inputs are parallel (up to a sign), they do not define a plane, so the output will be `[0, 0, 0]`.
-
-Order matters: `u × v == -(v × u)`.
-This is the famous Right-Hand Rule, which has left many of us staring at our thumb and two fingers as we twisted them around in space (_often with a puzzled expression_).
-
-```julia-repl
-# with \times syntax
-julia> [1, 2, 3] × [3, 4, 5]
-3-element Vector{Int64}:
- -2
-  4
- -2
-# with cross()
-julia> cross([1, 2, 3], [3, 4, 5])
-3-element Vector{Int64}:
- -2
-  4
- -2
-```
-
-Notice that this operation is restricted to length-3 vectors (equivalent to Euclidian space with orthogonal `x, y, z` axes).
-
 ### Norms
 
 _How "big" is a vector?_
