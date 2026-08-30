@@ -1497,6 +1497,14 @@
         "difficulty": 4
       },
       {
+        "slug": "affine-cipher",
+        "name": "Affine Cipher",
+        "uuid": "d3fea4a3-7b0f-4b7f-8c67-d3e09dc7a46f",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 4
+      },
+      {
         "slug": "rectangles",
         "name": "Rectangles",
         "uuid": "6284512a-b40a-4e81-8d4f-712d729cc419",
