@@ -1,0 +1,19 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{% for case in cases %}
+@testset "{{ case["description"] }}" begin
+  {% for subcase in case["cases"] %}
+    @testset "{{ subcase["description"]}}" begin
+    {% if subcase["expected"]["error"] %}
+        @test_throws ArgumentError {{ subcase["property"] }}("{{ subcase["input"]["phrase"] }}", {{ subcase["input"]["key"]["a"] }}, {{ subcase["input"]["key"]["b"] }})
+    {% else %}
+        @test {{ subcase["property"] }}("{{ subcase["input"]["phrase"] }}", {{ subcase["input"]["key"]["a"] }}, {{ subcase["input"]["key"]["b"] }}) == "{{ subcase["expected"] }}"
+    {% endif %}
+    end
+
+  {% endfor %}
+  end
+{% endfor %}
+end
