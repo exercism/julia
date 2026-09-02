@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/line-up/canonical-data.json
-# File last updated on 2026-07-27
+# File last updated on 2026-09-02
 
 using Test
 
