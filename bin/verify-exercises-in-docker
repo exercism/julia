@@ -11,6 +11,9 @@
 # Example: verify single exercise in Docker
 # bin/verify-exercises-in-docker two-fer
 
+# Example: verify all exercises against specified test runner
+# bin/verify-exercises-in-docker -i my-local-image
+
 set -eo pipefail
 
 die() { echo "$*" >&2; exit 1; }
@@ -30,16 +33,13 @@ copy_example_or_examplar_to_solution() {
 }
 
 pull_docker_image() {
-    # shellcheck disable=SC1083
-    docker pull exercism/{{SLUG}}-test-runner ||
-        die $'Could not find the `exercism/{{SLUG}}-test-runner` Docker image.\nCheck the test runner docs at https://exercism.org/docs/building/tooling/test-runners for more information.'
+    docker pull "${image}" ||
+        die $'Could not find the `'"${image}"$'` Docker image.\nCheck the test runner docs at https://exercism.org/docs/building/tooling/test-runners for more information.'
 }
 
 run_tests() {
     local slug
     slug="${1}"
-
-    # shellcheck disable=SC1083
     docker run \
         --rm \
         --network none \
@@ -47,7 +47,7 @@ run_tests() {
         --mount type=bind,src="${PWD}",dst=/solution \
         --mount type=bind,src="${PWD}",dst=/output \
         --mount type=tmpfs,dst=/tmp \
-        exercism/{{SLUG}}-test-runner "${slug}" /solution /output
+        "${image}" "${slug}" /solution /output
     jq -e '.status == "pass"' "${PWD}/results.json" >/dev/null 2>&1
 }
 
@@ -67,7 +67,7 @@ verify_exercise() {
         cd "${tmp_dir}"
 
         copy_example_or_examplar_to_solution
-        run_tests "${slug}"
+        run_tests "${slug}" || { cat "${PWD}/results.json"; exit 1; }
     )
 }
 
@@ -86,7 +86,19 @@ verify_exercises() {
     ((count > 0)) || die 'no matching exercises found!'
 }
 
-pull_docker_image
+image=''
+while getopts :i: opt; do
+    case $opt in
+        i) image=$OPTARG ;;
+        ?) echo >&2 "Unknown option: -$OPTARG"; exit 1 ;;
+    esac
+done
+shift "$((OPTIND - 1))"
+
+if [[ -z "${image}" ]]; then
+    image="exercism/julia-test-runner"
+    pull_docker_image
+fi
 
 exercise_slug="${1:-*}"
 verify_exercises "${exercise_slug}"
