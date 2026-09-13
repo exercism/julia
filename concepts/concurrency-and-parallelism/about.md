@@ -63,7 +63,7 @@ We want multiple parts of our program to execute concurrently, and these "parts"
 Several languages have something similar to tasks, but the terminology varies: "symmetric coroutines", "lightweight threads", "cooperative multitasking", "one-shot continuations" are all roughly equivalent.
 Julia tasks are particularly similar to goroutines in Go.
 
-Creating a task is easiest with the [`@task`][ref-task-macro] and a zero-argument function, though a [`Task()`][ref-Task] constructor is also available.
+Creating a task is easiest with the [`@task`][ref-task-macro] macro and a zero-argument function, though a [`Task()`][ref-Task] constructor is also available.
 
 ```julia-repl
 julia> t1 = @task begin; sleep(5); println("stopping"); end
@@ -83,7 +83,7 @@ julia> stopping
 Note that `schedule()` returns immediately.
 The task runs in the background, and we get the output some time later.
 
-Because define-and-start-immediately is a common pattern, we could use the [`Threads.@spawn`][ref-spawn-macro] macro for convenience.
+Because define-and-start-immediately is a common pattern, we can use the [`Threads.@spawn`][ref-spawn-macro] macro for convenience.
 
 ```julia-repl
 using Base.Threads
@@ -208,10 +208,29 @@ If you are familiar with Go, Julia's tasks and channels are quite similar to Go'
 
 There are two types of constructor for `Channel`.
 
-[Firstly][ref-Channel-size], specify a type, and optionally a buffer size (which defaults to zero, creating an unbuffered channel).
+[Firstly][ref-Channel-size], optionally specify a type (which defaults to `Any`), and optionally a buffer size (which defaults to zero, creating an unbuffered channel).
 
 ```julia-repl
-# TODO example
+julia> chn1 = Channel(32)
+Channel{Any}(32) (empty)
+
+julia> chn2 = Channel{Int}()
+Channel{Int64}(0) (empty)
+
+julia> put!(chn1, 42)
+42
+
+julia> put!(chn1, "fortytwo")
+"fortytwo"
+
+# status of buffered channel
+julia> chn1
+Channel{Any}(32) (2 items available)
+
+# DON'T do this in the REPL with an unbuffered channel
+julia> put!(chn2, 5)
+# the thread on which the REPL runs is now blocked, 
+# and you lost control of it
 ```
 
 [Alternatively][ref-Channel-func], pass a function as the argument.
@@ -220,10 +239,27 @@ Julia will create a new task from the function and bind it to the channel.
 The supplied function must take exactly one argument: the bound channel.
 
 ```julia-repl
-# TODO example
+julia> function producer(c::Channel)
+           put!(c, 42)
+           put!(c, "ending")
+       end
+producer (generic function with 1 method)
+
+julia> chn3 = Channel(producer)
+Channel{Any}(0) (1 item available)
+
+julia> take!(chn3)
+42
+
+julia> take!(chn3)
+"ending"
+
+julia> take!(chn3)
+ERROR: InvalidStateException: Channel is closed.
 ```
 
-The second type of channel will auto-close when the function exits.
+A function-derived of channel will auto-close when the function exits.
+In real use, 
 
 Once a channel exists, tasks can write to it with [`put!()`][ref-put], adding an entry, and read from it with [`take!()`][ref-take], removing an entry.
 
@@ -238,15 +274,22 @@ There are various information functions to determine the state of a channel.
 Only bound channels will auto-close: those created with the second type of constructor, or those where you [`bind()`][ref-bind] a task after construction.
 Use [`close()`][ref-close] to remove other types of channel.
 
-- iteration
+It is possible to iterate over a channel to get all available entries.
 
+```julia-repl
+# the producer() funtcion was defined in a previous example
+
+julia> for entry in Channel(producer); println(entry); end
+42
+ending
+```
 
 ## Race conditions and deadlocks
 
 Tasks running on one or more threads are in a _shared memory_ environment, and can all read the same variables in the outer scope.
 
 So far, so good.
-The (_big!_) problem is that they can  all _write_ to the same variables, and this can lead to dangerously non-deterministic results.
+The (_big!_) problem is that the tasks can  all _write_ to the same variables, and this can lead to dangerously non-deterministic results.
 
 Suppose you have 4 tasks, all performing some calculation and updating a variable with the result at the end.
 
@@ -277,7 +320,7 @@ THere will then be some sort of `reduce` operation once all tasks finish.
 
 A Julia channel is thread-safe, so any number of tasks can write results to each channel.
 
-Only a _single_ channel is permitted to read the results and aggregate them.
+For thread-safety, only a _single_ task is permitted to read the results and aggregate them.
 
 ```julia-repl
 # TODO example
