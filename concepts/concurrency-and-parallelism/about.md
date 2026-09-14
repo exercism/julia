@@ -122,16 +122,64 @@ Some useful information functions include:
 If you need to wait for a task `t` to finish and exit before continuing, just use [`wait(t)`][ref-wait].
 
 ```julia-repl
-# TODO example
+julia> using Base.Threads
+
+julia> t4 = @spawn begin; sleep(5); println("stopping"); end; wait(t4)
+stopping
+
+# no new julia> prompt until the task finishes
+```
+
+If a task `t` returns a result, `t.result` will contain that value _after_ task completion.
+Until then, it contains [`nothing`][concept-nothingness].
+
+```julia-repl
+julia> t5 = @spawn begin; sleep(10); return 42; end
+Task (runnable, started) @0x0000786c6e270e20
+
+julia> t5.result  # no result yet
+
+julia> t5.result  # t5 has finished
+42
+```
+
+Instead, we could use [`fetch()`][ref-task-fetch], which waits for the task to complete before returning the result.
+
+```julia-repl
+julia> t5 = @spawn begin; sleep(10); return 42; end
+Task (runnable, started) @0x0000786c6e271b40
+
+julia> fetch(t5)  # waits at this point
+42
 ```
 
 To wait for a collection of tasks to finish, we can wrap them in a [`@sync`][ref-sync-macro] macro.
 
 ```julia-repl
-# TODO example
+julia> facts = zeros(Int, 15); # => 15-element Vector{Int64}
+
+julia> @sync for n in 1:15; sleep(0.1); facts[n] = factorial(n); end
+
+julia> facts
+15-element Vector{Int64}:
+             1
+             2
+             6
+            24
+           120
+           720
+          5040
+         40320
+        362880
+       3628800
+      39916800
+     479001600
+    6227020800
+   87178291200
+ 1307674368000
 ```
 
-Tasks are lightweight, and there is little overhead in creating large numbers of them.
+Tasks are lightweight, and there is little overhead in creating large numbers of them: maybe tens of thousands.
 Of course, they then have to queue for an opportunity to run, but the Julia scheduler can easily handle this.
 
 ## [Multi-Threading][ref-multithreading]
@@ -150,7 +198,7 @@ Then the OS will choose a suitable number, based on the hardware: typically the 
 The available options are more complicated than this, including use of environment variables, and liable to change in future Julia releases.
 See the [manual][ref-starting-threads] for up-to-date details.
 
-To get the actual number of threads from within code, we have the very useful [`Threads`][ref-Threads-module] module.
+To get the actual number of threads (more specifically, _worker threads_) from within code, we have the very useful [`Threads`][ref-Threads-module] module.
 
 ```julia-repl
 julia> using Base.Threads
@@ -159,7 +207,7 @@ julia> nthreads() # on the author's PC, with -t auto
 16
 ```
 
-Creating larger numbers of threads is not forbidden, but probably not useful.
+Creating larger numbers of threads is not forbidden, but probably not useful: matching thread numbers to the available hardware is preferred.
 
 Unlike lightweight tasks, threads are an operating system resource, and context-switching between them has a significant overhead.
 
@@ -194,7 +242,18 @@ true
 ```
 
 A non-sticky task can be restarted on any available thread, which is good for performance.
-However, never rely on the [`threadid`][ref-threadid] to identify your task, as this can change unpredictably at any time.
+
+One related warning: never rely on the [`threadid`][ref-threadid] to identify your task, as this can change unpredictably at any time.
+
+~~~~exercism/note
+Some operations may pass the calculation to libraries written in C, C++ or Fortran, which implement their own multi-threading.
+
+In particular, linear algebra operations are likely to use [`OpenBLAS`][wiki-openblas], which will automatically distribute the calculation across all your CPU cores in the background.
+
+Try doing a big matrix multiplication, and watch your OS's CPU meter as it runs.
+
+[wiki-openblas]: https://en.wikipedia.org/wiki/OpenBLAS
+~~~~
 
 ## Channels
 
@@ -230,7 +289,8 @@ Channel{Any}(32) (2 items available)
 # DON'T do this in the REPL with an unbuffered channel
 julia> put!(chn2, 5)
 # the thread on which the REPL runs is now blocked, 
-# and you lost control of it
+# and you lost control of it 
+# (hit Ctrl-C several times, quickly, to recover)
 ```
 
 [Alternatively][ref-Channel-func], pass a function as the argument.
@@ -310,17 +370,43 @@ We talk about code that avoids race conditions (and related problems) as being "
 
 At its simplest, this can mean that each task gets its own index into a results vector, and writes _only_ to that element.
 
-THere will then be some sort of `reduce` operation once all tasks finish.
+We already saw this in an earlier example.
+
+There will then be some sort of `reduce` operation once all tasks finish.
 
 ```julia-repl
-# TODO example
+julia> facts = zeros(Int, 15); # => 15-element Vector{Int64}
+
+julia> @sync for n in 1:15; sleep(0.1); facts[n] = factorial(n); end
+
+julia> facts
+15-element Vector{Int64}:
+             1
+             2
+             6
+            24
+           120
+           720
+          5040
+         40320
+        362880
+       3628800
+      39916800
+     479001600
+    6227020800
+   87178291200
+ 1307674368000
+
+# aggregate to a single result
+julia> sum(facts)
+1401602636313
 ```
 
 ### Use channels
 
 A Julia channel is thread-safe, so any number of tasks can write results to each channel.
 
-For thread-safety, only a _single_ task is permitted to read the results and aggregate them.
+For thread-safety, only a _single_ task should be permitted to read the results and aggregate them.
 
 ```julia-repl
 # TODO example
@@ -328,7 +414,7 @@ For thread-safety, only a _single_ task is permitted to read the results and agg
 
 ### Use locks
 
-For added debugging fun, imagine that your task wants to increment a shared value.
+For added debugging "fun", imagine that your task wants to increment a shared value.
 
 We can write this simply as `v += n`, but that hides the three underlying operations.
 
@@ -340,7 +426,7 @@ But in the middle of this, another task can _change_ the old value, and you are 
 
 One way to handle this is with the use of [locks][wiki-locks], declaring "this variable is mine, nothing else can touch it until I am finished".
 
-Some languages (rarely Julia) refer to this as [mutual-exclusion][wiki-mutual-exclusion], or `mutex` for short.
+Some other languages (rarely Julia) refer to this as [mutual-exclusion][wiki-mutual-exclusion], or `mutex` for short.
 
 ```julia-repl
 # TODO example
@@ -350,7 +436,7 @@ Making sure that you release the lock is entirely your responsibility (though Ju
 
 A worst-case scenario is when task A is waiting for task B to release a lock, but task B is simultaneously waiting for task A.
 
-[Deadlock][wiki-deadlock] is the correct name, and it makes programmers very nervous.
+[Deadlock][wiki-deadlock] is the correct name for this, and it makes programmers very nervous.
 
 ### Use Atomic variables
 
@@ -421,5 +507,7 @@ It is copied here, with thanks.
 [ref-task_local_storage]: https://docs.julialang.org/en/v1/base/parallel/#Base.task_local_storage-Tuple{Any}
 [ref-wait]: https://docs.julialang.org/en/v1/base/parallel/#Base.wait
 [ref-sync-macro]: https://docs.julialang.org/en/v1/base/parallel/#Base.@sync
+[ref-task-fetch]: https://docs.julialang.org/en/v1/base/parallel/#Base.fetch-Tuple{Task}
 [web-tls]: https://juliafolds2.github.io/OhMyThreads.jl/stable/literate/tls/tls/#TLS
 [web-lesswrong]: https://www.lesswrong.com/posts/kPnjPfp2ZMMYfErLJ/julia-tasks-101
+[concept-nothingness]: https://exercism.org/tracks/julia/concepts/nothingness
