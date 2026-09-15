@@ -412,7 +412,7 @@ For thread-safety, only a _single_ task should be permitted to read the results 
 # TODO example
 ```
 
-### Use locks
+### Use [Locks][ref-locks]
 
 For added debugging "fun", imagine that your task wants to increment a shared value.
 
@@ -426,19 +426,65 @@ But in the middle of this, another task can _change_ the old value, and you are 
 
 One way to handle this is with the use of [locks][wiki-locks], declaring "this variable is mine, nothing else can touch it until I am finished".
 
-Some other languages (rarely Julia) refer to this as [mutual-exclusion][wiki-mutual-exclusion], or `mutex` for short.
+Some other languages (though rarely Julia) refer to this as [mutual-exclusion][wiki-mutual-exclusion], or `mutex` for short.
 
 ```julia-repl
-# TODO example
+# create a lock, which can be used repeatedly
+julia> lk = ReentrantLock()
+ReentrantLock() (unlocked)
+
+julia> v = 0
+0
+
+# lock a single assignment with the @lock macro
+julia> @lock lk v += 5
+5
+
+# the lock is already released
+julia> lk
+ReentrantLock() (unlocked)
+
+julia> v
+5
 ```
 
-Making sure that you release the lock is entirely your responsibility (though Julia has syntax that can help).
+For most end-user code, a [`ReentrantLock`][ref-reentrantlock] is appropriate.
+
+Making sure that you release the lock is entirely your responsibility, though Julia has syntax that can help.
+
+In the above example with [`@lock`][ref-lock-macro], the lock is held only for the duration of the `@lock lk v += 5` line.
+
+Other approaches are possible with the [`lock()`][ref-lock] function.
+
+```julia-repl
+julia> lock(lk) do; v = 5; end
+5
+```
+
+The [`do...end`][ref-do] syntax syntax shown above creates an anonymous function and passes it as the first argument to `lock()`.
+Again, the lock is held only for the duration of the (anonymous) function.
+
+To hold a lock more explicitly, it is recommended to put the corresponding [`unlock()`][ref-unlock] in a `finally` block to ensure it runs.
+
+```julia-repl
+julia> begin
+           lock(lk)
+           try
+               v = 42
+           finally
+               unlock(lk)
+           end
+       end
+42
+```
+
+If necessary (e.g. when debugging), there is an [`islocked()`][ref-islocked] function to get status.
 
 A worst-case scenario is when task A is waiting for task B to release a lock, but task B is simultaneously waiting for task A.
 
-[Deadlock][wiki-deadlock] is the correct name for this, and it makes programmers very nervous.
+[Deadlock][wiki-deadlock] is the correct name for this, and it makes programmers _very nervous._
 
-### Use Atomic variables
+### Use [Atomic Operations][ref-atomics]
 
 TODO
 
@@ -508,6 +554,14 @@ It is copied here, with thanks.
 [ref-wait]: https://docs.julialang.org/en/v1/base/parallel/#Base.wait
 [ref-sync-macro]: https://docs.julialang.org/en/v1/base/parallel/#Base.@sync
 [ref-task-fetch]: https://docs.julialang.org/en/v1/base/parallel/#Base.fetch-Tuple{Task}
+[ref-locks]: https://docs.julialang.org/en/v1/manual/multi-threading/#man-using-locks
+[ref-reentrantlock]: https://docs.julialang.org/en/v1/base/parallel/#Base.ReentrantLock
+[ref-lock]: https://docs.julialang.org/en/v1/base/parallel/#Base.lock
+[ref-lock-macro]: https://docs.julialang.org/en/v1/base/parallel/#Base.@lock
+[ref-islocked]: https://docs.julialang.org/en/v1/base/parallel/#Base.islocked
+[ref-unlock]: https://docs.julialang.org/en/v1/base/parallel/#Base.unlock
+[ref-atomics]: https://docs.julialang.org/en/v1/manual/multi-threading/#man-atomic-operations
+[ref-do]: https://docs.julialang.org/en/v1/base/base/#do
 [web-tls]: https://juliafolds2.github.io/OhMyThreads.jl/stable/literate/tls/tls/#TLS
 [web-lesswrong]: https://www.lesswrong.com/posts/kPnjPfp2ZMMYfErLJ/julia-tasks-101
 [concept-nothingness]: https://exercism.org/tracks/julia/concepts/nothingness
