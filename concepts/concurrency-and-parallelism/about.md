@@ -475,7 +475,7 @@ julia> begin
                unlock(lk)
            end
        end
-42
+42-
 ```
 
 If necessary (e.g. when debugging), there is an [`islocked()`][ref-islocked] function to get status.
@@ -486,11 +486,66 @@ A worst-case scenario is when task A is waiting for task B to release a lock, bu
 
 ### Use [Atomic Operations][ref-atomics]
 
-TODO
+A sequence of instuctions is _atomic_ if they run as an indivisible unit.
+
+- The entire sequence will succeed or fail together, with no partial successes.
+- There can be no interruptions or context-switching during the sequence.
+
+This is an important principle in database design, where _transactions_ are rolled back if they fail to successfully complete in their entirety.
+
+In concurrent code, atomic operations are an effective alternative to locks in preventing data races.
+
+Julia provides the [`Threads.Atomic`][ref-Atomic] type to declare a variable atomic.
+
+```julia-repl
+# declare and initialize to zero
+julia> x = Atomic{Int}(0)
+Atomic{Int64}(0)
+
+# non-atomic operations fail
+julia> x += 1
+ERROR: MethodError: no method matching +(::Atomic{Int64}, ::Int64)
+The function `+` exists, but no method is defined for this combination of argument types.
+
+julia> atomic_add!(x, 1)
+0
+
+# x was mutated in-place
+julia> x
+Atomic{Int64}(1)
+```
+
+Arithmetic using conventional syntax is blocked for atomic types.
+Instead, there are many functions with an `atomic_` prefix, such as the [`atomic_add!()`][ref-atomic_add] shown above.
+
+Mostly, these are mutating functions (ending in `!`), which change the passed-in atomic variable.
+Slightly surprisingly, the function returns the _old_ value of the variable, not the mutated value: _beware_.
+
+For composite types, Julia (since v1.7) supports [per-field atomics][ref-per-field] with the [`@atomic`][ref-atomic-macro] macro.
+Documentation is still fairly limited (as of mid 2026).
 
 ## [Distributed Computing][ref-distributed]
 
 None of this is available within Exercism, but we will briefly summarize some of the things you might want to try on your own computer.
+
+All previous sections of this document describe situations where all tasks/threads share the same memory space: they can read (and perhaps write) the same variables without copying.
+
+We now nove to situations where processes each have their own memory space.
+This is true whether they are running on a single CPU, or on separate computers that may be on different continents.
+
+### Multi-processing
+
+Just as we needed to add `-t` to the Julia startup command to get more than one thread, use `-p` to get more than one process.
+
+The thread setting is propagated to each process, so `julia -p 2 -t 4` will run with 2 processes and 4 threads on each (8 in total).
+
+- TODO `Distributed` standard library
+
+### GPU programming
+
+TODO
+
+### Message passing
 
 TODO
 
@@ -508,7 +563,7 @@ It is copied here, with thanks.
 - `@async` (deprecated) create and immediately schedule a sticky task
 - `Threads.@threads` (deprecated) run a for loop in parallel
 - `wait(task::Task)` waits for a task to complete
-- `task.result` once the task is done, contains the output. Contains nothing otherwise
+- `task.result` once the task is done, contains the output. Contains `nothing` otherwise
 - `fetch(task::Task)` : wait for the task, then return its result value
 - `@sync` use this before an expression that creates multiple tasks, and it will wait until all those tasks are done.
 - `Channel` "a waitable first-in first-out queue which can have multiple tasks reading from and writing to it". Channels are a robust way of communicating between tasks. If you're familiar with Go, you use Tasks and Channels in Julia the way you use Goroutines and Channels in Go.
@@ -562,6 +617,10 @@ It is copied here, with thanks.
 [ref-unlock]: https://docs.julialang.org/en/v1/base/parallel/#Base.unlock
 [ref-atomics]: https://docs.julialang.org/en/v1/manual/multi-threading/#man-atomic-operations
 [ref-do]: https://docs.julialang.org/en/v1/base/base/#do
+[ref-atomic-macro]: https://docs.julialang.org/en/v1/base/multi-threading/#Base.@atomic
+[ref-Atomic]: https://docs.julialang.org/en/v1/base/multi-threading/#Base.Threads.Atomic
+[ref-atomic_add]: https://docs.julialang.org/en/v1/base/multi-threading/#Base.Threads.atomic_add!
+[ref-per-field]: https://docs.julialang.org/en/v1/base/multi-threading/#Base.Threads.atomic_add!
 [web-tls]: https://juliafolds2.github.io/OhMyThreads.jl/stable/literate/tls/tls/#TLS
 [web-lesswrong]: https://www.lesswrong.com/posts/kPnjPfp2ZMMYfErLJ/julia-tasks-101
 [concept-nothingness]: https://exercism.org/tracks/julia/concepts/nothingness
