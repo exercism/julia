@@ -193,7 +193,7 @@ $ julia --threads 4 # or -t 4 for brevity
 ```
 
 Alternatively, use `--threads auto`.
-Then the OS will choose a suitable number, based on the hardware: typically the number of CPU cores.
+Then Julia will choose a suitable number, based on the hardware: typically the number of CPU cores.
 
 The available options are more complicated than this, including use of environment variables, and liable to change in future Julia releases.
 See the [manual][ref-starting-threads] for up-to-date details.
@@ -319,7 +319,10 @@ ERROR: InvalidStateException: Channel is closed.
 ```
 
 A function-derived of channel will auto-close when the function exits.
-In real use, 
+
+```julia-repl
+TODO example
+```
 
 Once a channel exists, tasks can write to it with [`put!()`][ref-put], adding an entry, and read from it with [`take!()`][ref-take], removing an entry.
 
@@ -329,7 +332,7 @@ There are various information functions to determine the state of a channel.
 
 - [`isfull()`][ref-isfull]: the buffer is at capacity, so `put!()` operations will block and wait until a write is possible.
 - [`isready()`][ref-isready]: the channel has an entry available for read.
-- [`isopen()`][ref-isopen]: the channel is available to `put!()` a new entry (or queue it is the buffer is full).
+- [`isopen()`][ref-isopen]: the channel is available to `put!()` a new entry (or queue it if the buffer is full).
 
 Only bound channels will auto-close: those created with the second type of constructor, or those where you [`bind()`][ref-bind] a task after construction.
 Use [`close()`][ref-close] to remove other types of channel.
@@ -475,7 +478,7 @@ julia> begin
                unlock(lk)
            end
        end
-42-
+42
 ```
 
 If necessary (e.g. when debugging), there is an [`islocked()`][ref-islocked] function to get status.
@@ -537,7 +540,7 @@ This is true whether they are running on a single CPU, or on separate computers 
 
 Just as we needed to add `-t` to the Julia startup command to get more than one thread, use `-p` to get more than one process.
 
-The thread setting is propagated to each process, so `julia -p 2 -t 4` will run with 2 processes and 4 threads on each (8 in total).
+The thread setting is propagated to each process, so `julia -p 2 -t 4` will run with 2 processes and 4 threads on each (8 threads in total).
 
 - TODO `Distributed` standard library
 
