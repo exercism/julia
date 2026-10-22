@@ -10,3 +10,5 @@ Manifest.toml
 *.pyc
 
 CLAUDE.md
+
+no_template.md
