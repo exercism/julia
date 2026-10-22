@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/darts/canonical-data.json
+# File last updated on 2026-10-22
+
 using Test
 
 include("darts.jl")
@@ -19,11 +23,11 @@ include("darts.jl")
         @test score(0, -1) == 10
     end
 
-    @testset "Exactly on centre" begin
+    @testset "Exactly on center" begin
         @test score(0, 0) == 10
     end
 
-    @testset "Near the centre" begin
+    @testset "Near the center" begin
         @test score(-0.1, -0.1) == 10
     end
 
