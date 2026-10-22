@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/isogram/canonical-data.json
+# File last updated on 2026-10-22
+
 using Test
 
 include("isogram.jl")
@@ -15,6 +19,10 @@ include("isogram.jl")
         @test !isisogram("eleven")
     end
 
+    @testset "word with one duplicated character from the end of the alphabet" begin
+        @test !isisogram("zzyzx")
+    end
+
     @testset "longest reported english isogram" begin
         @test isisogram("subdermatoglyphic")
     end
@@ -23,24 +31,12 @@ include("isogram.jl")
         @test !isisogram("Alphabet")
     end
 
-    @testset "hypothetical isogrammic word with hyphen" begin
-        @test isisogram("thumbscrew-japingly")
-    end
-
-    @testset "isogram with duplicated non letter character" begin
-        @test isisogram("Hjelmqvist-Gryb-Zock-Pfund-Wax")
-    end
-
-    @testset "made-up name that is an isogram" begin
-        @test isisogram("Emily Jung Schwartzkopf")
-    end
-
-    @testset "word with one duplicated character from the end of the alphabet" begin
-        @test !isisogram("zzyzx")
-    end
-
     @testset "word with duplicated character in mixed case, lowercase first" begin
         @test !isisogram("alphAbet")
+    end
+
+    @testset "hypothetical isogrammic word with hyphen" begin
+        @test isisogram("thumbscrew-japingly")
     end
 
     @testset "hypothetical word with duplicated character following hyphen" begin
@@ -51,6 +47,10 @@ include("isogram.jl")
         @test isisogram("six-year-old")
     end
 
+    @testset "made-up name that is an isogram" begin
+        @test isisogram("Emily Jung Schwartzkopf")
+    end
+
     @testset "duplicated character in the middle" begin
         @test !isisogram("accentor")
     end
@@ -58,8 +58,8 @@ include("isogram.jl")
     @testset "same first and last characters" begin
         @test !isisogram("angola")
     end
-end
 
-@testset "word with duplicated character and with two hyphens" begin
-    @test !isisogram("up-to-date")
+    @testset "word with duplicated character and with two hyphens" begin
+        @test !isisogram("up-to-date")
+    end
 end

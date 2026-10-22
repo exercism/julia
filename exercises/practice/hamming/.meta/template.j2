@@ -1,0 +1,14 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{% for case in cases + additional_cases %}
+    @testset "{{ case["description"] }}" begin
+    {%- if case is error_case %}
+        @test_throws ArgumentError distance("{{ case["input"]["strand1"] }}", "{{ case["input"]["strand2"] }}")
+    {%- else %}
+        @test distance("{{ case["input"]["strand1"] }}", "{{ case["input"]["strand2"] }}") == {{ case["expected"] }}
+    {%- endif %}
+    end
+{% endfor %}
+end

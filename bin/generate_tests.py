@@ -285,7 +285,7 @@ def format_file(path: Path) -> NoReturn:
     """
 
     # This uses subprocess to shell out and call jlfmt from the command line
-    check_call(["jlfmt", path, "-i", "-v", "--style=yas", "--remove-extra-newlines"])
+    check_call(["jlfmt", path, "-i", "-v", "--style=yas", "--remove-extra-newlines=true"])
 
 
 def check_template(slug: str, tests_path: Path, tmpfile: Path):

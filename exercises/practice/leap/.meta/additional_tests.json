@@ -1,0 +1,10 @@
+{
+  "cases": [
+    {
+      "description": "year divisible by 4, not divisible by 100 in leap year (2016)",
+      "property": "leapYear",
+      "input": { "year": 2016 },
+      "expected": true
+    }
+  ]
+}
