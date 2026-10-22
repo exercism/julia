@@ -1,0 +1,10 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{% for case in cases %}
+    @testset "{{ case["description"] }}" begin
+        @test to_rna("{{ case["input"]["dna"] }}") == "{{ case["expected"] }}"
+    end
+{% endfor %}
+end
