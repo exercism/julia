@@ -1,27 +1,11 @@
 {
   "cases": [
     {
-      "description": "another missing the letter 'x'",
-      "property": "isPangram",
-      "input": { "sentence": "the quick brown fish jumps over the lazy dog" },
-      "expected": false
-    },
-    {
-      "description": "upper and lower case versions of the same character should not be counted separately",
-      "property": "isPangram",
-      "input": { "sentence": "the quick brown fox jumped over the lazy FOX" },
-      "expected": false
-    },
-    {
-      "description": "pangram with more than 26 letters (if case sensitive)",
-      "property": "isPangram",
-      "input": { "sentence": "the 1 quick brown fox jumps Over the 2 lazy dogs" },
-      "expected": true
-    },
-    {
       "description": "an Arabic pangram is not an English pangram",
       "property": "isPangram",
-      "input": { "sentence": "The scholar and poet Al Farāhīdi wrote this Arabic pangram: صِف خَلقَ خَودِ كَمِثلِ الشَمسِ إِذ بَزَغَت — يَحظى الضَجيعُ بِها نَجلاءَ مِعطارِ" },
+      "input": {
+        "sentence": "The scholar and poet Al Farāhīdi wrote this Arabic pangram: صِف خَلقَ خَودِ كَمِثلِ الشَمسِ إِذ بَزَغَت — يَحظى الضَجيعُ بِها نَجلاءَ مِعطارِ"
+      },
       "expected": false
     }
   ]

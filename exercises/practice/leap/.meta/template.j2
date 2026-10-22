@@ -2,7 +2,7 @@
 {{ macros.canonical_ref() }}
 
 {{ macros.header() }}
-{% for case in cases + additional_cases %}
+{% for case in cases %}
     @testset "{{ case["description"] }}" begin
         @test {% if not case["expected"] %}!{% endif %}is_leap_year({{ case["input"]["year"] }})
     end

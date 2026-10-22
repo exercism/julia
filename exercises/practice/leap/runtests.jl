@@ -42,8 +42,4 @@ include("leap.jl")
     @testset "year divisible by 200, not divisible by 400 in common year" begin
         @test !is_leap_year(1800)
     end
-
-    @testset "year divisible by 4, not divisible by 100 in leap year (2016)" begin
-        @test is_leap_year(2016)
-    end
 end

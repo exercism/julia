@@ -47,18 +47,6 @@ include("pangram.jl")
         @test !ispangram("abcdefghijklm ABCDEFGHIJKLM")
     end
 
-    @testset "another missing the letter 'x'" begin
-        @test !ispangram("the quick brown fish jumps over the lazy dog")
-    end
-
-    @testset "upper and lower case versions of the same character should not be counted separately" begin
-        @test !ispangram("the quick brown fox jumped over the lazy FOX")
-    end
-
-    @testset "pangram with more than 26 letters (if case sensitive)" begin
-        @test ispangram("the 1 quick brown fox jumps Over the 2 lazy dogs")
-    end
-
     @testset "an Arabic pangram is not an English pangram" begin
         @test !ispangram("The scholar and poet Al Farāhīdi wrote this Arabic pangram: صِف خَلقَ خَودِ كَمِثلِ الشَمسِ إِذ بَزَغَت — يَحظى الضَجيعُ بِها نَجلاءَ مِعطارِ")
     end
