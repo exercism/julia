@@ -8,3 +8,5 @@ Manifest.toml
 .idea/
 
 *.pyc
+
+CLAUDE.md

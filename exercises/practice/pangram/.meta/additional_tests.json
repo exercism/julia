@@ -1,0 +1,12 @@
+{
+  "cases": [
+    {
+      "description": "an Arabic pangram is not an English pangram",
+      "property": "isPangram",
+      "input": {
+        "sentence": "The scholar and poet Al Farāhīdi wrote this Arabic pangram: صِف خَلقَ خَودِ كَمِثلِ الشَمسِ إِذ بَزَغَت — يَحظى الضَجيعُ بِها نَجلاءَ مِعطارِ"
+      },
+      "expected": false
+    }
+  ]
+}
