@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # Synopsis:
-# Verify that each practice exercise's example solution passes the tests.
-# You can either verify all practice exercises or a single exercise.
+# Verify that each exercise's example/exemplar solution passes the tests.
+# You can either verify all exercises or a single exercise.
 
-# Example: verify all practice exercises
+# Example: verify all exercises
 # bin/verify-exercises
 
 # Example: verify single exercise
@@ -62,7 +62,7 @@ verify_exercises() {
     local failed=()
 
     shopt -s nullglob
-    for exercise_dir in ./exercises/practice/${exercise_slug}/; do
+    for exercise_dir in ./exercises/{concept,practice}/${exercise_slug}/; do
         if [[ -d "${exercise_dir}" ]]; then
             verify_exercise "${exercise_dir}" || failed+=("$(basename "${exercise_dir}")")
             ((++count))
