@@ -2,9 +2,20 @@
 {{ macros.canonical_ref() }}
 
 {{ macros.header() }}
-{% for case in cases %}
+{% for case in cases if "big-integer" not in case.scenarios %}
     @testset "{{ case["description"] }}" begin
         @test {% if not case["expected"] %}!{% endif %}isarmstrong({{ case["input"]["number"] }})
     end
 {% endfor %}
+
+    # Bonus tasks: enabled by adding `const TEST_BIG_INTEGERS = true` to the solution file
+    if isdefined(TEST_BIG_INTEGERS)
+        @eval @testset "big_integers" begin
+            {% for case in cases if "big-integer" in case.scenarios %}
+                @testset "{{ case["description"] }}" begin
+                    @test {% if not case["expected"] %}!{% endif %}isarmstrong({{ case["input"]["number"] }})
+                end
+            {% endfor %}       
+        end
+    end
 end
