@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/largest-series-product/canonical-data.json
+# File last updated on 2026-10-23
+
 using Test
 
 include("largest-series-product.jl")
@@ -24,11 +28,12 @@ include("largest-series-product.jl")
     end
 
     @testset "can find the largest product of 5 with numbers in order" begin
-        @test largest_product("0123456789", 5) == 15_120
+        @test largest_product("0123456789", 5) == 15120
     end
 
     @testset "can get the largest product of a big number" begin
-        @test largest_product("73167176531330624919225119674426574742355349194934", 6) == 23_520
+        @test largest_product("73167176531330624919225119674426574742355349194934", 6) ==
+              23520
     end
 
     @testset "reports zero if the only digits are zero" begin
@@ -39,21 +44,19 @@ include("largest-series-product.jl")
         @test largest_product("99099", 3) == 0
     end
 
-    @testset "error handling" begin
-        @testset "rejects span longer than string length" begin
-            @test_throws ArgumentError largest_product("123", 4)
-        end
+    @testset "rejects span longer than string length" begin
+        @test_throws ArgumentError largest_product("123", 4)
+    end
 
-        @testset "rejects empty string and nonzero span" begin
-            @test_throws ArgumentError largest_product("", 1)
-        end
+    @testset "rejects empty string and nonzero span" begin
+        @test_throws ArgumentError largest_product("", 1)
+    end
 
-        @testset "rejects invalid character in digits" begin
-            @test_throws ArgumentError largest_product("1234a5", 2)
-        end
+    @testset "rejects invalid character in digits" begin
+        @test_throws ArgumentError largest_product("1234a5", 2)
+    end
 
-        @testset "rejects negative span" begin
-            @test_throws ArgumentError largest_product("12345", -1)
-        end
+    @testset "rejects negative span" begin
+        @test_throws ArgumentError largest_product("12345", -1)
     end
 end

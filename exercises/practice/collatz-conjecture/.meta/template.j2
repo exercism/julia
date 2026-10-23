@@ -1,0 +1,14 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{% for case in cases %}
+    @testset "{{ case["description"] }}" begin
+    {%- if case is error_case %}
+        @test_throws DomainError collatz_steps({{ case["input"]["number"] }})
+    {%- else %}
+        @test collatz_steps({{ case["input"]["number"] }}) == {{ case["expected"] }}
+    {%- endif %}
+    end
+{% endfor %}
+end
