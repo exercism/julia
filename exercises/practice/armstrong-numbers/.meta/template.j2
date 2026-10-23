@@ -9,7 +9,7 @@
 {% endfor %}
 
     # Bonus tasks: enabled by adding `const TEST_BIG_INTEGERS = true` to the solution file
-    if isdefined(TEST_BIG_INTEGERS)
+    if @isdefined(TEST_BIG_INTEGERS)
         @eval @testset "big_integers" begin
             {% for case in cases if "big-integer" in case.scenarios %}
                 @testset "{{ case["description"] }}" begin

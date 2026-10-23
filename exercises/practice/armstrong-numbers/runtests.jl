@@ -44,7 +44,7 @@ include("armstrong-numbers.jl")
     end
 
     # Bonus tasks: enabled by adding `const TEST_BIG_INTEGERS = true` to the solution file
-    if isdefined(TEST_BIG_INTEGERS)
+    if @isdefined(TEST_BIG_INTEGERS)
         @eval @testset "big_integers" begin
             @testset "Armstrong number containing seven zeroes" begin
                 @test isarmstrong(186709961001538790100634132976990)
