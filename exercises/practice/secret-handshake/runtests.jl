@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/secret-handshake/canonical-data.json
+# File last updated on 2026-10-23
+
 using Test
 
 include("secret-handshake.jl")
@@ -45,9 +49,5 @@ include("secret-handshake.jl")
 
     @testset "do nothing for zero" begin
         @test secret_handshake(0) == []
-    end
-
-    @testset "do nothing if lower 5 bits not set" begin
-        @test secret_handshake(32) == []
     end
 end

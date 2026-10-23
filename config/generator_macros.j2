@@ -35,3 +35,8 @@ include("{{ exercise }}.jl")
 {% macro julia_string(s) -%}
 "{{ s | replace("\\", "\\\\") | replace('"', '\\"') | replace("$", "\\$") }}"
 {%- endmacro %}
+
+{# A Julia vector literal; string elements are quoted with julia_string #}
+{% macro julia_vector(xs) -%}
+[{% for x in xs %}{% if x is string %}{{ julia_string(x) }}{% else %}{{ x }}{% endif %}{% if not loop.last %}, {% endif %}{% endfor %}]
+{%- endmacro %}
