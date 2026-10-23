@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/eliuds-eggs/canonical-data.json
+# File last updated on 2026-10-22
+
 using Test
 
 include("eliuds-eggs.jl")

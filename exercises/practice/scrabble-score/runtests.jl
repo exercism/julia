@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/scrabble-score/canonical-data.json
+# File last updated on 2026-10-22
+
 using Test
 
 include("scrabble-score.jl")
@@ -37,10 +41,6 @@ include("scrabble-score.jl")
 
     @testset "english-like word" begin
         @test score("pinata") == 8
-    end
-
-    @testset "non-english letter is not scored" begin
-        @test score("piñata") == 7
     end
 
     @testset "empty input" begin

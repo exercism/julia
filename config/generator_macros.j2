@@ -30,3 +30,8 @@ include("{{ exercise }}.jl")
 {{ set }} = {{ class_name }}()
 {%- endif %}
 {%- endmacro %}
+
+{# A Julia string literal, with \, " and $ escaped #}
+{% macro julia_string(s) -%}
+"{{ s | replace("\\", "\\\\") | replace('"', '\\"') | replace("$", "\\$") }}"
+{%- endmacro %}
