@@ -1984,6 +1984,11 @@
       "uuid": "5eaf65fc-67c8-4dc8-a69e-a02333066cd5",
       "slug": "interfaces",
       "name": "Interfaces"
+    },
+    {
+      "uuid": "91fa337c-ad06-43a8-ad38-9638614aaf3e",
+      "slug": "concurrency-and-parallelism",
+      "name": "Concurrency And Parallelism"
     }
   ],
   "key_features": [
