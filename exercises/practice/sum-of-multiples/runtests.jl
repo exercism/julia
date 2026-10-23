@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/sum-of-multiples/canonical-data.json
+# File last updated on 2026-10-23
+
 using Test
 
 include("sum-of-multiples.jl")
@@ -7,7 +11,7 @@ include("sum-of-multiples.jl")
         @test sum_of_multiples(1, [3, 5]) == 0
     end
 
-    @testset "test one factor has multiples within limit" begin
+    @testset "one factor has multiples within limit" begin
         @test sum_of_multiples(4, [3, 5]) == 3
     end
 
@@ -43,7 +47,7 @@ include("sum-of-multiples.jl")
         @test sum_of_multiples(51, [5, 25]) == 275
     end
 
-    @testset "test much larger factors" begin
+    @testset "much larger factors" begin
         @test sum_of_multiples(10000, [43, 47]) == 2203160
     end
 
@@ -59,11 +63,11 @@ include("sum-of-multiples.jl")
         @test sum_of_multiples(1, [0]) == 0
     end
 
-    @testset "the factor 0 does not affect the sum_of_multiples of other factors" begin
+    @testset "the factor 0 does not affect the sum of multiples of other factors" begin
         @test sum_of_multiples(4, [3, 0]) == 3
     end
 
-    @testset "solutions using include exclude must extend to cardinality greater than 3" begin
+    @testset "solutions using include-exclude must extend to cardinality greater than 3" begin
         @test sum_of_multiples(10000, [2, 3, 5, 7, 11]) == 39614537
     end
 end

@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/prime-factors/canonical-data.json
+# File last updated on 2026-10-23
+
 using Test
 
 include("prime-factors.jl")
@@ -15,16 +19,12 @@ include("prime-factors.jl")
         @test prime_factors(3) == [3]
     end
 
-    @testset "product of first prime" begin
-        @test prime_factors(4) == [2, 2]
-    end
-
     @testset "square of a prime" begin
         @test prime_factors(9) == [3, 3]
     end
 
-    @testset "product of first and second prime" begin
-        @test prime_factors(6) == [2, 3]
+    @testset "product of first prime" begin
+        @test prime_factors(4) == [2, 2]
     end
 
     @testset "cube of a prime" begin
@@ -35,12 +35,16 @@ include("prime-factors.jl")
         @test prime_factors(27) == [3, 3, 3]
     end
 
-    @testset "product of primes and non-primes" begin
-        @test prime_factors(12) == [2, 2, 3]
-    end
-
     @testset "product of third prime" begin
         @test prime_factors(625) == [5, 5, 5, 5]
+    end
+
+    @testset "product of first and second prime" begin
+        @test prime_factors(6) == [2, 3]
+    end
+
+    @testset "product of primes and non-primes" begin
+        @test prime_factors(12) == [2, 2, 3]
     end
 
     @testset "product of primes" begin

@@ -1,0 +1,10 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{% for case in cases %}
+    @testset "{{ case["description"] }}" begin
+        @test sum_of_multiples({{ case["input"]["limit"] }}, {% if case["input"]["factors"] %}{{ macros.julia_vector(case["input"]["factors"]) }}{% else %}Int[]{% endif %}) == {{ case["expected"] }}
+    end
+{% endfor %}
+end
