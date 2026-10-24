@@ -1,0 +1,11 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{% for case in cases %}
+    @testset "{{ case["description"] }}" begin
+    {%- set garden = macros.julia_vector(case["input"]["garden"]) if case["input"]["garden"] else "String[]" %}
+        @test annotate({{ garden }}) == {{ macros.julia_vector(case["expected"]) }}
+    end
+{% endfor %}
+end
