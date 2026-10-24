@@ -1,0 +1,28 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{%- set bucket = {"one": 1, "two": 2} %}
+{%- macro test_case(case) %}
+{%- if case["cases"] %}
+    @testset "{{ case["description"] }}" begin
+    {%- for subcase in case["cases"] %}
+        {{ test_case(subcase) }}
+    {% endfor %}
+    end
+{%- else %}
+    @testset "{{ case["description"] }}" begin
+    {%- set i = case["input"] %}
+    {%- set args = [i["bucketOne"], i["bucketTwo"], i["goal"], bucket[i["startBucket"]]] | join(", ") %}
+    {%- if case is error_case %}
+        @test_throws DomainError twobucket({{ args }})
+    {%- else %}
+        @test twobucket({{ args }}) == ({{ case["expected"]["moves"] }}, {{ bucket[case["expected"]["goalBucket"]] }}, {{ case["expected"]["otherBucket"] }})
+    {%- endif %}
+    end
+{%- endif %}
+{%- endmacro %}
+{% for case in cases %}
+    {{ test_case(case) }}
+{% endfor %}
+end

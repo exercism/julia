@@ -1,0 +1,22 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header(solution="sudoku-util.jl") }}
+{%- macro test_case(case) %}
+{%- if case["cases"] %}
+    @testset "{{ case["description"] }}" begin
+    {%- for subcase in case["cases"] %}
+        {{ test_case(subcase) }}
+    {% endfor %}
+    end
+{%- else %}
+    @testset "{{ case["description"] }}" begin
+    {%- set cage = case["input"]["cage"] %}
+        @test combinations_in_cage({{ cage["sum"] }}, {{ cage["size"] }}{% if cage["exclude"] %}, {{ macros.julia_vector(cage["exclude"]) }}{% endif %}) == {{ macros.julia_vector(case["expected"]) }}
+    end
+{%- endif %}
+{%- endmacro %}
+{% for case in cases %}
+    {{ test_case(case) }}
+{% endfor %}
+end

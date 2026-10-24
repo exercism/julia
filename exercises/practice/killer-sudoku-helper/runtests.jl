@@ -1,11 +1,47 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/killer-sudoku-helper/canonical-data.json
+# File last updated on 2026-10-24
+
 using Test
 
 include("sudoku-util.jl")
 
 @testset verbose = true "tests" begin
     @testset "Trivial 1-digit cages" begin
-        for n in 1:9
-            @test combinations_in_cage(n, 1) == [[n]]
+        @testset "1" begin
+            @test combinations_in_cage(1, 1) == [[1]]
+        end
+
+        @testset "2" begin
+            @test combinations_in_cage(2, 1) == [[2]]
+        end
+
+        @testset "3" begin
+            @test combinations_in_cage(3, 1) == [[3]]
+        end
+
+        @testset "4" begin
+            @test combinations_in_cage(4, 1) == [[4]]
+        end
+
+        @testset "5" begin
+            @test combinations_in_cage(5, 1) == [[5]]
+        end
+
+        @testset "6" begin
+            @test combinations_in_cage(6, 1) == [[6]]
+        end
+
+        @testset "7" begin
+            @test combinations_in_cage(7, 1) == [[7]]
+        end
+
+        @testset "8" begin
+            @test combinations_in_cage(8, 1) == [[8]]
+        end
+
+        @testset "9" begin
+            @test combinations_in_cage(9, 1) == [[9]]
         end
     end
 

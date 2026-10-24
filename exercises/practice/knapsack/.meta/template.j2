@@ -1,0 +1,28 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+using Test
+
+include("knapsack.jl")
+
+Item = NamedTuple{(:weight, :value),Tuple{Int,Int}}
+
+@testset verbose = true "tests" begin
+{%- macro test_case(case) %}
+{%- if case["cases"] %}
+    @testset "{{ case["description"] }}" begin
+    {%- for subcase in case["cases"] %}
+        {{ test_case(subcase) }}
+    {% endfor %}
+    end
+{%- else %}
+    @testset "{{ case["description"] }}" begin
+    {%- set items = case["input"]["items"] %}
+        @test maximum_value({{ case["input"]["maximumWeight"] }}, {% if items %}[{% for it in items %}Item(({{ it["weight"] }}, {{ it["value"] }})){% if not loop.last %}, {% endif %}{% endfor %}]{% else %}Item[]{% endif %}) == {{ case["expected"] }}
+    end
+{%- endif %}
+{%- endmacro %}
+{% for case in cases %}
+    {{ test_case(case) }}
+{% endfor %}
+end

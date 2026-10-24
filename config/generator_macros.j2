@@ -15,10 +15,11 @@
 # File last updated on {{ current_date }}
 {%- endmacro -%}
 
-{%- macro header(imports=[], ignore=[]) %}
+{# solution: the student's file, when it isn't named after the exercise slug #}
+{%- macro header(imports=[], ignore=[], solution=none) %}
 using Test
 
-include("{{ exercise }}.jl")
+include("{{ solution or exercise ~ ".jl" }}")
 
 @testset verbose = true "tests" begin
 {%- endmacro -%}
