@@ -36,7 +36,7 @@ include("{{ exercise }}.jl")
 "{{ s | replace("\\", "\\\\") | replace('"', '\\"') | replace("$", "\\$") }}"
 {%- endmacro %}
 
-{# A Julia vector literal; string elements are quoted with julia_string #}
+{# A Julia vector literal; string elements are quoted with julia_string, nested lists become nested vectors #}
 {% macro julia_vector(xs) -%}
-[{% for x in xs %}{% if x is string %}{{ julia_string(x) }}{% else %}{{ x }}{% endif %}{% if not loop.last %}, {% endif %}{% endfor %}]
+[{% for x in xs %}{% if x is string %}{{ julia_string(x) }}{% elif x is sequence %}{{ julia_vector(x) }}{% else %}{{ x }}{% endif %}{% if not loop.last %}, {% endif %}{% endfor %}]
 {%- endmacro %}

@@ -1,0 +1,21 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{%- macro test_case(case) %}
+    @testset "{{ case["description"] }}" begin
+    {%- if case["property"] == "consistency" %}
+        @test decode(encode("{{ case["input"]["string"] }}")) == "{{ case["expected"] }}"
+    {%- else %}
+        @test {{ case["property"] }}("{{ case["input"]["string"] }}") == "{{ case["expected"] }}"
+    {%- endif %}
+    end
+{%- endmacro %}
+{% for group in cases %}
+    @testset "{{ group["description"] }}" begin
+    {%- for case in group["cases"] %}
+        {{ test_case(case) }}
+    {% endfor %}
+    end
+{% endfor %}
+end

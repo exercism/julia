@@ -1,0 +1,17 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{%- macro test_case(case) %}
+    @testset "{{ case["description"] }}" begin
+        @test translate("{{ case["input"]["phrase"] }}") == "{{ case["expected"] }}"
+    end
+{%- endmacro %}
+{% for group in cases %}
+    @testset "{{ group["description"] }}" begin
+    {%- for case in group["cases"] %}
+        {{ test_case(case) }}
+    {% endfor %}
+    end
+{% endfor %}
+end
