@@ -3,9 +3,8 @@
 
 {{ macros.header() }}
 {% for case in cases + additional_cases %}
-    {%- set sentence = case["input"]["sentence"] | replace("\\", "\\\\") | replace('"', '\\"') | replace("$", "\\$") %}
     @testset "{{ case["description"] }}" begin
-        @test {% if not case["expected"] %}!{% endif %}ispangram("{{ sentence }}")
+        @test {% if not case["expected"] %}!{% endif %}ispangram({{ macros.julia_string(case["input"]["sentence"]) }})
     end
 {% endfor %}
 end

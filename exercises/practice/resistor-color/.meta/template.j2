@@ -1,0 +1,25 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{%- macro test_case(case) %}
+    @testset "{{ case["description"] }}" begin
+    {%- if case["property"] == "colors" %}
+        @test collect(colors()) == {{ macros.julia_vector(case["expected"]) }}
+    {%- else %}
+        @test colorcode("{{ case["input"]["color"] }}") == {{ case["expected"] }}
+    {%- endif %}
+    end
+{%- endmacro %}
+{% for case in cases %}
+{%- if case["cases"] %}
+    @testset "{{ case["description"] }}" begin
+    {%- for subcase in case["cases"] %}
+        {{ test_case(subcase) }}
+    {% endfor %}
+    end
+{%- else %}
+    {{ test_case(case) }}
+{%- endif %}
+{% endfor %}
+end
