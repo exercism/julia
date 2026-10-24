@@ -1,9 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/state-of-tic-tac-toe/canonical-data.json
+# File last updated on 2026-10-24
+
 using Test
 
 include("state-of-tic-tac-toe.jl")
 
 @testset verbose = true "tests" begin
-
     @testset "Won games" begin
         @testset "Finished game where X won via left column victory" begin
             @test gamestate(["XOO", "X  ", "X  "]) == "win"
@@ -78,7 +81,6 @@ include("state-of-tic-tac-toe.jl")
         end
     end
 
-
     @testset "Drawn games" begin
         @testset "Draw" begin
             @test gamestate(["XOX", "XXO", "OXO"]) == "draw"
@@ -89,9 +91,7 @@ include("state-of-tic-tac-toe.jl")
         end
     end
 
-
     @testset "Ongoing games" begin
-
         @testset "Ongoing game: one move in" begin
             @test gamestate(["   ", "X  ", "   "]) == "ongoing"
         end
@@ -105,9 +105,7 @@ include("state-of-tic-tac-toe.jl")
         end
     end
 
-
     @testset "Invalid boards" begin
-
         @testset "Invalid board: X went twice" begin
             @test_throws ErrorException gamestate(["XX ", "   ", "   "])
         end

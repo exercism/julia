@@ -1,0 +1,25 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{%- macro test_case(case) %}
+{%- if case["cases"] %}
+    @testset "{{ case["description"] }}" begin
+    {%- for subcase in case["cases"] %}
+        {{ test_case(subcase) }}
+    {% endfor %}
+    end
+{%- else %}
+    @testset "{{ case["description"] }}" begin
+    {%- if case is error_case %}
+        @test_throws ErrorException gamestate({{ macros.julia_vector(case["input"]["board"]) }})
+    {%- else %}
+        @test gamestate({{ macros.julia_vector(case["input"]["board"]) }}) == "{{ case["expected"] }}"
+    {%- endif %}
+    end
+{%- endif %}
+{%- endmacro %}
+{% for case in cases %}
+    {{ test_case(case) }}
+{% endfor %}
+end
