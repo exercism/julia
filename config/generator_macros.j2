@@ -49,7 +49,7 @@ Dict({% for k, v in d.items() %}{% if char_keys %}'{{ k }}'{% else %}{{ julia_st
 {# A Julia Matrix literal from a list of rows; empty and single-column matrices need special forms #}
 {% macro julia_matrix(rows) -%}
 {%- if not rows or not rows[0] -%}
-Matrix{Int}(undef, 0, 0)
+Int[;;]
 {%- elif rows[0] | length == 1 -%}
 reshape([{{ rows | map("first") | join(", ") }}], :, 1)
 {%- else -%}

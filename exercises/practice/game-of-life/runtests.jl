@@ -8,7 +8,7 @@ include("game-of-life.jl")
 
 @testset verbose = true "tests" begin
     @testset "empty matrix" begin
-        @test gameoflife(Matrix{Int}(undef, 0, 0)) == Matrix{Int}(undef, 0, 0)
+        @test gameoflife(Int[;;]) == Int[;;]
     end
 
     @testset "live cells with zero live neighbors die" begin

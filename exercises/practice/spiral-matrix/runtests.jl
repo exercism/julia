@@ -8,7 +8,7 @@ include("spiral-matrix.jl")
 
 @testset verbose = true "tests" begin
     @testset "empty spiral" begin
-        @test spiral_matrix(0) == Matrix{Int}(undef, 0, 0)
+        @test spiral_matrix(0) == Int[;;]
     end
 
     @testset "trivial spiral" begin

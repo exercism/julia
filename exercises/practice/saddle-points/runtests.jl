@@ -12,7 +12,7 @@ include("saddle-points.jl")
     end
 
     @testset "Can identify that empty matrix has no saddle points" begin
-        @test sort(saddlepoints(Matrix{Int}(undef, 0, 0))) == []
+        @test sort(saddlepoints(Int[;;])) == []
     end
 
     @testset "Can identify lack of saddle points when there are none" begin
