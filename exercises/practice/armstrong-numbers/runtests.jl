@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/armstrong-numbers/canonical-data.json
-# File last updated on 2026-10-22
+# File last updated on 2026-10-23
 
 using Test
 
@@ -41,5 +41,18 @@ include("armstrong-numbers.jl")
 
     @testset "Seven-digit number that is not an Armstrong number" begin
         @test !isarmstrong(9926314)
+    end
+
+    # Bonus tasks: enabled by adding `const TEST_BIG_INTEGERS = true` to the solution file
+    if @isdefined(TEST_BIG_INTEGERS)
+        @eval @testset "big_integers" begin
+            @testset "Armstrong number containing seven zeroes" begin
+                @test isarmstrong(186709961001538790100634132976990)
+            end
+
+            @testset "The largest and last Armstrong number" begin
+                @test isarmstrong(115132219018763992565095597973971522401)
+            end
+        end
     end
 end
