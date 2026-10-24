@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/two-bucket/canonical-data.json
+# File last updated on 2026-10-24
+
 using Test
 
 include("two-bucket.jl")
@@ -36,7 +40,7 @@ include("two-bucket.jl")
     end
 
     @testset "Not possible to reach the goal" begin
-        @test_throws DomainError twobucket(6, 15, 5, 1) 
+        @test_throws DomainError twobucket(6, 15, 5, 1)
     end
 
     @testset "With the same buckets but a different goal, then it is possible" begin
