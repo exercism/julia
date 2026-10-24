@@ -1,0 +1,10 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{% for case in cases %}
+    @testset "{{ case["description"] }}" begin
+        @test transform(Dict({% for score, letters in case["input"]["legacy"].items() %}{{ score }} => [{% for c in letters %}'{{ c }}'{% if not loop.last %}, {% endif %}{% endfor %}]{% if not loop.last %}, {% endif %}{% endfor %})) == {{ macros.julia_dict(case["expected"], char_keys=true) }}
+    end
+{% endfor %}
+end

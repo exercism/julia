@@ -31,12 +31,17 @@ include("{{ exercise }}.jl")
 {%- endif %}
 {%- endmacro %}
 
-{# A Julia string literal, with \, " and $ escaped #}
+{# A Julia string literal, with \, ", $, newlines and tabs escaped #}
 {% macro julia_string(s) -%}
-"{{ s | replace("\\", "\\\\") | replace('"', '\\"') | replace("$", "\\$") }}"
+"{{ s | replace("\\", "\\\\") | replace('"', '\\"') | replace("$", "\\$") | replace("\n", "\\n") | replace("\t", "\\t") }}"
 {%- endmacro %}
 
 {# A Julia vector literal; string elements are quoted with julia_string, nested lists become nested vectors #}
 {% macro julia_vector(xs) -%}
 [{% for x in xs %}{% if x is string %}{{ julia_string(x) }}{% elif x is sequence %}{{ julia_vector(x) }}{% else %}{{ x }}{% endif %}{% if not loop.last %}, {% endif %}{% endfor %}]
+{%- endmacro %}
+
+{# A Julia Dict literal; string keys are quoted with julia_string, or as Chars if char_keys is true #}
+{% macro julia_dict(d, char_keys=false) -%}
+Dict({% for k, v in d.items() %}{% if char_keys %}'{{ k }}'{% else %}{{ julia_string(k) }}{% endif %} => {% if v is string %}{{ julia_string(v) }}{% elif v is sequence %}{{ julia_vector(v) }}{% else %}{{ v }}{% endif %}{% if not loop.last %}, {% endif %}{% endfor %})
 {%- endmacro %}

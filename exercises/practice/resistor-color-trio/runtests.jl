@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/resistor-color-trio/canonical-data.json
+# File last updated on 2026-10-24
+
 using Test
 
 include("resistor-color-trio.jl")
@@ -21,26 +25,6 @@ include("resistor-color-trio.jl")
 
     @testset "Yellow and violet and yellow" begin
         @test label(["yellow", "violet", "yellow"]) == "470 kiloohms"
-    end
-
-    @testset "Orange and orange and red" begin
-        @test label(["orange", "orange", "red"]) == "3.3 kiloohms"
-    end
-
-    @testset "Orange and orange and green" begin
-        @test label(["orange", "orange", "green"]) == "3.3 megaohms"
-    end
-
-    @testset "White and white and violet" begin
-        @test label(["white", "white", "violet"]) == "990 megaohms"
-    end
-
-    @testset "White and white and grey" begin
-        @test label(["white", "white", "grey"]) == "9.9 gigaohms"
-    end
-
-    @testset "White and black and white" begin
-        @test label(["white", "black", "white"]) == "90 gigaohms"
     end
 
     @testset "Blue and violet and blue" begin

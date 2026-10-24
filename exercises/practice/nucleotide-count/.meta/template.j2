@@ -1,0 +1,14 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{% for case in cases %}
+    @testset "{{ case["description"] }}" begin
+    {%- if case is error_case %}
+        @test_throws DomainError count_nucleotides("{{ case["input"]["strand"] }}")
+    {%- else %}
+        @test count_nucleotides("{{ case["input"]["strand"] }}") == {{ macros.julia_dict(case["expected"], char_keys=true) }}
+    {%- endif %}
+    end
+{% endfor %}
+end
