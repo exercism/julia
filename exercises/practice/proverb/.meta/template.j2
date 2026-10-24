@@ -1,0 +1,10 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{% for case in cases %}
+    @testset "{{ case["description"] }}" begin
+        @test recite({{ macros.julia_vector(case["input"]["strings"]) }}) == {{ macros.julia_string(case["expected"] | join("\n")) }}
+    end
+{% endfor %}
+end

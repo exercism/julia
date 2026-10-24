@@ -1,12 +1,12 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/word-count/canonical-data.json
+# File last updated on 2026-10-24
+
 using Test
 
 include("word-count.jl")
 
 @testset verbose = true "tests" begin
-    @testset "no words" begin
-        @test wordcount(" .\n,\t!^&*()~@#\$%{}[]:;'/<>") == Dict()
-    end
-
     @testset "count one word" begin
         @test wordcount("word") == Dict("word" => 1)
     end
@@ -16,7 +16,8 @@ include("word-count.jl")
     end
 
     @testset "multiple occurrences of a word" begin
-        @test wordcount("one fish two fish red fish blue fish") == Dict("one" => 1, "fish" => 4, "two" => 1, "red" => 1, "blue" => 1)
+        @test wordcount("one fish two fish red fish blue fish") ==
+              Dict("one" => 1, "fish" => 4, "two" => 1, "red" => 1, "blue" => 1)
     end
 
     @testset "handles cramped lists" begin
@@ -28,7 +29,8 @@ include("word-count.jl")
     end
 
     @testset "ignore punctuation" begin
-        @test wordcount("car: carpet as java: javascript!!&@\$%^&") == Dict("car" => 1, "carpet" => 1, "as" => 1, "java" => 1, "javascript" => 1)
+        @test wordcount("car: carpet as java: javascript!!&@\$%^&") ==
+              Dict("car" => 1, "carpet" => 1, "as" => 1, "java" => 1, "javascript" => 1)
     end
 
     @testset "include numbers" begin
@@ -40,24 +42,30 @@ include("word-count.jl")
     end
 
     @testset "with apostrophes" begin
-        @test wordcount("First: don't laugh. Then: don't cry.") == Dict("first" => 1, "don't" => 2, "laugh" => 1, "then" => 1, "cry" => 1)
-        @test wordcount("Should've could've would've") == Dict("should've" => 1, "could've" => 1, "would've" => 1)
+        @test wordcount("First: don't laugh. Then: don't cry.") ==
+              Dict("first" => 1, "don't" => 2, "laugh" => 1, "then" => 1, "cry" => 1)
     end
 
     @testset "with quotations" begin
-        @test wordcount("Joe can't tell between 'large' and large.") == Dict("joe" => 1, "can't" => 1, "tell" => 1, "between" => 1, "large" => 2, "and" => 1)
+        @test wordcount("Joe can't tell between 'large' and large.") ==
+              Dict("joe" => 1, "can't" => 1, "tell" => 1, "between" => 1, "large" => 2,
+                   "and" => 1)
     end
 
     @testset "substrings from the beginning" begin
-        @test wordcount("Joe can't tell between app, apple and a.") == Dict("joe" => 1, "can't" => 1, "tell" => 1, "between" => 1, "app" => 1, "apple" => 1, "and" => 1, "a" => 1)
+        @test wordcount("Joe can't tell between app, apple and a.") ==
+              Dict("joe" => 1, "can't" => 1, "tell" => 1, "between" => 1, "app" => 1,
+                   "apple" => 1, "and" => 1, "a" => 1)
     end
 
     @testset "multiple spaces not detected as a word" begin
-        @test wordcount(" multiple   whitespaces") == Dict("multiple" => 1, "whitespaces" => 1)
+        @test wordcount(" multiple   whitespaces") ==
+              Dict("multiple" => 1, "whitespaces" => 1)
     end
 
     @testset "alternating word separators not detected as a word" begin
-        @test wordcount(",\n,one,\n ,two \n 'three'") == Dict("one" => 1, "two" => 1, "three" => 1)
+        @test wordcount(",\n,one,\n ,two \n 'three'") ==
+              Dict("one" => 1, "two" => 1, "three" => 1)
     end
 
     @testset "quotation for word with apostrophe" begin

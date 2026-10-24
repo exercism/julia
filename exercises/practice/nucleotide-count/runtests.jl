@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/nucleotide-count/canonical-data.json
+# File last updated on 2026-10-24
+
 using Test
 
 include("nucleotide-count.jl")
@@ -7,7 +11,7 @@ include("nucleotide-count.jl")
         @test count_nucleotides("") == Dict('A' => 0, 'C' => 0, 'G' => 0, 'T' => 0)
     end
 
-    @testset "strand with one nucleotide in single-character input" begin
+    @testset "can count one nucleotide in single-character input" begin
         @test count_nucleotides("G") == Dict('A' => 0, 'C' => 0, 'G' => 1, 'T' => 0)
     end
 
@@ -16,7 +20,8 @@ include("nucleotide-count.jl")
     end
 
     @testset "strand with multiple nucleotides" begin
-        @test count_nucleotides("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC") == Dict('A' => 20, 'C' => 12, 'G' => 17, 'T' => 21)
+        @test count_nucleotides("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC") ==
+              Dict('A' => 20, 'C' => 12, 'G' => 17, 'T' => 21)
     end
 
     @testset "strand with invalid nucleotides" begin
