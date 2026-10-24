@@ -1,10 +1,13 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/perfect-numbers/canonical-data.json
+# File last updated on 2026-10-24
+
 using Test
 
 include("perfect-numbers.jl")
 
 @testset verbose = true "tests" begin
     @testset "Perfect numbers" begin
-
         @testset "Smallest perfect number is classified correctly" begin
             @test isperfect(6)
         end
@@ -16,15 +19,9 @@ include("perfect-numbers.jl")
         @testset "Large perfect number is classified correctly" begin
             @test isperfect(33550336)
         end
-        
-        @testset "Correctly handles non-perfect numbers" begin
-            @test !isperfect(12)
-            @test !isperfect(4)
-        end
     end
 
     @testset "Abundant numbers" begin
-
         @testset "Smallest abundant number is classified correctly" begin
             @test isabundant(12)
         end
@@ -40,15 +37,9 @@ include("perfect-numbers.jl")
         @testset "Perfect square abundant number is classified correctly" begin
             @test isabundant(196)
         end
-
-        @testset "Correctly handles non-abundant numbers" begin
-            @test !isabundant(6)
-            @test !isabundant(32)
-        end
     end
 
     @testset "Deficient numbers" begin
-
         @testset "Smallest prime deficient number is classified correctly" begin
             @test isdeficient(2)
         end
@@ -68,25 +59,19 @@ include("perfect-numbers.jl")
         @testset "Edge case (no factors other than itself) is classified correctly" begin
             @test isdeficient(1)
         end
-
-        @testset "Correctly handles non-deficient numbers" begin
-            @test !isdeficient(28)
-            @test !isdeficient(30)
-        end
     end
 
     @testset "Invalid inputs" begin
-
-        @testset "Zero is rejected (not a natural number)" begin
-            @test_throws DomainError isdeficient(0)
+        @testset "Zero is rejected (as it is not a positive integer)" begin
             @test_throws DomainError isperfect(0)
             @test_throws DomainError isabundant(0)
+            @test_throws DomainError isdeficient(0)
         end
 
-        @testset "Negative integer is rejected (not a natural number)" begin
-            @test_throws DomainError isdeficient(-1)
+        @testset "Negative integer is rejected (as it is not a positive integer)" begin
             @test_throws DomainError isperfect(-1)
             @test_throws DomainError isabundant(-1)
+            @test_throws DomainError isdeficient(-1)
         end
     end
 end
