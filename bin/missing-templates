@@ -2,7 +2,7 @@
 # 
 # find exercises without a generator template (or txt file)
 # exclude deprecated exercises
-# exclude exercises with no canonical data
+# exclude exercises with no canonical data, including track-only exercises
 
 filter_deprecated() {
     grep -vFxf <(
@@ -13,10 +13,10 @@ filter_deprecated() {
 filter_canonical() {
     local probspec="${XDG_CACHE_HOME:-$HOME/.cache}/exercism/configlet/problem-specifications"
     if [[ -d $probspec ]]; then
-        grep -vFxf <(
-            find "$probspec/exercises" -mindepth 1 -type d \
-                \! -exec test -f '{}/canonical-data.json' \; \
-                -exec basename '{}' \;
+        grep -Fxf <(
+            find "$probspec/exercises" -mindepth 2 -maxdepth 2 -name canonical-data.json \
+                -exec dirname '{}' \; \
+            | xargs -n1 basename
         )
     else
         cat
