@@ -1,0 +1,30 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+using Test
+
+include("isbn-verifier.jl")
+
+"""
+    @test_nothrow expr
+
+Test that the expression `expr` does not throw an exception.
+"""
+# Julia doesn't include this because you would usually test some property of
+# your object rather than checking if an exception was thrown.
+# We define this anyway so that you can focus on the validation logic.
+macro test_nothrow(expr)
+    :(@test ( $expr; true ))
+end
+
+@testset verbose = true "tests" begin
+{% for case in cases %}
+    @testset "{{ case["description"] }}" begin
+    {%- if case["expected"] %}
+        @test_nothrow ISBN({{ macros.julia_string(case["input"]["isbn"]) }})
+    {%- else %}
+        @test_throws DomainError ISBN({{ macros.julia_string(case["input"]["isbn"]) }})
+    {%- endif %}
+    end
+{% endfor %}
+end

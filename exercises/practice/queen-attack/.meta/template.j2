@@ -1,0 +1,32 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{%- macro queen(q) -%}
+Queen({{ q["position"]["row"] }}, {{ q["position"]["column"] }})
+{%- endmacro %}
+{%- macro test_case(case) %}
+{%- if case["cases"] %}
+    @testset "{{ case["description"] }}" begin
+    {%- for subcase in case["cases"] %}
+        {{ test_case(subcase) }}
+    {% endfor %}
+    end
+{%- else %}
+    @testset "{{ case["description"] }}" begin
+    {%- if case["property"] == "create" %}
+      {%- if case is error_case %}
+        @test_throws InvalidPosition {{ queen(case["input"]["queen"]) }}
+      {%- else %}
+        @test {{ queen(case["input"]["queen"]) }} isa Queen
+      {%- endif %}
+    {%- else %}
+        @test {% if not case["expected"] %}!{% endif %}canattack({{ queen(case["input"]["white_queen"]) }}, {{ queen(case["input"]["black_queen"]) }})
+    {%- endif %}
+    end
+{%- endif %}
+{%- endmacro %}
+{% for case in cases %}
+    {{ test_case(case) }}
+{% endfor %}
+end
