@@ -1,0 +1,11 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{% for case in cases %}
+    @testset "{{ case["description"] }}" begin
+        rows, columns = matrix({{ macros.julia_string(case["input"]["string"]) }})
+        @test {{ case["property"] }}s[{{ case["input"]["index"] }}] == {{ macros.julia_vector(case["expected"]) }}
+    end
+{% endfor %}
+end
