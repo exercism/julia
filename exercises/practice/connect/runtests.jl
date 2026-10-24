@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/connect/canonical-data.json
-# File last updated on 2026-07-28
+# File last updated on 2026-10-23
 
 using Test
 
@@ -12,20 +12,17 @@ include("connect.jl")
                  " . . . . .",
                  "  . . . . .",
                  "   . . . . .",
-                 "    . . . . ."
-                 ]
+                 "    . . . . ."]
         @test connect(board) == ""
     end
 
     @testset "X can win on a 1x1 board" begin
-        board = ["X"
-                 ]
+        board = ["X"]
         @test connect(board) == "X"
     end
 
     @testset "O can win on a 1x1 board" begin
-        board = ["O"
-                 ]
+        board = ["O"]
         @test connect(board) == "O"
     end
 
@@ -33,8 +30,7 @@ include("connect.jl")
         board = ["O O O X",
                  " X . . X",
                  "  X . . X",
-                 "   X O O O"
-                 ]
+                 "   X O O O"]
         @test connect(board) == ""
     end
 
@@ -43,8 +39,7 @@ include("connect.jl")
                  " O X X X",
                  "  O X O .",
                  "   . O X .",
-                 "    X X O O"
-                 ]
+                 "    X X O O"]
         @test connect(board) == ""
     end
 
@@ -53,8 +48,7 @@ include("connect.jl")
                  " . X O .",
                  "  O . X O",
                  "   . O . X",
-                 "    . . O ."
-                 ]
+                 "    . . O ."]
         @test connect(board) == ""
     end
 
@@ -63,8 +57,7 @@ include("connect.jl")
                  " O X X X",
                  "  O X O .",
                  "   X X O X",
-                 "    . O X ."
-                 ]
+                 "    . O X ."]
         @test connect(board) == "X"
     end
 
@@ -72,8 +65,7 @@ include("connect.jl")
         board = [". . X .",
                  " X X . .",
                  "  . X X X",
-                 "   O O O O"
-                 ]
+                 "   O O O O"]
         @test connect(board) == "X"
     end
 
@@ -81,8 +73,7 @@ include("connect.jl")
         board = [". . X X",
                  " X X . .",
                  "  . X X .",
-                 "   O O O O"
-                 ]
+                 "   O O O O"]
         @test connect(board) == "X"
     end
 
@@ -91,8 +82,7 @@ include("connect.jl")
                  " O X X X",
                  "  O O O .",
                  "   X X O X",
-                 "    . O X ."
-                 ]
+                 "    . O X ."]
         @test connect(board) == "O"
     end
 
@@ -101,8 +91,7 @@ include("connect.jl")
                  " X . X . X",
                  "  . X . X .",
                  "   . X X . .",
-                 "    O O O O O"
-                 ]
+                 "    O O O O O"]
         @test connect(board) == "X"
     end
 
@@ -115,8 +104,7 @@ include("connect.jl")
                  "     O X O O O X O X O",
                  "      O X X X X X O X O",
                  "       O O O O O O O X O",
-                 "        X X X X X X X X O"
-                 ]
+                 "        X X X X X X X X O"]
         @test connect(board) == "X"
     end
 end

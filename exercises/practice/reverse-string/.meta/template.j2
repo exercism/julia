@@ -1,0 +1,22 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{%- macro test_case(case) %}
+    @testset "{{ case["description"] }}" begin
+        @test myreverse({{ macros.julia_string(case["input"]["value"]) }}) == {{ macros.julia_string(case["expected"]) }}
+    end
+{%- endmacro %}
+{% for case in cases if "grapheme" not in case["description"] %}
+    {{ test_case(case) }}
+{% endfor %}
+
+    # Bonus tasks: enabled by adding `const TEST_GRAPHEMES = true` to the solution file
+    if @isdefined(TEST_GRAPHEMES)
+        @eval @testset "graphemes" begin
+        {%- for case in cases if "grapheme" in case["description"] %}
+            {{ test_case(case) }}
+        {% endfor %}
+        end
+    end
+end

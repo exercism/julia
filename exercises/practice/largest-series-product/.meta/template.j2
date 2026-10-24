@@ -1,0 +1,14 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{% for case in cases %}
+    @testset "{{ case["description"] }}" begin
+    {%- if case is error_case %}
+        @test_throws ArgumentError largest_product("{{ case["input"]["digits"] }}", {{ case["input"]["span"] }})
+    {%- else %}
+        @test largest_product("{{ case["input"]["digits"] }}", {{ case["input"]["span"] }}) == {{ case["expected"] }}
+    {%- endif %}
+    end
+{% endfor %}
+end

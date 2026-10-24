@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/reverse-string/canonical-data.json
+# File last updated on 2026-10-23
+
 using Test
 
 include("reverse-string.jl")
@@ -27,24 +31,20 @@ include("reverse-string.jl")
         @test myreverse("drawer") == "reward"
     end
 
-    @testset "reversing a string twice" begin
-        @test myreverse(myreverse("gift")) == "gift"
-    end
-
-    @testset "emoji" begin
-        @test myreverse("hi 🐱") == "🐱 ih"
-    end
-
     @testset "wide characters" begin
         @test myreverse("子猫") == "猫子"
     end
 
+    # Bonus tasks: enabled by adding `const TEST_GRAPHEMES = true` to the solution file
     if @isdefined(TEST_GRAPHEMES)
         @eval @testset "graphemes" begin
-            @test myreverse("as⃝df̅") == "f̅ds⃝a"
-            @test myreverse("hi 👋🏾") == "👋🏾 ih"
-            @test myreverse("Würstchenstand") == "dnatsnehctsrüW"
-            @test myreverse("ผู้เขียนโปรแกรม") == "มรกแรปโนยขีเผู้"
+            @testset "grapheme cluster with pre-combined form" begin
+                @test myreverse("Würstchenstand") == "dnatsnehctsrüW"
+            end
+
+            @testset "grapheme clusters" begin
+                @test myreverse("ผู้เขียนโปรแกรม") == "มรกแรปโนยขีเผู้"
+            end
         end
     end
 end

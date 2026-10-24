@@ -1,39 +1,55 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/grains/canonical-data.json
+# File last updated on 2026-10-23
+
 using Test
 
 include("grains.jl")
 
 @testset verbose = true "tests" begin
-    @testset "beginning squares" begin
-        @test on_square(1) == 1
-        @test on_square(2) == 2
-        @test on_square(3) == 4
-        @test on_square(4) == 8
-        @test on_square(16) == 32768
-        @test on_square(32) == 2147483648
-        @test total_after(1) == 1
-        @test total_after(3) == on_square(1) + on_square(2) + on_square(3)
-    end
+    @testset "returns the number of grains on the square" begin
+        @testset "grains on square 1" begin
+            @test on_square(1) == 1
+        end
 
-    @testset "ending squares" begin
-        @test total_after(32) < total_after(64)
-        @test on_square(64) == 9223372036854775808
-        @test total_after(64) == 18446744073709551615
-    end
+        @testset "grains on square 2" begin
+            @test on_square(2) == 2
+        end
 
-    @testset "Invalid values" begin
-        @testset "Zero" begin
+        @testset "grains on square 3" begin
+            @test on_square(3) == 4
+        end
+
+        @testset "grains on square 4" begin
+            @test on_square(4) == 8
+        end
+
+        @testset "grains on square 16" begin
+            @test on_square(16) == 32768
+        end
+
+        @testset "grains on square 32" begin
+            @test on_square(32) == 2147483648
+        end
+
+        @testset "grains on square 64" begin
+            @test on_square(64) == 9223372036854775808
+        end
+
+        @testset "square 0 is invalid" begin
             @test_throws DomainError on_square(0)
-            @test_throws DomainError total_after(0)
         end
-        
-        @testset "Negative" begin
+
+        @testset "negative square is invalid" begin
             @test_throws DomainError on_square(-1)
-            @test_throws DomainError total_after(-1)
         end
-        
-        @testset "Greater than 64" begin
+
+        @testset "square greater than 64 is invalid" begin
             @test_throws DomainError on_square(65)
-            @test_throws DomainError total_after(65)
         end
+    end
+
+    @testset "returns the total number of grains on the board" begin
+        @test total_after(64) == 18446744073709551615
     end
 end
