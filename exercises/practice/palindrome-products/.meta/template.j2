@@ -1,0 +1,34 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{%- macro test_case(case) %}
+{%- if case["cases"] %}
+    @testset "{{ case["description"] }}" begin
+    {%- for subcase in case["cases"] %}
+        {{ test_case(subcase) }}
+    {% endfor %}
+    end
+{%- else %}
+    @testset "{{ case["description"] }}" begin
+    {%- set i = case["input"] %}
+    {%- set args = [i["min"], i["max"], (case["property"] == "smallest") | lower] | join(", ") %}
+    {%- if case is error_case %}
+        @test_throws ArgumentError palindromeproducts({{ args }})
+    {%- else %}
+        palindrome, factors = palindromeproducts({{ args }})
+      {%- if case["expected"]["value"] is none %}
+        @test isnothing(palindrome)
+        @test isempty(factors)
+      {%- else %}
+        @test palindrome == {{ case["expected"]["value"] }}
+        @test sort(factors) == {{ macros.julia_vector(case["expected"]["factors"] | sort) }}
+      {%- endif %}
+    {%- endif %}
+    end
+{%- endif %}
+{%- endmacro %}
+{% for case in cases %}
+    {{ test_case(case) }}
+{% endfor %}
+end

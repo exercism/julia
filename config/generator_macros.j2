@@ -15,11 +15,19 @@
 # File last updated on {{ current_date }}
 {%- endmacro -%}
 
+{# imports: extra modules to load with `using`, e.g. ["Dates"] #}
 {# solution: the student's file, when it isn't named after the exercise slug #}
-{%- macro header(imports=[], ignore=[], solution=none) %}
+{# includes: helper files to include after the solution #}
+{%- macro header(imports=[], ignore=[], solution=none, includes=[]) %}
 using Test
+{%- for module in imports %}
+using {{ module }}
+{%- endfor %}
 
 include("{{ solution or exercise ~ ".jl" }}")
+{%- for file in includes %}
+include("{{ file }}")
+{%- endfor %}
 
 @testset verbose = true "tests" begin
 {%- endmacro -%}

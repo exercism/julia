@@ -1,0 +1,28 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{%- macro bytes(xs) %}{% if xs %}[{{ xs | join(", ") }}]{% else %}UInt8[]{% endif %}{% endmacro %}
+{%- set function = {"transmitSequence": "get_transmit_sequence", "decodeMessage": "decode_sequence"} %}
+{%- macro test_case(case) %}
+{%- if case["cases"] %}
+    @testset "{{ case["description"] }}" begin
+    {%- for subcase in case["cases"] %}
+        {{ test_case(subcase) }}
+    {% endfor %}
+    end
+{%- else %}
+    @testset "{{ case["description"] }}" begin
+    {%- set call = function[case["property"]] ~ "(" ~ bytes(case["input"]["message"]) ~ ")" %}
+    {%- if case is error_case %}
+        @test_throws ErrorException {{ call }}
+    {%- else %}
+        @test {{ call }} == {{ bytes(case["expected"]) }}
+    {%- endif %}
+    end
+{%- endif %}
+{%- endmacro %}
+{% for case in cases %}
+    {{ test_case(case) }}
+{% endfor %}
+end

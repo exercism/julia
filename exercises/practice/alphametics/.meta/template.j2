@@ -1,0 +1,25 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header(includes=["permutations.jl"]) }}
+{%- macro test_case(case) %}
+{%- if case["cases"] %}
+    @testset "{{ case["description"] }}" begin
+    {%- for subcase in case["cases"] %}
+        {{ test_case(subcase) }}
+    {% endfor %}
+    end
+{%- else %}
+    @testset "{{ case["description"] }}" begin
+    {%- if case["expected"] is none %}
+        @test solve("{{ case["input"]["puzzle"] }}") === nothing
+    {%- else %}
+        @test solve("{{ case["input"]["puzzle"] }}") == {{ macros.julia_dict(case["expected"], char_keys=true) }}
+    {%- endif %}
+    end
+{%- endif %}
+{%- endmacro %}
+{% for case in cases %}
+    {{ test_case(case) }}
+{% endfor %}
+end
