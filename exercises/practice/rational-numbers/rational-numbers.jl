@@ -4,7 +4,7 @@
 # define the RationalNumber type
 # struct RationalNumber...
 
-# Implement functions to handle the following operations:
+# Implement methods to handle the following operations:
 
 # Addition x + y
 
