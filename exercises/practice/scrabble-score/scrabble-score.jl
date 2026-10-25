@@ -1,3 +1,3 @@
 function score(str)
-
+    
 end

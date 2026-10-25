@@ -7,5 +7,5 @@ Invalid strands raise a `DomainError`.
 
 """
 function count_nucleotides(strand)
-
+    
 end

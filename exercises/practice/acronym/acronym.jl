@@ -1,3 +1,3 @@
 function acronym(phrase)
-
+    
 end
