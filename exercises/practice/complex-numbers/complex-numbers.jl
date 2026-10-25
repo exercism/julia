@@ -2,41 +2,24 @@ struct ComplexNumber <: Number
     
 end
 
-function Base.real(z::ComplexNumber)
-    
-end
+# Implement methods to handle these operations.
 
-function Base.imag(z::ComplexNumber)
-    
-end
+# real(z) and imag(z)
 
-function Base.:+(z1::ComplexNumber, z2::ComplexNumber)
-    
-end
+# Addition z1 + z2
 
-function Base.:-(z1::ComplexNumber, z2::ComplexNumber)
-    
-end
+# Subtraction z1 - z2
 
-function Base.:*(z1::ComplexNumber, z2::ComplexNumber)
-    
-end
+# Multiplication z1 * z2
 
-function Base.:/(z1::ComplexNumber, z2::ComplexNumber)
-    
-end
+# Division z1 / z2
 
-function Base.abs(z::ComplexNumber)
-    
-end
+# Absolute value of z
 
-function Base.conj(z::ComplexNumber)
-    
-end
+# Complex conjugate of z
 
-function Base.exp(z::ComplexNumber)
-    
-end
+# Exponentiation e ^ z
+
 
 # Uncomment the following line to enable bonus tests involving arithmetic between real numbers and complex numbers.
 # enable_realcomplex_tests = true
