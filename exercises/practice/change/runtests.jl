@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/change/canonical-data.json
+# File last updated on 2026-10-24
+
 using Test
 
 include("change.jl")
@@ -24,7 +28,8 @@ include("change.jl")
     end
 
     @testset "large target values" begin
-        @test change([1, 2, 5, 10, 20, 50, 100], 999) == [2, 2, 5, 20, 20, 50, 100, 100, 100, 100, 100, 100, 100, 100, 100]
+        @test change([1, 2, 5, 10, 20, 50, 100], 999) ==
+              [2, 2, 5, 20, 20, 50, 100, 100, 100, 100, 100, 100, 100, 100, 100]
     end
 
     @testset "possible change without unit coins available" begin

@@ -1,4 +1,9 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/pythagorean-triplet/canonical-data.json
+# File last updated on 2026-10-24
+
 using Test
+
 include("pythagorean-triplet.jl")
 
 @testset verbose = true "tests" begin
@@ -14,7 +19,7 @@ include("pythagorean-triplet.jl")
         @test pythagorean_triplets(1000) == [(200, 375, 425)]
     end
 
-    @testset "triplets whose sum is 1001" begin
+    @testset "no matching triplets for 1001" begin
         @test pythagorean_triplets(1001) == []
     end
 
@@ -23,25 +28,14 @@ include("pythagorean-triplet.jl")
     end
 
     @testset "several matching triplets" begin
-        @test pythagorean_triplets(840) == [
-            (40, 399, 401),
-            (56, 390, 394),
-            (105, 360, 375),
-            (120, 350, 370),
-            (140, 336, 364),
-            (168, 315, 357),
-            (210, 280, 350),
-            (240, 252, 348),
-        ]
+        @test pythagorean_triplets(840) ==
+              [(40, 399, 401), (56, 390, 394), (105, 360, 375), (120, 350, 370),
+               (140, 336, 364), (168, 315, 357), (210, 280, 350), (240, 252, 348)]
     end
 
     @testset "triplets for large number" begin
-        @test pythagorean_triplets(30000) == [
-            (1200, 14375, 14425),
-            (1875, 14000, 14125),
-            (5000, 12000, 13000),
-            (6000, 11250, 12750),
-            (7500, 10000, 12500),
-        ]
+        @test pythagorean_triplets(30000) ==
+              [(1200, 14375, 14425), (1875, 14000, 14125), (5000, 12000, 13000),
+               (6000, 11250, 12750), (7500, 10000, 12500)]
     end
 end

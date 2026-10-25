@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/protein-translation/canonical-data.json
+# File last updated on 2026-10-24
+
 using Test
 
 include("protein-translation.jl")
@@ -109,10 +113,6 @@ include("protein-translation.jl")
 
     @testset "Sequence of two non-STOP codons does not translate to a STOP codon" begin
         @test proteins("AUGAUG") == ["Methionine", "Methionine"]
-    end
-
-    @testset "Non-existing codon can't translate" begin
-        @test_throws DomainError proteins("AAA")
     end
 
     @testset "Unknown amino acids, not part of a codon, can't translate" begin

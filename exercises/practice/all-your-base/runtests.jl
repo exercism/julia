@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/all-your-base/canonical-data.json
+# File last updated on 2026-10-24
+
 using Test
 
 include("all-your-base.jl")
@@ -36,7 +40,7 @@ include("all-your-base.jl")
     end
 
     @testset "empty list" begin
-        @test all_your_base([], 2, 10) == [0]
+        @test all_your_base(Int[], 2, 10) == [0]
     end
 
     @testset "single zero" begin
@@ -56,7 +60,7 @@ include("all-your-base.jl")
     end
 
     @testset "input base is zero" begin
-        @test_throws DomainError all_your_base([], 0, 10)
+        @test_throws DomainError all_your_base(Int[], 0, 10)
     end
 
     @testset "input base is negative" begin
