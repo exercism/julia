@@ -1,0 +1,27 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{#- A canonical {"v", "l", "r"} node as a Tree, or nothing for an empty node #}
+{%- macro tree(node) -%}
+{%- if node -%}
+Tree({{ macros.julia_string(node["v"]) }}, {{ tree(node["l"]) }}, {{ tree(node["r"]) }})
+{%- else -%}
+nothing
+{%- endif -%}
+{%- endmacro %}
+{% for case in cases %}
+    @testset "{{ case["description"] }}" begin
+    {%- set i = case["input"] %}
+    {%- set args = [i["preorder"], i["inorder"]] %}
+    {%- set call %}tree_from_traversals({% for xs in args %}{% if xs %}{{ macros.julia_vector(xs) }}{% else %}String[]{% endif %}{% if not loop.last %}, {% endif %}{% endfor %}){% endset %}
+    {%- if case is error_case %}
+        @test_throws ArgumentError {{ call }}
+    {%- elif not case["expected"] %}
+        @test isnothing({{ call }})
+    {%- else %}
+        @test {{ call }} == {{ tree(case["expected"]) }}
+    {%- endif %}
+    end
+{% endfor %}
+end

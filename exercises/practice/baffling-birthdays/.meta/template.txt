@@ -1,0 +1,3 @@
+The non-deterministic tests in this exercise have needed some fine tuning.
+
+Trying to automate test generation is probably more trouble than it's worth.

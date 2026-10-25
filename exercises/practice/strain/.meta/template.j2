@@ -1,0 +1,20 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{#- Julia lambdas for the canonical pseudo-code predicates #}
+{%- set predicates = {
+    "fn(x) -> true": "x -> true",
+    "fn(x) -> false": "x -> false",
+    "fn(x) -> x % 2 == 1": "x -> x % 2 == 1",
+    "fn(x) -> x % 2 == 0": "x -> x % 2 == 0",
+    "fn(x) -> starts_with(x, 'z')": "x -> startswith(x, 'z')",
+    "fn(x) -> contains(x, 5)": "x -> 5 in x",
+} %}
+{% for case in cases %}
+    @testset "{{ case["description"] }}" begin
+    {%- set values = case["input"]["list"] %}
+        @test {{ case["property"] }}({% if values %}{{ macros.julia_vector(values) }}{% else %}Int[]{% endif %}, {{ predicates[case["input"]["predicate"]] }}) == {{ macros.julia_vector(case["expected"]) }}
+    end
+{% endfor %}
+end
