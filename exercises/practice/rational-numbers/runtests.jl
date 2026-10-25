@@ -211,8 +211,8 @@ include("rational-numbers.jl")
         end
     end
 
-    # Uncomment the following line to enable bonus tests for Julia's number interfaces.
-    # enable_bonus_tests = true
+    # To enable bonus tests for Julia's number interfaces, uncomment the
+    # `enable_bonus_tests = true` line in your solution file
     if @isdefined(enable_bonus_tests) && enable_bonus_tests
         println("\nBonus tests enabled.\n")
 
