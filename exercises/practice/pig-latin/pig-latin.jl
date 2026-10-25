@@ -1,4 +1,4 @@
 function translate(phrase)
-
+    
 end
 
