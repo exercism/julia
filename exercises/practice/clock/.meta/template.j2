@@ -1,12 +1,7 @@
 {%- import "generator_macros.j2" as macros with context -%}
 {{ macros.canonical_ref() }}
 
-using Test
-using Dates
-
-include("clock.jl")
-
-@testset verbose = true "tests" begin
+{{ macros.header(imports=["Dates"]) }}
 {%- macro clock(c) -%}
 Clock({{ c["hour"] }}, {{ c["minute"] }})
 {%- endmacro %}
