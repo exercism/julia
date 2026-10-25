@@ -1,0 +1,32 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+using Test
+
+include("grade-school.jl")
+
+Student = NamedTuple{(:name, :grade),Tuple{String,Int}}
+
+@testset verbose = true "tests" begin
+{% for case in cases %}
+    @testset "{{ case["description"] }}" begin
+        school = new_school()
+    {%- set students = case["input"]["students"] %}
+    {%- if students %}
+        students = [{% for s in students %}Student(({{ macros.julia_string(s[0]) }}, {{ s[1] }})){% if not loop.last %}, {% endif %}{% endfor %}]
+    {%- endif %}
+    {%- if case["property"] == "add" %}
+        @test add!(students, school) == {{ case["expected"] | lower }}
+    {%- else %}
+      {%- if students %}
+        add!(students, school)
+      {%- endif %}
+      {%- if case["property"] == "roster" %}
+        @test roster(school) == {{ macros.julia_vector(case["expected"]) }}
+      {%- else %}
+        @test grade({{ case["input"]["desiredGrade"] }}, school) == {{ macros.julia_vector(case["expected"]) }}
+      {%- endif %}
+    {%- endif %}
+    end
+{% endfor %}
+end

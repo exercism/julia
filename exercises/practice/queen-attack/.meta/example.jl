@@ -10,7 +10,7 @@ struct Queen
             throw(InvalidPosition("row must be positive"))
         elseif row > 7
             throw(InvalidPosition("row not on board"))
-        elseif row < 0
+        elseif col < 0
             throw(InvalidPosition("column must be positive"))
         elseif col > 7
             throw(InvalidPosition("column not on board"))
