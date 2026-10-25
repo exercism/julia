@@ -1,0 +1,109 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{%- set ops = {"add": "+", "sub": "-", "mul": "*", "div": "/"} %}
+{%- macro rational(r) -%}
+RationalNumber({{ r[0] }}, {{ r[1] }})
+{%- endmacro %}
+{%- macro test_case(case) %}
+{%- if case["cases"] %}
+    @testset "{{ case["description"] }}" begin
+    {%- for subcase in case["cases"] %}
+        {{ test_case(subcase) }}
+    {% endfor %}
+    end
+{%- else %}
+    @testset "{{ case["description"] }}" begin
+    {%- set i = case["input"] %}
+    {%- set p = case["property"] %}
+    {%- if p in ops %}
+        @test {{ rational(i["r1"]) }} {{ ops[p] }} {{ rational(i["r2"]) }} == {{ rational(case["expected"]) }}
+    {%- elif p == "abs" %}
+        @test abs({{ rational(i["r"]) }}) == {{ rational(case["expected"]) }}
+    {%- elif p == "exprational" %}
+        @test {{ rational(i["r"]) }}^{{ i["n"] }} == {{ rational(case["expected"]) }}
+    {%- elif p == "expreal" %}
+        @test {{ i["x"] }}^{{ rational(i["r"]) }} ≈ {{ case["expected"] }}
+    {%- else %}
+        r = {{ rational(i["r"]) }}
+        @test numerator(r) == {{ case["expected"][0] }}
+        @test denominator(r) == {{ case["expected"][1] }}
+    {%- endif %}
+    end
+{%- endif %}
+{%- endmacro %}
+{% for case in cases %}
+    {{ test_case(case) }}
+{% endfor %}
+
+{#- Track-specific opt-in bonus tests, described in .docs/instructions.append.md #}
+    # Uncomment the following line to enable bonus tests for Julia's number interfaces.
+    # enable_bonus_tests = true
+    if @isdefined(enable_bonus_tests) && enable_bonus_tests
+        println("\nBonus tests enabled.\n")
+
+        @testset "Bonus: Julia number interfaces" begin
+            @testset "Subtype of Real" begin
+                @test RationalNumber <: Real
+            end
+
+            @testset "Zero denominator and zero numerator" begin
+                @test_throws ArgumentError RationalNumber(0, 0)
+            end
+
+            @testset "Conversion and promotion" begin
+                # To pass these tests you should define a promote_rule method and a
+                # constructor, you don't need to define methods such as
+                # `==(a::RationalNumber{Int}, b::Int)`, `promote_type`, `convert`, etc.
+                #
+                # Read the manual for how to do this and why:
+                # https://docs.julialang.org/en/v1/manual/conversion-and-promotion/
+                @test RationalNumber{Int}(10) == 10
+                @test promote_type(Int, RationalNumber{Int}) == RationalNumber{Int}
+                @test convert(RationalNumber{Int8}, 2) isa RationalNumber{Int8}
+            end
+
+            @testset "One- & Zero-elements" begin
+                @test zero(RationalNumber{Int}) == RationalNumber(0, 1)
+                @test one(RationalNumber{Int}) == RationalNumber(1, 1)
+            end
+
+            @testset "Arithmetic with integers" begin
+                @test RationalNumber(1, 2) + 4 == RationalNumber(9, 2)
+                @test 4 + RationalNumber(1, 2) == RationalNumber(9, 2)
+            end
+
+            # The following testset is based on the tests for rational numbers in Julia Base (MIT license)
+            # https://github.com/JuliaLang/julia/blob/52bafeb981bac548afd2264edb518d8d86944dca/test/rational.jl
+            # https://github.com/JuliaLang/julia/blob/52bafeb981bac548afd2264edb518d8d86944dca/LICENSE.md
+            @testset "Ordering" begin
+                for a in -5:5, b in -5:5, c in -5:5
+                    b == 0 && continue
+
+                    r = RationalNumber(a, b)
+
+                    @test (r == c) == (a / b == c)
+                    @test (r != c) == (a / b != c)
+                    @test (r <= c) == (a / b <= c)
+                    @test (r < c) == (a / b < c)
+                    @test (r >= c) == (a / b >= c)
+                    @test (r > c) == (a / b > c)
+
+                    for d in -5:5
+                        d == 0 && continue
+
+                        s = RationalNumber(c, d)
+
+                        @test (r == s) == (a / b == c / d)
+                        @test (r != s) == (a / b != c / d)
+                        @test (r <= s) == (a / b <= c / d)
+                        @test (r < s) == (a / b < c / d)
+                        @test (r >= s) == (a / b >= c / d)
+                        @test (r > s) == (a / b > c / d)
+                    end
+                end
+            end
+        end
+    end
+end

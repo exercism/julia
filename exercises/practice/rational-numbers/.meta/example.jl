@@ -56,3 +56,5 @@ inv(x::RationalNumber) = RationalNumber(denominator(x), numerator(x))
 # Ordering
 <(x::RationalNumber, y::RationalNumber) = x.den == y.den ? x.num < y.num : x.num * y.den < y.num * x.den
 <=(x::RationalNumber, y::RationalNumber) = x.den == y.den ? x.num <= y.num : x.num * y.den <= y.num * x.den
+
+enable_bonus_tests = true

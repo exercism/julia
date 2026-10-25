@@ -1,0 +1,75 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{%- set ops = {"add": "+", "sub": "-", "mul": "*", "div": "/"} %}
+{%- set fns = {"real": "real", "imaginary": "imag", "abs": "abs", "conjugate": "conj", "exp": "exp"} %}
+{#- A canonical real number, which may be an expression such as "ln(2)/2" #}
+{%- macro real(x) -%}
+{%- if x == "e" -%}
+ℯ
+{%- elif x is string -%}
+{{ x | replace("ln", "log") | replace("pi", "π") }}
+{%- else -%}
+{{ x }}
+{%- endif -%}
+{%- endmacro %}
+{#- [re, im] becomes a ComplexNumber, a bare real number stays as it is #}
+{%- macro number(z) -%}
+{%- if z is sequence and z is not string -%}
+ComplexNumber({{ real(z[0]) }}, {{ real(z[1]) }})
+{%- else -%}
+{{ real(z) }}
+{%- endif -%}
+{%- endmacro %}
+{%- macro test_case(case) %}
+{%- if case["cases"] %}
+    @testset "{{ case["description"] }}" begin
+    {%- for subcase in case["cases"] %}
+        {{ test_case(subcase) }}
+    {% endfor %}
+    end
+{%- else %}
+    @testset "{{ case["description"] }}" begin
+    {%- set i = case["input"] %}
+    {%- if case["property"] in ops %}
+        @test {{ number(i["z1"]) }} {{ ops[case["property"]] }} {{ number(i["z2"]) }} {% if case["property"] == "div" %}≈{% else %}=={% endif %} {{ number(case["expected"]) }}
+    {%- elif case["property"] == "exp" %}
+        @test exp({{ number(i["z"]) }}) ≈ {{ number(case["expected"]) }} atol = 1e-15
+    {%- else %}
+        @test {{ fns[case["property"]] }}({{ number(i["z"]) }}) == {{ number(case["expected"]) }}
+    {%- endif %}
+    end
+{%- endif %}
+{%- endmacro %}
+{% for case in cases %}
+{%- if case["description"] == "Operations between real numbers and complex numbers" %}
+
+    # Bonus A
+    # Uncomment the following line to enable bonus tests involving arithmetic between real numbers and complex numbers.
+    # enable_realcomplex_tests = true
+    if @isdefined(enable_realcomplex_tests) && enable_realcomplex_tests
+        println("\nBonus real/complex tests enabled.\n")
+
+        {{ test_case(case) }}
+    end
+{%- else %}
+    {{ test_case(case) }}
+{%- endif %}
+{% endfor %}
+
+{#- Track-specific opt-in bonus tests, described in .docs/instructions.append.md #}
+    # Bonus B
+    # Uncomment the following line to enable bonus tests for syntax sugar.
+    # enable_syntaxsugar_tests = true
+    if @isdefined(enable_syntaxsugar_tests) && enable_syntaxsugar_tests
+        println("\nBonus syntax sugar tests enabled.\n")
+
+        @testset "Syntax sugar jm" begin
+            @test ComplexNumber(0, 1)  == jm
+            @test ComplexNumber(1, 0)  == 1 + 0jm
+            @test ComplexNumber(1, 1)  == 1 + 1jm
+            @test ComplexNumber(-1, 0) == jm^2
+        end
+    end
+end

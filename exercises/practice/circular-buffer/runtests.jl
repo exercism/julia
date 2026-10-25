@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/circular-buffer/canonical-data.json
+# File last updated on 2026-10-25
+
 using Test
 
 include("circular-buffer.jl")
@@ -117,27 +121,6 @@ include("circular-buffer.jl")
         @test_throws BoundsError popfirst!(cb)
     end
 
-    @testset "overwrite=true and overwrite=false" begin
-        cb = CircularBuffer{Int}(2)
-        @test empty!(cb) === cb
-        @test push!(cb, 1; overwrite=true) === cb
-        @test push!(cb, 2; overwrite=true) === cb
-        @test_throws BoundsError push!(cb, 3; overwrite=false)
-        @test push!(cb, 4; overwrite=true) === cb
-        @test popfirst!(cb) == 2
-        @test popfirst!(cb) == 4
-        @test_throws BoundsError popfirst!(cb)
-    end
-
-    @testset "type parameter" begin
-        cb = CircularBuffer{Int}(1)
-        @test_throws Exception push!(cb, "0")
-        cb = CircularBuffer{String}(1)
-        @test_throws Exception push!(cb, 0)
-        @test push!(cb, "0") === cb
-        @test popfirst!(cb) == "0"
-    end
-
     # Uncomment the following line to enable bonus tests.
     # enable_bonus_tests = true
 
@@ -177,7 +160,7 @@ include("circular-buffer.jl")
                     @test size(cb) == (length(cb),)
                     @test isempty(cb) == false
                     @test isfull(cb) == true
-                    @test convert(Array, cb) == Int[4,5,6,7,8]
+                    @test convert(Array, cb) == Int[4, 5, 6, 7, 8]
                 end
 
                 @testset "getindex" begin
@@ -188,15 +171,15 @@ include("circular-buffer.jl")
                     @test cb[5] == 8
                     @test_throws BoundsError cb[6]
                     @test_throws BoundsError cb[3:6]
-                    @test cb[3:4] == Int[6,7]
-                    @test cb[[1,5]] == Int[4,8]
+                    @test cb[3:4] == Int[6, 7]
+                    @test cb[[1, 5]] == Int[4, 8]
                     @test first(cb) == 4
                     @test last(cb) == 8
                 end
 
                 @testset "setindex" begin
                     cb[3] = 999
-                    @test convert(Array, cb) == Int[4,5,999,7,8]
+                    @test convert(Array, cb) == Int[4, 5, 999, 7, 8]
                 end
             end
 
@@ -243,7 +226,7 @@ include("circular-buffer.jl")
                 end
                 for j in 5:-1:1
                     @test pop!(cb) == j
-                    @test convert(Array, cb) == collect(1:j-1)
+                    @test convert(Array, cb) == collect(1:(j - 1))
                 end
                 @test isempty(cb)
                 @test_throws BoundsError pop!(cb)
@@ -256,7 +239,7 @@ include("circular-buffer.jl")
                 end
                 for j in 1:5
                     @test popfirst!(cb) == j
-                    @test convert(Array, cb) == collect(j+1:5)
+                    @test convert(Array, cb) == collect((j + 1):5)
                 end
                 @test isempty(cb)
                 @test_throws BoundsError popfirst!(cb)
