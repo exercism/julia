@@ -1,0 +1,36 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{#- Assertions for the node at `path` and, recursively, its children #}
+{%- macro check_node(node, path) %}
+{%- if node is none %}
+        @test isnothing({{ path }})
+{%- else %}
+        @test nodedata({{ path }}) == {{ node["data"] | int }}
+        {{- check_node(node["left"], "leftnode(" ~ path ~ ")") }}
+        {{- check_node(node["right"], "rightnode(" ~ path ~ ")") }}
+{%- endif %}
+{%- endmacro %}
+{%- macro test_case(case) %}
+{%- if case["cases"] %}
+    @testset "{{ case["description"] }}" begin
+    {%- for subcase in case["cases"] %}
+        {{ test_case(subcase) }}
+    {% endfor %}
+    end
+{%- else %}
+    @testset "{{ case["description"] }}" begin
+        tree = BinarySearchTree([{{ case["input"]["treeData"] | map("int") | join(", ") }}])
+    {%- if case["property"] == "sortedData" %}
+        @test sort(tree) == [{{ case["expected"] | map("int") | join(", ") }}]
+    {%- else %}
+        {{- check_node(case["expected"], "tree") }}
+    {%- endif %}
+    end
+{%- endif %}
+{%- endmacro %}
+{% for case in cases %}
+    {{ test_case(case) }}
+{% endfor %}
+end
