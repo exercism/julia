@@ -1,0 +1,48 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{%- set inplace = {"intersection": "intersect", "difference": "complement", "union": "union"} %}
+{%- macro set(xs) -%}
+CustomSet({{ xs }})
+{%- endmacro %}
+{%- macro test_case(case) %}
+{%- if case["cases"] %}
+    @testset "{{ case["description"] }}" begin
+    {%- for subcase in case["cases"] %}
+        {{ test_case(subcase) }}
+    {% endfor %}
+    end
+{%- else %}
+    @testset "{{ case["description"] }}" begin
+    {%- set i = case["input"] %}
+    {%- set p = case["property"] %}
+    {%- set ex = case["expected"] %}
+    {%- if p == "empty" %}
+        @test {% if not ex %}!{% endif %}isempty({{ set(i["set"]) }})
+    {%- elif p == "contains" %}
+        @test {% if ex %}{{ i["element"] }} in {{ set(i["set"]) }}{% else %}!({{ i["element"] }} in {{ set(i["set"]) }}){% endif %}
+    {%- elif p == "subset" %}
+        @test {% if not ex %}!{% endif %}issubset({{ set(i["set1"]) }}, {{ set(i["set2"]) }})
+    {%- elif p == "disjoint" %}
+        @test {% if not ex %}!{% endif %}disjoint({{ set(i["set1"]) }}, {{ set(i["set2"]) }})
+    {%- elif p == "equal" %}
+        @test {{ set(i["set1"]) }} {% if ex %}=={% else %}!={% endif %} {{ set(i["set2"]) }}
+    {%- elif p == "add" %}
+        custom_set = {{ set(i["set"]) }}
+        push!(custom_set, {{ i["element"] }})
+        @test custom_set == {{ set(ex) }}
+    {%- else %}
+        {%- set fn = inplace[p] %}
+        @test {% if ex %}{{ fn }}({{ set(i["set1"]) }}, {{ set(i["set2"]) }}) == {{ set(ex) }}{% else %}isempty({{ fn }}({{ set(i["set1"]) }}, {{ set(i["set2"]) }})){% endif %}
+        cs1 = {{ set(i["set1"]) }}
+        {{ fn }}!(cs1, {{ set(i["set2"]) }})
+        @test {% if ex %}cs1 == {{ set(ex) }}{% else %}isempty(cs1){% endif %}
+    {%- endif %}
+    end
+{%- endif %}
+{%- endmacro %}
+{% for case in cases %}
+    {{ test_case(case) }}
+{% endfor %}
+end

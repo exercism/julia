@@ -9,13 +9,17 @@ You can extend your solution by adding the functionality described below.
 Bonus A only requires basics as outlined in the blog post. Bonus B requires significantly more knowledge of metaprogramming in Julia.
 
 ## Bonus A
+
 Implement a string literal that acts as `ROT13` on the string:
+
 ```julia
 R13"abcdefghijklmnopqrstuvwxyz" == "nopqrstuvwxyzabcdefghijklm"
 ```
 
 ## Bonus B
+
 Implement string literals `R<i>`, `i = 0, ..., 26`, that shift the string for `i` values:
+
 ```julia
 R0"Hello, World!" == "Hello, World!"
 R4"Testing 1 2 3 testing" == "Xiwxmrk 1 2 3 xiwxmrk"

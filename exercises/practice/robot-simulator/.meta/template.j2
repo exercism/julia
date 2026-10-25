@@ -1,0 +1,28 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{%- macro test_case(case) %}
+{%- if case["cases"] %}
+    @testset "{{ case["description"] }}" begin
+    {%- for subcase in case["cases"] %}
+        {{ test_case(subcase) }}
+    {% endfor %}
+    end
+{%- else %}
+    @testset "{{ case["description"] }}" begin
+    {%- set i = case["input"] %}
+    {%- set ex = case["expected"] %}
+        r = Robot(({{ i["position"]["x"] }}, {{ i["position"]["y"] }}), {{ i["direction"] | upper }})
+    {%- if case["property"] == "move" %}
+        move!(r, "{{ i["instructions"] }}")
+    {%- endif %}
+        @test position(r) == Point({{ ex["position"]["x"] }}, {{ ex["position"]["y"] }})
+        @test heading(r) == {{ ex["direction"] | upper }}
+    end
+{%- endif %}
+{%- endmacro %}
+{% for case in cases %}
+    {{ test_case(case) }}
+{% endfor %}
+end

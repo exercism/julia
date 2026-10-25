@@ -1,0 +1,22 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{%- set fn = {"squareOfSum": "square_of_sum", "sumOfSquares": "sum_of_squares", "differenceOfSquares": "difference"} %}
+{%- macro test_case(case) %}
+{%- if case["cases"] %}
+    @testset "{{ case["description"] }}" begin
+    {%- for subcase in case["cases"] %}
+        {{ test_case(subcase) }}
+    {% endfor %}
+    end
+{%- else %}
+    @testset "{{ case["description"] }}" begin
+        @test {{ fn[case["property"]] }}({{ case["input"]["number"] }})::Integer == {{ case["expected"] }}
+    end
+{%- endif %}
+{%- endmacro %}
+{% for case in cases %}
+    {{ test_case(case) }}
+{% endfor %}
+end
