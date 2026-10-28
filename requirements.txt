@@ -1,8 +1,8 @@
 Jinja2~=3.1.6
-juliacall==0.9.31
-markupsafe==3.0.2
-pytest-subtests~=0.14.2
-pytest~=8.4.0
-python-dateutil~=2.9.0
-requests~=2.32.4
-tomli>=2.2.1; python_full_version < '3.11.2'
+juliacall==0.9.37
+MarkupSafe==3.0.4
+pytest==9.2.0
+pytest-subtests~=0.15.0
+python-dateutil~=3.0.0
+requests~=2.34.2
+tomli==2.5.0
