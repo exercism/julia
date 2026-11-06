@@ -164,7 +164,7 @@ In Julia, mathematical expression involving the above mentioned arithmetic opera
 ```julia
 # ^ has highest priority,
 # then division,
-# followed by substraction and addition, from left to right.
+# followed by subtraction and addition, from left to right.
 julia> 5 - 2 + 10 / 2 ^ 2
 5.5
 

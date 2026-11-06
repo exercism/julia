@@ -92,7 +92,7 @@ julia> isnothing(m)
 true
 ```
 
-Though `match` defaults to starting at the begining of the string, we can also specify an offset `n` to ignore the first `n` characters.
+Though `match` defaults to starting at the beginning of the string, we can also specify an offset `n` to ignore the first `n` characters.
 
 ```julia-repl
 # capture first match

@@ -204,7 +204,7 @@ julia> v
 This appears to have worked in the same way, but here `v .+ 1` created a new vector `[2, 3, 4]` and then assigned it to the variable `v`, leaving the initial vector `[1, 2, 3]` in memory to be garbage collected.
 This ends up using twice as much memory as the previous example that reuses the memory allocated for the initial vector.
 
-Likewise, there are related subtlties when broadcasting with vectors of the same size.
+Likewise, there are related subtleties when broadcasting with vectors of the same size.
 For example, given two vectors `v` and `w` of the same size:
 
 - `v .= w` produces a [`copy`][copy] of `w` in the memory location of `v`. Further changes in `v` do not affect `w` and vice versa.

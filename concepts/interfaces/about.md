@@ -121,7 +121,7 @@ This is commonly done in practice when possible.
 ~~~~exercism/advanced
 When we introduced optional arguments in the [Functions][concept-functions] concept, nothing was said about implementation.
 
-Since then, we learned about multiple dipatch, so it now makes more sense to know that Julia automatically converts a function _with_ optional arguments to multiple methods _without_ optional arguments.
+Since then, we learned about multiple dispatch, so it now makes more sense to know that Julia automatically converts a function _with_ optional arguments to multiple methods _without_ optional arguments.
 
 Defining `Base.iterate(P::Powers, state=(1, 1))` is exactly equivalent to defining both `Base.iterate(P::Powers, state)` and `Base.iterate(P::Powers)` separately.
 

@@ -20,10 +20,10 @@ This Concept will focus on higher-order functions (familiar from any functional 
 
 Other possible approaches include:
 
-- Recursion (as in ML-family languages). 
+- Recursion (as in ML-family languages).
   - Julia allows this, but without tail-call optimization it risks stack overflow.
-- Metaprogramming with macros (traditionally a Lisp feature). 
-  - This is widely used in advanced Julia programming, but _approach with caution_ in most cases. 
+- Metaprogramming with macros (traditionally a Lisp feature).
+  - This is widely used in advanced Julia programming, but _approach with caution_ in most cases.
   - Other options are likely to be easier to write and much easier to debug.
 
 ## Filtering
@@ -215,7 +215,7 @@ julia> sum(map(x -> x^2 + 1, 1:3))
 
 MapReduce operations are especially popular with big data systems (Hadoop, Spark, etc), as they can operate in real time on streams of arbitrary and unknown length without exploding memory usage.
 
-As we might expect, Julia also has [`mapfoldl()`][mapfoldl] and [`mapfoldr()`][mapfoldr] functions for sitations where direction is important.
+As we might expect, Julia also has [`mapfoldl()`][mapfoldl] and [`mapfoldr()`][mapfoldr] functions for situations where direction is important.
 
 
 [loops]: https://exercism.org/tracks/julia/concepts/loops

@@ -173,7 +173,7 @@ Also, engineers familiar with calculating torque or angular momentum vectors._
 
 Whereas the dot product converts two vectors to a `scalar`, the cross product converts two 3-vectors to a third 3-vector.
 
-In the geometric representation of the vector space, the new vector is _perpendicular_ the the plane containing the two input vectors.
+In the geometric representation of the vector space, the new vector is _perpendicular_ to the plane containing the two input vectors.
 If the two inputs are parallel (up to a sign), they do not define a plane, so the output will be `[0, 0, 0]`.
 
 Order matters: `u × v == -(v × u)`.
@@ -194,7 +194,7 @@ julia> cross([1, 2, 3], [3, 4, 5])
  -2
 ```
 
-Notice that this operation is restricted to length-3 vectors (equivalent to Euclidian space with orthogonal `x, y, z` axes).
+Notice that this operation is restricted to length-3 vectors (equivalent to Euclidean space with orthogonal `x, y, z` axes).
 Mathematicians are happy to define the operation for other dimensions, with an incomprehensible word salad (higher-order tensors, wedge product, exterior product, multivectors...) as the result.
 _Most of us run away or quickly change the subject at that point!_
 
@@ -381,7 +381,7 @@ julia> rot2d(π/2, i_hat)
 ```
 
 Rotations in 3D need a more complex matrix, with two angles.
-This is hard to dispay in a Markdown document without embedding a lot of LaTeX, so check [Wikipedia][3d-rot] for the formula.
+This is hard to display in a Markdown document without embedding a lot of LaTeX, so check [Wikipedia][3d-rot] for the formula.
 
 For 3-D graphics, such as OpenGL and its successors, the convention is to work with [Homogeneous Coordinates][homogeneous].
 

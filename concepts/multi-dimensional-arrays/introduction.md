@@ -65,11 +65,11 @@ julia> [v; 2v]
  6
 ```
 
-There are functions `hcat()`and `vcat()` that do the same thing, making more expicit that these are horizontal and vertical concatenations.
+There are functions `hcat()`and `vcat()` that do the same thing, making more explicit that these are horizontal and vertical concatenations.
 The higher-dimensional generalization is the `cat()` function.
 
 ```julia-repl
-jjulia> hcat(v, 2v)
+julia> hcat(v, 2v)
 3×2 Matrix{Int64}:
  1  2
  2  4
@@ -283,7 +283,7 @@ A view like this can be used for looping, broadcasting, or all the other operati
 Also, comprehensions can be powerful and versatile with array input.
 Simple cases were mentioned in the `Loops` concept, but there will be an expanded discussion in a later concept.
 
-## Broadcasting in multiple dimansions
+## Broadcasting in multiple dimensions
 
 We discussed the 1-D case in the `Vector Operations` concept.
 

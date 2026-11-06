@@ -37,7 +37,7 @@ The `sort()` function has an obvious name, and apparently returns the sorted `Ve
 _Only joking!_
 By this stage in the syllabus, you perhaps suspect (correctly) that there are nuances we need to discuss.
 
-## Mutating vs non-mutating fuctions
+## Mutating vs non-mutating functions
 
 After running `sort(v)`, what is `v`?
 

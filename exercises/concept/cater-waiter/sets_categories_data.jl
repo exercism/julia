@@ -368,7 +368,7 @@ recipes_without_duplicates  =  [("kisir_with_warm_pita", "Kisir with Warm Pita",
 
 all_drinks  =  [("Amaretto Sour", ["almond liqueur", "bourbon", "cherries", "egg white", "lemon juice", "lemon twist", "simple syrup"]),
                 ("Aperol Spritz", ["aperol", "prosecco", "soda water"]),
-                ("Bannana Punch", ["banana", "ginger ale", "lemonade", "orange juice", "pineapple juice", "sugar", "water"]),
+                ("Banana Punch", ["banana", "ginger ale", "lemonade", "orange juice", "pineapple juice", "sugar", "water"]),
                 ("Beet Sumac Soda", ["beet", "club soda", "fresh lemon juice", "sugar", "sumac"]),
                 ("Better Than Celery Juice", ["apple cider vinegar", "black pepper", "celery stalks", "club soda", "granny smith apples", "kosher salt", "parsley"]),
                 ("Black & Blue Berries", ["blackberries", "blueberries", "honey", "lemon juice", "soda water"]),
@@ -403,11 +403,11 @@ all_drinks  =  [("Amaretto Sour", ["almond liqueur", "bourbon", "cherries", "egg
                 ("Shirley ginger", ["brooklyn crafted lemon lime ginger beer", "club soda", "grenadine", "lime juice"]),
                 ("Spiced Hibiscus Tea", ["cinnamon sticks", "dried hibiscus flowers", "ginger", "honey", "lemon juice", "lemon wheels", "whole allspice"]),
                 ("Turmeric Tonic", ["agave syrup", "cayenne pepper", "lemon", "peeled ginger", "peeled turmeric", "sparkling water"]),
-                ("Virgin Cucumber Gimlet", [";ime juice", "club soda", "muddled cucumber", "simple syrup"]),
+                ("Virgin Cucumber Gimlet", ["lime juice", "club soda", "muddled cucumber", "simple syrup"]),
                 ("Whiskey Sour", ["cherry", "lemon juice", "lemon slices", "superfine sugar", "whiskey"])
                 ]
 
-drink_names = ["Amaretto Sour Cocktail","Aperol Spritz Cocktail","Bannana Punch Mocktail","Beet Sumac Soda Mocktail",
+drink_names = ["Amaretto Sour Cocktail","Aperol Spritz Cocktail","Banana Punch Mocktail","Beet Sumac Soda Mocktail",
                "Better Than Celery Juice Mocktail","Black & Blue Berries Mocktail","Bloody Mary Cocktail",
                "Bloody Shame Mocktail","Chai Blossom Mocktail","Chile-lime Pineapple Soda Mocktail",
                "Citrus Fizz Mocktail","Dry Martini Cocktail","Espresso Martini Cocktail","Fermented Grape Soda Mocktail",

@@ -210,7 +210,7 @@ The backslash solver gives us a solution!
 
 To get the other solutions, we need the [`nullspace`][ref-nullspace] of `A2`.
 
-Adding any scalar multiple of the nullpace to the original solution will give another valid solution.
+Adding any scalar multiple of the nullspace to the original solution will give another valid solution.
 
 ```julia-repl
 # get the nummspace of A2
@@ -363,7 +363,7 @@ PCA is not part of a minimal Julia installation, but (outside of Exercism) the [
 
 Taking the PCA idea a step further, digital images are just matrices of pixel values, and we can calculate principal components for them.
 
-This has been used for decades in image compression, where PCA is a guide to what is most impotant to preserve when reducing the file size.
+This has been used for decades in image compression, where PCA is a guide to what is most important to preserve when reducing the file size.
 
 Increasingly, PCA is a vital part of image classifiers such as facial recognition.
 Next time you walk through an airport, [Big Brother][wiki-big-brother] is not just watching, he also uses Linear Algebra to understand what he sees!
