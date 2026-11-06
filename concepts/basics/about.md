@@ -7,7 +7,7 @@ There is a strong and versatile type system, which will become important in late
 In practice, Julia will usually infer a suitable default from the context.
 
 Despite its emphasis on readability, making it appear as a scripting language like Python and Ruby, Julia code is compiled before running.
-The Just In Time (JIT) compiler produces highly optimized code for each function as it is enountered, leading to high runtime speed.
+The Just In Time (JIT) compiler produces highly optimized code for each function as it is encountered, leading to high runtime speed.
 
 Julia is not an object-oriented language, and there is no class hierarchy of the sort central to many other languages.
 

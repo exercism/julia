@@ -277,7 +277,7 @@ julia> replace("abc", "a"=>"b", "b"=>"c", "c"=>"a")
 "bca"
 ```
 
-Since Julia 1.7, the `replace` function can take an arbritrary number of changes, with a guarantee that no character will be changed more than once during the replace.
+Since Julia 1.7, the `replace` function can take an arbitrary number of changes, with a guarantee that no character will be changed more than once during the replace.
 
 The `x => y` syntax is called a `pair`, an important type in Julia which is covered in more details in the `Dicts and Pairs` Concept.
 

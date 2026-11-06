@@ -306,7 +306,7 @@ julia> DateTime("14/7/2023", dtfmt)
 2023-07-14T00:00:00
 ```
 
-Creating a `DateFormat` involves significant overhead, so doing this step just once (as here with `dtfmt`) is helpful for perfomance when looping over many date/time strings.
+Creating a `DateFormat` involves significant overhead, so doing this step just once (as here with `dtfmt`) is helpful for performance when looping over many date/time strings.
 
 Formats can be much more complex than this, so see the [manual][dateformat] for details.
 
