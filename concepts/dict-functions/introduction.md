@@ -91,7 +91,7 @@ julia> [(kv.first, kv.second) for kv in d]
 
 Often, we want to use just the keys or just the values, which is easy.
 
-```juliajulia> [k for k in keys(d)]
+```julia-repl
 julia> [k for k in keys(d)]
 3-element Vector{Int64}:
  4
@@ -109,7 +109,7 @@ julia> [v for v in values(d)]
 
 Combining two `Dict`s can be useful, but we need to be clear about what we intend to do with keys that are present in more than one input.
 
-The `merge()` and `merge!()` functions will combine an arbitrary number of supplied `Dict`s in a left-to right fashion.
+The `merge()` and `merge!()` functions will combine an arbitrary number of supplied `Dict`s in a left-to-right fashion.
 
 Existing keys have their values simply overwritten, so the right-most `Dict` "wins".
 
@@ -132,7 +132,7 @@ Dict{String, Any} with 3 entries:
   "coords" => (3, 2)
 ```
 
-The `mergewith()` and `mergewith!()` functions lets us supply a function as the first argument, to define how repeated keys should be merged.
+The `mergewith()` and `mergewith!()` functions let us supply a function as the first argument, to define how repeated keys should be merged.
 Addition is a simple example.
 
 ```julia-repl

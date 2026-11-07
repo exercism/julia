@@ -129,7 +129,7 @@ julia> join(["lots", "of", "bits"], "_")
 ```
 
 Note that strings are immutable, and concatenation involves copying.
-Thus, repeated concatenations within a loop are inefficient and it is better to collect the fragments in a vector and join all of them them at the end.
+Thus, repeated concatenations within a loop are inefficient and it is better to collect the fragments in a vector and join all of them at the end.
 
 ### Repetition
 
@@ -191,7 +191,7 @@ julia> @sprintf("A circle of radius %.1f has area %.2f", r, π * r^2)
 ## String functions
 
 For simplicity, this section will concentrate on functions that return a new string and leave the input unchanged.
-Many have an equivalent, named with a `!` suffix, that modify the input in place.
+Many have an equivalent, named with a `!` suffix, that modifies the input in place.
 
 ### Length
 
@@ -318,7 +318,7 @@ julia> replace("abc", "a"=>"b", "b"=>"c", "c"=>"a")
 
 Since Julia 1.7, the [`replace`][replace] function can take an arbitrary number of changes, with a guarantee that no character will be changed more than once during the replace.
 
-The `x => y` syntax is called a `pair`, an important type in Julia which is covered in more details in the [`Dicts and Pairs`][dicts-pairs] Concept.
+The `x => y` syntax is called a `pair`, an important type in Julia which is covered in more detail in the [`Dicts and Pairs`][dicts-pairs] Concept.
 
 ***Note***: For simplicity, all the examples above use string literals.
 Many of the functions are more general, and will also work with Regular Expressions.
@@ -431,7 +431,7 @@ Various other special strings are less common in Exercism-style programming, tho
 [replace]: https://docs.julialang.org/en/v1/base/strings/#Base.replace-Tuple%7BIO,%20AbstractString,%20Vararg%7BPair%7D%7D
 [dicts-pairs]: https://exercism.org/tracks/julia/concepts/dicts-and-pairs
 [round]: https://docs.julialang.org/en/v1/base/math/#Base.round
-[macro]:https://docs.julialang.org/en/v1/manual/metaprogramming/#man-macros
+[macro]: https://docs.julialang.org/en/v1/manual/metaprogramming/#man-macros
 [occursin]: https://docs.julialang.org/en/v1/base/strings/#Base.occursin
 [contains]: https://docs.julialang.org/en/v1/base/strings/#Base.contains
 [printf-ports]: https://en.wikipedia.org/wiki/Printf

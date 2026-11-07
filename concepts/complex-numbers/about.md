@@ -47,7 +47,7 @@ Most scientists and mathematicians prefer the mathematical notation `i` for _ima
 The [manual][complex] states that "Using mathematicians' i or engineers' j for this global constant was rejected since they are such popular index variable names".
 
 By happy coincidence, this also avoids long arguments between engineers and everyone else.
-Feel free to form your own judgement about whether this influenced the decision.
+Feel free to form your own judgment about whether this influenced the decision.
 
 To access the parts of a complex number individually:
 
@@ -148,7 +148,7 @@ julia> sqrt(-1 + 0im)
 There are several functions, in addition to `real()` and `imag()`, with particular relevance for complex numbers.
 Please skip over these if they make no sense to you!
 
-- `conj()` simply flips the sign of the imaginary part of a complex number (_from + to - or vice-versa_).
+- `conj()` simply flips the sign of the imaginary part of a complex number (_from + to - or vice versa_).
     - Because of the way complex multiplication works, this is more useful than you might think.
 - `abs(<complex number>)` is guaranteed to return a real number with no imaginary part.
 - `abs2(<complex number>)` returns the square of `abs(<complex number>)`: quicker to calculate than `abs()`, and often what a calculation needs.
@@ -193,7 +193,7 @@ So a simple expression with three of the most important constants in nature `e`,
 Some people believe this is the most beautiful result in all of mathematics.
 It dates back to around 1740.
 
-The polar `(r, θ)` notation is so useful, that there are built-in functions `cis` (short for `cos(x) + isin(x)`) and `cispi` (short for `cos(πx) + isin(πx)`) which can help in constructing it more efficiently.
+The polar `(r, θ)` notation is so useful that there are built-in functions `cis` (short for `cos(x) + isin(x)`) and `cispi` (short for `cos(πx) + isin(πx)`) which can help in constructing it more efficiently.
 
 The usefulness of polar notation is found in Euler's elegant formula, `ℯ^(iθ) = cos(θ) + isin(θ) = x + iy`, where `|x + iy| = 1`.
 With `|x + iy| = r`, we have the more general polar form of `r * ℯ^(iθ) = r * (cos(θ) + isin(θ)) = x + iy`.
@@ -226,10 +226,10 @@ julia> cispi(θ / π)  # θ/π == 1/2
 
 Incidentally, this makes complex numbers very useful for performing rotations and radial displacements in 2D.
 
-For rotations, the complex number `z = x + iy`, can be rotated an angle `θ` about the origin with a simple multiplication: `z * ℯ^(iθ)`.
+For rotations, the complex number `z = x + iy` can be rotated by an angle `θ` about the origin with a simple multiplication: `z * ℯ^(iθ)`.
 Note that the `x` and `y` here are just the usual coordinates on the real 2D Cartesian plane, and a positive angle results in a *counterclockwise* rotation, while a negative angle results in a *clockwise* one.
 
-Likewise simply, a radial displacement `Δr` can be made by adding it to the magnitude `r` of a complex number in the polar form (eg. `z = r * ℯ^(iθ)` -> `z' = (r + Δr) * ℯ^(iθ)`).
+Likewise simply, a radial displacement `Δr` can be made by adding it to the magnitude `r` of a complex number in the polar form (e.g. `z = r * ℯ^(iθ)` -> `z' = (r + Δr) * ℯ^(iθ)`).
 Note how the angular part stays the same and only the magnitude, `r`, is varied, as expected.
 
 -----
@@ -262,7 +262,7 @@ Complex exponentials are ___much___ easier to work with.
 
 Only true if you are living in a cave and foraging for your food.
 
-If you are reading this on any sort of screen, you are utterly dependent on some useful 20th-Century advances made through the use of complex numbers.
+If you are reading this on any sort of screen, you are utterly dependent on some useful 20th-century advances made through the use of complex numbers.
 
 1. __Semiconductor chips__.
     - These make no sense in classical physics and can only be explained (and designed) by quantum mechanics (QM).

@@ -123,7 +123,7 @@ Note that there is an [`@assert`][assert] macro for other forms of assertion.
 
 ## The Type Hierarchy
 
-`Int64`, `Int16`, `String`, `Char`: where do these types _"come from"_.
+`Int64`, `Int16`, `String`, `Char`: where do these types _"come from"_?
 
 In many object-oriented (OO) languages, each type is a class, subclassing arranges them in a class hierarchy, and class methods define the behaviors.
 
@@ -137,7 +137,7 @@ Who knows, perhaps they also read this quote:
 
 "Object-oriented programming is an exceptionally bad idea which could only have originated in California."
 
-It is attributed to [Edsger Dijkstra][dijkstra], a brilliant computer scientist for several decades from the 1950's (though not generally noted for his sunny optimism or subtle diplomacy).
+It is attributed to [Edsger Dijkstra][dijkstra], a brilliant computer scientist for several decades from the 1950s (though not generally noted for his sunny optimism or subtle diplomacy).
 
 And yet, look at this code:
 
@@ -294,7 +294,7 @@ julia> isconcretetype(Vector), isabstracttype(Vector)
 (false, false)
 ```
 
-Though `Vector` is not a concrete types, the elements are concrete.
+Though `Vector` is not a concrete type, the elements are concrete.
 The `eltype()` (element type) function extracts this type:
 
 ```julia-repl

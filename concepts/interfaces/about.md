@@ -49,7 +49,7 @@ In other words, we only ever see the `item` while everything else remains in a b
 [Multiple dispatch][concept-multiple-dispatch] is central to this.
 The type of `iter` determines which methods are called, and the number of arguments determines whether the first or next item is returned.
 
-Methods for standard types are already defined: `Vector`, `Range`, `Set`, etc ([currently][ref-iterations-collections] 14 types in total).
+Methods for standard types are already defined: `Vector`, `Range`, `Set`, etc. ([currently][ref-iterations-collections] 14 types in total).
 
 For a custom `MyType` to share the same behaviors, we first need to define:
 - `Base.iterate(iter::MyType)`
@@ -89,7 +89,7 @@ function Base.iterate(p::Powers)
 end
 ```
 
-In this example, the first item (`p.n`) is returned to the loop and the first state `(p.n, 2)` is passed to the `iterate(P::Powers, state)` method.
+In this example, the first item (`p.n`) is returned to the loop and the first state `(p.n, 2)` is passed to the `iterate(p::Powers, state)` method.
 There we can process the state to produce the next item by multiplying the current item by the base number, thereby increasing its power by `1`.
 
 ```julia
@@ -114,8 +114,8 @@ If the index value is still within `count`, the `Tuple` is returned with the `ne
 When the `index` value exceeds `count`, then `nothing` is returned instead, to indicate iteration has terminated.
 
 Maybe you have noticed that the `iterate(p::Powers)` and `iterate(p::Powers, state)` methods have fairly similar function bodies.
-In fact, if we're clever, this similarity allows for a streamlined implementation by using only the two argument version with a default argument for the state: `Base.iterate(p::Powers, state=(1, 1))`
-With that, we wouldn't need the separate single argument `iterate(p::Powers)`.
+In fact, if we're clever, this similarity allows for a streamlined implementation by using only the two-argument version with a default argument for the state: `Base.iterate(p::Powers, state=(1, 1))`.
+With that, we wouldn't need the separate single-argument `iterate(p::Powers)`.
 This is commonly done in practice when possible.
 
 ~~~~exercism/advanced
@@ -227,7 +227,7 @@ Minimally, we need to define `getindex()`.
 ```julia-repl
 julia> function Base.getindex(P::Powers, i::Int)
           1 ≤ i ≤ P.count || throw(BoundsError(P, i))
-          return p.n ^ i
+          return P.n ^ i
        end
 
 julia> p = Powers(3, 4)
@@ -271,7 +271,7 @@ How do we want to index the entries?
 In the [Multi Dimensional Arrays Concept][concept-multi-dimensional-arrays] we introduced the two main approaches:
 
 - One index per dimension, so `M[row, col]` for a Matrix `M`.
-- A single index, corresponding to the layout of entries in memory
+- A single index, corresponding to the layout of entries in memory.
 
 These are called `Cartesian` and `Linear` respectively.
 
@@ -374,7 +374,7 @@ The function `round` exists, but no method is defined for this combination of ar
 Unsurprisingly, there is a `Rounding` interface, which minimally requires us to define `round()` for our type.
 
 ```julia-repl
-julia> Base.round(P3D::Point3D, r::RoundingMode) = Point3D(round(P3D.x, r), round(P3D.y, r),round(P3D.z, r))
+julia> Base.round(P3D::Point3D, r::RoundingMode) = Point3D(round(P3D.x, r), round(P3D.y, r), round(P3D.z, r))
 
 julia> round(p)
 Point3D(8.0, 9.0, 4.0)
@@ -390,7 +390,7 @@ Of course, we are free to define more complicated forms of rounding.
 - We might want to round `Point3D` to be an integer distance from the origin, in the same direction.
 - For angles, we might want to round to the 16 directions used by weather forecasters (_"wind SSW at 15 knots"_), meaning multiples of π/8 radians.
 - We might want to add the ability to specify `digits`, `sigdigits` or `base`.
-- There are [special options][ref-round-periods] for time periods
+- There are [special options][ref-round-periods] for time periods.
 
 ## Summary
 

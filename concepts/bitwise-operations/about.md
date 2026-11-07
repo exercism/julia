@@ -115,7 +115,7 @@ julia> xor(0b1011, 0b0010) # bit is 1 in exactly one number, not both
 "00001001"
 ```
 
-Here, `xor()`  is [exclusive-or][xor], used as a function (see below for an alternative notation).
+Here, `xor()` is [exclusive-or][xor], used as a function (see below for an alternative notation).
 
 Incidentally, the `&` and `|` operators can also be used with booleans.
 Unlike `&&` and `||`, all parts of the expression are then evaluated: there is no short-circuiting.

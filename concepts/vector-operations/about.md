@@ -26,7 +26,7 @@ There are also functions that operate on multiple vectors, such as the (very use
 
 ```julia-repl
 julia> z = zip( 1:3, ['a', 'b', 'c'], ["I", "make", "tuples"] )
-zip([1, 2, 3], ['a', 'b', 'c'], ["I", "make", "tuples"])
+zip(1:3, ['a', 'b', 'c'], ["I", "make", "tuples"])
 
 # convert iterator to vector
 julia> collect(z)
@@ -100,7 +100,7 @@ julia> sqrt.([1, 4, 9])
 
 As an aside, infix operators are really just syntactic sugar for the underlying function.
 
-This means that, for example, `[1, 5, 10] .% 3` is translated to ` mod.([1, 5, 10], 3)` by the interpreter, and the `mod.` syntax then executes (both versions return `[1, 2, 1]`).
+This means that, for example, `[1, 5, 10] .% 3` is translated to `mod.([1, 5, 10], 3)` by the interpreter, and the `mod.` syntax then executes (both versions return `[1, 2, 1]`).
 
 ### 2) Singleton expansion
 
@@ -138,7 +138,7 @@ Programmers familiar with broadcasting in other languages should note that Julia
 
 ### Broadcasting in-place
 
-If memory usage is a concern, then in-place operations are a common way to look to reduce allocations.
+If memory usage is a concern, then in-place operations are a common way to reduce allocations.
 However, the broadcasting operations in the examples above create a new `Vector` instead of modifying the original.
 
 ```julia-repl
@@ -257,10 +257,10 @@ a = collect('A':'Z')  # => 26-element Vector{Char}
 a[2]  # => 'B'
 
 # index with a range
- a[12:2:18]  # => ['L', 'N', 'P, 'R']
+a[12:2:18]  # => ['L', 'N', 'P', 'R']
 
- # index with another vector
- a[ [1, 3, 5] ]  # => ['A', 'C', 'E']
+# index with another vector
+a[ [1, 3, 5] ]  # => ['A', 'C', 'E']
 ```
 
 ### Logical indexing
@@ -276,7 +276,7 @@ julia> a[a .< 'D']
  'C': ASCII/Unicode U+0043 (category Lu: Letter, uppercase)
 ```
 
-For more complex expression the dots tend to proliferate (but they are small and easy to type).
+For more complex expressions the dots tend to proliferate (but they are small and easy to type).
 
 ```julia-repl
 julia> a[a .< 'D' .|| a .> 'W']

@@ -112,3 +112,4 @@ julia> vals::Vector{Union{Real, Missing}} = q.([4, 3.1, -1, 0])
 [nothing]: https://docs.julialang.org/en/v1/base/base/#Core.Nothing
 [missing]: https://docs.julialang.org/en/v1/base/base/#Base.missing
 [linked]: https://en.wikipedia.org/wiki/Linked_list
+[any]: https://docs.julialang.org/en/v1/base/base/#Core.Any

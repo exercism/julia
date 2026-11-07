@@ -80,7 +80,7 @@ Dict{Int64, Float64} with 5 entries:
   2 => 0.5
   3 => 0.333333
   1 => 1.0
-  ```
+```
 
 In other languages, something very similar to a `Dict` might be called a dictionary (Python), a Hash (Ruby) or a HashMap (Java).
 

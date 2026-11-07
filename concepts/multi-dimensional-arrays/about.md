@@ -5,14 +5,14 @@ Far back in the [Vectors][vectors] Concept, we noted that "_arrays can be of arb
 Since then, we have largely ignored arrays with more than one dimension, just to keep things simple.
 This decision will make more sense if you try reading the Julia reference documents, in their full complexity.
 
-However, higher dimensional arrays are _very, very_ important in scientific computing, so we need to understand them.
+However, higher-dimensional arrays are _very, very_ important in scientific computing, so we need to understand them.
 
 ***Nomenclature:*** Following centuries of mathematical precedent, we refer to 1-D arrays as `Vectors` and 2-D arrays as `Matrices`.
 
 Examples in this document will mostly be matrices.
 Working with 3 or more dimensions is syntactically near-identical, but the output is difficult and confusing to read (on a 2-D screen).
 
-The [`type`][types] of an N-dimensional of [`eltype`][eltype] `T` is `Array{T, N}`.
+The [`type`][types] of an N-dimensional array of [`eltype`][eltype] `T` is `Array{T, N}`.
 
 For convenience, and consistency with mathematical nomenclature, Julia defines some type aliases: `Vector{T}` for `Array{T, 1}` and `Matrix{T}` for `Array{T, 2}`.
 
@@ -127,7 +127,7 @@ julia> m = [1 2 3; 4 5 6]
  4  5  6
 ```
 
-However, be aware that Julia (like Fortran, R and Matlab, but _unlike_ C/C++ or NumPy) stores N-dimension arrays in [column-major order][col-major], and this can make a huge performance difference if you loop over the elements.
+However, be aware that Julia (like Fortran, R and Matlab, but _unlike_ C/C++ or NumPy) stores N-dimensional arrays in [column-major order][col-major], and this can make a huge performance difference if you loop over the elements.
 _Help your CPU cache to help you!_
 
 ```julia-repl
@@ -360,7 +360,7 @@ julia> eachcol(m)
 ```
 
 The type is a bit alarming, but only because this is a _view_ into the original array, letting us work on it without copying.
-Julia arrays can potentially be Terabytes in size, so copying is potentially a performance nightmare!
+Julia arrays can potentially be terabytes in size, so copying is potentially a performance nightmare!
 
 A view like this can be used for looping, broadcasting, or all the other operations we saw in the syllabus so far.
 
@@ -389,7 +389,7 @@ The dotted operator `.-` treats the singleton `0.5` as equivalent to `[0.5, 0.5,
 
 Extending this to higher dimensions is really just more of the same.
 
-For example, when broadcasting the multiplication of a 2x1 row vector `[1.0 1.5 2.0]` with the 2x3 matrix `[1 2 3; 4 5 6]`, it is equivalent to broadcasting `[1.0 1.5 2.0]` to `[1.0 1.5 2.0; 1.0 1.5 2.0]` with multiplication then done element-wise.
+For example, when broadcasting the multiplication of a 1x3 row vector `[1.0 1.5 2.0]` with the 2x3 matrix `[1 2 3; 4 5 6]`, it is equivalent to broadcasting `[1.0 1.5 2.0]` to `[1.0 1.5 2.0; 1.0 1.5 2.0]` with multiplication then done element-wise.
 
 ```julia-repl
 julia> m
@@ -418,7 +418,7 @@ julia> m ./ [1 1 1; 2 2 2]  # 2x3 elementwise division
  2.0  2.5  3.0
 ```
 
-**Note:** It is the non-singleton dimensions should match in size (e.g. `2x3 Matrix .* 2x1 Matrix`) for broadcasting.
+**Note:** It is the non-singleton dimensions that should match in size (e.g. `2x3 Matrix .* 2x1 Matrix`) for broadcasting.
 
 Furthermore, a function can be broadcast to each element of a `Matrix` exactly how it is done with a `Vector`.
 

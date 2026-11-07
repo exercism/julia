@@ -27,7 +27,7 @@ Note the "as possible", it is an important part of the statement.
 
 Character literals are written in single-quotes, and are distinct from strings written in double quotes.
 
-This is obvious to people from the C/C++ world, but potentially confusing to Python and Javascript programmers.
+This is obvious to people from the C/C++ world, but potentially confusing to Python and JavaScript programmers.
 
 ```julia-repl
 julia> a = 'a'  # Roman alphabet

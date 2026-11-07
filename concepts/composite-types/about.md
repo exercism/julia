@@ -7,7 +7,7 @@ It is often useful to define custom types in our programs.
 Creating new primitive types is possible, but rarely done.
 The built-in [primitive types][primitive] are not an arbitrary choice: they closely match the standard types in the LLVM compiler used by Julia for JIT compilation.
 
-Much more useful is the the ability to define [composite types][composite-types], with named fields.
+Much more useful is the ability to define [composite types][composite-types], with named fields.
 
 Other languages have something similar, calling them `structs` or `records`.
 The Julia documentation refers to them as `composite types`, though (in a slight mismatch) the language syntax defines them with the `struct` keyword.
@@ -38,7 +38,7 @@ julia> fred.age
 A few points are worth noting in the above example:
 
 - No type is specified for `id`, so the compiler interprets this as `id::Any`.
-  - **Note:**: in practice, it is best to help the compiler by specifying the type of a field with a concrete type.
+  - **Note:** in practice, it is best to help the compiler by specifying the type of a field with a concrete type.
   - We will see in a [future Concept][parametric] that using parameters is another option.
 - The type name is used as a constructor, as in `Person(id, name, age)`, to give an instance of type `Person`.
 - Individual fields can be accessed with dot notation, the same as [named tuples][named-tuple].
@@ -196,7 +196,7 @@ ConstrainedPoint(3, 5)
 The `new()` function can _only_ be used in inner constructors, and returns the desired item if the inputs are found to be valid.
 
 For invalid input, we could stop with an error message, as in the example.
-Alternatively, you may prefer to uses a placeholder such as `nothing` or `missing`.
+Alternatively, you may prefer to use a placeholder such as `nothing` or `missing`.
 See the [`Nothingness`][nothingness] Concept for more on these.
 
 

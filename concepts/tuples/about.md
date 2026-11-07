@@ -25,7 +25,7 @@ julia> t[2]
 
 # Immutable:
 julia> t[2] = 7.3
-ERROR: MethodError: no method matching setindex!(::Tuple{Int64, Float64, String}
+ERROR: MethodError: no method matching setindex!(::Tuple{Int64, Float64, String})
 ```
 There is also a `Tuple()` constructor, which will turn any iterable collection into a tuple.
 Usefully, this treats a string as an iterable collection of characters.
@@ -69,7 +69,7 @@ A [`NamedTuple`][namedtuple] pairs each value with a name.
 
 Individual fields can then be accessed with "dot" notation:
 
-```jullia-repl
+```julia-repl
 julia> nt = (a = 1, b = 7.3)
 (a = 1, b = 7.3)
 
@@ -91,7 +91,7 @@ julia> nt[:b]
 
 It is sometimes useful to split creation of a named tuple into two steps:
 
-1. Define the fields as as custom data type.
+1. Define the fields as a custom data type.
 2. Use this as a constructor to convert a tuple to a named tuple.
 
 ```julia-repl
@@ -158,3 +158,4 @@ Immutability is good in this use case, providing data safety and allowing more a
 [symbol]: https://docs.julialang.org/en/v1/base/base/#Core.Symbol
 [splat]: https://docs.julialang.org/en/v1/manual/functions/#Varargs-Functions
 [functions]: https://exercism.org/tracks/julia/concepts/functions
+[dict]: https://docs.julialang.org/en/v1/base/collections/#Dictionaries

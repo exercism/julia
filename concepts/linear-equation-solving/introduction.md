@@ -14,11 +14,11 @@ Two equations, two unknowns: a bit of substitution, and you can soon see that `x
 Look again at the left side of the previous example.
 It looks like a matrix `[4 -3; 2 7]` multiplying an unknown vector `[x, y]` to give the vector `[-2, 16]`.
 
-In Linear Algebra notation: **A** **x** = **b**, following the usual convention of Uppercase letters for matrices and lowercase for vectors.
+In Linear Algebra notation: **A** **x** = **b**, following the usual convention of uppercase letters for matrices and lowercase for vectors.
 
 ## **A x = 0** and the nullspace
 
-An important special case is when all our equations have zero on the right hand side.
+An important special case is when all our equations have zero on the right-hand side.
 
 ```
 4x - 3y = 0
@@ -45,7 +45,7 @@ Consider instead these equations:
 
 ```
 4x - 3y = 0
-8x + 6y = 0
+8x - 6y = 0
 ```
 
 The second equation is just double the first equation, adding no new information.
@@ -186,7 +186,7 @@ julia> A3 \ b3
  2.0
  3.0
 
-# remove row 3 from A3 and B3
+# remove row 3 from A3 and b3
 julia> A2 = A3[1:2, :]
 2×3 Matrix{Int64}:
  4  -3  1
@@ -213,7 +213,7 @@ To get the other solutions, we need the [`nullspace`][ref-nullspace] of `A2`.
 Adding any scalar multiple of the nullspace to the original solution will give another valid solution.
 
 ```julia-repl
-# get the nummspace of A2
+# get the nullspace of A2
 julia> N = nullspace(A2)
 3×1 Matrix{Float64}:
  -0.46499055497527725

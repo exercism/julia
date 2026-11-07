@@ -8,7 +8,7 @@ Typically, the data will be stored in arrays (or some related type), so it is re
 Arrays can be of arbitrary size (subject only to memory constraints in your hardware), and can have arbitrarily many dimensions.
 
 Some types of arrays have special names (copied from Linear Algebra).
-A 1-Dimensional array is called a `Vector` and a 2-dimensional array is called a `Matrix`.
+A 1-dimensional array is called a `Vector` and a 2-dimensional array is called a `Matrix`.
 Both are subtypes of `Array` in Julia.
 
 This introductory Concept concentrates on the basics of Vectors.
@@ -97,7 +97,7 @@ julia> fill(42, 3)
 
 There are many other options: see [the manual][prefilled].
 
-# Indexing
+## Indexing
 
 Please read and remember this rule:
 
@@ -111,8 +111,8 @@ Otherwise, indexes work as you might guess: just put them in square brackets:
 squares = [0, 1, 4, 9, 16]
 squares[1]  # 0
 squares[3]  # 4
-squares[begin]  # 0 ("begin" is synonym for 1)
-squares[end]  # 16 ("end" is synonym for length(squares))
+squares[begin]  # 0 ("begin" is a synonym for 1)
+squares[end]  # 16 ("end" is a synonym for length(squares))
 ```
 
 Note the convenience of indexing with `end` (which is very useful) and `begin` (which is probably not).
@@ -169,7 +169,7 @@ julia> push!(vals, 5, 6)  # can add multiple values
  5
  6
 
-julia> pop!(vals)  # mutates vals, return popped value
+julia> pop!(vals)  # mutates vals, returns popped value
 6
 
 julia> vals

@@ -113,7 +113,7 @@ julia> join(["lots", "of", "bits"], "_")
 ```
 
 Note that strings are immutable, and concatenation involves copying.
-Thus, repeated concatenations within a loop are inefficient and it is better to collect the fragments in a vector and join all of them them at the end.
+Thus, repeated concatenations within a loop are inefficient and it is better to collect the fragments in a vector and join all of them at the end.
 
 ### Repetition
 
@@ -169,7 +169,7 @@ julia> @sprintf("A circle of radius %.1f has area %.2f", r, π * r^2)
 ## String functions
 
 For simplicity, this section will concentrate on functions that return a new string and leave the input unchanged.
-Many have an equivalent, named with a `!` suffix, that modify the input in place.
+Many have an equivalent, named with a `!` suffix, that modifies the input in place.
 
 ### Length
 
@@ -279,7 +279,7 @@ julia> replace("abc", "a"=>"b", "b"=>"c", "c"=>"a")
 
 Since Julia 1.7, the `replace` function can take an arbitrary number of changes, with a guarantee that no character will be changed more than once during the replace.
 
-The `x => y` syntax is called a `pair`, an important type in Julia which is covered in more details in the `Dicts and Pairs` Concept.
+The `x => y` syntax is called a `pair`, an important type in Julia which is covered in more detail in the `Dicts and Pairs` Concept.
 
 ### Whitespace
 
