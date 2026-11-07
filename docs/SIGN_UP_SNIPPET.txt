@@ -1,0 +1,11 @@
+function most_common_word(text)
+    counts = Dict{String,Int}()
+    best = ""
+    for word in split(lowercase(text))
+        counts[word] = get(counts, word, 0) + 1
+        if counts[word] > get(counts, best, 0)
+            best = word
+        end
+    end
+    return "\"$best\" appears $(counts[best]) times"
+end
