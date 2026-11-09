@@ -2,7 +2,7 @@
 
 ## General guidance
 
-- prefer `isdigit` to `isnumeric` when you want to match only the western arabic numerals (0123456789)
+- prefer `isdigit` to `isnumeric` when you want to match only the Western Arabic numerals (0123456789)
 - regex is fine
 - you can use higher-order-functions like `filter` and `map` on strings
 

@@ -97,7 +97,7 @@ Another small variation would be to use `zip` rather than calculating `right` wi
     end
 ```
 
-## Approach: moving window with `maximum(f, itr)` and UTF8/ASCII optimisations
+## Approach: moving window with `maximum(f, itr)` and UTF-8/ASCII optimisations
 
 Generic Unicode-aware string processing is quite slow, so this approach shows how we can safely and efficiently treat the input as a stream of bytes while still throwing the appropriate errors even in the presence of non-ASCII characters.
 
@@ -106,7 +106,7 @@ function largest_product(str, span)
     # Get the UTF8 bytes of the string. We want the bytes because iterating
     # UTF8 by character is expensive, but valid inputs to this function will
     # only be ASCII. We will throw the "Non-digit character in str" error if we
-    # receive non-ascii strings.
+    # receive non-ASCII strings.
     #
     # This is a no-op for the CPU if the string is already encoded as UTF8
     # (which String is).
@@ -178,7 +178,7 @@ end
 ```
 
 Note that this solution uses integer division, `window ÷ leaving`, rather than standard division.
-In Julia, the unicode divide symbol means integer division, or you can write `div(window, leaving)`.
+In Julia, the Unicode divide symbol means integer division, or you can write `div(window, leaving)`.
 With standard division, each of `window` and `best` would sometimes be an Int (because `prod` will return an Int) and sometimes be a Float64, and that kind of uncertainty makes the compiler emit slower code and is confusing (the Julia community calls this kind of problem "type instability").
 
 [do-block]: https://docs.julialang.org/en/v1/manual/functions/#Do-Block-Syntax-for-Function-Arguments

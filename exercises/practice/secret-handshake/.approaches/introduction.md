@@ -49,7 +49,7 @@ end
 
 ## Approach: logical indexing
 
-gevis' solution, shows logical indexing and broadcasting.
+gevis' solution shows logical indexing and broadcasting.
 They could also have used `digits(Bool, n; base=2, pad=5)` and avoided the broadcast, which would arguably be nicer.
 
 ```julia

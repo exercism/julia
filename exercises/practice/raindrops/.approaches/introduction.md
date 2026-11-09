@@ -4,7 +4,7 @@ You can solve this exercise a great number of ways!
 
 Because this is a very small problem, almost any solution is likely to be fast enough for most purposes.
 
-Clarity and readability are generally the priority, though we will make a few comments on performance in proparation for future challenges where speed matters.
+Clarity and readability are generally the priority, though we will make a few comments on performance in preparation for future challenges where speed matters.
 
 ## Example solutions
 

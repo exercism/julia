@@ -107,7 +107,7 @@ But can we go faster?
 
 ### Dict
 
-Another natural way to map a string to an integer is to use a `Dict`, but if we do that then we want to construct the dict just once (rather than on every call to `label`.
+Another natural way to map a string to an integer is to use a `Dict`, but if we do that then we want to construct the dict just once (rather than on every call to `label`).
 The standard way to do that in Julia is to use `const` to define a module-level constant:
 
 ```julia
@@ -153,7 +153,7 @@ We could make a dict as above, mapping from `firstlast(color) => value` instead 
 
 ### Perfect hash tables
 
-In general, when you know the contents of your dict or hash table in advance it's sometimes practical to construct something called a perfect hash table ([more information on wikipedia](https://en.wikipedia.org/wiki/Perfect_hash_function), and in [this video](https://www.youtube.com/watch?v=DMQ_HcNSOAI)).
+In general, when you know the contents of your dict or hash table in advance it's sometimes practical to construct something called a perfect hash table ([more information on Wikipedia](https://en.wikipedia.org/wiki/Perfect_hash_function), and in [this video](https://www.youtube.com/watch?v=DMQ_HcNSOAI)).
 
 The code below introduces:
 - a very fast hash function suitable for our purposes, `fxhash1_32` (Julia's built-in `hash(x)` function is much better than FxHash in lots of ways, but it's also slower)

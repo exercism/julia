@@ -15,8 +15,8 @@ At the time of writing, "Approach: Find each word with regex" matches the specif
 
 - Words containing a mix of numbers and letters (e.g. "x220")
 - Double contractions: words containing more than one apostrophe (e.g. "y'ain't", "wouldn't've")
-- Words containing non-ascii letters or numerals (e.g. "café")
-    - This one is a bit subtle for solutions using regex because unlike regex in most other languages, the character classes in Julia's regexes (e.g. `\w`) are inclusive of non-ascii characters.
+- Words containing non-ASCII letters or numerals (e.g. "café")
+    - This one is a bit subtle for solutions using regex because unlike regex in most other languages, the character classes in Julia's regexes (e.g. `\w`) are inclusive of non-ASCII characters.
       You can read more about this behaviour by searching for `PCRE_UCP` in the [PCRE library's documentation](https://www.pcre.org/original/doc/html/pcreunicode.html).
 
 </details>
@@ -50,7 +50,7 @@ Dict{String,Int64} with 6 entries:
   "and"     => 1
 
 julia> wordcount("Co-operative")
-Dict{String,Int64} with 6 entries:
+Dict{String,Int64} with 2 entries:
   "co"    => 1
   "operative"   => 1
 ```
@@ -71,7 +71,7 @@ It is similar to writing `Regex(raw"foo")`, but with the benefit that the regex 
 This is a straightforward algorithm and it is easy to prove that it follows the specification exactly.
 Implementations that split by whitespace and punctuation (see below) tend to count words that the specification does not ask for, e.g. "x1".
 You can view that as a good thing or a bad thing!
-For what it is worth, traditional word counting code like `wc` treat a mix of letters and digits as a word.
+For what it is worth, traditional word counting code like `wc` treats a mix of letters and digits as a word.
 
 ```julia
 function wordcount(input)
@@ -166,7 +166,7 @@ This solution is a lot more complicated and a little quicker than the other appr
 function wordcount(str)
     counts = Dict{typeof(str)}, Int}()
     iswordchar(c) = 'a' ≤ c ≤ 'z' || 'A' ≤ c ≤ 'Z' || isdigit(c)
-    # To support more non-ascii words, you could use this instead:
+    # To support more non-ASCII words, you could use this instead:
     # iswordchar(c) = isletter(c) || isnumeric(c)
 
     in_word = false
@@ -228,7 +228,7 @@ Inspired by mentoring [rezaeir's solution](https://exercism.org/tracks/julia/exe
 
 If you don't know what a "word-boundary" is in regex,
 [this stack overflow post might help](https://stackoverflow.com/questions/4541573/what-are-non-word-boundary-in-regex-b-compared-to-word-boundary)
-(Note, though that character classes in Julia regexes include unicode characters by default. e.g. `\w` matches `[\pL\pN_]`: all characters that are letters or numbers, and underscore.
+(Note, though, that character classes in Julia regexes include Unicode characters by default. e.g. `\w` matches `[\pL\pN_]`: all characters that are letters or numbers, and underscore.
 You can read more about this behaviour by searching for `PCRE_UCP` in the [PCRE library's documentation](https://www.pcre.org/original/doc/html/pcreunicode.html)).
 
 ```julia
