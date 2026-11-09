@@ -151,7 +151,7 @@ julia> try
 
            elseif problem isa MethodError # no idea what n is
                @error "please supply a valid argument"
- 
+
            else
               rethrow() # the error could be anything else
            end
@@ -211,7 +211,7 @@ See also the previous example, under `try...catch`.
 [debug_macro]: https://docs.julialang.org/en/v1/stdlib/Logging/#Logging.Debug
 [info_macro]: https://docs.julialang.org/en/v1/stdlib/Logging/#Logging.Info
 [warn_macro]: https://docs.julialang.org/en/v1/stdlib/Logging/#Logging.Warn
-[error]: https://docs.julialang.org/en/v1/manual/control-flow/#Errors 
+[error]: https://docs.julialang.org/en/v1/manual/control-flow/#Errors
 [throw]: https://docs.julialang.org/en/v1/manual/control-flow/#The-%5Bthrow%5D(@ref)-function
 [try-catch]: https://docs.julialang.org/en/v1/manual/control-flow/#The-try/catch-statement
 [types]: https://exercism.org/tracks/julia/concepts/types

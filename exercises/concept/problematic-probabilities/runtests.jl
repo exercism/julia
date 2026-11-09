@@ -19,7 +19,7 @@ include("problematic-probabilities.jl")
 
         successes, trials = [9, 2, 3, 9, 6], [23, 10, 15, 23, 10]
         @test checkmean(successes, trials)
-        
+
         successes, trials = [7, 8, 1, 4, 1], [18, 25, 19, 12, 23]
         @test checkmean(successes, trials) == 223853//983250
 

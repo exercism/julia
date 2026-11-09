@@ -1,3 +1,3 @@
 function ciphertext(plaintext)
-    
+
 end

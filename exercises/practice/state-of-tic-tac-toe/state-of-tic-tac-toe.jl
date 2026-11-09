@@ -1,3 +1,3 @@
 function gamestate(board)
-    
+
 end

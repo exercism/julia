@@ -1,4 +1,4 @@
-using Test 
+using Test
 
 include("role-playing-game.jl")
 
@@ -59,7 +59,7 @@ include("role-playing-game.jl")
             defaultplayer = Player()
             name = title!(defaultplayer)
             @test ismissing(name) && ismissing(defaultplayer.name)
-            
+
             namedplayer = Player(name="Willard", level=21)
             name = title!(Player(name="Willard", level=21))
             @test name == namedplayer.name == "Willard"
@@ -69,9 +69,9 @@ include("role-playing-game.jl")
             namedplayer = Player(name="Genie", level=42, health=50)
             name = title!(namedplayer)
             @test name == namedplayer.name == "Genie the Great"
-            
+
             unnamedplayer = Player(level=42)
-            name = title!(unnamedplayer) 
+            name = title!(unnamedplayer)
             @test name == unnamedplayer.name == "The Great"
         end
     end

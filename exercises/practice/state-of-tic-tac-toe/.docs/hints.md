@@ -3,7 +3,7 @@
 ## General
 
 - There are many ways to solve this exercise, and planning your strategy is a key part of the challenge.
-- In line with other tracks, input is a `Vector{String}`. 
+- In line with other tracks, input is a `Vector{String}`.
 - Because Julia has a native [`Matrix` type][matrix] in the base language, you may find it easier to convert the board to some sort of `Matrix` (`String`, `Char`, `Int`...).
 - Beware of edge cases, which raise the exercise difficulty from Easy to Medium.
   - It is possible to make a move that wins on 2 dimensions simultaneously.

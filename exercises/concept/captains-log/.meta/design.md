@@ -2,7 +2,7 @@
 
 ## Goal
 
-The goal of this exercise is to introduce the student to randomness operations in Julia. 
+The goal of this exercise is to introduce the student to randomness operations in Julia.
 
 ## Learning objectives
 
@@ -14,9 +14,9 @@ The goal of this exercise is to introduce the student to randomness operations i
 
 ## Out of scope
 
-- Most of the functionality in Random, and everything in uninstalled packages, is only briefly mentioned in the concept's `about.md`. 
+- Most of the functionality in Random, and everything in uninstalled packages, is only briefly mentioned in the concept's `about.md`.
 - Julia has a lot of functions in this area, and we only try to cover a small subset.
-  
+
 ## Concepts
 
 The Concepts this exercise unlocks are:

@@ -102,4 +102,3 @@ Note that iteration over a named tuple only produces the _values_, and the _name
 
 Tuples (named or not) are a very common way to transfer structured data to and from functions.
 Immutability is good in this use case, providing data safety and allowing more aggressive compiler optimizations.
-

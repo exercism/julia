@@ -40,7 +40,7 @@ isname(x) = occursin(r"^[A-Z]{2}[0-9]{3}$", x)
             @test isname(name(r2))
             @test isname(name(r3))
         end
-        
+
         @testset "names of robots are not equal" begin
             @test name(r2) != name(r3)
         end

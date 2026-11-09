@@ -19,4 +19,3 @@ Some (not all) of the tests assume the value is `Int32`, so please avoid forcing
 
 - Simple AND logic will do the opposite of what you need.
 - How do you flip all the bits in the mask?
-  

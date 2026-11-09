@@ -14,7 +14,7 @@
 - This can be checked with a dot product.
 - It might be helpful to normalize the vectors.
 - In case of floating point discrepancies, the orientation only needs to be [approximately][isapprox-ref] equal to around `~1e-7`.
-- The following identity could be helpful: `x⋅y = ||x||*||y||cos(θ)` where [`||x|| = norm(x)`][norm-ref] 
+- The following identity could be helpful: `x⋅y = ||x||*||y||cos(θ)` where [`||x|| = norm(x)`][norm-ref]
 
 ## 4. Robot Body Coordinates
 - This is very straightforward, but elementwise operations are important.

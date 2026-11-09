@@ -3,7 +3,7 @@ mutable struct BinarySearchTree
     left
     right
     BinarySearchTree() = new(nothing, nothing, nothing)
-    BinarySearchTree(node::T) where T<:Real = new(node, nothing, nothing) 
+    BinarySearchTree(node::T) where T<:Real = new(node, nothing, nothing)
 end
 
 function BinarySearchTree(vector::Vector{T}) where T<:Real

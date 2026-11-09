@@ -22,5 +22,5 @@ Remember, turtles are cold-blooded animals, so make sure they are warm before gi
     - Think about what the original ordering of indices is for an arbitrary `Vector`.
     - What can be done to *any* permutation of indices to return it to this starting point?
     - Final hint... What does the sort permutation of a sort permutation do?
- 
+
 [invperm]: https://docs.julialang.org/en/v1/base/arrays/#Base.invperm

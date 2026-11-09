@@ -8,7 +8,7 @@ include("card-generator.jl")
             - Our next speaker is Sasha Duda Krall, from GDQU
             - Their talk is called »Speedrunning 101«
             - They will answer your questions in the Q&A session at the end of the talk, starting at 13:20
-            
+
             13:00 - 13:20 - 13:30
             """
     end
@@ -18,7 +18,7 @@ include("card-generator.jl")
             - Our next speaker is Madeline
             - Her talk is called »How I learned to say Farewell«
             - She will answer your questions in the Q&A session at the end of the talk, starting at 14:00
-            
+
             13:40 - 14:00 - 14:05
             """
     end
@@ -28,7 +28,7 @@ include("card-generator.jl")
             - Our next speaker is Vítězslav Kruse
             - His talk is called »How To Find a Good Title For Your Conference Talk«
             - There will not be a Q&A session
-            
+
             14:15 - NO Q&A - 14:40
             """
     end
@@ -38,7 +38,7 @@ include("card-generator.jl")
             - Our next speaker is Ash van Amelsvoort, from the University of 🧬🧪⚛
             - Ash's talk is called »Why Emoji Matter❣«
             - Ash will answer your questions in the Q&A session at the end of the talk, starting at 15:05
-            
+
             14:50 - 15:05 - 15:10
             """
     end
@@ -48,7 +48,7 @@ include("card-generator.jl")
             - Our next speaker is Kira "k1ralli" Sørensen
             - Kira's talk is called »Can dogs look up?«
             - Kira will answer your questions in the Q&A session at the end of the talk, starting at 21:05
-            
+
             20:50 - 21:05 - 21:10
             """
     end

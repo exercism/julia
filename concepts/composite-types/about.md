@@ -178,11 +178,11 @@ julia> struct Point <: AbstractPoint
 julia> struct ConstrainedPoint <: AbstractPoint
            x::Integer
            y::Integer
-           
+
            ConstrainedPoint(x, y) =
                y > x ? new(x, y) : @error("require y > x")
        end;
-       
+
 julia> Point(3, 2)
 Point(3, 2)
 

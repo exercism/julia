@@ -175,7 +175,7 @@ julia> ndims(m)  # how many dimensions? Like `m |> size |> length`
 
 ### Indexing with ranges and arrays
 
-We can easily copy a sub-matrix. 
+We can easily copy a sub-matrix.
 
 In the example below, the `reshape()` function coerces an array to the specified dimensions by filling column-wise, then we slice it.
 

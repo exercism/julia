@@ -11,7 +11,7 @@ include("factory-sensors.jl")
         @testset "Failing" begin
             @test_throws ErrorException humiditycheck(80)
             @test_throws "80" humiditycheck(80)
-        end       
+        end
     end
 
     @testset "2. Check for overheating" begin
@@ -37,20 +37,20 @@ include("factory-sensors.jl")
 
         @testset "Failing" begin
             @test_logs (:error, "humidity level check failed: 80%") (:info, "temperature check passed: 220 °C") begin
-                @test_throws MachineError machinemonitor(80, 220) 
+                @test_throws MachineError machinemonitor(80, 220)
             end
             @test_logs (:info, "humidity level check passed: 52%") (:warn, "sensor is broken") begin
                 @test_throws MachineError machinemonitor(52, nothing)
-            end       
+            end
             @test_logs (:info, "humidity level check passed: 21%") (:error, "overheating detected: 540 °C") begin
-                @test_throws MachineError machinemonitor(21, 540) 
+                @test_throws MachineError machinemonitor(21, 540)
             end
             @test_logs (:error, "humidity level check failed: 100%") (:warn, "sensor is broken") begin
-                @test_throws MachineError machinemonitor(100, nothing) 
+                @test_throws MachineError machinemonitor(100, nothing)
             end
             @test_logs (:error, "humidity level check failed: 93%") (:error, "overheating detected: 521 °C") begin
                 @test_throws MachineError machinemonitor(93, 521)
             end
-        end       
+        end
     end
 end

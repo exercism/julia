@@ -38,7 +38,7 @@ function fun1(arg1)
 end
 
 function fun2(arg2, arg3)
-    
+
 end
 ```
 
@@ -51,7 +51,7 @@ using Test
 include("stub.jl")
 
 @testset verbose = true "tests" begin
-    
+
     # Exercise specific testing: @testset / @test
 
 end
@@ -90,7 +90,7 @@ include("testtools.jl")
 include("boilerplate.jl")
 
 @testset verbose = true "tests" begin
-    
+
     # Exercise specific testing: @testset / @test
 
 end

@@ -105,6 +105,6 @@ julia> γ2 = Photon("γ2")
 Photon("γ2")
 
 julia> encounter(γ1, γ2)
-"γ1 meets γ2 and nothing happens." 
+"γ1 meets γ2 and nothing happens."
 # This is true, photons just pass through each other.
 ```

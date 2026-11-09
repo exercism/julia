@@ -11,7 +11,7 @@ end
 # function gamestate(board)
 #     # create a Matrix of the board with ' ' => 0, 'X' => 1, and 'O' => -1
 #     M = reshape([col == ' ' ? 0 : (-1)^(col == 'O') for row in board for col in row], (3,3))
-    
+
 #     # Sum colums, rows and diagonals, keep the minimum and the maximum (± 3 indicates a win).
 #     mini, maxi = extrema([sum(M, dims=1)..., sum(M, dims=2)..., M[1,1]+M[2,2]+M[3,3], M[1,3]+M[2,2]+M[3,1]])
 
@@ -47,7 +47,7 @@ end
 #     # It's a win if any of the rows, columns, or diagonals add up to ±3
 #     row_wins = count(sum(row) == 3 * player for row in eachrow(b_int))
 #     col_wins = count(sum(col) == 3 * player for col in eachcol(b_int))
-#     diag_wins = (sum(diag(b_int)) == 3 * player ? 1 : 0) + 
+#     diag_wins = (sum(diag(b_int)) == 3 * player ? 1 : 0) +
 #                 (sum(diag(rotr90(b_int))) == 3 * player ? 1 : 0)
 #     (row_wins, col_wins, diag_wins)
 # end
@@ -120,7 +120,7 @@ end
 #     # Invalid boards
 #     nₒ = count(x -> x == "O", b)
 #     nₓ = count(x -> x == "X", b)
-#     # Not taking turns in order 
+#     # Not taking turns in order
 #     if nₒ > nₓ || abs(nₒ - nₓ) > 1
 #         error("Invalid board: did not take turns in order")
 #     end

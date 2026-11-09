@@ -4,7 +4,7 @@ You can solve this exercise a great number of ways!
 
 Because this is a very small problem, almost any solution is likely to be fast enough for most purposes.
 
-Clarity and readability are generally the priority, though we will make a few comments on performance in proparation for future challenges where speed matters. 
+Clarity and readability are generally the priority, though we will make a few comments on performance in proparation for future challenges where speed matters.
 
 ## Example solutions
 
@@ -159,7 +159,7 @@ and when `number` is divisible by 3, but not 5 and 7, the statically allocated s
 ```julia
 function raindrops4(number)
     s = ""
-    # The first equals here lets us avoid dynamically allocating a string 
+    # The first equals here lets us avoid dynamically allocating a string
     # in the case that number is only divisible by 3.
     number % 3 == 0 && (s = "Pling")
     number % 5 == 0 && (s *= "Plang")
@@ -173,7 +173,7 @@ end
 
 [cmcaine's solution](https://exercism.io/tracks/julia/exercises/raindrops/solutions/d558034438c64bb9a949f90cfcdaad6a)
 
-A solution (over?)designed to be easily extended or changed if the `noises` spec changed. 
+A solution (over?)designed to be easily extended or changed if the `noises` spec changed.
 
 Some similar solutions use a `Dict` rather than a tuple, but a tuple of pairs is simpler and more efficient if you do not need to look up values by key.
 
@@ -190,7 +190,7 @@ end
 
 ### IOBuffer
 
-Using an [`IOBuffer`][ref-IOBuffer] to create a string on the fly is a common pattern in Julia. 
+Using an [`IOBuffer`][ref-IOBuffer] to create a string on the fly is a common pattern in Julia.
 
 However, for this exercise, it tends to be rather slow compared to the other solutions.
 Presumably, this problem is so small that the fixed overhead of `IOBuffer` creation is not offset by avoiding a few (relatively slow) string concatenations.
@@ -211,8 +211,8 @@ function raindrops6(number)
 end
 ```
 
-More generally, constructing strings is slow! 
-Profiling shows that `string(number)` and string concatenation are the biggest time sinks. 
+More generally, constructing strings is slow!
+Profiling shows that `string(number)` and string concatenation are the biggest time sinks.
 Branching / lookup and remainder calculation are blazingly fast by comparison.
 
 [concept-bitwise]: https://exercism.org/tracks/julia/concepts/bitwise-operations

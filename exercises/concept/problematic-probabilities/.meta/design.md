@@ -20,7 +20,7 @@ The goal of this exercise is to introduce the student to rational numbers.
 
 The Concepts this exercise unlocks are:
 
-- 
+-
 
 ## Prerequisites
 

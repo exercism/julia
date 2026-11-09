@@ -3,7 +3,7 @@ using Test
 include("ordering-ordeal.jl")
 
 @testset verbose = true "tests" begin
-    
+
     @testset "1. Sort quantity!" begin
         @testset "Sort permutation" begin
             @test sortquantity!([1, 2, 3, 4, 5]) == [5, 4, 3, 2, 1]
@@ -34,7 +34,7 @@ include("ordering-ordeal.jl")
             cust_abcde = ["a", "b", "c", "d", "e"]
             sortcustomer(cust_abcde, [5, 4, 3, 2, 1])
             @test cust_abcde == ["a", "b", "c", "d", "e"]
-            
+
             cust = [1223, 7654, 3232, 8743]
             sortcustomer([1223, 7654, 3232, 8743], [2, 1, 4, 3])
             @test cust == [1223, 7654, 3232, 8743]
@@ -49,10 +49,10 @@ include("ordering-ordeal.jl")
         qty_231 = [2, 3, 1]
         cust_abc, invsrtperm_231 = production_schedule!(["a", "b", "c"], qty_231)
         @test (cust_abc[invsrtperm_231], qty_231[invsrtperm_231]) == (["a", "b", "c"], [2, 3, 1])
-        
+
         qty_657 = [6, 5, 7]
         cust_abc, invsrtperm_657 = production_schedule!(["a", "b", "c"], qty_657)
-        @test (cust_abc[invsrtperm_657], qty_657[invsrtperm_657]) == (["a", "b", "c"], [6, 5, 7]) 
+        @test (cust_abc[invsrtperm_657], qty_657[invsrtperm_657]) == (["a", "b", "c"], [6, 5, 7])
     end
 
 end

@@ -29,16 +29,16 @@ The `Matrix` looks as follows, with `0` as a whitespace and `1` as a dot:
 If you "render" it, it looks like this:
 
 ```julia
-  XX          XX  
- X              X 
- X   X      X   X 
- X  X X    X X  X 
- X              X 
+  XX          XX
+ X              X
+ X   X      X   X
+ X  X X    X X  X
+ X              X
 X                X
- X    X    X    X 
- X     X  X     X 
- X      XX      X 
- X              X 
+ X    X    X    X
+ X     X  X     X
+ X      XX      X
+ X              X
   XX          XX
 ```
 

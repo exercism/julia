@@ -68,7 +68,7 @@ end
 ```
 
 As a reminder: only expressions that evaluate to `true` or `false` can be used as conditionals.
-Julia deliberately avoids any concept of "truthiness", so zero values, empty strings and empty arrays are _not_ equivalent to `false`. 
+Julia deliberately avoids any concept of "truthiness", so zero values, empty strings and empty arrays are _not_ equivalent to `false`.
 
 ## Ternary operator
 

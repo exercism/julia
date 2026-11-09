@@ -107,7 +107,7 @@ a[2]  # => 'B'
 
 # index with a range
  a[12:2:18]  # => ['L', 'N', 'P, 'R']
- 
+
  # index with another vector
  a[ [1, 3, 5] ]  # => ['A', 'C', 'E']
 ```

@@ -9,7 +9,7 @@ Using complex numbers for rotations in 2D can leave things much cleaner and nume
 
 ## 2. Construct a complex number from Polar coordinates
 
-- There are a few equivalent ways to do this (e.g. `exp`, `cis`, `cispi`). 
+- There are a few equivalent ways to do this (e.g. `exp`, `cis`, `cispi`).
 - See the introduction and instructions for further review.
 
 ## 3. Perform a 2D vector rotation

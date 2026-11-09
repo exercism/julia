@@ -17,7 +17,7 @@ julia> rank_range()
 
 ## 2. Define the file range
 
-Implement the `file_range()` function. 
+Implement the `file_range()` function.
 It should return a range of characters, from the uppercase letter A, to the uppercase letter H.
 
 ```julia-repl
@@ -27,7 +27,7 @@ julia> file_range()
 
 ## 3. Transform the rank range into a vector of ranks
 
-Implement the `ranks()` function. It should return a vector of integers, from 1 to 8. 
+Implement the `ranks()` function. It should return a vector of integers, from 1 to 8.
 Do not write the vector by hand, generate it from the range returned by the `rank_range()` function.
 
 ```julia-repl
@@ -37,7 +37,7 @@ julia> ranks()
 
 ## 4. Transform the file range into a vector of files
 
-Implement the `files` function. It should return a vector of characters, from 'A' to 'H'. 
+Implement the `files` function. It should return a vector of characters, from 'A' to 'H'.
 Do not write the vector by hand, generate it from the range returned by the `file_range()` function.
 
 ```julia-repl

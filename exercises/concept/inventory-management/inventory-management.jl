@@ -15,5 +15,5 @@ function remove_item(inventory, item)
 end
 
 function list_inventory(inventory)
-    
+
 end

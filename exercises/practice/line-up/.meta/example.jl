@@ -1,4 +1,4 @@
-line_up(name, number) = 
+line_up(name, number) =
     "$name, you are the $number$(ending(number)) customer we serve today. Thank you!"
 
 function ending(number)

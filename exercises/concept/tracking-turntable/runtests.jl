@@ -10,7 +10,7 @@ include("tracking-turntable.jl")
 
         @test z(-π, 42.24) ≈ -π + 42.24im
     end
-    
+
     @testset "2. complex from polar" begin
         @test euler(1, π) ≈ -1.0 + 0.0im
 

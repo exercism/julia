@@ -19,7 +19,7 @@ include("boutique-suggestions.jl")
             @test clothingitem(categories, qualities) == expected
         end
     end
-    
+
     @testset "2. Suggest combinations" begin
         @testset "Generates one pair from one top and one bottom" begin
             categories = ("item_name", "price", "color", "base_color")
@@ -51,7 +51,7 @@ include("boutique-suggestions.jl")
 
             tops = (top1, top2, top3)
             bottoms = (bottom1, bottom2, bottom3)
-            expected = [(top1, bottom1) (top1, bottom2) (top1, bottom3) 
+            expected = [(top1, bottom1) (top1, bottom2) (top1, bottom3)
                         (top2, bottom1) (top2, bottom2) (top2, bottom3)
                         (top3, bottom1) (top3, bottom2) (top3, bottom3)]
             @test get_combinations(tops, bottoms) == expected
@@ -90,7 +90,7 @@ include("boutique-suggestions.jl")
             bottom1 = testitem(categories, bot1quals)
             bottom2 = testitem(categories, bot2quals)
 
-            combos = [(top1, bottom1) (top1, bottom2) 
+            combos = [(top1, bottom1) (top1, bottom2)
                       (top2, bottom1) (top2, bottom2)]
             expected = [67 98
                         69 100]
@@ -105,7 +105,7 @@ include("boutique-suggestions.jl")
             bottomqualities = ("Happy Hike Studio Pants", 19.00, "Ochre Red", "red")
             top = testitem(categories, topqualities)
             bottom = testitem(categories, bottomqualities)
-            
+
             combos = get_combinations((top,), (bottom,))
             @test filter_clashing(combos) == []
         end
@@ -127,7 +127,7 @@ include("boutique-suggestions.jl")
             bottom2 = testitem(categories, bot2quals)
             bottom3 = testitem(categories, bot3quals)
 
-            combos = [(top1, bottom1) (top1, bottom2) (top1, bottom3) 
+            combos = [(top1, bottom1) (top1, bottom2) (top1, bottom3)
                       (top2, bottom1) (top2, bottom2) (top2, bottom3)
                       (top3, bottom1) (top3, bottom2) (top3, bottom3)]
             expected = [(top1, bottom1), (top2, bottom1), (top3, bottom1),
@@ -153,7 +153,7 @@ include("boutique-suggestions.jl")
             bottom2 = testitem(categories, bot2quals)
             bottom3 = testitem(categories, bot3quals)
 
-            combos = [(top1, bottom1) (top1, bottom2) (top1, bottom3) 
+            combos = [(top1, bottom1) (top1, bottom2) (top1, bottom3)
                       (top2, bottom1) (top2, bottom2) (top2, bottom3)
                       (top3, bottom1) (top3, bottom2) (top3, bottom3)]
             expected = [(top1, bottom1), (top2, bottom1), (top3, bottom1),

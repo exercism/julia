@@ -17,7 +17,7 @@ The goal of this exercise is to introduce the student to type unions and practic
 
 The Concepts this exercise unlocks are:
 
-- 
+-
 
 ## Prerequisites
 

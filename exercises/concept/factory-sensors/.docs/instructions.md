@@ -1,7 +1,7 @@
 # Instructions
 
-Elena is the new quality manager of a newspaper factory. 
-As she has just arrived in the company, she has decided to review some of the processes in the factory to see what could be improved. 
+Elena is the new quality manager of a newspaper factory.
+As she has just arrived in the company, she has decided to review some of the processes in the factory to see what could be improved.
 She found out that technicians are doing a lot of quality checks by hand. She sees there is a good opportunity for automation and asks you, a freelance developer, to develop a piece of software to monitor some of the machines.
 
 ## 1. Check the humidity level of the room
@@ -12,7 +12,7 @@ You need to implement a function in the software that will throw an error if the
 If the humidity is at an acceptable level, a info log will be added.
 The function should be called `humiditycheck` and take the humidity percentage as an argument.
 
-You should halt with an ErrorException (the exact message is not important, but must contain the measured humidity level) if the percentage exceeds 70%. 
+You should halt with an ErrorException (the exact message is not important, but must contain the measured humidity level) if the percentage exceeds 70%.
 Otherwise, add an Info log, with the message `"humidity level check passed: h%"`, where `h` is the humidity percentage.
 
 ```julia-repl

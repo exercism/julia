@@ -5,7 +5,7 @@ end
 struct Queen
     row::Int
     col::Int
-    Queen(row::Int, col::Int) = 
+    Queen(row::Int, col::Int) =
         if row < 0
             throw(InvalidPosition("row must be positive"))
         elseif row > 7

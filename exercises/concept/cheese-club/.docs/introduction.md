@@ -20,10 +20,10 @@ This Concept will focus on higher-order functions (familiar from any functional 
 
 Other possible approaches include:
 
-- Recursion (as in ML-family languages). 
+- Recursion (as in ML-family languages).
   - Julia allows this, but without tail-call optimization it risks stack overflow.
-- Metaprogramming with macros (traditionally a Lisp feature). 
-  - This is widely used in advanced Julia programming, but _approach with caution_ in most cases. 
+- Metaprogramming with macros (traditionally a Lisp feature).
+  - This is widely used in advanced Julia programming, but _approach with caution_ in most cases.
   - Other options are likely to be easier to write and much easier to debug.
 
 ## Filtering

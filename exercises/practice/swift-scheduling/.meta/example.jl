@@ -9,7 +9,7 @@ function delivery_date_time(start, description)
 
     if description == "ASAP"
         start_day = Date(start_dt)
-        return Time(start_dt) < Time(13, 0, 0) ? 
+        return Time(start_dt) < Time(13, 0, 0) ?
             DateTime(start_day, Time(17, 0, 0)) :
             DateTime(start_day + Day(1), Time(13, 0, 0))
     end
@@ -20,7 +20,7 @@ function delivery_date_time(start, description)
             DateTime(Date(start_dt + Day(5 - day_of_week)), Time(17, 0, 0)) :
             DateTime(Date(start_dt + Day(7 - day_of_week)), Time(20, 0, 0))
     end
-    
+
     if endswith(description, "M")
         m = parse(Int, chop(description))
         y = month(start_dt) ≥ m ? year(start_dt) + 1 : year(start_dt)

@@ -86,7 +86,7 @@ The corresponding cards are:
 - Kira's talk is called »Can dogs look up?«
 - Kira will answer your questions in the Q&A session at the end of the talk, starting at 21:05
 
-20:50 - 21:05 - 21:10 
+20:50 - 21:05 - 21:10
 ```
 
 A few things to note here:

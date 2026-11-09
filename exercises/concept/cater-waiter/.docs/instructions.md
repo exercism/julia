@@ -93,9 +93,9 @@ Either the `dishes` or `appetizers` `Vector` could contain duplicates and may re
 
 ```julia-repl
 julia> dishes = ["Avocado Deviled Eggs","Flank Steak with Chimichurri and Asparagus", "Kingfish Lettuce Cups", "Grilled Flank Steak with Caesar Salad","Vegetarian Khoresh Bademjan","Avocado Deviled Eggs", "Barley Risotto","Kingfish Lettuce Cups"];
-          
+
 julia> appetizers = ["Kingfish Lettuce Cups","Avocado Deviled Eggs","Satay Steak Skewers", "Dahi Puri with Black Chickpeas","Avocado Deviled Eggs","Asparagus Puffs", "Asparagus Puffs"];
-              
+
 julia> separate_appetizers(dishes, appetizers)
 ["Vegetarian Khoresh Bademjan", "Barley Risotto", "Flank Steak with Chimichurri and Asparagus", "Grilled Flank Steak with Caesar Salad"]
 ```

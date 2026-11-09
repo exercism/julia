@@ -68,7 +68,7 @@ The returned value must be an integer.
 ```julia-repl
 julia> modifier(17)
 3
-``` 
+```
 
 ## 3. Write a random character generator that follows the rules above
 

@@ -38,7 +38,7 @@ julia> [x^2 for x in m]
 2×3 Matrix{Int64}:
   1   4   9
  16  25  36
-julia> [x^2 for x in m if isodd(x^2)] 
+julia> [x^2 for x in m if isodd(x^2)]
 3-element Vector{Int64}:
   1
  25

@@ -13,7 +13,7 @@ Since the record is rotating, it's easier to track the radial difference and the
 Turndit needs to know how to find the new `(x', y')` coordinates to which the needle will move when a different track is selected.
 
 ~~~~exercism/note
-These operations can be done through trigonometric functions and/or rotation matrices, but they can be made simpler (and more fun, I assure you!) with the use of complex numbers via rotations and radial displacements. 
+These operations can be done through trigonometric functions and/or rotation matrices, but they can be made simpler (and more fun, I assure you!) with the use of complex numbers via rotations and radial displacements.
 In fact, each function in this exercise can be written in assigment form (i.e. a one-liner) using complex numbers and built-in Julia methods/functionality, should you so desire.
 ~~~~
 

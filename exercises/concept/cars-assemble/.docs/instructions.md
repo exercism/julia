@@ -1,19 +1,19 @@
 # Instructions
 
-In this exercise you will be writing code to analyze the production of an assembly line in a car factory. 
+In this exercise you will be writing code to analyze the production of an assembly line in a car factory.
 The assembly line's speed can range from `0` (off) to `10` (maximum).
 
-At its lowest speed (`1`), `221` cars are produced each hour. 
-The production increases linearly with the speed. 
-So with the speed set to `4`, it should produce `4 * 221 = 884` cars per hour. 
-However, higher speeds increase the likelihood that faulty cars are produced, which then have to be discarded. 
+At its lowest speed (`1`), `221` cars are produced each hour.
+The production increases linearly with the speed.
+So with the speed set to `4`, it should produce `4 * 221 = 884` cars per hour.
+However, higher speeds increase the likelihood that faulty cars are produced, which then have to be discarded.
 
 You have three tasks.
 Each of the required functions takes a single integer parameter, the speed of the assembly line.
 
 ## 1. Calculate the success rate
 
-Implement the `success_rate()` method to calculate the probability of an item being created without error for a given speed. 
+Implement the `success_rate()` method to calculate the probability of an item being created without error for a given speed.
 The following table shows how speed influences the success rate:
 
 - `0`: 0% success rate.

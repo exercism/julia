@@ -47,7 +47,7 @@ This function should take two arguments.
 - An integer multiplier `n`.
 - A `TreasureChest{T}` type.
 
-The function should return a new `TreasureChest{Vector{T}}`, with 
+The function should return a new `TreasureChest{Vector{T}}`, with
 - The same password as the original
 - The multiplied treasure as a `Vector{T}` of length `n`, and the original treasure repeated `n` times.
 

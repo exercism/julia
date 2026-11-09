@@ -10,8 +10,8 @@ The goal of this exercise is to teach the student the use of `tuples` in Julia,.
 - Know how to create tuples.
 - Understand indexing and looping over tuples.
 - Understand upacking, thorugh multiple assignment.
-- Understand named tuples, and the constraints on them: 
-  - names must be symbols, 
+- Understand named tuples, and the constraints on them:
+  - names must be symbols,
   - looping ignores names by default.
 
 ## Out of scope

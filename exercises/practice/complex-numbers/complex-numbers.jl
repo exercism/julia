@@ -1,5 +1,5 @@
 struct ComplexNumber <: Number
-    
+
 end
 
 # Implement methods to handle these operations.

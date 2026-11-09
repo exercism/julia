@@ -1,4 +1,4 @@
-using Test 
+using Test
 
 include("treasure-chest.jl")
 

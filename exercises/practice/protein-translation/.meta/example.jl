@@ -8,7 +8,7 @@ function proteins(strand)
 
         protein = codon_to_protein[codon]
         protein == "STOP" && return results
-    
+
         push!(results, protein)
     end
     results

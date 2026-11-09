@@ -101,7 +101,7 @@ Take a look at the `exercise/` directory or commit history for examples, or at t
 
 ### Existing exercises
 
-There are always improvements possible on existing exercises. 
+There are always improvements possible on existing exercises.
 
 #### Improving the exercise instructions
 
