@@ -3,7 +3,7 @@ using Test
 include("regular-chatbot.jl")
 
 @testset verbose = true "tests" begin
-    
+
     @testset "1. Check valid command" begin
         # Recognizes whether the command is at the first position
         @test is_valid_command("Chatbot, Do you understand this command?")

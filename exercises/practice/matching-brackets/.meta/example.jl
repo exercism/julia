@@ -4,7 +4,7 @@ function matching_brackets(input)
     input = filter(i -> (i in union(open_brackets, close_brackets)), input)
     stack = Array{String}(undef, 0)
     brackets = Dict([("(", ")"),(")", "("), ("[", "]"), ("]", "["), ("{", "}"), ("}", "{")]) #global
-    count, valid = 0,1 #global 
+    count, valid = 0,1 #global
     length(input) % 2 != 0 && return false
     for i in input
         if i in open_brackets

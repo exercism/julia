@@ -1,4 +1,4 @@
-using Test 
+using Test
 
 include("log-levels.jl")
 
@@ -8,17 +8,17 @@ include("log-levels.jl")
             msg = "[ERROR]: Stack overflow"
             @test message(msg) == "Stack overflow"
         end
-        
+
         @testset "Warning message" begin
             msg = "[WARNING]: Disk almost full"
             @test message(msg) == "Disk almost full"
         end
-        
+
         @testset "Info message" begin
             msg = "[INFO]: File moved"
             @test message(msg) == "File moved"
         end
-        
+
         @testset "Message with leading and trailing white space" begin
             msg = "[WARNING]:   \tTimezone not set  \r\n"
             @test message(msg) == "Timezone not set"

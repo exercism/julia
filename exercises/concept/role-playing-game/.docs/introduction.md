@@ -38,8 +38,8 @@ julia> y = "works"
 julia> typeof(y)
 String
 julia> y = 5.3
-ERROR: MethodError: Cannot `convert` an object of type 
-  Float64 to an object of type 
+ERROR: MethodError: Cannot `convert` an object of type
+  Float64 to an object of type
   Union{Integer, String}
 ```
 

@@ -57,13 +57,13 @@ Set([5, 4, 6, 2, 3, 1])
 
 julia> s1 ∩ s2  # intersect
 Set([4, 3])
-  
+
 julia> setdiff(s1, s2)
 Set([2, 1])
 
 julia> symdiff(s1, s2)
 Set([5, 6, 2, 1])
-  
+
 julia> s1 ⊇ s2  # issubset
 false
 ```

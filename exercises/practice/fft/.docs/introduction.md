@@ -2,7 +2,7 @@
 
 ### Fourier Transform
 
-The [Fourier Transform](https://en.wikipedia.org/wiki/Fourier_transform) is seen often in physics and mathematics, which translates to it having many everyday uses as well. 
+The [Fourier Transform](https://en.wikipedia.org/wiki/Fourier_transform) is seen often in physics and mathematics, which translates to it having many everyday uses as well.
 
 In short, the Fourier Transform takes an input signal, often in time or space domains, and transforms it to the frequency domain.
 And more concretely, with an input signal that is made of a jumble (i.e. superposition) of different frequencies, the transform will separate out the individual frequencies and show their relative strengths.
@@ -17,7 +17,7 @@ Here, the sum runs over `n`, and `N` is the number of samples, `k` is the freque
 
 ### Fast Fourier Transform
 
-While extremely useful, the Fourier Transform, naively implemented, is a bit slow (`O(n²)`). 
+While extremely useful, the Fourier Transform, naively implemented, is a bit slow (`O(n²)`).
 The [Fast Fourier Transform](https://en.wikipedia.org/wiki/Fast_Fourier_transform) (FFT) is an algorithm which drastically speeds this up.
 This is typically done through a divide-and-conquer strategy which exploits some symmetries in the formulation and results in an asymptotically `O(Nlog(N))` complexity.
 This speed up greatly improves the practically and range of applications suitable for the transform.

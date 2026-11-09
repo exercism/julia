@@ -149,7 +149,7 @@ Dict{String, Int64} with 1 entry:
   "Orange"    => 120
   "Chocolate" => 100
 
-julia> stock 
+julia> stock
 Dict{String, Int64} with 5 entries:
   "Milk"      => 45
   "Apple"     => 120

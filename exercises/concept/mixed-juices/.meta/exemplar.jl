@@ -1,18 +1,18 @@
 # This code is not really idiomatic.
-# The assumption is that the exercise comes early in the syllabus, 
+# The assumption is that the exercise comes early in the syllabus,
 # before Dicts, broadcasting, comprehensions, etc
 
 
 time_to_mix_juice(juice) =
-    if juice == "Pure Strawberry Joy" 
+    if juice == "Pure Strawberry Joy"
         0.5
     elseif juice == "Energizer" || juice == "Green Garden"
         1.5
-    elseif juice == "Tropical Island" 
+    elseif juice == "Tropical Island"
         3
-    elseif juice == "All or Nothing" 
+    elseif juice == "All or Nothing"
         5
-    else 
+    else
         2.5
     end
 

@@ -39,7 +39,7 @@ include("captains-log.jl")
             @test all([1000 ≤ parse(Int, regno[5:end]) ≤ 9999 for regno in random_registry])
         end
     end
-    
+
     @testset "3. Generate a random stardate" begin
         random_stardates = [random_stardate() for _ in 1:repeats]
 
@@ -52,7 +52,7 @@ include("captains-log.jl")
             n_mid = sum(41333 .≤ random_stardates .< 41667)
             n_large = sum(random_stardates .≥ 41667)
             n_expected = length(random_stardates) / 3
-            
+
             uniform_if = sum(((n_small, n_mid, n_large) .- n_expected) .^ 2) / n_expected
             @test uniform_if < 10 # startdates should have uniform distribution
         end
@@ -91,7 +91,7 @@ include("captains-log.jl")
         end
 
         @testset "all chosen starships are unique" begin
-            @test all([length(fleet) == length(unique(fleet)) for fleet in chosen_starships]) 
+            @test all([length(fleet) == length(unique(fleet)) for fleet in chosen_starships])
         end
 
         @testset "all chosen starship fleets are of correct size" begin

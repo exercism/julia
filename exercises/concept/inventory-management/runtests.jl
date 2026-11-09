@@ -1,4 +1,4 @@
-using Test 
+using Test
 
 include("inventory-management.jl")
 
@@ -41,19 +41,19 @@ include("inventory-management.jl")
             expected = Dict("iron" => 1, "diamond" => 3, "gold" => 0)
             @test decrement_items(inventory, ["iron", "iron", "diamond", "gold", "gold"]) == expected
         end
-        
+
         @testset "test_decrement_items" begin
             inventory = Dict("wood" => 2, "iron" => 3, "diamond" => 1)
             expected = Dict("wood" => 0, "iron" => 2, "diamond" => 0)
             @test decrement_items(inventory, ["wood", "wood", "wood", "iron", "diamond", "diamond"]) == expected
         end
-        
+
         @testset "test_decrement_items_not_in_inventory" begin
             inventory = Dict("iron" => 3, "gold" => 2)
             expected = Dict("iron" => 1, "gold" => 2)
             @test decrement_items(inventory, ["iron", "wood", "iron", "diamond"]) == expected
         end
-        
+
     end
 
     @testset "4. remove_item" begin

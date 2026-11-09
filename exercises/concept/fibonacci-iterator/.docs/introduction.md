@@ -82,7 +82,7 @@ function Base.iterate(p::Powers)
     # if iteration should continue
     if 1 ≤ p.count
         # return (firstitem, firststate)
-        return (p.n, (p.n, 2)) 
+        return (p.n, (p.n, 2))
     end
     # else terminate iteration
     return nothing
@@ -97,7 +97,7 @@ function Base.iterate(p::Powers, state)
     # unpack the state
     curr, index = state
 
-    # create next item                 
+    # create next item
     next = curr * p.n
 
     # if iteration should continue

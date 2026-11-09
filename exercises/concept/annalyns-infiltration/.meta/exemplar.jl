@@ -24,5 +24,5 @@ can_signal_prisoner(archer_awake, prisoner_awake) = prisoner_awake && !archer_aw
 
 Return if the prisoner can be freed.
 """
-can_free_prisoner(knight_awake, archer_awake, prisoner_awake, dog_present) = 
+can_free_prisoner(knight_awake, archer_awake, prisoner_awake, dog_present) =
                     !knight_awake && !archer_awake && prisoner_awake || dog_present && !archer_awake

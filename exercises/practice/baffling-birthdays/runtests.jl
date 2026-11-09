@@ -59,7 +59,7 @@ include("baffling-birthdays.jl")
             @test shared_birthday(birthdates)
         end
     end
-    
+
     @testset "Random birthdates" begin
         @testset "Random birthdates generated requested number of birthdates" begin
             @test all(length(random_birthdates(groupsize)) == groupsize for groupsize in 1:20)
@@ -82,7 +82,7 @@ include("baffling-birthdays.jl")
 
     @testset "Estimated probability of at least one shared birthday" begin
         # C# uses atol=1.0 for all cases, so this presumably works most of the time
-        # Elixir is more sophisticated: 
+        # Elixir is more sophisticated:
         #   https://github.com/exercism/elixir/blob/main/exercises/practice/baffling-birthdays/test/baffling_birthdays_test.exs
 
         # this should be very, very close to zero!

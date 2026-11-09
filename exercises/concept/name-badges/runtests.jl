@@ -1,4 +1,4 @@
-using Test 
+using Test
 
 include("name-badges.jl")
 
@@ -11,7 +11,7 @@ include("name-badges.jl")
             expected = "[455] - Mary M. Brown - MARKETING"
             @test print_name_badge(id, name, department) == expected
         end
-        
+
         @testset "uppercases the department" begin
             id = 89
             name = "Jack McGregor"
@@ -20,7 +20,7 @@ include("name-badges.jl")
             @test print_name_badge(id, name, department) == expected
         end
     end
-        
+
     @testset "2. New employee" begin
         @testset "create the employee badge without id" begin
             id = missing

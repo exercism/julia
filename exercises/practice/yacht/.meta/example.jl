@@ -32,4 +32,3 @@ function score(dice, category)
       0
   end
 end
-

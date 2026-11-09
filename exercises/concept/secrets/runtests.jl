@@ -3,7 +3,7 @@ using Test
 include("secrets.jl")
 
 @testset verbose = true "tests" begin
-    
+
     @testset "1. Shift back the bits" begin
         @test shift_back(8, 2) == 2
 

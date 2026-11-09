@@ -47,7 +47,7 @@ for n in 1:10
     if is_useless(n)
         continue
     end
-    
+
     # we decided this iteration could be useful
     do_something_slow(n)
 end

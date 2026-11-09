@@ -2,7 +2,7 @@
 
 _"Dates and times are something we teach to young children. How hard can it be?"_
 
-Many programmers have made that mistake, and the subsequent experience tends to have a bad effect on their health and happiness. 
+Many programmers have made that mistake, and the subsequent experience tends to have a bad effect on their health and happiness.
 
 Anyone doing non-trivial programming with dates and times should at least be prepared to understand and mitigate potential problems.
 
@@ -216,7 +216,7 @@ When working with `Period` types, Julia tries to be smart about calendar irregul
 
 ```julia-repl
 # February has fewer days than January
-julia> Date(2025, 1, 31) + Month(1) 
+julia> Date(2025, 1, 31) + Month(1)
 2025-02-28
 ```
 

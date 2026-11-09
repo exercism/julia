@@ -58,7 +58,7 @@ function decode_sequence(received_seq)
         current_byte_data::UInt8 = get_byte_data(received_byte)
         contribution::UInt8 = current_byte_data >>> trailing_zeros(upper_mask)
         push!(decoded_message, byte_to_add | contribution)
-        
+
         # Update parameters for next round
         byte_to_add = (current_byte_data & ~(upper_mask | 0x01)) << count_ones(upper_mask)
         upper_mask = (upper_mask >> 1) | 0x80
@@ -69,6 +69,6 @@ end
 
 
 function get_byte_data(data)
-    iseven(count_ones(data::UInt8)) || error("Byte has incorrect parity") 
+    iseven(count_ones(data::UInt8)) || error("Byte has incorrect parity")
     UInt8(data & 0xFE)
 end

@@ -8,7 +8,7 @@ There are plenty of technical definitions, on [Wikipedia][linalg-wiki], in textb
 Linear Algebra is about lots of interesting (and very useful) things you can do with Vectors and Matrices.
 ~~~~
 
-The Julia (and Python) maintainers love this sort of thing. 
+The Julia (and Python) maintainers love this sort of thing.
 Exercism management, _not so much_.
 
 This Concept will be restricted to the simpler aspects of a huge subject, but be warned: _this is, inevitably, quite a mathematical concept_.
@@ -223,7 +223,7 @@ julia> norm([1, -2, 3], 1)
 
 It sometimes seems as though every applied mathematician in the world has spent much of the last 80 years turning every calculation into a series of matrix multiplications.
 
-This is an operation that computers are very good at: 
+This is an operation that computers are very good at:
 
 - It is highly repetitive.
 - It can be parallelized efficiently.
@@ -272,7 +272,7 @@ julia> A * B
 2×2 Matrix{Int64}:
  17  23
  39  53
- 
+
 julia> B * A
 2×2 Matrix{Int64}:
  26  38

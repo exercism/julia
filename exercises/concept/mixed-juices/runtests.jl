@@ -1,4 +1,4 @@
-using Test 
+using Test
 
 include("mixed-juices.jl")
 
@@ -161,7 +161,7 @@ include("mixed-juices.jl")
 
         @testset "works if there is only very little time left" begin
             orders = [
-                "Bananas Gone Wild", 
+                "Bananas Gone Wild",
                 "Pure Strawberry Joy"
             ]
             expected = ["Pure Strawberry Joy"]

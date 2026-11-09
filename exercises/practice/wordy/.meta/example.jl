@@ -1,4 +1,4 @@
-MATHEXPRESSION = r"-?\d+\.?\d* [-+*/] -?\d+\.?\d*"  #Regex which, for x,y ∈ R and op ∈ {+,-,/,*}, matches: "x op y" 
+MATHEXPRESSION = r"-?\d+\.?\d* [-+*/] -?\d+\.?\d*"  #Regex which, for x,y ∈ R and op ∈ {+,-,/,*}, matches: "x op y"
 NUMBER = r"^-?\d+\.?\d*$"                           #Regex which matches a string consisting solely of a single n ∈ R
 ENG2MATH = zip(("plus","minus","divided by","multiplied by","What is ","?"), ("+","-","/","*","",""))
 

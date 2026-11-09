@@ -23,7 +23,7 @@ function machinemonitor(pct_humidity, temperature)
         temperaturecheck(temperature)
     catch temp_error
         errors += 1
-        temp_error isa ArgumentError ? (@warn "sensor is broken") : (@error "overheating detected: $temperature °C")    
+        temp_error isa ArgumentError ? (@warn "sensor is broken") : (@error "overheating detected: $temperature °C")
     end
     iszero(errors) || throw(MachineError())
 end

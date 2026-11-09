@@ -8,7 +8,7 @@ The goal of this exercise is to teach the student about bit-twiddling in Julia.
 
 - Left- and right-shifts, and some pitfalls.
 - Bitwise logic.
-  
+
 ## Out of scope
 
 - *(nothing obvious)*

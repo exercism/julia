@@ -124,7 +124,7 @@ julia> try
 
            elseif problem isa MethodError # no idea what n is
                @error "please supply a valid argument"
- 
+
            else
               rethrow() # the error could be anything else
            end

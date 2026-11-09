@@ -6,7 +6,7 @@ function dft(x)
 end
 
 function fft(x)
-    length(x) ≤ 1 && return x 
+    length(x) ≤ 1 && return x
     N = length(x)
     xeven, xodd = fft(x[1:2:end]), fft(x[2:2:end])
     factors = cispi.(-(0:2:N-2) / N)

@@ -15,7 +15,7 @@
                 @testset "{{ case["description"] }}" begin
                     @test {% if not case["expected"] %}!{% endif %}isarmstrong({{ case["input"]["number"] }})
                 end
-            {% endfor %}       
+            {% endfor %}
         end
     end
 end

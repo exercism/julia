@@ -1,4 +1,4 @@
-demote(num) = 
+demote(num) =
     if typeof(num) == Float64  return ceil(UInt8, num)
     elseif num isa Integer     return convert(Int8, num)
     else                       throw(MethodError(demote, (num,)))

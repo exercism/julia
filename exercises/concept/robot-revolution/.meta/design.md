@@ -11,7 +11,7 @@ The goal of this exercise is to teach the student how to basic linear algebra fu
 - Understand how to perform matrix multiplication.
 - Understand elementwise operations.
 - Understand the uses of a dot product.
-  
+
 ## Out of scope
 
 - Transpose

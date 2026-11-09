@@ -1,6 +1,6 @@
 # Instructions
 
-You work at an online fashion boutique store. 
+You work at an online fashion boutique store.
 You come up with the idea for a website feature where outfits are suggested to the user.
 Of interest are the potential outfits, their prices and eliminating clashing options.
 

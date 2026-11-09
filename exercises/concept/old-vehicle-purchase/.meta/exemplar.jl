@@ -34,6 +34,6 @@ function fee(msrp, age, kind)
 
     value = max(msrp, 25000)
     percent = 1 - age / 10
-    
+
     return value * percent / 100
 end

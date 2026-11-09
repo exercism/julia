@@ -11,7 +11,7 @@ include("mecha-munch-management.jl")
         cart = Dict("Orange" => 1, "Raspberry" => 1, "Blueberries" => 10)
         items = ("Raspberry", "Blueberries", "Raspberry")
         @test additems!(cart, items) == cart == Dict("Orange" => 1, "Raspberry" => 3, "Blueberries" => 11)
-        
+
         cart = Dict("Broccoli" => 1, "Banana" => 1)
         items = ("Broccoli", "Kiwi", "Kiwi", "Kiwi", "Melon", "Apple", "Banana", "Banana")
         @test additems!(cart, items) == cart == Dict("Broccoli" => 2, "Banana" => 3, "Kiwi" => 3, "Melon" => 1, "Apple" => 1)
@@ -110,7 +110,7 @@ include("mecha-munch-management.jl")
         outofstock = Dict("Orange" => 0)
         stock = Dict("Banana" => 150, "Apple" => 120, "Orange" => 120, "Milk" => 45)
         @test reorder!(outofstock, stock) == Dict("Orange" => 120)
-        
+
         outofstock = Dict("Orange" => 0, "Chocolate" => 0)
         stock = Dict("Banana" => 150, "Apple" => 120, "Orange" => 120, "Milk" => 45)
         @test reorder!(outofstock, stock) == Dict("Orange" => 120, "Chocolate" => 100)

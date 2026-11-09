@@ -30,5 +30,5 @@ include("robot-revolution.jl")
         @test bodylocation(orientmatrix, [0, 3]) ≈ [-√2/2 1 -√2/2; √2/2+3 3 -√2/2+3]
         @test bodylocation(orientmatrix, [5, 3]) ≈ [-√2/2+5 6 -√2/2+5; √2/2+3 3 -√2/2+3]
     end
-    
+
 end

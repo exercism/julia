@@ -1,4 +1,4 @@
-# Hints 
+# Hints
 
 ## General
 

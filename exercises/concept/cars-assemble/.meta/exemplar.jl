@@ -22,11 +22,11 @@ end
 
 production_rate_per_hour(speed) = base_speed * speed * success_rate(speed)
 
-working_items_per_minute(speed) = 
+working_items_per_minute(speed) =
     Int(floor(production_rate_per_hour(speed) / 60))
 
 # Experienced programmers may prefer the version below
 # However, pipes are only introduced later in the syllabus
 
-# working_items_per_minute(speed) = 
+# working_items_per_minute(speed) =
 #     production_rate_per_hour(speed) / 60 |> floor |> Int

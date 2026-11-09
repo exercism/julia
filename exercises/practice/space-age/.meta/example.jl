@@ -11,7 +11,7 @@ function onVenus(seconds::Integer)
 end
 
 function onMars(seconds::Integer)
-    onEarth(seconds) / 1.8808158 
+    onEarth(seconds) / 1.8808158
 end
 
 function onJupiter(seconds::Integer)

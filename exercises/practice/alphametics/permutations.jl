@@ -47,7 +47,7 @@ end
 
 """
     permutations(data)
-Generate all permutations of an indexable object `data` in index-based lexicographic order. 
+Generate all permutations of an indexable object `data` in index-based lexicographic order.
 Because the number of permutations can be very large, this function returns an iterator object.
 Use `collect(permutations(data))` to get an array of all permutations.
 """
@@ -69,9 +69,9 @@ end
 function nextpermutation!(data::Vector, permlen::Int, idxvec::Vector{Int})
     perm = data[@view idxvec[1:permlen]]
     idxveclen = length(idxvec)
-    
+
     permlen ≤ 0 && return (perm, [idxveclen + 1])
-    
+
     if permlen < idxveclen
         j = permlen + 1
         while j ≤ idxveclen &&  idxvec[permlen] ≥ idxvec[j]

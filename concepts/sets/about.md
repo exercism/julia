@@ -84,7 +84,7 @@ julia> s1 ∩ s2  # intersect
 Set{Int64} with 2 elements:
   4
   3
-  
+
 julia> setdiff(s1, s2)
 Set{Int64} with 2 elements:
   2
@@ -96,7 +96,7 @@ Set{Int64} with 4 elements:
   6
   2
   1
-  
+
 julia> s1 ⊇ s2  # issubset
 false
 ```

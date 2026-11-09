@@ -193,7 +193,7 @@ myfunc (generic function with 1 method)
 
 Multiple dispatch is very flexible and highly performant in Julia, so is used very widely.
 
-As the example of 161 methods for `+` suggest, Julia programmers aim to define methods with narrowly-specified types. 
+As the example of 161 methods for `+` suggest, Julia programmers aim to define methods with narrowly-specified types.
 Adding two integers is very different to adding two floats at the bytecode level, and adding an integer to a float adds an addition complication of type promotion.
 
 The more specific the type, the more optimization the compiler can do: of marginal importance in a toy exercise in Exercism, but vital for performance in the big numerical simulations that Julia is designed for.

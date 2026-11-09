@@ -3,14 +3,14 @@ using Test
 include("lasagna.jl")
 
 @testset verbose = true "tests" begin
-    
+
     @testset "1. expected bake time" begin
         @test expected_bake_time == 60
         if VERSION > v"1.7"
             @test isconst(@__MODULE__, :expected_bake_time) == true
         end
     end
-    
+
     @testset "2. preparation time" begin
         @test preparation_time(2) == 4
         @test preparation_time(3) == 6

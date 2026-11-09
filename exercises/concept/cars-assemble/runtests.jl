@@ -35,7 +35,7 @@ include("cars-assemble.jl")
             @test isapprox(success_rate(speed), 0.77, atol=1e-3)
         end
     end
-    
+
     @testset "2. production_rate_per_hour" begin
         @testset "Production rate per hour for speed zero" begin
             speed = 0

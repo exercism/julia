@@ -8,7 +8,7 @@ function translate(phrase, a, b, mode)
 
         inx_c = c - 'a'
         new_c = mode == 0 ? a * inx_c + b : invmod(a, m) * (inx_c - b)
-        
+
         # Must use mod() to guarantee a positive modulus
         # % (remainder) can be negative in Julia, unlike R or Python
         Char(mod(new_c, 26) + 'a')

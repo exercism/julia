@@ -162,7 +162,7 @@ julia> rest
  4
 ```
 
-Keyword arguments can also be supplied by splatting, typically using a `named tuple`. 
+Keyword arguments can also be supplied by splatting, typically using a `named tuple`.
 A `Dict` will also work, but the keys must be symbols (strings will not work).
 
 ```julia-repl

@@ -5,13 +5,13 @@ struct Tree
 end
 
 function tree_from_traversals(preorder, inorder)
-    length(preorder) == length(inorder) || 
+    length(preorder) == length(inorder) ||
         throw(ArgumentError("traversals must have the same length"))
 
-    sort(preorder) == sort(inorder) || 
+    sort(preorder) == sort(inorder) ||
         throw(ArgumentError("traversals must have the same elements"))
 
-    length(preorder) == length(unique(preorder)) || 
+    length(preorder) == length(unique(preorder)) ||
         throw(ArgumentError("traversals must contain unique items"))
 
     tree(preorder, inorder)

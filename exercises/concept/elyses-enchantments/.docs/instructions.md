@@ -1,10 +1,10 @@
 # Instructions
 
-As a magician-to-be, Elyse needs to practice some basics. 
+As a magician-to-be, Elyse needs to practice some basics.
 She has a stack of cards that she wants to manipulate.
 
-To make things a bit easier she only uses the cards 1 to 10 so her stack of cards can be represented by a vector of numbers. 
-The position of a certain card corresponds to the index in the vector. 
+To make things a bit easier she only uses the cards 1 to 10 so her stack of cards can be represented by a vector of numbers.
+The position of a certain card corresponds to the index in the vector.
 
 ## 1. Retrieve a card from a stack
 

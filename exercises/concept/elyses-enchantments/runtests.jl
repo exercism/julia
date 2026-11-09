@@ -4,7 +4,7 @@ include("elyses-enchantments.jl")
 
 @testset verbose = true "tests" begin
     @testset "1. Retrieve a card from a deck" begin
-        
+
         @testset "get the first card" begin
             stack = [1, 2, 3]
             position = 1
@@ -33,21 +33,21 @@ include("elyses-enchantments.jl")
             replacement_card = 7
             @test set_item!(stack, position, replacement_card) == [7, 2, 3]
         end
-        
+
         @testset "replace the middle card with a 5" begin
             stack = [2, 2, 2]
             position = 2
             replacement_card = 5
             @test set_item!(stack, position, replacement_card) == [2, 5, 2]
         end
-        
+
         @testset "replace the last card with a 7" begin
             stack = [7, 7, 6]
             position = 3
             replacement_card = 7
             @test set_item!(stack, position, replacement_card) == [7, 7, 7]
         end
-        
+
     end
 
     @testset "3. Add a card at the top" begin

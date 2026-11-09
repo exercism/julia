@@ -1,4 +1,4 @@
-using Test 
+using Test
 
 include("tisbury-treasure-hunt.jl")
 

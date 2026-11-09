@@ -5,5 +5,5 @@ struct Tree
 end
 
 function tree_from_traversals(preorder, inorder)
-    
+
 end

@@ -3,7 +3,7 @@
 Julia is a dynamic, strongly-typed programming language.
 The programming style is mainly functional, though with more flexibility than in languages such as Haskell.
 
-There is a strong and versatile type system, which will become important in later concepts. 
+There is a strong and versatile type system, which will become important in later concepts.
 In practice, Julia will usually infer a suitable default from the context.
 
 Despite its emphasis on readability, making it appear as a scripting language like Python and Ruby, Julia code is compiled before running.
@@ -128,7 +128,7 @@ We will return to this in later concepts, which will discuss integer division wi
 
 ## Functions
 
-For best runtime performance, it is best to place most of the code inside [functions][functions]. 
+For best runtime performance, it is best to place most of the code inside [functions][functions].
 Having lots of small functions is fine, in contrast to some other languages.
 
 There are two common ways to define a named function in Julia:
@@ -144,7 +144,7 @@ There are two common ways to define a named function in Julia:
     Indentation by 4 spaces is conventional for readability, but the compiler ignores this.
     The `end` keyword is essential: more like Ruby than like Python.
 
-    Note that we could have written `return x * y + z`. 
+    Note that we could have written `return x * y + z`.
     However, Julia functions always return the last expression evaluated, so the `return` keyword is optional.
     Many programmers prefer to include it to make their intentions more explicit.
 

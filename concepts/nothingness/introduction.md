@@ -108,7 +108,7 @@ julia> v / 0
  NaN
   Inf
  -Inf
- 
+
 julia> sum(v / 0)
 NaN
 ```

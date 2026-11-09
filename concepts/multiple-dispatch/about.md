@@ -214,7 +214,7 @@ julia> Point(3.5, 2)
 julia> Point{Float32}(3.5, 2)
  Point{Float32}(3.5f0, 2.0f0)
 
-julia> Point{Int64}(3.5, 2) 
+julia> Point{Int64}(3.5, 2)
  InexactError: Int64(3.5)      # Output truncated for brevity
 ```
 While this level of control over the types may be desirable, it may also be useful to have a bit of abstraction.
@@ -255,7 +255,7 @@ Of course, Julia also does a form of pattern-matching, but at dispatch rather th
 
 Multiple dispatch is very flexible and highly performant in Julia, so is used very widely.
 
-As the example of 161 methods for `+` suggest, Julia programmers aim to define methods with narrowly-specified types. 
+As the example of 161 methods for `+` suggest, Julia programmers aim to define methods with narrowly-specified types.
 Adding two integers is very different to adding two floats at the bytecode level, and adding an integer to a float adds an addition complication of type promotion.
 
 The more specific the type, the more optimization the compiler can do: of marginal importance in a toy exercise in Exercism, but vital for performance in the big numerical simulations that Julia is designed for.

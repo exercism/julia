@@ -6,7 +6,7 @@ You have six tasks, all dealing with the numbers of birds that visited your gard
 
 ## 1. Check how many birds visited today
 
-Implement the `today()` function to return how many birds visited your garden today. 
+Implement the `today()` function to return how many birds visited your garden today.
 The bird counts are ordered by day, with the first element being the count of the oldest day, and the last element being today's count.
 
 ```julia-repl
@@ -47,7 +47,7 @@ julia> count_for_first_days(birds_per_day, 4)
 
 ## 5. Calculate the number of busy days
 
-Some days are busier that others. 
+Some days are busier that others.
 A busy day is one where five or more birds have visited your garden.
 Implement the `busy_days()` function to return the number of busy days:
 
@@ -70,4 +70,3 @@ julia> week2 = [2, 6, 4, 1, 3, 8, 9]
 julia> average_per_day(week1, week2)
 [4.5, 4.0, 6.5, 1.0, 4.0, 3.0, 9.5]
 ```
-

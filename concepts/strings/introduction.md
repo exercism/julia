@@ -92,7 +92,7 @@ At least the error message is helpful.
 julia> "s1 " + "s2"
 ERROR: MethodError: no method matching +(::String, ::String)
 The function `+` exists, but no method is defined for this combination of argument types.
-String concatenation is performed with * 
+String concatenation is performed with *
 
 julia> "s1 " * "s2"
 "s1 s2"

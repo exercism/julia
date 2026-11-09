@@ -35,7 +35,7 @@
 - With the total exchange rate, the exchange can be done in three steps in the app:
     - You can calculated the exchangeable value from scratch, or...
     - You can use three of your functions from earlier tasks.
-- Pay attention to the order of processing functions, 
+- Pay attention to the order of processing functions,
     - Start with a function that uses an exchange rate.
     - The output of a function should hint at which is needed next.
 

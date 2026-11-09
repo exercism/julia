@@ -10,7 +10,7 @@ You may (or may not!) want to call the function `permutations(a, t)` from [Combi
 ~~~~
 
 - If working in the online editor, you can call `permutations(a ,t)` freely as it is already in the namespace. You can see the source code in the tab labeled `permutations.jl`.
-- If working locally, add `include("permutations.jl")` to the top of your solution file to access a version of `permutations(a, t)` located there. 
+- If working locally, add `include("permutations.jl")` to the top of your solution file to access a version of `permutations(a, t)` located there.
 
 ~~~~exercism/caution
 

@@ -1,7 +1,7 @@
 function transform(ch)
     if ch == '-'
         "_"
-    elseif 'α' ≤ ch ≤ 'ω' 
+    elseif 'α' ≤ ch ≤ 'ω'
         "?"
     elseif isspace(ch) || isdigit(ch)
         ""
