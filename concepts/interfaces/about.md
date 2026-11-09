@@ -212,10 +212,10 @@ The Iterators interface allows us to take an arbitrary custom type and have it b
 Suppose we also wanted to be able to index into the sequence:
 
 ```julia-repl
-julia> P = Powers(3, 4)
+julia> p = Powers(3, 4)
 Powers(3, 4)
 
-julia> P[2]
+julia> p[2]
 ERROR: MethodError: no method matching getindex(::Powers, ::Int64)
 The function `getindex` exists, but no method is defined for this combination of argument types.
 ```
@@ -225,9 +225,9 @@ We can add this behavior, and the [manual][ref-indexing] explains how.
 Minimally, we need to define `getindex()`.
 
 ```julia-repl
-julia> function Base.getindex(P::Powers, i::Int)
-          1 ≤ i ≤ P.count || throw(BoundsError(P, i))
-          return P.n ^ i
+julia> function Base.getindex(p::Powers, i::Int)
+          1 ≤ i ≤ p.count || throw(BoundsError(p, i))
+          return p.n ^ i
        end
 
 julia> p = Powers(3, 4)
