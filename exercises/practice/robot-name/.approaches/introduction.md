@@ -3,7 +3,7 @@
 ## General guidance
 
 The main point of this exercise is to learn about mutable structs and to reinforce the idea of writing methods for your own types.
-But there's also some trickyness in the problem, too.
+But there's also some trickiness in the problem, too.
 There are two common mistakes:
 
 1. fields should have explicit types (structs with `Any` fields are slower, ref [Julia performance guide](https://docs.julialang.org/en/v1/manual/performance-tips/index.html))
@@ -15,8 +15,8 @@ There are two common mistakes:
 There are broadly four ways of solving this (in ascending goodness):
 
 1. Generate a random name, but don't worry about collision at all
-2. Generate a random names until you get one that you haven't seen before
-3. Generate a random names until you get one that you haven't seen before, but give up if there are no names left to find
+2. Generate random names until you get one that you haven't seen before
+3. Generate random names until you get one that you haven't seen before, but give up if there are no names left to find
 4. Generate and shuffle the names in advance, then just iterate that collection
 
 Solutions that store previously issued names in a collection should probably use an efficient collection.
@@ -26,7 +26,7 @@ Option 4 uses a lot of memory if you store names as a vector of strings (1x 64 b
 You can cut that significantly by storing integers instead (1x 32bit int per name) or by storing one long string and indexing into it (40 bits per name).
 
 Options 2 and 3 need special consideration to make them not take a very long time as names run out.
-There's some basic stats to help you grasp the issue:
+Here are some basic stats to help you grasp the issue:
 
     Probability of finding the last name with N guesses =
       1 - ((676000 - 1) / 676000)^N

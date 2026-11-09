@@ -6,7 +6,7 @@
 - If you want a vector of characters from a string, `collect(str)` is the simplest way to get one
 - Think about allocations. How many collections (strings, vectors) do you need to allocate? 2? 1? 0?
 
-## What even is a luhn?
+## What even is a Luhn?
 
 The formula is a little obscure. A good docstring might look something like this:
 
@@ -14,7 +14,7 @@ The formula is a little obscure. A good docstring might look something like this
 """
     luhn(str)
 
-Return true if `str` encodes a valid number in the luhn formula.
+Return true if `str` encodes a valid number in the Luhn formula.
 
 A valid string will:
 
@@ -55,7 +55,7 @@ a new reversed string, but either would work.
 
 We're also using juxtaposition multiplication, which is a fancy way of saying that `2x` is equivalent to `2 * x`.
 
-As with most exercises involving strings, a lot of time is spent doing unicode-aware things.
+As with most exercises involving strings, a lot of time is spent doing Unicode-aware things.
 So we can speed it up if we avoid those things.
 
 For example, when parsing `chr`, we already know that it is a digit, so we can just do some arithmetic:
@@ -71,8 +71,8 @@ x = chr - '0'
 And, with a little work, we can rewrite the whole solution to operate on bytes for a 25x speedup:
 
 ```julia
-# 25x faster by iterating the utf8 bytes rather than the string
-# This is still unicode-safe.
+# 25x faster by iterating the UTF-8 bytes rather than the string
+# This is still Unicode-safe.
 function luhn2(str)
     acc = 0
     len = 0

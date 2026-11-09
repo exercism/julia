@@ -62,7 +62,7 @@ Without an annotation Julia will type `triplets` as `Vector{Any}`, which means a
 Annotating with an immutable type, which by definition will be of known size,
 [allows Julia to simply store the items one after the other without indirection](https://docs.julialang.org/en/v1/manual/performance-tips/index.html#man-performance-abstract-container).
 
-This will make almost no difference to the speed of this particular function because the number of `push!`s are very small compared to other operations,
+This will make almost no difference to the speed of this particular function because the number of `push!`s is very small compared to other operations,
 but it would help _type inference_ in functions using the output of `pythagorean_triplets(x)`, which is often useful.
 
 We can improve this solution slightly by tightening up the loop bounds using some simple arithmetic and floor division (`fld`):

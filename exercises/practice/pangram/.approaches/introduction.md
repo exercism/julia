@@ -13,7 +13,7 @@ A simple, elegant solution:
 ispangram(input) = 'a':'z' ⊆ lowercase(input)
 ```
 
-⊆ can be entered at the Julia repl as `\subseteq` followed by tab. It's the infix operator for the `issubset` function.
+⊆ can be entered at the Julia REPL as `\subseteq` followed by tab. It's the infix operator for the `issubset` function.
 
 ## Approach: using currying
 
@@ -35,10 +35,10 @@ ispangram2(input) = all(c -> in(c, input) || in(uppercase(c), input), 'a':'z')
 
 And here's a faster, more complicated solution,
 just in case pangram-identification is on the critical path for your new startup.
-Speed comes from avoiding expensive unicode-compatible iteration and upper/lowercasing and
+Speed comes from avoiding expensive Unicode-compatible iteration and upper/lowercasing and
 from keeping the body of the loop very simple (no conditionals, minimal logic).
 
-This is still unicode safe, if you don't understand why, the wikipedia article on UTF-8 might help :)
+This is still Unicode safe, if you don't understand why, the Wikipedia article on UTF-8 might help :)
 
 ```julia
 function ispangram3(input)

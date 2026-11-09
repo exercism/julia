@@ -4,13 +4,13 @@
 
 - Instead of writing out the whole alphabet, you can use a character range `'a':'z'`, if you like.
 - `Iterators.partition` and `join` might be helpful for adding spaces between groups.
-- Think about what happens to non-ascii input. What would you like to happen?
+- Think about what happens to non-ASCII input. What would you like to happen?
 
 ## Technique: ciphering a single character
 
 The Atbash cipher requires mapping each occurrence of the nth letter in the alphabet with the (26-n)th letter.
 
-You could acheive this by creating a dictionary something like this:
+You could achieve this by creating a dictionary something like this:
 
 ```julia
 const cipher = Dict(zip(vcat('a':'z', 'A':'Z', '0':'9'),
@@ -19,7 +19,7 @@ const cipher = Dict(zip(vcat('a':'z', 'A':'Z', '0':'9'),
 
 and translating each character with `cipher[char]`.
 
-Another option is to use the fact that the english alphabetic characters are represented in order in unicode (so the numerical representation of 'b' is one greater than the numerical representation of 'a').
+Another option is to use the fact that the English alphabetic characters are represented in order in Unicode (so the numerical representation of 'b' is one greater than the numerical representation of 'a').
 
 That lets us encode a single character with these steps:
 
@@ -51,7 +51,7 @@ We get a nice definition for encoding a single character (with a good output typ
 and the `encode(str)` function is quite short and, if you are familiar with functional programming in Julia, fairly easy to read.
 
 Compared to the lower-level approach below, this allocates more and performs extra work by creating various intermediate results that need to be transformed.
-Of course, that will only rarely matteer.
+Of course, that will only rarely matter.
 
 The code uses `missing` because unencodable values do go missing and because `skipmissing` is a handy built-in iterator.
 I could also have used `nothing` and provided a function like `skipnothing(xs) = (x for x in xs if !isnothing(x))`.
@@ -68,7 +68,7 @@ using Base.Iterators: partition
 """
     encode(ch::AbstractChar)
 
-Encode a character with the Atbash cipher using the ascii latin alphabet.
+Encode a character with the Atbash cipher using the ASCII Latin alphabet.
 
 Letters are encoded, numbers are passed through unchanged, all other characters
 return `missing`. The Atbash cipher only has one key, so encoding and decoding
@@ -89,7 +89,7 @@ end
 """
     encode(str; group=true)
 
-Encode a string with the atbash cipher using the ascii latin alphabet.
+Encode a string with the Atbash cipher using the ASCII Latin alphabet.
 
 Letters are encoded, numbers are passed through unchanged, all other characters
 are filtered out. The Atbash cipher only has one key, so encoding and decoding
@@ -171,11 +171,11 @@ end
 A solution by [halfdan](https://exercism.io/tracks/julia/exercises/atbash-cipher/solutions/419b6f4d04974a63b7f8531e8ad2808c).
 
 ~~~~exercism/caution
-This solution will mangle non-[ascii][ascii] letter characters and pass-through symbols, separators, etc.
-because it assumes that `isletter(c)` is the same as `c in 'a':'z' || c in 'A':'Z'` (it actually matches all unicode letters).
+This solution will mangle non-[ASCII][ascii] letter characters and pass-through symbols, separators, etc.
+because it assumes that `isletter(c)` is the same as `c in 'a':'z' || c in 'A':'Z'` (it actually matches all Unicode letters).
 This is a common mistake and can cause real issues!
 
-If you want to ensure your input is ascii you can use `ascii()`, or `isascii()`, or the Strs.jl package.
+If you want to ensure your input is ASCII you can use `ascii()`, or `isascii()`, or the Strs.jl package.
 ~~~~
 
 ```julia
@@ -202,7 +202,7 @@ end
 
 Solution by [Nosferican](https://exercism.io/tracks/julia/exercises/atbash-cipher/solutions/4a06872ec87a4c91ab7c32e98682165e)
 
-This solution defines a `Dict` that maps each valid character to its' ciphered version (`Cipher`). The definition for `decode` is then pretty simple.
+This solution defines a `Dict` that maps each valid character to its ciphered version (`Cipher`). The definition for `decode` is then pretty simple.
 
 The only complicated code is the code to partition the ciphertext into blocks of 5, and that could be done by Iterators.partition.
 

@@ -87,8 +87,8 @@ end
 
 Its speed comes from three sources:
 
-1. Iterating a vector of bytes instead of characters (though this algorithm is still unicode-safe).
-   This is faster because iterating characters from a `String` involves scanning the same vector of UTF-8 bytes but also doing a little work every iteration to establish if the current byte is the start of a multibyte sequence (and, if so to reassemble that sequence into its proper 32 bit character).
+1. Iterating a vector of bytes instead of characters (though this algorithm is still Unicode-safe).
+   This is faster because iterating characters from a `String` involves scanning the same vector of UTF-8 bytes but also doing a little work every iteration to establish if the current byte is the start of a multibyte sequence (and, if so, to reassemble that sequence into its proper 32 bit character).
 2. The loop body is extremely simple and fast on many processors (load a value, increment a value at an offset\*) and branchless (there are no conditionals within the loop body).
    Branchless code is often faster because branching hinders CPU instruction level parallelism and stops compilers using "Single Instruction Multiple Data" (SIMD) instructions (though this particular loop body can't benefit from SIMD anyway).
 3. Bounds checks are turned off with `@inbounds`, this removes some hidden branches (normally every array access in Julia has a little check that the index is valid first).

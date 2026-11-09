@@ -29,11 +29,11 @@ function sum_of_multiples(limit, factors)
 end
 ```
 
-We specify that the `Set` will contain `Int` by writing `Set{Int}`. This is necessary so that `sum` knows how to sum the empty set (an empty set of integers has a sum of 0, but if the set has an unknown type then we cannot know it's sum).
+We specify that the `Set` will contain `Int` by writing `Set{Int}`. This is necessary so that `sum` knows how to sum the empty set (an empty set of integers has a sum of 0, but if the set has an unknown type then we cannot know its sum).
 
 We could also have used a `BitSet` here instead of a `Set`, which is the better option when working with a dense set of integers.
 To use a `BitSet` replace `Set{Int}()` on line 2 with `BitSet()`,
-but beware that `BitSet`s can use an enormous about of memory if the difference between the smallest and largest element is very large, which can happen in this function if the limit is very large.
+but beware that `BitSet`s can use an enormous amount of memory if the difference between the smallest and largest element is very large, which can happen in this function if the limit is very large.
 
 <details>
 <summary>Automatically choosing between a `BitSet` and a `Set{Int}`</summary>
@@ -106,7 +106,7 @@ end
 ```
 
 If the body of `sum_of_multiples` was more complicated (as in the Wheel approach below), then the type instability could cause performance issues.
-In that case, performance could be improved be coercing `multiples` into just one type (e.g. `collect(unique_multiples(limit, factor))` to turn it into a vector), or by introducing a "function barrier", or by writing explicit ifs (`if multiples isa BitSet`).
+In that case, performance could be improved by coercing `multiples` into just one type (e.g. `collect(unique_multiples(limit, factor))` to turn it into a vector), or by introducing a "function barrier", or by writing explicit ifs (`if multiples isa BitSet`).
 
 If this seems a bit clumsy to you, another approach would be to write your own set implementation (possibly using `BitSet` and `Set`) that has good performance for both dense and sparse sets of integers.
 This is left as an exercise for the reader ;)
@@ -150,7 +150,7 @@ Understandability is a matter of opinion and taste, but for me both approaches a
 
 As for performance, finding the remainders will almost always be a lot slower because it is performing many more iterations of its inner loop (at least once for each of 1:limit-1) and its inner loop is more expensive (CPUs take several times longer to divide integers than to add them).
 
-When benchmarking, finding the remainders was only faster when when the factors started at 1 (so every value in 1:limit-1 is a factor) or there were an enormous number of repeated factors, which are the worst cases for the summing set approach but are also quite silly inputs. Try the benchmarking code below if you're interested in running your own experiments.
+When benchmarking, finding the remainders was only faster when the factors started at 1 (so every value in 1:limit-1 is a factor) or there were an enormous number of repeated factors, which are the worst cases for the summing set approach but are also quite silly inputs. Try the benchmarking code below if you're interested in running your own experiments.
 
 ```julia
 function sum_of_multiples1(limit, factors)
