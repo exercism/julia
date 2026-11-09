@@ -9,7 +9,7 @@ She found out that technicians are doing a lot of quality checks by hand. She se
 Your first mission is to write a piece of software to monitor the humidity level of the production room. There is already a sensor connected to the software of the company that returns periodically the humidity percentage of the room.
 
 You need to implement a function in the software that will throw an error if the humidity percentage is too high.
-If the humidity is at an acceptable level, a info log will be added.
+If the humidity is at an acceptable level, an info log will be added.
 The function should be called `humiditycheck` and take the humidity percentage as an argument.
 
 You should halt with an ErrorException (the exact message is not important, but must contain the measured humidity level) if the percentage exceeds 70%.

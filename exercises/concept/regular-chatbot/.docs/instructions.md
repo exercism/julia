@@ -16,7 +16,7 @@ Apart from being smart, the Chatbot is also a loyal assistant.
 
 To ask something to the chatbot, the user must say the word “**Chatbot**” in the first position of the command.
 
-It doesn"t matter if the keyword is in UPPERCASE or lowercase. The important aspect here is the position of the word.
+It doesn't matter if the keyword is in UPPERCASE or lowercase. The important aspect here is the position of the word.
 
 Implement the function `is_valid_command()` that helps the Chatbot recognize when the user is giving a command.
 
@@ -68,7 +68,7 @@ julia> check_phone_number("659-771-594")
 
 ## 4. Get Website Link
 
-The Chatbot is a really curious software. Even though he can search on the internet about a particular topic, he likes to ask users about cool websites or URL’s to go find relevant information.
+The Chatbot is a really curious software. Even though he can search on the internet about a particular topic, he likes to ask users about cool websites or URLs to go find relevant information.
 
 Example of Conversation:
 

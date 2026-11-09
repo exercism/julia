@@ -62,7 +62,7 @@ In this, the variable is more or less similar to those in a statically-typed lan
 
 ## The Type Hierarchy
 
-`Int64`, `Int16`, `String`, `Char`: where do these types _"come from"_.
+`Int64`, `Int16`, `String`, `Char`: where do these types _"come from"_?
 
 In many object-oriented (OO) languages, each type is a class, subclassing arranges them in a class hierarchy, and class methods define the behaviors.
 

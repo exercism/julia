@@ -58,7 +58,7 @@ julia> random_stardate_v2()
 
 One version of the game involves interacting with other starships, and Mary needs a selection.
 
-There is a full list of possible starships, but only a few of these is needed in each game, and they should be chosen at random.
+There is a full list of possible starships, but only a few of these are needed in each game, and they should be chosen at random.
 
 Implement the `pick_starships(starships, number_needed)` function, which takes a vector of unique starship registry numbers, and returns a vector of length `number_needed`.
 Result values should be taken from `starships`, with no duplicates.

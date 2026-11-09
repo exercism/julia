@@ -50,7 +50,7 @@ Being budding Julia programmers, they have come to you for help in writing a sma
 
 ## 1. Extract coordinates
 
-Implement the `get_cooordinate()` function that takes a `(treasure, coordinate)` pair from Azara's list and returns only the extracted map coordinate.
+Implement the `get_coordinate()` function that takes a `(treasure, coordinate)` pair from Azara's list and returns only the extracted map coordinate.
 
 ```julia-repl
 julia> get_cooordinate( ("Scrimshaw Whale's Tooth", "2A") )

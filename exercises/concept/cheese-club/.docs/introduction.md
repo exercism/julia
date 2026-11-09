@@ -207,4 +207,4 @@ julia> sum(map(x -> x^2 + 1, 1:3))
 17
 ```
 
-As we might expect, Julia also has `mapfoldl()` and `mapfoldr()` functions for sitations where direction is important.
+As we might expect, Julia also has `mapfoldl()` and `mapfoldr()` functions for situations where direction is important.

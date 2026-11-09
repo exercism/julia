@@ -27,7 +27,7 @@ Note the "as possible", it is an important part of the statement.
 
 ***Character literals are written in single-quotes, and are distinct from strings written in double quotes.***
 
-This is obvious to people from the C/C++ world, but potentially confusing to Python and Javascript programmers.
+This is obvious to people from the C/C++ world, but potentially confusing to Python and JavaScript programmers.
 
 ```julia-repl
 julia> a = 'a'  # Roman alphabet
@@ -87,7 +87,7 @@ Many string-handling functions can also work on `Char` input.
 - For appropriate alphabets, change case with `uppercase()` and `lowercase()`.
 - Test case with `isuppercase()` and `islowercase()`.
 - Test character type with:
-  - `isletter()` covers many alphabets
+  - `isletter()`, covers many alphabets
   - `isdigit()`, tests for strictly 0:9
   - `isnumeric()`, broader than `isdigit`, so `true` for ¾ and various non-European scripts
   - `isxdigit()`, hexadecimal digits

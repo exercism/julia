@@ -19,7 +19,7 @@ In a third and even shorter form, a short, single-use function can be created wi
 
 ```julia-repl
 julia> map(x -> 2x, 1:3)
-4-element Vector{Int64}:
+3-element Vector{Int64}:
  2
  4
  6
@@ -55,7 +55,7 @@ This would be limiting and inconvenient, so there are several other options.
 
 Like many languages, Julia allows function definitions to supply default values for individual arguments.
 
-Function call can then either supply a value for that argument, or omit it and rely on the default.
+A function call can then either supply a value for that argument, or omit it and rely on the default.
 
 ```julia-repl
 julia> f(x, y=10) = x * y
@@ -154,7 +154,7 @@ For example, multiple assignment uses a tuple constructor function internally:
 
 ```julia-repl
 julia> first, rest... = [1, 2, 3, 4]
-4-element Vector{Int64}:
+3-element Vector{Int64}:
  1
  2
  3

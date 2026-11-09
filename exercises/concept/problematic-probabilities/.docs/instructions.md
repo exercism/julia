@@ -1,7 +1,7 @@
 # Instructions
 
 A research organization has noticed that some of its junior researchers have been using less-than-optimal methods in their analysis.
-One of these methods is to immediately convert discrete probabilites into floats (i.e. real numbers) before doing further calculations.
+One of these methods is to immediately convert discrete probabilities into floats (i.e. real numbers) before doing further calculations.
 
 Senior researchers prefer to use rational numbers in the calculations, which may provide higher precision, and would like to know if the poor practices of the junior researchers have affected the studies' outcomes.
 
@@ -9,7 +9,7 @@ There were two types of studies done:
 - Many tests were run, each returning a discrete probability for success, and then the mean of these probabilities was calculated.
 - Many independent events were tested, and the total probability for all events to occur was calculated by multiplying them together.
 
-The senior researchers are asking you to write functions which can help them determine if there are rounding errors in the analyses from using floats, and asking you provide a precise rational number for the outcome if there are errors.
+The senior researchers are asking you to write functions which can help them determine if there are rounding errors in the analyses from using floats, and asking you to provide a precise rational number for the outcome if there are errors.
 
 ## 1. Give the ratio of successes to trials
 
@@ -43,7 +43,7 @@ julia> probabilities([1, 2, 3], [4, 5, 6])
 The `checkmean(successes, trials)` takes the two arrays, `successes` and `trials`.
 It checks the mean of the real probabilities against the mean of the rational probabilities.
 - If the two probabilities are equal, `checkmean` returns `true`
-- If the two probabilites are different, `checkmean` returns the rational probability.
+- If the two probabilities are different, `checkmean` returns the rational probability.
 
 ```julia-repl
 julia> successes, trials = [9, 4, 7, 8, 6], [22, 22, 11, 17, 12];
@@ -60,7 +60,7 @@ julia> checkmean(successes, trials)
 The `checkprob(successes, trials)` takes the two arrays, `successes` and `trials`.
 It checks the total probability of the float probabilities against the total probability of the rational probabilities.
 - If the two probabilities are equal, `checkprob` returns `true`
-- If the two probabilites are different, `checkprob` returns the rational probability.
+- If the two probabilities are different, `checkprob` returns the rational probability.
 
 ```julia-repl
 julia> successes, trials = [2, 9, 4, 4, 5], [15, 11, 17, 19, 15];

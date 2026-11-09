@@ -57,7 +57,7 @@ These ingredients need to be tagged/annotated for each dish so that they don't c
 Implement the `tag_special_ingredients(dish)` function that takes a `Tuple` with the dish name in the first position, and a `Vector` or `Set` of ingredients for that dish in the second position.
 Return the dish name followed by the `Set` of ingredients that require a special note on the dish description.
 Dish ingredients inside a `Vector` may or may not have duplicates.
- For the purposes of this exercise, all allergens or special ingredients that need to be labeled are in the `SPECIAL_INGREDIENTS` constant.
+For the purposes of this exercise, all allergens or special ingredients that need to be labeled are in the `SPECIAL_INGREDIENTS` constant.
 
 ```julia-repl
 julia> tag_special_ingredients(("Ginger Glazed Tofu Cutlets", ["tofu", "soy sauce", "ginger", "corn starch", "garlic", "brown sugar", "sesame seeds", "lemon juice"]))
@@ -85,7 +85,7 @@ Set(["arugula", "brown sugar", "honeydew", "coconut water", "english cucumber", 
 ## 6. Pull out Appetizers for Passing on Trays
 
 The hosts have given you a list of dishes they'd like prepped as "bite-sized" appetizers to be served on trays.
- You need to pull these from the main list of dishes being prepared as larger servings.
+You need to pull these from the main list of dishes being prepared as larger servings.
 
 Implement the `separate_appetizers(dishes, appetizers)` function that takes a `Vector` of dish names and a `Vector` of appetizer names.
 The function should return a `Vector` with the list of dish names with appetizer names removed.

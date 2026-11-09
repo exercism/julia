@@ -19,7 +19,7 @@ Implementation of this can be built up stepwise, adding logic for tasks 2 and 3 
 - Now the department is `nothing`.
 - There is an [`isnothing()`][isnothing] function.
 
-## 4. Calculate the total salary of emplyees with no ID
+## 4. Calculate the total salary of employees with no ID
 
 - Are [any][any] IDs missing? If not, the return value is zero.
 - To pull out entries with missing ID, it may help to start by [zipping][zip] the `ids` and `salaries` vectors.

@@ -12,7 +12,7 @@ For each of the four possible options you need to write a function that tells th
 
 ## 1. Check if the 'Fast Attack' option should be shown
 
-If the knight is sleeping, then Annalyn will be able to make a quick attack into the camp before he can wake up properly and get his armour on.
+If the knight is sleeping, then Annalyn will be able to make a quick attack into the camp before he can wake up properly and get his armor on.
 
 Implement a function named `can_do_fast_attack` that takes a boolean value which indicates if the knight is awake.
 This function returns `true` if the 'Fast Attack' action is available based on the state of the character. Otherwise, returns `false`:
@@ -44,8 +44,8 @@ true
 
 ## 3. Check if the 'Signal Prisoner' option should be shown
 
-The prisoner can be signalled using bird sounds if she is awake and the archer is sleeping.
-If the archer is awake then she can't be safely signaled because the archer is also trained in bird signalling.
+The prisoner can be signaled using bird sounds if she is awake and the archer is sleeping.
+If the archer is awake then she can't be safely signaled because the archer is also trained in bird signaling.
 
 Implement a function named `can_signal_prisoner` that takes two boolean values, indicating if the archer and prisoner, respectively, are awake.
 The function returns `true` if the 'Signal Prisoner' action is available based on the state of the characters.
