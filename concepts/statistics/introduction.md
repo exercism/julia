@@ -21,9 +21,6 @@ julia> v = collect(1:0.2:3)
  ... # display truncated
  3.0
 
-julia> mean(v)
-2.0
-
 julia> extrema(v)
 (1.0, 3.0)
 

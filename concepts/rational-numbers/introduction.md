@@ -68,7 +68,7 @@ julia> 3//4 * 1//3  # multiplication
 julia> 3//4 / 1//3  # division
 9//4
 
-julia> 3//4 ^ 2  # exponentiation
+julia> (3//4) ^ 2  # exponentiation
 3//16
 
 julia> 3//4 + 5  # rational and int => rational

@@ -184,13 +184,13 @@ julia> A = reshape(Random.shuffle(1:9), (3, 3))
  6  7  5
  2  1  3
 
-julia> sort(A, dims=1)  # sort rows
+julia> sort(A, dims=1)  # sort vertically
 3×3 Matrix{Int64}:
  2  1  3
  6  4  5
  8  7  9
 
-julia> sort(A, dims=2)  # sort columns
+julia> sort(A, dims=2)  # sort horizontally
 3×3 Matrix{Int64}:
  4  8  9
  5  6  7

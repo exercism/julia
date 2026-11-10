@@ -68,7 +68,7 @@ julia> 3//4 * 1//3  # multiplication
 julia> 3//4 / 1//3  # division
 9//4
 
-julia> 3//4 ^ 2  # exponentiation
+julia> (3//4) ^ 2  # exponentiation, parentheses are needed
 3//16
 
 julia> 3//4 + 5  # rational and int => rational
@@ -80,6 +80,8 @@ julia> 3//4 + 5.3  # rational and float => float
 julia> float(3//4)  # casting
 0.75
 ```
+
+Because of operator precedence, sometimes parentheses are needed, as for exponentiation in the previous example.
 
 Rationals and [complex numbers][complex] can also be combined.
 Complex numbers are discussed in a [separate concept][complex-concept].

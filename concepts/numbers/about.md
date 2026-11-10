@@ -208,7 +208,7 @@ It is always possible to use `*` as an [infix][infix] operator, as in most other
 
 However, Julia is designed by people who believe that code should look as much as possible like mathematical equations.
 
-Because variable names must start with a letter, prefacing the name with a number (integer or floating-point) is treated as implicit multiplication.
+Because variable names must start with a letter, prefacing the name with a number (integer or floating-point) is treated as [implicit multiplication][implicit-multiplication].
 
 For example, if we want the surface area of a sphere, instead of `4 * pi * r * r` we could do this:
 
@@ -278,6 +278,62 @@ Common examples include `π`, `e` ([Euler's number][e]), and many [roots][root] 
 
 Julia tries to do mathematics _properly_.
 
+## Modulo and Remainder
+
+Examples of what we might simplistically call the _leftover part_ from integer division often just show positive integers.
+
+```julia-repl
+julia> 10 ÷ 3
+3
+
+julia> 10 % 3
+1
+```
+
+Thinking about negative integers gets a bit more complicated.
+What determines the sign of the result?
+
+```julia-repl
+julia> -10 % 3
+-1
+
+julia> 10 % -3
+1
+```
+
+In the above examples, we are calculating the _remainder_.
+The infix operator `%` is just syntatic sugar for the [`rem()`][ref-rem] function which performs the caclulation.
+
+```julia-repl
+julia> rem(-10, 3)
+-1
+
+julia> rem(10, -3)
+1
+```
+
+Contrast this with the _modulo_, using the [`mod()`][ref-mod] function.
+
+```julia-repl
+julia> mod(-10, 3)
+2
+
+julia> mod(10, -3)
+-2
+```
+
+Summarizing the underlying principles, and the practical consequences:
+
+- `rem(x, y)` performs _truncated division_.
+  - The division rounds towards zero.
+  - The result has the same sign as the dividend `x`.
+- `mod(x, y)` performs _floor division_.
+  - The division rounds towards minus infinity.
+  - The result has the same sign as the divisor `y`.
+
+This is just a basic introduction.
+Julia (_of course!_) has a wide range of related functions dealing with all aspects of integer division: far too many to list here.
+
 ## Conversion of numeric types
 
 This can often happen automatically:
@@ -344,7 +400,7 @@ See the [manual][round] for more details.
 Surely this just throws an error?
 In fact, the situation is not that simple.
 
-Integer division with `÷` or `//` will result in an error, as you might expect.
+Integer division with `÷` or `//` will result in a [rational-number][concept-rational], covered in a later Concept.
 
 Floating-point division with `/` takes what might be considered an engineering approach, rather than a standard computer science approach:
 
@@ -435,3 +491,6 @@ As well as rational numbers, later parts of the syllabus will discuss:
 [isapprox]: https://docs.julialang.org/en/v1/base/math/#Base.isapprox
 [operators]: https://docs.julialang.org/en/v1/manual/mathematical-operations/#Arithmetic-Operators
 [implicit-multiplication]: https://docs.julialang.org/en/v1/manual/integers-and-floating-point-numbers/#man-numeric-literal-coefficients
+[ref-rem]: https://docs.julialang.org/en/v1/base/math/#Base.mod
+[ref-mod]: https://docs.julialang.org/en/v1/base/math/#Base.rem
+[concept-rational]: https://exercism.org/tracks/julia/concepts/rational-numbers

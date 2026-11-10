@@ -183,7 +183,7 @@ julia> round(π, digits=10)
 Surely this just throws an error?
 In fact, the situation is not that simple.
 
-Integer division with `÷` or `//` will result in an error, as you might expect.
+Integer division with `÷` or `//` will be covered in a later concept.
 
 Floating-point division with `/` takes what might be considered an engineering approach, rather than a standard computer science approach:
 
