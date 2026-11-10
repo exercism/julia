@@ -1777,6 +1777,14 @@
         ]
       },
       {
+        "slug": "zebra-puzzle",
+        "name": "Zebra Puzzle",
+        "uuid": "bda62cdc-a9c4-4f2e-9f00-b5fab69b96b2",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
+      },
+      {
         "slug": "complex-numbers",
         "name": "Complex Numbers",
         "uuid": "eca7e62c-7bbf-436c-8011-2920cb2ab1c1",
