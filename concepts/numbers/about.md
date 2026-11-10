@@ -324,10 +324,10 @@ julia> mod(10, -3)
 
 Summarizing the underlying principles, and the practical consequences:
 
-- `rem(x, y)` performs _floor division_.
+- `rem(x, y)` performs _truncated division_.
   - The division rounds towards zero.
   - The result has the same sign as the dividend `x`.
-- `mod(x, y)` performs _truncated division_.
+- `mod(x, y)` performs _floor division_.
   - The division rounds towards minus infinity.
   - The result has the same sign as the divisor `y`.
 
