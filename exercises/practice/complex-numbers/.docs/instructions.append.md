@@ -9,6 +9,6 @@ You can work on the bonus exercises involving arithmetic between real numbers an
 `# enable_realcomplex_tests = true` in the stub `complex-numbers.jl` or in `runtests.jl`
 
 ## Bonus B
-You can work on the bonus exercises between real numbers and complex numbers by uncommenting:
+You can work on the bonus exercises involving syntax sugar by uncommenting:
 `# enable_syntaxsugar_tests = true` in the stub `complex-numbers.jl` or in `runtests.jl`
 Then, implement `jm` analogous to `im` so that `1 + 1jm == ComplexNumber(1, 1)`.

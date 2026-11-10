@@ -33,10 +33,10 @@ these tests, add the top-level line `enable_bonus_tests = true` to your file or 
 To pass these tests you need to declare `CircularBuffer` as a subtype of
 `AbstractVector` and define two functions:
 - `capacity(cb::CircularBuffer)`: Return the capacity of `cb`.
-- `isfull(cb::CircularBuffer)`: Return `true` is `cb` is full.
+- `isfull(cb::CircularBuffer)`: Return `true` if `cb` is full.
 
 Then you must ensure that the following functions from `Base` work correctly with
-`CircularBuffer`s: `append!`, `empty!`, `pop!`, `pushfirst`, `setindex!`, `collect`,
+`CircularBuffer`s: `append!`, `empty!`, `pop!`, `pushfirst!`, `setindex!`, `collect`,
 `eltype`, `first`, `getindex`, `isempty`, `iterate`, `last`, `length`, and `size`.
 
 Hint: You don't need to—and should not—extend all of these functions! By defining
