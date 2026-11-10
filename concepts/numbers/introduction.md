@@ -96,7 +96,7 @@ However, Julia is designed by people who believe that code should look as much a
 
 Because variable names must start with a letter, prefacing the name with a number (integer or floating-point) is treated as implicit multiplication.
 
-For example, if we want the surface area of a sphere, instead of `4 * pi * r * r` we could do this :
+For example, if we want the surface area of a sphere, instead of `4 * pi * r * r` we could do this:
 
 ```julia-repl
 julia> surface(r) = 4π * r^2

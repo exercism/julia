@@ -11,7 +11,7 @@ Generating truly random values with a computer is a [surprisingly difficult tech
 
 ***Important***: This Concept does _not_ cover cryptographically secure random numbers, which are a much more difficult challenge.
 
-However, well-designed libraries like the [`Random`][Random] module in the Julia standard library are fast, flexible, and give results that are amply good enough for most applications in modelling, simulation and games.
+However, well-designed libraries like the [`Random`][Random] module in the Julia standard library are fast, flexible, and give results that are amply good enough for most applications in modeling, simulation and games.
 
 Julia divides random functionality into multiple locations:
 
@@ -127,8 +127,8 @@ To simulate sampling without replacement in Julia, there are a couple of options
 Simplest (_and within Exercism the only option_), use `Random.shuffle()` to put the entries in random order, then use the first `n` elements.
 This is fine for small problems but may not scale well to large collections: `shuffle` needs to generate the full array, even if you only want a small fraction of it.
 
-To do sampling-with-replacement "properly", install the `StatsBase.jl` package.
-That provide the `sample()` function with a full range of options.
+To do sampling-without-replacement "properly", install the `StatsBase.jl` package.
+That provides the `sample()` function with a full range of options.
 
 We can reasonably hope that similar functionality will be added into `Random` in a future release, to make it part of the standard library (code samples in this document were tested with Julia 1.11).
 
@@ -143,7 +143,7 @@ As a result, statisticians have created a wide variety of [`distributions`][prob
 ### Uniform distributions
 
 The `rand()` function described above is used when all probabilities are equal.
-This is called a [`uniform`][uniform-distribution] distribution.
+This is called a [`uniform`][uniform] distribution.
 
 ### Gaussian distribution
 
@@ -154,7 +154,7 @@ You want to set up the factory robot to handle them, so you weigh a sample of 10
 This is extremely unlikely to mean that they all weigh exactly 4.731g.
 Perhaps you find that values range from 4.627 to 4.794g but cluster around 4.731g.
 
-This is the [`Gaussian distribution`][gaussian-distribution], for which probabilities peak at the mean and tails off symmetrically on both sides (hence "bell-shaped").
+This is the [`Gaussian distribution`][gaussian-distribution], for which probabilities peak at the mean and tail off symmetrically on both sides (hence "bell-shaped").
 To simulate this in software, we need some way to specify the width of the curve (_typically, expensive bolts will cluster more tightly around the mean than cheap bolts!_).
 
 By convention, this is done with the [`standard deviation`][standard-deviation]: small values for a sharp, narrow curve, large for a low, broad curve.
@@ -163,7 +163,7 @@ Thus, if you read that "95% of values are within 2σ of μ" or "the Higgs boson 
 
 There will be more to say about this in the [`Statistics`][statistics] Concept.
 
-## The `randn()`function
+## The `randn()` function
 
 Short for "random normal", this is similar to the floating-point variant of `rand()` except that values are distributed as a Gaussian with mean 0 and standard deviation 1.
 
@@ -210,7 +210,6 @@ julia> randstring(20)
 Additionally, there is a `bitrand` function to generate a random [`BitArray`][bitarray] of specified length.
 
 ```julia-repl
-julia> bitrand(5)
 julia> bitrand(5)
 5-element BitVector:
  1

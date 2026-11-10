@@ -57,9 +57,9 @@ Each function tends to have various options, and there are _many_ more functions
 
 ## Other packages
 
-As you might expect, statistics is a big use-case for Julia, and there many available packages to support more specialized work.
+As you might expect, statistics is a big use-case for Julia, and there are many available packages to support more specialized work.
 
-The JuliaStats group helpfully maintain an [online list][juliastats].
+The JuliaStats group helpfully maintains an [online list][juliastats].
 
 [statistics]: https://docs.julialang.org/en/v1/stdlib/Statistics/
 [randomness]: https://exercism.org/tracks/julia/concepts/randomness

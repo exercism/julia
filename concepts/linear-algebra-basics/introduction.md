@@ -231,7 +231,7 @@ This is an operation that computers are very good at:
 
 The details are fairly simple, though not very intuitive at first sight.
 
-Consider a matrix `A` multiplying a vector `v` to give an output `w` (_by Linear algebra convention, we will uses uppercase letters for matrices, lowercase for vectors_).
+Consider a matrix `A` multiplying a vector `v` to give an output `w` (_by Linear Algebra convention, we will use uppercase letters for matrices, lowercase for vectors_).
 
 The top row of `A` is dotted with `v` to get the first element of `w`, the second row gives the second element, and so on down.
 

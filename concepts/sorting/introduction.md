@@ -56,12 +56,12 @@ false
 The original vector is unchanged.
 `sort()` is a ***non-mutating*** function that returns a _copy_ of its input.
 
-This is good design in many contexts: we have a [pure function][wiki-pure-func] whose behaviour is easy to reason about, even in parallel, distributed code.
+This is good design in many contexts: we have a [pure function][wiki-pure-func] whose behavior is easy to reason about, even in parallel, distributed code.
 
 On the other hand, suppose we had an array of a billion strings, and wanted to sort it.
 
 The sorting is probably slow.
-Additionally, we need to copy everything (_slow!_), and allocate enough memory (_several GigaBytes!_) to store the copy.
+Additionally, we need to copy everything (_slow!_), and allocate enough memory (_several gigabytes!_) to store the copy.
 
 Compare this quite similar code:
 
@@ -103,7 +103,7 @@ Sorting `Int64` values is relatively simple: even young children understand that
 Other types may be more complicated, but in general `x < y` if `isless(x, y) == true`.
 Julia provides implementations of `isless()` for most standard types.
 
-For example, Unicode characters (Uppercase sorts before lowercase, for European letters):
+For example, Unicode characters (uppercase sorts before lowercase, for European letters):
 
 ```julia-repl
 julia> j = collect("Julia")
@@ -118,7 +118,7 @@ julia> sort(j)
 5-element Vector{Char}:
  'J': ASCII/Unicode U+004A (category Lu: Letter, uppercase)
  'a': ASCII/Unicode U+0061 (category Ll: Letter, lowercase)
- 'i': ASCII/Unicode U+0false069 (category Ll: Letter, lowercase)
+ 'i': ASCII/Unicode U+0069 (category Ll: Letter, lowercase)
  'l': ASCII/Unicode U+006C (category Ll: Letter, lowercase)
  'u': ASCII/Unicode U+0075 (category Ll: Letter, lowercase)
 ```
@@ -214,7 +214,7 @@ Output from `sortperm()` is a [permutation][wiki-permutation] of these integers,
 Does your program need the entire input to be sorted?
 In cases where only the first few or last few entries are interesting, it can be significantly quicker to do a [partial sort][wiki-partial-sort].
 
-Julia provides the `partialsort()` and `partialsort!()` functions, which guarantee that the specified entry or range of entries is correct, but provides no guarantees about the remainder of the input.
+Julia provides the `partialsort()` and `partialsort!()` functions, which guarantee that the specified entry or range of entries is correct, but provide no guarantees about the remainder of the input.
 
 The second argument can be either an integer or a range, representing the index/indices of the sorted input:
 

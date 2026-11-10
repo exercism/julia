@@ -49,7 +49,7 @@ In other words, we only ever see the `item` while everything else remains in a b
 [Multiple dispatch][concept-multiple-dispatch] is central to this.
 The type of `iter` determines which methods are called, and the number of arguments determines whether the first or next item is returned.
 
-Methods for standard types are already defined: `Vector`, `Range`, `Set`, etc ([currently][ref-iterations-collections] 14 types in total).
+Methods for standard types are already defined: `Vector`, `Range`, `Set`, etc. ([currently][ref-iterations-collections] 14 types in total).
 
 For a custom `MyType` to share the same behaviors, we first need to define:
 - `Base.iterate(iter::MyType)`
@@ -89,7 +89,7 @@ function Base.iterate(p::Powers)
 end
 ```
 
-In this example, the first item (`p.n`) is returned to the loop and the first state `(p.n, 2)` is passed to the `iterate(P::Powers, state)` method.
+In this example, the first item (`p.n`) is returned to the loop and the first state `(p.n, 2)` is passed to the `iterate(p::Powers, state)` method.
 There we can process the state to produce the next item by multiplying the current item by the base number, thereby increasing its power by `1`.
 
 ```julia
@@ -114,8 +114,8 @@ If the index value is still within `count`, the `Tuple` is returned with the `ne
 When the `index` value exceeds `count`, then `nothing` is returned instead, to indicate iteration has terminated.
 
 Maybe you have noticed that the `iterate(p::Powers)` and `iterate(p::Powers, state)` methods have fairly similar function bodies.
-In fact, if we're clever, this similarity allows for a streamlined implementation by using only the two argument version with a default argument for the state: `Base.iterate(p::Powers, state=(1, 1))`
-WWith that, we wouldn't need the separate single argument `iterate(p::Powers)`.
+In fact, if we're clever, this similarity allows for a streamlined implementation by using only the two-argument version with a default argument for the state: `Base.iterate(p::Powers, state=(1, 1))`.
+With that, we wouldn't need the separate single-argument `iterate(p::Powers)`.
 This is commonly done in practice when possible.
 
 So far, we already have some useful functionality: for the first 4 powers of 3, we can loop through the results, check if a given number is in the results, and apply aggregate functions such as `sum()`.
@@ -142,7 +142,7 @@ Despite this good start, not everything works yet.
 
 ```julia-repl
 julia> [p for p in Powers(3, 4)]
-ERROR: MethodError: no method matching length(::Powers) (from the documentation][ref-interfaces])
+ERROR: MethodError: no method matching length(::Powers)
 The function `length` exists, but no method is defined for this combination of argument types.
 You may need to implement the `length` method or define `IteratorSize` for this type to be `SizeUnknown`.
 ```
@@ -213,3 +213,5 @@ However, they are surprisingly simple in practice:
 [concept-vector-operations]: https://exercism.org/tracks/julia/concepts/vector-operations
 [concept-hof]: https://exercism.org/tracks/julia/concepts/higher-order-functions
 [concept-comprehensions]: https://exercism.org/tracks/julia/concepts/comprehensions
+[ref-iterations-collections]: https://docs.julialang.org/en/v1/base/collections/#lib-collections-iteration
+[wiki-mixins]: https://en.wikipedia.org/wiki/Mixin

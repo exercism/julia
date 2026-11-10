@@ -87,7 +87,7 @@ julia> str = ["I", "exist", missing]
  "exist"
  missing
 
-julia> [@coalesce(s, "-") for  s in str]
+julia> [@coalesce(s, "-") for s in str]
 3-element Vector{String}:
  "I"
  "exist"
@@ -129,7 +129,7 @@ julia> filter(!isnan, [1, 2, NaN])
 
 ## Undefined data
 
-This is something you are likely use less frequently.
+This is something you are likely to use less frequently.
 Exceptions include:
 - There are ways to create composite types (such as [`struct`][struct]) with uninitialized fields.
 Julia usually tries to use default values, but can only do this if it has enough information to infer the field type.

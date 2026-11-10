@@ -37,7 +37,7 @@ Dict{String, Int64} with 4 entries:
 
 The app has an "ideas" section that's filled with finished recipes from various cuisines.
 The user can select any one of these recipes and have all its ingredients added to their shopping cart automatically.
-The project manager has asked you create a way to edit these "ideas" recipes, since the content team keeps changing around ingredients and quantities.
+The project manager has asked you to create a way to edit these "ideas" recipes, since the content team keeps changing around ingredients and quantities.
 
 Create the function `update_recipes!(<ideas>, <updates>)` that takes an "ideas" dictionary and a dictionary of recipe updates as arguments.
 The function should return the updated "ideas" dictionary.
@@ -69,9 +69,9 @@ Dict{String, Dict{String, Int64}} with 4 entries:
 
 ## 3. Send User Shopping Cart to Store for Fulfillment
 
-The app needs to send a given users cart to the store for fulfillment.
+The app needs to send a given user's cart to the store for fulfillment.
 However, the shoppers in the store need to know where the item can be found using a unique aisle code.
-The "fulfillment cart" needs to be sorted in order of the items aisle codes to help the shoppers be more efficient.
+The "fulfillment cart" needs to be sorted in order of the items' aisle codes to help the shoppers be more efficient.
 
 Create the function `send_to_store(<cart>, <aislecodes>)` that takes a user shopping cart and a dictionary that has store aisle numbers.
 The function should return a combined "fulfillment cart" that has a pair `aislecode => quantity` for each item the customer is ordering.

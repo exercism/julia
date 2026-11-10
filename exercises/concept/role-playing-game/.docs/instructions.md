@@ -67,7 +67,7 @@ julia> increment(player2.name)
 ```
 
 The `increment` method for mana should take a player's `mana`.
-- If the player's mana is `missing`, return a value of `50`.
+- If the player's mana is `nothing`, return a value of `50`.
 - Otherwise the mana should be increased by `100`.
 
 This `increment` method returns the updated mana.
@@ -132,7 +132,7 @@ If the player is dead:
 - The player should be revived with `100` health.
 - The player's mana should be incremented using the `increment` function.
 
-If the player is  alive, nothing happens to the player
+If the player is alive, nothing happens to the player.
 
 The `revive!` function should return the player.
 

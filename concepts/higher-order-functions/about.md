@@ -213,7 +213,7 @@ julia> sum(map(x -> x^2 + 1, 1:3))
 17
 ```
 
-MapReduce operations are especially popular with big data systems (Hadoop, Spark, etc), as they can operate in real time on streams of arbitrary and unknown length without exploding memory usage.
+MapReduce operations are especially popular with big data systems (Hadoop, Spark, etc.), as they can operate in real time on streams of arbitrary and unknown length without exploding memory usage.
 
 As we might expect, Julia also has [`mapfoldl()`][mapfoldl] and [`mapfoldr()`][mapfoldr] functions for situations where direction is important.
 

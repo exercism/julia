@@ -69,7 +69,7 @@ Execution is now strictly left-to-right, with the output of each function flowin
 
 It is no coincidence that the functions used to illustrate composition and pipelining all take a _single_ argument.
 
-Some purely-functional languages, pipe the _first_ argument into a function but allow others to be included.
+Some purely-functional languages pipe the _first_ argument into a function but allow others to be included.
 
 In contrast, Julia only expects function _names_ (or something equivalent) in a pipeline, without any additional arguments.
 
@@ -78,7 +78,7 @@ The _many_ people who have no understanding of currying should merely accept tha
 
 ### Workarounds
 
-We need single-arguments functions that do whatever is needed.
+We need single-argument functions that do whatever is needed.
 Fortunately, defining new functions in Julia is easy.
 
 Most simply, we could use an [`anonymous function`][anonymous-function].
@@ -98,7 +98,7 @@ Enclosing the anonymous function in parentheses is optional in this case, but mo
 
 Equally, we could create a named function, earlier in the program, and reuse it as needed.
 
-[`Closures`][closures] are beyond the scope of this Concept, but anyone familiar with them from other languages will recognise that they offer a more flexible way to create single-argument functions.
+[`Closures`][closures] are beyond the scope of this Concept, but anyone familiar with them from other languages will recognize that they offer a more flexible way to create single-argument functions.
 
 ```julia-repl
 julia> function makesplit(sep)

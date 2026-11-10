@@ -1,9 +1,9 @@
 # Instructions
 
 In this exercise you will be implementing a simulation of encounters.
-This will familiarise you with the basics of multiple dispatch, Julia's main paradigm.
+This will familiarize you with the basics of multiple dispatch, Julia's main paradigm.
 
-~~~~exercism-important
+~~~~exercism/important
 For this exercise, all function definitions should be a single-line declaration with no if/else logic.
 ~~~~
 

@@ -11,7 +11,7 @@ Once you have implemented the function to convert the grades, you will need to w
 - Some professors use `Vector`s sorted in ascending order to store their grades, because they are meticulous about their data.
 - Other professors use `Set`s, which are unsorted, to store their grades, because they are a bit lazier.
 
-In both functions, you will need to handle invlalid inputs by throwing a MethodError.
+In both functions, you will need to handle invalid inputs by throwing a MethodError.
 
 ~~~~exercism/note
 Exception handling will be covered in a later Concept, so for the purposes of this exercise, you can use the following syntax:
@@ -29,7 +29,7 @@ throw(MethodError(demote, (n,)))
 
 Implement the `demote(n)` method.
 - With a `Float64` input, it should round up to the nearest whole number and return a `UInt8` data type.
-- With an arbitrary `Integer`, it should return the same integer in a `Int8` data type.
+- With an arbitrary `Integer`, it should return the same integer in an `Int8` data type.
 - All other inputs should throw a MethodError.
 
 ```julia-repl

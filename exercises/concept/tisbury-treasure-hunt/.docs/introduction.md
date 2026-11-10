@@ -65,7 +65,7 @@ A `NamedTuple` pairs each value with a name.
 
 Individual fields can then be accessed with "dot" notation:
 
-```jullia-repl
+```julia-repl
 julia> nt = (a = 1, b = 7.3)
 (a = 1, b = 7.3)
 

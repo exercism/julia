@@ -35,7 +35,7 @@ true
 We need to separate the more emphatic customers from the others.
 
 Implement `emphatics()` which takes a dictionary of customers and ratings.
-Returns a similar dictionary with those who only use only `1` or `5` star ratings.
+Returns a similar dictionary with those who use only `1` or `5` star ratings.
 
 ```julia-repl
 julia> ratings = ([2, 3, 5, 1, 1], [1, 1, 5, 5, 1], [4, 5, 5, 3, 2], [5, 5, 1, 1, 5]);
@@ -57,9 +57,9 @@ Dict{String, Vector{Int64}} with 2 entries:
 
 ## 3. Change ratings to binary
 
-Since the emphatic customers only use `1` and `5` ratings, it will more computationally convenient if these are changed these to `0` and `1`.
+Since the emphatic customers only use `1` and `5` ratings, it will be more computationally convenient if these are changed to `0` and `1`.
 
-Implement `tobinary()` which takes vector of emphatic ratings.
+Implement `tobinary()` which takes a vector of emphatic ratings.
 Returns binary ratings, where `1` has been changed to `0` and `5` has been changed to `1`.
 
 ```julia-repl

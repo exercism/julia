@@ -86,7 +86,7 @@ julia> str = ["I", "exist", missing]
  "exist"
  missing
 
-julia> [@coalesce(s, "-") for  s in str]
+julia> [@coalesce(s, "-") for s in str]
 3-element Vector{String}:
  "I"
  "exist"

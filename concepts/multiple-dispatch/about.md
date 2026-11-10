@@ -8,7 +8,7 @@ julia> f(x) = x^2
 f (generic function with 1 method)
 ```
 
-Why _"generic function with 1 method"_ ?
+Why _"generic function with 1 method"_?
 
 Suppose we want to be more specific about the argument types.
 
@@ -39,7 +39,7 @@ julia> methods(f)  # output edited for brevity
  [2] f(x::Integer)
  [3] f(x::Real)
  [4] f(x)
- ```
+```
 
 If we call the function `f`, Julia somehow knows which method to use:
 
@@ -219,7 +219,7 @@ julia> Point{Int64}(3.5, 2)
 ```
 While this level of control over the types may be desirable, it may also be useful to have a bit of abstraction.
 ```julia
-Point(x::T, y::S) where {T<:Real, S<:Real} = Point{promote_type(T,  S)}(x, y)
+Point(x::T, y::S) where {T<:Real, S<:Real} = Point{promote_type(T, S)}(x, y)
 ```
 This outer constructor provides this by allowing for a `Point` to accept inhomogeneous types for `x` and `y` without explicitly specifying the conversion type.
 The type values `T` and `S` are used in the function body in `promote_type(T, S)` to provide the explicit conversion type for the original definition.
@@ -255,14 +255,14 @@ Of course, Julia also does a form of pattern-matching, but at dispatch rather th
 
 Multiple dispatch is very flexible and highly performant in Julia, so is used very widely.
 
-As the example of 161 methods for `+` suggest, Julia programmers aim to define methods with narrowly-specified types.
-Adding two integers is very different to adding two floats at the bytecode level, and adding an integer to a float adds an addition complication of type promotion.
+As the example of 161 methods for `+` suggests, Julia programmers aim to define methods with narrowly-specified types.
+Adding two integers is very different to adding two floats at the bytecode level, and adding an integer to a float adds an additional complication of type promotion.
 
 The more specific the type, the more optimization the compiler can do: of marginal importance in a toy exercise in Exercism, but vital for performance in the big numerical simulations that Julia is designed for.
 
 _If you know what inputs a method will receive, please tell the compiler!_
 
-~~~~exercism-note
+~~~~exercism/note
 You will now realize, perhaps with dismay, that some earlier exercises in this syllabus were not particularly idiomatic.
 
 This is unfortunate, but unavoidable: we needed a series of quite advanced concepts to explain function calls and the type system, all leading up to multiple dispatch.

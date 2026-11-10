@@ -113,6 +113,6 @@ julia> xor(0b1011, 0b0010) # bit is 1 in exactly one number, not both
 "00001001"
 ```
 
-Here, `xor()`  is exclusive-or, used as a function.
+Here, `xor()` is exclusive-or, used as a function.
 
 [2complement]: https://en.wikipedia.org/wiki/Two%27s_complement

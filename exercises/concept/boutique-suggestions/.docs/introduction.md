@@ -4,7 +4,7 @@ Anyone who has used Python has almost certainly used list comprehensions, which 
 
 Something so convenient gradually finds its way into other languages, including Julia.
 
-Comprehensions are an option rather than a necessity for Julia programmers, as there are usually alternatives (broadcasting, higher-order functions, etc).
+Comprehensions are an option rather than a necessity for Julia programmers, as there are usually alternatives (broadcasting, higher-order functions, etc.).
 
 However, a comprehension will often provide a simple, readable and performant way to construct an array.
 Use is ultimately a matter of personal taste, and how you feel about Python versus functional languages.

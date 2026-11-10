@@ -8,7 +8,7 @@ julia> f(x) = x^2
 f (generic function with 1 method)
 ```
 
-Why _"generic function with 1 method"_ ?
+Why _"generic function with 1 method"_?
 
 Suppose we want to be more specific about the argument types.
 
@@ -39,7 +39,7 @@ julia> methods(f)  # output edited for brevity
  [2] f(x::Integer)
  [3] f(x::Real)
  [4] f(x)
- ```
+```
 
 If we call the function `f`, Julia somehow knows which method to use:
 
@@ -74,7 +74,7 @@ More formally, the tuple is _mapped_ to a return value.
 
 ## How do functions handle different numbers and types of arguments?
 
-This is usually referred to as "polymorphism"
+This is usually referred to as "polymorphism".
 
 This has been a big topic in computer science for several decades, and different approaches have been adopted.
 
@@ -193,9 +193,9 @@ myfunc (generic function with 1 method)
 
 Multiple dispatch is very flexible and highly performant in Julia, so is used very widely.
 
-As the example of 161 methods for `+` suggest, Julia programmers aim to define methods with narrowly-specified types.
-Adding two integers is very different to adding two floats at the bytecode level, and adding an integer to a float adds an addition complication of type promotion.
+As the example of 161 methods for `+` suggests, Julia programmers aim to define methods with narrowly-specified types.
+Adding two integers is very different to adding two floats at the bytecode level, and adding an integer to a float adds an additional complication of type promotion.
 
-The more specific the type, the more optimization the compiler can do: of marginal importance in a toy exercise in Exercism, but vital for perfomance in the big numerical simulations that Julia is designed for.
+The more specific the type, the more optimization the compiler can do: of marginal importance in a toy exercise in Exercism, but vital for performance in the big numerical simulations that Julia is designed for.
 
 _If you know what inputs a method will receive, please tell the compiler!_

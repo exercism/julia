@@ -40,7 +40,7 @@ julia> print_name_badge(missing, "Rachel Miller", nothing)
 "Rachel Miller - OWNER"
 ```
 
-## 4. Calculate the total salary of emplyees with no ID
+## 4. Calculate the total salary of employees with no ID
 
 As a rough metric of how well the IDs are being issued, you want to see the combined salary of employees with no ID. A high value means lots are waiting, or the problem is affecting senior people: both bad.
 

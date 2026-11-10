@@ -1,6 +1,6 @@
 # Instructions
 
-You have been hired as a Assistant Production Engineer in a company that produces quilts for turtles.
+You have been hired as an Assistant Production Engineer in a company that produces quilts for turtles.
 
 Orders come in throughout the day as a customer name or number and an order quantity.
 These are then processed in the morning before the day's production starts.

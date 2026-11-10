@@ -37,7 +37,7 @@ The `sort()` function has an obvious name, and apparently returns the sorted `Ve
 _Only joking!_
 By this stage in the syllabus, you perhaps suspect (correctly) that there are nuances we need to discuss.
 
-## Mutating vs non-mutating fuctions
+## Mutating vs non-mutating functions
 
 After running `sort(v)`, what is `v`?
 
@@ -56,12 +56,12 @@ false
 The original vector is unchanged.
 `sort()` is a ***non-mutating*** function that returns a _copy_ of its input.
 
-This is good design in many contexts: we have a pure function whose behaviour is easy to reason about, even in parallel, distributed code.
+This is good design in many contexts: we have a pure function whose behavior is easy to reason about, even in parallel, distributed code.
 
 On the other hand, suppose we had an array of a billion strings, and wanted to sort it.
 
 The sorting is probably slow.
-Additionally, we need to copy everything (_slow!_), and allocate enough memory (_several GigaBytes!_) to store the copy.
+Additionally, we need to copy everything (_slow!_), and allocate enough memory (_several gigabytes!_) to store the copy.
 
 Compare this quite similar code:
 

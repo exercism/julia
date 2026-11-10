@@ -68,7 +68,7 @@ The international standard is defined in `ISO 8601`, with two main advantages:
 - Parsing is quick and unambiguous.
 - Sorting is easy, as the datetime can be treated as normal text and sorted alphabetically.
 
-We saw in a previous example that `Date.now()` returned `2025-06-21T16:03:04.161`.
+We saw in a previous example that `Dates.now()` returned `2025-06-21T16:03:04.161`.
 
 This is built up from various parts:
 
@@ -80,7 +80,7 @@ Other string formats will be discussed in a later section.
 
 ## Dates
 
-`Dates.Date` is a relatively simple date-only type, with no understanding of times or timezones.
+`Dates.Date` is a relatively simple date-only type, with no understanding of times or time zones.
 
 ```julia-repl
 # constructor with year, month, day arguments
@@ -173,7 +173,7 @@ julia> Minute(t) # => Period
 
 ## DateTimes
 
-`Dates.DateTime` combines most of the features of the `Date` and `Time` Types.
+`Dates.DateTime` combines most of the features of the `Date` and `Time` types.
 
 ```julia-repl
 julia> dt1 = DateTime(2025, 6, 23, 14, 57, 25, 142)

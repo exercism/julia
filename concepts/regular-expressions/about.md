@@ -3,7 +3,7 @@
 Regular expressions are a highly versatile way to _pattern match_ strings, using a Domain Specific Language (DSL) designed for the purpose.
 
 Like several other programming languages, Julia makes no attempt to implement its own Regex library.
-Instead, it wraps the popular [PCRE2][PCRE] library, thus providing a Regex syntax identical to (for example) Gleam, and very similar to Javascript.
+Instead, it wraps the popular [PCRE2][PCRE] library, thus providing a Regex syntax identical to (for example) Gleam, and very similar to JavaScript.
 
 ~~~~exercism/note
 This Julia syllabus assumes that you are already familiar with basic Regex syntax.
@@ -79,7 +79,7 @@ julia> m.offsets
 ```
 
 Of course, matches can fail.
-The result will then be the special value `Nothing` instead of a `RegexMatch`, so be ready to test for this.
+The result will then be the special value `nothing` instead of a `RegexMatch`, so be ready to test for this.
 
 ```julia-repl
 # failed match

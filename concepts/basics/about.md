@@ -14,7 +14,7 @@ Julia is not an object-oriented language, and there is no class hierarchy of the
 Instead *(and please don't panic as you read this!)*, Julia relies on:
 - A *Type* hierarchy.
 - *Composable* functions (designed to combine easily, in versatile and powerful ways).
-- *Multiple dispatch*, meaning functions can be called with variable number and types of arguments.
+- *Multiple dispatch*, meaning functions can be called with a variable number and types of arguments.
 
 These rather confusing terms should become clearer as we progress through the syllabus.
 
@@ -31,7 +31,7 @@ The [official documentation][official-documentation] contains a lot of valuable 
 Videos include:
 - [A Brief Introduction to Julia][erik] from the Exercism management!
 - [A Gentle Introduction to Julia][gentle-intro]
-- [Learn Julia With Us][learn-with-us] : a 4-part series
+- [Learn Julia With Us][learn-with-us]: a 4-part series
 
 ## Comments
 

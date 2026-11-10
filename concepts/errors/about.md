@@ -10,7 +10,7 @@ Data science languages tend to take a more nuanced approach.
 Some errors are so serious that immediate termination is necessary, but often it is better to flag a problem as something to be dealt with later, then continue execution.
 
 We saw in the [Nothingness][nothingness] Concept that Julia provides various placeholders for problematic values: [`missing`][nothing], [`NaN`][NaN] and `Inf`.
-Whether these are a better approach than program termination in a particular situation is a matter for programmer judgement.
+Whether these are a better approach than program termination in a particular situation is a matter for programmer judgment.
 
 _A point of nomenclature_ before getting into the details: the Julia documentation treats the words "error" and "exception" as largely interchangeable.
 The content below may be equally inconsistent.
@@ -93,7 +93,7 @@ ERROR: AnotherError("Wrong!")
 Simply printing out the constructor is not yet quite right.
 Compare the earlier example where we threw a `DomainError`.
 
-To have a custom error handled in the same was as built-in errors, we need to add a [`showerror()`][showerror] method:
+To have a custom error handled in the same way as built-in errors, we need to add a [`showerror()`][showerror] method:
 
 ```julia-repl
 julia> Base.showerror(io::IO, e::AnotherError) =

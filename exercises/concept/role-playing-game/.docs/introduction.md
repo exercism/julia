@@ -68,7 +68,7 @@ Several other languages have types that may or may not contain a value, with nam
 Julia has no specific syntax for this, but type unions are a generalization of the same idea.
 
 We saw in the `Nothingness` Concept that Julia has various ways to represent non-values, including `nothing` and `missing`.
-Either of these can be included in a type Union.
+Either of these can be included in a type union.
 
 For example, in defining some sort of linked list, we need a way to terminate the list if there are no further nodes.
 `Nothing` is the type with singleton value `nothing`, and this Node definition makes it possible to signal the end of the chain:

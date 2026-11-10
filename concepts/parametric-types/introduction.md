@@ -11,7 +11,7 @@ In the `Types` Concept, we learned that:
 
 Only `primitive` types follow the abstract versus concrete pattern in its simple form.
 
-One example of types which are not primitive are Collections, such as `Vector` or `Set`.
+One example of types which are not primitive is Collections, such as `Vector` or `Set`.
 
 ```julia-repl
 julia> isprimitivetype(Int)

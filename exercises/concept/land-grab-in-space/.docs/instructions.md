@@ -2,7 +2,7 @@
 
 You have been tasked by the claims department of Isaac's Asteroid Exploration Co. to improve the performance of their land claim system.
 
-Every time a asteroid is ready for exploitation speculators are invited to stake their claim to a plot of land.
+Every time an asteroid is ready for exploitation speculators are invited to stake their claim to a plot of land.
 The asteroid's land is divided into non-overlapping rectangular plots.
 Dimensions differ, but all have sides parallel to the coordinate axes.
 Speculators claim one of the plots of land by specifying its coordinates.

@@ -9,7 +9,7 @@ You will need to write the functions to help decrypt the message.
 The first step in decrypting the message is to undo the shifting from the encryption process by shifting the bits back to the right.
 There will be further steps in the decryption process that assume 0s are inserted from the left hand side.
 
-Implement the `shift_back()` function that takes a value and the number of places to shift and peforms the shift.
+Implement the `shift_back()` function that takes a value and the number of places to shift and performs the shift.
 
 ```julia
 shift_back(0b1001, 2) # => 0b0010

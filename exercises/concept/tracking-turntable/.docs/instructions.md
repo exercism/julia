@@ -14,7 +14,7 @@ Turndit needs to know how to find the new `(x', y')` coordinates to which the ne
 
 ~~~~exercism/note
 These operations can be done through trigonometric functions and/or rotation matrices, but they can be made simpler (and more fun, I assure you!) with the use of complex numbers via rotations and radial displacements.
-In fact, each function in this exercise can be written in assigment form (i.e. a one-liner) using complex numbers and built-in Julia methods/functionality, should you so desire.
+In fact, each function in this exercise can be written in assignment form (i.e. a one-liner) using complex numbers and built-in Julia methods/functionality, should you so desire.
 ~~~~
 
 ## 1. Construct a complex number from Cartesian coordinates

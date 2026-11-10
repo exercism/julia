@@ -39,7 +39,7 @@ Optionally, use [`collect(type, range)`][collect2] to specify the output array t
 The step size can be specified, in this case 0.3:
 
 ```julia-repl
-julia>  collect(1.0:0.3:2.0)
+julia> collect(1.0:0.3:2.0)
 4-element Vector{Float64}:
  1.0
  1.3
@@ -107,7 +107,7 @@ nums[ [3, 5, 7] ] # also gives [12.0, 14.0, 16.0]
 Use with `end` also works, though operator precedence means parentheses may be necessary:
 
 ```julia-repl
- nums[(end - 3):end]
+julia> nums[(end - 3):end]
 4-element Vector{Float64}:
  47.0
  48.0

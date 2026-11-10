@@ -34,7 +34,7 @@ julia> collect(0:5)
 The step size can be specified, in this case 0.3:
 
 ```julia-repl
-julia>  collect(1.0:0.3:2.0)
+julia> collect(1.0:0.3:2.0)
 4-element Vector{Float64}:
  1.0
  1.3

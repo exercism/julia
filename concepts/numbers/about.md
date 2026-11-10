@@ -1,6 +1,6 @@
 # About
 
-Julia is a general-purpose language, that can be used for most programming tasks.
+Julia is a general-purpose language that can be used for most programming tasks.
 In practice, however, the main use cases tend to be in engineering and science.
 Fast, versatile, sophisticated numerical calculations are central to the design.
 
@@ -132,7 +132,7 @@ julia> avogadro = 6.02e23
 As with integers, the default type is fine for most purposes, but other signed types are available.
 There are no [_unsigned_ floating-point][unsigned-fp] types.
 
-As a shortcut, `Float32` values can be created by using a `f0` suffix.
+As a shortcut, `Float32` values can be created by using an `f0` suffix.
 
 ```julia-repl
 julia> f32 = 4.56f0
@@ -210,7 +210,7 @@ However, Julia is designed by people who believe that code should look as much a
 
 Because variable names must start with a letter, prefacing the name with a number (integer or floating-point) is treated as implicit multiplication.
 
-For example, if we want the surface area of a sphere, instead of `4 * pi * r * r` we could do this :
+For example, if we want the surface area of a sphere, instead of `4 * pi * r * r` we could do this:
 
 ```julia-repl
 julia> surface(r) = 4π * r^2
@@ -383,14 +383,14 @@ So instead of `a == b`, use `abs(a - b) < epsilon`.
 
 Julia provides a cleaner alternative with the [`isapprox()`][isapprox] function.
 
-For an absolute tolerance, the syntax is `isapprox(a, b, atol=epsilon`).
+For an absolute tolerance, the syntax is `isapprox(a, b, atol=epsilon)`.
 The `atol` keyword is required in this case.
 
 The relative tolerance is often more useful.
 This is the default, so `isapprox(a, b)` will try to choose some sensible value for `rtol` (the rules are quite complicated).
 
 A relative tolerance can also be specified, as a fraction of the values being compared.
-So `isapprox(a, b, rtol=0.01` tests that the values are within 1% of each other.
+So `isapprox(a, b, rtol=0.01)` tests that the values are within 1% of each other.
 
 In the usual Julia fashion, there is a mathematical operator that is a synonym for the default case: `a ≈ b` (with the operator entered as `\approx` then `<tab>`).
 
