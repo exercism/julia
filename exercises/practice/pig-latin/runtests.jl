@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/pig-latin/canonical-data.json
-# File last updated on 2026-10-24
+# File last updated on 2026-11-10
 
 using Test
 
@@ -107,7 +107,8 @@ include("pig-latin.jl")
 
     @testset "phrases are translated" begin
         @testset "a whole phrase" begin
-            @test translate("quick fast run") == "ickquay astfay unray"
+            @test translate("why do squids enjoy xrays") ==
+                  "ywhay oday idssquay enjoyay xraysay"
         end
     end
 end
