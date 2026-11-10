@@ -14,7 +14,7 @@ What to do?
 To cut a long story short, many smart and patient people had to serve on committees for years, working out the details of the [Unicode][unicode] character set, and of encodings such as [UTF-8][utf-8], and lots of software needed a _very_ complicated rewrite.
 Also, lots of new bugs were introduced.
 
-To prevent _everything_ breaking, the Unicode/UTF-8 design ensures that the first 127 codes are identical to ASCII _(even the bell)_.
+To prevent _everything_ breaking, the Unicode/UTF-8 design ensures that the first 128 codes are identical to ASCII _(even the bell)_.
 
 ## Characters in Julia
 

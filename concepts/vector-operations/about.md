@@ -100,7 +100,7 @@ julia> sqrt.([1, 4, 9])
 
 As an aside, infix operators are really just syntactic sugar for the underlying function.
 
-This means that, for example, `[1, 5, 10] .% 3` is translated to `mod.([1, 5, 10], 3)` by the interpreter, and the `mod.` syntax then executes (both versions return `[1, 2, 1]`).
+This means that, for example, `[1, 5, 10, -10] .% 3` is translated to `rem.([1, 5, 10, -10], 3)` by the interpreter, and the `rem.` syntax then executes (both versions return `[1, 2, 1, -1]`).
 
 ### 2) Singleton expansion
 

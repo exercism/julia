@@ -164,7 +164,7 @@ julia> [1, 2] ⋅ [3, 4]
 ```
 
 For complex-valued vectors, the left vector needs to be the conjugate (sign flipped on the imaginary part).
-The `dot` function does this automatically, the `u'` syntax does it explicitly, but `sum(u .* v)` will fail if `u` and `v` are complex.
+The `dot` function does this automatically, the `u'` syntax does it explicitly, but `sum(u .* v)` will return an incorrect result if `u` and `v` are complex.
 
 ### Vectors, cross product
 
@@ -204,7 +204,7 @@ The `norm` is an attempt to capture this, by reducing the vector to an appropria
 
 A whole family of norms are defined, but by far the most common is the 2-norm, which is `√(v ⋅ v)`.
 
-This root-mean-square operation is the _Pythagorean distance_ from the origin (in N-dimensional space).
+This root-sum-of-squares operation is the _Euclidean distance_ from the origin (in N-dimensional space).
 If we visualize the vector as an arrow, with its tail at the origin, the 2-norm is the _length_ of the arrow.
 
 Any p-norm can be calculated by providing `p` as the 2nd argument.

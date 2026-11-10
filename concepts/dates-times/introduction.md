@@ -11,7 +11,7 @@ There is also a [Wikibook][Wikibook] which some readers may find clearer in its 
 
 ## The `Dates` module
 
-Most of the basic functionality is in `Dates`, a module which is included in a default installation but is not part of the standard library.
+Most of the basic functionality is in `Dates`, a module which is included in the standard library but is not in the default namespace.
 
 To use the module, there are two options:
 
@@ -164,6 +164,9 @@ julia> Time(14, 57, 25, 142, 32)
 As with `Date`, individual parts are available with accessor functions:
 
 ```julia-repl
+julia> t = Time("14:57:25.142")
+14:57:25.142
+
 julia> minute(t) # => integer
 57
 
