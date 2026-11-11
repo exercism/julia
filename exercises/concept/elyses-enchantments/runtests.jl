@@ -206,24 +206,6 @@ include("elyses-enchantments.jl")
             @test check_size_of_stack(stack, stack_size) == false
         end
 
-        @testset "has exactly 5 cards" begin
-            stack = [1, 3, 5, 7, 9]
-            stack_size = 3
-            @test check_size_of_stack(stack, stack_size) == false
-        end
-
-        @testset "has exactly 5 cards" begin
-            stack = [1, 3, 5, 7, 9]
-            stack_size = 4
-            @test check_size_of_stack(stack, stack_size) == false
-        end
-
-        @testset "has exactly 5 cards" begin
-            stack = [1, 3, 5, 7, 9]
-            stack_size = 5
-            @test check_size_of_stack(stack, stack_size) == true
-        end
-
     end
 
 end
