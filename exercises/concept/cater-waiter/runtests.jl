@@ -5,7 +5,7 @@ include("sets_categories_data.jl")
 
 @testset verbose=true "tests" begin
     @testset "1. clean ingredients" begin
-        test_data = zip(recipes_with_duplicates[1:3:end], recipes_without_duplicates[1:3:end])
+        test_data = zip(recipes_with_duplicates[1:5], recipes_without_duplicates[1:5])
 
         for (item, result) in test_data
             @test clean_ingredients(item[1], item[2]) == (result[2], result[3])
@@ -13,7 +13,7 @@ include("sets_categories_data.jl")
      end
 
     @testset "2. check_drinks" begin
-        test_data = zip(all_drinks[1:2:end], drink_names[1:2:end])
+        test_data = zip(all_drinks[1:5], drink_names[1:5])
 
         for (item, result) in test_data
             @test check_drinks(item[1], item[2]) == result
@@ -21,7 +21,7 @@ include("sets_categories_data.jl")
     end
 
     @testset "3. categorize dish" begin
-        test_data = zip(sort(recipes_without_duplicates, rev=true)[1:3:end], dishes_categorized[1:3:end])
+        test_data = zip(sort(recipes_without_duplicates, rev=true)[1:5], dishes_categorized[1:5])
 
         for (item, result) in test_data
             @test categorize_dish(item[2], item[3]) == result
