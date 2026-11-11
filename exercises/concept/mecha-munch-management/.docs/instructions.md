@@ -43,23 +43,23 @@ Create the function `update_recipes!(<ideas>, <updates>)` that takes an "ideas" 
 The function should return the updated "ideas" dictionary.
 
 ```julia-repl
-julia>update_recipes!(
-        Dict("Banana Bread"  => Dict("Banana" => 1, "Apple" => 1, "Walnuts" => 1, "Flour" => 1, "Eggs" => 2, "Butter" => 1),
-             "Raspberry Pie" => Dict("Raspberry" => 1, "Orange" => 1, "Pie Crust" => 1, "Cream Custard" => 1)),
-        Dict("Banana Bread" => Dict("Banana" => 4,  "Walnuts" => 2, "Flour" => 1, "Butter" => 1, "Milk" => 2, "Eggs" => 3))
-    )
+julia> update_recipes!(
+           Dict("Banana Bread"  => Dict("Banana" => 1, "Apple" => 1, "Walnuts" => 1, "Flour" => 1, "Eggs" => 2, "Butter" => 1),
+                "Raspberry Pie" => Dict("Raspberry" => 1, "Orange" => 1, "Pie Crust" => 1, "Cream Custard" => 1)),
+           Dict("Banana Bread" => Dict("Banana" => 4,  "Walnuts" => 2, "Flour" => 1, "Butter" => 1, "Milk" => 2, "Eggs" => 3))
+       )
 Dict{String, Dict{String, Int64}} with 2 entries:
   "Raspberry Pie" => Dict("Cream Custard"=>1, "Raspberry"=>1, "Orange"=>1, "Pie Crust"=>1)
   "Banana Bread"  => Dict("Eggs"=>3, "Flour"=>1, "Milk"=>2, "Butter"=>1, "Walnuts"=>2, "Banana"=>4)
 
 julia> update_recipes!(
-    Dict("Banana Bread"    => Dict("Banana" => 1, "Apple" => 1, "Walnuts" => 1, "Flour" => 1, "Eggs" => 2, "Butter" => 1),
-         "Raspberry Pie"   => Dict("Raspberry" => 1, "Orange" => 1, "Pie Crust" => 1, "Cream Custard" => 1),
-         "Pasta Primavera" => Dict("Eggs" => 1, "Carrots" => 1, "Spinach" => 2, "Tomatoes" => 3, "Parmesan" => 2, "Milk" => 1, "Onion" => 1)),
-    Dict("Raspberry Pie"    => Dict("Raspberry" => 3, "Orange" => 1, "Pie Crust" => 1, "Cream Custard" => 1, "Whipped Cream" => 2),
-        "Pasta Primavera"   => Dict("Eggs" => 1, "Mixed Veggies" => 2, "Parmesan" => 2, "Milk" => 1, "Spinach" => 1, "Bread Crumbs" => 1),
-        "Blueberry Crumble" => Dict("Blueberries" => 2, "Whipped Creme" => 2, "Granola Topping" => 2, "Yogurt" => 3))
-    )
+           Dict("Banana Bread"    => Dict("Banana" => 1, "Apple" => 1, "Walnuts" => 1, "Flour" => 1, "Eggs" => 2, "Butter" => 1),
+                "Raspberry Pie"   => Dict("Raspberry" => 1, "Orange" => 1, "Pie Crust" => 1, "Cream Custard" => 1),
+                "Pasta Primavera" => Dict("Eggs" => 1, "Carrots" => 1, "Spinach" => 2, "Tomatoes" => 3, "Parmesan" => 2, "Milk" => 1, "Onion" => 1)),
+           Dict("Raspberry Pie"    => Dict("Raspberry" => 3, "Orange" => 1, "Pie Crust" => 1, "Cream Custard" => 1, "Whipped Cream" => 2),
+                "Pasta Primavera"   => Dict("Eggs" => 1, "Mixed Veggies" => 2, "Parmesan" => 2, "Milk" => 1, "Spinach" => 1, "Bread Crumbs" => 1),
+                "Blueberry Crumble" => Dict("Blueberries" => 2, "Whipped Creme" => 2, "Granola Topping" => 2, "Yogurt" => 3))
+       )
 Dict{String, Dict{String, Int64}} with 4 entries:
   "Raspberry Pie"     => Dict("Raspberry"=>3, "Orange"=>1, "Pie Crust"=>1, "Cream Custard"=>1, "Whipped Cream"=>2)
   "Pasta Primavera"   => Dict("Eggs"=>1, "Mixed Veggies"=>2, "Parmesan"=>2, "Milk"=>1, "Spinach"=>1, "Bread Crumbs"=>1)
