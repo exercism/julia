@@ -1,5 +1,5 @@
 function rows(letter)
-    letter == "A" && return ["A"]
+    letter == 'A' && return ["A"]
 
     letters = 'A':'Z' |> collect
     letter_index = findfirst(x -> x == only(letter), letters)
