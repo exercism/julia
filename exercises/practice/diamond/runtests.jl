@@ -1,6 +1,6 @@
 # These tests are auto-generated with test data from:
 # https://github.com/exercism/problem-specifications/tree/main/exercises/diamond/canonical-data.json
-# File last updated on 2026-10-23
+# File last updated on 2026-11-12
 
 using Test
 
@@ -8,24 +8,24 @@ include("diamond.jl")
 
 @testset verbose = true "tests" begin
     @testset "Degenerate case with a single 'A' row" begin
-        @test rows("A") == ["A"]
+        @test rows('A') == ["A"]
     end
 
     @testset "Degenerate case with no row containing 3 distinct groups of spaces" begin
-        @test rows("B") == [" A ", "B B", " A "]
+        @test rows('B') == [" A ", "B B", " A "]
     end
 
     @testset "Smallest non-degenerate case with odd diamond side length" begin
-        @test rows("C") == ["  A  ", " B B ", "C   C", " B B ", "  A  "]
+        @test rows('C') == ["  A  ", " B B ", "C   C", " B B ", "  A  "]
     end
 
     @testset "Smallest non-degenerate case with even diamond side length" begin
-        @test rows("D") ==
+        @test rows('D') ==
               ["   A   ", "  B B  ", " C   C ", "D     D", " C   C ", "  B B  ", "   A   "]
     end
 
     @testset "Largest possible diamond" begin
-        @test rows("Z") == ["                         A                         ",
+        @test rows('Z') == ["                         A                         ",
                             "                        B B                        ",
                             "                       C   C                       ",
                             "                      D     D                      ",
