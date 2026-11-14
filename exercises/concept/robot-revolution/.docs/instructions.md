@@ -27,7 +27,7 @@ Implement the `rotaterobot(orientation, θ)` function, which takes the robot's o
 Return the new orientation matrix.
 
 ```julia-repl
-julia> orientmatrix = initialize([[-1,1],[1,0],[-1,-1]]);
+julia> orientmatrix = orientrobot([[-1,1],[1,0],[-1,-1]]);
 
 julia> rotaterobot(orientmatrix, π/2)
 2×3 Matrix{Float64}:
@@ -44,7 +44,7 @@ Implement the `robotoriented(orientation, direction)` function, which takes an o
 Return `true` if the robot is oriented in the same direction as the relative position vector (within rounding error).
 
 ```julia-repl
-julia> orientmatrix = initialize([[-1,1],[1,0],[-1,-1]]);
+julia> orientmatrix = orientrobot([[-1,1],[1,0],[-1,-1]]);
 
 julia> robotoriented(orientmatrix, [5, 0])
 true
@@ -65,7 +65,7 @@ Implement the `bodylocation(orientation, position)` function, which takes an ori
 Return the translated orientation matrix.
 
 ```julia-repl
-julia> orientmatrix = initialize([[-1,1],[1,0],[-1,-1]]);
+julia> orientmatrix = orientrobot([[-1,1],[1,0],[-1,-1]]);
 
 julia> bodylocation(orientmatrix, [5, 3])
 2×3 Matrix{Float64}:
