@@ -4,7 +4,9 @@
 {{ macros.header() }}
 {% for case in cases %}
     @testset "{{ case["description"] }}" begin
-        @test gameoflife({{ macros.julia_matrix(case["input"]["matrix"]) }}) == {{ macros.julia_matrix(case["expected"]) }}
+        {% call macros.keep_format(case["input"]["matrix"]) %}matrix = {{ macros.julia_matrix(case["input"]["matrix"], indent=17) }}{% endcall %}
+        {% call macros.keep_format(case["expected"]) %}expected = {{ macros.julia_matrix(case["expected"], indent=19) }}{% endcall %}
+        @test gameoflife(matrix) == expected
     end
 {% endfor %}
 end

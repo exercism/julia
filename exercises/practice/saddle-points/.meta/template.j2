@@ -4,7 +4,9 @@
 {{ macros.header() }}
 {% for case in cases %}
     @testset "{{ case["description"] }}" begin
-        @test sort(saddlepoints({{ macros.julia_matrix(case["input"]["matrix"]) }})) == [{% for p in case["expected"] | sort(attribute="row,column") %}({{ p["row"] }}, {{ p["column"] }}){% if not loop.last %}, {% endif %}{% endfor %}]
+        {% call macros.keep_format(case["input"]["matrix"]) %}matrix = {{ macros.julia_matrix(case["input"]["matrix"], indent=17) }}{% endcall %}
+        expected = [{% for p in case["expected"] | sort(attribute="row,column") %}({{ p["row"] }}, {{ p["column"] }}){% if not loop.last %}, {% endif %}{% endfor %}]
+        @test sort(saddlepoints(matrix)) == expected
     end
 {% endfor %}
 end

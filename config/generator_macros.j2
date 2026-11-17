@@ -55,13 +55,44 @@ include("{{ file }}")
 Dict({% for k, v in d.items() %}{% if char_keys %}'{{ k }}'{% else %}{{ julia_string(k) }}{% endif %} => {% if v is string %}{{ julia_string(v) }}{% elif v is sequence %}{{ julia_vector(v) }}{% else %}{{ v }}{% endif %}{% if not loop.last %}, {% endif %}{% endfor %})
 {%- endmacro %}
 
+{# Whether a matrix's elements print with different widths, so its columns need padding to line up #}
+{% macro is_ragged(rows) -%}
+{%- set ns = namespace(widths=[]) -%}
+{%- for row in rows %}{% for x in row %}{% set ns.widths = ns.widths + [x | string | length] %}{% endfor %}{% endfor -%}
+{%- if ns.widths | unique | list | length > 1 %}true{% endif -%}
+{%- endmacro %}
+
 {# A Julia Matrix literal from a list of rows; empty and single-column matrices need special forms #}
-{% macro julia_matrix(rows) -%}
+{# By default each row goes on its own line, aligned under the first, with elements right-aligned #}
+{# in columns; indent is the column where the literal's "[" starts, e.g. 8 + len("matrix = ") #}
+{# for `matrix = ` inside a testset. jlfmt strips the column padding, so wrap the assignment in #}
+{# keep_format when it matters. multiline=false gives the single-line form [1 0; 0 1] #}
+{% macro julia_matrix(rows, multiline=true, indent=0) -%}
 {%- if not rows or not rows[0] -%}
 Int[;;]
 {%- elif rows[0] | length == 1 -%}
 reshape([{{ rows | map("first") | join(", ") }}], :, 1)
+{%- elif multiline -%}
+{%- set ns = namespace(widths=[]) -%}
+{%- for j in range(rows[0] | length) -%}
+{%- set ns.widths = ns.widths + [rows | map(attribute=j) | map("string") | map("length") | max] -%}
+{%- endfor -%}
+[{% for row in rows %}{% for x in row %}{{ (x | string).rjust(ns.widths[loop.index0]) }}{% if not loop.last %} {% endif %}{% endfor %}{% if not loop.last %}
+{{ " " * (indent + 1) }}{% endif %}{% endfor %}]
 {%- else -%}
 [{% for row in rows %}{{ row | join(" ") }}{% if not loop.last %}; {% endif %}{% endfor %}]
 {%- endif %}
+{%- endmacro %}
+
+{# Use as {% call macros.keep_format(rows) %}x = {{ macros.julia_matrix(rows, indent=...) }}{% endcall %} #}
+{# Wraps the caller's lines in #! format: off/on when rows need column padding, so jlfmt keeps it. #}
+{# indent is the indentation of the line the call starts on #}
+{% macro keep_format(rows, indent=8) -%}
+{%- if is_ragged(rows) -%}
+#! format: off
+{{ " " * indent }}{{ caller() }}
+{{ " " * indent }}#! format: on
+{%- else -%}
+{{ caller() }}
+{%- endif -%}
 {%- endmacro %}
