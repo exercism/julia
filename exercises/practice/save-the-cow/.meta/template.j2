@@ -1,0 +1,24 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{% for case in cases %}
+    @testset "{{ case["description"] }}" begin
+        game = new_game({{ macros.julia_string(case["input"]["word"]) }})
+    {%- set guesses = case["input"]["guesses"] %}
+    {%- if case is error_case %}
+    {%- for letter in guesses[:-1] %}
+        guess!(game, '{{ letter }}')
+    {%- endfor %}
+        @test_throws ErrorException guess!(game, '{{ guesses[-1] }}')
+    {%- else %}
+    {%- for letter in guesses %}
+        guess!(game, '{{ letter }}')
+    {%- endfor %}
+        @test state(game) == {{ case["expected"]["state"] | upper }}
+        @test masked_word(game) == {{ macros.julia_string(case["expected"]["maskedWord"]) }}
+        @test remaining_failures(game) == {{ case["expected"]["remainingFailures"] }}
+    {%- endif %}
+    end
+{% endfor %}
+end
