@@ -1738,6 +1738,14 @@
         ]
       },
       {
+        "slug": "rail-fence-cipher",
+        "name": "Rail Fence Cipher",
+        "uuid": "5bdd0acc-1cea-4c85-a23c-19826ceefcc6",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 7
+      },
+      {
         "slug": "satellite",
         "name": "Satellite",
         "uuid": "1ad5b338-8f5f-45ae-bf36-314f3d8dd2c5",
