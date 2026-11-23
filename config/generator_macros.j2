@@ -40,9 +40,9 @@ include("{{ file }}")
 {%- endif %}
 {%- endmacro %}
 
-{# A Julia string literal, with \, ", $, newlines and tabs escaped #}
+{# A Julia string literal, with \, ", $, newlines, carriage returns and tabs escaped #}
 {% macro julia_string(s) -%}
-"{{ s | replace("\\", "\\\\") | replace('"', '\\"') | replace("$", "\\$") | replace("\n", "\\n") | replace("\t", "\\t") }}"
+"{{ s | replace("\\", "\\\\") | replace('"', '\\"') | replace("$", "\\$") | replace("\n", "\\n") | replace("\r", "\\r") | replace("\t", "\\t") }}"
 {%- endmacro %}
 
 {# A Julia vector literal; string elements are quoted with julia_string, nested lists become nested vectors #}
