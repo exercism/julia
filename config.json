@@ -1061,9 +1061,7 @@
         "slug": "collatz-conjecture",
         "name": "Collatz Conjecture",
         "uuid": "d1d5a74a-d488-4e2e-bd63-b74730057c98",
-        "practices": [
-          "conditionals"
-        ],
+        "practices": [],
         "prerequisites": [
           "conditionals",
           "numbers"
@@ -1295,7 +1293,6 @@
         "name": "Perfect Numbers",
         "uuid": "4fc89443-1c5c-492a-850f-7990869caae6",
         "practices": [
-          "conditionals",
           "numbers",
           "errors"
         ],
@@ -1601,6 +1598,14 @@
         ]
       },
       {
+        "slug": "parallel-letter-frequency",
+        "name": "Parallel Letter Frequency",
+        "uuid": "2a824a63-1a54-46de-8420-e2727d1c12fd",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "matching-brackets",
         "name": "Matching Brackets",
         "uuid": "bf5c1f49-963a-4397-bb67-b58e1b7d45e3",
@@ -1828,14 +1833,6 @@
         "practices": [],
         "prerequisites": [],
         "difficulty": 10
-      },
-      {
-        "slug": "parallel-letter-frequency",
-        "name": "Parallel Letter Frequency",
-        "uuid": "2a824a63-1a54-46de-8420-e2727d1c12fd",
-        "practices": [],
-        "prerequisites": [],
-        "difficulty": 5
       }
     ]
   },
