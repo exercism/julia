@@ -80,5 +80,6 @@ Your next steps are:
 - Verify the example solution passes the tests by running 'bin/verify-exercises ${slug}'
 - Create the stub solution in $(jq -r '.solution' <<< "${files}")
 - Update the 'difficulty' value for the exercise's entry in the 'config.json' file in the repo's root
-- Validate CI using 'bin/configlet lint' and 'bin/configlet fmt'
+- Run `bin/reorder-exercises` to sort `config.json` and run 'bin/configlet fmt'
+- Validate CI using 'bin/configlet lint'
 NEXT_STEPS
