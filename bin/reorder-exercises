@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+die() { echo >&2 "$*"; exit 1; }
+
+required_tool() {
+    command -v "${1}" >/dev/null 2>&1 ||
+        die "${1} is required but not installed. Please install it and make sure it's in your PATH."
+}
+
+required_tool jq
+
+out=$(jq '.exercises.practice |= sort_by(.difficulty, (.name|ascii_upcase))' config.json) && printf '%s\n' "${out}" > config.json
+bin/fetch-configlet && bin/configlet fmt --update --yes
