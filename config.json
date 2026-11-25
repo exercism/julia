@@ -1293,7 +1293,6 @@
         "name": "Perfect Numbers",
         "uuid": "4fc89443-1c5c-492a-850f-7990869caae6",
         "practices": [
-          "conditionals",
           "numbers",
           "errors"
         ],
