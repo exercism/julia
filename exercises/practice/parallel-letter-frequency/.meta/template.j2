@@ -4,7 +4,28 @@
 {{ macros.header() }}
 {% for case in cases %}
     @testset "{{ case["description"] }}" begin
-        @test {{ case["property"] | to_snake }}({{ macros.julia_vector(case["input"]["texts"]) }}) == {{ macros.julia_dict(dict(case["expected"] | dictsort), char_keys=true) }}
+        @test {{ case["property"] | to_snake }}({% if case["input"]["texts"] %}{{ macros.julia_vector(case["input"]["texts"]) }}{% else %}String[]{% endif %}) == {{ macros.julia_dict(dict(case["expected"] | dictsort), char_keys=true) }}
     end
 {% endfor %}
+
+    @testset "parallelism test" begin
+        global function calculate_frequencies(text::String)
+            thread = Dict{Char, Int}()
+            for c in lowercase.(filter(isletter, text))
+                thread[c] = Threads.threadid()
+            end
+            thread
+        end
+
+        @test calculate_frequencies(["abbccc", "abbccc", "abbccc", "abbccc", "abbccc",
+                                    "abbccc", "abbccc", "abbccc", "abbccc", "abbccc",
+                                    "abbccc", "abbccc", "abbccc", "abbccc", "abbccc",
+                                    "abbccc", "abbccc", "abbccc", "abbccc", "abbccc",
+                                    "abbccc", "abbccc", "abbccc", "abbccc", "abbccc",
+                                    "abbccc", "abbccc", "abbccc", "abbccc", "abbccc",
+                                    "abbccc", "abbccc", "abbccc", "abbccc", "abbccc",
+                                    "abbccc", "abbccc", "abbccc", "abbccc", "abbccc",
+                                    "abbccc", "abbccc", "abbccc", "abbccc", "abbccc",
+                                    "abbccc", "abbccc", "abbccc", "abbccc", "abbccc"])['a'] > 50
+    end
 end
