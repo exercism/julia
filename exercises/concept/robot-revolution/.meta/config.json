@@ -13,5 +13,6 @@
       ".meta/exemplar.jl"
     ]
   },
+  "icon": "party-robot",
   "blurb": "Use basic linear algebra functionality to control a robot"
 }

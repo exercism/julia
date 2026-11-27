@@ -13,5 +13,6 @@
       ".meta/exemplar.jl"
     ]
   },
+  "icon": "grade-stats",
   "blurb": "Learn about types by doing a bit of data engineering"
 }

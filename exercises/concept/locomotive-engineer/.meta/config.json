@@ -16,5 +16,6 @@
   "forked_from": [
     "python/locomotive-engineer"
   ],
+  "icon": "tracks-on-tracks-on-tracks",
   "blurb": "Learn more about functions in Julia while helping Linus with his train control system."
 }
