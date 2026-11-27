@@ -15,5 +15,6 @@
     ]
   },
   "language_versions": "≥1.0",
+  "icon": "pal-picker",
   "blurb": "Learn about multiple dispatch by simulating encounters between pets and other entities."
 }

@@ -13,5 +13,6 @@
       ".meta/exemplar.jl"
     ]
   },
+  "icon": "two-product-production-decision",
   "blurb": "Learn about sorting functions by helping a factory schedule production"
 }

@@ -13,5 +13,6 @@
       ".meta/exemplar.jl"
     ]
   },
+  "icon": "die",
   "blurb": "Help make statistics more accurate with rational numbers"
 }
