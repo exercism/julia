@@ -1,0 +1,44 @@
+{%- import "generator_macros.j2" as macros with context -%}
+{{ macros.canonical_ref() }}
+
+{{ macros.header() }}
+{%- macro operation(op) -%}
+{%- if op["operation"] == "open" -%}
+open!(account)
+{%- elif op["operation"] == "close" -%}
+close!(account)
+{%- elif op["operation"] == "deposit" -%}
+deposit!(account, {{ op["amount"] }})
+{%- elif op["operation"] == "withdraw" -%}
+withdraw!(account, {{ op["amount"] }})
+{%- elif op["operation"] == "balance" -%}
+balance(account)
+{%- elif op["operation"] == "concurrent" -%}
+@sync for _ in 1:{{ op["number"] }}
+    Threads.@spawn begin
+    {%- for sub in op["operations"] %}
+        {{ operation(sub) }}
+    {%- endfor %}
+    end
+end
+{%- endif -%}
+{%- endmacro %}
+{% for case in cases %}
+    @testset "{{ case["description"] }}" begin
+        account = create()
+    {%- set ops = case["input"]["operations"] %}
+    {%- if case is error_case %}
+    {%- for op in ops[:-1] %}
+        {{ operation(op) }}
+    {%- endfor %}
+        {%- set error_type = "ArgumentError" if case["expected"]["error"].startswith("amount") else "ErrorException" %}
+        @test_throws {{ error_type }} {{ operation(ops[-1]) }}
+    {%- else %}
+    {%- for op in ops[:-1] %}
+        {{ operation(op) }}
+    {%- endfor %}
+        @test {{ operation(ops[-1]) }} == {{ case["expected"] }}
+    {%- endif %}
+    end
+{% endfor %}
+end
