@@ -1518,6 +1518,14 @@
         "difficulty": 4
       },
       {
+        "slug": "bank-account",
+        "name": "Bank Account",
+        "uuid": "f7cc7a58-10ac-430b-856a-d486c5e52954",
+        "practices": [],
+        "prerequisites": [],
+        "difficulty": 5
+      },
+      {
         "slug": "rectangles",
         "name": "Rectangles",
         "uuid": "6284512a-b40a-4e81-8d4f-712d729cc419",
